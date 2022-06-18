@@ -1,6 +1,6 @@
-baseurl = "https://blist.vercel.app"
+baseurl = "https://blog.toastit.dev"
 metaDataFormat = "yaml"
-title = "Blist Multilingual Theme"
+title = "ToastIT"
 theme = "blist"
 
 DefaultContentLanguage = "en"
@@ -60,7 +60,7 @@ DefaultContentLanguageInSubdir = true
         name = "Tags"
         url = "tags"
         weight = 3
-        
+
   [languages.fr]
     contentDir = "content/fr" #French
     weight = 1
@@ -84,7 +84,7 @@ DefaultContentLanguageInSubdir = true
         name = "Tags"
         url = "tags"
         weight = 3
-        
+
   [languages.dy]
     contentDir = "content/dy" #Example language
     weight = 3
@@ -93,7 +93,7 @@ DefaultContentLanguageInSubdir = true
 [params]
   # Enable the darkmode toggle in header
   darkModeToggle = true
-  
+
   # Enable search in header
   enableSearch = true
 
