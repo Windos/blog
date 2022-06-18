@@ -4,7 +4,6 @@ title = "ToastIT"
 theme = "blist"
 
 DefaultContentLanguage = "en"
-DefaultContentLanguageInSubdir = true
 [languages]
   [languages.en]
     contentDir = "content" #English
@@ -32,7 +31,7 @@ DefaultContentLanguageInSubdir = true
 
     [[languages.en.menu.main]]
         name = "Top Post"
-        url = "/en/blog/emoji-support/"
+        url = "/blog/emoji-support/"
         weight = 4
 
 [params]
