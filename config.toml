@@ -18,14 +18,17 @@ contentDir = "content"
     weight = 1
 
   [[menu.main]]
-    name = "About"
-    url = "page/about/"
+    name = "Tags"
+    url = "tag"
     weight = 2
 
   [[menu.main]]
-    name = "Tags"
-    url = "tag"
+    name = "Feed"
+    url = "index.xml"
     weight = 3
+
+[author]
+  name = 'Josh King'
 
 [params]
   introTitle = "Josh King"
