@@ -3,40 +3,35 @@ metaDataFormat = "yaml"
 title = "ToastIT"
 theme = "blist"
 
-DefaultContentLanguage = "en"
-[languages]
-  [languages.en]
-    contentDir = "content" #English
+[permalinks]
+  blog = '/:year/:month/:day/:slug'
+
+contentDir = "content"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "blog"
     weight = 1
-    languageName = "English"
-    [languages.en.params]
-      introTitle = "Josh King"
-      introSubtitle = "Geek, Father, Walking Helpdesk"
-      introPhoto = "/avatar.jpg"
-      logo = "/toastit-logo.png"
-    [[languages.en.menu.main]]
-        name = "Blog"
-        url = "blog"
-        weight = 1
 
-    [[languages.en.menu.main]]
-        name = "About"
-        url = "page/about/"
-        weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "page/about/"
+    weight = 2
 
-    [[languages.en.menu.main]]
-        name = "Tags"
-        url = "tags"
-        weight = 3
-
-    [[languages.en.menu.main]]
-        name = "Top Post"
-        url = "/blog/emoji-support/"
-        weight = 4
+  [[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 3
 
 [params]
+  introTitle = "Josh King"
+  introSubtitle = "Geek, Father, Walking Helpdesk"
+  introPhoto = "/avatar.jpg"
+  logo = "/toastit-logo.png"
+
   # Enable the darkmode toggle in header
-  darkModeToggle = false
+  darkModeToggle = true
 
   # Enable search in header
   enableSearch = true
@@ -61,10 +56,6 @@ DefaultContentLanguage = "en"
   linkedin = "https://linkedin.com/in/windos"
   github = "https://github.com/Windos"
   youtube = "https://www.youtube.com/c/JoshuaKingSolari"
-
-[[menu.main]]
-  name = "About"
-  url = "/about"
 
 [build]
   writeStats = true
