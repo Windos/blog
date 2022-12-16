@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/04/ben-kolde-470579-unsplash.jpg"
 slug = "crouton-10"
 summary = "If you can forgive incomplete help, the latest update of BurntToast has some cool new features. First one we'll be covering is Shoulder Taps!"
-tags = ["BurntToast", "PowerShell"]
+tag = ["BurntToast", "PowerShell"]
 title = "Crouton #10 - Cold Shoulder (Taps)"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/samuel-zeller-118195-unsplash.jpg"
 slug = "automatic-blog-archive-tweets"
 summary = "This morning I was up at 4 AM, live streaming the creation of an auto-tweet script."
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "Automatic Blog Archive Tweets"
 
 +++

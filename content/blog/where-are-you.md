@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-21.jpg"
 slug = "where-are-you"
 summary = "This seems like a decent excuse for a 'State of the Blog' post."
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "Where the bloody hell are ya?"
 
 +++

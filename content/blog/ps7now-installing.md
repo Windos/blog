@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/01/IMG_3567.jpeg"
 slug = "ps7now-installing"
 summary = "PowerShell 7 is out now! The first step in being able to add it to our toolbox is to install it so let's check out our options."
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "Getting Your Hands on PowerShell 7 - #PS7Now"
 
 +++

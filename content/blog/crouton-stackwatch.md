@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-1.jpg"
 slug = "crouton-stackwatch"
 summary = "A crouton is a small piece of toast for soup or salads. Or, a small piece of (burnt) toast"
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "Crouton #1 - Toast Notifications for New Stack Overflow Questions"
 
 +++

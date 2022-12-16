@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/02/randy-fath-531056-unsplash.jpg"
 slug = "everything-is-better-with-toast-getting-build-notifications"
 summary = "When you want to keep an eye on build results, but don't want to dedicate a screen to the web page, toast is the answer!"
-tags = ["PowerShell", "BurntToast", "Office 365"]
+tag = ["PowerShell", "BurntToast", "Office 365"]
 title = "Everything Is Better with Toast: Getting Build Notifications"
 
 +++

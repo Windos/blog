@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/10/rukma-pratista-1054296-unsplash.jpg"
 slug = "crouton-9-attribution"
 summary = "Where did that toast come from? Who cooked it?! If only it was attributed to someone..."
-tags = ["BurntToast", "PowerShell"]
+tag = ["BurntToast", "PowerShell"]
 title = "Crouton #9 - Free, with Attribution"
 
 +++

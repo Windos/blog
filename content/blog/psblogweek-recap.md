@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-13.jpg"
 slug = "psblogweek-recap"
 summary = "It was a great event, with five days worth of awesome PowerShell content coming out!"
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "#PSBlogWeek 2017 Recap"
 
 +++

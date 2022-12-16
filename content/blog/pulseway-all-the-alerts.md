@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/1280px-US_Navy_030516-N-5862D-010_A_recruit_division_sings_as_they_successfully_complete_the_final_leg_of_a_Battle_Stations_drill.jpg"
 slug = "pulseway-all-the-alerts"
 summary = "Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn't present in the OS after booting up? Uhh..."
-tags = ["PowerShell", "Monitoring"]
+tag = ["PowerShell", "Monitoring"]
 title = "With PowerShell, Pulseway Can Alert on Anything"
 
 +++

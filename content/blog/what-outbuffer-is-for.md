@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/05/alex-iby-HfR0W6HW_Cw-unsplash.jpg"
 slug = "what-outbuffer-is-for"
 summary = "OutBuffer has been lurking in amongst the common parameters on most cmdlets for years, but I've never taken the time to ask what it's for."
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "So *That's* What OutBuffer Is For!"
 
 +++

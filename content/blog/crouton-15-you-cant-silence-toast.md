@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/09/kristina-flour-BcjdbyKWquw-unsplash.jpg"
 slug = "crouton-15-you-cant-silence-toast"
 summary = "Focus assist is a favoured tool of practiced speakers and presenters on Windows. It does put you in a bit of a bind if the thing you're presenting requires notifications though."
-tags = ["BurntToast", "PowerShell"]
+tag = ["BurntToast", "PowerShell"]
 title = "Crouton #15 - You Can't Silence Toast"
 
 +++

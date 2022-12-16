@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-19.jpg"
 slug = "burnttoast-appid-installer"
 summary = "I can't tell you how happy I am to be writing this post."
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "BurntToast + AppId = It's Working!"
 
 +++

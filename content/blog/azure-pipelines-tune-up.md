@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/09/clem-onojeghuo-NrtSbPWPjxo-unsplash.jpg"
 slug = "azure-pipelines-tune-up"
 summary = "After reading some awesome posts on the topic, I've been shamed into making my pipelines a little more efficient."
-tags = ["Azure", "PowerShell"]
+tag = ["Azure", "PowerShell"]
 title = "Azure DevOps Pipelines Tune Up: Templates and Centralization"
 
 +++

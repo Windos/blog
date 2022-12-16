@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/6211443671_2739e09986_b-1.jpg"
 slug = "crouton-heroimages"
 summary = "Ever find yourself needing to get an image up on your screen in a timely manner?"
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "Crouton #7 – Superhero Landing"
 
 +++

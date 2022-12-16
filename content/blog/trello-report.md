@@ -5,7 +5,7 @@ description = ""
 draft = false
 slug = "trello-report"
 summary = "Nothing distracts a room full of nerds faster than technology."
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "Reporting on Trello Boards with PowerTrello"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/09/pablo-heimplatz-an3qaxZ-2bY-unsplash.jpg"
 slug = "ternary-operator-powershell-7"
 summary = "What the heck is a \"ternary\" and what's it doing in my PowerShell?!"
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "Getting Familiar with the Ternary Operator in PowerShell 7"
 
 +++

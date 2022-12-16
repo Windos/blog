@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/REA_pie_from_oven.png"
 slug = "old-posts"
 summary = "I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn't seen in years."
-tags = ["Windows"]
+tag = ["Windows"]
 title = "Digging Up Old Blog Posts"
 
 +++

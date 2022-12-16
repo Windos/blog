@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/07/jason-dent-3wPJxh-piRw-unsplash.jpg"
 slug = "synology-active-backup-suite-review"
 summary = "Have you ever come face to face with something that shines a spotlight on a gap in your knowledge of a subject? This happened to me recently when I was asked to review Synology's Active Backup Suite."
-tags = ["Backup"]
+tag = ["Backup"]
 title = "Synology Active Backup Suite Review"
 
 +++

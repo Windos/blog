@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-2.jpg"
 slug = "always-api"
 summary = "Your business uses two disparate cloud services and needs them to share data, but they don’t integrate natively. You really don’t need to make this harder than it needs to be."
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "Always Ask for the API"
 
 +++

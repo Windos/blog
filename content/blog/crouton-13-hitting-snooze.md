@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/11/sophie-elvis-msC14JchkKU-unsplash.jpg"
 slug = "crouton-13-hitting-snooze"
 summary = "Hitting snooze on your alarm clock is probably rather common. Let's take a look at how you can do the same thing with your Toast Notifications."
-tags = ["BurntToast", "PowerShell"]
+tag = ["BurntToast", "PowerShell"]
 title = "Crouton #13 - Hitting Snooze"
 
 +++

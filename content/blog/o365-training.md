@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-5.jpg"
 slug = "o365-training"
 summary = "At first, I figured this wouldn’t cause me much of an issue. Information is information right?"
-tags = ["Office 365", "Meta"]
+tag = ["Office 365", "Meta"]
 title = "Old Office 365 Training: Navigating the Minefield"
 
 +++

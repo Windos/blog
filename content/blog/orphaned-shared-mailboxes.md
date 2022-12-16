@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/08/rawpixel-777268-unsplash.jpg"
 slug = "orphaned-shared-mailboxes"
 summary = "Time for a bit of Exchange flavoured spring cleaning? Let's find some un-needed shared mailboxes!"
-tags = ["PowerShell", "Office 365", "Nugget"]
+tag = ["PowerShell", "Office 365", "Nugget"]
 title = "Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes"
 
 +++

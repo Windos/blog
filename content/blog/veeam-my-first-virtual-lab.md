@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/MaxPixel.freegreatpicture.com-Toy-Child-Game-Childhood-Blocks-Education-Kid-503109.jpg"
 slug = "veeam-my-first-virtual-lab"
 summary = "Over the last day or so I've been setting up a sandbox/virtual lab which leverages our Veeam backups."
-tags = ["Backup"]
+tag = ["Backup"]
 title = "Veeam: My First Virtual Lab"
 
 +++

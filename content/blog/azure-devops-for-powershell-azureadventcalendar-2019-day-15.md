@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/12/45SZm5ke.jpg"
 slug = "azure-devops-for-powershell-azureadventcalendar-2019-day-15"
 summary = "It's long past time to wrap some modern smarts around KovertKringle, a PowerShell module for managing Secret Santa events."
-tags = ["Azure", "PowerShell"]
+tag = ["Azure", "PowerShell"]
 title = "Azure Devops for PowerShell - #AzureAdventCalendar 2019 Day 15"
 
 +++

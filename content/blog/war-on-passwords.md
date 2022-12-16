@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-8.jpg"
 slug = "war-on-passwords"
 summary = "The NIST guidelines struck a chord with me. It seemed to be something that our users would embrace while addressing potential issues within any given workplace"
-tags = ["Security", "Meta"]
+tag = ["Security", "Meta"]
 title = "The War on Passwords"
 
 +++

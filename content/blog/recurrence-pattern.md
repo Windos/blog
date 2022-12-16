@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-9.jpg"
 slug = "recurrence-pattern"
 summary = "There's one thing that bugs me when scheduling scripts from the prompt, however: Recurrence."
-tags = ["PowerShell", "Nugget"]
+tag = ["PowerShell", "Nugget"]
 title = "Recurrence Patterns and PowerShell"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/0-key-1.png"
 slug = "u2f-key"
 summary = "GitHub now supports FIDO Universal 2nd Factor (U2F) as an option for two-factor authentication alongside their existing support for Google/Microsoft Authenticator Apps."
-tags = ["Security"]
+tag = ["Security"]
 title = "A Very Octocat U2F Key"
 
 +++

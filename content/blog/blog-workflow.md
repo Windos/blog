@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/4162953165_d5dd956c0f_b.jpg"
 slug = "blog-workflow"
 summary = "I've also noticed a number of people saying 'I want to get into it... but need to figure out x and y first."
-tags = ["Meta"]
+tag = ["Meta"]
 title = "My Blogging Workflow"
 
 +++

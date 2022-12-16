@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/8734598308_3d1ceaaf15_k.jpg"
 slug = "ps-splatting"
 summary = "You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet."
-tags = ["PowerShell", "Nugget"]
+tag = ["PowerShell", "Nugget"]
 title = "Splatting your way to reduced duplicated code"
 
 +++

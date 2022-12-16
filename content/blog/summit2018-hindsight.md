@@ -5,7 +5,7 @@ description = ""
 draft = false
 thumbnail = "/2018/05/56012414_699aac9e8e_o.jpg"
 slug = "summit2018-hindsight"
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "A Quick Look Back at #PSHSummit 2018"
 
 +++

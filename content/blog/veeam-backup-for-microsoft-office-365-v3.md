@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/02/katya-austin-554633-unsplash.jpg"
 slug = "veeam-backup-for-microsoft-office-365-v3"
 summary = "I've been testing a beta of Veeam Backup for Microsoft Office 365 v3. It ticked some boxes of mine (spoiler alert.)"
-tags = ["Backup", "Office 365"]
+tag = ["Backup", "Office 365"]
 title = "Veeam Backup for Microsoft Office 365 v3.0: It's Good, Very Good"
 
 +++

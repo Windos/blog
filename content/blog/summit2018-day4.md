@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/1024px-Flickr_-_Official_U.S._Navy_Imagery_-_U.S._Naval_Academy_plebes_carry_a_log_as_part_of_teamwork_training_during_Sea_Trials..jpg"
 slug = "summit2018-day4"
 summary = "That's it. It's over. I've shaken many hand, met many people, and seen lots of PowerShell."
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "Day Four of #PSHSummit 2018 - Iron Scripter"
 
 +++

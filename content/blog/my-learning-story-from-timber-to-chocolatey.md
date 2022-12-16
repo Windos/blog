@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2021/05/element5-digital-OyCl7Y4y0Bk-unsplash.jpg"
 slug = "my-learning-story-from-timber-to-chocolatey"
 summary = "This post is part of #TheMVPChallenge. It's not exactly what was on the brief... but I think it's a story worth telling!"
-tags = ["Meta", "Azure", "Office 365", "PowerShell"]
+tag = ["Meta", "Azure", "Office 365", "PowerShell"]
 title = "My Learning Story: From Timber to Chocolatey"
 
 +++

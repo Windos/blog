@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/06/nousnou-iwasaki-45718-unsplash.jpg"
 slug = "exploring-your-options"
 summary = "We've been looking into PowerShell Scheduled Jobs lately, today let's have a quick look at the \"options\" available to us."
-tags = ["PowerShell", "Nugget"]
+tag = ["PowerShell", "Nugget"]
 title = "PS Scheduled Jobs: Exploring Your Options"
 
 +++

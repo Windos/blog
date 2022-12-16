@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-4.jpg"
 slug = "crouton-headers"
 summary = "Headers, introduced in the Creators Update, can be used to organize you toasts."
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "Crouton #4 – Getting Your Head Around Headers"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/12/josh-riemer-flRN6KYpl1A-unsplash.jpg"
 slug = "making-sense-of-data"
 summary = "\"There's way too much information to decode the Matrix. You get used to it, though. Your brain does the translating. I don't even see the code.\""
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "Making Sense of Data: The Matrix"
 
 +++

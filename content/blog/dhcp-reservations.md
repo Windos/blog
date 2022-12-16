@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-3.png"
 slug = "dhcp-reservations"
 summary = "Have multiple DHCP servers that aren’t in a cluster? Don’t worry!"
-tags = ["PowerShell", "Nugget"]
+tag = ["PowerShell", "Nugget"]
 title = "DHCP Reservations: No Cluster? No Problem!"
 
 +++

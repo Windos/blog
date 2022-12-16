@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/01/valentin-lacoste-jNSJE8dMro0-unsplash.jpg"
 slug = "ps7now-null-conditional"
 summary = "How do you deal with potentially getting nothing back from a cmdlet or function? PowerShell 7 introduced a set of new operators to make working with null values easier."
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "Exploring... Nothing? PowerShell 7's Null Conditional Operators - #PS7Now"
 
 +++

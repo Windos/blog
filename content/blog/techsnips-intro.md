@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/512982909_04fd0dd5a5_o.jpg"
 slug = "techsnips-intro"
 summary = "TechSnips is a new e-learning service and I’ve been recording content for it, along with many other contributors."
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "Get the (Tech)Snip!"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/02/ankush-minda-545239-unsplash.jpg"
 slug = "how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release"
 summary = "What good is a nicely built PowerShell module if no one can use it? Time to release it into the wild!"
-tags = ["PowerShell", "Azure"]
+tag = ["PowerShell", "Azure"]
 title = "How I Failed My Way to Success with Azure Pipelines - Part 2: Release"
 
 +++

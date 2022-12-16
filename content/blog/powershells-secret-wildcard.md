@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/01/stefan-steinbauer-HK8IoD-5zpg-unsplash.jpg"
 slug = "powershells-secret-wildcard"
 summary = "It's funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use... such as the \"like\" operators accepting more than two different wildcards."
-tags = ["PowerShell", "Nugget"]
+tag = ["PowerShell", "Nugget"]
 title = "PowerShell's Secret Wildcard"
 
 +++

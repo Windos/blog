@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/need-update.png"
 slug = "wu-windows-1607"
 summary = "Over a year ago, I answered a question on Super User. The question was about stopping the very persistent Windows Update from rebooting without the users’ consent, and wow was that ever a popular topic."
-tags = ["PowerShell", "Windows"]
+tag = ["PowerShell", "Windows"]
 title = "Validating Prevention of Automatic Reboots on Windows 10, Version 1607"
 
 +++

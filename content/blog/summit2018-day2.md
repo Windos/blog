@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/pexels-photo-207691.jpeg"
 slug = "summit2018-day2"
 summary = "No comments about the plumbing or anything today, having gotten over the initial shock."
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "Day Two of #PSHSummit 2018 - Getting Smart"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/1024px-Bright-eyed_and_Bushy-tailed_-7976750718-.jpg"
 slug = "summit2018-day1"
 summary = "Why the hell are American toilets so full?"
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "Day One of #PSHSummit 2018 - Bright-Eyed and Bushy-Tailed"
 
 +++

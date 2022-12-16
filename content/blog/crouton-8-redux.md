@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/01/ryoji-iwata-669950-unsplash.jpg"
 slug = "crouton-8-redux"
 summary = "I didn't do the best job of the examples in my original post on this topic. Let's put that right."
-tags = ["BurntToast", "PowerShell"]
+tag = ["BurntToast", "PowerShell"]
 title = "Crouton #8 Redux - Now with a More Complete Example"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/feature.jpg"
 slug = "crouton-sounds"
 summary = "It gives me a glimpse into how people are using the module and it also focuses my documentation efforts on something that might actually be useful."
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "Crouton #6 – Dance to Your Own Beat"
 
 +++

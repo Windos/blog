@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/04/kaitlyn-chow-554372-unsplash.jpg"
 slug = "veeam-onedrive-selective"
 summary = "I've been wanting to get this out for a while, but couldn't find the right way to present it... rather than stressing, here's a brain dump on VBO v3."
-tags = ["Backup", "PowerShell"]
+tag = ["Backup", "PowerShell"]
 title = "Disjointed Thoughts on Veeam Backup for Office 365 v3"
 
 +++

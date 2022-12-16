@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-15.jpg"
 slug = "kovertkringle"
 summary = "Given it's the holiday season, I worked on a PowerShell based Secret Santa Organizer"
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "KovertKringle: Secret Santa With a Dash of PowerShell"
 
 +++

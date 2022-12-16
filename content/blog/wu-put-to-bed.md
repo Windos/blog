@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-17.jpg"
 slug = "wu-put-to-bed"
 summary = "There were, and still are, many people frustrated with the fact that Windows 10 would decide to forcibly reboot for updates."
-tags = ["Windows"]
+tag = ["Windows"]
 title = "Windows Updates: Putting Update Avoidance to Bed"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/pexels-photo-167964.jpeg"
 slug = "pshelp-twitter"
 summary = "If you're looking for some help, try #PSHelp. If you've got knowledge to share (and you do), make sure you jump in and get involved!"
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "Need PowerShell Help? Use #PSHelp!"
 
 +++

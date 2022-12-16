@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/02/vinicius-amano-566532-unsplash.jpg"
 slug = "veeam-365-selective"
 summary = "I can't stand \"expected warnings,\" but getting selective in my VBO jobs got me back to my happy place."
-tags = ["Backup", "PowerShell", "Office 365"]
+tag = ["Backup", "PowerShell", "Office 365"]
 title = "Getting Selective with Veeam Backup for Microsoft Office 365"
 
 +++

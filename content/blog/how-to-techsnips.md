@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/07/john-hult-93012-unsplash.jpg"
 slug = "how-to-techsnips"
 summary = "On the fence about becoming a TechSnips contributor? Here's some of my tips... hopefully they will help you hit record!"
-tags = ["Meta"]
+tag = ["Meta"]
 title = "How to TechSnips"
 
 +++

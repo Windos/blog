@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/03/birmingham-museums-trust-p49Q9HRPN7I-unsplash.jpg"
 slug = "ps7now-update-notifications"
 summary = "If you're not stalking the PowerShell team on Twitter, or obsessively refreshing the PowerShell repo on GitHub, how are you meant to be aware of new releases?"
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "Staying up to Date on PowerShell Releases with Update Notifications - #PS7Now"
 
 +++

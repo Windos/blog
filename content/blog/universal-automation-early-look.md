@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/01/franck-v-U3sOwViXhkY-unsplash.jpg"
 slug = "universal-automation-early-look"
 summary = "I had the pleasure of testing Universal Automation while it was in private beta. Now the beta is open to all and I'm really excited for it to be in more hands because it's a very interesting project!"
-tags = ["PowerShell", "Toolbox"]
+tag = ["PowerShell", "Toolbox"]
 title = "Universal Automation: An Early Look"
 
 +++

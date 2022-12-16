@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-11.jpg"
 slug = "burnttoast-no-appid"
 summary = "I hate reducing customizability, just as much as I hate making breaking changes in my projects."
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "BurntToast Breaking Change: Hiding Customizable AppID"
 
 +++

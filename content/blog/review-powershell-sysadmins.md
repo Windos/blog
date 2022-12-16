@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/09/nong-vang-9pw4TKvT3po-unsplash.jpg"
 slug = "review-powershell-sysadmins"
 summary = "Are you a sysadmin? Looking to stop wearing out your mouse? Could this be the book for you?"
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "Review: PowerShell for Sysadmins"
 
 +++

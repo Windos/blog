@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb.png"
 slug = "win-10-update-up-time"
 summary = "Three weeks on, did Windows 10 decide to reboot?"
-tags = ["Windows"]
+tag = ["Windows"]
 title = "Update on Windows Update... Up Time"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2021/04/shane-rounce-DNkoNXQti3c-unsplash.jpg"
 slug = "road-to-burnttoast-v1-1"
 summary = "BurntToast is finally growing up. It's going through puberty and will see a v1 release when it gets to the other side... but it'll be a journey."
-tags = ["BurntToast", "PowerShell"]
+tag = ["BurntToast", "PowerShell"]
 title = "Road to BurntToast v1: Actionable Toast for All!"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/1024px-CISV_trust_game.JPG"
 slug = "trust-no-reboot"
 summary = "Perhaps it was a helpdesk technician powering up a cloned desktop while connected to the network."
-tags = ["PowerShell", "Windows", "Nugget"]
+tag = ["PowerShell", "Windows", "Nugget"]
 title = "Repairing Trust Relationships Without a Reboot"
 
 +++

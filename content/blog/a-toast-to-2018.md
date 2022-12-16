@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/12/joe-leahy-391693-unsplash.jpg"
 slug = "a-toast-to-2018"
 summary = "The community, in and of itself, made 2018 for me. If you haven’t already gotten engaged in it… put it on your list for 2019. You wont regret it."
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "A Toast to 2018"
 
 +++

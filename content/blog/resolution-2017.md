@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-2.png"
 slug = "resolution-2017"
 summary = "New Year’s Resolutions are the in thing, right?"
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "New Year’s Resolutions - 2017"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb.jpeg"
 slug = "o365-connect"
 summary = "Just like their on-premises counterparts, each of these products has their own PowerShell interface for management."
-tags = ["PowerShell", "Office 365"]
+tag = ["PowerShell", "Office 365"]
 title = "Office 365 & PowerShell: Jacking Into the Matrix"
 
 +++

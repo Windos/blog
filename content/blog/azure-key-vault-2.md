@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/05/silas-kohler-C1P4wHhQbjM-unsplash.jpg"
 slug = "azure-key-vault-2"
 summary = "Now that we have our credentials stored in an Azure Key Vault, how do we go about using them in other Azure services?"
-tags = ["PowerShell", "Azure"]
+tag = ["PowerShell", "Azure"]
 title = "Fun with Azure Key Vault Part 2: Integration with Azure Functions"
 
 +++

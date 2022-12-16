@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/08/jason-rosewell-60014-unsplash.jpg"
 slug = "echo-echo"
 summary = "I don't know if this will help anyone else, and it's more for future me, but I hope it helps someone out there!"
-tags = ["Meta"]
+tag = ["Meta"]
 title = "Echo, Echo: Combine System Sounds with your Microphone for Skype for Business Presentations"
 
 +++

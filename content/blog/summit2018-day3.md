@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/170223-M-GJ704-948--1-.JPG"
 slug = "summit2018-day3"
 summary = "Today was the reason I was able to be here at Summit. Today was the day I presented in front of about 100 people."
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "Day Three of #PSHSummit 2018 - I Did the Thing"
 
 +++

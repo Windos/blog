@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb.JPG"
 slug = "crouton-progress-bars"
 summary = "April saw the release of the Creators Update for Windows 10 which brought with it a handful of new options for toast notifications."
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "Crouton #2 - You Can't Stop Progress (Bars)"
 
 +++

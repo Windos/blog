@@ -3,6 +3,9 @@ metaDataFormat = "yaml"
 title = "ToastIT"
 theme = "blist"
 
+[taxonomies]
+  tags = 'tag'
+
 [permalinks]
   blog = '/:year/:month/:day/:slug'
 
@@ -21,7 +24,7 @@ contentDir = "content"
 
   [[menu.main]]
     name = "Tags"
-    url = "tags"
+    url = "tag"
     weight = 3
 
 [params]

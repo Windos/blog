@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-20.jpg"
 slug = "burnttoast-wix"
 summary = "This time around, I'll walk you through how to create your own installer."
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "DIY AppId and WiX, for Tasty Toast"
 
 +++

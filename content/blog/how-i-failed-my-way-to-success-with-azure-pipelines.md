@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2019/02/quino-al-135852-unsplash.jpg"
 slug = "how-i-failed-my-way-to-success-with-azure-pipelines"
 summary = "Some people learn by writing. Some by watching videos. Apparently I learn by failing and head-desking."
-tags = ["PowerShell", "Azure"]
+tag = ["PowerShell", "Azure"]
 title = "How I Failed My Way to Success with Azure Pipelines - Part 1: Build"
 
 +++

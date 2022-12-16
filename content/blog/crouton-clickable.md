@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-3.jpg"
 slug = "crouton-clickable"
 summary = "Buttons can look pretty ugly when only using one, so just click your Toast instead!"
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "Crouton #3 - Sometimes You Just Want to Click Your Toast"
 
 +++

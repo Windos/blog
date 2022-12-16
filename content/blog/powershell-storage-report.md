@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-12.jpg"
 slug = "powershell-storage-report"
 summary = "Whether they're nearly empty, nearly full, or somewhere in-between, it's helpful to get a quick overview of all your servers' hard drives."
-tags = ["PowerShell", "Windows"]
+tag = ["PowerShell", "Windows"]
 title = "Creating Storage Reports With PowerShell"
 
 +++

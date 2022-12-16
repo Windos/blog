@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/07/lidya-nada-638316-unsplash.jpg"
 slug = "mvp-omg"
 summary = "Today I'm humbled, shocked, and proud to announce that I'm now a Microsoft MVP."
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "MVP: OMG"
 
 +++

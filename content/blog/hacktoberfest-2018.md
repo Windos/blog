@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/10/rawpixel-653764-unsplash.jpg"
 slug = "hacktoberfest-2018"
 summary = "This is my third Hacktoberfest, the event that made October one of my favorite months of the year!"
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "I Need You! #Hacktoberfest"
 
 +++

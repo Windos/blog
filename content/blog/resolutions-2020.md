@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/01/jamie-street--d6kTMGXV6E-unsplash.jpg"
 slug = "resolutions-2020"
 summary = "Apparently I forgot to do one of these posts last year. I like having these posts to look back on, so let's get back on track!"
-tags = ["Meta", "PowerShell"]
+tag = ["Meta", "PowerShell"]
 title = "New Year's Resolutions - 2020"
 
 +++

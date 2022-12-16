@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/3224581771_5917d64f99_b.jpg"
 slug = "ugly-validation"
 summary = "Figure out what you did wrong and don't do it again. Good luck!"
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "Giving ValidateScript a Makeover"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/10/dawid-zawila-279998-unsplash.jpg"
 slug = "my-wish-list-vbo365"
 summary = "I heard a rumor that v3 is already well into development... hopeful it's not too late to register my feature wish list!"
-tags = ["Backup", "Office 365"]
+tag = ["Backup", "Office 365"]
 title = "My Wish List for Veeam Backup for Microsoft Office 365 v3"
 
 +++

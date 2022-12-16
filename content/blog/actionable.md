@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/08/kate-hliznitsova-ZIGxIQ4gzBU-unsplash.jpg"
 slug = "actionable"
 summary = "I don't know how to express a happy dance with text. If I could that's what would be here because I've finally removed a thorn from my side that's been there for five years."
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "Actionable Toast Notifications, Finally Cracked Them!"
 
 +++

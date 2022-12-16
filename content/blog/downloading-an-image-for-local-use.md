@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/emarts-emarts-68775-unsplash.jpg"
 slug = "downloading-an-image-for-local-use"
 summary = "This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I'm disappointed that I didn't get to it sooner."
-tags = ["PowerShell", "Nugget", "BurntToast"]
+tag = ["PowerShell", "Nugget", "BurntToast"]
 title = "Downloading an Image for Local Use"
 
 +++

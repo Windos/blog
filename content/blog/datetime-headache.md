@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-14.jpg"
 slug = "datetime-headache"
 summary = "Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style."
-tags = ["PowerShell", "Nugget"]
+tag = ["PowerShell", "Nugget"]
 title = "Avoiding DateTime Headaches"
 
 +++

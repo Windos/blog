@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-7.jpg"
 slug = "wu-2017-revisit-setup"
 summary = "It's been nine months, time to revisit the prevention of Windows Update reboots."
-tags = ["PowerShell", "Windows"]
+tag = ["PowerShell", "Windows"]
 title = "Revisiting Windows Updates in 2017: The Lab Setup"
 
 +++

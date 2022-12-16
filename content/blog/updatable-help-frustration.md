@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-1.png"
 slug = "updatable-help-frustration"
 summary = "AAAAAAAAAAAAARRGH!"
-tags = ["PowerShell"]
+tag = ["PowerShell"]
 title = "PowerShell Updateable Help Frustration"
 
 +++

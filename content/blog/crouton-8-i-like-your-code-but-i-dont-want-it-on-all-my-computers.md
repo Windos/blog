@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/08/kyle-glenn-629501-unsplash.jpg"
 slug = "crouton-8-i-like-your-code-but-i-dont-want-it-on-all-my-computers"
 summary = "I get you; you like toast, but you don't want to put a toaster on 100 desks."
-tags = ["BurntToast", "PowerShell"]
+tag = ["BurntToast", "PowerShell"]
 title = "Crouton #8 - I like Your Code, but I Don't Want It on All My Computers"
 
 +++

@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2020/02/giu-vicente-FMArg2k3qOU-unsplash.jpg"
 slug = "living-in-a-pssession"
 summary = "PowerShell remoting is a truly powerful tool, but sometimes your scripts need a little help finding their way. How can you tell when you're in a PSSession and what info is available about the session itself?"
-tags = ["PowerShell", "Nugget"]
+tag = ["PowerShell", "Nugget"]
 title = "It's Likely We're Living in a PSSession"
 
 +++

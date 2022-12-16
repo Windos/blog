@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/thumb-18.jpg"
 slug = "crouton-password"
 summary = "How the heck did that happen, isn't the system meant to give me some warning?"
-tags = ["PowerShell", "BurntToast"]
+tag = ["PowerShell", "BurntToast"]
 title = "Crouton #5 – Password Expiry Warning"
 
 +++

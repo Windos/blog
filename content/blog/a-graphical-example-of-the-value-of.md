@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/lukas-blazek-367945-unsplash.jpg"
 slug = "a-graphical-example-of-the-value-of"
 summary = "If you have a PowerShell blog, I can't overstate how valuable it is to get your feed hooked up to Planet PowerShell!"
-tags = ["PowerShell", "Meta"]
+tag = ["PowerShell", "Meta"]
 title = "A Graphical Example of the Value of Planet PowerShell"
 
 +++

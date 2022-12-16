@@ -6,7 +6,7 @@ draft = false
 thumbnail = "/2018/05/Automatic_Telephone_Exchange-_Communications_in_Wartime-_London-_England-_UK-_1945_D23695.jpg"
 slug = "how-i-work"
 summary = "Consider this my 'How I Work' post, and if you're interested in reading more posts from other bloggers make sure you check out the list of participants on GitHub"
-tags = ["Meta"]
+tag = ["Meta"]
 title = "I'm Josh King, 'IT Pro,' and This Is How I Work"
 
 +++
