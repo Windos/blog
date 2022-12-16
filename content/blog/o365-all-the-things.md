@@ -3,7 +3,7 @@ categories = ["PowerShell", "Office 365"]
 date = 2017-08-03T12:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-6.jpg"
+thumbnail = "/2018/05/thumb-6.jpg"
 slug = "o365-all-the-things"
 summary = "Now that we've figured out how to connect to each of the Office 365 services, it's time to tie a pretty (PowerShell) blue bow on it."
 tags = ["PowerShell", "Office 365"]
@@ -112,7 +112,7 @@ Oh, that variable notion of `$Script:Name` is being used here so that the variab
 
 Like a good "tidy kiwi," we'll also be cleaning up the various remote sessions we opened with the previous function.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/tidykiwi.jpg" >}}
+{{< figure src="/2018/05/tidykiwi.jpg" >}}
 
 You'll notice that there is no `Disconnect-MsolService` cmdlet. Unlike the other services, there is no actual PS session created, so just disconnect the others and close the PowerShell host.
 

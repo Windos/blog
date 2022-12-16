@@ -3,7 +3,7 @@ categories = ["PowerShell", "Nugget", "Windows"]
 date = 2019-02-13T19:56:39Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/02/daniel-watson-75027-unsplash.jpg"
+thumbnail = "/2019/02/daniel-watson-75027-unsplash.jpg"
 slug = "rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action"
 summary = "I'm a little late to this particular party, but I only just had the 1809 update on my workstation today."
 tags = ["PowerShell", "Nugget", "Windows"]
@@ -16,11 +16,11 @@ Ok, that title may be a little hyperbolic. It's not like I **hate** the experien
 
 But what was I expecting? I thought we'd still be going into the classic Windows Features interface, just without the need to install the binaries (manually) before hand.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/WindowsFeatures.png" >}}
+{{< figure src="/2019/02/WindowsFeatures.png" >}}
 
 But as you can see... that isn't the case. Okay, no problem, it just means we do it through the Settings app, right? Correct! To get there, open **Settings** -> **Apps** -> **Manage optional features** -> **Add a feature**.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-14--1-.png" >}}
+{{< figure src="/2019/02/2019-02-14--1-.png" >}}
 
 Here's where I have my issue. Unlike the old interface, there no way to install all of (or a subset of) the RSAT tools at once. Okay sure, it means I can more carefully select the individual tools that I will use, though that's only one or two and will save me literally KBs.
 

@@ -3,7 +3,7 @@ categories = ["PowerShell", "Nugget"]
 date = 2018-04-18T20:30:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/3500720731_fd6be590fe_b.jpg"
+thumbnail = "/2018/05/3500720731_fd6be590fe_b.jpg"
 slug = "ps-csv"
 summary = "CSVs are pretty handy, right? And there is a cmdlet that'll handle this for you!"
 tags = ["PowerShell", "Nugget"]
@@ -61,8 +61,8 @@ PS C:\> $Servers | Get-Member -MemberType Properties
 
    TypeName: System.String
 
-Name   MemberType Definition       
-----   ---------- ----------       
+Name   MemberType Definition
+----   ---------- ----------
 Length Property   int Length {get;}
 
 ```

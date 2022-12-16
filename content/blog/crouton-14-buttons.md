@@ -3,7 +3,7 @@ categories = ["BurntToast", "PowerShell"]
 date = 2020-01-22T21:50:06Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/01/waldemar-brandt-H7gNBeSy7eE-unsplash.jpg"
+thumbnail = "/2020/01/waldemar-brandt-H7gNBeSy7eE-unsplash.jpg"
 slug = "crouton-14-buttons"
 summary = "It's all well and good putting buttons all over your toast notification, but text is a little plain. Let's see how we can dress out buttons up a little bit!"
 tags = ["BurntToast", "PowerShell"]
@@ -54,7 +54,7 @@ New-BurntToastNotification -Text $Text -Button $ButtonCsv, $ButtonXlsx
 
 The result is a toast notification which does the job, but those buttons look a little... boring.
 
-{{< figure src="__GHOST_URL__/content/images/2020/01/image-4.png" >}}
+{{< figure src="/2020/01/image-4.png" >}}
 
 ## Fancy Buttons
 
@@ -87,7 +87,7 @@ New-BurntToastNotification -Text $Text -Button $ButtonCsv, $ButtonXlsx
 
 Now, we have a much different notification.
 
-{{< figure src="__GHOST_URL__/content/images/2020/01/image-5.png" >}}
+{{< figure src="/2020/01/image-5.png" >}}
 
 Admittedly, the icon images didn't fair too well when they were shrunk down. Also, in all honesty, I'm not too fond of the light gray back being removed when you're using these images.
 
@@ -120,7 +120,7 @@ $Text = 'Report Completed',
 New-BurntToastNotification -Text $Text -Button $ButtonCsv, $ButtonXlsx, $ButtonDismiss
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2020/01/image-6.png" >}}
+{{< figure src="/2020/01/image-6.png" >}}
 
 You'll note that I also had to shorten the text on the original two buttons in order to fit all three on the notification.
 

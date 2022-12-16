@@ -8,39 +8,38 @@
   <title>
   Exploring... Nothing? PowerShell 7&#39;s Null Conditional Operators - #PS7Now - ToastIT
   </title>
-  <meta name="description" content="How do you deal with potentially getting nothing back from a cmdlet or function? PowerShell 7 introduced a set of new operators to make working with null values easier." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="How do you deal with potentially getting nothing back from a cmdlet or function? PowerShell 7 introduced a set of new operators to make working with null values easier." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
-  
-  
+
+
 
   <meta property="og:title" content="Exploring... Nothing? PowerShell 7&#39;s Null Conditional Operators - #PS7Now" />
 <meta property="og:description" content="How do you deal with potentially getting nothing back from a cmdlet or function? PowerShell 7 introduced a set of new operators to make working with null values easier." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/ps7now-null-conditional/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2020-03-11T11:00:00+00:00" />
-<meta property="article:modified_time" content="2020-03-11T11:00:00+00:00" />
-
+<meta property="article:published_time" content="2020-03-10T22:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-10T22:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Exploring... Nothing? PowerShell 7&#39;s Null Conditional Operators - #PS7Now"/>
 <meta name="twitter:description" content="How do you deal with potentially getting nothing back from a cmdlet or function? PowerShell 7 introduced a set of new operators to make working with null values easier."/>
 
   <meta itemprop="name" content="Exploring... Nothing? PowerShell 7&#39;s Null Conditional Operators - #PS7Now">
-<meta itemprop="description" content="How do you deal with potentially getting nothing back from a cmdlet or function? PowerShell 7 introduced a set of new operators to make working with null values easier."><meta itemprop="datePublished" content="2020-03-11T11:00:00+00:00" />
-<meta itemprop="dateModified" content="2020-03-11T11:00:00+00:00" />
-<meta itemprop="wordCount" content="1375">
+<meta itemprop="description" content="How do you deal with potentially getting nothing back from a cmdlet or function? PowerShell 7 introduced a set of new operators to make working with null values easier."><meta itemprop="datePublished" content="2020-03-10T22:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-03-10T22:00:00+00:00" />
+<meta itemprop="wordCount" content="1387">
 <meta itemprop="keywords" content="PowerShell," />
+
+
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
-    
+
     <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
-    
+
   </a>
   <button class="mobile-menu-button md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,19 +50,19 @@
   </button>
   <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
 
-    
+
     <li><a href="/blog">Blog</a></li>
-    
+
     <li><a href="/page/about/">About</a></li>
-    
+
     <li><a href="/tags">Tags</a></li>
-    
+
     <li><a href="/blog/emoji-support/">Top Post</a></li>
-    
 
-    
 
-    
+
+
+
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,20 +73,21 @@
         </svg>
       </span>
     </li>
-    
 
-    
+
+
   </ul>
 </header>
 <main class="flex-1">
-  
-  
 
-  
+
+
+
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Exploring... Nothing? PowerShell 7&#39;s Null Conditional Operators - #PS7Now</h1>
+
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -97,15 +97,15 @@
         <line x1="4" y1="11" x2="20" y2="11" />
         <rect x="8" y="15" width="2" height="2" />
       </svg>
-      Posted on 
-  
-    March 11, 2020
-  
+      Posted on
+
+    March 10, 2020
 
 
-      
+
+
         &nbsp;&bull;&nbsp;
-      
+
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <circle cx="12" cy="12" r="9" />
@@ -121,166 +121,206 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      1375&nbsp;words
-      
+      1387&nbsp;words
+
+
+
     </h5>
 
-    <p><em>This post is part of the <a href="https://twitter.com/search?q=%23PS7Now" target="_blank" rel="noopener">#PS7Now</a>
- PowerShell Blog Week celebrating the general availability launch of <a href="https://docs.microsoft.com/en-us/powershell/" target="_blank" rel="noopener">PowerShell 7.</a>
-</em></p>
-<p><em>There&rsquo;s a lot of great content coming out this week from a number of different authors, so make sure you keep an eye on the <a href="https://twitter.com/search?q=%23PS7Now" target="_blank" rel="noopener">hashtag</a>
- over on Twitter or checkout the table at the bottom of this post for direct links!</em></p>
+
+    <p class="note"><em>This post is part of the <a href="https://twitter.com/search?q=%23PS7Now" target="_blank">#PS7Now</a> PowerShell Blog Week celebrating the general availability launch of <a href="https://docs.microsoft.com/en-us/powershell/" target="_blank">PowerShell 7.</a></em><br /><br />
+<em>There's a lot of great content coming out this week from a number of different authors, so make sure you keep an eye on the <a href="https://twitter.com/search?q=%23PS7Now" target="_blank">hashtag</a> over on Twitter or checkout the table at the bottom of this post for direct links!</em></p>
 <p>Have you ever found yourself with a variable that may or may not actually exist? Maybe you were assigning the output of a cmdlet to it, but it&rsquo;s possible that the resource you were looking for doesn&rsquo;t exist so the cmdlet didn&rsquo;t return anything.</p>
 <p>In this situation, the variable is &ldquo;null&rdquo; or empty/non-existent. For a deep dive on the general concept of null in PowerShell I highly recommend checking out <a href="https://twitter.com/KevinMarquette" target="_blank" rel="noopener">Kevin Marquette</a>
 &rsquo;s &ldquo;<a href="https://powershellexplained.com/2018-12-23-Powershell-null-everything-you-wanted-to-know" target="_blank" rel="noopener">Everything You Wanted to Know</a>
 &rdquo; post.</p>
 <p>But back to the original question. Traditionally if you wanted to check if your variable was null or not, you might include something like this:</p>
-<pre><code>$TheThing = $null
-
-if ($null -eq $TheThing) {
-	&quot;Nope, it wasn't there!&quot;
-} else {
-	$TheThing
-}
-</code></pre>
-<p>In this example, we first assign null to the <code>$TheThing</code> variable, we&rsquo;re doing this for the sake of the demo to ensure you get the expected result when you try it at home.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$TheThing</span> = $null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> ($null <span style="color:#ff79c6">-eq</span> <span style="color:#8be9fd;font-style:italic">$TheThing</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#f1fa8c">&#34;Nope, it wasn&#39;t there!&#34;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">$TheThing</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example, we first assign null to the <code>$TheThing</code> variable, we&rsquo;re doing this for the sake of the demo to ensure you get the expected result when you try it at home.</p>
 <p>We then check to see if that variable is null. If it is null then we take some action (in this case outputting a string) and if it isn&rsquo;t then we return the value it contains.</p>
 <p>You could simplify your if statement from <code>($null -eq $TheThing)</code> to <code>(-not $TheThing)</code>, but regardless of how you go about the comparison you&rsquo;re still using a full if/else statement.</p>
 <h2 id="null-coalescing-operator">Null Coalescing Operator</h2>
 <p>The newly released PowerShell 7 introduces a new option for us on this front. We now have a <code>??</code> null coalescing operator, which is a feature of more &ldquo;traditional&rdquo; programming languages.</p>
 <p>The best way to describe this is that your output will be the value on the left hand side of the operator if it isn&rsquo;t null, but if it <strong>is</strong> null then it will output whatever is on the right of the operator.</p>
-<pre><code>&lt;left&gt; ?? &lt;right&gt;
-</code></pre>
-<p>Our previous example re-written to use the null coalescing operator looks like this:</p>
-<pre><code>$TheThing = $null
-
-$TheThing ?? &quot;Nope, it wasn't there!&quot;
-</code></pre>
-<p>That&rsquo;s dramatically shorter isn&rsquo;t it?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>&lt;left&gt; ?? &lt;right&gt;
+</span></span></code></pre></div><p>Our previous example re-written to use the null coalescing operator looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$TheThing</span> = $null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$TheThing</span> ?? <span style="color:#f1fa8c">&#34;Nope, it wasn&#39;t there!&#34;</span>
+</span></span></code></pre></div><p>That&rsquo;s dramatically shorter isn&rsquo;t it?</p>
 <h3 id="try-it-yourself">Try It Yourself</h3>
 <p>If you haven&rsquo;t already, let&rsquo;s run through those examples and see the output from them. The first &ldquo;old&rdquo; example was this:</p>
-<pre><code>$Thing = $null
-
-if ($null -eq $Thing) {
-    'The thing is null'
-} else {
-    $Thing
-}
-</code></pre>
-<p>This will output:</p>
-<pre><code>The thing is null
-</code></pre>
-<p>Now let&rsquo;s give <code>$Thing</code> a value:</p>
-<pre><code>$Thing = 'The thing has a value!'
-
-if ($null -eq $Thing) {
-    'The thing is null'
-} else {
-    $Thing
-}
-</code></pre>
-<p>The output now contains the value we assigned to <code>$Thing</code>:</p>
-<pre><code>The thing has a value!
-</code></pre>
-<p>Now try those two examples again, but using the null coalescing operator.</p>
-<pre><code>$Thing = $null
-
-$Thing ?? 'The thing is null'
-
-$Thing = 'The thing has a value!'
-
-$Thing ?? 'The thing is null'
-</code></pre>
-<h3 id="stretching-things">Stretching Things</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> = $null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> ($null <span style="color:#ff79c6">-eq</span> <span style="color:#8be9fd;font-style:italic">$Thing</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;The thing is null&#39;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Thing</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This will output:</p>
+<pre tabindex="0"><code class="language-output" data-lang="output">The thing is null
+</code></pre><p>Now let&rsquo;s give <code>$Thing</code> a value:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> = <span style="color:#f1fa8c">&#39;The thing has a value!&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> ($null <span style="color:#ff79c6">-eq</span> <span style="color:#8be9fd;font-style:italic">$Thing</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;The thing is null&#39;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Thing</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The output now contains the value we assigned to <code>$Thing</code>:</p>
+<pre tabindex="0"><code class="language-output" data-lang="output">The thing has a value!
+</code></pre><p>Now try those two examples again, but using the null coalescing operator.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> = $null
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> ?? <span style="color:#f1fa8c">&#39;The thing is null&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> = <span style="color:#f1fa8c">&#39;The thing has a value!&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> ?? <span style="color:#f1fa8c">&#39;The thing is null&#39;</span>
+</span></span></code></pre></div><h3 id="stretching-things">Stretching Things</h3>
 <p>It&rsquo;s not just strings that you can put on either side of this operator. You can actually run commands. A caveat here, as far as I&rsquo;m aware from my experiments, is that you&rsquo;re limited to one pipeline (meaning you can use <code>|</code> characters, but not <code>;</code>) and in my testing the expression needs to be wrapped in brackets.</p>
-<pre><code>$Thing ?? (Get-Date | Select *)
-</code></pre>
-<p><em>You can even put an expression like this on the left. Just be aware that the expression on the right will <strong>only</strong> be evaluated if the left side was null. That&rsquo;s a very specific condition, remember that things that return a Boolean value aren&rsquo;t returning null (<code>$false</code> is a value, therefore it&rsquo;s not null.)</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> ?? (<span style="color:#8be9fd;font-style:italic">Get-Date</span> | <span style="color:#8be9fd;font-style:italic">Select </span>*)
+</span></span></code></pre></div><p><em>You can even put an expression like this on the left. Just be aware that the expression on the right will <strong>only</strong> be evaluated if the left side was null. That&rsquo;s a very specific condition, remember that things that return a Boolean value aren&rsquo;t returning null (<code>$false</code> is a value, therefore it&rsquo;s not null.)</em></p>
 <p>This is all well and good, but what if we want to actually assign a value to our variable if it&rsquo;s null?</p>
 <h2 id="null-conditional-assignment-operator">Null Conditional Assignment Operator</h2>
 <p>A very near relative to the <code>??</code> coalescing operator is the <code>??=</code> conditional assignment operator.</p>
 <p>With this operator, the variable on the left will keep its current value if it is not null, but will be assigned the value on the right if it is null.</p>
 <p>Let&rsquo;s walk through a full example of this using just the new operators from PowerShell 7 (no need for if/else here!)</p>
 <p>First we&rsquo;ll make sure our variable is null:</p>
-<pre><code>$Thing = $null
-</code></pre>
-<p>Then we&rsquo;ll make sure it&rsquo;s actually null with the coalescing operator:</p>
-<pre><code>$Thing ?? &quot;Yup, it's null!&quot;
-
-Yup, it's null!
-</code></pre>
-<p>Now, let&rsquo;s use the conditional assignment operator to give our variable a value:</p>
-<pre><code>$Thing ??= 'This is a value!'
-</code></pre>
-<p>There&rsquo;s no output on this. To see that something has happened, we&rsquo;ll use the coalescing operator again:</p>
-<pre><code>$Thing ?? &quot;Yup, it's null!&quot;
-
-This is a value!
-</code></pre>
-<p>Excellent, our value was assigned. For a little homework, try running the following commands to double check that the conditional assignment operator won&rsquo;t overwrite and existing value:</p>
-<pre><code>$Thing ??= 'Yet another value...'
-$Thing
-</code></pre>
-<h2 id="bonus-accessing-properties-and-methods-on-null-variables">Bonus: Accessing Properties and Methods on Null Variables</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> = $null
+</span></span></code></pre></div><p>Then we&rsquo;ll make sure it&rsquo;s actually null with the coalescing operator:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> ?? <span style="color:#f1fa8c">&#34;Yup, it&#39;s null!&#34;</span>
+</span></span></code></pre></div><pre tabindex="0"><code class="language-output" data-lang="output">Yup, it&#39;s null!
+</code></pre><p>Now, let&rsquo;s use the conditional assignment operator to give our variable a value:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> ??= <span style="color:#f1fa8c">&#39;This is a value!&#39;</span>
+</span></span></code></pre></div><p>There&rsquo;s no output on this. To see that something has happened, we&rsquo;ll use the coalescing operator again:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> ?? <span style="color:#f1fa8c">&#34;Yup, it&#39;s null!&#34;</span>
+</span></span></code></pre></div><pre tabindex="0"><code class="language-output" data-lang="output">This is a value!
+</code></pre><p>Excellent, our value was assigned. For a little homework, try running the following commands to double check that the conditional assignment operator won&rsquo;t overwrite and existing value:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span> ??= <span style="color:#f1fa8c">&#39;Yet another value...&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Thing</span>
+</span></span></code></pre></div><h2 id="bonus-accessing-properties-and-methods-on-null-variables">Bonus: Accessing Properties and Methods on Null Variables</h2>
 <p>One of the main reasons I actually find myself checking whether a variable is null or not is to avoid errors when trying to dig into it, such as pulling out properties, calling methods, or indexing an item in a collection.</p>
 <p>Doing any of these actions on a null variable will result in errors. We can avoid these errors by throwing question marks at the problem (don&rsquo;t worry, this statement will make sense in a moment.)</p>
 <p><em>Note: This is an experimental feature, and will need to be enabled prior to use.</em></p>
-<pre><code>Enable-ExperimentalFeature -Name PSNullConditionalOperators
-</code></pre>
-<h3 id="methods-and-properties">Methods and Properties</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Enable-ExperimentalFeature</span> -Name PSNullConditionalOperators
+</span></span></code></pre></div><h3 id="methods-and-properties">Methods and Properties</h3>
 <p>Let&rsquo;s say we&rsquo;re wanting to stop the BITS service using its <code>Stop()</code> method, but we&rsquo;ve forgotten to actually get the service in a variable prior to trying.</p>
-<pre><code>$BitsService.Stop()
-</code></pre>
-<p><img src="__GHOST_URL__/content/images/2020/02/image-2.png" alt="Example error on Stop method call">
-In PowerShell 7 we can instead do the following:</p>
-<pre><code>${BitsService}?.Stop()
-</code></pre>
-<p><img src="__GHOST_URL__/content/images/2020/02/image-3.png" alt="Suppression of error using conditional method access">
-What you&rsquo;ll note here is that the name of the variable has been wrapped in curly braces, this is needed because variable names can end with a question mark and that happens to be what we need to add before the period when calling a method or property.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$BitsService</span>.Stop()
+</span></span></code></pre></div><figure><img src="/2020/02/image-2.png"/>
+</figure>
+
+<p>In PowerShell 7 we can instead do the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>${BitsService}?.Stop()
+</span></span></code></pre></div><figure><img src="/2020/02/image-3.png"/>
+</figure>
+
+<p>What you&rsquo;ll note here is that the name of the variable has been wrapped in curly braces, this is needed because variable names can end with a question mark and that happens to be what we need to add before the period when calling a method or property.</p>
 <p>The previous example didn&rsquo;t actually <em>do</em> anything because that variable was still null. If it did contain a service object, the service would have been stopped. Adding the question mark specifies that you&rsquo;re expecting that the variable <em>could</em> be null and that that is OK&hellip; for whatever reason.</p>
 <p><em>Note: Trying to get properties from a null variable won&rsquo;t actually generate an error, even before PowerShell 7. Using this syntax just makes then intentions of your script clearer.</em></p>
 <h3 id="indexing-collections">Indexing Collections</h3>
 <p>Let&rsquo;s say you&rsquo;re getting a list of users from Active Directory, but the Organizational Unit you&rsquo;re using may or may not actually contain users. You want to index into the potential collection of users, but if none were returned your variable will be null&hellip; and you&rsquo;ll get an error</p>
-<pre><code>$Users[0]
-</code></pre>
-<p><img src="__GHOST_URL__/content/images/2020/02/image-4.png" alt="Error when indexing into a null collection">
-Once again, we can add wrap the variable&rsquo;s name in curly braces and add a question mark to avoid the error:</p>
-<pre><code>${Users}?[0]
-</code></pre>
-<p><img src="__GHOST_URL__/content/images/2020/02/image-5.png" alt="Suppressed error using conditional access question mark">
-These can be chained together, so you can index into a collection and also call a method or get a property, you just need to continue to use question marks.</p>
-<pre><code>${Users}?[0]?.SamAccountName
-</code></pre>
-<h2 id="final-thoughts">Final Thoughts</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Users</span>[<span style="color:#bd93f9">0</span>]
+</span></span></code></pre></div><figure><img src="/2020/02/image-4.png"/>
+</figure>
+
+<p>Once again, we can add wrap the variable&rsquo;s name in curly braces and add a question mark to avoid the error:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>${Users}?[<span style="color:#bd93f9">0</span>]
+</span></span></code></pre></div><figure><img src="/2020/02/image-5.png"/>
+</figure>
+
+<p>These can be chained together, so you can index into a collection and also call a method or get a property, you just need to continue to use question marks.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>${Users}?[<span style="color:#bd93f9">0</span>]?.SamAccountName
+</span></span></code></pre></div><h2 id="final-thoughts">Final Thoughts</h2>
 <p>It&rsquo;s important to remember, as with most of the new PowerShell 7 features, that using them automatically makes your scripts incompatible with older PowerShell versions.</p>
 <p>There&rsquo;s nothing wrong with this, just consider the audience of your scripts and whether you want to force them to upgrade (even though we all know that they should!)</p>
 <p>Personally, I&rsquo;ll be using some of these new operators when working via an interactive shell, but not in scripts that I&rsquo;m saving for later re-use. This is the same stance I take on <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-7" target="_blank" rel="noopener">aliases</a>
 .</p>
 <p>The main value I see here is breaking down a barrier that may have previously stopped existing developers from adding PowerShell to their toolbox.</p>
 <p>Now that you&rsquo;ve learnt a little bit about nothing (ha, null jokes!), please go check out the other <a href="https://twitter.com/search?q=%23PS7Now" target="_blank" rel="noopener">#PS7Now</a>
- authors:
-AuthorTwitterBlogAdam Bertram<a href="https://twitter.com/adbertram" target="_blank" rel="noopener">@adbertram</a>
-<a href="https://adamtheautomator.com" target="_blank" rel="noopener">https://adamtheautomator.com</a>
-Dan Franciscus<a href="https://twitter.com/dan_franciscus" target="_blank" rel="noopener">@dan_franciscus</a>
-<a href="https://winsysblog.com" target="_blank" rel="noopener">https://winsysblog.com</a>
-Dave Carroll<a href="https://twitter.com/thedavecarroll" target="_blank" rel="noopener">@thedavecarroll</a>
-<a href="https://powershell.anovelidea.org" target="_blank" rel="noopener">https://powershell.anovelidea.org</a>
-Jeff Hicks<a href="https://twitter.com/JeffHicks" target="_blank" rel="noopener">@JeffHicks</a>
-<a href="https://jdhitsolutions.com" target="_blank" rel="noopener">https://jdhitsolutions.com</a>
-Jonathan Medd<a href="https://twitter.com/jonathanmedd" target="_blank" rel="noopener">@jonathanmedd</a>
-<a href="https://www.jonathanmedd.net" target="_blank" rel="noopener">https://www.jonathanmedd.net</a>
-Josh Duffney<a href="https://twitter.com/joshduffney" target="_blank" rel="noopener">@joshduffney</a>
-<a href="http://duffney.io" target="_blank" rel="noopener">http://duffney.io</a>
-Mike Kanakos<a href="https://twitter.com/MikeKanakos" target="_blank" rel="noopener">@MikeKanakos</a>
-<a href="https://www.networkadm.in" target="_blank" rel="noopener">https://www.networkadm.in</a>
-Prateek Singh<a href="https://twitter.com/singhprateik" target="_blank" rel="noopener">@singhprateik</a>
-<a href="https://ridicurious.com" target="_blank" rel="noopener">https://ridicurious.com</a>
-Thomas Lee<a href="https://twitter.com/doctordns" target="_blank" rel="noopener">@doctordns</a>
-<a href="https://tfl09.blogspot.com" target="_blank" rel="noopener">https://tfl09.blogspot.com</a>
-</p>
+ authors:</p>
+<table>
+<thead>
+<tr>
+<th>Author</th>
+<th>Twitter</th>
+<th>Blog</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adam Bertram</td>
+<td><a href="https://twitter.com/adbertram" target="_blank" rel="noopener">@adbertram</a>
+</td>
+<td><a href="https://adamtheautomator.com" target="_blank" rel="noopener">https://adamtheautomator.com</a>
+</td>
+</tr>
+<tr>
+<td>Dan Franciscus</td>
+<td><a href="https://twitter.com/dan_franciscus" target="_blank" rel="noopener">@dan_franciscus</a>
+</td>
+<td><a href="https://winsysblog.com" target="_blank" rel="noopener">https://winsysblog.com</a>
+</td>
+</tr>
+<tr>
+<td>Dave Carroll</td>
+<td><a href="https://twitter.com/thedavecarroll" target="_blank" rel="noopener">@thedavecarroll</a>
+</td>
+<td><a href="https://powershell.anovelidea.org" target="_blank" rel="noopener">https://powershell.anovelidea.org</a>
+</td>
+</tr>
+<tr>
+<td>Jeff Hicks</td>
+<td><a href="https://twitter.com/JeffHicks" target="_blank" rel="noopener">@JeffHicks</a>
+</td>
+<td><a href="https://jdhitsolutions.com" target="_blank" rel="noopener">https://jdhitsolutions.com</a>
+</td>
+</tr>
+<tr>
+<td>Jonathan Medd</td>
+<td><a href="https://twitter.com/jonathanmedd" target="_blank" rel="noopener">@jonathanmedd</a>
+</td>
+<td><a href="https://www.jonathanmedd.net" target="_blank" rel="noopener">https://www.jonathanmedd.net</a>
+</td>
+</tr>
+<tr>
+<td>Josh Duffney</td>
+<td><a href="https://twitter.com/joshduffney" target="_blank" rel="noopener">@joshduffney</a>
+</td>
+<td><a href="http://duffney.io" target="_blank" rel="noopener">http://duffney.io</a>
+</td>
+</tr>
+<tr>
+<td>Mike Kanakos</td>
+<td><a href="https://twitter.com/MikeKanakos" target="_blank" rel="noopener">@MikeKanakos</a>
+</td>
+<td><a href="https://www.commandline.ninja" target="_blank" rel="noopener">https://www.commandline.ninja</a>
+</td>
+</tr>
+<tr>
+<td>Prateek Singh</td>
+<td><a href="https://twitter.com/singhprateik" target="_blank" rel="noopener">@singhprateik</a>
+</td>
+<td><a href="https://ridicurious.com" target="_blank" rel="noopener">https://ridicurious.com</a>
+</td>
+</tr>
+<tr>
+<td>Thomas Lee</td>
+<td><a href="https://twitter.com/doctordns" target="_blank" rel="noopener">@doctordns</a>
+</td>
+<td><a href="https://tfl09.blogspot.com" target="_blank" rel="noopener">https://tfl09.blogspot.com</a>
+</td>
+</tr>
+</tbody>
+</table>
 <h2 id="credit">Credit</h2>
-<p>Hero image by <a href="https://unsplash.com/@valentinlacoste?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Valentin Lacoste</a>
- on <a href="https://unsplash.com/?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+<p>Hero image by <a href="https://unsplash.com/@valentinlacoste?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Valentin Lacoste</a>
+ on <a href="https://unsplash.com/?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
 </p>
 
   </article><div class="bg-blue-300 dark:bg-gray-900">
@@ -290,7 +330,7 @@ Thomas Lee<a href="https://twitter.com/doctordns" target="_blank" rel="noopener"
       <p class="opacity-60"></p>
     </div>
     <ul class="flex justify-center gap-4">
-      
+
       <li>
         <a
           href="https://twitter.com/WindosNZ"
@@ -317,8 +357,8 @@ Thomas Lee<a href="https://twitter.com/doctordns" target="_blank" rel="noopener"
           </svg>
         </a>
       </li>
-      
-      
+
+
       <li>
         <a
           href="https://linkedin.com/in/windos"
@@ -347,9 +387,9 @@ Thomas Lee<a href="https://twitter.com/doctordns" target="_blank" rel="noopener"
           </svg>
         </a>
       </li>
-      
-      
-      
+
+
+
       <li>
         <a
           href="https://github.com/Windos"
@@ -376,11 +416,11 @@ Thomas Lee<a href="https://twitter.com/doctordns" target="_blank" rel="noopener"
           </svg>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <li>
         <a
           href="https://www.youtube.com/c/JoshuaKingSolari"
@@ -407,16 +447,18 @@ Thomas Lee<a href="https://twitter.com/doctordns" target="_blank" rel="noopener"
           </svg>
         </a>
       </li>
-      
-      
+
+
+
+
     </ul>
   </div>
 </div>
     </main><footer class="container p-6 mx-auto flex justify-between items-center">
   <span class="text-sm font-light">
-    
+
     Copyright © 2022 - Josh King · All rights reserved
-    
+
   </span>
   <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"

@@ -3,7 +3,7 @@ categories = ["PowerShell", "Azure"]
 date = 2019-02-16T20:08:32Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/02/ankush-minda-545239-unsplash.jpg"
+thumbnail = "/2019/02/ankush-minda-545239-unsplash.jpg"
 slug = "how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release"
 summary = "What good is a nicely built PowerShell module if no one can use it? Time to release it into the wild!"
 tags = ["PowerShell", "Azure"]
@@ -24,7 +24,7 @@ Unlike the build pipelines we've just finished with, there is (currently) no sup
 
 When you go in to create a new pipeline, you'll be presented with a smorgasbord of templates to start with. These cover a huge range of scenarios, including deploying a Node.js app to Azure App Service and deploying a Kubernetes Cluster.
 
-![Release Pipeline Template](__GHOST_URL__/content/images/2019/02/2019-02-12--5-.png)
+![Release Pipeline Template](/2019/02/2019-02-12--5-.png)
 
 If one of these are close to what you're looking to do, go ahead and use them. For me though, I started with an empty job.
 
@@ -32,47 +32,47 @@ You'll then be prompted to name your first stage. Depending on your requirements
 
 For a PowerShell module though, and especially on my first run through, I just went straight to production (and why wouldn't you [deploy to production](https://www.youtube.com/watch?v=5p8wTOr8AbU)?)
 
-![StageName](__GHOST_URL__/content/images/2019/02/StageName.png)
+![StageName](/2019/02/StageName.png)
 
 <p class="note">I'm going to go back and add a preview stage within my projects in order to get preview/beta releases out on the PowerShell Gallery and GitHub as a final dry run before "going live."</p>
 
 Next, add an artifact. This is effectively letting your release pipeline know where to pull the "bits" from that it's going to release. This can come directly from your source control, such as GitHub or Azure Repos, but since we've got a build pipeline setup, we'll stick with that.
 
-![AddAnArtifact](__GHOST_URL__/content/images/2019/02/AddAnArtifact.PNG)
+![AddAnArtifact](/2019/02/AddAnArtifact.PNG)
 
 If you're leaving your source as a build pipeline, go ahead and select the project, the specific pipeline and the default version. You **can** specify this at runtime manually, but I like to set it to the latest from the build pipeline.
 
-![BuildSource](__GHOST_URL__/content/images/2019/02/BuildSource.PNG)
+![BuildSource](/2019/02/BuildSource.PNG)
 
 Also, don't forget to name and save your pipeline. It's currently called "New release pipeline" and you can change this by clicking the name at the top of the screen. Changing the name will force you to save the pipeline... if you don't do this and you close the page without thinking about it... all your work's gone!
 
 On this screen you can also enable triggers to make deployment to your stages automatic. We'll discuss later that I manually create releases, but I do want to automatically deploy to the production stage when a release is created. To do this, click the pre-deployment conditions button next to the stage.
 
-![Conditions](__GHOST_URL__/content/images/2019/02/Conditions.PNG)
+![Conditions](/2019/02/Conditions.PNG)
 
 As you'll see, the default here is to automatically deploy "after release" which is perfect for me. If you want to ensure that you have some input, you can toggle this to manual only. There's a lot of other options you can play with, that I haven't touched yet, including specify who needs to give their approval before a deployment can proceed.
 
-![ConditionsBlade](__GHOST_URL__/content/images/2019/02/ConditionsBlade.PNG)
+![ConditionsBlade](/2019/02/ConditionsBlade.PNG)
 
 Before we start diving into making our pipeline **do** something, let's have a look at the lay of the land around jobs and tasks. It's not the most intuitive thing in the world, but to start adjusting these, click the link under the stage's name.
 
-![StageTasks](__GHOST_URL__/content/images/2019/02/StageTasks.png)
+![StageTasks](/2019/02/StageTasks.png)
 
 With no jobs configured, you end up on a somewhat sparse screen and the first time I landed here I was a little confused about what's next.
 
 On the left you'll see you default job. Remember from our dive into build pipelines that jobs contain tasks, and a pipeline can have one or more jobs. If you click on the job, you can edit its settings, like name and which agent pool it uses (mainly, selecting if it runs on Windows or Linux.)
 
-![AgentSettings](__GHOST_URL__/content/images/2019/02/AgentSettings.PNG)
+![AgentSettings](/2019/02/AgentSettings.PNG)
 
-What about adding tasks? Hit the "+" next to the name of your job. You'll be greeted by a (searchable) list of available tasks, select one to add them then click on an added task on the left to configure them. 
+What about adding tasks? Hit the "+" next to the name of your job. You'll be greeted by a (searchable) list of available tasks, select one to add them then click on an added task on the left to configure them.
 
-![NewTask](__GHOST_URL__/content/images/2019/02/NewTask.png)
+![NewTask](/2019/02/NewTask.png)
 
 ### My Pipeline
 
 Up until now I've been showing you a new/default release pipeline, but I think it's about time I jump over to my "real" one for BurntToast.
 
-![TaskList](__GHOST_URL__/content/images/2019/02/TaskList.PNG)
+![TaskList](/2019/02/TaskList.PNG)
 
 The first thing you'll notice is two "Download Pipeline Artifact" tasks. These are matched to two "Publish Pipeline Artifact" tasks in my build pipelines. You **can** specify a specific pipeline from which to download artifacts, otherwise it'll download from the default for this pipeline.
 
@@ -80,13 +80,13 @@ The only other things to configure here are the name of the artifacts, matching 
 
 <p class="warning">I spent a <b>long</b> time trying to figure out why I couldn't touch my artifacts within my later PowerShell tasks. I knew where the artifacts directory should have been, but nothing was there. Hadn't I specified an artifact when first starting to create this pipeline?<br /><br />I didn't realize you actually have to download the artifacts within a given job before you can use them.<br /><br />If you need to touch the artifacts, remember to add tasks to download them.</p>
 
-![ConfigDownloadArtifact](__GHOST_URL__/content/images/2019/02/ConfigDownloadArtifact.PNG)
+![ConfigDownloadArtifact](/2019/02/ConfigDownloadArtifact.PNG)
 
 <p class="warning">You may also notice that these pair of tasks are in preview and that there is another, confusingly similar task called "Download Build Artifacts".<br /><br />These two pairs of tasks don't mix (as far as I'm aware) so either use the "Pipeline" version or the "Build" version.<br /><br />Not realizing which one I'd used in my build task (because YAML), I didn't initially know which one to use and again found myself wondering why my artifacts directory was <b>still</b> empty.</p>
 
 Next we'll add various PowerShell tasks (we'll look at the code soon.) They are very similar to their build pipeline counterparts, just configured through the visual interface rather than YAML.
 
-![PowerShellTask](__GHOST_URL__/content/images/2019/02/PowerShellTask.PNG)
+![PowerShellTask](/2019/02/PowerShellTask.PNG)
 
 Notice that the path to my script uses the same automatic variable provided by Azure Pipelines as my Pipeline Artifact Download. That "PipelinesScripts" path was specified during the download as well.
 
@@ -94,15 +94,15 @@ Each of my PowerShell tasks have some environment variables configured.
 
 The version tag task has a variable for the artifacts directory.
 
-![EnvTag](__GHOST_URL__/content/images/2019/02/EnvTag.PNG)
+![EnvTag](/2019/02/EnvTag.PNG)
 
 The PowerShell Gallery publishing task also has the artifacts directory but also has our API key.
 
-![EnvGallery](__GHOST_URL__/content/images/2019/02/EnvGallery.PNG)
+![EnvGallery](/2019/02/EnvGallery.PNG)
 
 And the Twitter announcement task has a lot! Once again we've got the artifacts directory, but we've also got our four Twitter keys, and a "release message" which we'll talk a little more about later.
 
-![EnvTwitter](__GHOST_URL__/content/images/2019/02/EnvTwitter.PNG)
+![EnvTwitter](/2019/02/EnvTwitter.PNG)
 
 These environment variables are used within our scripts like any other environment variable. For instance, the artifacts directory one that all of our tasks have would be referenced as `$env:ArtifactDir`
 
@@ -110,19 +110,19 @@ These environment variables are used within our scripts like any other environme
 
 The final task here is the "GitHub release (create)" one. This is a really nice way of getting a release up on the GitHub repo for your project. If you haven't already done so, you'll need to setup OAuth to allow this action to be carried out by Azure Pipelines. Once the connection is sorted, choose the repository and "target" (the SHA of the commit on GitHub which forms this release... luckily this is stored in a variable automatically: `$(Build.SourceVersion)`)
 
-![GitRelease-1](__GHOST_URL__/content/images/2019/02/GitRelease-1.PNG)
+![GitRelease-1](/2019/02/GitRelease-1.PNG)
 
 You also need to specify a tag and release title. These are using variables, which are set via one of the PowerShell tasks and we'll look at the code for that soon (I promise.)
 
 Our build pipeline also saved a zip file of the release, and a text file containing the release notes. These were within one of the artifacts and we'll use them here to flesh out our GitHub release. I've also opted into adding a changelog, which lists out all of the commits since the last release.
 
-![GitRelease-2](__GHOST_URL__/content/images/2019/02/GitRelease-2.PNG)
+![GitRelease-2](/2019/02/GitRelease-2.PNG)
 
 Before we get to the code, let's quickly look at the custom pipeline variables we'll be using since it's right here. To manage your variables, click the tab for it below the name of your pipeline.
 
 You'll need five variables defined (and made secret, so one can't see the plain text behind them.) One is an API key for the PowerShell Gallery, with permission to publish new releases for the specific project that this pipeline will release. The other four are all Twitter... don't ask me why you need four keys for Twitter, but the setup for your Twitter module of choice will point you in the right direction.
 
-![Variables](__GHOST_URL__/content/images/2019/02/Variables.PNG)
+![Variables](/2019/02/Variables.PNG)
 
 ## Release Scripts... Totally Different Than Build Scripts
 
@@ -201,7 +201,7 @@ This pulls in the API key variable for the Gallery, via the environment variable
 
 Once this executes, our updated module will be live on the Gallery. I... may have tested this a few times myself.
 
-![Testing](__GHOST_URL__/content/images/2019/02/Testing.PNG)
+![Testing](/2019/02/Testing.PNG)
 
 The final task is in aid of letting the world know that a new release is out in the wild. We do that via Twitter, and since this is the only task that needs the Twitter module, I only call the bootstrap section at this stage.
 
@@ -269,11 +269,11 @@ There's a few options for automatically creating new releases, but given that mi
 
 The first is from a successful build. If I look at the history on my build pipeline, I can choose a build and select it for release.
 
-![BuildToRelease](__GHOST_URL__/content/images/2019/02/BuildToRelease.PNG)
+![BuildToRelease](/2019/02/BuildToRelease.PNG)
 
 The other options is by pressing the "Create a release" button when looking at your history of releases.
 
-![NewRelease](__GHOST_URL__/content/images/2019/02/NewRelease.png)
+![NewRelease](/2019/02/NewRelease.png)
 
 Regardless, you'll end up with the "Create a new release" blade to fill out. You'll need to choose an artifact, if you chose the first method this will be pre-selected and otherwise it'll be set to the latest.
 
@@ -281,7 +281,7 @@ You can also fill out the release description, and I certainly do as the text I 
 
 The top of the blade is a little misleading unless you stop to actually read the text. Selecting something up here overrides any automation you have on your stages and sets them to manual.
 
-![NewReleaseBlade](__GHOST_URL__/content/images/2019/02/NewReleaseBlade.PNG)
+![NewReleaseBlade](/2019/02/NewReleaseBlade.PNG)
 
 If you remember the default conditions on our production stage... if we don't provide an override here, creating this release will go straight into running our deployment tasks.
 

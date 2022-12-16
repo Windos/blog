@@ -3,7 +3,7 @@ categories = ["PowerShell", "Azure"]
 date = 2020-06-20T15:58:22Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/05/silas-kohler-C1P4wHhQbjM-unsplash.jpg"
+thumbnail = "/2020/05/silas-kohler-C1P4wHhQbjM-unsplash.jpg"
 slug = "azure-key-vault-2"
 summary = "Now that we have our credentials stored in an Azure Key Vault, how do we go about using them in other Azure services?"
 tags = ["PowerShell", "Azure"]
@@ -24,11 +24,11 @@ Before we continue, make sure you've followed through the demo in Part 1 or just
 
 To start head over to the [Azure Portal](https://portal.azure.com), and search for "Function App". Choose that from the list of services.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image.png" >}}
+{{< figure src="/2020/06/image.png" >}}
 
 If you already have functions, you'll see them listed. We'll click the Add button to create a new one, though.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-1.png" >}}
+{{< figure src="/2020/06/image-1.png" >}}
 
 The first page you'll need to fill out is all the "basic" information about it. You'll need to choose a resource group, for this demo we'll use the **rg-PsCredDemo** group that we created for our Key Vault in part 1.
 
@@ -38,11 +38,11 @@ The final choices on this page are the runtime stack, which will be PowerShell C
 
 Once you're happy with your settings here, click next to head to the "hosting" options.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/functionapp.png" >}}
+{{< figure src="/2020/06/functionapp.png" >}}
 
 The hosting options are where any costs associated with this function will be incurred. Firstly you'll need a Storage account to store the various files that make up your function. We haven't made one yet, so I'll add a new one.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-3.png" >}}
+{{< figure src="/2020/06/image-3.png" >}}
 
 You'll notice an option to choose an operating system. Unfortunately, PowerShell functions are only supported on Windows at the moment so there's nothing to set here.
 
@@ -50,7 +50,7 @@ Finally, choose your plan. I'm leaving mine on "Consumption (Serverless)" as for
 
 When happy, click next.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-4.png" >}}
+{{< figure src="/2020/06/image-4.png" >}}
 
 In order to better see what's happening when we run out function, I am going to be turning on Application Insights. There is a small cost to this, but I almost always turn it on so it's invaluable when troubleshooting.
 
@@ -58,15 +58,15 @@ It will suggest a new for your Application Insights instance, but if you want to
 
 If you're using tags to categorize things in your Azure tenant click the next button to set those, otherwise skip straight to the end by clicking "Review + create"
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-5.png" >}}
+{{< figure src="/2020/06/image-5.png" >}}
 
 Have a read of this final page, it your last chance to go back and make adjustments. When you're ready click Create.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-6.png" >}}
+{{< figure src="/2020/06/image-6.png" >}}
 
 Now sit back and wait for a little bit while your new function is deployed. When it's finished, you'll see a "Go to resource" button which will take you directly to your new function.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-10.png" >}}
+{{< figure src="/2020/06/image-10.png" >}}
 
 ## I Can Haz Creds?
 
@@ -76,63 +76,63 @@ Start from the main page of our function app. If you're following on in sequence
 
 Scroll down until your see "Identity" in the "Settings" section of all the options on the left hand side of the page and click it.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-11.png" >}}
+{{< figure src="/2020/06/image-11.png" >}}
 
 This is where we let Azure know how our function can be referenced across other Azure services. In our case we'll be telling Key Vault "See this function? It's ok to let it get access to our secrets."
 
 If you're comfortable setting up app registrations, you can go to the User assigned tab, but we'll be sticking to System assigned here. All we have to do to get a system assigned identity is toggle the status to "On".
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-12.png" >}}
+{{< figure src="/2020/06/image-12.png" >}}
 
 Do make sure you click Save after toggling it though. Save yourself an hour of troubleshooting because you did what I do every time and forget to click that one button.
 
 You'll know you've done it right because you'll get a confirmation asking if you're ok with a managed identity being created in Azure AD (you want to click Yes.)
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-13.png" >}}
+{{< figure src="/2020/06/image-13.png" >}}
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-14.png" >}}
+{{< figure src="/2020/06/image-14.png" >}}
 
 With that done we need to head over to our Key Vault. Search for it and choose it from the list of resources.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-15.png" >}}
+{{< figure src="/2020/06/image-15.png" >}}
 
 Pick the vault from the list. The one created for this demo was "kv-PsCredStore".
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-16.png" >}}
+{{< figure src="/2020/06/image-16.png" >}}
 
 Once you're there head straight into the Access policies settings and add a new policy.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-19.png" >}}
+{{< figure src="/2020/06/image-19.png" >}}
 
 To create your access policy, you need to select the principal (your function app) and what permissions you want to give it. In this example I only want the function to be able to list and retrieve secrets (but not certificates or keys) so I only give it those two permissions.
 
 Scrolls down and hit Add once you've done configuring your policy.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-20.png" >}}
+{{< figure src="/2020/06/image-20.png" >}}
 
 Once again, make sure you click save when you get back to the main Access policies page! It's easy to miss and if you don't do it the change won't take effect.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-21.png" >}}
+{{< figure src="/2020/06/image-21.png" >}}
 
 ## Using the Creds
 
 Before we head back to our function app, we need some details about the secret we're going to be using. Head into the Secrets section and choose the PSCredential we created in part one.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/kv-secrets.png" >}}
+{{< figure src="/2020/06/kv-secrets.png" >}}
 
 You'll then see a list of versions (possibly only one) click on the current version to open it.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-23.png" >}}
+{{< figure src="/2020/06/image-23.png" >}}
 
 Once you're into a specific version, you'll see a Secret Identifier field which is really just a URL. You'll need to take a copy of this and keep it available for later.
 
 In my example this is: [`https://kv-pscredstore.vault.azure.net/secrets/TestCredential/89f0a4f08b3d4973a1e3d32d4519a5d1`](https://kv-pscredstore.vault.azure.net/secrets/TestCredential/89f0a4f08b3d4973a1e3d32d4519a5d1)
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-24.png" >}}
+{{< figure src="/2020/06/image-24.png" >}}
 
 Now, head back to our function app. Head down to the Configuration setting and choose to add a new application setting.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-25.png" >}}
+{{< figure src="/2020/06/image-25.png" >}}
 
 You can give this setting any name, though I will call mine "TestCredential" to make it match the name of the Key Vault secret. The value needs to be in the format of `@Microsoft.KeyVault(SecretUri=<SECRET_IDENTIFIER>)` so for me it'll be:
 
@@ -140,11 +140,11 @@ You can give this setting any name, though I will call mine "TestCredential" to 
 @Microsoft.KeyVault(SecretUri=https://kv-pscredstore.vault.azure.net/secrets/TestCredential/89f0a4f08b3d4973a1e3d32d4519a5d1)
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-26.png" >}}
+{{< figure src="/2020/06/image-26.png" >}}
 
 Back on the list of application settings, click the **Save** and then **Refresh** buttons. You'll know it's worked because your setting will show "Key Vault Reference" in the source column with a green check mark.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-27.png" >}}
+{{< figure src="/2020/06/image-27.png" >}}
 
 <p class="warning">Be aware that this locks your function to only a specific version of the secret. If you load a new version into your Key Vault, the function will continue to use the old one.<br /><br />
 You can remove the version number from your key vault reference if desired and this will allow your function to always get the latest version. You need to ensure you leave the trailing slash though, or else it won't work.<br /><br />In the above example this would be:<br /><br />
@@ -154,19 +154,19 @@ You can remove the version number from your key vault reference if desired and t
 
 We've done a _lot_ of setup, now it's time to put this to work. On your function apps page, head into the functions section and click add.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/addfunction.png" >}}
+{{< figure src="/2020/06/addfunction.png" >}}
 
 We're going to keep things simple here and get to the point where we're interacting with our credential secret as fast as possible. With that in mind we'll use a timer trigger template.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/temaplte.png" >}}
+{{< figure src="/2020/06/temaplte.png" >}}
 
 Give this function a name, I've called mine CredGetter. The default schedule means the function will run every five minutes and I've left this as is.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-30.png" >}}
+{{< figure src="/2020/06/image-30.png" >}}
 
 Once the function has been created, head into Code + Test to edit the PowerShell behind the function.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-31.png" >}}
+{{< figure src="/2020/06/image-31.png" >}}
 
 I left all the template code intact, and added the following at the end:
 
@@ -182,7 +182,7 @@ Write-Host "The Key Vault secret password is: $($Cred.GetNetworkCredential().Pas
 
 Save after you've added this code and then you can either wait for this function to run on its timer or click the Test/Run button to trigger it manually. Eventually you'll see output in the log pane towards the bottom of the page. As you can see you credential was retrieved and contains the data I set in it in part 1.
 
-{{< figure src="__GHOST_URL__/content/images/2020/06/image-32.png" >}}
+{{< figure src="/2020/06/image-32.png" >}}
 
 _n.b. you might need to refresh the page in order to see updated log output. Be patient._
 

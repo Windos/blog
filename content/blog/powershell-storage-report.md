@@ -3,7 +3,7 @@ categories = ["PowerShell", "Windows"]
 date = 2017-10-16T10:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-12.jpg"
+thumbnail = "/2018/05/thumb-12.jpg"
 slug = "powershell-storage-report"
 summary = "Whether they're nearly empty, nearly full, or somewhere in-between, it's helpful to get a quick overview of all your servers' hard drives."
 tags = ["PowerShell", "Windows"]
@@ -215,11 +215,11 @@ But, how do you actually use the thing?
 
 First, just run it directly and view the output inside your PowerShell host:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/Output1.png" >}}
+{{< figure src="/2018/05/Output1.png" >}}
 
 Next, pop the output into a variable for further manipulation:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/Output2.png" >}}
+{{< figure src="/2018/05/Output2.png" >}}
 
 From here, it's up to you to tweak as you see fit.
 

@@ -8,33 +8,32 @@
   <title>
   DIY AppId and WiX, for Tasty Toast - ToastIT
   </title>
-  <meta name="description" content="This time around, I&#39;ll walk you through how to create your own installer." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="This time around, I&rsquo;ll walk you through how to create your own installer." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="DIY AppId and WiX, for Tasty Toast" />
-<meta property="og:description" content="This time around, I&#39;ll walk you through how to create your own installer." />
+<meta property="og:description" content="This time around, I&rsquo;ll walk you through how to create your own installer." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/burnttoast-wix/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2018-03-03T04:30:00+00:00" />
-<meta property="article:modified_time" content="2018-03-03T04:30:00+00:00" />
-
+<meta property="article:published_time" content="2018-03-02T15:30:00+00:00" />
+<meta property="article:modified_time" content="2018-03-02T15:30:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="DIY AppId and WiX, for Tasty Toast"/>
-<meta name="twitter:description" content="This time around, I&#39;ll walk you through how to create your own installer."/>
+<meta name="twitter:description" content="This time around, I&rsquo;ll walk you through how to create your own installer."/>
 
   <meta itemprop="name" content="DIY AppId and WiX, for Tasty Toast">
-<meta itemprop="description" content="This time around, I&#39;ll walk you through how to create your own installer."><meta itemprop="datePublished" content="2018-03-03T04:30:00+00:00" />
-<meta itemprop="dateModified" content="2018-03-03T04:30:00+00:00" />
+<meta itemprop="description" content="This time around, I&rsquo;ll walk you through how to create your own installer."><meta itemprop="datePublished" content="2018-03-02T15:30:00+00:00" />
+<meta itemprop="dateModified" content="2018-03-02T15:30:00+00:00" />
 <meta itemprop="wordCount" content="714">
 <meta itemprop="keywords" content="PowerShell,BurntToast," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">DIY AppId and WiX, for Tasty Toast</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    March 3, 2018
+    March 2, 2018
   
 
 
@@ -123,7 +123,10 @@
       </svg>
       714&nbsp;words
       
+        
+      
     </h5>
+    
 
     <p>It has certainly taken a lot longer to get this post out than I&rsquo;d hoped. Better late than never, I guess?</p>
 <p>My <a href="https://king.geek.nz/2018/02/04/burnttoast-appid-installer/" target="_blank" rel="noopener">last post</a>
@@ -141,53 +144,52 @@
 <p>You can see the file used for the BurntToast installer <a href="https://github.com/Windos/BurntToast/blob/master/Installer/src/BurntToast.wxs" target="_blank" rel="noopener">on GitHub</a>
 . I&rsquo;ve templated it to an extent, and will include it all here, but you can find a <a href="https://gist.github.com/Windos/f01ff665adbd5bc46fcb9abcba22490c" target="_blank" rel="noopener">Gist</a>
  of it too.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;Wix xmlns=&quot;http://schemas.microsoft.com/wix/2006/wi&quot;&gt;
-    &lt;Product Id=&quot;*&quot; UpgradeCode=&quot;__GUID1__&quot; Version=&quot;1.0.0.0&quot; Language=&quot;1033&quot; Name=&quot;__NAME__&quot; Manufacturer=&quot;__MANUFACTURER__&quot;&gt;
-        &lt;Package InstallerVersion=&quot;300&quot; Compressed=&quot;yes&quot;/&gt;
-        &lt;Media Id=&quot;1&quot; Cabinet=&quot;__NAME__.cab&quot; EmbedCab=&quot;yes&quot; /&gt;
-
-        &lt;Directory Id=&quot;TARGETDIR&quot; Name=&quot;SourceDir&quot;&gt;
-            &lt;Directory Id=&quot;ProgramFilesFolder&quot;&gt;
-                &lt;Directory Id=&quot;APPLICATIONROOTDIRECTORY&quot; Name=&quot;__NAME__&quot;/&gt;
-            &lt;/Directory&gt;
-            &lt;Directory Id=&quot;ProgramMenuFolder&quot;&gt;
-                &lt;Directory Id=&quot;ApplicationProgramsFolder&quot; Name=&quot;__NAME__&quot;/&gt;
-            &lt;/Directory&gt;
-        &lt;/Directory&gt;
-
-        &lt;DirectoryRef Id=&quot;APPLICATIONROOTDIRECTORY&quot;&gt;
-            &lt;Component Id=&quot;__NAME__.png&quot; Guid=&quot;__GUID2__&quot;&gt;
-                &lt;File Id=&quot;__NAME__.png&quot; Source=&quot;__NAME__.png&quot; KeyPath=&quot;yes&quot; Checksum=&quot;yes&quot;/&gt;
-            &lt;/Component&gt;
-        &lt;/DirectoryRef&gt;
-
-        &lt;Icon Id=&quot;__NAME__.ico&quot; SourceFile=&quot;__NAME__.ico&quot; /&gt;
-        &lt;DirectoryRef Id=&quot;ApplicationProgramsFolder&quot;&gt;
-            &lt;Component Id=&quot;ApplicationShortcut&quot; Guid=&quot;__GUID3__&quot;&gt;
-                &lt;Shortcut Id=&quot;ApplicationStartMenuShortcut&quot;
-                    Name=&quot;__NAME__&quot;
-                    Description=&quot;Shortcut that enables Toast Notifications&quot;
-                    Target=&quot;[#__NAME__.png]&quot;
-                    WorkingDirectory=&quot;APPLICATIONROOTDIRECTORY&quot;
-                    Icon=&quot;__NAME__.ico&quot;&gt;
-                    &lt;ShortcutProperty Key=&quot;System.AppUserModel.ID&quot; Value=&quot;__MANUFACTURER__!__NAME__&quot; /&gt;
-                    &lt;ShortcutProperty Key=&quot;System.AppUserModel.ToastActivatorCLSID&quot; Value=&quot;{__GUID4__}&quot;&gt;&lt;/ShortcutProperty&gt;
-		        &lt;/Shortcut&gt;
-                &lt;RemoveFolder Id=&quot;ApplicationProgramsFolder&quot; On=&quot;uninstall&quot;/&gt;
-
-                &lt;RegistryValue Root=&quot;HKCU&quot; Key=&quot;Software\Microsoft\__NAME__&quot; Name=&quot;installed&quot; Type=&quot;integer&quot; Value=&quot;1&quot; KeyPath=&quot;yes&quot;/&gt;
-           &lt;/Component&gt;
-        &lt;/DirectoryRef&gt;
-
-        &lt;Feature Id=&quot;MainApplication&quot; Title=&quot;Main Application&quot; Level=&quot;1&quot;&gt;
-            &lt;ComponentRef Id=&quot;__NAME__.png&quot; /&gt;
-            &lt;ComponentRef Id=&quot;ApplicationShortcut&quot; /&gt;
-        &lt;/Feature&gt;
-    &lt;/Product&gt;
-&lt;/Wix&gt;
-</code></pre>
-<p>You&rsquo;ll notice four GUID values in there, they need to be unique, but you don&rsquo;t need to put much thought at all into them. Just run <code>New-Guid</code> four times and use the output to replace:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#ff79c6">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;Wix</span> <span style="color:#50fa7b">xmlns=</span><span style="color:#f1fa8c">&#34;http://schemas.microsoft.com/wix/2006/wi&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;Product</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;*&#34;</span> <span style="color:#50fa7b">UpgradeCode=</span><span style="color:#f1fa8c">&#34;__GUID1__&#34;</span> <span style="color:#50fa7b">Version=</span><span style="color:#f1fa8c">&#34;1.0.0.0&#34;</span> <span style="color:#50fa7b">Language=</span><span style="color:#f1fa8c">&#34;1033&#34;</span> <span style="color:#50fa7b">Name=</span><span style="color:#f1fa8c">&#34;__NAME__&#34;</span> <span style="color:#50fa7b">Manufacturer=</span><span style="color:#f1fa8c">&#34;__MANUFACTURER__&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;Package</span> <span style="color:#50fa7b">InstallerVersion=</span><span style="color:#f1fa8c">&#34;300&#34;</span> <span style="color:#50fa7b">Compressed=</span><span style="color:#f1fa8c">&#34;yes&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;Media</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;1&#34;</span> <span style="color:#50fa7b">Cabinet=</span><span style="color:#f1fa8c">&#34;__NAME__.cab&#34;</span> <span style="color:#50fa7b">EmbedCab=</span><span style="color:#f1fa8c">&#34;yes&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;Directory</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;TARGETDIR&#34;</span> <span style="color:#50fa7b">Name=</span><span style="color:#f1fa8c">&#34;SourceDir&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;Directory</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;ProgramFilesFolder&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&lt;Directory</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;APPLICATIONROOTDIRECTORY&#34;</span> <span style="color:#50fa7b">Name=</span><span style="color:#f1fa8c">&#34;__NAME__&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;Directory</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;ProgramMenuFolder&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&lt;Directory</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;ApplicationProgramsFolder&#34;</span> <span style="color:#50fa7b">Name=</span><span style="color:#f1fa8c">&#34;__NAME__&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;/Directory&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;DirectoryRef</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;APPLICATIONROOTDIRECTORY&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;Component</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;__NAME__.png&#34;</span> <span style="color:#50fa7b">Guid=</span><span style="color:#f1fa8c">&#34;__GUID2__&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&lt;File</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;__NAME__.png&#34;</span> <span style="color:#50fa7b">Source=</span><span style="color:#f1fa8c">&#34;__NAME__.png&#34;</span> <span style="color:#50fa7b">KeyPath=</span><span style="color:#f1fa8c">&#34;yes&#34;</span> <span style="color:#50fa7b">Checksum=</span><span style="color:#f1fa8c">&#34;yes&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;/Component&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;/DirectoryRef&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;Icon</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;__NAME__.ico&#34;</span> <span style="color:#50fa7b">SourceFile=</span><span style="color:#f1fa8c">&#34;__NAME__.ico&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;DirectoryRef</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;ApplicationProgramsFolder&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;Component</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;ApplicationShortcut&#34;</span> <span style="color:#50fa7b">Guid=</span><span style="color:#f1fa8c">&#34;__GUID3__&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&lt;Shortcut</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;ApplicationStartMenuShortcut&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#50fa7b">Name=</span><span style="color:#f1fa8c">&#34;__NAME__&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#50fa7b">Description=</span><span style="color:#f1fa8c">&#34;Shortcut that enables Toast Notifications&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#50fa7b">Target=</span><span style="color:#f1fa8c">&#34;[#__NAME__.png]&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#50fa7b">WorkingDirectory=</span><span style="color:#f1fa8c">&#34;APPLICATIONROOTDIRECTORY&#34;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#50fa7b">Icon=</span><span style="color:#f1fa8c">&#34;__NAME__.ico&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">&lt;ShortcutProperty</span> <span style="color:#50fa7b">Key=</span><span style="color:#f1fa8c">&#34;System.AppUserModel.ID&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;__MANUFACTURER__!__NAME__&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#ff79c6">&lt;ShortcutProperty</span> <span style="color:#50fa7b">Key=</span><span style="color:#f1fa8c">&#34;System.AppUserModel.ToastActivatorCLSID&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;{__GUID4__}&#34;</span><span style="color:#ff79c6">&gt;&lt;/ShortcutProperty&gt;</span>
+</span></span><span style="display:flex;"><span>		        <span style="color:#ff79c6">&lt;/Shortcut&gt;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&lt;RemoveFolder</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;ApplicationProgramsFolder&#34;</span> <span style="color:#50fa7b">On=</span><span style="color:#f1fa8c">&#34;uninstall&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#ff79c6">&lt;RegistryValue</span> <span style="color:#50fa7b">Root=</span><span style="color:#f1fa8c">&#34;HKCU&#34;</span> <span style="color:#50fa7b">Key=</span><span style="color:#f1fa8c">&#34;Software\Microsoft\__NAME__&#34;</span> <span style="color:#50fa7b">Name=</span><span style="color:#f1fa8c">&#34;installed&#34;</span> <span style="color:#50fa7b">Type=</span><span style="color:#f1fa8c">&#34;integer&#34;</span> <span style="color:#50fa7b">Value=</span><span style="color:#f1fa8c">&#34;1&#34;</span> <span style="color:#50fa7b">KeyPath=</span><span style="color:#f1fa8c">&#34;yes&#34;</span><span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#ff79c6">&lt;/Component&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;/DirectoryRef&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;Feature</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;MainApplication&#34;</span> <span style="color:#50fa7b">Title=</span><span style="color:#f1fa8c">&#34;Main Application&#34;</span> <span style="color:#50fa7b">Level=</span><span style="color:#f1fa8c">&#34;1&#34;</span><span style="color:#ff79c6">&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;ComponentRef</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;__NAME__.png&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&lt;ComponentRef</span> <span style="color:#50fa7b">Id=</span><span style="color:#f1fa8c">&#34;ApplicationShortcut&#34;</span> <span style="color:#ff79c6">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&lt;/Feature&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&lt;/Product&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">&lt;/Wix&gt;</span>
+</span></span></code></pre></div><p>You&rsquo;ll notice four GUID values in there, they need to be unique, but you don&rsquo;t need to put much thought at all into them. Just run <code>New-Guid</code> four times and use the output to replace:</p>
 <ul>
 <li><strong>GUID1</strong> - Line 3</li>
 <li><strong>GUID2</strong> - Line 18</li>
@@ -203,10 +205,9 @@
 <p>Put these images in the same directory as your <strong>.wxs</strong> file and give them the same name as what you used to replace <strong>NAME</strong> in the template. If your first image is not a <strong>.png</strong>, you&rsquo;ll have to update that in the <strong>.wxs</strong> file too.</p>
 <h2 id="light-the-candle"><strong>Light the Candle</strong></h2>
 <p>Time to put WiX to work! Fire up a terminal (CMD or PowerShell), navigate to the directory into which you&rsquo;ve saved your files and run the following commands. Remember to change the example file names to match what you&rsquo;ve actually used.</p>
-<pre><code>candle.exe ToastExample.wxs
+<pre tabindex="0"><code>candle.exe ToastExample.wxs
 light.exe -ext WixUIExtension ToastExample.wixobj
-</code></pre>
-<p>Note that the file extension changed between the two commands. The result will be a <strong>.msi</strong> installer</p>
+</code></pre><p>Note that the file extension changed between the two commands. The result will be a <strong>.msi</strong> installer</p>
 <h2 id="run-the-installer"><strong>Run the Installer</strong></h2>
 <p>Now run your installer and find that you&rsquo;ve got a new item in your Start Menu. Double check the AppId by running: <code>Get-StartApps</code></p>
 <p>If your aim was to use this for toasts via the <a href="https://www.powershellgallery.com/packages/BurntToast" target="_blank" rel="noopener">BurntToast module</a>
@@ -339,6 +340,8 @@ light.exe -ext WixUIExtension ToastExample.wixobj
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

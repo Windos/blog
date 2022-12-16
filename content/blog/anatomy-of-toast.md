@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2020-07-28T14:05:26Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/07/joyce-mccown-LAEPsbXOhIM-unsplash.jpg"
+thumbnail = "/2020/07/joyce-mccown-LAEPsbXOhIM-unsplash.jpg"
 slug = "anatomy-of-toast"
 summary = "BurntToast just turned five, and I've only now realized that I've never written about how all the module's \"advanced\" functions work together to create a toast notification."
 tags = ["PowerShell", "BurntToast"]
@@ -54,7 +54,7 @@ In order to have something meaty to bite into, let's start with a more complex e
 
 This is the toast that we'll be dissecting today:
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/ToastExample.png" >}}
+{{< figure src="/2020/07/ToastExample.png" >}}
 
 And the XML behind this is:
 
@@ -112,7 +112,7 @@ The key thing here is the order in which you add your text objects. The first on
 
 This maps through to our XML as shown in this splatter of arrows.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-16.png" >}}
+{{< figure src="/2020/07/image-16.png" >}}
 
 What next? We have our binding element; this now needs to go under a visual element. This is a touch boring in our use case today, as we're not using any features enabled through the visual element, so we'll just assign our binding to it.
 
@@ -122,7 +122,7 @@ $Visual = New-BTVisual -BindingGeneric $Binding
 
 Looking one more layer up in our XML we can see that the next (and final) element is the toast element, but we're not ready for that yet. You'll notice that there's another element we need to prepare first.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-17.png" >}}
+{{< figure src="/2020/07/image-17.png" >}}
 
 This last section is our buttons. In the XML schema they're called an action, and are assigned to an actions element. Like your text and images, let's create the buttons first.
 
@@ -141,7 +141,7 @@ $Actions = New-BTAction -Buttons $GoogleButton, $BingButton
 
 Again, the order here is important. The first button specified will be on the left-hand side of the toast followed by any others in order.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-18.png" >}}
+{{< figure src="/2020/07/image-18.png" >}}
 
 Now we have all the components we need to wrap up all the content that describes our toast notification.
 

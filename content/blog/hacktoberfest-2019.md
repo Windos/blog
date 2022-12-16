@@ -3,7 +3,7 @@ categories = ["Meta", "Nugget", "PowerShell"]
 date = 2019-09-29T21:37:45Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/09/umanoide-8NvFlA8DO6Q-unsplash.jpg"
+thumbnail = "/2019/09/umanoide-8NvFlA8DO6Q-unsplash.jpg"
 slug = "hacktoberfest-2019"
 summary = "I'm gearing up for my fourth Hacktoberfest event, and so should you. You could even come away from this month with a fancy new t-shirt!"
 tags = ["Meta", "Nugget", "PowerShell"]
@@ -20,7 +20,7 @@ This will be my fourth Hacktoberfest, and with any luck the fourth event t-shirt
 
 Hacktoberfest is a yearly month long event fostering contributions to open source projects.
 
-{{< figure src="__GHOST_URL__/content/images/2019/09/Hacktoberfest_19_Events_500x500.png" >}}
+{{< figure src="/2019/09/Hacktoberfest_19_Events_500x500.png" >}}
 
 The first 50,000 people to complete four pull requests to open source projects will be able to claim a t-shirt which will be sent out with a few cool stickers. Every years' design has been awesome, but this year has by far and away the coolest, in my opinion.
 

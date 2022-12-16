@@ -3,7 +3,7 @@ categories = ["PowerShell", "Windows"]
 date = 2016-10-17T10:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/need-update.png"
+thumbnail = "/2018/05/need-update.png"
 slug = "wu-windows-1607"
 summary = "Over a year ago, I answered a question on Super User. The question was about stopping the very persistent Windows Update from rebooting without the users’ consent, and wow was that ever a popular topic."
 tags = ["PowerShell", "Windows"]
@@ -76,11 +76,11 @@ Looking back, that seems like a lot of code for what boils down to one web call 
 
 It appears that Windows Update knows there are updates available and is prompting me, through the Action Center, to install them.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/enterprise-current.png" >}}
+{{< figure src="/2018/05/enterprise-current.png" >}}
 
 My Screenshots folder is filling up and I’ll keep an eye on it. Now we wait.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/folder.png" >}}
+{{< figure src="/2018/05/folder.png" >}}
 
 If it makes it through to a week without a reboot, I’ll consider saving these screenshots directly into a public OneDrive folder so that anyone who’s interest can follow along in ‘real time.’
 

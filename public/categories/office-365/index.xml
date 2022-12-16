@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Office 365 on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/office-365/</link>
+    <description>Recent content in Office 365 on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 07 May 2021 05:42:32 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/office-365/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Learning Story: From Timber to Chocolatey</title>
+      <link>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</link>
+      <pubDate>Fri, 07 May 2021 05:42:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</guid>
+      <description>This post is part of #TheMVPChallenge. It&amp;rsquo;s not exactly what was on the brief&amp;hellip; but I think it&amp;rsquo;s a story worth telling!</description>
+    </item>
+    
+    <item>
+      <title>Getting Selective with Veeam Backup for Microsoft Office 365</title>
+      <link>https://blog.toastit.dev/blog/veeam-365-selective/</link>
+      <pubDate>Mon, 25 Feb 2019 21:08:57 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-365-selective/</guid>
+      <description>I can&amp;rsquo;t stand &amp;ldquo;expected warnings,&amp;rdquo; but getting selective in my VBO jobs got me back to my happy place.</description>
+    </item>
+    
+    <item>
+      <title>Veeam Backup for Microsoft Office 365 v3.0: It&#39;s Good, Very Good</title>
+      <link>https://blog.toastit.dev/blog/veeam-backup-for-microsoft-office-365-v3/</link>
+      <pubDate>Mon, 18 Feb 2019 21:29:41 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-backup-for-microsoft-office-365-v3/</guid>
+      <description>I&amp;rsquo;ve been testing a beta of Veeam Backup for Microsoft Office 365 v3. It ticked some boxes of mine (spoiler alert.)</description>
+    </item>
+    
+    <item>
+      <title>Everything Is Better with Toast: Getting Build Notifications</title>
+      <link>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</link>
+      <pubDate>Fri, 08 Feb 2019 22:51:33 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</guid>
+      <description>When you want to keep an eye on build results, but don&amp;rsquo;t want to dedicate a screen to the web page, toast is the answer!</description>
+    </item>
+    
+    <item>
+      <title>My Wish List for Veeam Backup for Microsoft Office 365 v3</title>
+      <link>https://blog.toastit.dev/blog/my-wish-list-vbo365/</link>
+      <pubDate>Tue, 09 Oct 2018 19:47:26 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-wish-list-vbo365/</guid>
+      <description>I heard a rumor that v3 is already well into development&amp;hellip; hopeful it&amp;rsquo;s not too late to register my feature wish list!</description>
+    </item>
+    
+    <item>
+      <title>Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes</title>
+      <link>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</link>
+      <pubDate>Thu, 23 Aug 2018 22:22:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</guid>
+      <description>Time for a bit of Exchange flavoured spring cleaning? Let&amp;rsquo;s find some un-needed shared mailboxes!</description>
+    </item>
+    
+    <item>
+      <title>Copying Office 365 User Licensing</title>
+      <link>https://blog.toastit.dev/blog/copying-office-365-user-licensing/</link>
+      <pubDate>Mon, 23 Jul 2018 17:06:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/copying-office-365-user-licensing/</guid>
+      <description>Spoiler alert: this post didn&amp;rsquo;t end up the way I expected it to when I started writing&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Office 365 &amp; PowerShell: Connecting All the Pieces</title>
+      <link>https://blog.toastit.dev/blog/o365-all-the-things/</link>
+      <pubDate>Thu, 03 Aug 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/o365-all-the-things/</guid>
+      <description>Now that we&amp;rsquo;ve figured out how to connect to each of the Office 365 services, it&amp;rsquo;s time to tie a pretty (PowerShell) blue bow on it.</description>
+    </item>
+    
+    <item>
+      <title>Office 365 &amp; PowerShell: Jacking Into the Matrix</title>
+      <link>https://blog.toastit.dev/blog/o365-connect/</link>
+      <pubDate>Thu, 27 Jul 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/o365-connect/</guid>
+      <description>Just like their on-premises counterparts, each of these products has their own PowerShell interface for management.</description>
+    </item>
+    
+    <item>
+      <title>Old Office 365 Training: Navigating the Minefield</title>
+      <link>https://blog.toastit.dev/blog/o365-training/</link>
+      <pubDate>Mon, 05 Jun 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/o365-training/</guid>
+      <description>At first, I figured this wouldn’t cause me much of an issue. Information is information right?</description>
+    </item>
+    
+  </channel>
+</rss>

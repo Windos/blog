@@ -3,7 +3,7 @@ categories = ["Backup"]
 date = 2020-07-18T01:16:38Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/07/jason-dent-3wPJxh-piRw-unsplash.jpg"
+thumbnail = "/2020/07/jason-dent-3wPJxh-piRw-unsplash.jpg"
 slug = "synology-active-backup-suite-review"
 summary = "Have you ever come face to face with something that shines a spotlight on a gap in your knowledge of a subject? This happened to me recently when I was asked to review Synology's Active Backup Suite."
 tags = ["Backup"]
@@ -24,7 +24,7 @@ Turns out I was very wrong on that front. Synology have a suite of options under
 
 My home lab environment is close to what you might see in a small business here in New Zealand, with a single managed switch that connects to a router and a fibre internet connection. There's a Hyper-V host that pulls double duty as a file server, one desktop workstation and a laptop that comes and goes from the network.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image.png" >}}
+{{< figure src="/2020/07/image.png" >}}
 
 This might be a small retail business, with a single point of sale machine, a supervisor on a laptop, and the point of sale software running on one of the Hyper-V guests. Their email happens to be hosted in an Office 365 tenant.
 
@@ -66,7 +66,7 @@ Backup (and business continuity) is one of my passions, and I happen to own the 
 
 Given the problem statement above and my previous experience I don't know what I would have ended up recommending. Reading between the lines, I would assume that our fictional small business would be somewhat price-sensitive which immediately rules out a lot of the large enterprise scale backup options.In order to test this out the suite, I've added the supplied Intel-powered DS920+ NAS to my home lab and have had it running for a few weeks backing up the other components within it.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/20200711_140917.jpg" >}}
+{{< figure src="/2020/07/20200711_140917.jpg" >}}
 
 Before we jump in, I feel like I should touch on cost. This is happily very simple:
 
@@ -86,7 +86,7 @@ One of these prerequisites is a [Synology account](https://account.synology.com/
 
 The first place I started when exploring the Active Backup Suite was PC (and Server) backups.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-2.png" >}}
+{{< figure src="/2020/07/image-2.png" >}}
 
 These are both agent-based backups, so when you go to add a new device in from the web interface you'll be directed to download the agent which you will then install on the PC you want backed up. Once installed, you enter the address of your NAS and the DiskStation Manager account you've configure on it.
 
@@ -94,13 +94,13 @@ From there you can configure your task(s) back on the NAS itself, which are the 
 
 The schedule options allow you to backup manually, one a schedule, and based on certain events.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-3.png" >}}
+{{< figure src="/2020/07/image-3.png" >}}
 
 In my lab, the desktop is set to backup at 3 AM just in case it's left on overnight. Otherwise it will backup at startup once a day. The laptop, on the other hand only backs up at start up, but can do this every four hours as that's a device that is on and off all day and has a more rapid changes on it.
 
 Finally, you can tweak how long each backup point is retained.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-4.png" >}}
+{{< figure src="/2020/07/image-4.png" >}}
 
 These backup jobs work away from now on, based on their schedule or the events you've configured. I've not noticed any negative impact to performance, which I was expected during the startup triggered scheduled.
 
@@ -122,13 +122,13 @@ Now we get to the final backup option, and perhaps the coolest on the restore op
 
 The first step here is adding your hypervisor(s). You can add both VMware and Hyper-V hosts. Once added you'll see all of the guests running on your host.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-5.png" >}}
+{{< figure src="/2020/07/image-5.png" >}}
 
 This view also gives you a glanceable view of if the guests are protected. In the above screenshot you'll see three guests, but only two of them have tick marks on their icons. This indicates that "LabServer01" isn't configured to be backed up in a task.
 
 Speaking of tasks, there are a number of options to tweak the backup of your virtual guests, including application aware backups using Volume Shadow Copy Service (VSS).
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-6.png" >}}
+{{< figure src="/2020/07/image-6.png" >}}
 
 The coolest option on this list is backup verification. This is a spoiler for one of the best restoration options the suite provides, but backup verification uses [Virtual Machine Manager](https://www.synology.com/en-nz/dsm/feature/virtual_machine_manager) on the NAS to spin up your recently backed up VM and record the result. This allows for verification that your backups can be relied on for a successful restore if and when the time comes.
 
@@ -138,7 +138,7 @@ I've used a few services for backing up Office 365 now, and I'm very impressed w
 
 When you create a new task, a window pops up where you log into your Office 365 tenant. Once you're authenticated you then consent to the permissions Active Backup needs and it's done and you're free to configure the specifics of what you want to backup, how often, and how long it should all be kept.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-7.png" >}}
+{{< figure src="/2020/07/image-7.png" >}}
 
 Simple and effective.
 
@@ -160,7 +160,7 @@ Of course, backups are only valuable if you can restore them. This is such a big
 
 For everything that we will be looking at today, you need to fire up the relevant "portal".
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-8.png" >}}
+{{< figure src="/2020/07/image-8.png" >}}
 
 Selecting any of these will open a new tab and you may initially feel a little lost, though finding your bearings is quick.
 
@@ -168,17 +168,17 @@ Selecting any of these will open a new tab and you may initially feel a little l
 
 The first thing when loading up the Active Backup for Business Portal is to make sure you're "looking" at the device you intend to restore from.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-11.png" >}}
+{{< figure src="/2020/07/image-11.png" >}}
 
 You do this by clicking into the "Task" area at the top right of the tab. This will show you all of the devices being backed up by your various backup tasks. This covers everything from your agent-based laptop backups through VMs (for file stores) and file servers.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-10.png" >}}
+{{< figure src="/2020/07/image-10.png" >}}
 
 After choosing your device, choose the restore point from the timeline at the bottom of the screen and then navigate, or search, the file system for the files you want to restore.
 
 You have two options for file restoration. You can either download the file via the browser to your local computer or restore it back to the protected device. How easy this is depends on the backup type. Agent-based backups can just use that connection to restore the files, however VM based backups may ask for credentials and an SSH service to do the same.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-12.png" >}}
+{{< figure src="/2020/07/image-12.png" >}}
 
 ### Cloud Portals
 
@@ -186,13 +186,13 @@ The G Suite and Office 365 portals are so similar that I'm only going to show of
 
 When you first load up this portal you might be struck with a sinking "uhh... where's my data?!"
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-13.png" >}}
+{{< figure src="/2020/07/image-13.png" >}}
 
 First thing first, make sure you have the right user selected. You choose the target user via the "View Role" section.
 
 Then you need to make sure you're looking at the actual service you want to restore data from. On Office 365 that would be Exchange for Email, SharePoint for intranet data, or OneDrive for personal files. This option is initially hard to find, it's one of the circular icons.
 
-{{< figure src="__GHOST_URL__/content/images/2020/07/image-14.png" >}}
+{{< figure src="/2020/07/image-14.png" >}}
 
 For demonstration, and because I know there's data there, I'll click into "Mail".
 

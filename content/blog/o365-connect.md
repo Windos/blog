@@ -3,7 +3,7 @@ categories = ["PowerShell", "Office 365"]
 date = 2017-07-27T12:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb.jpeg"
+thumbnail = "/2018/05/thumb.jpeg"
 slug = "o365-connect"
 summary = "Just like their on-premises counterparts, each of these products has their own PowerShell interface for management."
 tags = ["PowerShell", "Office 365"]
@@ -37,7 +37,7 @@ Connect-MsolService
 
 As shown, this will show a box where you can supply your username and password for your tenant.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/msol.png" >}}
+{{< figure src="/2018/05/msol.png" >}}
 
 It's possible to suppress this by supplying credentials, which is something we'll be doing in the follow up post.
 

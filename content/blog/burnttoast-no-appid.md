@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2017-10-08T10:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-11.jpg"
+thumbnail = "/2018/05/thumb-11.jpg"
 slug = "burnttoast-no-appid"
 summary = "I hate reducing customizability, just as much as I hate making breaking changes in my projects."
 tags = ["PowerShell", "BurntToast"]
@@ -45,5 +45,5 @@ It will still be possible to supply your own AppId using the “advanced” func
 
 If you happen to be a particularly gifted scripter (or know what I’m missing, which is pretty likely), and can brew up a PowerShell based method for creating AppId-laden-shortcuts, then feel free to send through a pull request!
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/toast.gif" >}}
+{{< figure src="/2018/05/toast.gif" >}}
 

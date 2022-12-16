@@ -3,7 +3,7 @@ categories = ["PowerShell", "Nugget"]
 date = 2017-11-05T19:15:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-14.jpg"
+thumbnail = "/2018/05/thumb-14.jpg"
 slug = "datetime-headache"
 summary = "Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style."
 tags = ["PowerShell", "Nugget"]
@@ -35,17 +35,17 @@ That's just a human reading the date out loud. You can imagine how this might ca
 
 Windows allows us to set the culture on our workstations. This changes the currency, date and other number formats. With my culture set to "en-NZ" (New Zealand English), the system displays the date in the correct format:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/SystemDate.png" >}}
+{{< figure src="/2018/05/SystemDate.png" >}}
 
 _Note for clarity that this is the 6th of November._
 
 PowerShell will even output the date in this format when I ask for it in the "short date" format:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/PowerShell1.png" >}}
+{{< figure src="/2018/05/PowerShell1.png" >}}
 
 The trouble is that it isn't consistent. Sometimes it just throws the system culture out the window and assumes that you meant to supply the date in the American style, such as when converting a string to a datetime:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/PowerShell2.png" >}}
+{{< figure src="/2018/05/PowerShell2.png" >}}
 
 ## **My "solution"**
 
@@ -53,7 +53,7 @@ I use the term solution loosely, but my advice is to never assume that the syste
 
 If I'm supplying a date as a string, I always go with the unambiguous [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) date format, YYYY-MM-DD. To revisit the previous example, that would be:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/PowerShell3.png" >}}
+{{< figure src="/2018/05/PowerShell3.png" >}}
 
 ## **But that's not what I have to work with!**
 

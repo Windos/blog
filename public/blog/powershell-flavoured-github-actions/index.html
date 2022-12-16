@@ -8,39 +8,38 @@
   <title>
   Cutting My Teeth on PowerShell Flavoured GitHub Actions - ToastIT
   </title>
-  <meta name="description" content="Carrying out PowerShell based GitHub Actions in less than a minute? Colour me impressed!" />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Carrying out PowerShell based GitHub Actions in less than a minute? Colour me impressed!" /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
-  
-  
+
+
 
   <meta property="og:title" content="Cutting My Teeth on PowerShell Flavoured GitHub Actions" />
 <meta property="og:description" content="Carrying out PowerShell based GitHub Actions in less than a minute? Colour me impressed!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/powershell-flavoured-github-actions/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2018-12-19T11:46:50+00:00" />
-<meta property="article:modified_time" content="2018-12-19T11:46:50+00:00" />
-
+<meta property="article:published_time" content="2018-12-18T22:46:50+00:00" />
+<meta property="article:modified_time" content="2018-12-18T22:46:50+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cutting My Teeth on PowerShell Flavoured GitHub Actions"/>
 <meta name="twitter:description" content="Carrying out PowerShell based GitHub Actions in less than a minute? Colour me impressed!"/>
 
   <meta itemprop="name" content="Cutting My Teeth on PowerShell Flavoured GitHub Actions">
-<meta itemprop="description" content="Carrying out PowerShell based GitHub Actions in less than a minute? Colour me impressed!"><meta itemprop="datePublished" content="2018-12-19T11:46:50+00:00" />
-<meta itemprop="dateModified" content="2018-12-19T11:46:50+00:00" />
+<meta itemprop="description" content="Carrying out PowerShell based GitHub Actions in less than a minute? Colour me impressed!"><meta itemprop="datePublished" content="2018-12-18T22:46:50+00:00" />
+<meta itemprop="dateModified" content="2018-12-18T22:46:50+00:00" />
 <meta itemprop="wordCount" content="1309">
 <meta itemprop="keywords" content="PowerShell," />
+
+
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
-    
+
     <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
-    
+
   </a>
   <button class="mobile-menu-button md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,19 +50,19 @@
   </button>
   <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
 
-    
+
     <li><a href="/blog">Blog</a></li>
-    
+
     <li><a href="/page/about/">About</a></li>
-    
+
     <li><a href="/tags">Tags</a></li>
-    
+
     <li><a href="/blog/emoji-support/">Top Post</a></li>
-    
 
-    
 
-    
+
+
+
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,20 +73,21 @@
         </svg>
       </span>
     </li>
-    
 
-    
+
+
   </ul>
 </header>
 <main class="flex-1">
-  
-  
 
-  
+
+
+
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Cutting My Teeth on PowerShell Flavoured GitHub Actions</h1>
+
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -97,15 +97,15 @@
         <line x1="4" y1="11" x2="20" y2="11" />
         <rect x="8" y="15" width="2" height="2" />
       </svg>
-      Posted on 
-  
-    December 19, 2018
-  
+      Posted on
+
+    December 18, 2018
 
 
-      
+
+
         &nbsp;&bull;&nbsp;
-      
+
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <circle cx="12" cy="12" r="9" />
@@ -122,8 +122,11 @@
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
       1309&nbsp;words
-      
+
+
+
     </h5>
+
 
     <p>Whew, I haven&rsquo;t written a blog in a while now. I&rsquo;ve missed it! I&rsquo;ll have a soppy post in the new year about where I&rsquo;ve been and what&rsquo;s been keeping me so busy, but today I wanted to jot down some notes about a cool thing I started diving into at lunch.</p>
 <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
@@ -146,21 +149,20 @@
 <h2 id="hello-world"><strong>Hello World</strong></h2>
 <p>I wanted to start simple, and just see that I can run PowerShell with as little friction as possible. With that in mind, I created a Hello World action which just executes a ps1 file and outputs some text.</p>
 <p>A basic custom action is incredibly easy to scaffold. Within its own directory start with a Dockerfile (no file extension) file. Here&rsquo;s mine:</p>
-<pre><code>FROM mcr.microsoft.com/powershell:ubuntu-18.04
-
-LABEL &quot;com.github.actions.name&quot;=&quot;Hello World&quot;
-LABEL &quot;com.github.actions.description&quot;=&quot;Write arguments to the standard output&quot;
-LABEL &quot;com.github.actions.icon&quot;=&quot;terminal&quot;
-LABEL &quot;com.github.actions.color&quot;=&quot;blue&quot;
-
-LABEL &quot;repository&quot;=&quot;https://github.com/Windos/Deeds&quot;
-LABEL &quot;homepage&quot;=&quot;https://king.geek.nz&quot;
-LABEL &quot;maintainer&quot;=&quot;Josh King (@WindosNZ)&quot;
-
-ADD entrypoint.ps1 /entrypoint.ps1
-ENTRYPOINT [&quot;pwsh&quot;, &quot;/entrypoint.ps1&quot;]
-</code></pre>
-<p><a href="https://github.com/Windos/Deeds/blob/master/HelloWorld/Dockerfile" target="_blank" rel="noopener">&lt;em&gt;source - Dockerfile&lt;/em&gt;</a>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-docker" data-lang="docker"><span style="display:flex;"><span><span style="color:#ff79c6">FROM</span><span style="color:#f1fa8c"> mcr.microsoft.com/powershell:ubuntu-18.04</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">LABEL</span> <span style="color:#f1fa8c">&#34;com.github.actions.name&#34;</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Hello World&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">LABEL</span> <span style="color:#f1fa8c">&#34;com.github.actions.description&#34;</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Write arguments to the standard output&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">LABEL</span> <span style="color:#f1fa8c">&#34;com.github.actions.icon&#34;</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;terminal&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">LABEL</span> <span style="color:#f1fa8c">&#34;com.github.actions.color&#34;</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;blue&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">LABEL</span> <span style="color:#f1fa8c">&#34;repository&#34;</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://github.com/Windos/Deeds&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">LABEL</span> <span style="color:#f1fa8c">&#34;homepage&#34;</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://king.geek.nz&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">LABEL</span> <span style="color:#f1fa8c">&#34;maintainer&#34;</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;Josh King (@WindosNZ)&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ADD</span> entrypoint.ps1 /entrypoint.ps1
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">ENTRYPOINT</span> [<span style="color:#f1fa8c">&#34;pwsh&#34;</span>, <span style="color:#f1fa8c">&#34;/entrypoint.ps1&#34;</span>]
+</span></span></code></pre></div><p><a href="https://github.com/Windos/Deeds/blob/master/HelloWorld/Dockerfile" target="_blank" rel="noopener">&lt;em&gt;source - Dockerfile&lt;/em&gt;</a>
 </p>
 <p>Of note here, the first line indicates the Docker image within which you action will run. I chose a <a href="https://hub.docker.com/r/microsoft/powershell/" target="_blank" rel="noopener">Linux image from Microsoft</a>
  that had PowerShell Core baked into it. This meant that I didn&rsquo;t have to install PowerShell within the image myself (saving me a few lines of code, and a bit of run time.)</p>
@@ -169,15 +171,14 @@ ENTRYPOINT [&quot;pwsh&quot;, &quot;/entrypoint.ps1&quot;]
 .</p>
 <p>Skip down to the bottom, and note the final two lines. This is where you call the action&rsquo;s ps1 file. The part I was missing for the longest time was that I didn&rsquo;t include &lsquo;pwsh&rsquo; as part of the <code>ENTRYPOINT</code>. Turns out it that helps in the actual running of the script… I tried shebang&rsquo;s but it didn&rsquo;t seem to gel.</p>
 <p>So what about the ps1 file? Honestly, there&rsquo;s no real &ldquo;magic sauce&rdquo; in there.</p>
-<pre><code>Write-Host &quot;The commit sha was: $env:GITHUB_SHA&quot;
-
-if ($args) {
-    Write-Host &quot;Your first argument was: $($args[0])&quot;
-} else {
-    Write-Host &quot;You supplied no arguments&quot;
-}
-</code></pre>
-<p><a href="https://github.com/Windos/Deeds/blob/master/HelloWorld/entrypoint.ps1" target="_blank" rel="noopener">&lt;em&gt;source - entrypoint.ps1&lt;/em&gt;</a>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Write-Host</span> <span style="color:#f1fa8c">&#34;The commit sha was: </span><span style="color:#8be9fd;font-style:italic">$env:GITHUB_SHA</span><span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$args</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">Write-Host</span> <span style="color:#f1fa8c">&#34;Your first argument was: </span>$(<span style="color:#8be9fd;font-style:italic">$args</span>[<span style="color:#bd93f9">0</span>])<span style="color:#f1fa8c">&#34;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">Write-Host</span> <span style="color:#f1fa8c">&#34;You supplied no arguments&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><a href="https://github.com/Windos/Deeds/blob/master/HelloWorld/entrypoint.ps1" target="_blank" rel="noopener">&lt;em&gt;source - entrypoint.ps1&lt;/em&gt;</a>
 </p>
 <p>See, nothing too mystical in there. You do have access to the <code>$args</code> variable (which you can define when you come to the workflow). The thing I did struggle with for a little while is the <a href="https://developer.github.com/actions/creating-github-actions/accessing-the-runtime-environment/" target="_blank" rel="noopener">environment variables</a>
  that GitHub automatically created. You&rsquo;ll see that I&rsquo;ve used the GitHub SHA variable (<code>$env:GITHUB_SHA</code>) to get some dynamic information every time my workflow runs.</p>
@@ -185,28 +186,46 @@ if ($args) {
 <p>Alright, now let&rsquo;s actually put our shiny PowerShell powered action to use, and check out the fancy graphical tool for defining a workflow.</p>
 <p>As a test I&rsquo;ve been using one of my neglected, barely started, projects <a href="https://github.com/Windos/No8WireMonitor" target="_blank" rel="noopener">No8WireMonitor</a>
 .</p>
-<p>If you&rsquo;re in the GitHub Actions beta, you&rsquo;ll see an Actions tab to the right of the Pull requests one.
-<img src="__GHOST_URL__/content/images/2018/12/Tab.png" alt="Actions Tab">
-When you first go in there, you&rsquo;ll be prompted to create your workflow, which will start a new commit where you&rsquo;ll be editing a file called <code>main.workflow</code>.
-<img src="__GHOST_URL__/content/images/2018/12/Create.png" alt="Create a Workflow">
-If you&rsquo;re feeling keen, you <strong>can</strong> edit this file as text… but the visual editor is really nice. You&rsquo;ll initially be prompted to drag down a little blue dot to a blank area for you first action but before doing that, consider clicking edit on the &ldquo;New workflow&rdquo; block so that you can rename it.
-<img src="__GHOST_URL__/content/images/2018/12/EditName.png" alt="Edit Workflow Name">
-Now go ahead and drag down that blue dot and a blade will fly out to choose your action. There&rsquo;s a list of featured one (which you can actually dig into the source of to find out how they work), but we want to use our custom one.</p>
-<p>In order to use an action that&rsquo;s not on the featured list, you&rsquo;ll need to reference it in the form of <code>username/repo/location@reference</code>. The reference could be a branch, or the first seven figures in a commit&rsquo;s SHA. If you&rsquo;re using someone else&rsquo;s action, you may want to consider picking a specific commit so that your workflow doesn&rsquo;t break if they break something. I trust myself… for the most part, so I&rsquo;m going to reference the master branch and my path will be <code>Windos/Deeds/HelloWorld@master</code>
-<img src="__GHOST_URL__/content/images/2018/12/NoIcon.png" alt="No Icon or Colour">
-Note that your nice display name, icon, and custom colour won&rsquo;t show yet. Don&rsquo;t worry, hit use…
-<img src="__GHOST_URL__/content/images/2018/12/Icon.png" alt="A Wild Icon Appears!">
-Ahhh, that&rsquo;s better!</p>
+<p>If you&rsquo;re in the GitHub Actions beta, you&rsquo;ll see an Actions tab to the right of the Pull requests one.</p>
+<figure><img src="/2018/12/Tab.png"/>
+</figure>
+
+<p>When you first go in there, you&rsquo;ll be prompted to create your workflow, which will start a new commit where you&rsquo;ll be editing a file called <code>main.workflow</code>.</p>
+<figure><img src="/2018/12/Create.png"/>
+</figure>
+
+<p>If you&rsquo;re feeling keen, you <strong>can</strong> edit this file as text… but the visual editor is really nice. You&rsquo;ll initially be prompted to drag down a little blue dot to a blank area for you first action but before doing that, consider clicking edit on the &ldquo;New workflow&rdquo; block so that you can rename it.</p>
+<figure><img src="/2018/12/EditName.png"/>
+</figure>
+
+<p>Now go ahead and drag down that blue dot and a blade will fly out to choose your action. There&rsquo;s a list of featured one (which you can actually dig into the source of to find out how they work), but we want to use our custom one.</p>
+<p>In order to use an action that&rsquo;s not on the featured list, you&rsquo;ll need to reference it in the form of <code>username/repo/location@reference</code>. The reference could be a branch, or the first seven figures in a commit&rsquo;s SHA. If you&rsquo;re using someone else&rsquo;s action, you may want to consider picking a specific commit so that your workflow doesn&rsquo;t break if they break something. I trust myself… for the most part, so I&rsquo;m going to reference the master branch and my path will be <code>Windos/Deeds/HelloWorld@master</code></p>
+<figure><img src="/2018/12/NoIcon.png"/>
+</figure>
+
+<p>Note that your nice display name, icon, and custom colour won&rsquo;t show yet. Don&rsquo;t worry, hit use…</p>
+<figure><img src="/2018/12/Icon.png"/>
+</figure>
+
+<p>Ahhh, that&rsquo;s better!</p>
 <p>The configure action blade will be open automatically, so tweak as needed. Strictly speaking, the Hello World action will fire as is, but I&rsquo;ll add an argument here (you&rsquo;ll see what I added in a later screenshot.) Note, that arguments split on spaces (/whitespace), so &ldquo;hi there&rdquo; would actually be two discrete arguments and <code>$args[0]</code> would only show <code>hi</code>.</p>
-<p>When you&rsquo;re happy with your workflow, use the &ldquo;Start commit&rdquo; button up the top right to get it all saved and committed. If you ever need to get to the actual file, you can find it under the <code>.github</code> directory in the root of the repo.
-<img src="__GHOST_URL__/content/images/2018/12/loaction.png" alt="Location of File in Repo">
-Any time a commit is pushed to this repo now (including the one we just pushed to create the workflow itself), the workflow will trigger and out action will be executed.
-<img src="__GHOST_URL__/content/images/2018/12/InProgress.png" alt="In Progress">
-When you head back to the Actions tab, and you&rsquo;ll find the history of each execution, and the block for the action will allow you to drill into the logs for the particular run.
-<img src="__GHOST_URL__/content/images/2018/12/History.png" alt="Actions History">
-This is useful for diagnosing failures, but in this case it&rsquo;ll also let us check the output of our script (it&rsquo;s all the way at the bottom of the log.)
-<img src="__GHOST_URL__/content/images/2018/12/Output.png" alt="Output">
-What I still can&rsquo;t get over is that this action takes less than a minute to complete! The power of containers, eh?</p>
+<p>When you&rsquo;re happy with your workflow, use the &ldquo;Start commit&rdquo; button up the top right to get it all saved and committed. If you ever need to get to the actual file, you can find it under the <code>.github</code> directory in the root of the repo.</p>
+<figure><img src="/2018/12/loaction.png"/>
+</figure>
+
+<p>Any time a commit is pushed to this repo now (including the one we just pushed to create the workflow itself), the workflow will trigger and out action will be executed.</p>
+<figure><img src="/2018/12/InProgress.png"/>
+</figure>
+
+<p>When you head back to the Actions tab, and you&rsquo;ll find the history of each execution, and the block for the action will allow you to drill into the logs for the particular run.</p>
+<figure><img src="/2018/12/History.png"/>
+</figure>
+
+<p>This is useful for diagnosing failures, but in this case it&rsquo;ll also let us check the output of our script (it&rsquo;s all the way at the bottom of the log.)</p>
+<figure><img src="/2018/12/Output.png"/>
+</figure>
+
+<p>What I still can&rsquo;t get over is that this action takes less than a minute to complete! The power of containers, eh?</p>
 <h2 id="wrap-up"><strong>Wrap Up</strong></h2>
 <p>Are you using GitHub Actions? I&rsquo;m really interested in hearing about how you&rsquo;re using the feature.</p>
 <p>No, this isn&rsquo;t an actually useful action, but it was a good tooth cutting exercise and an interesting look into how easy it is to get PowerShell to work in a Linux flavoured world (after much stubborn frustration…)</p>
@@ -220,7 +239,7 @@ What I still can&rsquo;t get over is that this action takes less than a minute t
       <p class="opacity-60"></p>
     </div>
     <ul class="flex justify-center gap-4">
-      
+
       <li>
         <a
           href="https://twitter.com/WindosNZ"
@@ -247,8 +266,8 @@ What I still can&rsquo;t get over is that this action takes less than a minute t
           </svg>
         </a>
       </li>
-      
-      
+
+
       <li>
         <a
           href="https://linkedin.com/in/windos"
@@ -277,9 +296,9 @@ What I still can&rsquo;t get over is that this action takes less than a minute t
           </svg>
         </a>
       </li>
-      
-      
-      
+
+
+
       <li>
         <a
           href="https://github.com/Windos"
@@ -306,11 +325,11 @@ What I still can&rsquo;t get over is that this action takes less than a minute t
           </svg>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <li>
         <a
           href="https://www.youtube.com/c/JoshuaKingSolari"
@@ -337,16 +356,18 @@ What I still can&rsquo;t get over is that this action takes less than a minute t
           </svg>
         </a>
       </li>
-      
-      
+
+
+
+
     </ul>
   </div>
 </div>
     </main><footer class="container p-6 mx-auto flex justify-between items-center">
   <span class="text-sm font-light">
-    
+
     Copyright © 2022 - Josh King · All rights reserved
-    
+
   </span>
   <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"

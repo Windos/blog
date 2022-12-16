@@ -8,33 +8,32 @@
   <title>
   Digging Up Old Blog Posts - ToastIT
   </title>
-  <meta name="description" content="I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&#39;t seen in years." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&rsquo;t seen in years." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="Digging Up Old Blog Posts" />
-<meta property="og:description" content="I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&#39;t seen in years." />
+<meta property="og:description" content="I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&rsquo;t seen in years." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/old-posts/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2016-11-21T23:00:00+00:00" />
-<meta property="article:modified_time" content="2016-11-21T23:00:00+00:00" />
-
+<meta property="article:published_time" content="2016-11-21T10:00:00+00:00" />
+<meta property="article:modified_time" content="2016-11-21T10:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Digging Up Old Blog Posts"/>
-<meta name="twitter:description" content="I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&#39;t seen in years."/>
+<meta name="twitter:description" content="I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&rsquo;t seen in years."/>
 
   <meta itemprop="name" content="Digging Up Old Blog Posts">
-<meta itemprop="description" content="I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&#39;t seen in years."><meta itemprop="datePublished" content="2016-11-21T23:00:00+00:00" />
-<meta itemprop="dateModified" content="2016-11-21T23:00:00+00:00" />
+<meta itemprop="description" content="I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&rsquo;t seen in years."><meta itemprop="datePublished" content="2016-11-21T10:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-11-21T10:00:00+00:00" />
 <meta itemprop="wordCount" content="413">
 <meta itemprop="keywords" content="Windows," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Digging Up Old Blog Posts</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -123,7 +123,10 @@
       </svg>
       413&nbsp;words
       
+        
+      
     </h5>
+    
 
     <p>I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&rsquo;t seen in years.</p>
 <p>The blog only had two posts on it, and judging by the title (and my job at the time) I was obviously looking at starting a Helpdesk orientated site.</p>
@@ -132,8 +135,8 @@
 <h2 id="injecting-drivers-into-offline-wim-images">Injecting drivers into offline WIM images</h2>
 <p><em>Thursday, July 14, 2011</em></p>
 <blockquote>
-<p>&ldquo;The most likely way for the world to be destroyed, most experts agree, is by accident. That&rsquo;s where we come in; we&rsquo;re computer professionals. We cause accidents.&rdquo;</p>
-<p>~<a href="http://en.wikipedia.org/wiki/Nathaniel_Borenstein" target="_blank" rel="noopener">Nathaniel Borenstein</a>
+<p>&ldquo;The most likely way for the world to be destroyed, most experts agree, is by accident. That&rsquo;s where we come in; we&rsquo;re computer professionals. We cause accidents.&rdquo;
+~<a href="http://en.wikipedia.org/wiki/Nathaniel_Borenstein" target="_blank" rel="noopener">Nathaniel Borenstein</a>
 </p>
 </blockquote>
 <p>Historically, we have maintained two separate <a href="http://en.wikipedia.org/wiki/Windows_Imaging_Format" target="_blank" rel="noopener">WIM</a>
@@ -144,9 +147,8 @@
  it and capturing the image.</p>
 <p>Instead of uploading the image directly to our WDS server, it got mounted using <a href="http://en.wikipedia.org/wiki/Imagex#ImageX" target="_blank" rel="noopener">imagex</a>
  and the following command was run to add a directory filled to the brim with every driver we use on-site:</p>
-<pre><code>Dism /Image:C:\mount /Add-Driver /Driver:c:\drivers /Recurse /ForceUnsigned
-</code></pre>
-<p>This assumes the image was mounted to C:\mount\ and the drivers were stored in C:\drivers\</p>
+<pre tabindex="0"><code>Dism /Image:C:\mount /Add-Driver /Driver:c:\drivers /Recurse /ForceUnsigned
+</code></pre><p>This assumes the image was mounted to C:\mount\ and the drivers were stored in C:\drivers\</p>
 <p>Now any machine we deploy the image to gets it&rsquo;s full suite of drivers, and the work involved in maintaing our deployment images has been halved.</p>
 <h2 id="fix-your-hp-laserjet-p2015">Fix Your HP LaserJet P2015</h2>
 <p><em>Monday, August 1, 2011</em></p>
@@ -292,6 +294,8 @@
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

@@ -8,39 +8,38 @@
   <title>
   Avoiding DateTime Headaches - ToastIT
   </title>
-  <meta name="description" content="Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
-  
-  
+
+
 
   <meta property="og:title" content="Avoiding DateTime Headaches" />
 <meta property="og:description" content="Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/datetime-headache/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2017-11-06T08:15:00+00:00" />
-<meta property="article:modified_time" content="2017-11-06T08:15:00+00:00" />
-
+<meta property="article:published_time" content="2017-11-05T19:15:00+00:00" />
+<meta property="article:modified_time" content="2017-11-05T19:15:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Avoiding DateTime Headaches"/>
 <meta name="twitter:description" content="Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style."/>
 
   <meta itemprop="name" content="Avoiding DateTime Headaches">
-<meta itemprop="description" content="Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style."><meta itemprop="datePublished" content="2017-11-06T08:15:00+00:00" />
-<meta itemprop="dateModified" content="2017-11-06T08:15:00+00:00" />
+<meta itemprop="description" content="Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style."><meta itemprop="datePublished" content="2017-11-05T19:15:00+00:00" />
+<meta itemprop="dateModified" content="2017-11-05T19:15:00+00:00" />
 <meta itemprop="wordCount" content="493">
 <meta itemprop="keywords" content="PowerShell,Nugget," />
+
+
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
-    
+
     <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
-    
+
   </a>
   <button class="mobile-menu-button md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,19 +50,19 @@
   </button>
   <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
 
-    
+
     <li><a href="/blog">Blog</a></li>
-    
+
     <li><a href="/page/about/">About</a></li>
-    
+
     <li><a href="/tags">Tags</a></li>
-    
+
     <li><a href="/blog/emoji-support/">Top Post</a></li>
-    
 
-    
 
-    
+
+
+
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,20 +73,21 @@
         </svg>
       </span>
     </li>
-    
 
-    
+
+
   </ul>
 </header>
 <main class="flex-1">
-  
-  
 
-  
+
+
+
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Avoiding DateTime Headaches</h1>
+
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -97,15 +97,15 @@
         <line x1="4" y1="11" x2="20" y2="11" />
         <rect x="8" y="15" width="2" height="2" />
       </svg>
-      Posted on 
-  
-    November 6, 2017
-  
+      Posted on
+
+    November 5, 2017
 
 
-      
+
+
         &nbsp;&bull;&nbsp;
-      
+
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <circle cx="12" cy="12" r="9" />
@@ -122,8 +122,11 @@
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
       493&nbsp;words
-      
+
+
+
     </h5>
+
 
     <p>There&rsquo;s a number of things that - as a non-American - can cause confusion when dealing with America:</p>
 <ul>
@@ -140,28 +143,35 @@
 <p>Chances are you&rsquo;re saying &ldquo;December 10, 2017&rdquo;, but to a lot of the world this is actually &ldquo;12 October, 2017.&rdquo;</p>
 <p>That&rsquo;s just a human reading the date out loud. You can imagine how this might cause some level of confusion, and even frustration, when you&rsquo;re providing dates in this format to PowerShell (as an example) and it helpfully interprets it incorrectly.</p>
 <h2 id="youd-better-get-cultured"><strong>You&rsquo;d better get cultured!</strong></h2>
-<p>Windows allows us to set the culture on our workstations. This changes the currency, date and other number formats. With my culture set to &ldquo;en-NZ&rdquo; (New Zealand English), the system displays the date in the correct format:
-<img src="__GHOST_URL__/content/images/2018/05/SystemDate.png" alt="SystemDate">
-<em>Note for clarity that this is the 6th of November.</em></p>
-<p>PowerShell will even output the date in this format when I ask for it in the &ldquo;short date&rdquo; format:
-<img src="__GHOST_URL__/content/images/2018/05/PowerShell1.png" alt="PowerShell1">
-The trouble is that it isn&rsquo;t consistent. Sometimes it just throws the system culture out the window and assumes that you meant to supply the date in the American style, such as when converting a string to a datetime:
-<img src="__GHOST_URL__/content/images/2018/05/PowerShell2.png" alt="PowerShell2"></p>
+<p>Windows allows us to set the culture on our workstations. This changes the currency, date and other number formats. With my culture set to &ldquo;en-NZ&rdquo; (New Zealand English), the system displays the date in the correct format:</p>
+<figure><img src="/2018/05/SystemDate.png"/>
+</figure>
+
+<p><em>Note for clarity that this is the 6th of November.</em></p>
+<p>PowerShell will even output the date in this format when I ask for it in the &ldquo;short date&rdquo; format:</p>
+<figure><img src="/2018/05/PowerShell1.png"/>
+</figure>
+
+<p>The trouble is that it isn&rsquo;t consistent. Sometimes it just throws the system culture out the window and assumes that you meant to supply the date in the American style, such as when converting a string to a datetime:</p>
+<figure><img src="/2018/05/PowerShell2.png"/>
+</figure>
+
 <h2 id="my-solution"><strong>My &ldquo;solution&rdquo;</strong></h2>
 <p>I use the term solution loosely, but my advice is to never assume that the system (PowerShell or otherwise) knows which date format is appropriate.</p>
 <p>If I&rsquo;m supplying a date as a string, I always go with the unambiguous <a href="https://www.iso.org/iso-8601-date-and-time-format.html" target="_blank" rel="noopener">ISO 8601</a>
- date format, YYYY-MM-DD. To revisit the previous example, that would be:
-<img src="__GHOST_URL__/content/images/2018/05/PowerShell3.png" alt="PowerShell3"></p>
+ date format, YYYY-MM-DD. To revisit the previous example, that would be:</p>
+<figure><img src="/2018/05/PowerShell3.png"/>
+</figure>
+
 <h2 id="but-thats-not-what-i-have-to-work-with"><strong>But that&rsquo;s not what I have to work with!</strong></h2>
 <p>Then make it so!</p>
 <p>I&rsquo;m being serious, leverage PowerShell to change the date format coming from your (properly localized) log files:</p>
-<pre><code>$InputDate = '6/11/2017'
-$SplitDate = $InputDate.Split('/')
-$OutputDate = '{0}-{1:D2}-{2:D2}' -f $SplitDate[2], [int] $SplitDate[1], [int] $SplitDate[0]
-$OutputDate
-# 2017-11-06
-</code></pre>
-<p>Obviously, if you&rsquo;re doing this a lot, you might consider making a function to do this over a number of different scripts.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$InputDate</span> = <span style="color:#f1fa8c">&#39;6/11/2017&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$SplitDate</span> = <span style="color:#8be9fd;font-style:italic">$InputDate</span>.Split(<span style="color:#f1fa8c">&#39;/&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$OutputDate</span> = <span style="color:#f1fa8c">&#39;{0}-{1:D2}-{2:D2}&#39;</span> <span style="color:#ff79c6">-f</span> <span style="color:#8be9fd;font-style:italic">$SplitDate</span>[<span style="color:#bd93f9">2</span>], [int] <span style="color:#8be9fd;font-style:italic">$SplitDate</span>[<span style="color:#bd93f9">1</span>], [int] <span style="color:#8be9fd;font-style:italic">$SplitDate</span>[<span style="color:#bd93f9">0</span>]
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$OutputDate</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 2017-11-06</span>
+</span></span></code></pre></div><p>Obviously, if you&rsquo;re doing this a lot, you might consider making a function to do this over a number of different scripts.</p>
 <h2 id="we-live-in-an-international-world"><strong>We live in an international world</strong></h2>
 <p>I have volunteered my time to a number of American websites in the past to the point where I&rsquo;m used to just spelling things according to the American dictionary. I tend to lean towards that as the safer option when there is a binary choice between American or British/New Zealand styles.</p>
 <p>However, we can all help each other by picking an unambiguous middle ground where they exist, such as the ISO 8601 dates.</p>
@@ -174,7 +184,7 @@ $OutputDate
       <p class="opacity-60"></p>
     </div>
     <ul class="flex justify-center gap-4">
-      
+
       <li>
         <a
           href="https://twitter.com/WindosNZ"
@@ -201,8 +211,8 @@ $OutputDate
           </svg>
         </a>
       </li>
-      
-      
+
+
       <li>
         <a
           href="https://linkedin.com/in/windos"
@@ -231,9 +241,9 @@ $OutputDate
           </svg>
         </a>
       </li>
-      
-      
-      
+
+
+
       <li>
         <a
           href="https://github.com/Windos"
@@ -260,11 +270,11 @@ $OutputDate
           </svg>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <li>
         <a
           href="https://www.youtube.com/c/JoshuaKingSolari"
@@ -291,16 +301,18 @@ $OutputDate
           </svg>
         </a>
       </li>
-      
-      
+
+
+
+
     </ul>
   </div>
 </div>
     </main><footer class="container p-6 mx-auto flex justify-between items-center">
   <span class="text-sm font-light">
-    
+
     Copyright © 2022 - Josh King · All rights reserved
-    
+
   </span>
   <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"

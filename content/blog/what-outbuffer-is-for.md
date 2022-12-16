@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2020-05-27T06:30:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/05/alex-iby-HfR0W6HW_Cw-unsplash.jpg"
+thumbnail = "/2020/05/alex-iby-HfR0W6HW_Cw-unsplash.jpg"
 slug = "what-outbuffer-is-for"
 summary = "OutBuffer has been lurking in amongst the common parameters on most cmdlets for years, but I've never taken the time to ask what it's for."
 tags = ["PowerShell"]
@@ -26,7 +26,7 @@ This post won't cover the associated story, for that I highly recommend picking 
 
 Chances are good that you see OutBuffer often when tabbing through available parameters on commands. You'll have not paid it much mind as it's not the parameter you're looking for.
 
-{{< figure src="__GHOST_URL__/content/images/2020/05/OutBuffer-Tab-Completion.gif" >}}
+{{< figure src="/2020/05/OutBuffer-Tab-Completion.gif" >}}
 
 So... what is it?
 

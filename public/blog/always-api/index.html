@@ -8,33 +8,32 @@
   <title>
   Always Ask for the API - ToastIT
   </title>
-  <meta name="description" content="Your business uses two disparate cloud services and needs them to share data, but they don&#39;t integrate natively. You really don&#39;t need to make this harder than it needs to be." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Your business uses two disparate cloud services and needs them to share data, but they don’t integrate natively. You really don’t need to make this harder than it needs to be." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="Always Ask for the API" />
-<meta property="og:description" content="Your business uses two disparate cloud services and needs them to share data, but they don&#39;t integrate natively. You really don&#39;t need to make this harder than it needs to be." />
+<meta property="og:description" content="Your business uses two disparate cloud services and needs them to share data, but they don’t integrate natively. You really don’t need to make this harder than it needs to be." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/always-api/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2017-04-25T00:00:00+00:00" />
-<meta property="article:modified_time" content="2017-04-25T00:00:00+00:00" />
-
+<meta property="article:published_time" content="2017-04-24T12:00:00+00:00" />
+<meta property="article:modified_time" content="2017-04-24T12:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Always Ask for the API"/>
-<meta name="twitter:description" content="Your business uses two disparate cloud services and needs them to share data, but they don&#39;t integrate natively. You really don&#39;t need to make this harder than it needs to be."/>
+<meta name="twitter:description" content="Your business uses two disparate cloud services and needs them to share data, but they don’t integrate natively. You really don’t need to make this harder than it needs to be."/>
 
   <meta itemprop="name" content="Always Ask for the API">
-<meta itemprop="description" content="Your business uses two disparate cloud services and needs them to share data, but they don&#39;t integrate natively. You really don&#39;t need to make this harder than it needs to be."><meta itemprop="datePublished" content="2017-04-25T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2017-04-25T00:00:00+00:00" />
+<meta itemprop="description" content="Your business uses two disparate cloud services and needs them to share data, but they don’t integrate natively. You really don’t need to make this harder than it needs to be."><meta itemprop="datePublished" content="2017-04-24T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-04-24T12:00:00+00:00" />
 <meta itemprop="wordCount" content="891">
 <meta itemprop="keywords" content="PowerShell," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Always Ask for the API</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    April 25, 2017
+    April 24, 2017
   
 
 
@@ -123,41 +123,44 @@
       </svg>
       891&nbsp;words
       
+        
+      
     </h5>
+    
 
-    <p>Take this hypothetical, totally-didn&rsquo;t-recently-come-up-at-work, scenario: your business uses two disparate cloud services and needs them to share data, but they don&rsquo;t integrate natively.</p>
-<p>You, the scripting magician that you are, can take an export from the first service, manipulate it however it needs to be manipulated and then import it to the other service. You could do this in reverse. You could do this all day, every day; it&rsquo;s a task right up your alley.</p>
-<p>But you really don&rsquo;t need to make this harder than it needs to be.</p>
+    <p>Take this hypothetical, totally-didn’t-recently-come-up-at-work, scenario: your business uses two disparate cloud services and needs them to share data, but they don’t integrate natively.</p>
+<p>You, the scripting magician that you are, can take an export from the first service, manipulate it however it needs to be manipulated and then import it to the other service. You could do this in reverse. You could do this all day, every day; it’s a task right up your alley.</p>
+<p>But you really don’t need to make this harder than it needs to be.</p>
 <h2 id="hard-this-sounds-like-a-piece-of-cake"><strong>Hard? This sounds like a piece of cake!</strong></h2>
 <p>Yeah sure. At first look it really is a simple task.</p>
 <p>You read in a CSV, make some changes to the resulting objects, maybe pull in some auxiliary info from an internal system and finally spit out a new CSV that can be uploaded to the second service.</p>
 <p>But take a step back and consider: how are you getting that initial CSV?</p>
-<p>Chances are that you may not have your own access to the service in question, or you may have limited access. This is especially true if it&rsquo;s &ldquo;owned&rdquo; by another business unit outside of IT, like Human Resources. This means that you likely won&rsquo;t be able to export a report as a CSV and you&rsquo;ll need someone else to do it for you and probably email it to you.</p>
-<p>Now you&rsquo;ve got to figure out how to:</p>
+<p>Chances are that you may not have your own access to the service in question, or you may have limited access. This is especially true if it’s “owned” by another business unit outside of IT, like Human Resources. This means that you likely won’t be able to export a report as a CSV and you’ll need someone else to do it for you and probably email it to you.</p>
+<p>Now you’ve got to figure out how to:</p>
 <ul>
 <li>Check for to see if the email is in your inbox.</li>
 <li>Save the attachment somewhere.</li>
 <li>Read the file in and do all the processing mentioned above.</li>
 <li>Clean up the file.</li>
 </ul>
-<p>You&rsquo;ve also got to worry about the staff member you&rsquo;ve roped into this scheme remembering to do it. It&rsquo;ll also never be sent at the same time, so you&rsquo;re script/process will need to run in a loop until the email arrives.</p>
-<p>Also, the whole point of automation is to rule out (or limit/mitigate) human error. Are you 100% sure that there is no chance that the person running the report won&rsquo;t accidentally generate the wrong one. The report you get could end up with missing columns, extra columns. Maybe it has the right info, but in the &ldquo;wrong&rdquo; order.</p>
+<p>You’ve also got to worry about the staff member you’ve roped into this scheme remembering to do it. It’ll also never be sent at the same time, so you’re script/process will need to run in a loop until the email arrives.</p>
+<p>Also, the whole point of automation is to rule out (or limit/mitigate) human error. Are you 100% sure that there is no chance that the person running the report won’t accidentally generate the wrong one. The report you get could end up with missing columns, extra columns. Maybe it has the right info, but in the “wrong” order.</p>
 <h2 id="well-that-escalated-quickly"><strong>Well, that escalated quickly</strong></h2>
 <p>It sure did! But fear not, there is (usually) and easier way.</p>
 <p>Firstly, if this is a bigger cloud provider, chances are they already have an accessible and well documented API. In which case, just use that… and why were you even considering doing any of the above?!</p>
 <p>However, if this is more of a bespoke service, then instead of roping someone from the business unit into running a report all the time for you, ask them if they have a technical contact or account manager with the company providing the cloud service.</p>
-<p>With contact details in hand, flick them an email. Include the person you&rsquo;ve been talking to within your own company so they are aware of what you&rsquo;re asking for and can authorize it if need be.</p>
-<p>Keep the email short and simple, explain that you&rsquo;re attempting to get data out of system x using an API (maybe mention a preference for JSON if you&rsquo;re on that PowerShell train). Ask if it&rsquo;s possible and what the authorization and development process is.</p>
-<p>You&rsquo;ll likely get a &ldquo;sure, no problem!&rdquo; type response and details on the specific info the company needs. This will likely include the specific info you want exposed and how often you&rsquo;ll be polling it.</p>
-<p>When I&rsquo;ve done this in the past, after specifying the info I&rsquo;m after they will generate an example of the result as a CSV so you can eye ball that the result is what you&rsquo;re looking for and then they&rsquo;ll hand it off to their developers to set it all up.</p>
+<p>With contact details in hand, flick them an email. Include the person you’ve been talking to within your own company so they are aware of what you’re asking for and can authorize it if need be.</p>
+<p>Keep the email short and simple, explain that you’re attempting to get data out of system x using an API (maybe mention a preference for JSON if you’re on that PowerShell train). Ask if it’s possible and what the authorization and development process is.</p>
+<p>You’ll likely get a “sure, no problem!” type response and details on the specific info the company needs. This will likely include the specific info you want exposed and how often you’ll be polling it.</p>
+<p>When I’ve done this in the past, after specifying the info I’m after they will generate an example of the result as a CSV so you can eye ball that the result is what you’re looking for and then they’ll hand it off to their developers to set it all up.</p>
 <p>When the developers have done their thing, you should get some instructions, a URL and an authorization key. Time to start <code>Invoke-RestMethod</code>ing!</p>
 <h2 id="so-i-can-have-my-cake-and-eat-it-too"><strong>So I can have my cake and eat it too?</strong></h2>
 <p>Getting access to the API will make your job dramatically easier and the end product more robust and reliable.</p>
-<p>But it isn&rsquo;t free (unless you have a generous provider, a great support contract or negotiate it when procuring the service.)</p>
-<p>In every case when I have been through this process we&rsquo;ve been changed an hourly fee for two hours of development time. It&rsquo;s also possible that your provider may do the setup for free but then charge per request against the API.</p>
-<p>It&rsquo;s pretty easy to justify this cost, assuming your provider doesn&rsquo;t absolutely gouge you, when you consider the amount of time that it&rsquo;ll take you to develop the process that an API eliminates. Also consider the time you&rsquo;ll have to give up when something goes wrong; an extra column causing the script to fail? That&rsquo;s more of your time that would have been freed up with the API being in place.</p>
-<p>As an aside if you&rsquo;re having trouble working your hours into a cost/benefit analysis keep in mind your time does have a cost to the business. Chances are it&rsquo;s actually higher than the hourly rate that you&rsquo;re paid. Some managers would happily give you a number you can use in a business case, others may have never thought about it before.</p>
-<p>In any case, it can&rsquo;t hurt to at least ask for the API, that much costs nothing.</p>
+<p>But it isn’t free (unless you have a generous provider, a great support contract or negotiate it when procuring the service.)</p>
+<p>In every case when I have been through this process we’ve been changed an hourly fee for two hours of development time. It’s also possible that your provider may do the setup for free but then charge per request against the API.</p>
+<p>It’s pretty easy to justify this cost, assuming your provider doesn’t absolutely gouge you, when you consider the amount of time that it’ll take you to develop the process that an API eliminates. Also consider the time you’ll have to give up when something goes wrong; an extra column causing the script to fail? That’s more of your time that would have been freed up with the API being in place.</p>
+<p>As an aside if you’re having trouble working your hours into a cost/benefit analysis keep in mind your time does have a cost to the business. Chances are it’s actually higher than the hourly rate that you’re paid. Some managers would happily give you a number you can use in a business case, others may have never thought about it before.</p>
+<p>In any case, it can’t hurt to at least ask for the API, that much costs nothing.</p>
 
   </article><div class="bg-blue-300 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -283,6 +286,8 @@
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

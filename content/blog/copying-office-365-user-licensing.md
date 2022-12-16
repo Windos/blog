@@ -3,7 +3,7 @@ categories = ["PowerShell", "Office 365"]
 date = 2018-07-23T17:06:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/07/freestocks-org-540554-unsplash.jpg"
+thumbnail = "/2018/07/freestocks-org-540554-unsplash.jpg"
 slug = "copying-office-365-user-licensing"
 summary = "Spoiler alert: this post didn't end up the way I expected it to when I started writing..."
 tags = ["PowerShell", "Office 365"]
@@ -18,7 +18,7 @@ As you [may know](https://king.geek.nz/tag/office-365/) from some of my previous
 
 As an example of this, checkout this fictional user's license configuration:
 
-{{< figure src="__GHOST_URL__/content/images/2018/07/License-Example.png" >}}
+{{< figure src="/2018/07/License-Example.png" >}}
 
 ## **The Problem**
 
@@ -50,7 +50,7 @@ PS C:\> Connect-AzureAD
 
 When doing this interactively, I tend to run this without any arguments. This results in the standard login box popping up and allows me to benefit from our SSO (sometimes...).
 
-{{< figure src="__GHOST_URL__/content/images/2018/07/2018-07-24--3-.png" >}}
+{{< figure src="/2018/07/2018-07-24--3-.png" >}}
 
 The first thing I do once connected is ensure that all of my users have a usage location set. If this isn't set, you won't be able to apply licenses.
 
@@ -89,7 +89,7 @@ PS C:\> $Licenses = New-Object -TypeName Microsoft.Open.AzureAD.Model.AssignedLi
 PS C:\> $Licenses.AddLicenses = $ExistingLicense
 
 # Assign to the target user
-Get-AzureADUser -ObjectId target@king.geek.nz | 
+Get-AzureADUser -ObjectId target@king.geek.nz |
     Set-AzureADUserLicense -AssignedLicenses $Licenses
 
 ```

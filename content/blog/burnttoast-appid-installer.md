@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2018-02-03T18:45:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-19.jpg"
+thumbnail = "/2018/05/thumb-19.jpg"
 slug = "burnttoast-appid-installer"
 summary = "I can't tell you how happy I am to be writing this post."
 tags = ["PowerShell", "BurntToast"]
@@ -39,7 +39,7 @@ It'll put a PNG file into "**C:\Program Files\BurntToast\**" and throw a shortcu
 
 To actually use it, find the directory where the BurntToast module lives and open **config.json**. Change the AppId in this file to "**King.Geek.NZ!BurntToast**"
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/config.png" >}}
+{{< figure src="/2018/05/config.png" >}}
 
 If you don't know where the module is installed, run this:
 
@@ -52,7 +52,7 @@ Get-Module -Name BurntToast -ListAvailable | Select -Property ModuleBase
 
 And here's the result:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/proof.jpg" >}}
+{{< figure src="/2018/05/proof.jpg" >}}
 
 ## **Next Steps**
 

@@ -3,7 +3,7 @@ categories = ["BurntToast", "PowerShell"]
 date = 2018-10-04T02:07:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/10/rukma-pratista-1054296-unsplash.jpg"
+thumbnail = "/2018/10/rukma-pratista-1054296-unsplash.jpg"
 slug = "crouton-9-attribution"
 summary = "Where did that toast come from? Who cooked it?! If only it was attributed to someone..."
 tags = ["BurntToast", "PowerShell"]
@@ -74,7 +74,7 @@ Submit-BTNotification -Content $Content1
 
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2018/10/Attrib.gif" >}}
+{{< figure src="/2018/10/Attrib.gif" >}}
 
 Notice the text at the bottom of the toast, first we see the display name representation of my AppId (BurntToast), a separator, and then my attribution text.
 

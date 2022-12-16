@@ -3,7 +3,7 @@ categories = ["Security"]
 date = 2015-10-15T11:55:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/0-key-1.png"
+thumbnail = "/2018/05/0-key-1.png"
 slug = "u2f-key"
 summary = "GitHub now supports FIDO Universal 2nd Factor (U2F) as an option for two-factor authentication alongside their existing support for Google/Microsoft Authenticator Apps."
 tags = ["Security"]
@@ -24,31 +24,31 @@ _n.b. It’s possible that this deal is still available, go to yubi.co/github an
 
 Assuming you have two-factor authentication enabled on your GitHub account, you’ll normally get asked for a six-digit code when you log in like this:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/1-login-code.PNG" >}}
+{{< figure src="/2018/05/1-login-code.PNG" >}}
 
 In order to add a U2F key to your account you’ll need to hit up your account settings, and edit your two-factor authentication settings under the security group:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/2-settings.PNG" >}}
+{{< figure src="/2018/05/2-settings.PNG" >}}
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/3-security.PNG" >}}
+{{< figure src="/2018/05/3-security.PNG" >}}
 
 At the bottom of these settings, click on “Register new device” and you’ll be asked to insert the key and press the button (which will light up and flash.)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/4-register.PNG" >}}
+{{< figure src="/2018/05/4-register.PNG" >}}
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/5-blink.png" >}}
+{{< figure src="/2018/05/5-blink.png" >}}
 
 Once you’ve pressed the button, the key will be added to your account and ready to help protect your account.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/6-alldone.PNG" >}}
+{{< figure src="/2018/05/6-alldone.PNG" >}}
 
 When you next log in, you’ll be able to just press the button again, gain access to your account very quickly.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/7-signbackin.PNG" >}}
+{{< figure src="/2018/05/7-signbackin.PNG" >}}
 
 And if you happen to not have your key on you, you can still fall back on the other two-factor authentication methods.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/8-backup.PNG" >}}
+{{< figure src="/2018/05/8-backup.PNG" >}}
 
 Now, how else can I use this thing?
 

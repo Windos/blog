@@ -5,15 +5,14 @@
     <link>https://blog.toastit.dev/tags/toolbox/</link>
     <description>Recent content in Toolbox on ToastIT</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 16 Jan 2020 11:21:38 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/toolbox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Jan 2020 22:21:38 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/toolbox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Universal Automation: An Early Look</title>
       <link>https://blog.toastit.dev/blog/universal-automation-early-look/</link>
-      <pubDate>Thu, 16 Jan 2020 11:21:38 +0000</pubDate>
+      <pubDate>Wed, 15 Jan 2020 22:21:38 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/universal-automation-early-look/</guid>
-      <description>Chances are good that if you&amp;rsquo;ve been around any part of the PowerShell community during the past couple of years, you&amp;rsquo;ve at least heard of Universal Dashboard(UD).
-If, somehow, you haven&amp;rsquo;t heard of it yet UD is a product from Ironman Software, which is headed up by Adam Driscoll. It started as a tool focused on easily spinning up dashboards using PowerShell and has since developed into a full-on web framework.</description>
+      <description>I had the pleasure of testing Universal Automation while it was in private beta. Now the beta is open to all and I&amp;rsquo;m really excited for it to be in more hands because it&amp;rsquo;s a very interesting project!</description>
     </item>
     
   </channel>

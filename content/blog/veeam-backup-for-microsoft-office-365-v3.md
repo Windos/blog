@@ -3,7 +3,7 @@ categories = ["Backup", "Office 365"]
 date = 2019-02-18T21:29:41Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/02/katya-austin-554633-unsplash.jpg"
+thumbnail = "/2019/02/katya-austin-554633-unsplash.jpg"
 slug = "veeam-backup-for-microsoft-office-365-v3"
 summary = "I've been testing a beta of Veeam Backup for Microsoft Office 365 v3. It ticked some boxes of mine (spoiler alert.)"
 tags = ["Backup", "Office 365"]
@@ -48,7 +48,7 @@ The problem was that they were **SLOW**. Mainly because it had to check each and
 
 Why didn't I include it on the list? By the time I wrote my wish list, I'd already opened a ticket with Veeam support and had accepted the it was just the way of things for the foreseeable future.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/VeeamTicket.png" >}}
+{{< figure src="/2019/02/VeeamTicket.png" >}}
 
 But, much to my surprise it's sorted: "Up to 30x times faster SharePoint Online and OneDrive for Business incremental backups"
 
@@ -62,35 +62,35 @@ To be fair, these numbers came from a Friday night when **nothing** was happenin
 
 Currently with v2, SharePoint backups can be anywhere from 3 hours, 45 minutes through to 5 hours. Being ever hopeful the job is running every four hours, but this is a longer RPO than I was hoping for... and often the mark is missed as the previous backup is still running.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/SharePoint-v2.PNG" >}}
+{{< figure src="/2019/02/SharePoint-v2.PNG" >}}
 
 On v3 the same backup job takes about 20 minutes, and I've never seen it take longer than 30 minutes. This allows me to run the job hourly, and I'm much happier with that RPO.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/SharePoint-v3.PNG" >}}
+{{< figure src="/2019/02/SharePoint-v3.PNG" >}}
 
 ### **OneDrive for Business**
 
 Our OneDrive job on v2 was ok. It'd take about an hour, and I was happy with that. The schedule was set to every two hours, just in case it ran over the hour mark too often.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/OneDrive-v2.PNG" >}}
+{{< figure src="/2019/02/OneDrive-v2.PNG" >}}
 
 Once again, the v3 update delivers. The same OneDrive backup job now only takes 20 minutes and the schedule on the job is also down to hourly.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/OneDrive-v3.PNG" >}}
+{{< figure src="/2019/02/OneDrive-v3.PNG" >}}
 
 ### **Selective OneDrive Backups**
 
 But what about these new granular backup options for OneDrive backups? I put my "Critical" folder idea to the test. The incremental backups are about twice as fast as the non-selective backups (keeping in mind, I've drastically limited the scope of the backups.)
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/OneDrive-Selected.PNG" >}}
+{{< figure src="/2019/02/OneDrive-Selected.PNG" >}}
 
 What I really liked though, was the speed of the initial full backup. Without selecting a specific folder to be backed up, the full backup of OneDrive on v3 took over 7 hours.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/OneDrive-Full-Initial.PNG" >}}
+{{< figure src="/2019/02/OneDrive-Full-Initial.PNG" >}}
 
 My "Critical" folder test, however?
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/OneDrive-Selected-Initial.PNG" >}}
+{{< figure src="/2019/02/OneDrive-Selected-Initial.PNG" >}}
 
 Just a little over an hour. Woah, colour me impressed!
 

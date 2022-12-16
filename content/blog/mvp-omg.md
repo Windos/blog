@@ -3,7 +3,7 @@ categories = ["PowerShell", "Meta"]
 date = 2019-09-01T06:52:59Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/07/lidya-nada-638316-unsplash.jpg"
+thumbnail = "/2018/07/lidya-nada-638316-unsplash.jpg"
 slug = "mvp-omg"
 summary = "Today I'm humbled, shocked, and proud to announce that I'm now a Microsoft MVP."
 tags = ["PowerShell", "Meta"]
@@ -14,7 +14,7 @@ title = "MVP: OMG"
 
 Today I'm humbled, shocked, and proud to announce that I've been granted Microsoft's Most Valuable Professional ([MVP](https://mvp.microsoft.com/)) award in the Cloud and Datacenter Management category. I join an awesome group of  people that I've looked up to (AND STILL DO!) for years.
 
-![MVP-Email](__GHOST_URL__/content/images/2019/09/MVP-Email.PNG)
+![MVP-Email](/2019/09/MVP-Email.PNG)
 
 For those interested in the numbers, New Zealand has a pretty small pool of MVPs that I'm jumping into. Excluding myself, there's currently [28 people](https://mvp.microsoft.com/en-us/MvpSearch?lo=New+Zealand&sc=s) across all award categories, and [only three](https://mvp.microsoft.com/en-us/MvpSearch?ex=Cloud+and+Datacenter+Management&lo=New+Zealand&sc=s) under the Cloud and Datacenter Management banner.
 

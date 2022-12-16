@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2020-08-07T17:54:01Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/08/kate-hliznitsova-ZIGxIQ4gzBU-unsplash.jpg"
+thumbnail = "/2020/08/kate-hliznitsova-ZIGxIQ4gzBU-unsplash.jpg"
 slug = "actionable"
 summary = "I don't know how to express a happy dance with text. If I could that's what would be here because I've finally removed a thorn from my side that's been there for five years."
 tags = ["PowerShell", "BurntToast"]
@@ -36,7 +36,7 @@ But what about selection boxes? What if you want to take an action if the user d
 
 If you've been following my quest for actionable notifications over the years, you may have seen a screenshot like this.
 
-{{< figure src="__GHOST_URL__/content/images/2020/08/image.png" caption="Seeing this still irks me despite knowing where this post is going." >}}
+{{< figure src="/2020/08/image.png" caption="Seeing this still irks me despite knowing where this post is going." >}}
 
 Toasts are a Windows RT (WinRT) feature, and their associated events are WinRT events. PowerShell cannot subscribe to those events... until now (sort of, but we're not peaking too far behind the curtains today.)
 
@@ -46,7 +46,7 @@ But PowerShell 7 is great and once you've made the leap to that then following t
 
 Now to build hopes back up, assuming you're running the required versions, here's a taste of what you can now do:
 
-{{< figure src="__GHOST_URL__/content/images/2020/08/2020-08-06_23-03-10.gif" >}}
+{{< figure src="/2020/08/2020-08-06_23-03-10.gif" >}}
 
 That right there is a working selection box. A second toast is triggered by the activation (button click) of the first toast, based on the selected item.
 
@@ -167,7 +167,7 @@ Register-ObjectEvent -InputObject $Toast -EventName Activated -Action {
             $ImagePath = 'C:\temp\gifs\bob-ross.gif'
         }
     }
-    
+
     $Image1 = New-BTImage -Source $ImagePath -HeroImage
 
     $ImagePath2 = 'C:\Program Files\PowerShell\7-preview\assets\Powershell_av_colors.ico'

@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2017-05-15T12:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-4.jpg"
+thumbnail = "/2018/05/thumb-4.jpg"
 slug = "crouton-headers"
 summary = "Headers, introduced in the Creators Update, can be used to organize you toasts."
 tags = ["PowerShell", "BurntToast"]
@@ -40,11 +40,11 @@ There are two places you will see these headers manifest, on the toast themselve
 
 On the toast, the header appears, as you would expect, as a headline:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/toast.png" >}}
+{{< figure src="/2018/05/toast.png" >}}
 
 In the Action Center, a header will appear once and every toast with that header will be neatly sorted underneath.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/actioncenter.png" >}}
+{{< figure src="/2018/05/actioncenter.png" >}}
 
 ## **Bugger! I Messed up My Header!**
 
@@ -60,7 +60,7 @@ In general, given that these toasts are created using PowerShell, I consider the
 
 As a practical example of this, consider a script that [checks for new questions on Stack Overflow.](https://king.geek.nz/2017/03/20/crouton-stackwatch/) Unlike the previous example of this, let’s assume that you want to keep track of more than one tag. Headers will allow you to keep these questions organized.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/stackwatcher.png" >}}
+{{< figure src="/2018/05/stackwatcher.png" >}}
 
 That's all there is to headers (for now.) This will likely be the last crouton post for a short while. My next post should be something a little more... normal.
 

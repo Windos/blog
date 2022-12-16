@@ -8,39 +8,38 @@
   <title>
   Office 365 &amp; PowerShell: Jacking Into the Matrix - ToastIT
   </title>
-  <meta name="description" content="Just like their on-premises counterparts, each of these products has their own PowerShell interface for management." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Just like their on-premises counterparts, each of these products has their own PowerShell interface for management." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
-  
-  
+
+
 
   <meta property="og:title" content="Office 365 &amp; PowerShell: Jacking Into the Matrix" />
 <meta property="og:description" content="Just like their on-premises counterparts, each of these products has their own PowerShell interface for management." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/o365-connect/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2017-07-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2017-07-28T00:00:00+00:00" />
-
+<meta property="article:published_time" content="2017-07-27T12:00:00+00:00" />
+<meta property="article:modified_time" content="2017-07-27T12:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Office 365 &amp; PowerShell: Jacking Into the Matrix"/>
 <meta name="twitter:description" content="Just like their on-premises counterparts, each of these products has their own PowerShell interface for management."/>
 
   <meta itemprop="name" content="Office 365 &amp; PowerShell: Jacking Into the Matrix">
-<meta itemprop="description" content="Just like their on-premises counterparts, each of these products has their own PowerShell interface for management."><meta itemprop="datePublished" content="2017-07-28T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2017-07-28T00:00:00+00:00" />
-<meta itemprop="wordCount" content="612">
+<meta itemprop="description" content="Just like their on-premises counterparts, each of these products has their own PowerShell interface for management."><meta itemprop="datePublished" content="2017-07-27T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-07-27T12:00:00+00:00" />
+<meta itemprop="wordCount" content="613">
 <meta itemprop="keywords" content="PowerShell,Office 365," />
+
+
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
-    
+
     <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
-    
+
   </a>
   <button class="mobile-menu-button md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,19 +50,19 @@
   </button>
   <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
 
-    
+
     <li><a href="/blog">Blog</a></li>
-    
+
     <li><a href="/page/about/">About</a></li>
-    
+
     <li><a href="/tags">Tags</a></li>
-    
+
     <li><a href="/blog/emoji-support/">Top Post</a></li>
-    
 
-    
 
-    
+
+
+
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,20 +73,21 @@
         </svg>
       </span>
     </li>
-    
 
-    
+
+
   </ul>
 </header>
 <main class="flex-1">
-  
-  
 
-  
+
+
+
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Office 365 &amp; PowerShell: Jacking Into the Matrix</h1>
+
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -97,15 +97,15 @@
         <line x1="4" y1="11" x2="20" y2="11" />
         <rect x="8" y="15" width="2" height="2" />
       </svg>
-      Posted on 
-  
-    July 28, 2017
-  
+      Posted on
+
+    July 27, 2017
 
 
-      
+
+
         &nbsp;&bull;&nbsp;
-      
+
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <circle cx="12" cy="12" r="9" />
@@ -121,9 +121,12 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      612&nbsp;words
-      
+      613&nbsp;words
+
+
+
     </h5>
+
 
     <p>One thing became apparent very quickly during my recent foray into <a href="https://aka.ms/o365" target="_blank" rel="noopener">Office 365</a>
 : it truly is one big amalgam of bunch of Microsoft products. Just like their on-premises counterparts, each of these products has their own PowerShell interface for management.</p>
@@ -136,41 +139,38 @@
 <p>First of all, you&rsquo;ll need to download and install the Azure AD module, available in <a href="https://aka.ms/fohrds" target="_blank" rel="noopener">32-bit</a>
  or <a href="https://aka.ms/siqtee" target="_blank" rel="noopener">64-bit</a>
  flavors.</p>
-<p><em>Note that this is V1 of the Azure AD module, and there is a</em><a href="https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2" target="_blank" rel="noopener">V2</a>
-<em>available. I haven&rsquo;t looked into, or used, the new module but on the surface it looks like cmdlet names have changes between the two version, so for now I&rsquo;m just using what I know.</em></p>
+<p><em>Note that this is V1 of the Azure AD module, and there is a</em>  <a href="https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2" target="_blank" rel="noopener">V2</a>
+  <em>available. I haven&rsquo;t looked into, or used, the new module but on the surface it looks like cmdlet names have changes between the two version, so for now I&rsquo;m just using what I know.</em></p>
 <p>Once that&rsquo;s installed, go ahead and get connected to your tenant by running:</p>
-<pre><code>Connect-MsolService
-</code></pre>
-<p>As shown, this will show a box where you can supply your username and password for your tenant.
-<img src="__GHOST_URL__/content/images/2018/05/msol.png" alt="msol">
-It&rsquo;s possible to suppress this by supplying credentials, which is something we&rsquo;ll be doing in the follow up post.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Connect-MsolService</span>
+</span></span></code></pre></div><p>As shown, this will show a box where you can supply your username and password for your tenant.</p>
+<figure><img src="/2018/05/msol.png"/>
+</figure>
+
+<p>It&rsquo;s possible to suppress this by supplying credentials, which is something we&rsquo;ll be doing in the follow up post.</p>
 <h2 id="exchange-online"><strong>Exchange Online</strong></h2>
 <p>Just like on-premises Exchange you need to open a PowerShell session to your &ldquo;Exchange Server&rdquo;, in this case though you&rsquo;re connecting through a &ldquo;gateway&rdquo; in the cloud.</p>
 <p>First, store your credentials in a variable:</p>
-<pre><code>$Cred = Get-Credential
-</code></pre>
-<p>Then go ahead and start, then import, a PowerShell session:</p>
-<pre><code>$ExSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri &quot;https://outlook.office365.com/powershell-liveid/&quot; -Credential $Cred -Authentication &quot;Basic&quot; –AllowRedirection
-Import-PSSession $ExSession
-</code></pre>
-<p>You&rsquo;ll now have access to the various Exchange related cmdlets.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Cred</span> = <span style="color:#8be9fd;font-style:italic">Get-Credential</span>
+</span></span></code></pre></div><p>Then go ahead and start, then import, a PowerShell session:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$ExSession</span> = <span style="color:#8be9fd;font-style:italic">New-PSSession</span> -ConfigurationName Microsoft.Exchange -ConnectionUri <span style="color:#f1fa8c">&#34;https://outlook.office365.com/powershell-liveid/&#34;</span> -Credential <span style="color:#8be9fd;font-style:italic">$Cred</span> -Authentication <span style="color:#f1fa8c">&#34;Basic&#34;</span> –AllowRedirection
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Import-PSSession</span> <span style="color:#8be9fd;font-style:italic">$ExSession</span>
+</span></span></code></pre></div><p>You&rsquo;ll now have access to the various Exchange related cmdlets.</p>
 <h2 id="skype-for-business-online"><strong>Skype for Business Online</strong></h2>
 <p>This one is a little weird. Like Exchange Online, you create and import a PowerShell session however the session is created using a dedicated cmdlet.</p>
 <p>Start by installing the <a href="https://aka.ms/x3kyib" target="_blank" rel="noopener">Skype for Business Online Connector</a>
 . If you&rsquo;re running Windows 7 you&rsquo;ll also need to make sure that you&rsquo;re running PowerShell V3 and install the <a href="https://aka.ms/vl42dg" target="_blank" rel="noopener">Microsoft Online Services Sign-In Assistant</a>
 .</p>
 <p>Like Exchange, sore your credential then open and import Skype for Business Online session:</p>
-<pre><code>$Cred = Get-Credential
-$S4BSession = New-CSOnlineSession –Credential $Cred
-Import-PSSession $S4BSession
-</code></pre>
-<h2 id="sharepoint-online"><strong>SharePoint Online</strong></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Cred</span> = <span style="color:#8be9fd;font-style:italic">Get-Credential</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$S4BSession</span> = <span style="color:#8be9fd;font-style:italic">New-CSOnlineSession</span> –Credential <span style="color:#8be9fd;font-style:italic">$Cred</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Import-PSSession</span> <span style="color:#8be9fd;font-style:italic">$S4BSession</span>
+</span></span></code></pre></div><h2 id="sharepoint-online"><strong>SharePoint Online</strong></h2>
 <p>For our last service, you&rsquo;ll need to install the <a href="https://aka.ms/f04q5o" target="_blank" rel="noopener">SharePoint Online Management Shell</a>
  and again if you&rsquo;re on Windows 7 you&rsquo;ll need to be using PowerShell V3.</p>
 <p>Once that&rsquo;s installed simply run this command, supplementing your own tenant name:</p>
-<pre><code>Connect-SPOService -Url https://example-admin.sharepoint.com
-</code></pre>
-<p>Without specifying credentials, you&rsquo;ll see a very similar login box to what you got for the general Office 365 connection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Connect-SPOService</span> -Url https://<span style="color:#8be9fd;font-style:italic">example-admin</span>.sharepoint.com
+</span></span></code></pre></div><p>Without specifying credentials, you&rsquo;ll see a very similar login box to what you got for the general Office 365 connection.</p>
 <h2 id="when-in-doubt-you-probably-need-exchange"><strong>When in doubt, you probably need Exchange</strong></h2>
 <p>Several services without their own connection methods require you to open a session to Exchange Online, so chances are that will be your first port of call if you&rsquo;re unsure.</p>
 <p>Keep an eye out for my next post where we&rsquo;ll wrap these disparate connection methods up into one function, for those times where you don&rsquo;t want to think about it and just want to get connected quickly.</p>
@@ -184,7 +184,7 @@ Import-PSSession $S4BSession
       <p class="opacity-60"></p>
     </div>
     <ul class="flex justify-center gap-4">
-      
+
       <li>
         <a
           href="https://twitter.com/WindosNZ"
@@ -211,8 +211,8 @@ Import-PSSession $S4BSession
           </svg>
         </a>
       </li>
-      
-      
+
+
       <li>
         <a
           href="https://linkedin.com/in/windos"
@@ -241,9 +241,9 @@ Import-PSSession $S4BSession
           </svg>
         </a>
       </li>
-      
-      
-      
+
+
+
       <li>
         <a
           href="https://github.com/Windos"
@@ -270,11 +270,11 @@ Import-PSSession $S4BSession
           </svg>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <li>
         <a
           href="https://www.youtube.com/c/JoshuaKingSolari"
@@ -301,16 +301,18 @@ Import-PSSession $S4BSession
           </svg>
         </a>
       </li>
-      
-      
+
+
+
+
     </ul>
   </div>
 </div>
     </main><footer class="container p-6 mx-auto flex justify-between items-center">
   <span class="text-sm font-light">
-    
+
     Copyright © 2022 - Josh King · All rights reserved
-    
+
   </span>
   <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"

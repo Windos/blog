@@ -8,12 +8,10 @@
   <title>
   Splatting your way to reduced duplicated code - ToastIT
   </title>
-  <meta name="description" content="You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
@@ -22,19 +20,20 @@
 <meta property="og:description" content="You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/ps-splatting/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2014-09-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2014-09-24T00:00:00+00:00" />
-
+<meta property="article:published_time" content="2014-09-23T12:00:00+00:00" />
+<meta property="article:modified_time" content="2014-09-23T12:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Splatting your way to reduced duplicated code"/>
 <meta name="twitter:description" content="You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet."/>
 
   <meta itemprop="name" content="Splatting your way to reduced duplicated code">
-<meta itemprop="description" content="You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet."><meta itemprop="datePublished" content="2014-09-24T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2014-09-24T00:00:00+00:00" />
-<meta itemprop="wordCount" content="317">
+<meta itemprop="description" content="You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet."><meta itemprop="datePublished" content="2014-09-23T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2014-09-23T12:00:00+00:00" />
+<meta itemprop="wordCount" content="315">
 <meta itemprop="keywords" content="PowerShell,Nugget," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Splatting your way to reduced duplicated code</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    September 24, 2014
+    September 23, 2014
   
 
 
@@ -121,72 +121,70 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      317&nbsp;words
+      315&nbsp;words
+      
+        
       
     </h5>
+    
 
     <p><a href="https://technet.microsoft.com/en-us/library/jj672955.aspx" target="_blank" rel="noopener">Splatting</a>
  is a great way of making cmdlet calls with a lot of parameters more legible. You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet.</p>
 <p>A good example of this in action from the <a href="https://technet.microsoft.com/en-us/magazine/gg675931.aspx" target="_blank" rel="noopener">TechNet magazine</a>
  is turning:</p>
-<p>{% highlight powershell %}
-Get-WmiObject –computername SERVER-R2 –class Win32_LogicalDisk –filter &ldquo;DriveType=3&rdquo; –credential &ldquo;Administrator&rdquo;
-{% endhighlight %}</p>
+<p>{% highlight powershell %}Get-WmiObject –computername SERVER-R2 –class Win32_LogicalDisk –filter &ldquo;DriveType=3&rdquo; –credential &ldquo;Administrator&rdquo;{% endhighlight %}</p>
 <p>into:</p>
-<pre><code>$parms = @{'class'='Win32_BIOS';
-           'computername'='SERVER-R2';
-           'filter'='drivetype=3';
-           'credential'='Administrator'
-}
-
-Get-WmiObject @parms
-</code></pre>
-<p>Readability isn&rsquo;t the only reason to splat your parameters. It can also help you reduce mostly duplicated cmdlets calls. In an advanced function I wrote to wrap around the <a href="https://technet.microsoft.com/en-us/library/hh849925.aspx" target="_blank" rel="noopener">Send-MailMessage</a>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$parms</span> = @{<span style="color:#f1fa8c">&#39;class&#39;</span>=<span style="color:#f1fa8c">&#39;Win32_BIOS&#39;</span>;
+</span></span><span style="display:flex;"><span>           <span style="color:#f1fa8c">&#39;computername&#39;</span>=<span style="color:#f1fa8c">&#39;SERVER-R2&#39;</span>;
+</span></span><span style="display:flex;"><span>           <span style="color:#f1fa8c">&#39;filter&#39;</span>=<span style="color:#f1fa8c">&#39;drivetype=3&#39;</span>;
+</span></span><span style="display:flex;"><span>           <span style="color:#f1fa8c">&#39;credential&#39;</span>=<span style="color:#f1fa8c">&#39;Administrator&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Get-WmiObject</span> <span style="color:#8be9fd;font-style:italic">@parms</span>
+</span></span></code></pre></div><p>Readability isn&rsquo;t the only reason to splat your parameters. It can also help you reduce mostly duplicated cmdlets calls. In an advanced function I wrote to wrap around the <a href="https://technet.microsoft.com/en-us/library/hh849925.aspx" target="_blank" rel="noopener">Send-MailMessage</a>
 , you could specify <em>TO</em>, <em>From</em>, <em>CC</em>, <em>SmtpServer</em>, <em>Subject</em> and <em>Body</em> though parameters. <em>To</em>, <em>From</em>, <em>SmtpServer</em> and <em>Subject</em> all have default values, but <em>Body</em> and <em>CC</em> did not.</p>
 <p>In order to not get errors trying to pass null variables Send-MailMessage, you could use a complex series of <strong>if</strong> statements:</p>
-<pre><code>if ($Body -ne $null -and $Body -ne '')
-{
-    if ($CC -ne $null -and $CC -ne '')
-    {
-        Send-MailMessage -SmtpServer $SmtpServer -From $From -To $To -CC $CC -Body $Body -Subject $Subject
-    }
-    else
-    {
-        Send-MailMessage -SmtpServer $SmtpServer -From $From -To $To -Body $Body -Subject $Subject
-    }
-}
-else
-{
-    if ($CC -ne $null -and $CC -ne '')
-    {
-        Send-MailMessage -SmtpServer $SmtpServer -From $From -To $To -CC $CC -Subject $Subject
-    }
-    else
-    {
-        Send-MailMessage -SmtpServer $SmtpServer -From $From -To $To -Subject $Subject
-    }
-}
-</code></pre>
-<p>Four different possible Send-MailMessage calls with largely the same parameters for each. Not very efficient, or readable. Imagine if another parameter or two without default values were added. Splatting, and the ability to add Key=Value pairs to hastables makes this situation a lot more manageable.</p>
-<pre><code>$splat = @{'SmtpServer'=$SmtpServer;
-           'From'=$From;
-           'To'=$To;
-           'Subject'=$Subject;
-}
-
-if ($Body -ne $null -and $Body -ne '')
-{
-    $splat.Add('Body',$Body)
-}
-
-if ($CC -ne $null -and $CC -ne '')
-{
-    $splat.Add('CC',$CC)
-}
-
-Send-MailMessage @splat
-</code></pre>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Body</span> <span style="color:#ff79c6">-ne</span> $null <span style="color:#ff79c6">-and</span> <span style="color:#8be9fd;font-style:italic">$Body</span> <span style="color:#ff79c6">-ne</span> <span style="color:#f1fa8c">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$CC</span> <span style="color:#ff79c6">-ne</span> $null <span style="color:#ff79c6">-and</span> <span style="color:#8be9fd;font-style:italic">$CC</span> <span style="color:#ff79c6">-ne</span> <span style="color:#f1fa8c">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Send-MailMessage</span> -SmtpServer <span style="color:#8be9fd;font-style:italic">$SmtpServer</span> -From <span style="color:#8be9fd;font-style:italic">$From</span> -To <span style="color:#8be9fd;font-style:italic">$To</span> -CC <span style="color:#8be9fd;font-style:italic">$CC</span> -Body <span style="color:#8be9fd;font-style:italic">$Body</span> -Subject <span style="color:#8be9fd;font-style:italic">$Subject</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Send-MailMessage</span> -SmtpServer <span style="color:#8be9fd;font-style:italic">$SmtpServer</span> -From <span style="color:#8be9fd;font-style:italic">$From</span> -To <span style="color:#8be9fd;font-style:italic">$To</span> -Body <span style="color:#8be9fd;font-style:italic">$Body</span> -Subject <span style="color:#8be9fd;font-style:italic">$Subject</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$CC</span> <span style="color:#ff79c6">-ne</span> $null <span style="color:#ff79c6">-and</span> <span style="color:#8be9fd;font-style:italic">$CC</span> <span style="color:#ff79c6">-ne</span> <span style="color:#f1fa8c">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Send-MailMessage</span> -SmtpServer <span style="color:#8be9fd;font-style:italic">$SmtpServer</span> -From <span style="color:#8be9fd;font-style:italic">$From</span> -To <span style="color:#8be9fd;font-style:italic">$To</span> -CC <span style="color:#8be9fd;font-style:italic">$CC</span> -Subject <span style="color:#8be9fd;font-style:italic">$Subject</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Send-MailMessage</span> -SmtpServer <span style="color:#8be9fd;font-style:italic">$SmtpServer</span> -From <span style="color:#8be9fd;font-style:italic">$From</span> -To <span style="color:#8be9fd;font-style:italic">$To</span> -Subject <span style="color:#8be9fd;font-style:italic">$Subject</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Four different possible Send-MailMessage calls with largely the same parameters for each. Not very efficient, or readable. Imagine if another parameter or two without default values were added. Splatting, and the ability to add Key=Value pairs to hastables makes this situation a lot more manageable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$splat</span> = @{<span style="color:#f1fa8c">&#39;SmtpServer&#39;</span>=<span style="color:#8be9fd;font-style:italic">$SmtpServer</span>;
+</span></span><span style="display:flex;"><span>           <span style="color:#f1fa8c">&#39;From&#39;</span>=<span style="color:#8be9fd;font-style:italic">$From</span>;
+</span></span><span style="display:flex;"><span>           <span style="color:#f1fa8c">&#39;To&#39;</span>=<span style="color:#8be9fd;font-style:italic">$To</span>;
+</span></span><span style="display:flex;"><span>           <span style="color:#f1fa8c">&#39;Subject&#39;</span>=<span style="color:#8be9fd;font-style:italic">$Subject</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Body</span> <span style="color:#ff79c6">-ne</span> $null <span style="color:#ff79c6">-and</span> <span style="color:#8be9fd;font-style:italic">$Body</span> <span style="color:#ff79c6">-ne</span> <span style="color:#f1fa8c">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$splat</span>.Add(<span style="color:#f1fa8c">&#39;Body&#39;</span>,<span style="color:#8be9fd;font-style:italic">$Body</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$CC</span> <span style="color:#ff79c6">-ne</span> $null <span style="color:#ff79c6">-and</span> <span style="color:#8be9fd;font-style:italic">$CC</span> <span style="color:#ff79c6">-ne</span> <span style="color:#f1fa8c">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$splat</span>.Add(<span style="color:#f1fa8c">&#39;CC&#39;</span>,<span style="color:#8be9fd;font-style:italic">$CC</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Send-MailMessage</span> <span style="color:#8be9fd;font-style:italic">@splat</span>
+</span></span></code></pre></div>
   </article><div class="bg-blue-300 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
     <div>
@@ -311,6 +309,8 @@ Send-MailMessage @splat
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

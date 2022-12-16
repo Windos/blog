@@ -8,39 +8,38 @@
   <title>
   Office 365 &amp; PowerShell: Connecting All the Pieces - ToastIT
   </title>
-  <meta name="description" content="Now that we&#39;ve figured out how to connect to each of the Office 365 services, it&#39;s time to tie a pretty (PowerShell) blue bow on it." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Now that we&rsquo;ve figured out how to connect to each of the Office 365 services, it&rsquo;s time to tie a pretty (PowerShell) blue bow on it." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
-  
-  
+
+
 
   <meta property="og:title" content="Office 365 &amp; PowerShell: Connecting All the Pieces" />
-<meta property="og:description" content="Now that we&#39;ve figured out how to connect to each of the Office 365 services, it&#39;s time to tie a pretty (PowerShell) blue bow on it." />
+<meta property="og:description" content="Now that we&rsquo;ve figured out how to connect to each of the Office 365 services, it&rsquo;s time to tie a pretty (PowerShell) blue bow on it." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/o365-all-the-things/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2017-08-04T00:00:00+00:00" />
-<meta property="article:modified_time" content="2017-08-04T00:00:00+00:00" />
-
+<meta property="article:published_time" content="2017-08-03T12:00:00+00:00" />
+<meta property="article:modified_time" content="2017-08-03T12:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Office 365 &amp; PowerShell: Connecting All the Pieces"/>
-<meta name="twitter:description" content="Now that we&#39;ve figured out how to connect to each of the Office 365 services, it&#39;s time to tie a pretty (PowerShell) blue bow on it."/>
+<meta name="twitter:description" content="Now that we&rsquo;ve figured out how to connect to each of the Office 365 services, it&rsquo;s time to tie a pretty (PowerShell) blue bow on it."/>
 
   <meta itemprop="name" content="Office 365 &amp; PowerShell: Connecting All the Pieces">
-<meta itemprop="description" content="Now that we&#39;ve figured out how to connect to each of the Office 365 services, it&#39;s time to tie a pretty (PowerShell) blue bow on it."><meta itemprop="datePublished" content="2017-08-04T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2017-08-04T00:00:00+00:00" />
+<meta itemprop="description" content="Now that we&rsquo;ve figured out how to connect to each of the Office 365 services, it&rsquo;s time to tie a pretty (PowerShell) blue bow on it."><meta itemprop="datePublished" content="2017-08-03T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-08-03T12:00:00+00:00" />
 <meta itemprop="wordCount" content="689">
 <meta itemprop="keywords" content="PowerShell,Office 365," />
+
+
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
-    
+
     <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
-    
+
   </a>
   <button class="mobile-menu-button md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,19 +50,19 @@
   </button>
   <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
 
-    
+
     <li><a href="/blog">Blog</a></li>
-    
+
     <li><a href="/page/about/">About</a></li>
-    
+
     <li><a href="/tags">Tags</a></li>
-    
+
     <li><a href="/blog/emoji-support/">Top Post</a></li>
-    
 
-    
 
-    
+
+
+
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,20 +73,21 @@
         </svg>
       </span>
     </li>
-    
 
-    
+
+
   </ul>
 </header>
 <main class="flex-1">
-  
-  
 
-  
+
+
+
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Office 365 &amp; PowerShell: Connecting All the Pieces</h1>
+
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -97,15 +97,15 @@
         <line x1="4" y1="11" x2="20" y2="11" />
         <rect x="8" y="15" width="2" height="2" />
       </svg>
-      Posted on 
-  
-    August 4, 2017
-  
+      Posted on
+
+    August 3, 2017
 
 
-      
+
+
         &nbsp;&bull;&nbsp;
-      
+
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <circle cx="12" cy="12" r="9" />
@@ -122,8 +122,11 @@
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
       689&nbsp;words
-      
+
+
+
     </h5>
+
 
     <p>Now that we&rsquo;ve figured out <a href="https://king.geek.nz/2017/07/28/o365-connect/" target="_blank" rel="noopener">how to connect</a>
  to each of the Office 365 services, it&rsquo;s time to tie a pretty (PowerShell) blue bow on it. If you just want to skip the writeup and see the result, you can check out the <a href="https://gist.github.com/Windos/5f96a9425b5b31c23df441035b478c5f" target="_blank" rel="noopener">Gist</a>
@@ -134,87 +137,83 @@
 <h2 id="initial-housekeeping"><strong>Initial housekeeping</strong></h2>
 <p>We know that there are a few requirements we need to meet to establish our connection(s) to Office 365, so we might as well put PowerShell to work. Using <a href="https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_requires" target="_blank" rel="noopener">#Requires</a>
  statements allows us to specify that we need PowerShell V3 (for those running Windows 7), and all of the installable modules. If the requirements aren&rsquo;t met, PowerShell will handle letting the user know.</p>
-<pre><code>#Requires -Version 3.0
-#Requires -Modules MSOnline, SkypeOnlineConnector, Microsoft.Online.SharePoint.PowerShell
-</code></pre>
-<p>Assuming we don&rsquo;t meet the requirements, I want to have download links for all the relevant installs readily available.</p>
-<pre><code>&lt;#
-    Required downloads
-
-    Microsoft Azure Active Directory Module for Windows PowerShell
-        32-bit: http://aka.ms/fohrds
-        64-bit: http://aka.ms/siqtee
-    Skype for Business Online Connector: http://aka.ms/x3kyib
-    SharePoint Online Management Shell: http://aka.ms/f04q5o
-
-    Microsoft Online Services Sign-In Assistant (if Win7): http://aka.ms/vl42dg
-#&gt;
-</code></pre>
-<h2 id="connect-o365services"><strong>Connect-O365Services</strong></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#6272a4">#</span><span style="color:#ff79c6">Requires</span> <span style="color:#8be9fd;font-style:italic">-Version</span><span style="color:#50fa7b"> 3.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#</span><span style="color:#ff79c6">Requires</span> <span style="color:#8be9fd;font-style:italic">-Modules</span><span style="color:#50fa7b"> MSOnline, SkypeOnlineConnector, Microsoft.Online.SharePoint.PowerShell</span>
+</span></span></code></pre></div><p>Assuming we don&rsquo;t meet the requirements, I want to have download links for all the relevant installs readily available.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#6272a4">&lt;#
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">    Required downloads
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">    Microsoft Azure Active Directory Module for Windows PowerShell
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">        32-bit: http://aka.ms/fohrds
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">        64-bit: http://aka.ms/siqtee
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">    Skype for Business Online Connector: http://aka.ms/x3kyib
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">    SharePoint Online Management Shell: http://aka.ms/f04q5o
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">    Microsoft Online Services Sign-In Assistant (if Win7): http://aka.ms/vl42dg
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4">#&gt;</span>
+</span></span></code></pre></div><h2 id="connect-o365services"><strong>Connect-O365Services</strong></h2>
 <p>Now let&rsquo;s create our function for connecting to the various services. Start by defining the function and its parameters.</p>
-<pre><code>function Connect-O365Services {
-    param (
-        [Parameter(Mandatory = $true,
-                   Position = 0)]
-        [ValidateNotNullOrEmpty()]
-        [string]
-        $Tenant,
-
-        [Parameter(Mandatory = $true,
-                   Position = 1)]
-        [ValidateNotNullOrEmpty()]
-        [System.Management.Automation.PSCredential]
-        [System.Management.Automation.Credential()]
-        $Credential
-    )
-</code></pre>
-<p>Tenant is straight forward, it&rsquo;s just be the name that identifies your Office 365 instance. If you&rsquo;re using example.onmicrosoft.com, for example, you&rsquo;d supply &ldquo;example&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">Connect-O365Services</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">param</span> (
+</span></span><span style="display:flex;"><span>        [<span style="color:#8be9fd;font-style:italic">Parameter</span>(<span style="color:#50fa7b">Mandatory</span> = $true,
+</span></span><span style="display:flex;"><span>                   <span style="color:#50fa7b">Position</span> = <span style="color:#bd93f9">0</span>)]
+</span></span><span style="display:flex;"><span>        [<span style="color:#8be9fd;font-style:italic">ValidateNotNullOrEmpty</span>()]
+</span></span><span style="display:flex;"><span>        [string]
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$Tenant</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        [<span style="color:#8be9fd;font-style:italic">Parameter</span>(<span style="color:#50fa7b">Mandatory</span> = $true,
+</span></span><span style="display:flex;"><span>                   <span style="color:#50fa7b">Position</span> = <span style="color:#bd93f9">1</span>)]
+</span></span><span style="display:flex;"><span>        [<span style="color:#8be9fd;font-style:italic">ValidateNotNullOrEmpty</span>()]
+</span></span><span style="display:flex;"><span>        [System.Management.Automation.PSCredential]
+</span></span><span style="display:flex;"><span>        [System.Management.Automation.Credential()]
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$Credential</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span></code></pre></div><p>Tenant is straight forward, it&rsquo;s just be the name that identifies your Office 365 instance. If you&rsquo;re using example.onmicrosoft.com, for example, you&rsquo;d supply &ldquo;example&rdquo;.</p>
 <p>Credential is a little more interesting. You&rsquo;ll note that there are two possible object types that it&rsquo;ll accept allowing you can provide a fully formed credential object from <code>Get-Credential</code> or a username as a string, being prompted for a password at run-time.</p>
 <p>We&rsquo;re making PowerShell work for us again by validating that the input for these parameters isn&rsquo;t null (or empty) to save us some error handling.</p>
 <p>Next, we&rsquo;ll go through and actually get connected. I won&rsquo;t breakdown each one, as it&rsquo;s more or less identical to what we&rsquo;ve <a href="https://king.geek.nz/2017/07/28/o365-connect/" target="_blank" rel="noopener">already covered</a>
 .</p>
-<pre><code>    # Connect to Office 365
-    Connect-MsolService -Credential $Credential
-
-    # Connect to Exchange Online
-    $Script:ExSession = New-PSSession -Credential $Credential -ConfigurationName Microsoft.Exchange -ConnectionUri &quot;https://outlook.office365.com/powershell-liveid/&quot; -Authentication &quot;Basic&quot; -AllowRedirection -ErrorAction SilentlyContinue
-    if ($Script:ExSession) {
-        Import-PSSession $Script:ExSession
-    }
-
-    # Connect to SharePoint Online
-    Connect-SPOService -Credential $Credential -Url &quot;https://$Tenant-admin.sharepoint.com&quot; -ErrorAction SilentlyContinue
-
-    # Connect to Skype for Business Online
-    $Script:S4BSession = New-CSOnlineSession -Credential $Credential -ErrorAction SilentlyContinue
-    if ($Script:S4BSession) {
-        Import-PSSession $Script:S4BSession
-    }
-</code></pre>
-<p>The last, and most important, step for this function is to remember the closing curly brace.</p>
-<pre><code>}
-</code></pre>
-<p>Oh, that variable notion of <code>$Script:Name</code> is being used here so that the variables are accessible to other functions within this script file… like the disconnect function below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>    <span style="color:#6272a4"># Connect to Office 365</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">Connect-MsolService</span> -Credential <span style="color:#8be9fd;font-style:italic">$Credential</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># Connect to Exchange Online</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Script:ExSession</span> = <span style="color:#8be9fd;font-style:italic">New-PSSession</span> -Credential <span style="color:#8be9fd;font-style:italic">$Credential</span> -ConfigurationName Microsoft.Exchange -ConnectionUri <span style="color:#f1fa8c">&#34;https://outlook.office365.com/powershell-liveid/&#34;</span> -Authentication <span style="color:#f1fa8c">&#34;Basic&#34;</span> -AllowRedirection -ErrorAction SilentlyContinue
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Script:ExSession</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Import-PSSession</span> <span style="color:#8be9fd;font-style:italic">$Script:ExSession</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># Connect to SharePoint Online</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">Connect-SPOService</span> -Credential <span style="color:#8be9fd;font-style:italic">$Credential</span> -Url <span style="color:#f1fa8c">&#34;https://</span><span style="color:#8be9fd;font-style:italic">$Tenant</span><span style="color:#f1fa8c">-admin.sharepoint.com&#34;</span> -ErrorAction SilentlyContinue
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># Connect to Skype for Business Online</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Script:S4BSession</span> = <span style="color:#8be9fd;font-style:italic">New-CSOnlineSession</span> -Credential <span style="color:#8be9fd;font-style:italic">$Credential</span> -ErrorAction SilentlyContinue
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Script:S4BSession</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Import-PSSession</span> <span style="color:#8be9fd;font-style:italic">$Script:S4BSession</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>The last, and most important, step for this function is to remember the closing curly brace.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Oh, that variable notion of <code>$Script:Name</code> is being used here so that the variables are accessible to other functions within this script file… like the disconnect function below.</p>
 <h2 id="disconnect-o365services"><strong>Disconnect-O365Services</strong></h2>
-<p>Like a good &ldquo;tidy kiwi,&rdquo; we&rsquo;ll also be cleaning up the various remote sessions we opened with the previous function.
-<img src="__GHOST_URL__/content/images/2018/05/tidykiwi.jpg" alt="tidykiwi">
-You&rsquo;ll notice that there is no <code>Disconnect-MsolService</code> cmdlet. Unlike the other services, there is no actual PS session created, so just disconnect the others and close the PowerShell host.</p>
-<pre><code>function Disconnect-O365Services {
-    # Disconnect from Exchange Online
-    if ($Script:ExSession) {
-        Remove-PSSession $Script:ExSession -ErrorAction SilentlyContinue
-    }
+<p>Like a good &ldquo;tidy kiwi,&rdquo; we&rsquo;ll also be cleaning up the various remote sessions we opened with the previous function.</p>
+<figure><img src="/2018/05/tidykiwi.jpg"/>
+</figure>
 
-    # Disconnect from SharePoint Online
-    Disconnect-SPOService -ErrorAction SilentlyContinue
-
-    # Disconnect from Skype for Business Online
-    if ($Script:S4BSession) {
-        Remove-PSSession $Script:S4BSession -ErrorAction SilentlyContinue
-    }
-}
-</code></pre>
-<h2 id="theres-always-more-to-do"><strong>There&rsquo;s always more to do</strong></h2>
+<p>You&rsquo;ll notice that there is no <code>Disconnect-MsolService</code> cmdlet. Unlike the other services, there is no actual PS session created, so just disconnect the others and close the PowerShell host.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">Disconnect-O365Services</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># Disconnect from Exchange Online</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Script:ExSession</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Remove-PSSession</span> <span style="color:#8be9fd;font-style:italic">$Script:ExSession</span> -ErrorAction SilentlyContinue
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># Disconnect from SharePoint Online</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">Disconnect-SPOService</span> -ErrorAction SilentlyContinue
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># Disconnect from Skype for Business Online</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Script:S4BSession</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Remove-PSSession</span> <span style="color:#8be9fd;font-style:italic">$Script:S4BSession</span> -ErrorAction SilentlyContinue
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="theres-always-more-to-do"><strong>There&rsquo;s always more to do</strong></h2>
 <p>As I said in the disclaimer, this isn&rsquo;t a complete solution. It is a start, and will get the job done.</p>
 <p>You could add things to this like checking if a service is provisioned on your tenant before trying to connect to it or checking to see if the credentials you&rsquo;re using even have permission within that service.</p>
 <p>Have you created your own script for getting connected to Office 365, or did this post inspire you to make one? If so, send me a link, as I&rsquo;d love to see your implantation.</p>
@@ -226,7 +225,7 @@ You&rsquo;ll notice that there is no <code>Disconnect-MsolService</code> cmdlet.
       <p class="opacity-60"></p>
     </div>
     <ul class="flex justify-center gap-4">
-      
+
       <li>
         <a
           href="https://twitter.com/WindosNZ"
@@ -253,8 +252,8 @@ You&rsquo;ll notice that there is no <code>Disconnect-MsolService</code> cmdlet.
           </svg>
         </a>
       </li>
-      
-      
+
+
       <li>
         <a
           href="https://linkedin.com/in/windos"
@@ -283,9 +282,9 @@ You&rsquo;ll notice that there is no <code>Disconnect-MsolService</code> cmdlet.
           </svg>
         </a>
       </li>
-      
-      
-      
+
+
+
       <li>
         <a
           href="https://github.com/Windos"
@@ -312,11 +311,11 @@ You&rsquo;ll notice that there is no <code>Disconnect-MsolService</code> cmdlet.
           </svg>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <li>
         <a
           href="https://www.youtube.com/c/JoshuaKingSolari"
@@ -343,16 +342,18 @@ You&rsquo;ll notice that there is no <code>Disconnect-MsolService</code> cmdlet.
           </svg>
         </a>
       </li>
-      
-      
+
+
+
+
     </ul>
   </div>
 </div>
     </main><footer class="container p-6 mx-auto flex justify-between items-center">
   <span class="text-sm font-light">
-    
+
     Copyright © 2022 - Josh King · All rights reserved
-    
+
   </span>
   <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"

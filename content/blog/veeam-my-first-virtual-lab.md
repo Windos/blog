@@ -3,7 +3,7 @@ categories = ["Backup"]
 date = 2018-03-25T20:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/MaxPixel.freegreatpicture.com-Toy-Child-Game-Childhood-Blocks-Education-Kid-503109.jpg"
+thumbnail = "/2018/05/MaxPixel.freegreatpicture.com-Toy-Child-Game-Childhood-Blocks-Education-Kid-503109.jpg"
 slug = "veeam-my-first-virtual-lab"
 summary = "Over the last day or so I've been setting up a sandbox/virtual lab which leverages our Veeam backups."
 tags = ["Backup"]
@@ -50,7 +50,7 @@ First, let setup our **Application Group**. I'm going to assume we're setting up
 
 Fire up your Backup & Recovery Console, head over to the "Backup Infrastructure" section and look for "Application Groups" under SureBackup. Go ahead and create a new group, give it a descriptive name and add your VMs.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/appgroup.png" >}}
+{{< figure src="/2018/05/appgroup.png" >}}
 
 You'll note that I marked my Domain Controller for an authoritative restore (I had domain trust issues without this.) This is where you can adjust the order in which the VMs are restored, and to tweak any other VM specific settings. Have a look through, and make any changes that suit your needs.
 
@@ -62,21 +62,21 @@ Again, add a Virtual Lab and give it a descriptive name.
 
 Choose a host which will be the home of your lab. Unfortunately, it has to be a specific host and cannot be a cluster. The wizard will show you some stats about the host you've selected, such as how many VMs are currently running on it. Also, click on "Configure" to define a folder into which the lab can be stored in (keeping vCenter nice and tidy.)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/lab-host.png" >}}
+{{< figure src="/2018/05/lab-host.png" >}}
 
 It's more or less the same process for a datastore, except that there's no customization.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/lab-datastore.png" >}}
+{{< figure src="/2018/05/lab-datastore.png" >}}
 
 Here's where things start to get interesting. You now need to configure the proxy appliance for this lab. Give it a name (you will see this pop up in vCenter), set which production network it should connect to, and give it a static IP address. Technically you could let it obtain one from DHCP, but you'll be routing traffic to this later so I prefer to not risk it moving around.
 
 Also, you can tick a box here to allow the appliance to act as a proxy so that the lab can access the internet. I'll be assuming that this is what you want during the rest of this post.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/lab-proxy.png" >}}
+{{< figure src="/2018/05/lab-proxy.png" >}}
 
 You might be able to make use of a basic single-host networking configuration, however my environment meant I had to go for an advanced one.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/lab-advanced.png" >}}
+{{< figure src="/2018/05/lab-advanced.png" >}}
 
 The defaults on the Isolated Networks page was perfect for me. Make sure you sanity check what's there.
 
@@ -84,7 +84,7 @@ The next page has you configure the internal network for your lab. The two main 
 
 Generally, you want to set the address of the proxy to match what would normally be your network's gateway address, and for the masquerade range pick something that is unique on your network. In this example we're pretending that the production network is 10.1.1.x, the gateways is 10.1.1.254 and we've set our masquerade range to 10.1.**2**.x.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/lab-network.png" >}}
+{{< figure src="/2018/05/lab-network.png" >}}
 
 I didn't need to define any static mappings, and just completed the wizard.
 

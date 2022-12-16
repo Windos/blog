@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2018-04-01T16:30:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/feature.jpg"
+thumbnail = "/2018/05/feature.jpg"
 slug = "crouton-sounds"
 summary = "It gives me a glimpse into how people are using the module and it also focuses my documentation efforts on something that might actually be useful."
 tags = ["PowerShell", "BurntToast"]
@@ -31,7 +31,7 @@ Unfortunately, this is an all or nothing switch. You can't use these 15 "advance
 
 The best way to get your head around this switch is to see it in practice. The default toast from `New-BurntToastNotification` looks like this:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/defaulttoast.png" >}}
+{{< figure src="/2018/05/defaulttoast.png" >}}
 
 To replicate this with the advanced function is somewhat more involved:
 

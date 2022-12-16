@@ -3,7 +3,7 @@ categories = ["Security", "Meta"]
 date = 2017-08-28T12:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-8.jpg"
+thumbnail = "/2018/05/thumb-8.jpg"
 slug = "war-on-passwords"
 summary = "The NIST guidelines struck a chord with me. It seemed to be something that our users would embrace while addressing potential issues within any given workplace"
 tags = ["Security", "Meta"]
@@ -52,7 +52,7 @@ In reality, your users aren't picking a unique password every time. They're foll
 
 Rather than keeping your network secure, you're just serving to make users jump through hoops that frustrate them and, potentially, could lead them to committing an even greater sin that just incrementing the number: writing it on post-it and sticking it to their monitor. Okay, maybe it won't be that visible, but they could be inclined to record it somewhere.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/history.jpg" >}}
+{{< figure src="/2018/05/history.jpg" >}}
 
 ## **Wait, you said no complexity? That can't be right!**
 

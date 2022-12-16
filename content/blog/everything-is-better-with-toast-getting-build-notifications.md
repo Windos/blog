@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast", "Office 365"]
 date = 2019-02-08T22:51:33Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/02/randy-fath-531056-unsplash.jpg"
+thumbnail = "/2019/02/randy-fath-531056-unsplash.jpg"
 slug = "everything-is-better-with-toast-getting-build-notifications"
 summary = "When you want to keep an eye on build results, but don't want to dedicate a screen to the web page, toast is the answer!"
 tags = ["PowerShell", "BurntToast", "Office 365"]
@@ -61,7 +61,7 @@ For a little bit of flair, and because the Pipeline's logo doesn't look right wh
         'Failed' { $Icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Flat_cross_icon.svg/480px-Flat_cross_icon.svg.png' }
         Default { $Icon = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Icon-round-Question_mark.svg/480px-Icon-round-Question_mark.svg.png' }
     }
-    
+
     $ShortCommitSha = $Commit.Substring(0,7)
 
 ```
@@ -103,7 +103,7 @@ Invoke-RestMethod -Headers @{ Authorization = "Bearer $Token" } -Uri http://loca
 
 Of note here, is the form that the authorization takes in the headers parameter. If you don't get that right, you'll get an unauthorized error. All going well, you'll get something like this:
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/Fake-succeeded.PNG" >}}
+{{< figure src="/2019/02/Fake-succeeded.PNG" >}}
 
 Success!
 
@@ -126,7 +126,7 @@ Let's start by defining some variables. Getting there is a bit of a rabbit hole,
 
 Remember to click the padlock so that these become secret variables, meaning the values cannot be seen as plain text (you don't want your personal IP address and token to leak!)
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/API-Variables.PNG" >}}
+{{< figure src="/2019/02/API-Variables.PNG" >}}
 
 Now let's add a new task to our build YAML file. This is going to be a PowerShell based task, and we'll pass in our two newly defined variables as environment variables, making it easy to reference them within the script.
 

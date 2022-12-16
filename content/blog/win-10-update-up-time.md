@@ -3,7 +3,7 @@ categories = ["Windows"]
 date = 2016-11-06T10:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb.png"
+thumbnail = "/2018/05/thumb.png"
 slug = "win-10-update-up-time"
 summary = "Three weeks on, did Windows 10 decide to reboot?"
 tags = ["Windows"]
@@ -24,15 +24,15 @@ The TL;DR of the previous post was:
 
 Nope. Three weeks (nearly) later, and we still haven't had a reboot.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/Screenshot-Win10-Ent-201611071314.png" >}}
+{{< figure src="/2018/05/Screenshot-Win10-Ent-201611071314.png" >}}
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/Screenshot-Win10-Pro-201611071314.png" >}}
+{{< figure src="/2018/05/Screenshot-Win10-Pro-201611071314.png" >}}
 
 Now a caveat: I haven't set _any_ other Windows Update related settings. This includes, but is not limited to, setting active house, restart or advanced options. I don't know how these settings would affect, or potentially override, the 'fix' and the complexity in introducing them as variables to this test means... well I'm not doing it.
 
 Also, **NEVER** click the install button within the Windows Update interface until you're ready to install **AND** reboot your box. Once you've clicked that install button, all hope is lost and a reboot will happen whenever Windows decides to.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/danger.png" >}}
+{{< figure src="/2018/05/danger.png" >}}
 
 ## **That's it?**
 

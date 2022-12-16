@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2019-07-24T23:16:12Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/07/antoine-barres-jay5BqVyf5A-unsplash.jpg"
+thumbnail = "/2019/07/antoine-barres-jay5BqVyf5A-unsplash.jpg"
 slug = "normalizing-phone-numbers-easier-with-regex"
 summary = "After years of staring at it confused, I've finally given into the dark side and started to learn RegEx."
 tags = ["PowerShell"]
@@ -90,7 +90,7 @@ Putting this all together we end up with this expression:
 
 If I throw this into RegExr with some sample numbers in the text field I can see that it matches my example number but not the numbers below it. One of them didn't match because it had a leading 3 instead of a 2 and the other was simply too short.
 
-{{< figure src="__GHOST_URL__/content/images/2019/07/RegExr.PNG" caption="RegEx test using RegExr" >}}
+{{< figure src="/2019/07/RegExr.PNG" caption="RegEx test using RegExr" >}}
 
 That's all well and good, but we're trying to make changes here right?
 

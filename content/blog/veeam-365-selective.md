@@ -3,7 +3,7 @@ categories = ["Backup", "PowerShell", "Office 365"]
 date = 2019-02-25T21:08:57Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/02/vinicius-amano-566532-unsplash.jpg"
+thumbnail = "/2019/02/vinicius-amano-566532-unsplash.jpg"
 slug = "veeam-365-selective"
 summary = "I can't stand \"expected warnings,\" but getting selective in my VBO jobs got me back to my happy place."
 tags = ["Backup", "PowerShell", "Office 365"]
@@ -24,13 +24,13 @@ _Screenshots in this post were taken using the VBO v3 Beta. If you're interested
 
 Honestly, the easiest way to get the job done is just to setup a job and select to backup the "entire organization."
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/EntireOrg.png" >}}
+{{< figure src="/2019/02/EntireOrg.png" >}}
 
 Given the [speed difference](https://king.geek.nz/2019/02/19/veeam-backup-for-microsoft-office-365-v3/) between Exchange and SharePoint backups (at least before v3), I'd originally opted to split out into two different jobs. One for SharePoint sites (not personal ones) and one for user based items.
 
 This user job backed up Exchange and OneDrive and I was adding people to the jobs manually as migration occurred.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/Individual.png" >}}
+{{< figure src="/2019/02/Individual.png" >}}
 
 This worked except for two issues:
 
@@ -45,7 +45,7 @@ At one point I was attempting to backup the OneDrive of every user that was lice
 
 I also started getting jobs finishing with warnings instead of success. It's fine though, right? Those warnings are expected!
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/Warnings.png" >}}
+{{< figure src="/2019/02/Warnings.png" >}}
 
 Yes, strictly speaking these warnings are expected. It basically means that the user is licensed for OneDrive but hasn't opened it yet. Nothing to backup, so no issue right?
 
@@ -90,7 +90,7 @@ Set-DynamicDistributionGroup -Name 'O365 Mail Users' -HiddenFromAddressListsEnab
 
 Now head into the VBO console and set your job to target our new group, and edit the listing to only backup Mail (and Archive if needed.)
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/MailUsers.png" >}}
+{{< figure src="/2019/02/MailUsers.png" >}}
 
 Done!
 
@@ -123,7 +123,7 @@ New-DistributionGroup -Name 'OneDriveUsers' -Alias 'OneDriveUsers' -Type securit
 And, as always, hide it if that's your thing:
 
 ```powershell
-Set-DistributionGroup -Name 'OneDriveUsers' -HiddenFromAddressListsEnabled 
+Set-DistributionGroup -Name 'OneDriveUsers' -HiddenFromAddressListsEnabled
 
 ```
 
@@ -182,7 +182,7 @@ Add-ADGroupMember -Identity $Group.DistinguishedName -Members $ADUsers
 
 Once again, head into the VBO console and setup a job using this group and limit it to OneDrive (and also personal sites, if needed.)
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/OneDrive.png" >}}
+{{< figure src="/2019/02/OneDrive.png" >}}
 
 ## **No More Warnings**
 

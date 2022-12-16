@@ -3,7 +3,7 @@ categories = ["PowerShell", "Nugget"]
 date = 2017-09-25T10:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-9.jpg"
+thumbnail = "/2018/05/thumb-9.jpg"
 slug = "recurrence-pattern"
 summary = "There's one thing that bugs me when scheduling scripts from the prompt, however: Recurrence."
 tags = ["PowerShell", "Nugget"]
@@ -20,13 +20,13 @@ There's one thing that bugs me when managing this from the prompt, however: Recu
 
 When setting up a task via the Task Scheduler, you have the option of triggering once a month. Not just on the "15th of every month," but also on the "third Wednesday of every month."
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/GUI-TaskTrigger.png" >}}
+{{< figure src="/2018/05/GUI-TaskTrigger.png" >}}
 
 But how the heck does one do this from within PowerShell?
 
 Surely, it's a given, right?
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/PS-JobTrigger.png" >}}
+{{< figure src="/2018/05/PS-JobTrigger.png" >}}
 
 Apparently not…
 

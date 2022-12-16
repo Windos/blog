@@ -3,7 +3,7 @@ categories = ["PowerShell", "Toolbox"]
 date = 2020-01-15T22:21:38Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/01/franck-v-U3sOwViXhkY-unsplash.jpg"
+thumbnail = "/2020/01/franck-v-U3sOwViXhkY-unsplash.jpg"
 slug = "universal-automation-early-look"
 summary = "I had the pleasure of testing Universal Automation while it was in private beta. Now the beta is open to all and I'm really excited for it to be in more hands because it's a very interesting project!"
 tags = ["PowerShell", "Toolbox"]
@@ -36,7 +36,7 @@ Third is really nice, it runs on Linux. If you're the type to have random script
 
 There are more features, but the final one I'll talk about here is that it leverages UD to give you a dashboard for your UA server. This dashboard is optional but very, very cool. It gives you a visual of the status of all your scripts and allows you to manage them (heck, you can even edit your scripts directly within the dashboard!)
 
-{{< figure src="__GHOST_URL__/content/images/2020/01/image-3.png" >}}
+{{< figure src="/2020/01/image-3.png" >}}
 
 ## Go Play!
 

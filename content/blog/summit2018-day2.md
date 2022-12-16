@@ -3,7 +3,7 @@ categories = ["PowerShell", "Meta"]
 date = 2018-04-10T16:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/pexels-photo-207691.jpeg"
+thumbnail = "/2018/05/pexels-photo-207691.jpeg"
 slug = "summit2018-day2"
 summary = "No comments about the plumbing or anything today, having gotten over the initial shock."
 tags = ["PowerShell", "Meta"]
@@ -18,7 +18,7 @@ As a reminder, I’m doing these posts daily during the night after the days’ 
 
 Today’s mission was to get the office copy of [Windows PowerShell TFM](https://www.amazon.com/Windows-PowerShell-v1-0-TFM-2nd/dp/0977659763) signed. Mission complete:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/tfm-small.jpg" >}}
+{{< figure src="/2018/05/tfm-small.jpg" >}}
 
 ## **Be the Master**
 
@@ -38,7 +38,7 @@ I picked up a physical copy of the book while I was there too, sales going to [I
 
 [Missy Januszko](https://twitter.com/majst32)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/missy-large.jpg" >}}
+{{< figure src="/2018/05/missy-large.jpg" >}}
 
 Missy knows her some DSC, she [wrote the book](https://leanpub.com/the-dsc-book). This talk, however, explored Chef and Puppet then looked at how those offerings compared. It wasn’t the type of thing where at the end we were told “this is the product you should use!”
 
@@ -50,7 +50,7 @@ There was a lot to unpack from this talk, but I walked away knowing that I’ll 
 
 [Warren Frame](https://twitter.com/psCookieMonster)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/warren-large.jpg" >}}
+{{< figure src="/2018/05/warren-large.jpg" >}}
 
 I’ve heard about Neo4j before. I’ve seen Warren’s [PSNeo4j](https://github.com/RamblingCookieMonster/PSNeo4j) module around and about. But it’d never really clicked for me what these actually were or what they were used for.
 
@@ -68,7 +68,7 @@ There ended up being sixteen speakers, and I made a **lot** of notes and took a 
 
 I will quickly shout out [Andrew](https://twitter.com/plaandrew22) (again).
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/andrew-large.jpg" >}}
+{{< figure src="/2018/05/andrew-large.jpg" >}}
 
 He detailed his first [OSS contribution](https://github.com/PowershellFrameworkCollective/PSUtil/pull/26) on GitHub. Props for getting up there Andrew, and thanks for the shout out (I may have "gently prodded" him into getting onto GitHub)!
 

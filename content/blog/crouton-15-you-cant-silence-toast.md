@@ -3,7 +3,7 @@ categories = ["BurntToast", "PowerShell"]
 date = 2021-01-31T21:08:16Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/09/kristina-flour-BcjdbyKWquw-unsplash.jpg"
+thumbnail = "/2020/09/kristina-flour-BcjdbyKWquw-unsplash.jpg"
 slug = "crouton-15-you-cant-silence-toast"
 summary = "Focus assist is a favoured tool of practiced speakers and presenters on Windows. It does put you in a bit of a bind if the thing you're presenting requires notifications though."
 tags = ["BurntToast", "PowerShell"]
@@ -14,7 +14,7 @@ title = "Crouton #15 - You Can't Silence Toast"
 
 This post has been in the works for a long time now. We're talking almost half a year, and it's been one heck of an uphill battle putting fingers on keys and getting this written.
 
-{{< figure src="__GHOST_URL__/content/images/2021/02/image.png" >}}
+{{< figure src="/2021/02/image.png" >}}
 
 So, what ended up being the catalyst that got this post out into the wild? This morning I woke up to a great tweet from [Rob Sewell](https://twitter.com/sqldbawithbeard) with a video about how he's dealing with focus assist so that his toast notification can get through.
 
@@ -50,7 +50,7 @@ You're able to define a list of apps on your priority list. Notifications from t
 
 To define this list, open up the  [**Settings** app](https://support.microsoft.com/en-us/windows/find-settings-in-windows-10-6ffbef87-e633-45ac-a1e8-b7a834578ac6), click into the **System** category and choose **Focus assist**. For here you'll see you current focus assist and under "Priority only" is a link to customize your priority list.
 
-{{< figure src="__GHOST_URL__/content/images/2021/02/image-1.png" >}}
+{{< figure src="/2021/02/image-1.png" >}}
 
 When you click that link you'll see a little more than just a list of apps. You can also see that by default this focus assist level will also show notifications for incoming calls (e.g. from Teams) and reminders.
 
@@ -58,7 +58,7 @@ You can customize specific contacts that can break through focus assist across a
 
 There are a few apps listed by default, including some Xbox apps (probably because playing games can automatically turn on focus assist, so they expect you may still want your gaming notifications.) While you're here you can take a moment to clean up this list if you'd like by clicking on a given app and clicking **Remove**.
 
-{{< figure src="__GHOST_URL__/content/images/2021/02/image-2.png" >}}
+{{< figure src="/2021/02/image-2.png" >}}
 
 To add an app, click Add an app (surprise, surprise) and choose the app from the list.
 
@@ -74,7 +74,7 @@ This doesn't solve Rob's problem though. You'll note that he is cranking focus a
 
 There's a hint in the name of the max focus assist level that gives away how we can break through. Just in case the hint is buried a little deep, check out the description under it while you're in the settings app:
 
-{{< figure src="__GHOST_URL__/content/images/2021/02/image-3.png" >}}
+{{< figure src="/2021/02/image-3.png" >}}
 
 The only notifications that are allowed are alarms. Those come from clocks... and when you're creating your own toasts you can just say: "Psst, Windows. This toast isn't a reminder... it's an alarm. Trust me. Thanks bud."
 
@@ -101,7 +101,7 @@ $Text2 = New-BTText -Text 'Seriously, with the "Alarm" scenario, this will break
 Now we bind those images and text together... into a binding object. That binding object then feeds into a visual object.
 
 ```powershell
-$Binding1 = New-BTBinding -Children $Text1, $Text2 -AppLogoOverride $AppIcon -HeroImage $HeroImage 
+$Binding1 = New-BTBinding -Children $Text1, $Text2 -AppLogoOverride $AppIcon -HeroImage $HeroImage
 $Visual1 = New-BTVisual -BindingGeneric $Binding1
 ```
 
@@ -130,7 +130,7 @@ $Content1 = New-BTContent -Visual $Visual1 -Actions $Action1 -Audio $Audio1 -Sce
 Submit-BTNotification -Content $Content1
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2021/02/2021-02-01_22-52-01.gif" >}}
+{{< figure src="/2021/02/2021-02-01_22-52-01.gif" >}}
 
 ## Pros and Cons
 

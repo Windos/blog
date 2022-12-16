@@ -3,7 +3,7 @@ categories = ["Meta"]
 date = 2016-11-23T10:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/Automatic_Telephone_Exchange-_Communications_in_Wartime-_London-_England-_UK-_1945_D23695.jpg"
+thumbnail = "/2018/05/Automatic_Telephone_Exchange-_Communications_in_Wartime-_London-_England-_UK-_1945_D23695.jpg"
 slug = "how-i-work"
 summary = "Consider this my 'How I Work' post, and if you're interested in reading more posts from other bloggers make sure you check out the list of participants on GitHub"
 tags = ["Meta"]
@@ -60,7 +60,7 @@ Our IT team is in a rather small open-plan space, with only short dividers betwe
 
 Here's my place in the world:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/theoffice.png" >}}
+{{< figure src="/2018/05/theoffice.png" >}}
 
 The highlights:
 

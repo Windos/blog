@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2019-09-09T21:38:52Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/09/bence-boros-l3_9j916sh0-unsplash.jpg"
+thumbnail = "/2019/09/bence-boros-l3_9j916sh0-unsplash.jpg"
 slug = "powershell7-foreach-parallel"
 summary = "PoshRSJob has been my go to module for Parallelization for years... let's see if a head to head test with the new PowerShell 7 feature will change that."
 tags = ["PowerShell"]
@@ -76,10 +76,10 @@ foreach ($Run in 1..1000) {
                  'google.com',
                  'example.com',
                  'toastit.dev')
-    
+
     foreach ($Target in $Targets) {
         $Response = Test-Connection -ComputerName $Target -Count 2 -Quiet -InformationAction Ignore
-    
+
         [PSCustomObject] @{
             Host = $Target
             Online = $Response
@@ -124,10 +124,10 @@ foreach ($Run in 1..1000) {
                  'google.com',
                  'example.com',
                  'toastit.dev')
-    
+
     $Targets | Start-RSJob -Throttle 5 -ScriptBlock {
         $Response = Test-Connection -ComputerName $_ -Count 2 -Quiet -InformationAction Ignore
-    
+
         [PSCustomObject] @{
             Host = $_
             Online = $Response
@@ -170,10 +170,10 @@ foreach ($Run in 1..1000) {
                  'google.com',
                  'example.com',
                  'toastit.dev')
-    
+
     $Targets | ForEach-Object -ThrottleLimit 5 -Parallel {
         $Response = Test-Connection -ComputerName $_ -Count 2 -Quiet -InformationAction Ignore
-    
+
         [PSCustomObject] @{
             Host = $_
             Online = $Response

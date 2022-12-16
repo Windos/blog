@@ -3,7 +3,7 @@ categories = ["BurntToast", "PowerShell"]
 date = 2021-04-20T22:03:29Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2021/04/shane-rounce-DNkoNXQti3c-unsplash.jpg"
+thumbnail = "/2021/04/shane-rounce-DNkoNXQti3c-unsplash.jpg"
 slug = "road-to-burnttoast-v1-1"
 summary = "BurntToast is finally growing up. It's going through puberty and will see a v1 release when it gets to the other side... but it'll be a journey."
 tags = ["BurntToast", "PowerShell"]
@@ -26,9 +26,7 @@ BurntToast v1 is an almost complete re-write of the <a target="_blank" href="htt
 
 First of all. What's changed, what was so dramatic of a development that it prompted a re-write of BurntToast?
 
-In short, the release of the Windows Community Toolkit v7.0 in March.
-
-{{< bookmark url="https://blogs.windows.com/windowsdeveloper/2021/03/16/announcing-windows-community-toolkit-v7-0/" title="Announcing Windows Community Toolkit v7.0" description="After many\u00a0months\u00a0of\u00a0invigorating the Windows Community Toolkit with a multitude of improvements and\u00a0features;\u00a0we\u00a0are happy to announce version 7.0 is available today!\u00a0Made possible again with the support and contrib" icon="https://46c4ts1tskv22sdav81j9c69-wpengine.netdna-ssl.com/wp-content/uploads/sites/3/2016/12/cropped-Windows-logo2-300x300.png" author="Windows Developer Blog" publisher="Windows Developer Blog" thumbnail="https://blogs.windows.com/wp-content/themes/microsoft-stories-theme/img/theme/logos/windows.jpg" caption="" >}}
+In short, the release of the [Windows Community Toolkit v7.0](https://blogs.windows.com/windowsdeveloper/2021/03/16/announcing-windows-community-toolkit-v7-0/) in March.
 
 To follow along with the examples in this post, you're going to want to grab the latest [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet package (strictly speaking, anything above v7.0.0 will work.)
 
@@ -36,11 +34,11 @@ Hit up the download package link, [unblock](https://www.tenforums.com/tutorials/
 
 If this is your first time looking into a nupkg, you'll be forgiven for feeling a little lost.
 
-{{< figure src="__GHOST_URL__/content/images/2021/04/image.png" caption="" >}}
+{{< figure src="/2021/04/image.png" caption="" >}}
 
 You're looking for a DLL under the lib directory. Though it's not as simple as that. You'll see that there are a number of different options there.
 
-{{< figure src="__GHOST_URL__/content/images/2021/04/image-1.png" >}}
+{{< figure src="/2021/04/image-1.png" >}}
 
 Things get a little complicated at this point. The version of PowerShell you're running dictates which version of the DLL you're going to need and whether any additional resources are needed. (This complexity is the reason BurntToast exists... so no one has to worry about the complexity unless they really want to!)
 
@@ -103,7 +101,7 @@ $ContentBuilder.Show()
 
 THAT IS SO MUCH SIMPLER THAN IT USED TO BE!
 
-{{< figure src="__GHOST_URL__/content/images/2021/04/image-2.png" >}}
+{{< figure src="/2021/04/image-2.png" >}}
 
 What you'll notice is that the toast has been attributed to PowerShell ISE, which was the editor I was running the demo code in (just driving home that this works in Windows PowerShell 5.1!)
 
@@ -157,7 +155,7 @@ And finally, we show the toast.
 $ContentBuilder.Show()
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2021/04/image-3.png" >}}
+{{< figure src="/2021/04/image-3.png" >}}
 
 If you click that toast, either somewhere in the body of it or the "Action!" button, you see that you get a warning pop up in your PowerShell console. You'll need to hit enter to get your prompt back.
 
@@ -224,7 +222,7 @@ There's only one main issue that I'm tracking with these actionable toasts at th
 
 Unfortunately, most applications you'll be using these toasts from, like PowerShell ISE, can't handle these "launch" events.
 
-{{< figure src="__GHOST_URL__/content/images/2021/04/image-4.png" >}}
+{{< figure src="/2021/04/image-4.png" >}}
 
 Not cool.
 

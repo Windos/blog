@@ -8,33 +8,32 @@
   <title>
   Revisiting Windows Updates in 2017: The Lab Setup - ToastIT
   </title>
-  <meta name="description" content="It&#39;s been nine months, time to revisit the prevention of Windows Update reboots." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="It&rsquo;s been nine months, time to revisit the prevention of Windows Update reboots." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="Revisiting Windows Updates in 2017: The Lab Setup" />
-<meta property="og:description" content="It&#39;s been nine months, time to revisit the prevention of Windows Update reboots." />
+<meta property="og:description" content="It&rsquo;s been nine months, time to revisit the prevention of Windows Update reboots." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/wu-2017-revisit-setup/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2017-08-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2017-08-17T00:00:00+00:00" />
-
+<meta property="article:published_time" content="2017-08-16T12:00:00+00:00" />
+<meta property="article:modified_time" content="2017-08-16T12:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Revisiting Windows Updates in 2017: The Lab Setup"/>
-<meta name="twitter:description" content="It&#39;s been nine months, time to revisit the prevention of Windows Update reboots."/>
+<meta name="twitter:description" content="It&rsquo;s been nine months, time to revisit the prevention of Windows Update reboots."/>
 
   <meta itemprop="name" content="Revisiting Windows Updates in 2017: The Lab Setup">
-<meta itemprop="description" content="It&#39;s been nine months, time to revisit the prevention of Windows Update reboots."><meta itemprop="datePublished" content="2017-08-17T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2017-08-17T00:00:00+00:00" />
+<meta itemprop="description" content="It&rsquo;s been nine months, time to revisit the prevention of Windows Update reboots."><meta itemprop="datePublished" content="2017-08-16T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-08-16T12:00:00+00:00" />
 <meta itemprop="wordCount" content="314">
 <meta itemprop="keywords" content="PowerShell,Windows," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Revisiting Windows Updates in 2017: The Lab Setup</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    August 17, 2017
+    August 16, 2017
   
 
 
@@ -123,18 +123,21 @@
       </svg>
       314&nbsp;words
       
+        
+      
     </h5>
+    
 
-    <p>It&rsquo;s been nine months since I last looked into preventing Windows Update related reboots in Windows 10. It feels like so much has changed since then and a <a href="http://disq.us/p/1kfm9ch" target="_blank" rel="noopener">recent comment</a>
+    <p>It’s been nine months since I last looked into preventing Windows Update related reboots in Windows 10. It feels like so much has changed since then and a <a href="http://disq.us/p/1kfm9ch" target="_blank" rel="noopener">recent comment</a>
  made me realize there is more to test.</p>
-<p>With that in mind, I&rsquo;m rebuilding my lab and will be introducing test cases over time. This will be a very short post detailing the first two test cases and how you can follow along with the results as they come about.</p>
-<h3 id="whats-different-this-time">What&rsquo;s different this time?</h3>
+<p>With that in mind, I’m rebuilding my lab and will be introducing test cases over time. This will be a very short post detailing the first two test cases and how you can follow along with the results as they come about.</p>
+<h3 id="whats-different-this-time">What’s different this time?</h3>
 <p><a href="https://king.geek.nz/2016/10/18/wu-windows-1607/" target="_blank" rel="noopener">Last time</a>
  we monitored the prevention of reboots by being logged into the virtual machines and taking timed screenshots.</p>
 <p>The result was a <strong>lot</strong> of files, using a lot of OneDrive space.</p>
-<p>This time around I&rsquo;ll be feeding the VM&rsquo;s uptime into a file which GitHub renders as a nicely formatted webpage. <a href="https://king.geek.nz/WindowsUpdateUptime/" target="_blank" rel="noopener">Check it out</a>
+<p>This time around I’ll be feeding the VM’s uptime into a file which GitHub renders as a nicely formatted webpage. <a href="https://king.geek.nz/WindowsUpdateUptime/" target="_blank" rel="noopener">Check it out</a>
 !</p>
-<p>If you&rsquo;re so inclined, <a href="https://github.com/Windos/WindowsUpdateUptime/blob/master/ReportUptime.ps1" target="_blank" rel="noopener">check out the code</a>
+<p>If you’re so inclined, <a href="https://github.com/Windos/WindowsUpdateUptime/blob/master/ReportUptime.ps1" target="_blank" rel="noopener">check out the code</a>
  gathering this data and getting it up to GitHub.</p>
 <p>Oh, and the lab is running inside Hyper-V on Windows Server 2016 (Core).</p>
 <h3 id="test-cases">Test cases</h3>
@@ -144,9 +147,9 @@
 <li>Windows 10 Enterprise, Version 1703 not logged in.</li>
 </ol>
 <h3 id="closing-comments">Closing comments</h3>
-<p>At this stage I can&rsquo;t use Windows 10 Home in my tests as I don&rsquo;t have a license for it. This is a real bummer as I&rsquo;ve heard a lot of reports that the method being used to stop these reboots doesn&rsquo;t work in Home but I&rsquo;ve never been able to see it myself.</p>
+<p>At this stage I can’t use Windows 10 Home in my tests as I don’t have a license for it. This is a real bummer as I’ve heard a lot of reports that the method being used to stop these reboots doesn’t work in Home but I’ve never been able to see it myself.</p>
 <p>This may change in the future, but for now all test cases will be on Professional or Enterprise.</p>
-<p>The results page will be updated as more tests are included, so if you want to know any developments look there. It&rsquo;ll be at least two months before the first follow up post with the first round of properly documented info</p>
+<p>The results page will be updated as more tests are included, so if you want to know any developments look there. It’ll be at least two months before the first follow up post with the first round of properly documented info</p>
 
   </article><div class="bg-blue-300 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -272,6 +275,8 @@
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

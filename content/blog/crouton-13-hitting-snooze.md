@@ -3,7 +3,7 @@ categories = ["BurntToast", "PowerShell"]
 date = 2019-11-20T20:09:45Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/11/sophie-elvis-msC14JchkKU-unsplash.jpg"
+thumbnail = "/2019/11/sophie-elvis-msC14JchkKU-unsplash.jpg"
 slug = "crouton-13-hitting-snooze"
 summary = "Hitting snooze on your alarm clock is probably rather common. Let's take a look at how you can do the same thing with your Toast Notifications."
 tags = ["BurntToast", "PowerShell"]
@@ -26,7 +26,7 @@ To do this, specify the `SnoozeAndDismiss` switch when calling the `New-BurntToa
 New-BurntToastNotification -SnoozeAndDismiss
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2019/11/image.png" caption="" >}}
+{{< figure src="/2019/11/image.png" caption="" >}}
 
 _(No... I don't know where that "9 minutes" comes from either. I'll be ignoring it going froward.)_
 
@@ -139,7 +139,7 @@ $Content1 = New-BTContent -Visual $Visual1 -Audio $Audio1 -Actions $Action
 Submit-BTNotification -Content $Content1
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2019/11/image-1.png" caption="" >}}
+{{< figure src="/2019/11/image-1.png" caption="" >}}
 
 It should be noted that without the selection box, this toast only displays for as long as a regular toast (6 seconds) rather than the much longer time that these snooze and dismiss toasts are normally afforded.
 
@@ -163,7 +163,7 @@ $Content1 = New-BTContent -Visual $Visual1 -Audio $Audio1 -Actions $Action
 Submit-BTNotification -Content $Content1
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2019/11/image-2.png" caption="" >}}
+{{< figure src="/2019/11/image-2.png" caption="" >}}
 
 ### Dismiss Only
 
@@ -178,13 +178,13 @@ $Content1 = New-BTContent -Visual $Visual1 -Audio $Audio1 -Actions $Action
 Submit-BTNotification -Content $Content1
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2019/11/image-3.png" >}}
+{{< figure src="/2019/11/image-3.png" >}}
 
 ## Disclaimer: Snoozed Toast Bug
 
 There's currently an [issue](https://github.com/Windos/BurntToast/issues/72) where toasts that have been dismissed don't display correctly. You'll see curly braces around some of the text.
 
-{{< figure src="__GHOST_URL__/content/images/2019/11/image-4.png" >}}
+{{< figure src="/2019/11/image-4.png" >}}
 
 I'm hoping this will be sorted by the time of the next BurntToast release because it does make these less polished than they should be.
 

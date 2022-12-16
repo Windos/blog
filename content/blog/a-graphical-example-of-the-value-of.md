@@ -3,7 +3,7 @@ categories = ["PowerShell", "Meta"]
 date = 2018-06-01T14:53:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/lukas-blazek-367945-unsplash.jpg"
+thumbnail = "/2018/05/lukas-blazek-367945-unsplash.jpg"
 slug = "a-graphical-example-of-the-value-of"
 summary = "If you have a PowerShell blog, I can't overstate how valuable it is to get your feed hooked up to Planet PowerShell!"
 tags = ["PowerShell", "Meta"]
@@ -27,7 +27,7 @@ This blog is by no means the most trafficked site on the Internet, but I'm still
 
 Whenever a PowerShell post goes live, I can generally expect 40 to 70 hits that day. The following days see higher than normal traffic until it settles back down to the day to day "trickle." You can see this pattern in this analytics graph:
 
-{{< figure src="__GHOST_URL__/content/images/2018/06/normal-blog.png" >}}
+{{< figure src="/2018/06/normal-blog.png" >}}
 
 ## **The Planet PowerShell Effect**
 
@@ -35,7 +35,7 @@ When my feed wasn't going through to the site, the amount of traffic was noticea
 
 In this graph you can see a period without my feed working, when three new posts came out. Towards the end, you can see the immediate change when this was fixed, even though there were no new posts during that time.
 
-{{< figure src="__GHOST_URL__/content/images/2018/06/Non-normal-then-fixed.png" >}}
+{{< figure src="/2018/06/Non-normal-then-fixed.png" >}}
 
 ## **Where Do the Numbers Come From?**
 

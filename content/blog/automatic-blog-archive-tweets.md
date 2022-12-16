@@ -3,7 +3,7 @@ categories = ["PowerShell", "Meta"]
 date = 2018-05-29T05:54:09Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/samuel-zeller-118195-unsplash.jpg"
+thumbnail = "/2018/05/samuel-zeller-118195-unsplash.jpg"
 slug = "automatic-blog-archive-tweets"
 summary = "This morning I was up at 4 AM, live streaming the creation of an auto-tweet script."
 tags = ["PowerShell", "Meta"]
@@ -22,7 +22,7 @@ You can see the finished script over on [GitHub](https://github.com/Windos/power
 
 This script will end up on the PowerShell Gallery eventually too. It's my candidate for a [TechSnips](https://www.techsnips.io/) video on publishing scripts to it!
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/trello-1.png" >}}
+{{< figure src="/2018/05/trello-1.png" >}}
 
 Let's go ahead and walk through what the script is doing.
 

@@ -3,7 +3,7 @@ categories = ["BurntToast", "PowerShell"]
 date = 2018-08-20T17:18:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/08/kyle-glenn-629501-unsplash.jpg"
+thumbnail = "/2018/08/kyle-glenn-629501-unsplash.jpg"
 slug = "crouton-8-i-like-your-code-but-i-dont-want-it-on-all-my-computers"
 summary = "I get you; you like toast, but you don't want to put a toaster on 100 desks."
 tags = ["BurntToast", "PowerShell"]
@@ -81,7 +81,7 @@ $Toast = [Windows.UI.Notifications.ToastNotification]::new($ToastXml)
 
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2018/08/ExampleToast.png" >}}
+{{< figure src="/2018/08/ExampleToast.png" >}}
 
 ## **Example Two: A Little Customization**
 

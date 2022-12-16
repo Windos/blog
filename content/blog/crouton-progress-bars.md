@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2017-04-29T12:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb.JPG"
+thumbnail = "/2018/05/thumb.JPG"
 slug = "crouton-progress-bars"
 summary = "April saw the release of the Creators Update for Windows 10 which brought with it a handful of new options for toast notifications."
 tags = ["PowerShell", "BurntToast"]
@@ -27,7 +27,7 @@ New-BurntToastNotification –Text ‘Server Update’, ’50 servers out of 2,0
 
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/FirstToast.PNG" >}}
+{{< figure src="/2018/05/FirstToast.PNG" >}}
 
 That gets the job done, sure, but now consider:
 
@@ -37,7 +37,7 @@ New-BurntToastNotification –Text ‘Server Update’ -ProgressBar $ProgressBar
 
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/SecondToast.PNG" >}}
+{{< figure src="/2018/05/SecondToast.PNG" >}}
 
 Obviously in the real world you’d want to parameterize the values in there, but I’ve kept this fairly simple for demo purposes.
 
@@ -66,7 +66,7 @@ Also, the display text in the example showing 3% in the example above is automat
 
 Finally, if you want to use a progress bar but aren’t sure of what value at a given time, you can use the `Indeterminate` switch, which replaced the bar itself with an animation.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/animated.gif" >}}
+{{< figure src="/2018/05/animated.gif" >}}
 
 That’s it for this one. I imagine there should be another post in this Crouton series in the next week or so covering headers, another new option thanks to the Creators Update.
 

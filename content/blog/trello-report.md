@@ -167,7 +167,7 @@ $Report | Out-File -FilePath c:\temp\task.html
 
 For obvious reasons, I can't show the full text of a real report, but here's a censored version:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/report.png" >}}
+{{< figure src="/2018/05/report.png" >}}
 
 I'm not designer, so I'm sure playing around with the HTML styles could do a lot for the output but I'm happy with it as a means of bringing the info to team meetings without the distraction that a laptop or TV would cause.
 

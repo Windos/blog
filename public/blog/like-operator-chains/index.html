@@ -6,35 +6,34 @@
   <link rel="icon" href="/favicon.png">
 
   <title>
-  Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It - ToastIT
+  Tired of Massive &#34;like&#34; Operator Chains? Rub a Little RegEx on It - ToastIT
   </title>
-  <meta name="description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
-  <meta property="og:title" content="Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It" />
+  <meta property="og:title" content="Tired of Massive &#34;like&#34; Operator Chains? Rub a Little RegEx on It" />
 <meta property="og:description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/like-operator-chains/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2019-11-28T09:18:22+00:00" />
-<meta property="article:modified_time" content="2019-11-28T09:18:22+00:00" />
-
+<meta property="article:published_time" content="2019-11-27T20:18:22+00:00" />
+<meta property="article:modified_time" content="2019-11-27T20:18:22+00:00" />
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It"/>
+<meta name="twitter:title" content="Tired of Massive &#34;like&#34; Operator Chains? Rub a Little RegEx on It"/>
 <meta name="twitter:description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code."/>
 
-  <meta itemprop="name" content="Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It">
-<meta itemprop="description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code."><meta itemprop="datePublished" content="2019-11-28T09:18:22+00:00" />
-<meta itemprop="dateModified" content="2019-11-28T09:18:22+00:00" />
+  <meta itemprop="name" content="Tired of Massive &#34;like&#34; Operator Chains? Rub a Little RegEx on It">
+<meta itemprop="description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code."><meta itemprop="datePublished" content="2019-11-27T20:18:22+00:00" />
+<meta itemprop="dateModified" content="2019-11-27T20:18:22+00:00" />
 <meta itemprop="wordCount" content="916">
 <meta itemprop="keywords" content="PowerShell," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -87,7 +86,8 @@
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
-    <h1 class="text-2xl font-bold mb-2">Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It</h1>
+    <h1 class="text-2xl font-bold mb-2">Tired of Massive &#34;like&#34; Operator Chains? Rub a Little RegEx on It</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    November 28, 2019
+    November 27, 2019
   
 
 
@@ -123,75 +123,71 @@
       </svg>
       916&nbsp;words
       
+        
+      
     </h5>
+    
 
     <p>I was recently writing a PowerShell script and found myself needing to check an input value against a laundry list of criteria. That criteria could have been anywhere in the input value, so out of habit I started writing something that looked like this:</p>
-<pre><code>$Input = 'This is an example string. It demonstrates &quot;stuff.&quot;'
-
-if ($Input -like '*example*' -or
-    $Input -like '*demo*' -or
-    $Input -like '*more criteria*' -or
-    $Input -like '*when will this end?*') {
-    'A criteria matched, do the thing!'
-}
-</code></pre>
-<p>This works, but it doesn&rsquo;t scale. This example matches against four criteria, and it&rsquo;s already getting a little long for my liking.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Input</span> = <span style="color:#f1fa8c">&#39;This is an example string. It demonstrates &#34;stuff.&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Input</span> <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#39;*example*&#39;</span> <span style="color:#ff79c6">-or</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Input</span> <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#39;*demo*&#39;</span> <span style="color:#ff79c6">-or</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Input</span> <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#39;*more criteria*&#39;</span> <span style="color:#ff79c6">-or</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Input</span> <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#39;*when will this end?*&#39;</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;A criteria matched, do the thing!&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This works, but it doesn&rsquo;t scale. This example matches against four criteria, and it&rsquo;s already getting a little long for my liking.</p>
 <p>What if I had a list of 10 criteria, or 100? Yeah&hellip; that&rsquo;s not going to work out.</p>
 <h2 id="theres-got-to-be-a-better-way">There&rsquo;s Got to Be a Better Way</h2>
 <p>In the above example, I used the &ldquo;like&rdquo; operator, which allows you to match against a string using wildcards.</p>
 <p>There are a lot of other <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6" target="_blank" rel="noopener">comparison operators</a>
  available for us to use.</p>
 <p>A favorite when looking for a a full string in a large group of criteria, is the &ldquo;in&rdquo; (or &ldquo;contains&rdquo;) operator.</p>
-<pre><code>$Input = 'josh'
-
-$Criteria = 'adam', 'barry', 'josh', 'steve'
-
-if ($Input -in $Criteria) {
-    'A criteria matched, do the thing!'
-}
-</code></pre>
-<p>What we really need is a way combine both the &ldquo;like&rdquo; and &ldquo;in&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Input</span> = <span style="color:#f1fa8c">&#39;josh&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Criteria</span> = <span style="color:#f1fa8c">&#39;adam&#39;</span>, <span style="color:#f1fa8c">&#39;barry&#39;</span>, <span style="color:#f1fa8c">&#39;josh&#39;</span>, <span style="color:#f1fa8c">&#39;steve&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Input</span> -in <span style="color:#8be9fd;font-style:italic">$Criteria</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;A criteria matched, do the thing!&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>What we really need is a way combine both the &ldquo;like&rdquo; and &ldquo;in&rdquo;.</p>
 <h2 id="regex-to-the-rescue">RegEx to the Rescue!</h2>
 <p>It turns out that RegEx is a very handy tool to have in your tool belt, as I&rsquo;ve been discovering since I last used it in a <a href="__GHOST_URL__/2019/07/25/normalizing-phone-numbers-easier-with-regex/">blog post</a>
 . It has the ability to both look for chunks of text inside a larger input string, and also chaining together those chunks that we&rsquo;re looking for.</p>
 <p>From now on, we&rsquo;ll make use of the &ldquo;match&rdquo; operator.</p>
 <p>For starters, searching inside a string is even easier than with the &ldquo;like&rdquo; operator:</p>
-<pre><code>$Input = 'This is an example string. It demonstrates &quot;stuff.&quot;'
-
-$Input -match 'example'
-</code></pre>
-<p>Next we layer in matching against multiple criteria. We do this with the <code>|</code> character, which in RegEx is technically called an &ldquo;alternation&rdquo;, just think of it as an &ldquo;or&rdquo;.</p>
-<pre><code>$Input = 'This is an example string. It demonstrates &quot;stuff.&quot;'
-
-$Input -match 'example|unique|test'
-</code></pre>
-<p>This is going to return true if any of the words &ldquo;example&rdquo;, &ldquo;unique&rdquo;, or &ldquo;test&rdquo; are found in my input string. It&rsquo;s important to know that you&rsquo;re no limited to words here, you can have full on sentences if needed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Input</span> = <span style="color:#f1fa8c">&#39;This is an example string. It demonstrates &#34;stuff.&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Input</span> <span style="color:#ff79c6">-match</span> <span style="color:#f1fa8c">&#39;example&#39;</span>
+</span></span></code></pre></div><p>Next we layer in matching against multiple criteria. We do this with the <code>|</code> character, which in RegEx is technically called an &ldquo;alternation&rdquo;, just think of it as an &ldquo;or&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Input</span> = <span style="color:#f1fa8c">&#39;This is an example string. It demonstrates &#34;stuff.&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Input</span> <span style="color:#ff79c6">-match</span> <span style="color:#f1fa8c">&#39;example|unique|test&#39;</span>
+</span></span></code></pre></div><p>This is going to return true if any of the words &ldquo;example&rdquo;, &ldquo;unique&rdquo;, or &ldquo;test&rdquo; are found in my input string. It&rsquo;s important to know that you&rsquo;re no limited to words here, you can have full on sentences if needed.</p>
 <p><em>Note: if you&rsquo;re a performance fiend, the words are searched for in order, so if you&rsquo;re expecting one to match most often, put it towards the left of your list of criteria.</em></p>
 <p>Now we need to make this even more expandable. Ideally we could pull a list from some system and dynamically build our RegEx string to match against all of them. An example might be pulling a list of common passwords.</p>
-<pre><code>$Input = 'This is an example string. It demonstrates &quot;stuff.&quot;'
-
-$Criteria = 'example', 'unique', 'test', 'a lot', 'of', 'entries'
-
-$Input -match ($Criteria -join '|')
-</code></pre>
-<p>Here we load up our criteria into a list (that&rsquo;s fairly easy to maintain), and then use the &lsquo;join&rsquo; operator to put a pipe character between each of them. We then use the joined string in our match.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Input</span> = <span style="color:#f1fa8c">&#39;This is an example string. It demonstrates &#34;stuff.&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Criteria</span> = <span style="color:#f1fa8c">&#39;example&#39;</span>, <span style="color:#f1fa8c">&#39;unique&#39;</span>, <span style="color:#f1fa8c">&#39;test&#39;</span>, <span style="color:#f1fa8c">&#39;a lot&#39;</span>, <span style="color:#f1fa8c">&#39;of&#39;</span>, <span style="color:#f1fa8c">&#39;entries&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Input</span> <span style="color:#ff79c6">-match</span> (<span style="color:#8be9fd;font-style:italic">$Criteria</span> -join <span style="color:#f1fa8c">&#39;|&#39;</span>)
+</span></span></code></pre></div><p>Here we load up our criteria into a list (that&rsquo;s fairly easy to maintain), and then use the &lsquo;join&rsquo; operator to put a pipe character between each of them. We then use the joined string in our match.</p>
 <p>We&rsquo;ve now got a working method for searching for long lists of criteria in a given string without having to tediously build chains of like statements!</p>
 <h2 id="my-real-world-example">My Real World Example</h2>
 <p>The script I alluded to at the start of this post involved pulling user account information from Active Directory. One of my main design drivers was making the script as generic as possible and also friendly to use by people that don&rsquo;t live and breath PowerShell.</p>
 <p>With that in mind, I had made it so that the user could specify a base Organisational Unit (OU) to search from but I also needed a way of allowing the user to exclude specific OUs that may live under that base.</p>
 <p>There&rsquo;s many ways to solve this problem, but the way I opted to do it was to take the user&rsquo;s distinguished name property (which includes the OU path the live under), and check it against a list of exclusions.</p>
 <p>For user input, you might have data like this:</p>
-<pre><code>$BaseOU = 'OU=Users,OU=Corp,DC=ToastIT,DC=DEV'
-$ExclusionOUs = 'OU=HR,OU=Users,OU=Corp,DC=ToastIT,DC=DEV',
-                'OU=Finance,OU=Users,OU=Corp,DC=ToastIT,DC=DEV',
-                'OU=Executive,OU=Users,OU=Corp,DC=ToastIT,DC=DEV'
-</code></pre>
-<p>I&rsquo;ve kept the list of exclusions short for the sake of demonstration, but as a script I was going to be handing off I have no idea how long (or short) it could end up being.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$BaseOU</span> = <span style="color:#f1fa8c">&#39;OU=Users,OU=Corp,DC=ToastIT,DC=DEV&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$ExclusionOUs</span> = <span style="color:#f1fa8c">&#39;OU=HR,OU=Users,OU=Corp,DC=ToastIT,DC=DEV&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f1fa8c">&#39;OU=Finance,OU=Users,OU=Corp,DC=ToastIT,DC=DEV&#39;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#f1fa8c">&#39;OU=Executive,OU=Users,OU=Corp,DC=ToastIT,DC=DEV&#39;</span>
+</span></span></code></pre></div><p>I&rsquo;ve kept the list of exclusions short for the sake of demonstration, but as a script I was going to be handing off I have no idea how long (or short) it could end up being.</p>
 <p>Later on, I need to pull user objects from AD, but I don&rsquo;t want to end up with users inside those that were excluded.</p>
-<pre><code>$Users = Get-ADUser -Filter 'Enabled -eq $true' -SearchBase $BaseOU |
-    Where-Object {$_.DistinguishedName -notmatch ($ExclusionOUs -join '|')}
-</code></pre>
-<p>Job done!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Users</span> = <span style="color:#8be9fd;font-style:italic">Get-ADUser</span> -Filter <span style="color:#f1fa8c">&#39;Enabled -eq $true&#39;</span> -SearchBase <span style="color:#8be9fd;font-style:italic">$BaseOU</span> |
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">Where-Object</span> {<span style="color:#8be9fd;font-style:italic">$_</span>.DistinguishedName <span style="color:#ff79c6">-notmatch</span> (<span style="color:#8be9fd;font-style:italic">$ExclusionOUs</span> -join <span style="color:#f1fa8c">&#39;|&#39;</span>)}
+</span></span></code></pre></div><p>Job done!</p>
 <h2 id="proceed-with-caution">Proceed with Caution</h2>
 <p>Generally, RegEx is case sensitive, however PowerShell isn&rsquo;t. The &ldquo;match&rdquo; operator will ignore case, so it&rsquo;ll match &ldquo;Example&rdquo; with &ldquo;example&rdquo;.</p>
 <p>If this is going to be an issue in your case, use the &ldquo;cmatch&rdquo; operator. There&rsquo;s actually a number of these case sensitive operators in PowerShell, including the &ldquo;clike&rdquo; and &ldquo;cin&rdquo; versions of the operators we looked at earlier.</p>
@@ -323,6 +319,8 @@ $ExclusionOUs = 'OU=HR,OU=Users,OU=Corp,DC=ToastIT,DC=DEV',
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

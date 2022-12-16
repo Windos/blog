@@ -3,7 +3,7 @@ categories = ["Meta"]
 date = 2018-04-25T21:30:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/4162953165_d5dd956c0f_b.jpg"
+thumbnail = "/2018/05/4162953165_d5dd956c0f_b.jpg"
 slug = "blog-workflow"
 summary = "I've also noticed a number of people saying 'I want to get into it... but need to figure out x and y first."
 tags = ["Meta"]
@@ -24,7 +24,7 @@ That first link has good instructions on how to get started with GitHub Pages. T
 
 I've, uh, had a few of those emails...
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/failure.png" >}}
+{{< figure src="/2018/05/failure.png" >}}
 
 The biggest thing (for me) was finding a theme I liked. GitHub Pages has a stock selection to pick from, and now even allow you to easily choose from a large selection of community curated themes by [editing your configuration file](https://blog.github.com/2017-11-29-use-any-theme-with-github-pages/).
 
@@ -36,7 +36,7 @@ I ended up going with a theme called [CodeInventory](https://github.com/codeinve
 
 You may have noticed that this blog isn't sitting on the default domain for GitHub Pages (username.github.io). GitHub supports using custom domains, but don't (yet) support HTTPS when doing so.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/nohttps.png" >}}
+{{< figure src="/2018/05/nohttps.png" >}}
 
 However, this site does have a certificate and it is serving pages up over HTTPS. To do this I'm using [Cloudflare](https://cloudflare.com/). This gave me the added benefit of using them to cache my site all over their network which has improved load times (not that GitHub by itself was all that slow.)
 
@@ -50,11 +50,11 @@ Branches!
 
 As I write this, I'm making commits to a "blog-workflow" branch, named after the name of this post. The file I'm editing right now is "2018-04-26-blog-workflow.md".
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/branch.png" >}}
+{{< figure src="/2018/05/branch.png" >}}
 
 When I'm all finished writing, I merge the branch into master and the post goes live. You can have as many branches on the go as you like. If you were following along with my Summit recaps, I had used branches to preemptively get the templates, titles and thumbnails for each post ready before I was even on my way over to America.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/summit.jpg" >}}
+{{< figure src="/2018/05/summit.jpg" >}}
 
 ## **It All Starts with a Title and an Image**
 
@@ -115,7 +115,7 @@ I can write my posts in Word, with all of the grammar and spelling corrections i
 
 This is what this post looks like when you have it open in Word:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/writage.png" >}}
+{{< figure src="/2018/05/writage.png" >}}
 
 One thing I don't do via Writage is code snippets. It has a habit of wanting to escape dollar signs and the like. I just note where the code is to go and drop it in with Notepad++ at the end.
 

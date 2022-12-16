@@ -3,7 +3,7 @@ categories = ["Meta", "Azure", "Office 365", "PowerShell"]
 date = 2021-05-07T05:42:32Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2021/05/element5-digital-OyCl7Y4y0Bk-unsplash.jpg"
+thumbnail = "/2021/05/element5-digital-OyCl7Y4y0Bk-unsplash.jpg"
 slug = "my-learning-story-from-timber-to-chocolatey"
 summary = "This post is part of #TheMVPChallenge. It's not exactly what was on the brief... but I think it's a story worth telling!"
 tags = ["Meta", "Azure", "Office 365", "PowerShell"]
@@ -48,7 +48,7 @@ It took a while, and another stint working at a sawmill, but eventually I landed
 
 In the office was a copy of [Windows PowerShell v1.0: TFM (2nd Edition)](https://www.amazon.com/Windows-PowerShell-v1-0-TFM-2nd/dp/0977659763). This book was the catalyst that set a fire under my career in tech. It was what taught me [PowerShell](https://docs.microsoft.com/en-us/powershell/?WT.mc_id=PS-MVP-5003460) and what made me realize automation was something accessible to even a junior like me.
 
-![PowerShell v1 TFM - Signed](__GHOST_URL__/content/images/2021/05/20180410_105226-1.jpg)
+![PowerShell v1 TFM - Signed](/2021/05/20180410_105226-1.jpg)
 
 _Fun aside: I took this book with me to the PowerShell + DevOps Global Summit 2018 and had it signed by both_ [Don Jones](https://twitter.com/concentrateddon) _and_ [Jeff Hicks](https://twitter.com/JeffHicks).
 

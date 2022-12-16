@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/windows/</link>
+    <description>Recent content in Windows on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 13 Feb 2019 19:56:39 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RSAT as a Feature: I Thought I Was Going to Love It, Until I Saw It in Action</title>
+      <link>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</link>
+      <pubDate>Wed, 13 Feb 2019 19:56:39 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</guid>
+      <description>I&amp;rsquo;m a little late to this particular party, but I only just had the 1809 update on my workstation today.</description>
+    </item>
+    
+    <item>
+      <title>Windows Updates: Putting Update Avoidance to Bed</title>
+      <link>https://blog.toastit.dev/blog/wu-put-to-bed/</link>
+      <pubDate>Mon, 15 Jan 2018 18:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/wu-put-to-bed/</guid>
+      <description>There were, and still are, many people frustrated with the fact that Windows 10 would decide to forcibly reboot for updates.</description>
+    </item>
+    
+    <item>
+      <title>Creating Storage Reports With PowerShell</title>
+      <link>https://blog.toastit.dev/blog/powershell-storage-report/</link>
+      <pubDate>Mon, 16 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/powershell-storage-report/</guid>
+      <description>Whether they&amp;rsquo;re nearly empty, nearly full, or somewhere in-between, it&amp;rsquo;s helpful to get a quick overview of all your servers&amp;rsquo; hard drives.</description>
+    </item>
+    
+    <item>
+      <title>Revisiting Windows Updates in 2017: The Lab Setup</title>
+      <link>https://blog.toastit.dev/blog/wu-2017-revisit-setup/</link>
+      <pubDate>Wed, 16 Aug 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/wu-2017-revisit-setup/</guid>
+      <description>It&amp;rsquo;s been nine months, time to revisit the prevention of Windows Update reboots.</description>
+    </item>
+    
+    <item>
+      <title>Digging Up Old Blog Posts</title>
+      <link>https://blog.toastit.dev/blog/old-posts/</link>
+      <pubDate>Mon, 21 Nov 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/old-posts/</guid>
+      <description>I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&amp;rsquo;t seen in years.</description>
+    </item>
+    
+    <item>
+      <title>Update on Windows Update... Up Time</title>
+      <link>https://blog.toastit.dev/blog/win-10-update-up-time/</link>
+      <pubDate>Sun, 06 Nov 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/win-10-update-up-time/</guid>
+      <description>Three weeks on, did Windows 10 decide to reboot?</description>
+    </item>
+    
+    <item>
+      <title>Validating Prevention of Automatic Reboots on Windows 10, Version 1607</title>
+      <link>https://blog.toastit.dev/blog/wu-windows-1607/</link>
+      <pubDate>Mon, 17 Oct 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/wu-windows-1607/</guid>
+      <description>Over a year ago, I answered a question on Super User. The question was about stopping the very persistent Windows Update from rebooting without the users’ consent, and wow was that ever a popular topic.</description>
+    </item>
+    
+    <item>
+      <title>Repairing Trust Relationships Without a Reboot</title>
+      <link>https://blog.toastit.dev/blog/trust-no-reboot/</link>
+      <pubDate>Sun, 21 Sep 2014 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/trust-no-reboot/</guid>
+      <description>Perhaps it was a helpdesk technician powering up a cloned desktop while connected to the network.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,7 +3,7 @@ categories = ["BurntToast", "PowerShell"]
 date = 2019-01-09T16:37:08Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/01/ryoji-iwata-669950-unsplash.jpg"
+thumbnail = "/2019/01/ryoji-iwata-669950-unsplash.jpg"
 slug = "crouton-8-redux"
 summary = "I didn't do the best job of the examples in my original post on this topic. Let's put that right."
 tags = ["BurntToast", "PowerShell"]
@@ -139,7 +139,7 @@ $Toast = [Windows.UI.Notifications.ToastNotification]::new($ToastXml)
 
 All going well, you’ll see a toast that looks like this:
 
-{{< figure src="__GHOST_URL__/content/images/2019/01/UpdatedToastExample.PNG" >}}
+{{< figure src="/2019/01/UpdatedToastExample.PNG" >}}
 
 ## **Wrap Up**
 

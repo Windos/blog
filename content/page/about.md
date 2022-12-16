@@ -9,4 +9,6 @@ type: about
 
 ## Josh King
 
-Josh is a Microsoft MVP and Infrastructure Operations Engineer at Chocolatey Software. He has a passion for all things PowerShell and automation.
+Josh King is an Infrastructure Operations Engineer at Chocolatey Software and former Microsoft MVP.
+
+He has a long history working within Windows and VMware environments and has a passion for all things PowerShell and automation.

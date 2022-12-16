@@ -8,33 +8,32 @@
   <title>
   All I Want Is a Damned CSV! - ToastIT
   </title>
-  <meta name="description" content="CSVs are pretty handy, right? And there is a cmdlet that&#39;ll handle this for you!" />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="CSVs are pretty handy, right? And there is a cmdlet that&rsquo;ll handle this for you!" /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="All I Want Is a Damned CSV!" />
-<meta property="og:description" content="CSVs are pretty handy, right? And there is a cmdlet that&#39;ll handle this for you!" />
+<meta property="og:description" content="CSVs are pretty handy, right? And there is a cmdlet that&rsquo;ll handle this for you!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/ps-csv/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2018-04-19T08:30:00+00:00" />
-<meta property="article:modified_time" content="2018-04-19T08:30:00+00:00" />
-
+<meta property="article:published_time" content="2018-04-18T20:30:00+00:00" />
+<meta property="article:modified_time" content="2018-04-18T20:30:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="All I Want Is a Damned CSV!"/>
-<meta name="twitter:description" content="CSVs are pretty handy, right? And there is a cmdlet that&#39;ll handle this for you!"/>
+<meta name="twitter:description" content="CSVs are pretty handy, right? And there is a cmdlet that&rsquo;ll handle this for you!"/>
 
   <meta itemprop="name" content="All I Want Is a Damned CSV!">
-<meta itemprop="description" content="CSVs are pretty handy, right? And there is a cmdlet that&#39;ll handle this for you!"><meta itemprop="datePublished" content="2018-04-19T08:30:00+00:00" />
-<meta itemprop="dateModified" content="2018-04-19T08:30:00+00:00" />
+<meta itemprop="description" content="CSVs are pretty handy, right? And there is a cmdlet that&rsquo;ll handle this for you!"><meta itemprop="datePublished" content="2018-04-18T20:30:00+00:00" />
+<meta itemprop="dateModified" content="2018-04-18T20:30:00+00:00" />
 <meta itemprop="wordCount" content="443">
 <meta itemprop="keywords" content="PowerShell,Nugget," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">All I Want Is a Damned CSV!</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    April 19, 2018
+    April 18, 2018
   
 
 
@@ -123,71 +123,66 @@
       </svg>
       443&nbsp;words
       
+        
+      
     </h5>
+    
 
     <p>Spurred on by a common issue that comes up on Twitter from time to time, this will be a rather short post about CSVs and PowerShell.</p>
 <h2 id="whats-the-issue"><strong>What&rsquo;s the Issue?</strong></h2>
 <p>Let&rsquo;s say you have an array of strings.</p>
-<pre><code>$Servers = @(
-    'AD1',
-    'FILE1',
-    'DB1',
-    'APP1'
-)
-</code></pre>
-<p>You want to save these to disk. CSVs are pretty handy, right? And there is a cmdlet that&rsquo;ll handle this for you!</p>
-<pre><code>$Servers | Export-Csv -Path C:\temp\servers.csv
-</code></pre>
-<p>What is this nonsense?! That&rsquo;s not what you had in your array!</p>
-<pre><code>#TYPE System.String
-&quot;Length&quot;
-&quot;3&quot;
-&quot;5&quot;
-&quot;3&quot;
-&quot;4&quot;
-</code></pre>
-<h2 id="demystifying-the-nonsense"><strong>Demystifying the Nonsense</strong></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Servers</span> = @(
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;AD1&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;FILE1&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;DB1&#39;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#39;APP1&#39;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>You want to save these to disk. CSVs are pretty handy, right? And there is a cmdlet that&rsquo;ll handle this for you!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Servers</span> | <span style="color:#8be9fd;font-style:italic">Export-Csv</span> -Path C:\temp\servers.csv
+</span></span></code></pre></div><p>What is this nonsense?! That&rsquo;s not what you had in your array!</p>
+<pre tabindex="0"><code>#TYPE System.String
+&#34;Length&#34;
+&#34;3&#34;
+&#34;5&#34;
+&#34;3&#34;
+&#34;4&#34;
+</code></pre><h2 id="demystifying-the-nonsense"><strong>Demystifying the Nonsense</strong></h2>
 <p>This comes down to understanding what <code>Export-Csv</code> is actually doing. In the strictest sense, it&rsquo;s taking the object(s) you&rsquo;re giving it and writing that object&rsquo;s properties into a CSV file.</p>
 <p>So why doesn&rsquo;t this work when you&rsquo;ve got a bunch of strings?</p>
 <p>Take a look at what you&rsquo;re actually sending down the pipeline:</p>
-<pre><code>PS C:\&gt; $Servers | Get-Member -MemberType Properties
-
-
-   TypeName: System.String
-
-Name   MemberType Definition
-----   ---------- ----------
-Length Property   int Length {get;}
-</code></pre>
-<p>Yup, you&rsquo;re reading that correctly. Strings only have one property, and that&rsquo;s the length. So when you export strings to a CSV you&rsquo;re actually asking for the length of each of those strings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">PS </span>C:\&gt; <span style="color:#8be9fd;font-style:italic">$Servers</span> | <span style="color:#8be9fd;font-style:italic">Get-Member</span> -MemberType Properties
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   TypeName: System.String
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Name   MemberType Definition       
+</span></span><span style="display:flex;"><span>----   ---------- ----------       
+</span></span><span style="display:flex;"><span>Length Property   int Length {get;}
+</span></span></code></pre></div><p>Yup, you&rsquo;re reading that correctly. Strings only have one property, and that&rsquo;s the length. So when you export strings to a CSV you&rsquo;re actually asking for the length of each of those strings.</p>
 <h2 id="ok-so-what-do-i-do"><strong>Ok, So What Do I Do?</strong></h2>
 <p>Well, given you&rsquo;re just dealing with a simple array of strings consider whether you actually need a CSV. Consider instead just writing that array directly to a file:</p>
-<pre><code>$Servers | Set-Content -Path C:\temp\servers.txt
-</code></pre>
-<p>When you need to read this back in simply grab it back:</p>
-<pre><code>$ServersFromFile = Get-Content -Path C:\temp\servers.txt
-</code></pre>
-<h2 id="you-dont-understand-i-really-need-a-csv"><strong>You Don&rsquo;t Understand, I Really Need a CSV!</strong></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Servers</span> | <span style="color:#8be9fd;font-style:italic">Set-Content</span> -Path C:\temp\servers.txt
+</span></span></code></pre></div><p>When you need to read this back in simply grab it back:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$ServersFromFile</span> = <span style="color:#8be9fd;font-style:italic">Get-Content</span> -Path C:\temp\servers.txt
+</span></span></code></pre></div><h2 id="you-dont-understand-i-really-need-a-csv"><strong>You Don&rsquo;t Understand, I Really Need a CSV!</strong></h2>
 <p>Fair enough, I won&rsquo;t dig into your business. Consider what you&rsquo;d normally see at the top of a CSV file: headings.</p>
 <p>You need to decide &ldquo;what&rdquo; these strings represent. Are they usernames, UNC paths, or server names?</p>
 <p>Now you&rsquo;re going to want to make an object for each of the entries in your array with your string being a property of that object (named to reflect what the strings actually are.)</p>
-<pre><code>$Servers | foreach {[PSCustomObject] @{Server = $_}} | Export-Csv -Path C:\temp\servers.csv
-</code></pre>
-<p>Now you should see what you actually want in the CSV file.</p>
-<pre><code>#TYPE System.Management.Automation.PSCustomObject
-&quot;Server&quot;
-&quot;AD1&quot;
-&quot;FILE1&quot;
-&quot;DB1&quot;
-&quot;APP1&quot;
-</code></pre>
-<h2 id="wrap-up"><strong>Wrap Up</strong></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Servers</span> | <span style="color:#ff79c6">foreach</span> {[PSCustomObject] @{Server = <span style="color:#8be9fd;font-style:italic">$_</span>}} | <span style="color:#8be9fd;font-style:italic">Export-Csv</span> -Path C:\temp\servers.csv
+</span></span></code></pre></div><p>Now you should see what you actually want in the CSV file.</p>
+<pre tabindex="0"><code>#TYPE System.Management.Automation.PSCustomObject
+&#34;Server&#34;
+&#34;AD1&#34;
+&#34;FILE1&#34;
+&#34;DB1&#34;
+&#34;APP1&#34;
+</code></pre><h2 id="wrap-up"><strong>Wrap Up</strong></h2>
 <p>The next question that always comes up with CSV files is, &ldquo;what the hell is that type information about?&rdquo; That&rsquo;s a topic for another post&hellip; and I&rsquo;ll actually refer you over to <a href="https://danblank.co.uk/2018/04/05/export-csv-pshelp/" target="_blank" rel="noopener">Dan Blank</a>
  to hear a bit about that.</p>
 <p>What other gotcha&rsquo;s did/do you run into? Hit me up in the comments or on <a href="https://twitter.com/WindosNZ" target="_blank" rel="noopener">Twitter</a>
 !</p>
 <p>Also, remember that if you&rsquo;re looking for <a href="https://king.geek.nz/2018/03/20/pshelp-twitter/" target="_blank" rel="noopener">PowerShell help</a>
-, you can find it on Twitter using <a href="https://twitter.com/search?f=tweets&amp;amp;vertical=default&amp;amp;q=%23pshelp&amp;amp;src=typd" target="_blank" rel="noopener">#PSHelp</a>
+, you can find it on Twitter using <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=%23pshelp&amp;src=typd" target="_blank" rel="noopener">#PSHelp</a>
 !</p>
 
   </article><div class="bg-blue-300 dark:bg-gray-900">
@@ -314,6 +309,8 @@ Length Property   int Length {get;}
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

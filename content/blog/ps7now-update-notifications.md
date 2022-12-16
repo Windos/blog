@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2020-03-12T20:47:55Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/03/birmingham-museums-trust-p49Q9HRPN7I-unsplash.jpg"
+thumbnail = "/2020/03/birmingham-museums-trust-p49Q9HRPN7I-unsplash.jpg"
 slug = "ps7now-update-notifications"
 summary = "If you're not stalking the PowerShell team on Twitter, or obsessively refreshing the PowerShell repo on GitHub, how are you meant to be aware of new releases?"
 tags = ["PowerShell"]
@@ -21,7 +21,7 @@ But now you're itching for the next release and the next round of new features a
 
 While it's always fun to write about one of your favorite technologies, these are a lot of effort to put together (thanks [Jeff](https://twitter.com/JeffHicks)!). Luckily, PowerShell 7 shipped with an answer: [Update Notifications](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7).
 
-{{< figure src="__GHOST_URL__/content/images/2020/03/image.png" >}}
+{{< figure src="/2020/03/image.png" >}}
 
 Once in a given 24 hours window, PowerShell checks to see if there is a new version available. This check happens three seconds (or more) after you've opened PowerShell for the first time in that window to limit any impact on performance.
 

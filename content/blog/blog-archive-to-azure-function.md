@@ -3,7 +3,7 @@ categories = ["PowerShell", "Azure"]
 date = 2019-02-23T08:08:50Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/02/josh-edgoose-1078641-unsplash.jpg"
+thumbnail = "/2019/02/josh-edgoose-1078641-unsplash.jpg"
 slug = "blog-archive-to-azure-function"
 summary = "A few scripts run on my home server, but can happily run in a serverless environment. Time to give that poor server a rest, I think."
 tags = ["PowerShell", "Azure"]
@@ -34,11 +34,11 @@ To get started, sign into you Azure account and load up the [portal](https://por
 
 Head to the Function Apps page, and you can see any existing apps... and also find that you can't add a new one directly from this page. Instead hit the plus up the top left of the page.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--0-.png" >}}
+{{< figure src="/2019/02/2019-02-23--0-.png" >}}
 
 From here, either search for or scroll down to find "**Function App**". Choosing "**Compute**" from the left hand column will filter the list of options and make it easier to find.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--1--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--1--1.png" >}}
 
 This will open a blade where you can fill out info for your new Function App. The first option is the app name and this has to globally unique as it ends up with an internet resolvable domain name.
 
@@ -46,25 +46,25 @@ If you've got existing resource groups and storage provisioned, you can select t
 
 Also, if locality of your app is important (because serverless != no servers), remember to pick a location. It wasn't too important for this task, but when I have to think about proximity to "my audience", West US tends to be best so I stuck with that here.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--3--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--3--1.png" >}}
 
 Once the deployment is finished, which could take a little while if you're setting up a brand new resource group, you'll be able to get straight to your new Function App via the shortcut in your notifications.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--5--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--5--1.png" >}}
 
 The overview tab gives a high level break down of your app, including the url and quick links to some of the settings we'll be going into soon. The "Platform features" tab is a listing of all of the features you may need to get into.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--6--2.png" >}}
+{{< figure src="/2019/02/2019-02-23--6--2.png" >}}
 
 We'll start by looking into the "Function app settings" (which you can also get to from the Overview tab.)
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--7--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--7--1.png" >}}
 
 In order to use PowerShell, this function needs to be running version ~1 but the default is ~2 (which makes sense, it is newer...)
 
 Toggle the version to downgrade and wait for a moment to let it make these changes.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--8--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--8--1.png" >}}
 
 While we're looking at settings, we need to add some tokens which will be used to authenticate against the Twitter APIs when it's time to send our tweet.
 
@@ -72,7 +72,7 @@ You do this in the "Application settings". Once again, this is accessible via th
 
 These are for the four different tokens and secrets needed by Twitter. You Twitter module of choice should point you in the right direction for getting these generated.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--11--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--11--1.png" >}}
 
 So far we've defined the platform on which our function (and future functions?) will run. Now we need to create an actual function.
 
@@ -80,13 +80,13 @@ There's a drop down for functions on the left of the screen which currently has 
 
 The first screen you'll see gives a bunch of quick premade functions, but they aren't what we want. We need to create a custom function as we're planning to use PowerShell.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--12--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--12--1.png" >}}
 
 On the next page, toggle on "Experimental Language Support" which enables the PowerShell option we're looking for. You can pick any of the templates, but the one I want for this function is the "Timer trigger" as the script just runs on a given timer rather than being triggered via an API call.
 
 Once you know your trigger click on your preferred language underneath it (... PowerShell!)
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--13--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--13--1.png" >}}
 
 A new blade will fly out... from the right this time (I really don't get Azure's UX at times). Name the trigger, and define your schedule.
 
@@ -96,7 +96,7 @@ If, like me, you need to get up to speed on cron expressions this [cheat sheet](
 
 My schedule is `0 0 0 * * MON,THU` which, all going well should meant that at midnight (UTC) on Mondays and Thursdays my function will fire. This _may_ happen at a different time, as the timer _could_ be set to server local time instead of UTC.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--16--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--16--1.png" >}}
 
 Once you create this function, you'll be dumped into your script, `run.ps1`, which has some demo code (writing some random output.) Instead, dump your scripts in there.
 
@@ -106,37 +106,37 @@ Notice I've got some code up the top of my script checking for and installing my
 
 You can click run to test out your code.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--17--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--17--1.png" >}}
 
 But... problems. As this is a headless situation, I can't actually install the module from the Gallery. It's possible there is a way to make this work, but Google suggested this is the intention and if you rely on a module, you should include it with your function.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--18--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--18--1.png" >}}
 
 So I went about including in PSTwitterAPI with my function, and the logical place to do this is the storage account that got created with my Function App.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--20--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--20--1.png" >}}
 
 There's a handy way of viewing and managing the content of this storage account within the browser, called **Storage Explorer**.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--21--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--21--1.png" >}}
 
 What you're looking for here is under **File Shares**. And you'll want to navigate through the file system to **wwwroot** under which you'll find the name of your trigger.
 
 That directory will contain the json file containing the config for your function and that `run.ps1` script we were editing earlier.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--23--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--23--1.png" >}}
 
 From here, you can upload files... but not directories unfortunately, so I started by creating a new directory called "Modules".
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--24--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--24--1.png" >}}
 
 And then I went about manually creating the folder structure for the module itself, and uploading files into the correct folders (making sure what I ended up with in the storage account matched the copy of the module on my workstation.)
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--26--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--26--1.png" >}}
 
 Head back to your function, and if you see the "View Files" option on the right, you'll now see your new Modules directory.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--28--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--28--1.png" >}}
 
 Change your script to not try and install the module, and import the module via path instead of name and it should be working.
 
@@ -144,7 +144,7 @@ Now if we click run... it still comes out with errors, complaining about there n
 
 This is a lie, and I have to assume it's a random scoping/experimental language problem. The function is actually working for me at this point, and tweets do go out.
 
-{{< figure src="__GHOST_URL__/content/images/2019/02/2019-02-23--29--1.png" >}}
+{{< figure src="/2019/02/2019-02-23--29--1.png" >}}
 
 It's just a shame that the status for the job is coming back as failed despite working perfectly.
 

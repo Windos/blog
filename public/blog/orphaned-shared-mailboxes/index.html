@@ -8,33 +8,32 @@
   <title>
   Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes - ToastIT
   </title>
-  <meta name="description" content="Time for a bit of Exchange flavoured spring cleaning? Let&#39;s find some un-needed shared mailboxes!" />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Time for a bit of Exchange flavoured spring cleaning? Let&rsquo;s find some un-needed shared mailboxes!" /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes" />
-<meta property="og:description" content="Time for a bit of Exchange flavoured spring cleaning? Let&#39;s find some un-needed shared mailboxes!" />
+<meta property="og:description" content="Time for a bit of Exchange flavoured spring cleaning? Let&rsquo;s find some un-needed shared mailboxes!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/orphaned-shared-mailboxes/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2018-08-24T10:22:00+00:00" />
-<meta property="article:modified_time" content="2018-08-24T10:22:00+00:00" />
-
+<meta property="article:published_time" content="2018-08-23T22:22:00+00:00" />
+<meta property="article:modified_time" content="2018-08-23T22:22:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes"/>
-<meta name="twitter:description" content="Time for a bit of Exchange flavoured spring cleaning? Let&#39;s find some un-needed shared mailboxes!"/>
+<meta name="twitter:description" content="Time for a bit of Exchange flavoured spring cleaning? Let&rsquo;s find some un-needed shared mailboxes!"/>
 
   <meta itemprop="name" content="Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes">
-<meta itemprop="description" content="Time for a bit of Exchange flavoured spring cleaning? Let&#39;s find some un-needed shared mailboxes!"><meta itemprop="datePublished" content="2018-08-24T10:22:00+00:00" />
-<meta itemprop="dateModified" content="2018-08-24T10:22:00+00:00" />
+<meta itemprop="description" content="Time for a bit of Exchange flavoured spring cleaning? Let&rsquo;s find some un-needed shared mailboxes!"><meta itemprop="datePublished" content="2018-08-23T22:22:00+00:00" />
+<meta itemprop="dateModified" content="2018-08-23T22:22:00+00:00" />
 <meta itemprop="wordCount" content="524">
 <meta itemprop="keywords" content="PowerShell,Office 365,Nugget," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    August 24, 2018
+    August 23, 2018
   
 
 
@@ -123,7 +123,10 @@
       </svg>
       524&nbsp;words
       
+        
+      
     </h5>
+    
 
     <p>You might be migrating your on-premises Exchange server to the cloud. Maybe you&rsquo;re migrating to a newer version of Exchange. Or maybe you just feel like a bit of a spring clean.</p>
 <p>Regardless of why, or if, you want to clean up orphaned shared mailboxes, it is an interesting problem to tackle.</p>
@@ -137,56 +140,50 @@
 <h2 id="building-out-the-script"><strong>Building out the Script</strong></h2>
 <p>I&rsquo;m just going to be going over the highlights of this script, showing the key points. If you&rsquo;re looking for the complete script, there will be a Gist link at the end.</p>
 <p>First, as ever, let&rsquo;s connect to our Exchange server.</p>
-<pre><code>$ExSplat = @{
-    ConfigurationName = 'Microsoft.Exchange'
-    ConnectionUri     = 'http://exchange.example.com/powershell'
-    Authentication    = 'Kerberos'
-}
-$ExSession = New-PSSession @ExSplat
-
-# *&gt;$null suppresses the output from Import-PSSession
-Import-PSSession -Session $ExSession *&gt;$null
-</code></pre>
-<p>Next, we&rsquo;ll collect all of our shared mailboxes. This fulfills our first criteria listed above in the intro.</p>
-<pre><code>$SharedMailboxes = Get-Mailbox -RecipientTypeDetails SharedMailbox
-</code></pre>
-<p>For each mailbox, we&rsquo;ll then get the permissions set on it. We&rsquo;ll also need to rule out system or service accounts that you expect to find on a mailbox.</p>
-<pre><code>foreach ($SharedMailbox in $SharedMailboxes) {
-    $Permissions = $SharedMailbox | Get-MailboxPermission | Where-Object {
-        $_.IsInherited -eq $false -and $_.User -like 'EXAMPLE\*' -and $_.User -ne 'EXAMPLE\serviceaccount'
-    }
-
-    {#Snipped}
-}
-</code></pre>
-<p>Assuming you find no permissions on the mailbox, we&rsquo;ve met our second criteria. We now need to check the permissions on the calendar folder specifically.</p>
-<pre><code>if ($null -eq $Permissions) {
-    $CalendarIdentitiy = '{0}:\Calendar' -f $SharedMailbox.PrimarySmtpAddress
-    $CalendarPermissions = Get-MailboxFolderPermission -Identity $CalendarIdentitiy | Where-Object {
-        # Yes, these are redundant, but I've listed them like this for easier expansion.
-	    $_.User -notin @('Default', 'Anonymous') -and $_.User -like 'EXAMPLE\*'
-    }
-
-    {#Snipped}
-}
-</code></pre>
-<p>If you&rsquo;ve got to this point and found that there are no (expected) permissions on the calendar, then we&rsquo;ve found an orphaned shared mailbox so we should output the name and address so that we can then carry out further investigation&hellip; or just delete it.</p>
-<pre><code>if ($null -eq $CalendarPermissions) {
-	[PSCustomObject]@{
-		Mailbox = $SharedMailbox.Name
-		SMTPAddress = $SharedMailbox.PrimarySmtpAddress
-	}
-}
-</code></pre>
-<p>Finally, just in case there is any weird scoping issue, I like to clear out my two permissions variables so that I can be sure that my next iteration will start with both being NULL.</p>
-<pre><code>Clear-Variable -Name '*Permissions'
-</code></pre>
-<h2 id="wrap-up"><strong>Wrap Up</strong></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$ExSplat</span> = @{
+</span></span><span style="display:flex;"><span>    ConfigurationName = <span style="color:#f1fa8c">&#39;Microsoft.Exchange&#39;</span>
+</span></span><span style="display:flex;"><span>    ConnectionUri     = <span style="color:#f1fa8c">&#39;http://exchange.example.com/powershell&#39;</span>
+</span></span><span style="display:flex;"><span>    Authentication    = <span style="color:#f1fa8c">&#39;Kerberos&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$ExSession</span> = <span style="color:#8be9fd;font-style:italic">New-PSSession</span> <span style="color:#8be9fd;font-style:italic">@ExSplat</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># *&gt;$null suppresses the output from Import-PSSession</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Import-PSSession</span> -Session <span style="color:#8be9fd;font-style:italic">$ExSession</span> *&gt;$null
+</span></span></code></pre></div><p>Next, we&rsquo;ll collect all of our shared mailboxes. This fulfills our first criteria listed above in the intro.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$SharedMailboxes</span> = <span style="color:#8be9fd;font-style:italic">Get-Mailbox</span> -RecipientTypeDetails SharedMailbox
+</span></span></code></pre></div><p>For each mailbox, we&rsquo;ll then get the permissions set on it. We&rsquo;ll also need to rule out system or service accounts that you expect to find on a mailbox.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#ff79c6">foreach</span> (<span style="color:#8be9fd;font-style:italic">$SharedMailbox</span> <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">$SharedMailboxes</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Permissions</span> = <span style="color:#8be9fd;font-style:italic">$SharedMailbox</span> | <span style="color:#8be9fd;font-style:italic">Get-MailboxPermission</span> | <span style="color:#8be9fd;font-style:italic">Where-Object</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$_</span>.IsInherited <span style="color:#ff79c6">-eq</span> $false <span style="color:#ff79c6">-and</span> <span style="color:#8be9fd;font-style:italic">$_</span>.User <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#39;EXAMPLE\*&#39;</span> <span style="color:#ff79c6">-and</span> <span style="color:#8be9fd;font-style:italic">$_</span>.User <span style="color:#ff79c6">-ne</span> <span style="color:#f1fa8c">&#39;EXAMPLE\serviceaccount&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    {<span style="color:#6272a4">#Snipped}</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Assuming you find no permissions on the mailbox, we&rsquo;ve met our second criteria. We now need to check the permissions on the calendar folder specifically.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#ff79c6">if</span> ($null <span style="color:#ff79c6">-eq</span> <span style="color:#8be9fd;font-style:italic">$Permissions</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$CalendarIdentitiy</span> = <span style="color:#f1fa8c">&#39;{0}:\Calendar&#39;</span> <span style="color:#ff79c6">-f</span> <span style="color:#8be9fd;font-style:italic">$SharedMailbox</span>.PrimarySmtpAddress
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$CalendarPermissions</span> = <span style="color:#8be9fd;font-style:italic">Get-MailboxFolderPermission</span> -Identity <span style="color:#8be9fd;font-style:italic">$CalendarIdentitiy</span> | <span style="color:#8be9fd;font-style:italic">Where-Object</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#6272a4"># Yes, these are redundant, but I&#39;ve listed them like this for easier expansion.</span>
+</span></span><span style="display:flex;"><span>	    <span style="color:#8be9fd;font-style:italic">$_</span>.User -notin @(<span style="color:#f1fa8c">&#39;Default&#39;</span>, <span style="color:#f1fa8c">&#39;Anonymous&#39;</span>) <span style="color:#ff79c6">-and</span> <span style="color:#8be9fd;font-style:italic">$_</span>.User <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#39;EXAMPLE\*&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    {<span style="color:#6272a4">#Snipped}</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If you&rsquo;ve got to this point and found that there are no (expected) permissions on the calendar, then we&rsquo;ve found an orphaned shared mailbox so we should output the name and address so that we can then carry out further investigation&hellip; or just delete it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#ff79c6">if</span> ($null <span style="color:#ff79c6">-eq</span> <span style="color:#8be9fd;font-style:italic">$CalendarPermissions</span>) {
+</span></span><span style="display:flex;"><span>	[PSCustomObject]@{
+</span></span><span style="display:flex;"><span>		Mailbox = <span style="color:#8be9fd;font-style:italic">$SharedMailbox</span>.Name
+</span></span><span style="display:flex;"><span>		SMTPAddress = <span style="color:#8be9fd;font-style:italic">$SharedMailbox</span>.PrimarySmtpAddress
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Finally, just in case there is any weird scoping issue, I like to clear out my two permissions variables so that I can be sure that my next iteration will start with both being NULL.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Clear-Variable</span> -Name <span style="color:#f1fa8c">&#39;*Permissions&#39;</span>
+</span></span></code></pre></div><h2 id="wrap-up"><strong>Wrap Up</strong></h2>
 <p>Head over to <a href="https://gist.github.com/Windos/bb663a8b025de03f922a4593de79fcf9" target="_blank" rel="noopener">Gist</a>
  if you want to see a full script.</p>
 <p>Obviously, all the normal disclaimers apply. This isn&rsquo;t polished, and we may not have covered all of the things that would constitute &ldquo;orphaned&rdquo; in your environment.</p>
 <p>Remember, if you&rsquo;re looking for <a href="https://king.geek.nz/2018/03/20/pshelp-twitter/" target="_blank" rel="noopener">PowerShell help</a>
-, you can find it on Twitter using <a href="https://twitter.com/search?f=tweets&amp;amp;vertical=default&amp;amp;q=%23pshelp&amp;amp;src=typd" target="_blank" rel="noopener">#PSHelp</a>
+, you can find it on Twitter using <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=%23pshelp&amp;src=typd" target="_blank" rel="noopener">#PSHelp</a>
 !</p>
 
   </article><div class="bg-blue-300 dark:bg-gray-900">
@@ -313,6 +310,8 @@ Import-PSSession -Session $ExSession *&gt;$null
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

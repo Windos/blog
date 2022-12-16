@@ -8,39 +8,38 @@
   <title>
   Normalizing Phone Numbers, Easier with Regex - ToastIT
   </title>
-  <meta name="description" content="After years of staring at it confused, I&#39;ve finally given into the dark side and started to learn RegEx." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="After years of staring at it confused, I&rsquo;ve finally given into the dark side and started to learn RegEx." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
-  
-  
+
+
 
   <meta property="og:title" content="Normalizing Phone Numbers, Easier with Regex" />
-<meta property="og:description" content="After years of staring at it confused, I&#39;ve finally given into the dark side and started to learn RegEx." />
+<meta property="og:description" content="After years of staring at it confused, I&rsquo;ve finally given into the dark side and started to learn RegEx." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/normalizing-phone-numbers-easier-with-regex/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2019-07-25T11:16:12+00:00" />
-<meta property="article:modified_time" content="2019-07-25T11:16:12+00:00" />
-
+<meta property="article:published_time" content="2019-07-24T23:16:12+00:00" />
+<meta property="article:modified_time" content="2019-07-24T23:16:12+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Normalizing Phone Numbers, Easier with Regex"/>
-<meta name="twitter:description" content="After years of staring at it confused, I&#39;ve finally given into the dark side and started to learn RegEx."/>
+<meta name="twitter:description" content="After years of staring at it confused, I&rsquo;ve finally given into the dark side and started to learn RegEx."/>
 
   <meta itemprop="name" content="Normalizing Phone Numbers, Easier with Regex">
-<meta itemprop="description" content="After years of staring at it confused, I&#39;ve finally given into the dark side and started to learn RegEx."><meta itemprop="datePublished" content="2019-07-25T11:16:12+00:00" />
-<meta itemprop="dateModified" content="2019-07-25T11:16:12+00:00" />
+<meta itemprop="description" content="After years of staring at it confused, I&rsquo;ve finally given into the dark side and started to learn RegEx."><meta itemprop="datePublished" content="2019-07-24T23:16:12+00:00" />
+<meta itemprop="dateModified" content="2019-07-24T23:16:12+00:00" />
 <meta itemprop="wordCount" content="1280">
 <meta itemprop="keywords" content="PowerShell," />
+
+
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
-    
+
     <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
-    
+
   </a>
   <button class="mobile-menu-button md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,19 +50,19 @@
   </button>
   <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
 
-    
+
     <li><a href="/blog">Blog</a></li>
-    
+
     <li><a href="/page/about/">About</a></li>
-    
+
     <li><a href="/tags">Tags</a></li>
-    
+
     <li><a href="/blog/emoji-support/">Top Post</a></li>
-    
 
-    
 
-    
+
+
+
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,20 +73,21 @@
         </svg>
       </span>
     </li>
-    
 
-    
+
+
   </ul>
 </header>
 <main class="flex-1">
-  
-  
 
-  
+
+
+
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Normalizing Phone Numbers, Easier with Regex</h1>
+
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -97,15 +97,15 @@
         <line x1="4" y1="11" x2="20" y2="11" />
         <rect x="8" y="15" width="2" height="2" />
       </svg>
-      Posted on 
-  
-    July 25, 2019
-  
+      Posted on
+
+    July 24, 2019
 
 
-      
+
+
         &nbsp;&bull;&nbsp;
-      
+
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <circle cx="12" cy="12" r="9" />
@@ -122,8 +122,11 @@
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
       1280&nbsp;words
-      
+
+
+
     </h5>
+
 
     <p>For the longest time, <a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank" rel="noopener">Regex</a>
  has been similar to black magic in my mind. I&rsquo;ve seen these expressions used by (scripting) wizard to do amazing things, but I have never been able to wrap my head around them.</p>
@@ -131,9 +134,8 @@
 <p>For example, let&rsquo;s say I was trying to ensure that input was a valid NetBIOS name. I&rsquo;d head off to Google and search for &ldquo;<a href="http://lmgtfy.com/?q=NetBIOS&#43;name&#43;regex" target="_blank" rel="noopener">NetBIOS name regex</a>
 &rdquo; and likely end up grabbing something from the first <a href="https://stackoverflow.com/questions/24095272/netbios-name-regular-expression" target="_blank" rel="noopener">Stack Overflow</a>
  result. I would then blindly drop that into my script.</p>
-<pre><code>$Input -match &quot;^[\\w!@#$%^()\\-'{}\\.~]{1,15}$&quot;
-</code></pre>
-<p>This would work, nine times out of ten, and I&rsquo;d happily go on my merry way.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Input</span> <span style="color:#ff79c6">-match</span> <span style="color:#f1fa8c">&#34;^[\\w!@#$%^()\\-&#39;{}\\.~]{1,15}$&#34;</span>
+</span></span></code></pre></div><p>This would work, nine times out of ten, and I&rsquo;d happily go on my merry way.</p>
 <p>Lately I&rsquo;ve been trying to make a concerted effort to actually learn Regex, understand what the expressions are actually doing&hellip; and even occasionally writing my own.</p>
 <h2 id="still-needing-a-little-help">Still Needing a Little Help</h2>
 <p>Don&rsquo;t get me wrong, I&rsquo;m not writing my expressions without any sort of references or help.</p>
@@ -149,48 +151,46 @@
 <h2 id="regex-to-the-rescue">Regex to the Rescue</h2>
 <p>Let&rsquo;s talk through each step of this. First I&rsquo;ll consult RegExr and find a token that will match against a number. It turns out that I can use <code>\d</code> which matches any digit. If you&rsquo;ve ever seen regex notation with square brackets listing out characters and digits, this is the equivalent of <code>[0-9]</code>.</p>
 <p>I want to start be matching what will be my leading 2 and the following digit, to do this I&rsquo;ll use the following:</p>
-<pre><code>(2\d)
-</code></pre>
-<p>That is to say, I want to match a two and any other single digit. In my example number this will match against the <em>27</em>.</p>
+<pre tabindex="0"><code>(2\d)
+</code></pre><p>That is to say, I want to match a two and any other single digit. In my example number this will match against the <em>27</em>.</p>
 <p>Now I need the next three digits. I could list out three instances of the digit token:</p>
-<pre><code>(\d\d\d)
-</code></pre>
-<p>That really doesn&rsquo;t scale though, does it? Instead we can use a quantifier to specify how many digits we&rsquo;re wanting. Do this by putting the number of digits in curly braces.</p>
-<pre><code>(\d{3})
-</code></pre>
-<p>Excellent, when used in conjunction with the previous part of the expression, this will match against the 111 in the example number.</p>
+<pre tabindex="0"><code>(\d\d\d)
+</code></pre><p>That really doesn&rsquo;t scale though, does it? Instead we can use a quantifier to specify how many digits we&rsquo;re wanting. Do this by putting the number of digits in curly braces.</p>
+<pre tabindex="0"><code>(\d{3})
+</code></pre><p>Excellent, when used in conjunction with the previous part of the expression, this will match against the 111 in the example number.</p>
 <p>Finally we need the last set of digits. This one though is four digits in the example number, but when I&rsquo;m actually using this it could be as few as three digits or as high as five.</p>
 <p>It turns out our new friend the quantifier can actually specify a minimum and maximum number of times to match.</p>
-<pre><code>(\d{3,5}
-</code></pre>
-<p>This will match the 2222 in my example number, but could equally match against 222 or 22222.</p>
+<pre tabindex="0"><code>(\d{3,5}
+</code></pre><p>This will match the 2222 in my example number, but could equally match against 222 or 22222.</p>
 <p>Putting this all together we end up with this expression:</p>
-<pre><code>(2\d)(\d{3})(\d{3,4})
-</code></pre>
-<p>If I throw this into RegExr with some sample numbers in the text field I can see that it matches my example number but not the numbers below it. One of them didn&rsquo;t match because it had a leading 3 instead of a 2 and the other was simply too short.
-<img src="__GHOST_URL__/content/images/2019/07/RegExr.PNG" alt="">RegEx test using RegExr
-That&rsquo;s all well and good, but we&rsquo;re trying to make changes here right?</p>
+<pre tabindex="0"><code>(2\d)(\d{3})(\d{3,4})
+</code></pre><p>If I throw this into RegExr with some sample numbers in the text field I can see that it matches my example number but not the numbers below it. One of them didn&rsquo;t match because it had a leading 3 instead of a 2 and the other was simply too short.</p>
+<figure><img src="/2019/07/RegExr.PNG"
+         alt="RegEx test using RegExr"/><figcaption>
+            <p>RegEx test using RegExr</p>
+        </figcaption>
+</figure>
+
+<p>That&rsquo;s all well and good, but we&rsquo;re trying to make changes here right?</p>
 <h2 id="those-brackets-are-there-on-purpose">Those Brackets Are There on Purpose</h2>
 <p>Strictly speaking, the expression we built works perfectly fine without the brackets (i.e. <code>2\d\d{3}\d{3,4}</code>) when it comes to finding my example number. But those brackets weren&rsquo;t there just as a stylistic decision or to chunk it up into logical units for the purpose of demonstration.</p>
 <p>The brackets denote a capturing group, and you&rsquo;re able to actually reference these to as sub-strings.</p>
 <p>In PowerShell this manifests itself when using the <code>-Replace</code> operator. Each capturing group can be reference in turn using special tokens starting at <code>$1</code> and incrementing with each group.</p>
-<p>You&rsquo;d be forgiven for thinking that these tokens are normal PowerShell variables because they start with a dollar sign. They are not, and they must be treated as a literal string.</p>
-<p>If you are using double quotes around your replacement string, you need to escape the dollar signs when referencing your capturing groups.</p>
+<p class="warning">You'd be forgiven for thinking that these tokens are normal PowerShell variables because they start with a dollar sign. They are not, and they must be treated as a literal string.
+<br /><br />
+If you are using double quotes around your replacement string, you need to escape the dollar signs when referencing your capturing groups.</p>
 <p>So, let&rsquo;s just go ahead and test this out in PowerShell, using our expression against the test number.</p>
-<pre><code>'0271112222' -Replace '(2\d)(\d{3})(\d{3,4})', '+64 $1 $2 $3'
-</code></pre>
-<p>Run that and we get the output: <code>0+64 27 111 2222</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;0271112222&#39;</span> <span style="color:#ff79c6">-Replace</span> <span style="color:#f1fa8c">&#39;(2\d)(\d{3})(\d{3,4})&#39;</span>, <span style="color:#f1fa8c">&#39;+64 $1 $2 $3&#39;</span>
+</span></span></code></pre></div><p>Run that and we get the output: <code>0+64 27 111 2222</code></p>
 <p>Yes! Awesome! Wait&hellip;</p>
 <h2 id="i-goofed">I Goofed</h2>
 <p>While the bulk of the formatting there is right, I didn&rsquo;t account for leading zero. We could use another capturing group and just not reference it in the replacement string, but I think I&rsquo;d rather get fancy and use a <em>NON-capturing group</em>. These are similar to the normal groups, except that you include <code>?:</code> as the first two character inside the brackets.</p>
-<pre><code>'0271112222' -Replace '(?:0)(2\d)(\d{3})(\d{3,4})', '+64 $1 $2 $3'
-</code></pre>
-<p>Now we can celebrate, we&rsquo;ve officially got the output we need (<code>+64 27 111 2222</code>)!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;0271112222&#39;</span> <span style="color:#ff79c6">-Replace</span> <span style="color:#f1fa8c">&#39;(?:0)(2\d)(\d{3})(\d{3,4})&#39;</span>, <span style="color:#f1fa8c">&#39;+64 $1 $2 $3&#39;</span>
+</span></span></code></pre></div><p>Now we can celebrate, we&rsquo;ve officially got the output we need (<code>+64 27 111 2222</code>)!</p>
 <p>There&rsquo;s one other scenario I want to quickly cover off, and that&rsquo;s internationalizing cellphone numbers that may already have spaces. I&rsquo;ll repeat the use of non capturing groups, using the whitespace token <code>\s</code>, and the star quantifier <code>*</code> which simply means it&rsquo;s match zero or more times (so that the lack of any whitespace won&rsquo;t cause issues.)</p>
 <p>This makes my final expression look like this:</p>
-<pre><code>(?:0)(2\d)(?:\s)*(\d{3})(?:\s)*(\d{3,4})
-</code></pre>
-<p>Fair enough, that may still look a little complex if you&rsquo;re new to regex but I hope that having built it up step by step it can be deciphered.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>(?:<span style="color:#bd93f9">0</span>)(<span style="color:#bd93f9">2</span>\d)(?:\s)*(\d{<span style="color:#bd93f9">3</span>})(?:\s)*(\d{<span style="color:#bd93f9">3</span>,<span style="color:#bd93f9">4</span>})
+</span></span></code></pre></div><p>Fair enough, that may still look a little complex if you&rsquo;re new to regex but I hope that having built it up step by step it can be deciphered.</p>
 <p>Also, if you&rsquo;re a regex guru be gentle. There&rsquo;s probably much better ways to do this, but this is the result of my exploration so far.</p>
 <h2 id="next-steps">Next Steps</h2>
 <p>I&rsquo;m going to go off and read a book on regex now (and watch some videos), as they have finally &ldquo;clicked&rdquo; for me and I now have that seed which is spurring me on to learn more. It&rsquo;s better to ride that wave of inspiration, especially when it&rsquo;s heading towards something useful, than ignore it!</p>
@@ -203,7 +203,7 @@ That&rsquo;s all well and good, but we&rsquo;re trying to make changes here righ
       <p class="opacity-60"></p>
     </div>
     <ul class="flex justify-center gap-4">
-      
+
       <li>
         <a
           href="https://twitter.com/WindosNZ"
@@ -230,8 +230,8 @@ That&rsquo;s all well and good, but we&rsquo;re trying to make changes here righ
           </svg>
         </a>
       </li>
-      
-      
+
+
       <li>
         <a
           href="https://linkedin.com/in/windos"
@@ -260,9 +260,9 @@ That&rsquo;s all well and good, but we&rsquo;re trying to make changes here righ
           </svg>
         </a>
       </li>
-      
-      
-      
+
+
+
       <li>
         <a
           href="https://github.com/Windos"
@@ -289,11 +289,11 @@ That&rsquo;s all well and good, but we&rsquo;re trying to make changes here righ
           </svg>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <li>
         <a
           href="https://www.youtube.com/c/JoshuaKingSolari"
@@ -320,16 +320,18 @@ That&rsquo;s all well and good, but we&rsquo;re trying to make changes here righ
           </svg>
         </a>
       </li>
-      
-      
+
+
+
+
     </ul>
   </div>
 </div>
     </main><footer class="container p-6 mx-auto flex justify-between items-center">
   <span class="text-sm font-light">
-    
+
     Copyright © 2022 - Josh King · All rights reserved
-    
+
   </span>
   <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"

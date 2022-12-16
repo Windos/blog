@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2018-07-09T22:15:24Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/07/nicole-harrington-62045-unsplash.jpg"
+thumbnail = "/2018/07/nicole-harrington-62045-unsplash.jpg"
 slug = "safe-credentials"
 summary = "How do you deal with credentials in your scripts? Personally, I'm a Credential Manager kind of guy."
 tags = ["PowerShell"]
@@ -24,7 +24,7 @@ The Credential Manager has been a feature in Windows since Windows 7, or at leas
 
 Even if you don't save passwords, you'll probably be surprised to see how much "stuff" is in there. Check out mine:
 
-{{< figure src="__GHOST_URL__/content/images/2018/07/MyCredential.png" >}}
+{{< figure src="/2018/07/MyCredential.png" >}}
 
 If a user is experiencing account lockouts at work the first port of call is changing passwords on phones and other mobile devices. When that doesn't work we also go in and clear out the Credential Manager. Often there is something in there with the old password that didn't get automatically updated, and so it's trying to use the old one. A lot.
 

@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2015-07-22T12:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/3224581771_5917d64f99_b.jpg"
+thumbnail = "/2018/05/3224581771_5917d64f99_b.jpg"
 slug = "ugly-validation"
 summary = "Figure out what you did wrong and don't do it again. Good luck!"
 tags = ["PowerShell"]
@@ -33,7 +33,7 @@ function Test
 
 This test fucntion has a name parameter, and the `ValidateSet` attribute will only allow John or Jane as valid values. If I try to pass in 'Windos', the function doesn't run, and PowerShell lets me know why.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/ValidateSet.PNG" >}}
+{{< figure src="/2018/05/ValidateSet.PNG" >}}
 
 ## **Very Flexible, Yet So Ugly**
 
@@ -62,7 +62,7 @@ function Test-PC
 
 This function takes a Computer Name, but will only run if Test-Connection runs against the supplied name successfully. If I pass in a name I know doesn't exist the validation fails.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/ValidateScript.PNG" >}}
+{{< figure src="/2018/05/ValidateScript.PNG" >}}
 
 When I read the resulting message, which just blurts out the full validation script, I see: 'Figure out what you did wrong and don't do it again. Good luck!'
 
@@ -103,7 +103,7 @@ function Test-PC
 
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/Custom.PNG" >}}
+{{< figure src="/2018/05/Custom.PNG" >}}
 
 As you can see, the text we specified after the `throw` statement is presented to the user and is a lot easier to understand what the issue is and what needs to be done to correct the situation.
 

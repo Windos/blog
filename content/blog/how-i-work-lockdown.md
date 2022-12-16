@@ -3,7 +3,7 @@ categories = ["Meta", "PowerShell"]
 date = 2020-04-12T21:40:52Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/03/dillon-shook-3iPKIXVXv_U-unsplash.jpg"
+thumbnail = "/2020/03/dillon-shook-3iPKIXVXv_U-unsplash.jpg"
 slug = "how-i-work-lockdown"
 summary = "My last \"How I Work\" post was over three years ago and I've been considering an update for a while. What better time to do that than during the COVID-19 lockdown?"
 tags = ["Meta", "PowerShell"]
@@ -18,15 +18,13 @@ I've been considering an updated post for a while now, especially since I have m
 
 This time around I'm mixing the previous set of questions with ones that have been asked by the [ITP](https://itp.nz/) in a [series of posts](https://techblog.nz/2108-Lockdown-QA-Leighton-Roberts-Sharesies) with leaders of the tech sector in New Zealand.
 
-{{< bookmark url="__GHOST_URL__/2016/11/23/how-i-work/" title="I’m Josh King, ‘IT Pro,’ and This Is How I Work" description="Consider this my ‘How I Work’ post, and if you’re interested in reading more posts from other bloggers make sure you check out the list of participants on GitHub" icon="__GHOST_URL__/favicon.png" author="Josh King" publisher="ToastIT" thumbnail="__GHOST_URL__/content/images/2018/05/Automatic_Telephone_Exchange-_Communications_in_Wartime-_London-_England-_UK-_1945_D23695.jpg" caption="" >}}
-
 ## ****Where are you located?****
 
 If you hadn't picked it up from the intro, I call [New Zealand](https://en.wikipedia.org/wiki/New_Zealand) home. I was born in NZ and have no real desire to move overseas, as much fun as it is to visit other countries.
 
 My family and I live in [Hawke's Bay](https://en.wikipedia.org/wiki/Hawke%27s_Bay_Region), which is about halfway down the [North Island](https://en.wikipedia.org/wiki/North_Island).
 
-{{< figure src="__GHOST_URL__/content/images/2020/04/IMG_20170225_120017.jpg" caption="Sun, Seagulls, and Optimist boats at Ahuriri Beach in Hawke's Bay" >}}
+{{< figure src="/2020/04/IMG_20170225_120017.jpg" caption="Sun, Seagulls, and Optimist boats at Ahuriri Beach in Hawke's Bay" >}}
 
 Last time I answered this question I mentioned that the furthest I'd gone abroad was Australia. Since then I've been over to [Bellevue](https://en.wikipedia.org/wiki/Bellevue,_Washington) in the States to present at the [PowerShell + DevOps Global Summit](https://events.devopscollective.org/) which was an awesome experience (but still doesn't want to make me leave NZ permanently.)
 
@@ -34,7 +32,7 @@ Last time I answered this question I mentioned that the furthest I'd gone abroad
 
 I work at [Tribe](https://www.tribe.co.nz/), a Managed Service Provider based out of Hawke's Bay but with offices in Palmerston North and Christchurch as well. I work as a Systems Administrator in the Security & TechOps (SecTechOps) team. We're a specialist team that isn't (usually) customer facing, instead we own the internal tools ensuring that they fit for use by the front-line teams.
 
-{{< figure src="__GHOST_URL__/content/images/2020/04/RAB_3354-1-1_69e2a3fabaa3c1c375f591785986d196.jpg" caption="A few colleagues from the Tribe office" >}}
+{{< figure src="/2020/04/RAB_3354-1-1_69e2a3fabaa3c1c375f591785986d196.jpg" caption="A few colleagues from the Tribe office" >}}
 
 My specific focus is on automation. I keep an eye out for opportunities to eliminate manual work, especially if that can be applied across several (or hopefully all) customers to help them achieve increased efficiencies.
 
@@ -66,7 +64,7 @@ My work browser is the [new Edge](https://www.microsoft.com/en-us/edge). I use t
 
 A recent addition is the [Microsoft Editor browser extension](https://support.office.com/en-us/article/check-grammar-and-spelling-with-the-microsoft-editor-browser-extension-49dd8e1b-3dfa-4ba7-a40e-1bc120f9a71c), which brings Word style spelling, grammar, and refinement suggestions to the web. It catches my stupid mistakes and has even made the writing of this post so much easier.
 
-{{< figure src="__GHOST_URL__/content/images/2020/04/image.png" caption="Meta: Fixing an issue in the previous paragraph" >}}
+{{< figure src="/2020/04/image.png" caption="Meta: Fixing an issue in the previous paragraph" >}}
 
 ## What apps/tech are you using to enable remote working?
 
@@ -85,7 +83,7 @@ The full journey can be followed in this rambling Twitter thread.
 
 As for a tour of my desk now, here's an image and numbered notes. You might need to click the image to expand it.
 
-{{< figure src="__GHOST_URL__/content/images/2020/04/image-1.png" >}}
+{{< figure src="/2020/04/image-1.png" >}}
 
 1. Work laptop - Previously used for video calls prior to sorting a webcam
 2. [Adam Bertram](https://twitter.com/adbertram)'s [PowerShell for Sysadmins](https://nostarch.com/powershellsysadmins) - To be reviewed
@@ -131,7 +129,7 @@ A very close follow-up is the people, I work with some super sharp people.
 
 I've been a long time  [YouTube Red Premium](https://www.youtube.com/premium) subscriber, which comes with [Google Play Music](http://play.google.com/music/) and I use that as my music streaming service of choice. I've got a varied taste in music and what I choose depends on my mood (and if kids are around... language can be coarse.)
 
-{{< figure src="__GHOST_URL__/content/images/2020/04/image-2.png" >}}
+{{< figure src="/2020/04/image-2.png" >}}
 
 From left to right, that's:
 

@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2017-12-11T14:46:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-15.jpg"
+thumbnail = "/2018/05/thumb-15.jpg"
 slug = "kovertkringle"
 summary = "Given it's the holiday season, I worked on a PowerShell based Secret Santa Organizer"
 tags = ["PowerShell"]
@@ -79,7 +79,7 @@ Send-KKNotification
 
 This will send off an email to each of the participants, letting them know their "giftee" and also reminds them of the spend limit (in this example, $20.)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/example.png" >}}
+{{< figure src="/2018/05/example.png" >}}
 
 What about the snitch? They get BCC'ed on all of the email notifications.
 

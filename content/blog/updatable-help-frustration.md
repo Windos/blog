@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2016-11-07T10:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-1.png"
+thumbnail = "/2018/05/thumb-1.png"
 slug = "updatable-help-frustration"
 summary = "AAAAAAAAAAAAARRGH!"
 tags = ["PowerShell"]
@@ -47,7 +47,7 @@ I tried grabbing the download link for the [cab file](https://github.com/Windos/
 
 That should work, right?
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/nope1.png" >}}
+{{< figure src="/2018/05/nope1.png" >}}
 
 Ok, fine, maybe a repo isn't going to work. But wait! This blog runs out of GitHub Pages, perhaps I can serve these files out of a directory on there? Let's try:
 
@@ -57,7 +57,7 @@ Same result.
 
 What is interesting is that when you try to run `Save-Help` on the module, it creates an empty, correctly named, cab file in the target directory.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/folder-1.png" >}}
+{{< figure src="/2018/05/folder-1.png" >}}
 
 This is actually different than if you remove the files from the remote location (or just point the URI at the entirely wrong place.) When this happens I only get one of the two error messages shown above and the empty cab file isn't created.
 

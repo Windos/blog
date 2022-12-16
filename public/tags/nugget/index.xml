@@ -5,199 +5,167 @@
     <link>https://blog.toastit.dev/tags/nugget/</link>
     <description>Recent content in Nugget on ToastIT</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 29 Feb 2020 09:04:08 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/nugget/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Feb 2020 20:04:08 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/nugget/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>It&#39;s Likely We&#39;re Living in a PSSession</title>
       <link>https://blog.toastit.dev/blog/living-in-a-pssession/</link>
-      <pubDate>Sat, 29 Feb 2020 09:04:08 +0000</pubDate>
+      <pubDate>Fri, 28 Feb 2020 20:04:08 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/living-in-a-pssession/</guid>
-      <description>A questioncame up on the PowerShell Microsoft Tech Communitya couple of days ago that got me thinking.
-How can we tell if our PowerShell code is running in a PSSession, and what info can we find about the connection itself.
-The question itself was based around the fact that the remote sessions had access to a hash table with settings relevant to specific servers and this had to be queried by name.</description>
+      <description>PowerShell remoting is a truly powerful tool, but sometimes your scripts need a little help finding their way. How can you tell when you&amp;rsquo;re in a PSSession and what info is available about the session itself?</description>
     </item>
     
     <item>
       <title>PowerShell&#39;s Secret Wildcard</title>
       <link>https://blog.toastit.dev/blog/powershells-secret-wildcard/</link>
-      <pubDate>Thu, 09 Jan 2020 10:07:33 +0000</pubDate>
+      <pubDate>Wed, 08 Jan 2020 21:07:33 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/powershells-secret-wildcard/</guid>
-      <description>A couple of days ago I found myself needing to match text entries between two systems. The entries had a bunch of meta data, but the only thing I could use for the match was the text itself.
-In one system, the text might read:
-&amp;quot;This text is super important.&amp;quot; The second system had that same text, but with a little extra added to it but not in a predictable format:</description>
+      <description>It&amp;rsquo;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use&amp;hellip; such as the &amp;ldquo;like&amp;rdquo; operators accepting more than two different wildcards.</description>
     </item>
     
     <item>
       <title>Quick Ternary Operator Revisit: Can It Elseif?</title>
       <link>https://blog.toastit.dev/blog/quick-ternary-operator-revisit/</link>
-      <pubDate>Sat, 05 Oct 2019 04:41:49 +0000</pubDate>
+      <pubDate>Fri, 04 Oct 2019 15:41:49 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/quick-ternary-operator-revisit/</guid>
-      <description>It was a little over a week ago that I first started looking into the Ternary Operator, which is being added in PowerShell 7. I came away from my initial experimentation looking forward to being able to use it for trivial conditional logic when I can guarantee that the code will only need to run on the new version of PowerShell.
-Why trivial? As someone that&amp;rsquo;s not used the ternary operator in the past, reading it doesn&amp;rsquo;t come naturally.</description>
+      <description>I was thinking about the new Ternary Operator and had a random thought&amp;hellip; can it handle elseif logic?</description>
     </item>
     
     <item>
       <title>Roll Your Sleeves Up, It&#39;s Hacktoberfest Time!</title>
       <link>https://blog.toastit.dev/blog/hacktoberfest-2019/</link>
-      <pubDate>Mon, 30 Sep 2019 10:37:45 +0000</pubDate>
+      <pubDate>Sun, 29 Sep 2019 21:37:45 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/hacktoberfest-2019/</guid>
-      <description>We&amp;rsquo;re now about half an hour away from October, at least here in New Zealand, meaning that it&amp;rsquo;s just about time for Hacktoberfest2019 to kick off.
-This will be my fourth Hacktoberfest, and with any luck the fourth event t-shirt for my wife to eventually claim (not by my choice though!) I&amp;rsquo;ve written about the event a couple of times in the past, in 2017 and 2018.
-What&amp;rsquo;s a &amp;ldquo;Hacktoberfest&amp;rdquo;?</description>
+      <description>I&amp;rsquo;m gearing up for my fourth Hacktoberfest event, and so should you. You could even come away from this month with a fancy new t-shirt!</description>
     </item>
     
     <item>
       <title>RSAT as a Feature: I Thought I Was Going to Love It, Until I Saw It in Action</title>
       <link>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</link>
-      <pubDate>Thu, 14 Feb 2019 08:56:39 +0000</pubDate>
+      <pubDate>Wed, 13 Feb 2019 19:56:39 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</guid>
-      <description>Ok, that title may be a little hyperbolic. It&amp;rsquo;s not like I hate the experience of having the Remote Server Administration Tools (RSAT) installable as a feature rather than a standalone download. It&amp;rsquo;s just that it&amp;rsquo;s not what I&amp;rsquo;d imagine when I first heard about it.
-But what was I expecting? I thought we&amp;rsquo;d still be going into the classic Windows Features interface, just without the need to install the binaries (manually) before hand.</description>
+      <description>I&amp;rsquo;m a little late to this particular party, but I only just had the 1809 update on my workstation today.</description>
     </item>
     
     <item>
       <title>Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes</title>
       <link>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</link>
-      <pubDate>Fri, 24 Aug 2018 10:22:00 +0000</pubDate>
+      <pubDate>Thu, 23 Aug 2018 22:22:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</guid>
-      <description>You might be migrating your on-premises Exchange server to the cloud. Maybe you&amp;rsquo;re migrating to a newer version of Exchange. Or maybe you just feel like a bit of a spring clean.
-Regardless of why, or if, you want to clean up orphaned shared mailboxes, it is an interesting problem to tackle.
-First, in the interest of avoiding scope creep, let&amp;rsquo;s define what we mean by &amp;ldquo;orphaned shared mailbox&amp;rdquo;:
-It is a shared mailbox, not a user mailbox that you&amp;rsquo;ve shared.</description>
+      <description>Time for a bit of Exchange flavoured spring cleaning? Let&amp;rsquo;s find some un-needed shared mailboxes!</description>
     </item>
     
     <item>
       <title>PS Scheduled Jobs: Exploring Your Options</title>
       <link>https://blog.toastit.dev/blog/exploring-your-options/</link>
-      <pubDate>Sat, 30 Jun 2018 03:12:52 +0000</pubDate>
+      <pubDate>Fri, 29 Jun 2018 15:12:52 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/exploring-your-options/</guid>
-      <description>There are a total of 13 different options you can configure using the New-ScheduledJobOption and Set-ScheduledJobOption cmdlets. All of these options have a default value, and the resulting object will list out each of them. If you do not configure an option, it is assumed that you&amp;rsquo;re happy with the default.
-One example of this that may catch you out if you are working on a laptop is StartIfOnBatteries. This defaults to false and means that if your laptop isn&amp;rsquo;t plugged into AC power, your scheduled job will not run.</description>
+      <description>We&amp;rsquo;ve been looking into PowerShell Scheduled Jobs lately, today let&amp;rsquo;s have a quick look at the &amp;ldquo;options&amp;rdquo; available to us.</description>
     </item>
     
     <item>
       <title>Downloading an Image for Local Use</title>
       <link>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</link>
-      <pubDate>Mon, 28 May 2018 00:55:00 +0000</pubDate>
+      <pubDate>Sun, 27 May 2018 12:55:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</guid>
-      <description>During my latest livestream, after failing at what I intended to do, we got onto enabling the ability to use pictures from the Internet in toast notifications. All of the documentation for the UWP Toolkit suggests this should just work, but unfortunately it didn&amp;rsquo;t in practice.
-Rather than changing the code, and documentation, to explicitly not make this work from within the module we set out to enable this functionality ourselves.</description>
+      <description>This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&amp;rsquo;m disappointed that I didn&amp;rsquo;t get to it sooner.</description>
     </item>
     
     <item>
       <title>All I Want Is a Damned CSV!</title>
       <link>https://blog.toastit.dev/blog/ps-csv/</link>
-      <pubDate>Thu, 19 Apr 2018 08:30:00 +0000</pubDate>
+      <pubDate>Wed, 18 Apr 2018 20:30:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/ps-csv/</guid>
-      <description>Spurred on by a common issue that comes up on Twitter from time to time, this will be a rather short post about CSVs and PowerShell.
-What&amp;rsquo;s the Issue? Let&amp;rsquo;s say you have an array of strings.
-$Servers = @( &#39;AD1&#39;, &#39;FILE1&#39;, &#39;DB1&#39;, &#39;APP1&#39; ) You want to save these to disk. CSVs are pretty handy, right? And there is a cmdlet that&amp;rsquo;ll handle this for you!
-$Servers | Export-Csv -Path C:\temp\servers.</description>
+      <description>CSVs are pretty handy, right? And there is a cmdlet that&amp;rsquo;ll handle this for you!</description>
     </item>
     
     <item>
       <title>Avoiding DateTime Headaches</title>
       <link>https://blog.toastit.dev/blog/datetime-headache/</link>
-      <pubDate>Mon, 06 Nov 2017 08:15:00 +0000</pubDate>
+      <pubDate>Sun, 05 Nov 2017 19:15:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/datetime-headache/</guid>
-      <description>There&amp;rsquo;s a number of things that - as a non-American - can cause confusion when dealing with America:
-Imperial rather than Metric units of measurement, Words missing the letter &amp;lsquo;U,&amp;rsquo; Tipping, Backwards dates. A number of these applies to systems or software developed in America. The last one specifically, dates, is the subject of this short post.
-When dates don&amp;rsquo;t go as planned Before getting into things, I wanted to thanks Dan Blankfor inspiring this post during a conversation we had on Twitter.</description>
+      <description>Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style.</description>
     </item>
     
     <item>
       <title>October: The Hackiest Month of the Year</title>
       <link>https://blog.toastit.dev/blog/oct-17/</link>
-      <pubDate>Sun, 01 Oct 2017 23:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Oct 2017 10:00:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/oct-17/</guid>
-      <description>There&amp;rsquo;s a few things happening this month that officially make it the &amp;ldquo;hackiest&amp;rdquo; month of the year. I know&amp;hellip; there&amp;rsquo;s next to no creativity in that title considering it&amp;rsquo;s 100% ripped from one of the month&amp;rsquo;s events.
-This is a very short post promoting three things coming up in October. I&amp;rsquo;m excited for them and you should be too!
-Summit Session Acceptance The Call for Topicsfor next year&amp;rsquo;s PowerShell and DevOps Global Summitclosed today.</description>
+      <description>Summits, Blogging, and Hacking make October the &amp;lsquo;hackiest&amp;rsquo; month of the year.</description>
     </item>
     
     <item>
       <title>Recurrence Patterns and PowerShell</title>
       <link>https://blog.toastit.dev/blog/recurrence-pattern/</link>
-      <pubDate>Mon, 25 Sep 2017 23:00:00 +0000</pubDate>
+      <pubDate>Mon, 25 Sep 2017 10:00:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/recurrence-pattern/</guid>
-      <description>I love scheduling PowerShell scripts. I&amp;rsquo;ve got a server whose sole job in life is to be the place where my scripts are stored and executed on various schedules.
-There&amp;rsquo;s one thing that bugs me when managing this from the prompt, however: Recurrence.
-For once, the GUI is king?! When setting up a task via the Task Scheduler, you have the option of triggering once a month. Not just on the &amp;ldquo;15th of every month,&amp;rdquo; but also on the &amp;ldquo;third Wednesday of every month.</description>
+      <description>There&amp;rsquo;s one thing that bugs me when scheduling scripts from the prompt, however: Recurrence.</description>
     </item>
     
     <item>
       <title>DHCP Reservations: No Cluster? No Problem!</title>
       <link>https://blog.toastit.dev/blog/dhcp-reservations/</link>
-      <pubDate>Mon, 30 Jan 2017 01:50:00 +0000</pubDate>
+      <pubDate>Sun, 29 Jan 2017 12:50:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/dhcp-reservations/</guid>
-      <description>Have multiple DHCP servers that aren&amp;rsquo;t in a cluster? Don&amp;rsquo;t worry, there are more people in this boat than you might think.
-From time to time you&amp;rsquo;ll need to convert a lease into a reservation, but how do you go about making sure your clients reliably pick up their DHCP reservations (regardless of which DHCP server responds first)?
-Just copy the reservations! Ergh, but that sounds like a lot of work.</description>
+      <description>Have multiple DHCP servers that aren’t in a cluster? Don’t worry!</description>
     </item>
     
     <item>
       <title>Automatically Shutting Down My Home Server, so I Don&#39;t Have To</title>
       <link>https://blog.toastit.dev/blog/home-server-shutdown/</link>
-      <pubDate>Mon, 04 Jul 2016 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 03 Jul 2016 12:00:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/home-server-shutdown/</guid>
-      <description>My home server, nestled behind the TV, is an old HP workstation. It&amp;rsquo;s not exactly what I&amp;rsquo;d call&amp;hellip; power efficient.
-In an effort to not consume too much power I try to shut it down every night, but if I wasn&amp;rsquo;t actively using it before bed I would often forget about it.
-The boxes main duty is to act as a Plexserver and over time I have come to realise that if I&amp;rsquo;m not watching something by about 8:30 at night then I won&amp;rsquo;t be using it at all.</description>
+      <description>My home server, nestled behind the TV, is an old HP workstation. It&amp;rsquo;s not exactly what I&amp;rsquo;d call&amp;hellip; power efficient.</description>
     </item>
     
     <item>
       <title>Mini Post: 20 More Pulseway Alerts with PowerShell</title>
       <link>https://blog.toastit.dev/blog/more-alerts/</link>
-      <pubDate>Fri, 03 Jul 2015 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 Jul 2015 12:00:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/more-alerts/</guid>
-      <description>The Pitch In my last postI showed how you could extend the possible alerts generated by Pulsewaywith PowerShell and Windows&amp;rsquo; Event Log.
-The example used, checking to see if a disk was present within the operating system, was just the tip of the iceberg (and rather mundane.)
-In this mini post I&amp;rsquo;ll list 20 more ideas for PowerShell fuelled Pulseway alerts.
-Disclaimer from last post: Be careful about over saturating yourself with notifications.</description>
+      <description>In this mini post I&amp;rsquo;ll list 20 more ideas for PowerShell fuelled Pulseway alerts.</description>
     </item>
     
     <item>
       <title>Splatting your way to reduced duplicated code</title>
       <link>https://blog.toastit.dev/blog/ps-splatting/</link>
-      <pubDate>Wed, 24 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 23 Sep 2014 12:00:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/ps-splatting/</guid>
-      <description>Splattingis a great way of making cmdlet calls with a lot of parameters more legible. You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet.
-A good example of this in action from the TechNet magazineis turning:
-{% highlight powershell %} Get-WmiObject –computername SERVER-R2 –class Win32_LogicalDisk –filter &amp;ldquo;DriveType=3&amp;rdquo; –credential &amp;ldquo;Administrator&amp;rdquo; {% endhighlight %}
-into:</description>
+      <description>You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet.</description>
     </item>
     
     <item>
       <title>Repairing Trust Relationships Without a Reboot</title>
       <link>https://blog.toastit.dev/blog/trust-no-reboot/</link>
-      <pubDate>Mon, 22 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 21 Sep 2014 12:00:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/trust-no-reboot/</guid>
-      <description>It&amp;rsquo;s hopefully not something that comes up often, but if you work in a Windows environment you will undoubtedly come across machines with trust relationship issues with the domain. Maybe it was an overeager High Availability action on a vSphere guest resulting in two copies of the same server running at once. Or perhaps it was a helpdesk technician powering up a cloned desktop while connected to the network. Suddenly you can&amp;rsquo;t get onto the machine using your domain credentials.</description>
+      <description>Perhaps it was a helpdesk technician powering up a cloned desktop while connected to the network.</description>
     </item>
     
     <item>
       <title>The Single Most Important Resource When Learning Windows PowerShell</title>
       <link>https://blog.toastit.dev/blog/ps-important-resource/</link>
-      <pubDate>Sun, 14 Sep 2014 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 13 Sep 2014 12:00:00 +0000</pubDate>
       
       <guid>https://blog.toastit.dev/blog/ps-important-resource/</guid>
-      <description>So you&amp;rsquo;ve decided to learn Windows PowerShell. You&amp;rsquo;re probably reading a fair share of blogs, forums and even books. Maybe there is a specific task you&amp;rsquo;re trying to complete and have found out that PowerShell is the only avenue to do so. Or maybe you&amp;rsquo;ve heard a lot about PowerShell, and it&amp;rsquo;s ever increasing functionality within Windows, and are curious about how you can make it work for you in your day job.</description>
+      <description>There is one thing I learnt to do early on and continue to do to this day: Ask for help.</description>
     </item>
     
   </channel>

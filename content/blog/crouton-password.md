@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2018-01-24T21:30:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-18.jpg"
+thumbnail = "/2018/05/thumb-18.jpg"
 slug = "crouton-password"
 summary = "How the heck did that happen, isn't the system meant to give me some warning?"
 tags = ["PowerShell", "BurntToast"]
@@ -28,11 +28,11 @@ They are popping up; the user just didn't process them into something that needs
 
 To be fair, these notifications in Windows 7 are pathetic.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/win7.png" >}}
+{{< figure src="/2018/05/win7.png" >}}
 
 Windows 10 switched to toasts and they are a step up, but I think we can do better.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/win10.jpg" >}}
+{{< figure src="/2018/05/win10.jpg" >}}
 
 _Note: I don't know what the situation was like in Windows 8/8.1, I don't remember ever joining that OS to a domain._
 
@@ -117,7 +117,7 @@ Set-ScheduledTask -Principal $Principal `
 
 You're done! Our forgetful user will now be notified every ninety minutes regarding the impending expiry. The toast is specifically using an alarm tone, which makes is stay on the screen for longer and sounds annoying.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/example-1.png" >}}
+{{< figure src="/2018/05/example-1.png" >}}
 
 If they manage to ignore these notifications, I don't know if there is any hope for them.
 

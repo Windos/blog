@@ -8,33 +8,32 @@
   <title>
   PowerShell&#39;s Secret Wildcard - ToastIT
   </title>
-  <meta name="description" content="It&#39;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use... such as the &#39;like&#39; operators accepting more than two different wildcards." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="It&rsquo;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use&hellip; such as the &ldquo;like&rdquo; operators accepting more than two different wildcards." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="PowerShell&#39;s Secret Wildcard" />
-<meta property="og:description" content="It&#39;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use... such as the &#39;like&#39; operators accepting more than two different wildcards." />
+<meta property="og:description" content="It&rsquo;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use&hellip; such as the &ldquo;like&rdquo; operators accepting more than two different wildcards." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/powershells-secret-wildcard/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2020-01-09T10:07:33+00:00" />
-<meta property="article:modified_time" content="2020-01-09T10:07:33+00:00" />
-
+<meta property="article:published_time" content="2020-01-08T21:07:33+00:00" />
+<meta property="article:modified_time" content="2020-01-08T21:07:33+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PowerShell&#39;s Secret Wildcard"/>
-<meta name="twitter:description" content="It&#39;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use... such as the &#39;like&#39; operators accepting more than two different wildcards."/>
+<meta name="twitter:description" content="It&rsquo;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use&hellip; such as the &ldquo;like&rdquo; operators accepting more than two different wildcards."/>
 
   <meta itemprop="name" content="PowerShell&#39;s Secret Wildcard">
-<meta itemprop="description" content="It&#39;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use... such as the &#39;like&#39; operators accepting more than two different wildcards."><meta itemprop="datePublished" content="2020-01-09T10:07:33+00:00" />
-<meta itemprop="dateModified" content="2020-01-09T10:07:33+00:00" />
-<meta itemprop="wordCount" content="645">
+<meta itemprop="description" content="It&rsquo;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use&hellip; such as the &ldquo;like&rdquo; operators accepting more than two different wildcards."><meta itemprop="datePublished" content="2020-01-08T21:07:33+00:00" />
+<meta itemprop="dateModified" content="2020-01-08T21:07:33+00:00" />
+<meta itemprop="wordCount" content="644">
 <meta itemprop="keywords" content="PowerShell,Nugget," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">PowerShell&#39;s Secret Wildcard</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    January 9, 2020
+    January 8, 2020
   
 
 
@@ -121,29 +121,28 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      645&nbsp;words
+      644&nbsp;words
+      
+        
       
     </h5>
+    
 
     <p>A couple of days ago I found myself needing to match text entries between two systems. The entries had a bunch of meta data, but the only thing I could use for the match was the text itself.</p>
 <p>In one system, the text might read:</p>
-<pre><code>&quot;This text is super important.&quot;
-</code></pre>
-<p>The second system had that same text, but with a little extra added to it but not in a predictable format:</p>
-<pre><code>&quot;Urgent: This text is super important.&quot;
-</code></pre>
-<p>Simple enough, right? Just throw some wildcards around the text from the first system and check that what&rsquo;s coming from the second matches:</p>
-<pre><code>$One = &quot;This text is super important.&quot;
-$Two = &quot;Urgent: This text is super important.&quot;
-
-$Two -like &quot;*$One*&quot;
-</code></pre>
-<p>Sorted! Time to process a few thousand records.</p>
+<pre tabindex="0"><code>&#34;This text is super important.&#34;
+</code></pre><p>The second system had that same text, but with a little extra added to it but not in a predictable format:</p>
+<pre tabindex="0"><code>&#34;Urgent: This text is super important.&#34;
+</code></pre><p>Simple enough, right? Just throw some wildcards around the text from the first system and check that what&rsquo;s coming from the second matches:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$One</span> = <span style="color:#f1fa8c">&#34;This text is super important.&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Two</span> = <span style="color:#f1fa8c">&#34;Urgent: This text is super important.&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Two</span> <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#34;*</span><span style="color:#8be9fd;font-style:italic">$One</span><span style="color:#f1fa8c">*&#34;</span>
+</span></span></code></pre></div><p>Sorted! Time to process a few thousand records.</p>
 <h2 id="trouble">Trouble</h2>
 <p>It wasn&rsquo;t long until I started seeing red errors flashing up in my console.</p>
-<pre><code>The specified wildcard character pattern is not valid
-</code></pre>
-<p>You&hellip; what?</p>
+<pre tabindex="0"><code>The specified wildcard character pattern is not valid
+</code></pre><p>You&hellip; what?</p>
 <p>The only wildcard I&rsquo;m supplying is the asterisk (<code>*</code>), which matches everything including nothing! The only other wildcard that could be showing up in my input is the question mark.</p>
 <p>Those are the only two wildcards that the like operator works with, and the worst that might happen if I have a few extra of those sprinkled in is accidentally being too promiscuous when matching. It certainly shouldn&rsquo;t fail!</p>
 <p>Let&rsquo;s be doubly sure and check the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators" target="_blank" rel="noopener">documentation</a>
@@ -153,52 +152,46 @@ $Two -like &quot;*$One*&quot;
 </blockquote>
 <p>Ok, but what is a wildcard expression?</p>
 <blockquote>
-<p><strong>-like</strong>
-description: &ldquo;Match using the wildcard character (*).&rdquo;</p>
+<p><strong>-like</strong>Description: Match using the wildcard character (*).</p>
 </blockquote>
 <p>That&rsquo;s not all that helpful, it doesn&rsquo;t even mention the question mark! Luckily there&rsquo;s <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_wildcards" target="_blank" rel="noopener">documentation on wildcards</a>
 .</p>
-<pre><code>Wildcard	Description								Example		Match
+<pre tabindex="0"><code>Wildcard	Description								Example		Match
 *			Match zero or more characters			a*			aA, ag, Apple
 ?			Match one character in that position	?n			an, in, on
 [ ]			Match a range of characters				[a-l]ook	book, cook, look
 [ ]			Match specific characters				[bc]ook		book, cook
-</code></pre>
-<p>No! There is no way that square brackets have special meaning to the like operators! That is <em><strong>way</strong></em> too regex-y.</p>
+</code></pre><p>No! There is no way that square brackets have special meaning to the like operators! That is <strong><em>way</em></strong> too regex-y.</p>
 <h2 id="double-checking">Double Checking</h2>
 <p>After a little searching through my datasets I found that there was indeed plenty of square brackets.</p>
 <p>These could easily cause a comparison to fail when I was expecting it to match. For example a <code>[username]</code> would have been considered as a single character with multiple potential variants rather than a word wrapped in brackets.</p>
 <p>Worse still, it&rsquo;s very easy to put an invalid set inside of those brackets. The easiest one to hit is&hellip; nothing.</p>
-<pre><code>$One = &quot;Found problem users: []&quot;
-$Two = &quot;Log: Found problem users: []&quot;
-
-$Two -like &quot;*$One*&quot;
-</code></pre>
-<p>This will result in invalid pattern error:</p>
-<pre><code>The specified wildcard character pattern is not valid: *Found problem users: []*
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$One</span> = <span style="color:#f1fa8c">&#34;Found problem users: []&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Two</span> = <span style="color:#f1fa8c">&#34;Log: Found problem users: []&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Two</span> <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#34;*</span><span style="color:#8be9fd;font-style:italic">$One</span><span style="color:#f1fa8c">*&#34;</span>
+</span></span></code></pre></div><p>This will result in invalid pattern error:</p>
+<pre tabindex="0"><code>The specified wildcard character pattern is not valid: *Found problem users: []*
 At line:4 char:1
-+ $Two -like &quot;*$One*&quot;
++ $Two -like &#34;*$One*&#34;
 + ~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : NotSpecified: (:) [], WildcardPatternException
     + FullyQualifiedErrorId : RuntimeException
-</code></pre>
-<p>I&rsquo;d legitimately never ran into this before. I&rsquo;ve spent years blissfully thinking like only accepted two wildcards. This is huge, and makes these operators so much more powerful&hellip; but I still had a task to complete.</p>
+</code></pre><p>I&rsquo;d legitimately never ran into this before. I&rsquo;ve spent years blissfully thinking like only accepted two wildcards. This is huge, and makes these operators so much more powerful&hellip; but I still had a task to complete.</p>
 <h2 id="stripping-away-special-meaning">Stripping Away Special Meaning</h2>
 <p>When you want to stop something having a special meaning in PowerShell you&rsquo;re going to want to try the back tick (```) character first, and that happens to be exactly what we need to get this job done.</p>
 <p>I ended up using the <code>Replace</code> method twice. The first is to escape the left square bracket and the second for the right.</p>
 <p>To illustrate this, let&rsquo;s revisit the previous example that failed.</p>
-<pre><code>$One = &quot;Found problem users: []&quot;
-$Two = &quot;Log: Found problem users: []&quot;
-
-$Two -like &quot;*$($One.Replace('[','`[').Replace(']','`]'))*&quot;
-</code></pre>
-<p>When the comparison runs, the string in the <code>$One</code> variable will actually be:</p>
-<pre><code>&quot;Found problem users: `[`]&quot;
-</code></pre>
-<p>And the output of this example is the <code>$true</code> I was expecting all along.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$One</span> = <span style="color:#f1fa8c">&#34;Found problem users: []&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Two</span> = <span style="color:#f1fa8c">&#34;Log: Found problem users: []&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Two</span> <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#34;*</span>$(<span style="color:#8be9fd;font-style:italic">$One</span>.Replace(<span style="color:#f1fa8c">&#39;[&#39;</span>,<span style="color:#f1fa8c">&#39;`[&#39;</span>).Replace(<span style="color:#f1fa8c">&#39;]&#39;</span>,<span style="color:#f1fa8c">&#39;`]&#39;</span>))<span style="color:#f1fa8c">*&#34;</span>
+</span></span></code></pre></div><p>When the comparison runs, the string in the <code>$One</code> variable will actually be:</p>
+<pre tabindex="0"><code>&#34;Found problem users: `[`]&#34;
+</code></pre><p>And the output of this example is the <code>$true</code> I was expecting all along.</p>
 <h2 id="credit">Credit</h2>
-<p>Hero image by <a href="https://unsplash.com/@usinglight?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Stefan Steinbauer</a>
- on <a href="https://unsplash.com/s/photos/secret?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+<p>Hero image by <a href="https://unsplash.com/@usinglight?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Stefan Steinbauer</a>
+ on <a href="https://unsplash.com/s/photos/secret?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
 </p>
 
   </article><div class="bg-blue-300 dark:bg-gray-900">
@@ -325,6 +318,8 @@ $Two -like &quot;*$($One.Replace('[','`[').Replace(']','`]'))*&quot;
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

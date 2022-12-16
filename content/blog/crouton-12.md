@@ -3,7 +3,7 @@ categories = ["BurntToast", "PowerShell"]
 date = 2019-07-30T23:09:29Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/07/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg"
+thumbnail = "/2019/07/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg"
 slug = "crouton-12"
 summary = "Toast notification data bindings have a number of uses. We've already covered updating toasts, now let's teach our notifications a second language."
 tags = ["BurntToast", "PowerShell"]
@@ -46,13 +46,13 @@ _As a reminder, the text elements must be the same as the keys you want to match
 New-BurntToastNotification -Text 'Header', 'Body' -DataBinding $English
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2019/07/English.png" caption="Example Toast in English" >}}
+{{< figure src="/2019/07/English.png" caption="Example Toast in English" >}}
 
 ```powershell
 New-BurntToastNotification -Text 'Header', 'Body' -DataBinding $Maori
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2019/07/Maori.png" caption="Example Toast in Māori" >}}
+{{< figure src="/2019/07/Maori.png" caption="Example Toast in Māori" >}}
 
 ## Scaling Out
 

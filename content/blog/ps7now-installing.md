@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2020-03-07T23:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/01/IMG_3567.jpeg"
+thumbnail = "/2020/01/IMG_3567.jpeg"
 slug = "ps7now-installing"
 summary = "PowerShell 7 is out now! The first step in being able to add it to our toolbox is to install it so let's check out our options."
 tags = ["PowerShell"]
@@ -72,7 +72,7 @@ To get it, search for PowerShell and install it. The app will be from "Microsoft
 
 At the time of writing the live version of PowerShell 7 isn't yet available, but I can attest to the Preview working rather well.
 
-{{< figure src="__GHOST_URL__/content/images/2020/02/image-1.png" >}}
+{{< figure src="/2020/02/image-1.png" >}}
 
 At least during the preview, the app was able to live alongside the MSI version, which in turn can happily live alongside Windows PowerShell.
 

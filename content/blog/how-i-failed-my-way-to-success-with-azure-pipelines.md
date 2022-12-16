@@ -3,7 +3,7 @@ categories = ["PowerShell", "Azure"]
 date = 2019-02-05T22:38:49Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/02/quino-al-135852-unsplash.jpg"
+thumbnail = "/2019/02/quino-al-135852-unsplash.jpg"
 slug = "how-i-failed-my-way-to-success-with-azure-pipelines"
 summary = "Some people learn by writing. Some by watching videos. Apparently I learn by failing and head-desking."
 tags = ["PowerShell", "Azure"]
@@ -26,7 +26,7 @@ I remember the exact moment that Azure Pipelines clicked for me. [Tyler Leonhard
 
 The first time I was a build run, I was sold.
 
-![PoshNotify-BuildPipeline](__GHOST_URL__/content/images/2019/02/PoshNotify-BuildPipeline.PNG)
+![PoshNotify-BuildPipeline](/2019/02/PoshNotify-BuildPipeline.PNG)
 
 PoshNotify is a cross-platform PowerShell module, and what Tyler had setup was a build that ran our suite of Pester tests against all of our major targets: macOS, Linux, and Windows.
 
@@ -36,7 +36,7 @@ From there, I ran with it a little bit. I still hadn't quite figured everything 
 
 Still, for a first attempt, I'm really happy that I got it going.
 
-![PoshNotify-CoverageAndGallery](__GHOST_URL__/content/images/2019/02/PoshNotify-CoverageAndGallery.PNG)
+![PoshNotify-CoverageAndGallery](/2019/02/PoshNotify-CoverageAndGallery.PNG)
 
 That was my "click" moment, which got me hooked on Azure Pipelines. But this specific project isn't the topic of this post... instead let's have a look at my second attempt at setting this up for a PowerShell project: [BurntToast](https://github.com/Windos/BurntToast).
 
@@ -303,7 +303,7 @@ This is the built in task for publishing test results. Of note here, is that the
 
 The task makes it so that the Azure Pipelines service itself is aware of the result, and can display them nicely on the builds web page.
 
-![TestResults](__GHOST_URL__/content/images/2019/02/TestResults.PNG)
+![TestResults](/2019/02/TestResults.PNG)
 
 Ok, that's the test results, what about this code coverage business?
 
@@ -358,15 +358,15 @@ Unfortunately, I can't replicate (or remember) the process 100% accurately, as I
 
 Once you've added your repository, head over to the settings and take note of your "Repository Upload Token". We'll be supplying this as a secure variable to Azure Pipelines soon.
 
-![UploadToken](__GHOST_URL__/content/images/2019/02/UploadToken.png)
+![UploadToken](/2019/02/UploadToken.png)
 
 Once everything is hooked up and your pipeline running (the next step, I promise) you'll be able to see your coverage on Codecov itself.
 
-![Coverage](__GHOST_URL__/content/images/2019/02/Coverage.PNG)
+![Coverage](/2019/02/Coverage.PNG)
 
 But more importantly, you'll get information directly within GitHub too. For instance it will start to let you know how much your coverage will change after merging a pull request.
 
-![Codecov-report](__GHOST_URL__/content/images/2019/02/Codecov-report.PNG)
+![Codecov-report](/2019/02/Codecov-report.PNG)
 
 ## Squeezing Through the Pipe(line)
 
@@ -374,7 +374,7 @@ Finally, it's time to see the fruits of our labor. Head to the Azure DevOps site
 
 This first thing you'll need to do is create an "organization". In short this is a name, which will be included and publicly visible in URLs, and the Azure region where your projects will be hosted.
 
-![New-Organization](__GHOST_URL__/content/images/2019/02/New-Organization.PNG)
+![New-Organization](/2019/02/New-Organization.PNG)
 
 Despite what that screenshot shows, my organization is "windosnz".
 
@@ -382,11 +382,11 @@ Next, you'll need to add a project. Give it a name (I like to match the name of 
 
 It'll take a couple of moments to spin up your project, and when it's done you'll see a screen informing you that you've got no pipelines.
 
-![NewPipelines](__GHOST_URL__/content/images/2019/02/NewPipelines.PNG)
+![NewPipelines](/2019/02/NewPipelines.PNG)
 
 Here's where I actually like to jump over to GitHub and begin the setup process from that end. Find [Azure Pipelines in the GitHub Marketplace](https://github.com/marketplace/azure-pipelines) and install it. You'll go through to a screen where you configure access, you can either grant Azure Pipelines access to all of your repos or just the one(s) you specify (this is the route I went).
 
-![Access](__GHOST_URL__/content/images/2019/02/Access.PNG)
+![Access](/2019/02/Access.PNG)
 
 Click save and you'll be taken back to Azure Pipelines. You'll note that you're part way through adding a new pipeline and that the "connect" step is already done. Select your repo and go through to configure. This automatically scans your repo to try and decide on the type of template to apply.
 
@@ -394,39 +394,39 @@ If we had used the default name for a pipeline YAML file (azure-pipelines.yml) i
 
 Once the option comes up, choose "Starter pipeline."
 
-![Starter](__GHOST_URL__/content/images/2019/02/Starter.PNG)
+![Starter](/2019/02/Starter.PNG)
 
 It will saddle you with a default YAML file, and we've got no choice but to hit Save and Run. Don't bother editing this file at all, we're about to ditch it.
 
-![SaveAndRun](__GHOST_URL__/content/images/2019/02/SaveAndRun.PNG)
+![SaveAndRun](/2019/02/SaveAndRun.PNG)
 
 Unfortunately this will send through a commit to your repo on GitHub. You can get rid of this file once we're done though. Once the commit is done, it'll sit on configuring for a little bit and then it'll show you that it's running "your" build.
 
-![ManualRun](__GHOST_URL__/content/images/2019/02/ManualRun.PNG)
+![ManualRun](/2019/02/ManualRun.PNG)
 
 When this build finishes, head up top the top right of the page, click the three dots, and choose "Edit pipeline."
 
-![EditPipeline](__GHOST_URL__/content/images/2019/02/EditPipeline.PNG)
+![EditPipeline](/2019/02/EditPipeline.PNG)
 
 You'll see the contents of the YAML file again. Ignore this and head back up to the three dots, and this time choose "Pipeline settings."
 
-![PipelineSettings](__GHOST_URL__/content/images/2019/02/PipelineSettings.PNG)
+![PipelineSettings](/2019/02/PipelineSettings.PNG)
 
 See that YAML file path field? That's where we specify which YAML file defines this pipeline. Go ahead and change that to point to your definition (you can press the icon to the right to navigate your repo and select the file.)
 
-![YAML-file-path](__GHOST_URL__/content/images/2019/02/YAML-file-path.PNG)
+![YAML-file-path](/2019/02/YAML-file-path.PNG)
 
 For me, this field becomes: `Azure-Pipelines/build.yml`
 
 While we're in the settings area, let's provide that upload token for Codecov. Head to the Variables tab, and choose add. Give the variable a name, we used the name "CODECOV_TOKEN" in the definition and this needs to match. Also make sure that you click the padlock next to where you paste in the actual value of your token, this makes it a secret that cannot be viewed in plain text.
 
-![Variable](__GHOST_URL__/content/images/2019/02/Variable.PNG)
+![Variable](/2019/02/Variable.PNG)
 
 Click "Save & queue" to save your changes and queue and execution of your build pipeline.
 
 Sit back and relax, believe it or not you're done!
 
-![Cook-Toast](__GHOST_URL__/content/images/2019/02/Cook-Toast.PNG)
+![Cook-Toast](/2019/02/Cook-Toast.PNG)
 
 Notice that the job name and the display names of the tasks match what you set in your YAML file. Now... head back to GitHub and get rid of the azure-pipelines.yml file that this process added to your repo, you don't need it and it's just making a mess.
 
@@ -440,7 +440,7 @@ Keep an eye out on [Twitter](https://twitter.com/WindosNZ) for future posts!
 
 By the way, we got our badges:
 
-![Badges](__GHOST_URL__/content/images/2019/02/Badges.PNG)
+![Badges](/2019/02/Badges.PNG)
 
 <p class="note">You made it all the way to the end of part one?! <a href="https://king.geek.nz/2019/02/17/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/" target="_blank">Read part two here!</a></p>
 

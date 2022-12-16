@@ -8,39 +8,38 @@
   <title>
   With PowerShell, Pulseway Can Alert on Anything - ToastIT
   </title>
-  <meta name="description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&#39;t present in the OS after booting up? Uhh..." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&rsquo;t present in the OS after booting up? Uhh&hellip;" /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
-  
-  
+
+
 
   <meta property="og:title" content="With PowerShell, Pulseway Can Alert on Anything" />
-<meta property="og:description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&#39;t present in the OS after booting up? Uhh..." />
+<meta property="og:description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&rsquo;t present in the OS after booting up? Uhh&hellip;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/pulseway-all-the-alerts/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2015-06-30T00:00:00+00:00" />
-<meta property="article:modified_time" content="2015-06-30T00:00:00+00:00" />
-
+<meta property="article:published_time" content="2015-06-29T12:00:00+00:00" />
+<meta property="article:modified_time" content="2015-06-29T12:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="With PowerShell, Pulseway Can Alert on Anything"/>
-<meta name="twitter:description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&#39;t present in the OS after booting up? Uhh..."/>
+<meta name="twitter:description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&rsquo;t present in the OS after booting up? Uhh&hellip;"/>
 
   <meta itemprop="name" content="With PowerShell, Pulseway Can Alert on Anything">
-<meta itemprop="description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&#39;t present in the OS after booting up? Uhh..."><meta itemprop="datePublished" content="2015-06-30T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2015-06-30T00:00:00+00:00" />
+<meta itemprop="description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&rsquo;t present in the OS after booting up? Uhh&hellip;"><meta itemprop="datePublished" content="2015-06-29T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-06-29T12:00:00+00:00" />
 <meta itemprop="wordCount" content="833">
 <meta itemprop="keywords" content="PowerShell,Monitoring," />
+
+
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
-    
+
     <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
-    
+
   </a>
   <button class="mobile-menu-button md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,19 +50,19 @@
   </button>
   <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
 
-    
+
     <li><a href="/blog">Blog</a></li>
-    
+
     <li><a href="/page/about/">About</a></li>
-    
+
     <li><a href="/tags">Tags</a></li>
-    
+
     <li><a href="/blog/emoji-support/">Top Post</a></li>
-    
 
-    
 
-    
+
+
+
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,20 +73,21 @@
         </svg>
       </span>
     </li>
-    
 
-    
+
+
   </ul>
 </header>
 <main class="flex-1">
-  
-  
 
-  
+
+
+
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">With PowerShell, Pulseway Can Alert on Anything</h1>
+
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -97,15 +97,15 @@
         <line x1="4" y1="11" x2="20" y2="11" />
         <rect x="8" y="15" width="2" height="2" />
       </svg>
-      Posted on 
-  
-    June 30, 2015
-  
+      Posted on
+
+    June 29, 2015
 
 
-      
+
+
         &nbsp;&bull;&nbsp;
-      
+
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <circle cx="12" cy="12" r="9" />
@@ -122,13 +122,18 @@
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
       833&nbsp;words
-      
+
+
+
     </h5>
+
 
     <h2 id="the-pitch"><strong>The Pitch</strong></h2>
 <p>Need to monitor some servers (and/or workstations)? <a href="http://www.pulseway.com/" target="_blank" rel="noopener">Pulseway</a>
- is a good solution. The configuration of what you want alerts on is as simple as putting checks in boxes.
-<img src="__GHOST_URL__/content/images/2018/05/standard-notify.png" alt="standard-notify"></p>
+ is a good solution. The configuration of what you want alerts on is as simple as putting checks in boxes.</p>
+<figure><img src="/2018/05/standard-notify.png"/>
+</figure>
+
 <ul>
 <li>Need to know when someone logs into your server? <strong>Check</strong></li>
 <li>Need to know when someone installs something on your server? <strong>Check</strong></li>
@@ -154,44 +159,46 @@
 </ul>
 <h2 id="the-nut-and-bolts"><strong>The Nut and Bolts</strong></h2>
 <p>The first thing you need to do is get your event log ready to accept your custom events. This allows you to specify the &lsquo;source&rsquo; of the events, which makes it easier to filter on them. I also like to put my PowerShell generated events in the Windows PowerShell log (rather than application, or security, or the like.)</p>
-<pre><code>New-EventLog -LogName 'Windows PowerShell' -Source 'DiskCheck'
-</code></pre>
-<p>This is something you only have to do once, going forward you&rsquo;ll just be referencing the source you&rsquo;ve created.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">New-EventLog</span> -LogName <span style="color:#f1fa8c">&#39;Windows PowerShell&#39;</span> -Source <span style="color:#f1fa8c">&#39;DiskCheck&#39;</span>
+</span></span></code></pre></div><p>This is something you only have to do once, going forward you&rsquo;ll just be referencing the source you&rsquo;ve created.</p>
 <p>Next, you need to figure out what PowerShell should be checking and script it, including writing to the event log.</p>
-<pre><code>function Test-ConnectedDisk
-{
-    [CmdletBinding()]
-    Param (
-        [string] $Server,
-        [string] $Disk
-    )
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">Test-ConnectedDisk</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    [<span style="color:#8be9fd;font-style:italic">CmdletBinding</span>()]
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">Param</span> (
+</span></span><span style="display:flex;"><span>        [string] <span style="color:#8be9fd;font-style:italic">$Server</span>,
+</span></span><span style="display:flex;"><span>        [string] <span style="color:#8be9fd;font-style:italic">$Disk</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$OsPartition</span> = <span style="color:#8be9fd;font-style:italic">Get-Partition</span> -DriveLetter <span style="color:#8be9fd;font-style:italic">$Disk</span> -CimSession <span style="color:#8be9fd;font-style:italic">$Server</span> -ErrorAction SilentlyContinue
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (!<span style="color:#8be9fd;font-style:italic">$OsPartition</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Write-EventLog</span> -LogName <span style="color:#f1fa8c">&#39;Windows PowerShell&#39;</span> -Source <span style="color:#f1fa8c">&#39;DiskCheck&#39;</span> -EntryType Error -EventId <span style="color:#bd93f9">120</span> -Message <span style="color:#f1fa8c">&#39;DISK MISSING!&#39;</span> -ComputerName <span style="color:#8be9fd;font-style:italic">$Server</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">Write-EventLog</span> -LogName <span style="color:#f1fa8c">&#39;Windows PowerShell&#39;</span> -Source <span style="color:#f1fa8c">&#39;DiskCheck&#39;</span> -EntryType Information -EventId <span style="color:#bd93f9">121</span> -Message <span style="color:#f1fa8c">&#39;Disk is present and accounted for.&#39;</span> -ComputerName <span style="color:#8be9fd;font-style:italic">$Server</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>I like to put functions like the one above into a module so that they can be easily called by a PS Scheduled Job, and updated without touching the job itself. As for creating the job, I want this check to happen once an hour, on the hour. The job requires network access, as I run a few jobs from a &lsquo;script&rsquo; server and touch remote servers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$firstRun</span> = <span style="color:#8be9fd;font-style:italic">Get-Date</span> -Hour $((<span style="color:#8be9fd;font-style:italic">Get-Date</span>).AddHours(<span style="color:#bd93f9">1</span>).Hour) -Minute <span style="color:#bd93f9">0</span> -Second <span style="color:#bd93f9">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$jobTrigger</span> = <span style="color:#8be9fd;font-style:italic">New-JobTrigger</span> -Once -At <span style="color:#8be9fd;font-style:italic">$firstRun</span> -RepetitionInterval (<span style="color:#8be9fd;font-style:italic">New-TimeSpan</span> -Minutes <span style="color:#bd93f9">60</span>) -RepeatIndefinitely
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$jobOptions</span> = <span style="color:#8be9fd;font-style:italic">New-ScheduledJobOption</span> -RequireNetwork
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$cred</span> = <span style="color:#8be9fd;font-style:italic">Get-Credential</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Register-ScheduledJob</span> -Name <span style="color:#f1fa8c">&#39;Check Server Disk&#39;</span> -ScriptBlock {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">Test-ConnectedDisk</span> -Server <span style="color:#f1fa8c">&#39;test1.example.com&#39;</span> -Disk <span style="color:#f1fa8c">&#39;d&#39;</span>
+</span></span><span style="display:flex;"><span>} -Credential <span style="color:#8be9fd;font-style:italic">$cred</span> -Trigger <span style="color:#8be9fd;font-style:italic">$jobTrigger</span> -ScheduledJobOption <span style="color:#8be9fd;font-style:italic">$jobOptions</span>
+</span></span></code></pre></div><p>Now we need to get Pulseway checking for our new events, this is a case of opening up Pulseway Manager on the monitored server, selecting the <em>Notifications</em> tab, then the <em>Event Log</em> tab, hitting the check box, clicking add and filling out the details.</p>
+<figure><img src="/2018/05/notify-eventlog.PNG"/>
+</figure>
 
-    $OsPartition = Get-Partition -DriveLetter $Disk -CimSession $Server -ErrorAction SilentlyContinue
+<figure><img src="/2018/05/event-log-filter.png"/>
+</figure>
 
-    if (!$OsPartition)
-    {
-        Write-EventLog -LogName 'Windows PowerShell' -Source 'DiskCheck' -EntryType Error -EventId 120 -Message 'DISK MISSING!' -ComputerName $Server
-    }
-    else
-    {
-        Write-EventLog -LogName 'Windows PowerShell' -Source 'DiskCheck' -EntryType Information -EventId 121 -Message 'Disk is present and accounted for.' -ComputerName $Server
-    }
-}
-</code></pre>
-<p>I like to put functions like the one above into a module so that they can be easily called by a PS Scheduled Job, and updated without touching the job itself. As for creating the job, I want this check to happen once an hour, on the hour. The job requires network access, as I run a few jobs from a &lsquo;script&rsquo; server and touch remote servers.</p>
-<pre><code>$firstRun = Get-Date -Hour $((Get-Date).AddHours(1).Hour) -Minute 0 -Second 0
-
-$jobTrigger = New-JobTrigger -Once -At $firstRun -RepetitionInterval (New-TimeSpan -Minutes 60) -RepeatIndefinitely
-$jobOptions = New-ScheduledJobOption -RequireNetwork
-$cred = Get-Credential
-
-Register-ScheduledJob -Name 'Check Server Disk' -ScriptBlock {
-    Test-ConnectedDisk -Server 'test1.example.com' -Disk 'd'
-} -Credential $cred -Trigger $jobTrigger -ScheduledJobOption $jobOptions
-</code></pre>
-<p>Now we need to get Pulseway checking for our new events, this is a case of opening up Pulseway Manager on the monitored server, selecting the <em>Notifications</em> tab, then the <em>Event Log</em> tab, hitting the check box, clicking add and filling out the details.
-<img src="__GHOST_URL__/content/images/2018/05/notify-eventlog.PNG" alt="notify-eventlog"><img src="__GHOST_URL__/content/images/2018/05/event-log-filter.png" alt="event-log-filter">
-It&rsquo;s important to remember to select the right Event Log (Windows PowerShell in this case), the event level, event ID and source that you specified within your script.</p>
+<p>It&rsquo;s important to remember to select the right Event Log (Windows PowerShell in this case), the event level, event ID and source that you specified within your script.</p>
 <p>You can specify Pulseway&rsquo;s notification level here. My boss set his notification for critical events to an air-raid siren, so I like to set things to that level.</p>
 <p>Depending on your Pulseway configuration, and what level you set the notification to, you&rsquo;ll get an email and/or alert whenever the event you&rsquo;re looking for occurs. Note that unless you specifically allow repeat notifications, you won&rsquo;t get more than one Pulseway alert until you have cleared the alarm.</p>
 <h2 id="closing-notes"><strong>Closing Notes</strong></h2>
@@ -211,7 +218,7 @@ It&rsquo;s important to remember to select the right Event Log (Windows PowerShe
       <p class="opacity-60"></p>
     </div>
     <ul class="flex justify-center gap-4">
-      
+
       <li>
         <a
           href="https://twitter.com/WindosNZ"
@@ -238,8 +245,8 @@ It&rsquo;s important to remember to select the right Event Log (Windows PowerShe
           </svg>
         </a>
       </li>
-      
-      
+
+
       <li>
         <a
           href="https://linkedin.com/in/windos"
@@ -268,9 +275,9 @@ It&rsquo;s important to remember to select the right Event Log (Windows PowerShe
           </svg>
         </a>
       </li>
-      
-      
-      
+
+
+
       <li>
         <a
           href="https://github.com/Windos"
@@ -297,11 +304,11 @@ It&rsquo;s important to remember to select the right Event Log (Windows PowerShe
           </svg>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <li>
         <a
           href="https://www.youtube.com/c/JoshuaKingSolari"
@@ -328,16 +335,18 @@ It&rsquo;s important to remember to select the right Event Log (Windows PowerShe
           </svg>
         </a>
       </li>
-      
-      
+
+
+
+
     </ul>
   </div>
 </div>
     </main><footer class="container p-6 mx-auto flex justify-between items-center">
   <span class="text-sm font-light">
-    
+
     Copyright © 2022 - Josh King · All rights reserved
-    
+
   </span>
   <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"

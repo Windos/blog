@@ -3,7 +3,7 @@ categories = ["Azure", "PowerShell"]
 date = 2019-09-20T10:04:57Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/09/clem-onojeghuo-NrtSbPWPjxo-unsplash.jpg"
+thumbnail = "/2019/09/clem-onojeghuo-NrtSbPWPjxo-unsplash.jpg"
 slug = "azure-pipelines-tune-up"
 summary = "After reading some awesome posts on the topic, I've been shamed into making my pipelines a little more efficient."
 tags = ["Azure", "PowerShell"]
@@ -176,7 +176,7 @@ Note that in order to use this location on GitHub, you need to have an authorize
 
 In any project, head to the project settings, then service connections and add a new GitHub connection. I name mine 'github' and then click authorize.
 
-{{< figure src="__GHOST_URL__/content/images/2019/09/image.png" caption="Creating a new GitHub service connection" >}}
+{{< figure src="/2019/09/image.png" caption="Creating a new GitHub service connection" >}}
 
 You'll see on the left hand side two of this screenshot that I have two existing connections which I could have used. I'll point out in the following section where this specific connection is being used.
 
@@ -228,7 +228,7 @@ Head over to GitHub to see the [entire yaml file](https://raw.githubusercontent.
 
 All going well, the next time the pipeline runs we'll have a successful build:
 
-{{< figure src="__GHOST_URL__/content/images/2019/09/image-1.png" >}}
+{{< figure src="/2019/09/image-1.png" >}}
 
 Funnily enough, this looks no different from when I started. That's a good thing, we've simplified setting these pipelines up and the end result is exactly the build pipeline I need.
 

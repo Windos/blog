@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2017-03-19T10:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-1.jpg"
+thumbnail = "/2018/05/thumb-1.jpg"
 slug = "crouton-stackwatch"
 summary = "A crouton is a small piece of toast for soup or salads. Or, a small piece of (burnt) toast"
 tags = ["PowerShell", "BurntToast"]
@@ -52,7 +52,7 @@ New-BurntToastNotification -Text "There's things on Google!" -Button $Button1
 
 Ooh, shiny!
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/GoogleToast.png" >}}
+{{< figure src="/2018/05/GoogleToast.png" >}}
 
 ## **The setup**
 
@@ -112,15 +112,15 @@ We check the ID of the latest question against what is stored in the registry, a
 
 The cool thing about this is that the toast includes a button labeled ‘Open’ and clicking it will open your default browser directly to the question.
 
-Oh, I’ve also got a Stack Overflow icon sitting in a temp directory on my hard drive for display on the toast, you can get a copy of that image file for your own use [here](__GHOST_URL__/content/images/2018/05/stackoverflow-icon.png).
+Oh, I’ve also got a Stack Overflow icon sitting in a temp directory on my hard drive for display on the toast, you can get a copy of that image file for your own use [here](/2018/05/stackoverflow-icon.png).
 
 The resulting toast comes out all pretty:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/SO-Toast.gif" >}}
+{{< figure src="/2018/05/SO-Toast.gif" >}}
 
 And if you miss it, it’ll get stored in the Action Center (assuming you’ve configured the relevant AppId using the New-BTAppId function…)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/ActionCenter.PNG" >}}
+{{< figure src="/2018/05/ActionCenter.PNG" >}}
 
 So, that’s the actual logic done, now you need it to run periodically. To do this I use a [PowerShell Scheduled Job](https://blogs.technet.microsoft.com/heyscriptingguy/2014/05/12/introduction-to-powershell-scheduled-jobs/).
 

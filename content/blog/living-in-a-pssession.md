@@ -3,7 +3,7 @@ categories = ["PowerShell", "Nugget"]
 date = 2020-02-28T20:04:08Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/02/giu-vicente-FMArg2k3qOU-unsplash.jpg"
+thumbnail = "/2020/02/giu-vicente-FMArg2k3qOU-unsplash.jpg"
 slug = "living-in-a-pssession"
 summary = "PowerShell remoting is a truly powerful tool, but sometimes your scripts need a little help finding their way. How can you tell when you're in a PSSession and what info is available about the session itself?"
 tags = ["PowerShell", "Nugget"]
@@ -34,7 +34,7 @@ It turns out that there is an automatic variable that only exists when you're in
 
 It contains a lot of information about the originator of the remote connection, including of all things the time zone of the source computer.
 
-{{< figure src="__GHOST_URL__/content/images/2020/02/image-6.png" caption="Example output from my lab" >}}
+{{< figure src="/2020/02/image-6.png" caption="Example output from my lab" >}}
 
 So in order to answer my first question, if the `$PSSenderInfo` variable exists you can be sure that you're in a PSSession.
 

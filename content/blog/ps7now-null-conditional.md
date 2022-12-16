@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2020-03-10T22:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/01/valentin-lacoste-jNSJE8dMro0-unsplash.jpg"
+thumbnail = "/2020/01/valentin-lacoste-jNSJE8dMro0-unsplash.jpg"
 slug = "ps7now-null-conditional"
 summary = "How do you deal with potentially getting nothing back from a cmdlet or function? PowerShell 7 introduced a set of new operators to make working with null values easier."
 tags = ["PowerShell"]
@@ -189,7 +189,7 @@ Let's say we're wanting to stop the BITS service using its `Stop()` method, but 
 $BitsService.Stop()
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2020/02/image-2.png" >}}
+{{< figure src="/2020/02/image-2.png" >}}
 
 In PowerShell 7 we can instead do the following:
 
@@ -197,7 +197,7 @@ In PowerShell 7 we can instead do the following:
 ${BitsService}?.Stop()
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2020/02/image-3.png" >}}
+{{< figure src="/2020/02/image-3.png" >}}
 
 What you'll note here is that the name of the variable has been wrapped in curly braces, this is needed because variable names can end with a question mark and that happens to be what we need to add before the period when calling a method or property.
 
@@ -213,7 +213,7 @@ Let's say you're getting a list of users from Active Directory, but the Organiza
 $Users[0]
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2020/02/image-4.png" >}}
+{{< figure src="/2020/02/image-4.png" >}}
 
 Once again, we can add wrap the variable's name in curly braces and add a question mark to avoid the error:
 
@@ -221,7 +221,7 @@ Once again, we can add wrap the variable's name in curly braces and add a questi
 ${Users}?[0]
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2020/02/image-5.png" >}}
+{{< figure src="/2020/02/image-5.png" >}}
 
 These can be chained together, so you can index into a collection and also call a method or get a property, you just need to continue to use question marks.
 

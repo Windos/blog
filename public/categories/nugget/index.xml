@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nugget on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/nugget/</link>
+    <description>Recent content in Nugget on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 28 Feb 2020 20:04:08 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/nugget/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>It&#39;s Likely We&#39;re Living in a PSSession</title>
+      <link>https://blog.toastit.dev/blog/living-in-a-pssession/</link>
+      <pubDate>Fri, 28 Feb 2020 20:04:08 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/living-in-a-pssession/</guid>
+      <description>PowerShell remoting is a truly powerful tool, but sometimes your scripts need a little help finding their way. How can you tell when you&amp;rsquo;re in a PSSession and what info is available about the session itself?</description>
+    </item>
+    
+    <item>
+      <title>PowerShell&#39;s Secret Wildcard</title>
+      <link>https://blog.toastit.dev/blog/powershells-secret-wildcard/</link>
+      <pubDate>Wed, 08 Jan 2020 21:07:33 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/powershells-secret-wildcard/</guid>
+      <description>It&amp;rsquo;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use&amp;hellip; such as the &amp;ldquo;like&amp;rdquo; operators accepting more than two different wildcards.</description>
+    </item>
+    
+    <item>
+      <title>Quick Ternary Operator Revisit: Can It Elseif?</title>
+      <link>https://blog.toastit.dev/blog/quick-ternary-operator-revisit/</link>
+      <pubDate>Fri, 04 Oct 2019 15:41:49 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/quick-ternary-operator-revisit/</guid>
+      <description>I was thinking about the new Ternary Operator and had a random thought&amp;hellip; can it handle elseif logic?</description>
+    </item>
+    
+    <item>
+      <title>Roll Your Sleeves Up, It&#39;s Hacktoberfest Time!</title>
+      <link>https://blog.toastit.dev/blog/hacktoberfest-2019/</link>
+      <pubDate>Sun, 29 Sep 2019 21:37:45 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/hacktoberfest-2019/</guid>
+      <description>I&amp;rsquo;m gearing up for my fourth Hacktoberfest event, and so should you. You could even come away from this month with a fancy new t-shirt!</description>
+    </item>
+    
+    <item>
+      <title>RSAT as a Feature: I Thought I Was Going to Love It, Until I Saw It in Action</title>
+      <link>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</link>
+      <pubDate>Wed, 13 Feb 2019 19:56:39 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</guid>
+      <description>I&amp;rsquo;m a little late to this particular party, but I only just had the 1809 update on my workstation today.</description>
+    </item>
+    
+    <item>
+      <title>Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes</title>
+      <link>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</link>
+      <pubDate>Thu, 23 Aug 2018 22:22:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</guid>
+      <description>Time for a bit of Exchange flavoured spring cleaning? Let&amp;rsquo;s find some un-needed shared mailboxes!</description>
+    </item>
+    
+    <item>
+      <title>PS Scheduled Jobs: Exploring Your Options</title>
+      <link>https://blog.toastit.dev/blog/exploring-your-options/</link>
+      <pubDate>Fri, 29 Jun 2018 15:12:52 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/exploring-your-options/</guid>
+      <description>We&amp;rsquo;ve been looking into PowerShell Scheduled Jobs lately, today let&amp;rsquo;s have a quick look at the &amp;ldquo;options&amp;rdquo; available to us.</description>
+    </item>
+    
+    <item>
+      <title>Downloading an Image for Local Use</title>
+      <link>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</link>
+      <pubDate>Sun, 27 May 2018 12:55:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</guid>
+      <description>This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&amp;rsquo;m disappointed that I didn&amp;rsquo;t get to it sooner.</description>
+    </item>
+    
+    <item>
+      <title>All I Want Is a Damned CSV!</title>
+      <link>https://blog.toastit.dev/blog/ps-csv/</link>
+      <pubDate>Wed, 18 Apr 2018 20:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ps-csv/</guid>
+      <description>CSVs are pretty handy, right? And there is a cmdlet that&amp;rsquo;ll handle this for you!</description>
+    </item>
+    
+    <item>
+      <title>Avoiding DateTime Headaches</title>
+      <link>https://blog.toastit.dev/blog/datetime-headache/</link>
+      <pubDate>Sun, 05 Nov 2017 19:15:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/datetime-headache/</guid>
+      <description>Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style.</description>
+    </item>
+    
+    <item>
+      <title>October: The Hackiest Month of the Year</title>
+      <link>https://blog.toastit.dev/blog/oct-17/</link>
+      <pubDate>Sun, 01 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/oct-17/</guid>
+      <description>Summits, Blogging, and Hacking make October the &amp;lsquo;hackiest&amp;rsquo; month of the year.</description>
+    </item>
+    
+    <item>
+      <title>Recurrence Patterns and PowerShell</title>
+      <link>https://blog.toastit.dev/blog/recurrence-pattern/</link>
+      <pubDate>Mon, 25 Sep 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/recurrence-pattern/</guid>
+      <description>There&amp;rsquo;s one thing that bugs me when scheduling scripts from the prompt, however: Recurrence.</description>
+    </item>
+    
+    <item>
+      <title>DHCP Reservations: No Cluster? No Problem!</title>
+      <link>https://blog.toastit.dev/blog/dhcp-reservations/</link>
+      <pubDate>Sun, 29 Jan 2017 12:50:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/dhcp-reservations/</guid>
+      <description>Have multiple DHCP servers that aren’t in a cluster? Don’t worry!</description>
+    </item>
+    
+    <item>
+      <title>Automatically Shutting Down My Home Server, so I Don&#39;t Have To</title>
+      <link>https://blog.toastit.dev/blog/home-server-shutdown/</link>
+      <pubDate>Sun, 03 Jul 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/home-server-shutdown/</guid>
+      <description>My home server, nestled behind the TV, is an old HP workstation. It&amp;rsquo;s not exactly what I&amp;rsquo;d call&amp;hellip; power efficient.</description>
+    </item>
+    
+    <item>
+      <title>Mini Post: 20 More Pulseway Alerts with PowerShell</title>
+      <link>https://blog.toastit.dev/blog/more-alerts/</link>
+      <pubDate>Thu, 02 Jul 2015 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/more-alerts/</guid>
+      <description>In this mini post I&amp;rsquo;ll list 20 more ideas for PowerShell fuelled Pulseway alerts.</description>
+    </item>
+    
+    <item>
+      <title>Splatting your way to reduced duplicated code</title>
+      <link>https://blog.toastit.dev/blog/ps-splatting/</link>
+      <pubDate>Tue, 23 Sep 2014 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ps-splatting/</guid>
+      <description>You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet.</description>
+    </item>
+    
+    <item>
+      <title>Repairing Trust Relationships Without a Reboot</title>
+      <link>https://blog.toastit.dev/blog/trust-no-reboot/</link>
+      <pubDate>Sun, 21 Sep 2014 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/trust-no-reboot/</guid>
+      <description>Perhaps it was a helpdesk technician powering up a cloned desktop while connected to the network.</description>
+    </item>
+    
+    <item>
+      <title>The Single Most Important Resource When Learning Windows PowerShell</title>
+      <link>https://blog.toastit.dev/blog/ps-important-resource/</link>
+      <pubDate>Sat, 13 Sep 2014 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ps-important-resource/</guid>
+      <description>There is one thing I learnt to do early on and continue to do to this day: Ask for help.</description>
+    </item>
+    
+  </channel>
+</rss>

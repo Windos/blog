@@ -3,7 +3,7 @@ categories = ["PowerShell", "Nugget"]
 date = 2016-07-03T12:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/Socket_5.png"
+thumbnail = "/2018/05/Socket_5.png"
 slug = "home-server-shutdown"
 summary = "My home server, nestled behind the TV, is an old HP workstation. It's not exactly what I'd call... power efficient."
 tags = ["PowerShell", "Nugget"]
@@ -24,7 +24,7 @@ There is a very handy count there, labelled MediaContainer which gives you and e
 
 ```powershell
 $URL = 'http://localhost:32400/status/sessions'
-    
+
 while ($true)
 {
 	$PlexStatus = Invoke-RestMethod -Uri $URL
@@ -46,9 +46,9 @@ The final piece of the solution is to wrap the above PowerShell statement in a s
 ```powershell
 $JobTrigger = New-JobTrigger -Daily -At '8:30 PM'
 $JobOption = New-ScheduledJobOption -RunElevated
-Register-ScheduledJob -Name 'PlexShutdown' 
-					  -Trigger $JobTrigger 
-					  -ScheduledJobOption $JobOption 
+Register-ScheduledJob -Name 'PlexShutdown'
+					  -Trigger $JobTrigger
+					  -ScheduledJobOption $JobOption
 					  -ScriptBlock $ScriptBlock
 
 ```

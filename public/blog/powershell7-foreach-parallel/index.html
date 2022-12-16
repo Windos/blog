@@ -8,33 +8,32 @@
   <title>
   Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob? - ToastIT
   </title>
-  <meta name="description" content="PoshRSJob has been my go to module for Parallelization for years... let&#39;s see if a head to head test with the new PowerShell 7 feature will change that." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="PoshRSJob has been my go to module for Parallelization for years&hellip; let&rsquo;s see if a head to head test with the new PowerShell 7 feature will change that." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?" />
-<meta property="og:description" content="PoshRSJob has been my go to module for Parallelization for years... let&#39;s see if a head to head test with the new PowerShell 7 feature will change that." />
+<meta property="og:description" content="PoshRSJob has been my go to module for Parallelization for years&hellip; let&rsquo;s see if a head to head test with the new PowerShell 7 feature will change that." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/powershell7-foreach-parallel/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2019-09-10T09:38:52+00:00" />
-<meta property="article:modified_time" content="2019-09-10T09:38:52+00:00" />
-
+<meta property="article:published_time" content="2019-09-09T21:38:52+00:00" />
+<meta property="article:modified_time" content="2019-09-09T21:38:52+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?"/>
-<meta name="twitter:description" content="PoshRSJob has been my go to module for Parallelization for years... let&#39;s see if a head to head test with the new PowerShell 7 feature will change that."/>
+<meta name="twitter:description" content="PoshRSJob has been my go to module for Parallelization for years&hellip; let&rsquo;s see if a head to head test with the new PowerShell 7 feature will change that."/>
 
   <meta itemprop="name" content="Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?">
-<meta itemprop="description" content="PoshRSJob has been my go to module for Parallelization for years... let&#39;s see if a head to head test with the new PowerShell 7 feature will change that."><meta itemprop="datePublished" content="2019-09-10T09:38:52+00:00" />
-<meta itemprop="dateModified" content="2019-09-10T09:38:52+00:00" />
+<meta itemprop="description" content="PoshRSJob has been my go to module for Parallelization for years&hellip; let&rsquo;s see if a head to head test with the new PowerShell 7 feature will change that."><meta itemprop="datePublished" content="2019-09-09T21:38:52+00:00" />
+<meta itemprop="dateModified" content="2019-09-09T21:38:52+00:00" />
 <meta itemprop="wordCount" content="1434">
 <meta itemprop="keywords" content="PowerShell," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    September 10, 2019
+    September 9, 2019
   
 
 
@@ -123,7 +123,10 @@
       </svg>
       1434&nbsp;words
       
+        
+      
     </h5>
+    
 
     <p>I&rsquo;ve been a long time user of <a href="https://twitter.com/proxb" target="_blank" rel="noopener">Boe Prox&amp;rsquo;s</a>
  module, <a href="https://www.powershellgallery.com/packages/PoshRSJob" target="_blank" rel="noopener">PoshRSJob</a>
@@ -153,132 +156,126 @@
 <p>The only fair thing to do, is to put both options to the test.</p>
 <h2 id="two-options-enter">Two Options Enter</h2>
 <p>Technically, there&rsquo;s three options because I&rsquo;m going to include just running everything sequentially as an option&hellip; but only to show the potential gains in parallelization in general.</p>
-<p>This test involves pinging 10 different addresses on the internet, five will be supplied as IP Addresses and the other five will be supplied as names that need to be resolved. Each address will have two echo requests sent to it, and a <a href="https://powershellexplained.com/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/" target="_blank" rel="noopener">PSCustomObject </a>
-will be returned stating the address and if it responded or not.</p>
+<p>This test involves pinging 10 different addresses on the internet, five will be supplied as IP Addresses and the other five will be supplied as names that need to be resolved. Each address will have two echo requests sent to it, and a <a href="https://powershellexplained.com/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/" target="_blank" rel="noopener">PSCustomObject</a>
+ will be returned stating the address and if it responded or not.</p>
 <p>If you&rsquo;ve seen <a href="https://www.youtube.com/watch?v=Yp_m5T_kyJU" target="_blank" rel="noopener">my presentation</a>
  on optimizing PowerShell for speed, you will have seen a smaller version of this test. Given I&rsquo;m not having to worry about on stage pacing in this format, instead of only repeating each test only five to ten times they have each been run 1000 times.</p>
 <p>Let&rsquo;s start with the sequential runs:</p>
-<pre><code>$RawTimes = [System.Collections.Generic.List[int]]::new()
-
-foreach ($Run in 1..1000) {
-    $Stopwatch = [System.Diagnostics.Stopwatch]::new()
-    $Stopwatch.Start()
-    $Targets = @('8.8.8.8',
-                 '8.8.4.4',
-                 '1.1.1.1',
-                 '1.0.0.1',
-                 '9.9.9.9',
-                 'stuff.co.nz',
-                 'trademe.co.nz',
-                 'google.com',
-                 'example.com',
-                 'toastit.dev')
-
-    foreach ($Target in $Targets) {
-        $Response = Test-Connection -ComputerName $Target -Count 2 -Quiet -InformationAction Ignore
-
-        [PSCustomObject] @{
-            Host = $Target
-            Online = $Response
-        }
-    }
-    $Stopwatch.Stop()
-    $RawTimes.Add($Stopwatch.ElapsedMilliseconds)
-}
-
-$RawTimes | Measure -Average -Minimum -Maximum
-
-Count             : 1000
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$RawTimes</span> = [System.Collections.Generic.List[int]]::new()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">foreach</span> (<span style="color:#8be9fd;font-style:italic">$Run</span> <span style="color:#ff79c6">in</span> <span style="color:#bd93f9">1</span>.<span style="color:#bd93f9">.1000</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Stopwatch</span> = [System.Diagnostics.Stopwatch]::new()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Stopwatch</span>.Start()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Targets</span> = @(<span style="color:#f1fa8c">&#39;8.8.8.8&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;8.8.4.4&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;1.1.1.1&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;1.0.0.1&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;9.9.9.9&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;stuff.co.nz&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;trademe.co.nz&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;google.com&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;example.com&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;toastit.dev&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">foreach</span> (<span style="color:#8be9fd;font-style:italic">$Target</span> <span style="color:#ff79c6">in</span> <span style="color:#8be9fd;font-style:italic">$Targets</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$Response</span> = <span style="color:#8be9fd;font-style:italic">Test-Connection</span> -ComputerName <span style="color:#8be9fd;font-style:italic">$Target</span> -Count <span style="color:#bd93f9">2</span> -Quiet -InformationAction Ignore
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        [PSCustomObject] @{
+</span></span><span style="display:flex;"><span>            Host = <span style="color:#8be9fd;font-style:italic">$Target</span>
+</span></span><span style="display:flex;"><span>            Online = <span style="color:#8be9fd;font-style:italic">$Response</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Stopwatch</span>.Stop()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$RawTimes</span>.Add(<span style="color:#8be9fd;font-style:italic">$Stopwatch</span>.ElapsedMilliseconds)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$RawTimes</span> | <span style="color:#8be9fd;font-style:italic">Measure </span>-Average -Minimum -Maximum
+</span></span></code></pre></div><pre tabindex="0"><code class="language-output" data-lang="output">Count             : 1000
 Average           : 10620.135
 Sum               :
 Maximum           : 11046
 Minimum           : 10525
 StandardDeviation :
 Property          :
-</code></pre>
-<p><em>Note, the <code>-InformationAction Ignore</code> on <code>Test-Connection</code> is included because the <a href="https://github.com/PowerShell/PowerShell/issues/6768" target="_blank" rel="noopener">current behaviour in PowerShell 7</a>
+</code></pre><p><em>Note, the <code>-InformationAction Ignore</code> on <code>Test-Connection</code> is included because the <a href="https://github.com/PowerShell/PowerShell/issues/6768" target="_blank" rel="noopener">current behaviour in PowerShell 7</a>
  is that the text from the echo request is returned on the information stream even when the <code>-Quiet</code> switch is specified (the expected behaviour from Windows PowerShell 5.1 is that only a Boolean value would be output.)</em></p>
 <p>The average time to complete each iteration was over 10 seconds. Meaning the overall test took just shy of three hours to complete&hellip; my poor test VM.</p>
 <p>Next, let&rsquo;s try my old faithful PoshRSJob.</p>
-<pre><code>$PoshRSJobTimes = [System.Collections.Generic.List[int]]::new()
-
-foreach ($Run in 1..1000) {
-    $Stopwatch = [System.Diagnostics.Stopwatch]::new()
-    $Stopwatch.Start()
-    $Targets = @('8.8.8.8',
-                 '8.8.4.4',
-                 '1.1.1.1',
-                 '1.0.0.1',
-                 '9.9.9.9',
-                 'stuff.co.nz',
-                 'trademe.co.nz',
-                 'google.com',
-                 'example.com',
-                 'toastit.dev')
-
-    $Targets | Start-RSJob -Throttle 5 -ScriptBlock {
-        $Response = Test-Connection -ComputerName $_ -Count 2 -Quiet -InformationAction Ignore
-
-        [PSCustomObject] @{
-            Host = $_
-            Online = $Response
-        }
-    } | Wait-RSJob | Receive-RSJob
-    $Stopwatch.Stop()
-    $PoshRSJobTimes.Add($Stopwatch.ElapsedMilliseconds)
-}
-
-$PoshRSJobTimes | Measure -Average -Minimum -Maximum
-
-Count             : 1000
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$PoshRSJobTimes</span> = [System.Collections.Generic.List[int]]::new()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">foreach</span> (<span style="color:#8be9fd;font-style:italic">$Run</span> <span style="color:#ff79c6">in</span> <span style="color:#bd93f9">1</span>.<span style="color:#bd93f9">.1000</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Stopwatch</span> = [System.Diagnostics.Stopwatch]::new()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Stopwatch</span>.Start()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Targets</span> = @(<span style="color:#f1fa8c">&#39;8.8.8.8&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;8.8.4.4&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;1.1.1.1&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;1.0.0.1&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;9.9.9.9&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;stuff.co.nz&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;trademe.co.nz&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;google.com&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;example.com&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;toastit.dev&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Targets</span> | <span style="color:#8be9fd;font-style:italic">Start-RSJob</span> -Throttle <span style="color:#bd93f9">5</span> -ScriptBlock {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$Response</span> = <span style="color:#8be9fd;font-style:italic">Test-Connection</span> -ComputerName <span style="color:#8be9fd;font-style:italic">$_</span> -Count <span style="color:#bd93f9">2</span> -Quiet -InformationAction Ignore
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        [PSCustomObject] @{
+</span></span><span style="display:flex;"><span>            Host = <span style="color:#8be9fd;font-style:italic">$_</span>
+</span></span><span style="display:flex;"><span>            Online = <span style="color:#8be9fd;font-style:italic">$Response</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    } | <span style="color:#8be9fd;font-style:italic">Wait-RSJob</span> | <span style="color:#8be9fd;font-style:italic">Receive-RSJob</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Stopwatch</span>.Stop()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$PoshRSJobTimes</span>.Add(<span style="color:#8be9fd;font-style:italic">$Stopwatch</span>.ElapsedMilliseconds)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$PoshRSJobTimes</span> | <span style="color:#8be9fd;font-style:italic">Measure </span>-Average -Minimum -Maximum
+</span></span></code></pre></div><pre tabindex="0"><code class="language-output" data-lang="output">Count             : 1000
 Average           : 3254.613
 Sum               :
 Maximum           : 5987
 Minimum           : 2422
 StandardDeviation :
 Property          :
-</code></pre>
-<p>This one took a little over 3 seconds per iteration, and the entire test completed in under an hour.</p>
+</code></pre><p>This one took a little over 3 seconds per iteration, and the entire test completed in under an hour.</p>
 <p>Finally, the new <code>ForEach-Object</code> feature.</p>
-<pre><code>$Ps7Times = [System.Collections.Generic.List[int]]::new()
-
-foreach ($Run in 1..1000) {
-    $Stopwatch = [System.Diagnostics.Stopwatch]::new()
-    $Stopwatch.Start()
-    $Targets = @('8.8.8.8',
-                 '8.8.4.4',
-                 '1.1.1.1',
-                 '1.0.0.1',
-                 '9.9.9.9',
-                 'stuff.co.nz',
-                 'trademe.co.nz',
-                 'google.com',
-                 'example.com',
-                 'toastit.dev')
-
-    $Targets | ForEach-Object -ThrottleLimit 5 -Parallel {
-        $Response = Test-Connection -ComputerName $_ -Count 2 -Quiet -InformationAction Ignore
-
-        [PSCustomObject] @{
-            Host = $_
-            Online = $Response
-        }
-    }
-    $Stopwatch.Stop()
-    $Ps7Times.Add($Stopwatch.ElapsedMilliseconds)
-}
-
-$Ps7Times | Measure -Average -Minimum -Maximum
-
-Count             : 1000
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Ps7Times</span> = [System.Collections.Generic.List[int]]::new()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">foreach</span> (<span style="color:#8be9fd;font-style:italic">$Run</span> <span style="color:#ff79c6">in</span> <span style="color:#bd93f9">1</span>.<span style="color:#bd93f9">.1000</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Stopwatch</span> = [System.Diagnostics.Stopwatch]::new()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Stopwatch</span>.Start()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Targets</span> = @(<span style="color:#f1fa8c">&#39;8.8.8.8&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;8.8.4.4&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;1.1.1.1&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;1.0.0.1&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;9.9.9.9&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;stuff.co.nz&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;trademe.co.nz&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;google.com&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;example.com&#39;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#f1fa8c">&#39;toastit.dev&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Targets</span> | <span style="color:#8be9fd;font-style:italic">ForEach-Object</span> -ThrottleLimit <span style="color:#bd93f9">5</span> -Parallel {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$Response</span> = <span style="color:#8be9fd;font-style:italic">Test-Connection</span> -ComputerName <span style="color:#8be9fd;font-style:italic">$_</span> -Count <span style="color:#bd93f9">2</span> -Quiet -InformationAction Ignore
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        [PSCustomObject] @{
+</span></span><span style="display:flex;"><span>            Host = <span style="color:#8be9fd;font-style:italic">$_</span>
+</span></span><span style="display:flex;"><span>            Online = <span style="color:#8be9fd;font-style:italic">$Response</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Stopwatch</span>.Stop()
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Ps7Times</span>.Add(<span style="color:#8be9fd;font-style:italic">$Stopwatch</span>.ElapsedMilliseconds)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$Ps7Times</span> | <span style="color:#8be9fd;font-style:italic">Measure </span>-Average -Minimum -Maximum
+</span></span></code></pre></div><pre tabindex="0"><code class="language-output" data-lang="output">Count             : 1000
 Average           : 2461.979
 Sum               :
 Maximum           : 6028
 Minimum           : 2413
 StandardDeviation :
 Property          :
-</code></pre>
-<p>This one managed to beat out PoshRSJob by about 0.8 seconds.</p>
+</code></pre><p>This one managed to beat out PoshRSJob by about 0.8 seconds.</p>
 <p>Note the syntax of this command for when you go to run it yourself, there&rsquo;s a new <code>-Parallel</code> parameter on <code>ForEach-Object</code> which takes a script block as input. This is different from the normal use of ForEach-Object where <code>-Process</code> would normally consume your scriptblock.</p>
 <p>The <code>-ThrottleLimit</code> parameter allows you to control how many iterations can be run at the same time and in both this test and the PoshRSJob test this was set to five. This could easily have gone higher, and for your tasks it&rsquo;ll be a case of working out your sweet spot for the throttle that will give you the best speed vs. resource usage (e.g. CPU/memory usage or network capacity.)</p>
 <h2 id="not-the-full-picture">Not the Full Picture</h2>
@@ -418,6 +415,8 @@ Property          :
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

@@ -3,7 +3,7 @@ categories = ["PowerShell", "Meta"]
 date = 2018-05-15T13:30:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/512982909_04fd0dd5a5_o.jpg"
+thumbnail = "/2018/05/512982909_04fd0dd5a5_o.jpg"
 slug = "techsnips-intro"
 summary = "TechSnips is a new e-learning service and I’ve been recording content for it, along with many other contributors."
 tags = ["PowerShell", "Meta"]
@@ -20,7 +20,7 @@ Adam has been working on a new e-learning service and I've been putting a fair a
 
 ## **Meet TechSnips**
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/techsnips.png" >}}
+{{< figure src="/2018/05/techsnips.png" >}}
 
 The service is called [TechSnips](https://www.techsnips.io/), and it features short "laser focused" videos on many different tech topics. The idea is that there are no slides and no fluff like you'd normally get with video training.
 
@@ -36,7 +36,7 @@ I'm not doing this by halves either. I've already got five published videos, 29 
 
 What sort of topics? Here's a peek:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/trello.png" >}}
+{{< figure src="/2018/05/trello.png" >}}
 
 Obviously, it's not just me. There's 16 other people working on content (not including Adam... he's a little busy actually working on the service and herding cats) and two awesome editors working hard to turn the videos we submit into the polished product you see on the site.
 

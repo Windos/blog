@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/azure/</link>
+    <description>Recent content in Azure on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 07 May 2021 05:42:32 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Learning Story: From Timber to Chocolatey</title>
+      <link>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</link>
+      <pubDate>Fri, 07 May 2021 05:42:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</guid>
+      <description>This post is part of #TheMVPChallenge. It&amp;rsquo;s not exactly what was on the brief&amp;hellip; but I think it&amp;rsquo;s a story worth telling!</description>
+    </item>
+    
+    <item>
+      <title>Fun with Azure Key Vault Part 2: Integration with Azure Functions</title>
+      <link>https://blog.toastit.dev/blog/azure-key-vault-2/</link>
+      <pubDate>Sat, 20 Jun 2020 15:58:22 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-key-vault-2/</guid>
+      <description>Now that we have our credentials stored in an Azure Key Vault, how do we go about using them in other Azure services?</description>
+    </item>
+    
+    <item>
+      <title>Fun with Azure Key Vault Part 1: Vault Creation and Storing PSCredential Objects</title>
+      <link>https://blog.toastit.dev/blog/azure-key-vault-1/</link>
+      <pubDate>Thu, 21 May 2020 23:40:03 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-key-vault-1/</guid>
+      <description>I&amp;rsquo;m so used to storing fully formed credentials in the local Windows Credential Manager. How do I transition that into the &amp;ldquo;secrets&amp;rdquo; centric world that is the cloud?</description>
+    </item>
+    
+    <item>
+      <title>Azure Devops for PowerShell - #AzureAdventCalendar 2019 Day 15</title>
+      <link>https://blog.toastit.dev/blog/azure-devops-for-powershell-azureadventcalendar-2019-day-15/</link>
+      <pubDate>Sat, 14 Dec 2019 11:21:22 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-devops-for-powershell-azureadventcalendar-2019-day-15/</guid>
+      <description>It&amp;rsquo;s long past time to wrap some modern smarts around KovertKringle, a PowerShell module for managing Secret Santa events.</description>
+    </item>
+    
+    <item>
+      <title>Azure DevOps Pipelines Tune Up: Templates and Centralization</title>
+      <link>https://blog.toastit.dev/blog/azure-pipelines-tune-up/</link>
+      <pubDate>Fri, 20 Sep 2019 10:04:57 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-pipelines-tune-up/</guid>
+      <description>After reading some awesome posts on the topic, I&amp;rsquo;ve been shamed into making my pipelines a little more efficient.</description>
+    </item>
+    
+    <item>
+      <title>Moving My Automatic Blog Archive Tweets to Azure Functions</title>
+      <link>https://blog.toastit.dev/blog/blog-archive-to-azure-function/</link>
+      <pubDate>Sat, 23 Feb 2019 08:08:50 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/blog-archive-to-azure-function/</guid>
+      <description>A few scripts run on my home server, but can happily run in a serverless environment. Time to give that poor server a rest, I think.</description>
+    </item>
+    
+    <item>
+      <title>How I Failed My Way to Success with Azure Pipelines - Part 2: Release</title>
+      <link>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/</link>
+      <pubDate>Sat, 16 Feb 2019 20:08:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/</guid>
+      <description>What good is a nicely built PowerShell module if no one can use it? Time to release it into the wild!</description>
+    </item>
+    
+    <item>
+      <title>How I Failed My Way to Success with Azure Pipelines - Part 1: Build</title>
+      <link>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines/</link>
+      <pubDate>Tue, 05 Feb 2019 22:38:49 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines/</guid>
+      <description>Some people learn by writing. Some by watching videos. Apparently I learn by failing and head-desking.</description>
+    </item>
+    
+  </channel>
+</rss>

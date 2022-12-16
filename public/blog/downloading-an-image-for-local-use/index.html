@@ -8,33 +8,32 @@
   <title>
   Downloading an Image for Local Use - ToastIT
   </title>
-  <meta name="description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&#39;m disappointed that I didn&#39;t get to it sooner." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&rsquo;m disappointed that I didn&rsquo;t get to it sooner." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="Downloading an Image for Local Use" />
-<meta property="og:description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&#39;m disappointed that I didn&#39;t get to it sooner." />
+<meta property="og:description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&rsquo;m disappointed that I didn&rsquo;t get to it sooner." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/downloading-an-image-for-local-use/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2018-05-28T00:55:00+00:00" />
-<meta property="article:modified_time" content="2018-05-28T00:55:00+00:00" />
-
+<meta property="article:published_time" content="2018-05-27T12:55:00+00:00" />
+<meta property="article:modified_time" content="2018-05-27T12:55:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Downloading an Image for Local Use"/>
-<meta name="twitter:description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&#39;m disappointed that I didn&#39;t get to it sooner."/>
+<meta name="twitter:description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&rsquo;m disappointed that I didn&rsquo;t get to it sooner."/>
 
   <meta itemprop="name" content="Downloading an Image for Local Use">
-<meta itemprop="description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&#39;m disappointed that I didn&#39;t get to it sooner."><meta itemprop="datePublished" content="2018-05-28T00:55:00+00:00" />
-<meta itemprop="dateModified" content="2018-05-28T00:55:00+00:00" />
+<meta itemprop="description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&rsquo;m disappointed that I didn&rsquo;t get to it sooner."><meta itemprop="datePublished" content="2018-05-27T12:55:00+00:00" />
+<meta itemprop="dateModified" content="2018-05-27T12:55:00+00:00" />
 <meta itemprop="wordCount" content="666">
 <meta itemprop="keywords" content="PowerShell,Nugget,BurntToast," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Downloading an Image for Local Use</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    May 28, 2018
+    May 27, 2018
   
 
 
@@ -123,7 +123,10 @@
       </svg>
       666&nbsp;words
       
+        
+      
     </h5>
+    
 
     <p>During my latest <a href="https://youtu.be/OXFBHCY4Ils" target="_blank" rel="noopener">livestream</a>
 , after failing at what I intended to do, we got onto enabling the ability to use pictures from the Internet in toast notifications. All of the documentation for the UWP Toolkit suggests this should just work, but unfortunately it didn&rsquo;t in practice.</p>
@@ -131,92 +134,89 @@
 <h2 id="the-beginning"><strong>The Beginning</strong></h2>
 <p>Let&rsquo;s start with code we were working with. I&rsquo;ve simplified this to just the parts of the function we were worried about, but you can see the full function <a href="https://github.com/Windos/BurntToast/blob/v0.6.2/BurntToast/Public/New-BTImage.ps1" target="_blank" rel="noopener">on GitHub</a>
 .</p>
-<pre><code>function New-BTImage {
-    param (
-        [string] $Source
-    )
-
-    # Don't worry about this type and what it does, just know that this function
-    # creates and object, adds properties to it, then outputs it at the end
-    $Image = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
-
-    if ($Source) {
-        $Image.Source = $Source
-    }
-
-    $Image
-}
-</code></pre>
-<p>Simply put, this function took a source and added this to an &ldquo;AdaptiveImage&rdquo; objects. This should have been able to take a local path or an Internet address. Local paths worked, but not Internet ones.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">New-BTImage</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">param</span> (
+</span></span><span style="display:flex;"><span>        [string] <span style="color:#8be9fd;font-style:italic">$Source</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># Don&#39;t worry about this type and what it does, just know that this function</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#6272a4"># creates and object, adds properties to it, then outputs it at the end</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Image</span> = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Source</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#8be9fd;font-style:italic">$Image</span>.Source = <span style="color:#8be9fd;font-style:italic">$Source</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Image</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Simply put, this function took a source and added this to an &ldquo;AdaptiveImage&rdquo; objects. This should have been able to take a local path or an Internet address. Local paths worked, but not Internet ones.</p>
 <h2 id="the-first-attempt"><strong>The First Attempt</strong></h2>
 <p>The answer that we came up with on stream was to download the image(s) to a local path (in the temp directory) and adjust the source to that new path. My first attempt at this included generating a GUID for the file name to ensure that it was unique.</p>
-<pre><code>function New-BTImage {
-    param (
-        [string] $Source
-    )
-
-    $Image = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
-
-    if ($Source) {
-        if ($Source -like 'http?://*') {
-            $FileExtension = $Source.Split('.')[-1]
-            $Guid = [guid]::newGuid()
-
-            $NewFilePath = '{0}\{1}.{2}' -f $Env:TEMP, $Guid, $FileExtension
-
-            Invoke-WebRequest -Uri $Source -OutFile $NewFilePath
-
-            $Image.Source = $NewFilePath
-        } else {
-            $Image.Source = $Source
-        }
-    }
-
-    $Image
-}
-</code></pre>
-<p>In this iteration I tested to see if the source started with an HTTP or HTTPS and then split the patch on periods. The last item in the result from splitting the source should give me the file extension.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">New-BTImage</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">param</span> (
+</span></span><span style="display:flex;"><span>        [string] <span style="color:#8be9fd;font-style:italic">$Source</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Image</span> = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Source</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Source</span> <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#39;http?://*&#39;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$FileExtension</span> = <span style="color:#8be9fd;font-style:italic">$Source</span>.Split(<span style="color:#f1fa8c">&#39;.&#39;</span>)[<span style="color:#bd93f9">-1</span>]
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$Guid</span> = [guid]::newGuid()
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$NewFilePath</span> = <span style="color:#f1fa8c">&#39;{0}\{1}.{2}&#39;</span> <span style="color:#ff79c6">-f</span> <span style="color:#8be9fd;font-style:italic">$Env:TEMP</span>, <span style="color:#8be9fd;font-style:italic">$Guid</span>, <span style="color:#8be9fd;font-style:italic">$FileExtension</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">Invoke-WebRequest</span> -Uri <span style="color:#8be9fd;font-style:italic">$Source</span> -OutFile <span style="color:#8be9fd;font-style:italic">$NewFilePath</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$Image</span>.Source = <span style="color:#8be9fd;font-style:italic">$NewFilePath</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$Image</span>.Source = <span style="color:#8be9fd;font-style:italic">$Source</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Image</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this iteration I tested to see if the source started with an HTTP or HTTPS and then split the patch on periods. The last item in the result from splitting the source should give me the file extension.</p>
 <p>Then I create a new GUID, and build the path to where the file will be downloaded to. The file is then downloaded and used as the source on the image object.</p>
 <p>This worked, but there was one issue with it&hellip;</p>
 <h2 id="the-final-product"><strong>The Final Product</strong></h2>
 <p>The issue was that if you used the same image multiple times, then it would be downloaded every time. You&rsquo;d end up with multiple copies of the same image in your temp directory and have to wait for it to be downloaded every time you generated a new toast.</p>
 <p>The answer to this was to preserve the name from the Internet and test to see if it is already in the temp directory.</p>
-<pre><code>function New-BTImage {
-    param (
-        [string] $Source
-    )
-
-    $Image = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
-
-    if ($Source) {
-        if ($Source -like 'http?://*') {
-            $RemoteFileName = $Source.Split('/')[-1]
-
-            $NewFilePath = '{0}\{1}' -f $Env:TEMP, $RemoteFileName
-
-            if (!(Test-Path -Path $NewFilePath)) {
-                Invoke-WebRequest -Uri $Source -OutFile $NewFilePath
-            }
-
-            $Image.Source = $NewFilePath
-        } else {
-            $Image.Source = $Source
-        }
-    }
-
-    $Image
-}
-</code></pre>
-<p>This time I split the source on a forward slash, and the last item would give me the full file name (including extension.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">New-BTImage</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">param</span> (
+</span></span><span style="display:flex;"><span>        [string] <span style="color:#8be9fd;font-style:italic">$Source</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Image</span> = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Source</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$Source</span> <span style="color:#ff79c6">-like</span> <span style="color:#f1fa8c">&#39;http?://*&#39;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$RemoteFileName</span> = <span style="color:#8be9fd;font-style:italic">$Source</span>.Split(<span style="color:#f1fa8c">&#39;/&#39;</span>)[<span style="color:#bd93f9">-1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$NewFilePath</span> = <span style="color:#f1fa8c">&#39;{0}\{1}&#39;</span> <span style="color:#ff79c6">-f</span> <span style="color:#8be9fd;font-style:italic">$Env:TEMP</span>, <span style="color:#8be9fd;font-style:italic">$RemoteFileName</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">if</span> (!(<span style="color:#8be9fd;font-style:italic">Test-Path</span> -Path <span style="color:#8be9fd;font-style:italic">$NewFilePath</span>)) {
+</span></span><span style="display:flex;"><span>                <span style="color:#8be9fd;font-style:italic">Invoke-WebRequest</span> -Uri <span style="color:#8be9fd;font-style:italic">$Source</span> -OutFile <span style="color:#8be9fd;font-style:italic">$NewFilePath</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$Image</span>.Source = <span style="color:#8be9fd;font-style:italic">$NewFilePath</span>
+</span></span><span style="display:flex;"><span>        } <span style="color:#ff79c6">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#8be9fd;font-style:italic">$Image</span>.Source = <span style="color:#8be9fd;font-style:italic">$Source</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#8be9fd;font-style:italic">$Image</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This time I split the source on a forward slash, and the last item would give me the full file name (including extension.)</p>
 <p>Then <code>Test-Path</code> is used to see if that filename exists in the temp directory and if not then the file is downloaded.</p>
 <p>With that in place, Internet based images could now be used!</p>
 <p>This change will be part of the v0.6.2 release of <a href="https://www.powershellgallery.com/packages/BurntToast" target="_blank" rel="noopener">BurntToast</a>
  and my hope is that it will make displaying visually interesting toasts much easier.</p>
 <h2 id="wrap-up"><strong>Wrap Up</strong></h2>
 <p>This wasn&rsquo;t the problem I was intending to tackle during the livestream, but I&rsquo;m glad we did get to it. It had been sitting as an open issue on the project for a long time and given how quick of a fix it was I&rsquo;m disappointed that I didn&rsquo;t get to it sooner.</p>
-<p>Remember that <a href="https://twitter.com/search?f=tweets&amp;amp;vertical=default&amp;amp;q=%23pstweetchat" target="_blank" rel="noopener">#PSTweetChat</a>
+<p>Remember that <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=%23pstweetchat" target="_blank" rel="noopener">#PSTweetChat</a>
  is this coming Friday (1 - 2 PM Eastern Time). Also, if you&rsquo;re looking for <a href="https://king.geek.nz/2018/03/20/pshelp-twitter/" target="_blank" rel="noopener">PowerShell help</a>
-, you can find it on Twitter using <a href="https://twitter.com/search?f=tweets&amp;amp;vertical=default&amp;amp;q=%23pshelp&amp;amp;src=typd" target="_blank" rel="noopener">#PSHelp</a>
+, you can find it on Twitter using <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=%23pshelp&amp;src=typd" target="_blank" rel="noopener">#PSHelp</a>
 !</p>
 
   </article><div class="bg-blue-300 dark:bg-gray-900">
@@ -343,6 +343,8 @@
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

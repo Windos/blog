@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2018-03-19T19:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/pexels-photo-167964.jpeg"
+thumbnail = "/2018/05/pexels-photo-167964.jpeg"
 slug = "pshelp-twitter"
 summary = "If you're looking for some help, try #PSHelp. If you've got knowledge to share (and you do), make sure you jump in and get involved!"
 tags = ["PowerShell", "BurntToast"]
@@ -22,7 +22,7 @@ As it turns out, there's already a hashtag which sees some use: [#PSHelp](https:
 
 I've added this to my TweetDeck layout and will be keeping an eye on it from now on. If you're looking for help with a PowerShell issue, fire off a tweet with that hashtag and I'll do my best to try and help out.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/tweetdeck.png" >}}
+{{< figure src="/2018/05/tweetdeck.png" >}}
 
 Obviously, I'm not all knowing. I have my slither of technology that I focus on, or have experience with via my day job, and so I hope that others will start keeping an eye on the hashtag as well.
 
@@ -55,7 +55,7 @@ Set-ItemProperty -Path 'HKCU:\SOFTWARE\PowerShell-Scratch' -Name 'PSHelp-LastId'
 $JobBlock = {
     $URL = 'https://queryfeed.net/twitter?q=%23pshelp&title-type=user-name-both&geocode=&omit-retweets=on'
     $RSS = Invoke-RestMethod -Uri $URL
-    
+
     # The Tweet URL acts as the Id, the Id from the feed and the Id in the registry are compared to see if
     # the latest Tweet has been toasted or not.
     $LastNotifyId = Get-ItemPropertyValue -Path 'HKCU:\SOFTWARE\PowerShell-Scratch' -Name 'PSHelp-LastId'
@@ -67,7 +67,7 @@ $JobBlock = {
         $Title = $RSS[0].title.'#cdata-section'
 
         # Display a Toast Notification, with a button to open the Tweet.
-        $Button = New-BTButton -Content 'Open' -Arguments $LatestId    
+        $Button = New-BTButton -Content 'Open' -Arguments $LatestId
         New-BurntToastNotification -Text 'New PSHelp Question on Twitter', "From: $Title" -Button $Button
 
         Set-ItemProperty -Path 'HKCU:\SOFTWARE\PowerShell-Scratch' -Name 'PSHelp-LastId' -Value $LatestId

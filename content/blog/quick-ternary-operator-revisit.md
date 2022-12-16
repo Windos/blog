@@ -3,7 +3,7 @@ categories = ["Nugget", "PowerShell"]
 date = 2019-10-04T15:41:49Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/10/jens-lelie-u0vgcIOQG08-unsplash.jpg"
+thumbnail = "/2019/10/jens-lelie-u0vgcIOQG08-unsplash.jpg"
 slug = "quick-ternary-operator-revisit"
 summary = "I was thinking about the new Ternary Operator and had a random thought... can it handle elseif logic?"
 tags = ["Nugget", "PowerShell"]
@@ -43,7 +43,7 @@ $Num -gt 10 ? '> 10' : $Num -lt 10 ? '< 10' : '== 10'
 
 And what would you know? It works!
 
-{{< figure src="__GHOST_URL__/content/images/2019/10/image.png" caption="Example output in PowerShell 7" >}}
+{{< figure src="/2019/10/image.png" caption="Example output in PowerShell 7" >}}
 
 Unsurprisingly, I'm not a fan of this but it's a really cool option. If I were to use this myself, I'd probably opt to wrap the `elseif` component in brackets to help me parse it quickly:
 

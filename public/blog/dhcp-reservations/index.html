@@ -8,33 +8,32 @@
   <title>
   DHCP Reservations: No Cluster? No Problem! - ToastIT
   </title>
-  <meta name="description" content="Have multiple DHCP servers that aren&#39;t in a cluster? Don&#39;t worry!" />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Have multiple DHCP servers that aren’t in a cluster? Don’t worry!" /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="DHCP Reservations: No Cluster? No Problem!" />
-<meta property="og:description" content="Have multiple DHCP servers that aren&#39;t in a cluster? Don&#39;t worry!" />
+<meta property="og:description" content="Have multiple DHCP servers that aren’t in a cluster? Don’t worry!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/dhcp-reservations/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2017-01-30T01:50:00+00:00" />
-<meta property="article:modified_time" content="2017-01-30T01:50:00+00:00" />
-
+<meta property="article:published_time" content="2017-01-29T12:50:00+00:00" />
+<meta property="article:modified_time" content="2017-01-29T12:50:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="DHCP Reservations: No Cluster? No Problem!"/>
-<meta name="twitter:description" content="Have multiple DHCP servers that aren&#39;t in a cluster? Don&#39;t worry!"/>
+<meta name="twitter:description" content="Have multiple DHCP servers that aren’t in a cluster? Don’t worry!"/>
 
   <meta itemprop="name" content="DHCP Reservations: No Cluster? No Problem!">
-<meta itemprop="description" content="Have multiple DHCP servers that aren&#39;t in a cluster? Don&#39;t worry!"><meta itemprop="datePublished" content="2017-01-30T01:50:00+00:00" />
-<meta itemprop="dateModified" content="2017-01-30T01:50:00+00:00" />
+<meta itemprop="description" content="Have multiple DHCP servers that aren’t in a cluster? Don’t worry!"><meta itemprop="datePublished" content="2017-01-29T12:50:00+00:00" />
+<meta itemprop="dateModified" content="2017-01-29T12:50:00+00:00" />
 <meta itemprop="wordCount" content="280">
 <meta itemprop="keywords" content="PowerShell,Nugget," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">DHCP Reservations: No Cluster? No Problem!</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    January 30, 2017
+    January 29, 2017
   
 
 
@@ -123,28 +123,29 @@
       </svg>
       280&nbsp;words
       
+        
+      
     </h5>
+    
 
-    <p>Have multiple DHCP servers that aren&rsquo;t in a cluster? Don&rsquo;t worry, there are more people in this boat than you might think.</p>
-<p>From time to time you&rsquo;ll need to convert a lease into a reservation, but how do you go about making sure your clients reliably pick up their DHCP reservations (regardless of which DHCP server responds first)?</p>
+    <p>Have multiple DHCP servers that aren’t in a cluster? Don’t worry, there are more people in this boat than you might think.</p>
+<p>From time to time you’ll need to convert a lease into a reservation, but how do you go about making sure your clients reliably pick up their DHCP reservations (regardless of which DHCP server responds first)?</p>
 <h2 id="just-copy-the-reservations"><strong>Just copy the reservations!</strong></h2>
 <p>Ergh, but that sounds like a lot of work.</p>
 <p>It sure would be if you did it through the GUI, but your first thought these days is PowerShell, right?</p>
 <p>In my environment I have two DHCP servers, that share half of a DHCP scope each. For example, DHCP1 might lease 192.168.1.1 thought 192.168.1.99 and DHCP2 might lease 192.168.1.100 to 192.168.1.199.</p>
 <p>Whenever I create a new reservation on one server, I copy the reservations from both to make sure they are all in sync (you never know when someone else in your team has snuck a change in without you knowing about it.)</p>
-<p>First thing is to make sure you&rsquo;re got the &ldquo;Remote Server Administration Tools&rdquo; (RSAT) installed, which include the associated PowerShell modules. Just head over to Google and find the latest install for your version of Windows.</p>
-<p>Next, get a ‘copy&rsquo; of the current reservations on each server:</p>
-<pre><code>$1 = Get-DhcpServerv4Reservation -ComputerName DHCP1 -ScopeId 192.168.1.0
-
-$2 = Get-DhcpServerv4Reservation -ComputerName DHCP2 -ScopeId 192.168.1.0
-</code></pre>
-<p>Then ‘paste&rsquo; them to the alternative server:</p>
-<pre><code>$1 | Add-DhcpServerv4Reservation -ComputerName DHCP2
-
-$2 | Add-DhcpServerv4Reservation -ComputerName DHCP1
-</code></pre>
-<p>If you&rsquo;ve got more than two servers, you might want to consider iterating through them and if you find yourself doing this a lot you&rsquo;d benefit from turning it into a function.</p>
-<p>That&rsquo;s all there is to it!</p>
+<p>First thing is to make sure you’re got the “Remote Server Administration Tools” (RSAT) installed, which include the associated PowerShell modules. Just head over to Google and find the latest install for your version of Windows.</p>
+<p>Next, get a ‘copy’ of the current reservations on each server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$1</span> = <span style="color:#8be9fd;font-style:italic">Get-DhcpServerv4Reservation</span> -ComputerName DHCP1 -ScopeId <span style="color:#bd93f9">192.168</span>.1.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$2</span> = <span style="color:#8be9fd;font-style:italic">Get-DhcpServerv4Reservation</span> -ComputerName DHCP2 -ScopeId <span style="color:#bd93f9">192.168</span>.1.0
+</span></span></code></pre></div><p>Then ‘paste’ them to the alternative server:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$1</span> | <span style="color:#8be9fd;font-style:italic">Add-DhcpServerv4Reservation</span> -ComputerName DHCP2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$2</span> | <span style="color:#8be9fd;font-style:italic">Add-DhcpServerv4Reservation</span> -ComputerName DHCP1
+</span></span></code></pre></div><p>If you’ve got more than two servers, you might want to consider iterating through them and if you find yourself doing this a lot you’d benefit from turning it into a function.</p>
+<p>That’s all there is to it!</p>
 
   </article><div class="bg-blue-300 dark:bg-gray-900">
   <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -270,6 +271,8 @@ $2 | Add-DhcpServerv4Reservation -ComputerName DHCP1
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

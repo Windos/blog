@@ -3,7 +3,7 @@ categories = ["Meta", "PowerShell"]
 date = 2020-01-01T13:48:30Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/01/jamie-street--d6kTMGXV6E-unsplash.jpg"
+thumbnail = "/2020/01/jamie-street--d6kTMGXV6E-unsplash.jpg"
 slug = "resolutions-2020"
 summary = "Apparently I forgot to do one of these posts last year. I like having these posts to look back on, so let's get back on track!"
 tags = ["Meta", "PowerShell"]
@@ -22,7 +22,7 @@ Personally and professionally, 2019 was a huge year that I will never forget.
 
 The year started with the birth of my third child, and it ended with spending time with them offline at the beach (yes, it's summer at this time of year down in New Zealand.)
 
-{{< figure src="__GHOST_URL__/content/images/2020/01/image.png" >}}
+{{< figure src="/2020/01/image.png" >}}
 
 It was also the year that I decided I'd been working for my employer at the time for way too long and took the plunge into finding a new job. I ended up moving from an enterprise environment to an MSP (and this change was a lot more of an adjustment than I first expected it to be.)
 
@@ -30,7 +30,7 @@ When I decided to make the move, I wanted to be focusing more on PowerShell duri
 
 Finally, 2019 was the year I was [granted Microsoft's Most Valuable Professional](__GHOST_URL__/2019/09/01/mvp-omg/) (MVP) award in the Cloud and Datacenter Management category.
 
-{{< figure src="__GHOST_URL__/content/images/2020/01/image-1.png" >}}
+{{< figure src="/2020/01/image-1.png" >}}
 
 I have looked up to the "PowerShell" MVPs (that's technically not a thing anymore) for years and I still can't believe that this award actually has my name on it. Months later, thinking about it still instills a dose of [Imposter Syndrome](https://winsysblog.com/2018/12/i-have-impostor-syndrome.html).
 

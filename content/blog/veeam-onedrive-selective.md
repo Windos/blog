@@ -3,7 +3,7 @@ categories = ["Backup", "PowerShell"]
 date = 2019-05-04T20:38:35Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/04/kaitlyn-chow-554372-unsplash.jpg"
+thumbnail = "/2019/04/kaitlyn-chow-554372-unsplash.jpg"
 slug = "veeam-onedrive-selective"
 summary = "I've been wanting to get this out for a while, but couldn't find the right way to present it... rather than stressing, here's a brain dump on VBO v3."
 tags = ["Backup", "PowerShell"]
@@ -46,9 +46,9 @@ My whole reason for being excited for this update was the speed increases promis
 
 Unfortunately, I don't have v2 screenshots but I can show all folders vs selective folders for my own account.
 
-{{< figure src="__GHOST_URL__/content/images/2019/05/Full.PNG" caption="Backing up all folders" >}}
+{{< figure src="/2019/05/Full.PNG" caption="Backing up all folders" >}}
 
-{{< figure src="__GHOST_URL__/content/images/2019/05/Incremental.PNG" caption="Selective folder backup" >}}
+{{< figure src="/2019/05/Incremental.PNG" caption="Selective folder backup" >}}
 
 I can also say that even without selective folder backups, our production OneDrive for Business and SharePoint Online backup jobs sped up by 28.1x. The jobs now complete in under 5 minutes.
 

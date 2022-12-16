@@ -3,7 +3,7 @@ categories = ["PowerShell", "Azure"]
 date = 2020-05-21T23:40:03Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2020/05/emiel-maters-3a7nrgYSbRE-unsplash.jpg"
+thumbnail = "/2020/05/emiel-maters-3a7nrgYSbRE-unsplash.jpg"
 slug = "azure-key-vault-1"
 summary = "I'm so used to storing fully formed credentials in the local Windows Credential Manager. How do I transition that into the \"secrets\" centric world that is the cloud?"
 tags = ["PowerShell", "Azure"]
@@ -46,7 +46,7 @@ Connect-AzAccount
 
 This will pop open a window for you to authenticate. You'll want to login with an account that has access to your Azure subscription(s).
 
-{{< figure src="__GHOST_URL__/content/images/2020/05/image.png" caption="" >}}
+{{< figure src="/2020/05/image.png" caption="" >}}
 
 <p class="note">If you have more than one subscription, you'll need to make sure you're using the correct one.<br /><br />
     You can use <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/az.accounts/get-azcontext">Get-AzContext</a> to see your current subscription, and if needed <a target="_blank" href="https://docs.microsoft.com/en-us/powershell/module/az.accounts/set-azcontext">Select-AzContext</a> to change it.</p>
@@ -110,7 +110,7 @@ With our Key Vault setup it's finally time to store a PSCredential object in it.
 $Cred = Get-Credential
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2020/05/image-1.png" >}}
+{{< figure src="/2020/05/image-1.png" >}}
 
 Key Vault cannot accept raw PSCredential objects, so we need to convert it into a format that it understands. Credit goes to [Kevin Buchs](https://github.com/buchs) for detailing how he does this in an [issue](https://github.com/Azure/azure-powershell/issues/10434) on GitHub where he was requesting native support for PSCredentials.
 

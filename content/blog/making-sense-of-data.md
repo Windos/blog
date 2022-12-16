@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2019-12-10T20:39:17Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/12/josh-riemer-flRN6KYpl1A-unsplash.jpg"
+thumbnail = "/2019/12/josh-riemer-flRN6KYpl1A-unsplash.jpg"
 slug = "making-sense-of-data"
 summary = "\"There's way too much information to decode the Matrix. You get used to it, though. Your brain does the translating. I don't even see the code.\""
 tags = ["PowerShell"]
@@ -20,7 +20,7 @@ One of the methods I've been using lately is a matrix. These matrixes are a spre
 
 That description was hard to write, I assume it's hard to read too. Instead let's try a picture:
 
-{{< figure src="__GHOST_URL__/content/images/2019/12/Matrix-Example.png" >}}
+{{< figure src="/2019/12/Matrix-Example.png" >}}
 
 In this example, each row is a user from Active Directory. The first couple of columns are info about these users, specifically their user name and which Organizational Unit they're in. Most columns are hidden as they didn't have much interesting data, but from column D onward it lists every group in the domain.
 
@@ -38,7 +38,7 @@ The first thing we need to do in order to generate this group membership matrix 
 
 ```powershell
 $Users = Get-ADUser -Filter 'Enabled -eq $true'
-$GroupNames = (Get-ADGroup -Filter * | 
+$GroupNames = (Get-ADGroup -Filter * |
     Where-Object {$_.DistinguishedName -notlike '*CN=Builtin,*'}).Name
 ```
 

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/meta/</link>
+    <description>Recent content in Meta on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 07 May 2021 05:42:32 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/meta/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Learning Story: From Timber to Chocolatey</title>
+      <link>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</link>
+      <pubDate>Fri, 07 May 2021 05:42:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</guid>
+      <description>This post is part of #TheMVPChallenge. It&amp;rsquo;s not exactly what was on the brief&amp;hellip; but I think it&amp;rsquo;s a story worth telling!</description>
+    </item>
+    
+    <item>
+      <title>I&#39;m Josh King, Sysadmin, and This Is How I Work (During Lockdown)</title>
+      <link>https://blog.toastit.dev/blog/how-i-work-lockdown/</link>
+      <pubDate>Sun, 12 Apr 2020 21:40:52 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-i-work-lockdown/</guid>
+      <description>My last &amp;ldquo;How I Work&amp;rdquo; post was over three years ago and I&amp;rsquo;ve been considering an update for a while. What better time to do that than during the COVID-19 lockdown?</description>
+    </item>
+    
+    <item>
+      <title>New Year&#39;s Resolutions - 2020</title>
+      <link>https://blog.toastit.dev/blog/resolutions-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 13:48:30 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/resolutions-2020/</guid>
+      <description>Apparently I forgot to do one of these posts last year. I like having these posts to look back on, so let&amp;rsquo;s get back on track!</description>
+    </item>
+    
+    <item>
+      <title>Roll Your Sleeves Up, It&#39;s Hacktoberfest Time!</title>
+      <link>https://blog.toastit.dev/blog/hacktoberfest-2019/</link>
+      <pubDate>Sun, 29 Sep 2019 21:37:45 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/hacktoberfest-2019/</guid>
+      <description>I&amp;rsquo;m gearing up for my fourth Hacktoberfest event, and so should you. You could even come away from this month with a fancy new t-shirt!</description>
+    </item>
+    
+    <item>
+      <title>MVP: OMG</title>
+      <link>https://blog.toastit.dev/blog/mvp-omg/</link>
+      <pubDate>Sun, 01 Sep 2019 06:52:59 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/mvp-omg/</guid>
+      <description>Today I&amp;rsquo;m humbled, shocked, and proud to announce that I&amp;rsquo;m now a Microsoft MVP.</description>
+    </item>
+    
+    <item>
+      <title>A Toast to 2018</title>
+      <link>https://blog.toastit.dev/blog/a-toast-to-2018/</link>
+      <pubDate>Sun, 30 Dec 2018 19:20:59 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/a-toast-to-2018/</guid>
+      <description>The community, in and of itself, made 2018 for me. If you haven’t already gotten engaged in it… put it on your list for 2019. You wont regret it.</description>
+    </item>
+    
+    <item>
+      <title>I Need You! #Hacktoberfest</title>
+      <link>https://blog.toastit.dev/blog/hacktoberfest-2018/</link>
+      <pubDate>Mon, 01 Oct 2018 18:42:53 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/hacktoberfest-2018/</guid>
+      <description>This is my third Hacktoberfest, the event that made October one of my favorite months of the year!</description>
+    </item>
+    
+    <item>
+      <title>Echo, Echo: Combine System Sounds with your Microphone for Skype for Business Presentations</title>
+      <link>https://blog.toastit.dev/blog/echo-echo/</link>
+      <pubDate>Sun, 12 Aug 2018 22:21:01 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/echo-echo/</guid>
+      <description>I don&amp;rsquo;t know if this will help anyone else, and it&amp;rsquo;s more for future me, but I hope it helps someone out there!</description>
+    </item>
+    
+    <item>
+      <title>How to TechSnips</title>
+      <link>https://blog.toastit.dev/blog/how-to-techsnips/</link>
+      <pubDate>Sat, 28 Jul 2018 17:13:05 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-to-techsnips/</guid>
+      <description>On the fence about becoming a TechSnips contributor? Here&amp;rsquo;s some of my tips&amp;hellip; hopefully they will help you hit record!</description>
+    </item>
+    
+    <item>
+      <title>Coding with Kids Doesn&#39;t &#34;Bug&#34; Me!</title>
+      <link>https://blog.toastit.dev/blog/codebug/</link>
+      <pubDate>Fri, 15 Jun 2018 22:00:16 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/codebug/</guid>
+      <description>One day my daughter will be putting my code to shame, and I can&amp;rsquo;t wait.</description>
+    </item>
+    
+    <item>
+      <title>A Graphical Example of the Value of Planet PowerShell</title>
+      <link>https://blog.toastit.dev/blog/a-graphical-example-of-the-value-of/</link>
+      <pubDate>Fri, 01 Jun 2018 14:53:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/a-graphical-example-of-the-value-of/</guid>
+      <description>If you have a PowerShell blog, I can&amp;rsquo;t overstate how valuable it is to get your feed hooked up to Planet PowerShell!</description>
+    </item>
+    
+    <item>
+      <title>Automatic Blog Archive Tweets</title>
+      <link>https://blog.toastit.dev/blog/automatic-blog-archive-tweets/</link>
+      <pubDate>Tue, 29 May 2018 05:54:09 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/automatic-blog-archive-tweets/</guid>
+      <description>This morning I was up at 4 AM, live streaming the creation of an auto-tweet script.</description>
+    </item>
+    
+    <item>
+      <title>Blog Makeover - Why, Where, How?</title>
+      <link>https://blog.toastit.dev/blog/blog-makeover/</link>
+      <pubDate>Fri, 25 May 2018 06:52:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/blog-makeover/</guid>
+      <description>Didn&amp;rsquo;t I literally just post about my blogging workflow on GitHub Pages? Welp, I&amp;rsquo;m not there anymore!</description>
+    </item>
+    
+    <item>
+      <title>Get the (Tech)Snip!</title>
+      <link>https://blog.toastit.dev/blog/techsnips-intro/</link>
+      <pubDate>Tue, 15 May 2018 13:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/techsnips-intro/</guid>
+      <description>TechSnips is a new e-learning service and I’ve been recording content for it, along with many other contributors.</description>
+    </item>
+    
+    <item>
+      <title>My Blogging Workflow</title>
+      <link>https://blog.toastit.dev/blog/blog-workflow/</link>
+      <pubDate>Wed, 25 Apr 2018 21:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/blog-workflow/</guid>
+      <description>I&amp;rsquo;ve also noticed a number of people saying &amp;lsquo;I want to get into it&amp;hellip; but need to figure out x and y first.</description>
+    </item>
+    
+    <item>
+      <title>A Quick Look Back at #PSHSummit 2018</title>
+      <link>https://blog.toastit.dev/blog/summit2018-hindsight/</link>
+      <pubDate>Mon, 16 Apr 2018 13:15:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-hindsight/</guid>
+      <description>After another three flights, and 16 hours in the air, I&amp;rsquo;m back home in New Zealand. I can certainly say that the change in time zones has hit me harder coming back. Going over to Bellevue, I got right into things and felt (for the most part) normal.
+Last week I did a blog post for each dayof the PowerShell &amp;#43; DevOps Global Summit, going over what I took part in that day and what my main takeaways were.</description>
+    </item>
+    
+    <item>
+      <title>Day Four of #PSHSummit 2018 - Iron Scripter</title>
+      <link>https://blog.toastit.dev/blog/summit2018-day4/</link>
+      <pubDate>Thu, 12 Apr 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-day4/</guid>
+      <description>That&amp;rsquo;s it. It&amp;rsquo;s over. I&amp;rsquo;ve shaken many hand, met many people, and seen lots of PowerShell.</description>
+    </item>
+    
+    <item>
+      <title>Day Three of #PSHSummit 2018 - I Did the Thing</title>
+      <link>https://blog.toastit.dev/blog/summit2018-day3/</link>
+      <pubDate>Wed, 11 Apr 2018 18:59:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-day3/</guid>
+      <description>Today was the reason I was able to be here at Summit. Today was the day I presented in front of about 100 people.</description>
+    </item>
+    
+    <item>
+      <title>Day Two of #PSHSummit 2018 - Getting Smart</title>
+      <link>https://blog.toastit.dev/blog/summit2018-day2/</link>
+      <pubDate>Tue, 10 Apr 2018 16:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-day2/</guid>
+      <description>No comments about the plumbing or anything today, having gotten over the initial shock.</description>
+    </item>
+    
+    <item>
+      <title>Day One of #PSHSummit 2018 - Bright-Eyed and Bushy-Tailed</title>
+      <link>https://blog.toastit.dev/blog/summit2018-day1/</link>
+      <pubDate>Mon, 09 Apr 2018 18:50:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-day1/</guid>
+      <description>Why the hell are American toilets so full?</description>
+    </item>
+    
+    <item>
+      <title>Where the bloody hell are ya?</title>
+      <link>https://blog.toastit.dev/blog/where-are-you/</link>
+      <pubDate>Sun, 11 Mar 2018 20:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/where-are-you/</guid>
+      <description>This seems like a decent excuse for a &amp;lsquo;State of the Blog&amp;rsquo; post.</description>
+    </item>
+    
+    <item>
+      <title>New Year&#39;s Resolutions - 2018</title>
+      <link>https://blog.toastit.dev/blog/resolution-2018/</link>
+      <pubDate>Tue, 02 Jan 2018 11:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/resolution-2018/</guid>
+      <description>Woah, 2017 flew by.</description>
+    </item>
+    
+    <item>
+      <title>#PSBlogWeek 2017 Recap</title>
+      <link>https://blog.toastit.dev/blog/psblogweek-recap/</link>
+      <pubDate>Sat, 21 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/psblogweek-recap/</guid>
+      <description>It was a great event, with five days worth of awesome PowerShell content coming out!</description>
+    </item>
+    
+    <item>
+      <title>October: The Hackiest Month of the Year</title>
+      <link>https://blog.toastit.dev/blog/oct-17/</link>
+      <pubDate>Sun, 01 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/oct-17/</guid>
+      <description>Summits, Blogging, and Hacking make October the &amp;lsquo;hackiest&amp;rsquo; month of the year.</description>
+    </item>
+    
+    <item>
+      <title>The War on Passwords</title>
+      <link>https://blog.toastit.dev/blog/war-on-passwords/</link>
+      <pubDate>Mon, 28 Aug 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/war-on-passwords/</guid>
+      <description>The NIST guidelines struck a chord with me. It seemed to be something that our users would embrace while addressing potential issues within any given workplace</description>
+    </item>
+    
+    <item>
+      <title>Old Office 365 Training: Navigating the Minefield</title>
+      <link>https://blog.toastit.dev/blog/o365-training/</link>
+      <pubDate>Mon, 05 Jun 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/o365-training/</guid>
+      <description>At first, I figured this wouldn’t cause me much of an issue. Information is information right?</description>
+    </item>
+    
+    <item>
+      <title>New Year’s Resolutions - 2017</title>
+      <link>https://blog.toastit.dev/blog/resolution-2017/</link>
+      <pubDate>Thu, 05 Jan 2017 12:48:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/resolution-2017/</guid>
+      <description>New Year’s Resolutions are the in thing, right?</description>
+    </item>
+    
+    <item>
+      <title>I&#39;m Josh King, &#39;IT Pro,&#39; and This Is How I Work</title>
+      <link>https://blog.toastit.dev/blog/how-i-work/</link>
+      <pubDate>Wed, 23 Nov 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-i-work/</guid>
+      <description>Consider this my &amp;lsquo;How I Work&amp;rsquo; post, and if you&amp;rsquo;re interested in reading more posts from other bloggers make sure you check out the list of participants on GitHub</description>
+    </item>
+    
+  </channel>
+</rss>

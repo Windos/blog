@@ -8,39 +8,38 @@
   <title>
   Disjointed Thoughts on Veeam Backup for Office 365 v3 - ToastIT
   </title>
-  <meta name="description" content="I&#39;ve been wanting to get this out for a while, but couldn&#39;t find the right way to present it... rather than stressing, here&#39;s a brain dump on VBO v3." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="I&rsquo;ve been wanting to get this out for a while, but couldn&rsquo;t find the right way to present it&hellip; rather than stressing, here&rsquo;s a brain dump on VBO v3." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
-  
-  
+
+
 
   <meta property="og:title" content="Disjointed Thoughts on Veeam Backup for Office 365 v3" />
-<meta property="og:description" content="I&#39;ve been wanting to get this out for a while, but couldn&#39;t find the right way to present it... rather than stressing, here&#39;s a brain dump on VBO v3." />
+<meta property="og:description" content="I&rsquo;ve been wanting to get this out for a while, but couldn&rsquo;t find the right way to present it&hellip; rather than stressing, here&rsquo;s a brain dump on VBO v3." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/veeam-onedrive-selective/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2019-05-05T08:38:35+00:00" />
-<meta property="article:modified_time" content="2019-05-05T08:38:35+00:00" />
-
+<meta property="article:published_time" content="2019-05-04T20:38:35+00:00" />
+<meta property="article:modified_time" content="2019-05-04T20:38:35+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Disjointed Thoughts on Veeam Backup for Office 365 v3"/>
-<meta name="twitter:description" content="I&#39;ve been wanting to get this out for a while, but couldn&#39;t find the right way to present it... rather than stressing, here&#39;s a brain dump on VBO v3."/>
+<meta name="twitter:description" content="I&rsquo;ve been wanting to get this out for a while, but couldn&rsquo;t find the right way to present it&hellip; rather than stressing, here&rsquo;s a brain dump on VBO v3."/>
 
   <meta itemprop="name" content="Disjointed Thoughts on Veeam Backup for Office 365 v3">
-<meta itemprop="description" content="I&#39;ve been wanting to get this out for a while, but couldn&#39;t find the right way to present it... rather than stressing, here&#39;s a brain dump on VBO v3."><meta itemprop="datePublished" content="2019-05-05T08:38:35+00:00" />
-<meta itemprop="dateModified" content="2019-05-05T08:38:35+00:00" />
-<meta itemprop="wordCount" content="706">
+<meta itemprop="description" content="I&rsquo;ve been wanting to get this out for a while, but couldn&rsquo;t find the right way to present it&hellip; rather than stressing, here&rsquo;s a brain dump on VBO v3."><meta itemprop="datePublished" content="2019-05-04T20:38:35+00:00" />
+<meta itemprop="dateModified" content="2019-05-04T20:38:35+00:00" />
+<meta itemprop="wordCount" content="707">
 <meta itemprop="keywords" content="Backup,PowerShell," />
+
+
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
-    
+
     <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
-    
+
   </a>
   <button class="mobile-menu-button md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,19 +50,19 @@
   </button>
   <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
 
-    
+
     <li><a href="/blog">Blog</a></li>
-    
+
     <li><a href="/page/about/">About</a></li>
-    
+
     <li><a href="/tags">Tags</a></li>
-    
+
     <li><a href="/blog/emoji-support/">Top Post</a></li>
-    
 
-    
 
-    
+
+
+
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,20 +73,21 @@
         </svg>
       </span>
     </li>
-    
 
-    
+
+
   </ul>
 </header>
 <main class="flex-1">
-  
-  
 
-  
+
+
+
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Disjointed Thoughts on Veeam Backup for Office 365 v3</h1>
+
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -97,15 +97,15 @@
         <line x1="4" y1="11" x2="20" y2="11" />
         <rect x="8" y="15" width="2" height="2" />
       </svg>
-      Posted on 
-  
-    May 5, 2019
-  
+      Posted on
+
+    May 4, 2019
 
 
-      
+
+
         &nbsp;&bull;&nbsp;
-      
+
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <circle cx="12" cy="12" r="9" />
@@ -121,14 +121,17 @@
         <line x1="12" y1="6" x2="12" y2="19" />
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
-      706&nbsp;words
-      
+      707&nbsp;words
+
+
+
     </h5>
+
 
     <p>A while back, while it was in beta, I <a href="__GHOST_URL__/2019/02/19/veeam-backup-for-microsoft-office-365-v3/">sung the praises of Veeam Backup for Office 365 v3</a>
  (VBO). Since then this update has been <a href="https://www.veeam.com/news/new-veeam-backup-for-microsoft-office-365-version-3-now-available.html" target="_blank" rel="noopener">officially released</a>
 . I haven&rsquo;t yet (&hellip; at the time of writing) had the opportunity to update my production install, although I am champing at the bit to do so, so I&rsquo;ve continued to poke around the beta until the license expires.</p>
-<p>Before diving into this, I want to highlight that this is going to be a little different from my normal posts. I&rsquo;ve been sitting on this content for a while but couldn&rsquo;t find the thread/story to wrap around it&hellip; rather than put if off, or scrap it, this is going to be a collection of disjointed thoughts about VBO v3 post release.</p>
+<p class="note">Before diving into this, I want to highlight that this is going to be a little different from my normal posts. I've been sitting on this content for a while but couldn't find the thread/story to wrap around it... rather than put if off, or scrap it, this is going to be a collection of disjointed thoughts about VBO v3 post release.</p>
 <h2 id="selective-folders-in-onedrive-for-business-backup-jobs">Selective Folders in OneDrive for Business Backup Jobs</h2>
 <p>One of my key features in this update was the option to selectively include or exclude folders from OneDrive for Business jobs. Why? I&rsquo;ve <a href="__GHOST_URL__/2018/10/10/my-wish-list-vbo365/">mentioned it before</a>
 , but I really do want our users to be using OneDrive. We&rsquo;re paying for the service, so why not! What I don&rsquo;t want to do is end up backing up terabytes of data that isn&rsquo;t all that important.</p>
@@ -143,9 +146,20 @@
 <p>This allows you to explicitly exclude certain folders from your backup job. This gives you a different method for solving my issue, where you can tell users to put items they <strong>don&rsquo;t</strong> want backed up into a specific folder (e.g. &ldquo;Personal&rdquo;?) and everything else will be collected.</p>
 <h3 id="super-speed">Super Speed!</h3>
 <p>My whole reason for being excited for this update was the speed increases promised.</p>
-<p>Unfortunately, I don&rsquo;t have v2 screenshots but I can show all folders vs selective folders for my own account.
-<img src="__GHOST_URL__/content/images/2019/05/Full.PNG" alt="">Backing up all folders<img src="__GHOST_URL__/content/images/2019/05/Incremental.PNG" alt="">Selective folder backup
-I can also say that even without selective folder backups, our production OneDrive for Business and SharePoint Online backup jobs sped up by 28.1x. The jobs now complete in under 5 minutes.</p>
+<p>Unfortunately, I don&rsquo;t have v2 screenshots but I can show all folders vs selective folders for my own account.</p>
+<figure><img src="/2019/05/Full.PNG"
+         alt="Backing up all folders"/><figcaption>
+            <p>Backing up all folders</p>
+        </figcaption>
+</figure>
+
+<figure><img src="/2019/05/Incremental.PNG"
+         alt="Selective folder backup"/><figcaption>
+            <p>Selective folder backup</p>
+        </figcaption>
+</figure>
+
+<p>I can also say that even without selective folder backups, our production OneDrive for Business and SharePoint Online backup jobs sped up by 28.1x. The jobs now complete in under 5 minutes.</p>
 <h2 id="research-needed">Research Needed</h2>
 <p>There&rsquo;s a couple of things I need to double check through more testing.</p>
 <p>First, it&rsquo;s my understanding that folders you include or exclude from your backup job can be at any depth of the folder structure. In my case that means that if a user has a folder called &ldquo;Critical&rdquo; inside the folder containing family movies&hellip; I&rsquo;ll be backing that up.</p>
@@ -164,7 +178,7 @@ I can also say that even without selective folder backups, our production OneDri
       <p class="opacity-60"></p>
     </div>
     <ul class="flex justify-center gap-4">
-      
+
       <li>
         <a
           href="https://twitter.com/WindosNZ"
@@ -191,8 +205,8 @@ I can also say that even without selective folder backups, our production OneDri
           </svg>
         </a>
       </li>
-      
-      
+
+
       <li>
         <a
           href="https://linkedin.com/in/windos"
@@ -221,9 +235,9 @@ I can also say that even without selective folder backups, our production OneDri
           </svg>
         </a>
       </li>
-      
-      
-      
+
+
+
       <li>
         <a
           href="https://github.com/Windos"
@@ -250,11 +264,11 @@ I can also say that even without selective folder backups, our production OneDri
           </svg>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <li>
         <a
           href="https://www.youtube.com/c/JoshuaKingSolari"
@@ -281,16 +295,18 @@ I can also say that even without selective folder backups, our production OneDri
           </svg>
         </a>
       </li>
-      
-      
+
+
+
+
     </ul>
   </div>
 </div>
     </main><footer class="container p-6 mx-auto flex justify-between items-center">
   <span class="text-sm font-light">
-    
+
     Copyright © 2022 - Josh King · All rights reserved
-    
+
   </span>
   <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"

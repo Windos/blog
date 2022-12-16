@@ -3,7 +3,7 @@ categories = ["PowerShell", "Office 365", "Nugget"]
 date = 2018-08-23T22:22:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/08/rawpixel-777268-unsplash.jpg"
+thumbnail = "/2018/08/rawpixel-777268-unsplash.jpg"
 slug = "orphaned-shared-mailboxes"
 summary = "Time for a bit of Exchange flavoured spring cleaning? Let's find some un-needed shared mailboxes!"
 tags = ["PowerShell", "Office 365", "Nugget"]
@@ -57,7 +57,7 @@ foreach ($SharedMailbox in $SharedMailboxes) {
     $Permissions = $SharedMailbox | Get-MailboxPermission | Where-Object {
         $_.IsInherited -eq $false -and $_.User -like 'EXAMPLE\*' -and $_.User -ne 'EXAMPLE\serviceaccount'
     }
-    
+
     {#Snipped}
 }
 

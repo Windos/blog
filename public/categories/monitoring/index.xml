@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Monitoring on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/monitoring/</link>
+    <description>Recent content in Monitoring on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 02 Jul 2015 12:00:00 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/monitoring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mini Post: 20 More Pulseway Alerts with PowerShell</title>
+      <link>https://blog.toastit.dev/blog/more-alerts/</link>
+      <pubDate>Thu, 02 Jul 2015 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/more-alerts/</guid>
+      <description>In this mini post I&amp;rsquo;ll list 20 more ideas for PowerShell fuelled Pulseway alerts.</description>
+    </item>
+    
+    <item>
+      <title>With PowerShell, Pulseway Can Alert on Anything</title>
+      <link>https://blog.toastit.dev/blog/pulseway-all-the-alerts/</link>
+      <pubDate>Mon, 29 Jun 2015 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/pulseway-all-the-alerts/</guid>
+      <description>Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&amp;rsquo;t present in the OS after booting up? Uhh&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,7 +3,7 @@ categories = ["BurntToast", "PowerShell"]
 date = 2019-07-16T22:20:04Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2019/05/mae-mu-1547158-unsplash.jpg"
+thumbnail = "/2019/05/mae-mu-1547158-unsplash.jpg"
 slug = "crouton-11"
 summary = "Following the release of BurntToast v0.7.0 there were a couple of headline features that needed to be written about. Shoulder Taps had their time in the spotlight and now it's the turn of Updatable Toasts."
 tags = ["BurntToast", "PowerShell"]
@@ -37,7 +37,7 @@ foreach ($Number in 1..100) {
 }
 ```
 
-{{< figure src="__GHOST_URL__/content/images/2019/07/Replace.gif" caption="Example of replacing a toast by force" >}}
+{{< figure src="/2019/07/Replace.gif" caption="Example of replacing a toast by force" >}}
 
 No, that GIF isn't glitching. The animation is a good depiction of what forcibly replacing a toast looks like. The animation gets all wonky, and the UI can't really decide on where the toast itself is meant to come from.
 
@@ -63,7 +63,7 @@ New-BurntToastNotification -Text 'FirstLine', 'SecondLine' -UniqueIdentifier 'Ex
 
 This will display a toast as you would expect, with the text from your hashtable in place of the keywords.
 
-{{< figure src="__GHOST_URL__/content/images/2019/07/FirstToast.PNG" caption="Example toast with a side of data binding" >}}
+{{< figure src="/2019/07/FirstToast.PNG" caption="Example toast with a side of data binding" >}}
 
 You can now update this toast by constructing a new hashtable with at least one of the placeholders (you don't need to list all of them, just what you want to update.) This time, use the `Update-BTNotification` function, providing this hashtable and the original toast's unique identifier.
 
@@ -76,7 +76,7 @@ Update-BTNotification -UniqueIdentifier 'ExampleToast' -DataBinding $SecondDataB
 
 If you happen to update the toast while it's on-screen, you can see how seamlessly it updates.
 
-{{< figure src="__GHOST_URL__/content/images/2019/07/UpdateOnScreen.gif" caption="Updating a toast while it is on-screen" >}}
+{{< figure src="/2019/07/UpdateOnScreen.gif" caption="Updating a toast while it is on-screen" >}}
 
 This will also work if the notification has expired from the screen and is waiting in the Action Center. The content will be updated, but the toast will not be shown on the desktop again.
 

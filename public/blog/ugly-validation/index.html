@@ -8,39 +8,38 @@
   <title>
   Giving ValidateScript a Makeover - ToastIT
   </title>
-  <meta name="description" content="Figure out what you did wrong and don&#39;t do it again. Good luck!" />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="Figure out what you did wrong and don&rsquo;t do it again. Good luck!" /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
-  
-  
+
+
 
   <meta property="og:title" content="Giving ValidateScript a Makeover" />
-<meta property="og:description" content="Figure out what you did wrong and don&#39;t do it again. Good luck!" />
+<meta property="og:description" content="Figure out what you did wrong and don&rsquo;t do it again. Good luck!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/ugly-validation/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2015-07-23T00:00:00+00:00" />
-<meta property="article:modified_time" content="2015-07-23T00:00:00+00:00" />
-
+<meta property="article:published_time" content="2015-07-22T12:00:00+00:00" />
+<meta property="article:modified_time" content="2015-07-22T12:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Giving ValidateScript a Makeover"/>
-<meta name="twitter:description" content="Figure out what you did wrong and don&#39;t do it again. Good luck!"/>
+<meta name="twitter:description" content="Figure out what you did wrong and don&rsquo;t do it again. Good luck!"/>
 
   <meta itemprop="name" content="Giving ValidateScript a Makeover">
-<meta itemprop="description" content="Figure out what you did wrong and don&#39;t do it again. Good luck!"><meta itemprop="datePublished" content="2015-07-23T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2015-07-23T00:00:00+00:00" />
+<meta itemprop="description" content="Figure out what you did wrong and don&rsquo;t do it again. Good luck!"><meta itemprop="datePublished" content="2015-07-22T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-07-22T12:00:00+00:00" />
 <meta itemprop="wordCount" content="577">
 <meta itemprop="keywords" content="PowerShell," />
+
+
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
-    
+
     <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
-    
+
   </a>
   <button class="mobile-menu-button md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -51,19 +50,19 @@
   </button>
   <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
 
-    
+
     <li><a href="/blog">Blog</a></li>
-    
+
     <li><a href="/page/about/">About</a></li>
-    
+
     <li><a href="/tags">Tags</a></li>
-    
+
     <li><a href="/blog/emoji-support/">Top Post</a></li>
-    
 
-    
 
-    
+
+
+
     <li class="grid place-items-center">
       <span class="open-search inline-block cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,20 +73,21 @@
         </svg>
       </span>
     </li>
-    
 
-    
+
+
   </ul>
 </header>
 <main class="flex-1">
-  
-  
 
-  
+
+
+
 
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Giving ValidateScript a Makeover</h1>
+
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -97,15 +97,15 @@
         <line x1="4" y1="11" x2="20" y2="11" />
         <rect x="8" y="15" width="2" height="2" />
       </svg>
-      Posted on 
-  
-    July 23, 2015
-  
+      Posted on
+
+    July 22, 2015
 
 
-      
+
+
         &nbsp;&bull;&nbsp;
-      
+
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
         <circle cx="12" cy="12" r="9" />
@@ -122,28 +122,32 @@
         <line x1="21" y1="6" x2="21" y2="19" />
       </svg>
       577&nbsp;words
-      
+
+
+
     </h5>
+
 
     <h2 id="i-feel-validated"><strong>I Feel Validated</strong></h2>
 <p>One of the awesome things you get when adding the <a href="https://technet.microsoft.com/en-us/library/hh847872.aspx" target="_blank" rel="noopener">CmdletBinding attribute</a>
  to you functions (you are including CmdletBinding, right?) is the ability to use <a href="https://technet.microsoft.com/en-us/library/Hh847743.aspx" target="_blank" rel="noopener">Parameter Validation Atributes</a>
 . These atributes include nifty options like allowing or disallowing null values, specifying a valid amount of items that an aray parameter can accept, specifying a set of pre-determined valid values.</p>
 <p>All of these are awesome, and save you a fair amount of work in manually validating user input before using it within the rest of the function. They are checked before your code even runs and gives the end user nice feed back on what was wrong and what to do to fix it.</p>
-<pre><code>function Test
-{
-    [CmdletBinding()]
-    Param
-    (
-        [ValidateSet('John','Jane')]
-        [string] $Name
-    )
-}
-</code></pre>
-<p>This test fucntion has a name parameter, and the <code>ValidateSet</code> attribute will only allow John or Jane as valid values. If I try to pass in &lsquo;Windos&rsquo;, the function doesn&rsquo;t run, and PowerShell lets me know why.
-<img src="__GHOST_URL__/content/images/2018/05/ValidateSet.PNG" alt="ValidateSet"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">Test</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    [<span style="color:#8be9fd;font-style:italic">CmdletBinding</span>()]
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">Param</span>
+</span></span><span style="display:flex;"><span>    (
+</span></span><span style="display:flex;"><span>        [<span style="color:#8be9fd;font-style:italic">ValidateSet</span>(<span style="color:#f1fa8c">&#39;John&#39;</span>,<span style="color:#f1fa8c">&#39;Jane&#39;</span>)]
+</span></span><span style="display:flex;"><span>        [string] <span style="color:#8be9fd;font-style:italic">$Name</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This test fucntion has a name parameter, and the <code>ValidateSet</code> attribute will only allow John or Jane as valid values. If I try to pass in &lsquo;Windos&rsquo;, the function doesn&rsquo;t run, and PowerShell lets me know why.</p>
+<figure><img src="/2018/05/ValidateSet.PNG"/>
+</figure>
+
 <h2 id="very-flexible-yet-so-ugly"><strong>Very Flexible, Yet So Ugly</strong></h2>
-<p>I would argue that the most flexible, and possibly useful, validation atribute is <code>ValidateScript</code>. It allows you to specify a script which is run against the user&rsquo;s supplied value. <em>(Note that the value being validated is assigned to the <code>$_</code> variable.)</em></p>
+<p>I would argue that the most flexible, and possibly useful, validation atribute is <code>ValidateScript</code>. It allows you to specify a script which is run against the user&rsquo;s supplied value.  <em>(Note that the value being validated is assigned to the <code>$_</code> variable.)</em></p>
 <p>Given that you&rsquo;re specifying your own script, you&rsquo;re free to test literally anything.</p>
 <ul>
 <li>The supplied date should be in the future? Done.</li>
@@ -151,52 +155,54 @@
 <li>A supplied path should have two parent directories, should contain the letter &lsquo;a&rsquo; and be hidden? Done.</li>
 </ul>
 <p>With this flexibility, however, comes (subjectivly) ugly and less than helpful feedback for the user.</p>
-<pre><code>function Test-PC
-{
-    [CmdletBinding()]
-    Param
-    (
-        [ValidateScript({ Test-Connection $_ -BufferSize 16 -Count 1 })]
-        [string] $ComputerName
-    )
-}
-</code></pre>
-<p>This function takes a Computer Name, but will only run if Test-Connection runs against the supplied name successfully. If I pass in a name I know doesn&rsquo;t exist the validation fails.
-<img src="__GHOST_URL__/content/images/2018/05/ValidateScript.PNG" alt="ValidateScript">
-When I read the resulting message, which just blurts out the full validation script, I see: &lsquo;Figure out what you did wrong and don&rsquo;t do it again. Good luck!&rsquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">Test-PC</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    [<span style="color:#8be9fd;font-style:italic">CmdletBinding</span>()]
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">Param</span>
+</span></span><span style="display:flex;"><span>    (
+</span></span><span style="display:flex;"><span>        [<span style="color:#8be9fd;font-style:italic">ValidateScript</span>({ <span style="color:#8be9fd;font-style:italic">Test-Connection</span> <span style="color:#8be9fd;font-style:italic">$_</span> -BufferSize <span style="color:#bd93f9">16</span> -Count <span style="color:#bd93f9">1</span> })]
+</span></span><span style="display:flex;"><span>        [string] <span style="color:#8be9fd;font-style:italic">$ComputerName</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This function takes a Computer Name, but will only run if Test-Connection runs against the supplied name successfully. If I pass in a name I know doesn&rsquo;t exist the validation fails.</p>
+<figure><img src="/2018/05/ValidateScript.PNG"/>
+</figure>
+
+<p>When I read the resulting message, which just blurts out the full validation script, I see: &lsquo;Figure out what you did wrong and don&rsquo;t do it again. Good luck!&rsquo;</p>
 <h2 id="a-better-option"><strong>A Better Option</strong></h2>
 <p>You&rsquo;re in no way limited to using existing cmdlets in your ValidateScript atribute. You can even specify you&rsquo;re own functions.</p>
 <p>Whenever I use ValidateScript I always like to create my own <code>Validate-*</code> functions, in which I can do as complex a test as I want and also control the error message that is returned to the user. Your function should return <code>$true</code> if the parameter value is valid, and throw an error message if it is not valid.</p>
-<pre><code>function Validate-ComputerName
-{
-    Param
-    (
-        [string] $ComputerName
-    )
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">Validate-ComputerName</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">Param</span>
+</span></span><span style="display:flex;"><span>    (
+</span></span><span style="display:flex;"><span>        [string] <span style="color:#8be9fd;font-style:italic">$ComputerName</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">Test-Connection</span> <span style="color:#8be9fd;font-style:italic">$ComputerName</span> -BufferSize <span style="color:#bd93f9">16</span> -Count <span style="color:#bd93f9">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        $true
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">else</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">throw</span> <span style="color:#f1fa8c">&#34;The computer </span><span style="color:#8be9fd;font-style:italic">$ComputerName</span><span style="color:#f1fa8c"> is either offline or does not &#34;</span> +
+</span></span><span style="display:flex;"><span>            <span style="color:#f1fa8c">&#39;exist. Please check that the value is correct and try again.&#39;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">function</span> <span style="color:#8be9fd;font-style:italic">Test-PC</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    [<span style="color:#8be9fd;font-style:italic">CmdletBinding</span>()]
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">Param</span>
+</span></span><span style="display:flex;"><span>    (
+</span></span><span style="display:flex;"><span>        [<span style="color:#8be9fd;font-style:italic">ValidateScript</span>({ <span style="color:#8be9fd;font-style:italic">Validate-ComputerName</span> <span style="color:#8be9fd;font-style:italic">$_</span> })]
+</span></span><span style="display:flex;"><span>        [string] <span style="color:#8be9fd;font-style:italic">$ComputerName</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><figure><img src="/2018/05/Custom.PNG"/>
+</figure>
 
-    if (Test-Connection $ComputerName -BufferSize 16 -Count 1)
-    {
-        $true
-    }
-    else
-    {
-        throw &quot;The computer $ComputerName is either offline or does not &quot; +
-            'exist. Please check that the value is correct and try again.'
-    }
-}
-
-function Test-PC
-{
-    [CmdletBinding()]
-    Param
-    (
-        [ValidateScript({ Validate-ComputerName $_ })]
-        [string] $ComputerName
-    )
-}
-</code></pre>
-<p><img src="__GHOST_URL__/content/images/2018/05/Custom.PNG" alt="Custom">
-As you can see, the text we specified after the <code>throw</code> statement is presented to the user and is a lot easier to understand what the issue is and what needs to be done to correct the situation.</p>
+<p>As you can see, the text we specified after the <code>throw</code> statement is presented to the user and is a lot easier to understand what the issue is and what needs to be done to correct the situation.</p>
 <h2 id="closing-notes-tldr"><strong>Closing Notes/ TL;DR</strong></h2>
 <ul>
 <li>Use the CmdletBinding atribute</li>
@@ -213,7 +219,7 @@ As you can see, the text we specified after the <code>throw</code> statement is 
       <p class="opacity-60"></p>
     </div>
     <ul class="flex justify-center gap-4">
-      
+
       <li>
         <a
           href="https://twitter.com/WindosNZ"
@@ -240,8 +246,8 @@ As you can see, the text we specified after the <code>throw</code> statement is 
           </svg>
         </a>
       </li>
-      
-      
+
+
       <li>
         <a
           href="https://linkedin.com/in/windos"
@@ -270,9 +276,9 @@ As you can see, the text we specified after the <code>throw</code> statement is 
           </svg>
         </a>
       </li>
-      
-      
-      
+
+
+
       <li>
         <a
           href="https://github.com/Windos"
@@ -299,11 +305,11 @@ As you can see, the text we specified after the <code>throw</code> statement is 
           </svg>
         </a>
       </li>
-      
-      
-      
-      
-      
+
+
+
+
+
       <li>
         <a
           href="https://www.youtube.com/c/JoshuaKingSolari"
@@ -330,16 +336,18 @@ As you can see, the text we specified after the <code>throw</code> statement is 
           </svg>
         </a>
       </li>
-      
-      
+
+
+
+
     </ul>
   </div>
 </div>
     </main><footer class="container p-6 mx-auto flex justify-between items-center">
   <span class="text-sm font-light">
-    
+
     Copyright © 2022 - Josh King · All rights reserved
-    
+
   </span>
   <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"

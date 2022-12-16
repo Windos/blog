@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2017-05-07T12:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/thumb-3.jpg"
+thumbnail = "/2018/05/thumb-3.jpg"
 slug = "crouton-clickable"
 summary = "Buttons can look pretty ugly when only using one, so just click your Toast instead!"
 tags = ["PowerShell", "BurntToast"]
@@ -48,7 +48,7 @@ Submit-BTNotification -Content $Content1
 
 Now you can click the toast that is displayed, and it’ll open the specified URL.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/ToastClick.gif" >}}
+{{< figure src="/2018/05/ToastClick.gif" >}}
 
 That’s all there is to it!
 

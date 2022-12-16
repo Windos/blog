@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Toolbox on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/toolbox/</link>
+    <description>Recent content in Toolbox on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 15 Jan 2020 22:21:38 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/toolbox/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Universal Automation: An Early Look</title>
+      <link>https://blog.toastit.dev/blog/universal-automation-early-look/</link>
+      <pubDate>Wed, 15 Jan 2020 22:21:38 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/universal-automation-early-look/</guid>
+      <description>I had the pleasure of testing Universal Automation while it was in private beta. Now the beta is open to all and I&amp;rsquo;m really excited for it to be in more hands because it&amp;rsquo;s a very interesting project!</description>
+    </item>
+    
+  </channel>
+</rss>

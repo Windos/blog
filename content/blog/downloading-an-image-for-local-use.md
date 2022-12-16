@@ -3,7 +3,7 @@ categories = ["PowerShell", "Nugget", "BurntToast"]
 date = 2018-05-27T12:55:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/emarts-emarts-68775-unsplash.jpg"
+thumbnail = "/2018/05/emarts-emarts-68775-unsplash.jpg"
 slug = "downloading-an-image-for-local-use"
 summary = "This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I'm disappointed that I didn't get to it sooner."
 tags = ["PowerShell", "Nugget", "BurntToast"]
@@ -25,15 +25,15 @@ function New-BTImage {
     param (
         [string] $Source
     )
-    
+
     # Don't worry about this type and what it does, just know that this function
     # creates and object, adds properties to it, then outputs it at the end
     $Image = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
-    
+
     if ($Source) {
         $Image.Source = $Source
     }
-    
+
     $Image
 }
 
@@ -50,24 +50,24 @@ function New-BTImage {
     param (
         [string] $Source
     )
-    
+
     $Image = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
-    
+
     if ($Source) {
         if ($Source -like 'http?://*') {
             $FileExtension = $Source.Split('.')[-1]
             $Guid = [guid]::newGuid()
-            
+
             $NewFilePath = '{0}\{1}.{2}' -f $Env:TEMP, $Guid, $FileExtension
 
             Invoke-WebRequest -Uri $Source -OutFile $NewFilePath
-            
+
             $Image.Source = $NewFilePath
         } else {
             $Image.Source = $Source
         }
     }
-    
+
     $Image
 }
 
@@ -90,9 +90,9 @@ function New-BTImage {
     param (
         [string] $Source
     )
-    
+
     $Image = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
-    
+
     if ($Source) {
         if ($Source -like 'http?://*') {
             $RemoteFileName = $Source.Split('/')[-1]
@@ -108,7 +108,7 @@ function New-BTImage {
             $Image.Source = $Source
         }
     }
-    
+
     $Image
 }
 

@@ -3,7 +3,7 @@ categories = ["Meta"]
 date = 2018-08-12T22:21:01Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/08/jason-rosewell-60014-unsplash.jpg"
+thumbnail = "/2018/08/jason-rosewell-60014-unsplash.jpg"
 slug = "echo-echo"
 summary = "I don't know if this will help anyone else, and it's more for future me, but I hope it helps someone out there!"
 tags = ["Meta"]
@@ -34,33 +34,33 @@ Once the install is done, reboot your PC. It's a new Windows driver, don't argue
 
 After the reboot, head to "Sound" in the Control Panel.
 
-{{< figure src="__GHOST_URL__/content/images/2018/08/SoundStartMenu.png" >}}
+{{< figure src="/2018/08/SoundStartMenu.png" >}}
 
 On the playback tab, you should see "CABLE Input". In my case this had automatically become my default playback device. If this didn't happen for you, go ahead and right click it, making it the default for both playback and communication.
 
-{{< figure src="__GHOST_URL__/content/images/2018/08/Default.png" >}}
+{{< figure src="/2018/08/Default.png" >}}
 
 Now head to the recording tab and open the settings for your microphone. Head to the listen tab and check the "Listen to this device" option and select "CABLE Input" from the drop down list.
 
-{{< figure src="__GHOST_URL__/content/images/2018/08/ListenMic.png" >}}
+{{< figure src="/2018/08/ListenMic.png" >}}
 
 At this point, you may have noticed that you can't hear your system sounds. If you do want to hear system sounds, open up the properties for "CABLE Output" and change the options on the listen tab to specify your speakers or headphones... just be careful as you could end up with feedback or looped sound if your mic picks up the output.
 
 You can tell that this is working when you talk into your mic and see the level changing for both the microphone itself **AND** CABLE Output, as shown in this GIF:
 
-{{< figure src="__GHOST_URL__/content/images/2018/08/MIC.gif" >}}
+{{< figure src="/2018/08/MIC.gif" >}}
 
 Further, if you play sound on your PC but don't talk into your mic, you should see the level changing on just CABLE Output:
 
-{{< figure src="__GHOST_URL__/content/images/2018/08/DesktopSound.gif" >}}
+{{< figure src="/2018/08/DesktopSound.gif" >}}
 
 Now we need to configure Skype for Business. In the client, click the icon down the bottom left and choose "Audio Device Settings."
 
-{{< figure src="__GHOST_URL__/content/images/2018/08/SkypeForBusinessAudioDeviceSettings.png" >}}
+{{< figure src="/2018/08/SkypeForBusinessAudioDeviceSettings.png" >}}
 
 Choosing "Custom Device" allows you to pick different devices for your speaker and microphone. In this case you want your speaker to be your headset (not desktop speaker, you really don't want this being picked up by your mic.) Now set your microphone to CABLE Output.
 
-{{< figure src="__GHOST_URL__/content/images/2018/08/S4B-CustomDevice.png" >}}
+{{< figure src="/2018/08/S4B-CustomDevice.png" >}}
 
 With all of this set, Skype for Business is now accepting your system sound mixed with your microphone as input but it's outputting to your headset, which is separate from system sound in this case.
 

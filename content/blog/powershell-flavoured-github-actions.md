@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2018-12-18T22:46:50Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/12/adam-jang-224270-unsplash.jpg"
+thumbnail = "/2018/12/adam-jang-224270-unsplash.jpg"
 slug = "powershell-flavoured-github-actions"
 summary = "Carrying out PowerShell based GitHub Actions in less than a minute? Colour me impressed!"
 tags = ["PowerShell"]
@@ -92,25 +92,25 @@ As a test I've been using one of my neglected, barely started, projects [No8Wire
 
 If you're in the GitHub Actions beta, you'll see an Actions tab to the right of the Pull requests one.
 
-{{< figure src="__GHOST_URL__/content/images/2018/12/Tab.png" >}}
+{{< figure src="/2018/12/Tab.png" >}}
 
 When you first go in there, you'll be prompted to create your workflow, which will start a new commit where you'll be editing a file called `main.workflow`.
 
-{{< figure src="__GHOST_URL__/content/images/2018/12/Create.png" >}}
+{{< figure src="/2018/12/Create.png" >}}
 
 If you're feeling keen, you **can** edit this file as text… but the visual editor is really nice. You'll initially be prompted to drag down a little blue dot to a blank area for you first action but before doing that, consider clicking edit on the "New workflow" block so that you can rename it.
 
-{{< figure src="__GHOST_URL__/content/images/2018/12/EditName.png" >}}
+{{< figure src="/2018/12/EditName.png" >}}
 
 Now go ahead and drag down that blue dot and a blade will fly out to choose your action. There's a list of featured one (which you can actually dig into the source of to find out how they work), but we want to use our custom one.
 
 In order to use an action that's not on the featured list, you'll need to reference it in the form of `username/repo/location@reference`. The reference could be a branch, or the first seven figures in a commit's SHA. If you're using someone else's action, you may want to consider picking a specific commit so that your workflow doesn't break if they break something. I trust myself… for the most part, so I'm going to reference the master branch and my path will be `Windos/Deeds/HelloWorld@master`
 
-{{< figure src="__GHOST_URL__/content/images/2018/12/NoIcon.png" >}}
+{{< figure src="/2018/12/NoIcon.png" >}}
 
 Note that your nice display name, icon, and custom colour won't show yet. Don't worry, hit use…
 
-{{< figure src="__GHOST_URL__/content/images/2018/12/Icon.png" >}}
+{{< figure src="/2018/12/Icon.png" >}}
 
 Ahhh, that's better!
 
@@ -118,19 +118,19 @@ The configure action blade will be open automatically, so tweak as needed. Stric
 
 When you're happy with your workflow, use the "Start commit" button up the top right to get it all saved and committed. If you ever need to get to the actual file, you can find it under the `.github` directory in the root of the repo.
 
-{{< figure src="__GHOST_URL__/content/images/2018/12/loaction.png" >}}
+{{< figure src="/2018/12/loaction.png" >}}
 
 Any time a commit is pushed to this repo now (including the one we just pushed to create the workflow itself), the workflow will trigger and out action will be executed.
 
-{{< figure src="__GHOST_URL__/content/images/2018/12/InProgress.png" >}}
+{{< figure src="/2018/12/InProgress.png" >}}
 
 When you head back to the Actions tab, and you'll find the history of each execution, and the block for the action will allow you to drill into the logs for the particular run.
 
-{{< figure src="__GHOST_URL__/content/images/2018/12/History.png" >}}
+{{< figure src="/2018/12/History.png" >}}
 
 This is useful for diagnosing failures, but in this case it'll also let us check the output of our script (it's all the way at the bottom of the log.)
 
-{{< figure src="__GHOST_URL__/content/images/2018/12/Output.png" >}}
+{{< figure src="/2018/12/Output.png" >}}
 
 What I still can't get over is that this action takes less than a minute to complete! The power of containers, eh?
 

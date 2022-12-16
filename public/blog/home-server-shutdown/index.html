@@ -8,33 +8,32 @@
   <title>
   Automatically Shutting Down My Home Server, so I Don&#39;t Have To - ToastIT
   </title>
-  <meta name="description" content="My home server, nestled behind the TV, is an old HP workstation. It&#39;s not exactly what I&#39;d call... power efficient." />
-  <meta name="author" content="Josh King" />
-  <meta name="generator" content="Hugo 0.101.0" /><link
+  <meta name="description" content="My home server, nestled behind the TV, is an old HP workstation. It&rsquo;s not exactly what I&rsquo;d call&hellip; power efficient." /><meta name="generator" content="Hugo 0.108.0"><link
     rel="stylesheet"
-    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
-    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+    href="https://blog.toastit.dev/css/styles.min.00926f5a77daea6f795528dd203f08541988d4f18173be6e98b840cc57cd6ad6.css"
+    integrity="sha256-AJJvWnfa6m95VSjdID8IVBmI1PGBc75umLhAzFfNatY="
   />
   
   
 
   <meta property="og:title" content="Automatically Shutting Down My Home Server, so I Don&#39;t Have To" />
-<meta property="og:description" content="My home server, nestled behind the TV, is an old HP workstation. It&#39;s not exactly what I&#39;d call... power efficient." />
+<meta property="og:description" content="My home server, nestled behind the TV, is an old HP workstation. It&rsquo;s not exactly what I&rsquo;d call&hellip; power efficient." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.toastit.dev/blog/home-server-shutdown/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2016-07-04T00:00:00+00:00" />
-<meta property="article:modified_time" content="2016-07-04T00:00:00+00:00" />
-
+<meta property="article:published_time" content="2016-07-03T12:00:00+00:00" />
+<meta property="article:modified_time" content="2016-07-03T12:00:00+00:00" />
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Automatically Shutting Down My Home Server, so I Don&#39;t Have To"/>
-<meta name="twitter:description" content="My home server, nestled behind the TV, is an old HP workstation. It&#39;s not exactly what I&#39;d call... power efficient."/>
+<meta name="twitter:description" content="My home server, nestled behind the TV, is an old HP workstation. It&rsquo;s not exactly what I&rsquo;d call&hellip; power efficient."/>
 
   <meta itemprop="name" content="Automatically Shutting Down My Home Server, so I Don&#39;t Have To">
-<meta itemprop="description" content="My home server, nestled behind the TV, is an old HP workstation. It&#39;s not exactly what I&#39;d call... power efficient."><meta itemprop="datePublished" content="2016-07-04T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2016-07-04T00:00:00+00:00" />
+<meta itemprop="description" content="My home server, nestled behind the TV, is an old HP workstation. It&rsquo;s not exactly what I&rsquo;d call&hellip; power efficient."><meta itemprop="datePublished" content="2016-07-03T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2016-07-03T12:00:00+00:00" />
 <meta itemprop="wordCount" content="398">
 <meta itemprop="keywords" content="PowerShell,Nugget," />
+
+  
 </head>
 <body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
   <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
@@ -88,6 +87,7 @@
   <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
 
     <h1 class="text-2xl font-bold mb-2">Automatically Shutting Down My Home Server, so I Don&#39;t Have To</h1>
+    
     <h5 class="text-sm flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -99,7 +99,7 @@
       </svg>
       Posted on 
   
-    July 4, 2016
+    July 3, 2016
   
 
 
@@ -123,7 +123,10 @@
       </svg>
       398&nbsp;words
       
+        
+      
     </h5>
+    
 
     <p>My home server, nestled behind the TV, is an old HP workstation. It&rsquo;s not exactly what I&rsquo;d call&hellip; power efficient.</p>
 <p>In an effort to not consume too much power I try to shut it down every night, but if I wasn&rsquo;t actively using it before bed I would often forget about it.</p>
@@ -132,31 +135,29 @@
 <p>Luckily, Plex has a nice <a href="https://github.com/mjs7231/python-plexapi/wiki/Unofficial-Plex-API-Documentation" target="_blank" rel="noopener">API</a>
  which PowerShell can easily consume. Looking down the list, I immediately latched onto /status/sessions which lists all currently playing items. This includes items played through the web, mobile and even to a Chromecast. If you pause what you&rsquo;re watching it still counts as &lsquo;playing&rsquo; so I didn&rsquo;t have to worry about pausing a show only to have the server shut down on me.</p>
 <p>There is a very handy count there, labelled MediaContainer which gives you and easy to test count on the number of items playing. This makes it pretty easy to query the API, see if anything is playing and then shutdown if not (and try again in 15 minutes if there is something playing.)</p>
-<pre><code>$URL = 'http://localhost:32400/status/sessions'
-
-while ($true)
-{
-	$PlexStatus = Invoke-RestMethod -Uri $URL
-
-	if ($PlexStatus.MediaContainer.Size -eq 0)
-	{
-		Invoke-Expression -Command 'shutdown -s -t 0'
-	}
-
-	Start-Sleep -Seconds 900
-}
-</code></pre>
-<p>You&rsquo;ll not that I&rsquo;m invoking <code>shutdown.exe</code> rather than the native PowerShell cmdlet <code>Stop-Computer</code>. For whatever reason the cmdlet refused to work within a <a href="https://blogs.technet.microsoft.com/heyscriptingguy/2014/05/12/introduction-to-powershell-scheduled-jobs/" target="_blank" rel="noopener">Scheduled Job</a>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$URL</span> = <span style="color:#f1fa8c">&#39;http://localhost:32400/status/sessions&#39;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">while</span> ($true)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">$PlexStatus</span> = <span style="color:#8be9fd;font-style:italic">Invoke-RestMethod</span> -Uri <span style="color:#8be9fd;font-style:italic">$URL</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">if</span> (<span style="color:#8be9fd;font-style:italic">$PlexStatus</span>.MediaContainer.Size <span style="color:#ff79c6">-eq</span> <span style="color:#bd93f9">0</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#8be9fd;font-style:italic">Invoke-Expression</span> -Command <span style="color:#f1fa8c">&#39;shutdown -s -t 0&#39;</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#8be9fd;font-style:italic">Start-Sleep</span> -Seconds <span style="color:#bd93f9">900</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You&rsquo;ll not that I&rsquo;m invoking <code>shutdown.exe</code> rather than the native PowerShell cmdlet <code>Stop-Computer</code>. For whatever reason the cmdlet refused to work within a <a href="https://blogs.technet.microsoft.com/heyscriptingguy/2014/05/12/introduction-to-powershell-scheduled-jobs/" target="_blank" rel="noopener">Scheduled Job</a>
 . Them&rsquo;s the breaks, I guess.</p>
 <p>The final piece of the solution is to wrap the above PowerShell statement in a script block and register it as one of the previously mentioned Scheduled Job.</p>
-<pre><code>$JobTrigger = New-JobTrigger -Daily -At '8:30 PM'
-$JobOption = New-ScheduledJobOption -RunElevated
-Register-ScheduledJob -Name 'PlexShutdown'
-					  -Trigger $JobTrigger
-					  -ScheduledJobOption $JobOption
-					  -ScriptBlock $ScriptBlock
-</code></pre>
-<p>n.b. I did this on the server itself, so there is no remoting happening here.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$JobTrigger</span> = <span style="color:#8be9fd;font-style:italic">New-JobTrigger</span> -Daily -At <span style="color:#f1fa8c">&#39;8:30 PM&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$JobOption</span> = <span style="color:#8be9fd;font-style:italic">New-ScheduledJobOption</span> -RunElevated
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">Register-ScheduledJob</span> -Name <span style="color:#f1fa8c">&#39;PlexShutdown&#39;</span> 
+</span></span><span style="display:flex;"><span>					  -Trigger <span style="color:#8be9fd;font-style:italic">$JobTrigger</span> 
+</span></span><span style="display:flex;"><span>					  -ScheduledJobOption <span style="color:#8be9fd;font-style:italic">$JobOption</span> 
+</span></span><span style="display:flex;"><span>					  -ScriptBlock <span style="color:#8be9fd;font-style:italic">$ScriptBlock</span>
+</span></span></code></pre></div><p>n.b. I did this on the server itself, so there is no remoting happening here.</p>
 <p>Success! I now no longer need to even think about the server at night, even if I&rsquo;m watching something.</p>
 <p>You can see the full script over on <a href="https://github.com/Windos/powershell-depot/blob/master/General/PlexServerShutdown.ps1" target="_blank" rel="noopener">GitHub</a>
 . I doubt it will ever get edited much in the future, but the latest version of it will always be there.</p>
@@ -285,6 +286,8 @@ Register-ScheduledJob -Name 'PlexShutdown'
           </svg>
         </a>
       </li>
+      
+      
       
       
     </ul>

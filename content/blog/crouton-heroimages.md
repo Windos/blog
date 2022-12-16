@@ -3,7 +3,7 @@ categories = ["PowerShell", "BurntToast"]
 date = 2018-05-12T14:45:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/6211443671_2739e09986_b-1.jpg"
+thumbnail = "/2018/05/6211443671_2739e09986_b-1.jpg"
 slug = "crouton-heroimages"
 summary = "Ever find yourself needing to get an image up on your screen in a timely manner?"
 tags = ["PowerShell", "BurntToast"]
@@ -61,7 +61,7 @@ I set `-Loop` on my sound so that it keeps playing while the Toast is on screen,
 
 When you run this, you'll get your rather spiffy looking Toast:
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/herotoast.png" >}}
+{{< figure src="/2018/05/herotoast.png" >}}
 
 ## **Wrap-up**
 

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BurntToast on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/burnttoast/</link>
+    <description>Recent content in BurntToast on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 20 Apr 2021 22:03:29 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/burnttoast/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Road to BurntToast v1: Actionable Toast for All!</title>
+      <link>https://blog.toastit.dev/blog/road-to-burnttoast-v1-1/</link>
+      <pubDate>Tue, 20 Apr 2021 22:03:29 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/road-to-burnttoast-v1-1/</guid>
+      <description>BurntToast is finally growing up. It&amp;rsquo;s going through puberty and will see a v1 release when it gets to the other side&amp;hellip; but it&amp;rsquo;ll be a journey.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #15 - You Can&#39;t Silence Toast</title>
+      <link>https://blog.toastit.dev/blog/crouton-15-you-cant-silence-toast/</link>
+      <pubDate>Sun, 31 Jan 2021 21:08:16 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-15-you-cant-silence-toast/</guid>
+      <description>Focus assist is a favoured tool of practiced speakers and presenters on Windows. It does put you in a bit of a bind if the thing you&amp;rsquo;re presenting requires notifications though.</description>
+    </item>
+    
+    <item>
+      <title>Actionable Toast Notifications, Finally Cracked Them!</title>
+      <link>https://blog.toastit.dev/blog/actionable/</link>
+      <pubDate>Fri, 07 Aug 2020 17:54:01 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/actionable/</guid>
+      <description>I don&amp;rsquo;t know how to express a happy dance with text. If I could that&amp;rsquo;s what would be here because I&amp;rsquo;ve finally removed a thorn from my side that&amp;rsquo;s been there for five years.</description>
+    </item>
+    
+    <item>
+      <title>The Anatomy of Toast</title>
+      <link>https://blog.toastit.dev/blog/anatomy-of-toast/</link>
+      <pubDate>Tue, 28 Jul 2020 14:05:26 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/anatomy-of-toast/</guid>
+      <description>BurntToast just turned five, and I&amp;rsquo;ve only now realized that I&amp;rsquo;ve never written about how all the module&amp;rsquo;s &amp;ldquo;advanced&amp;rdquo; functions work together to create a toast notification.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #14 - Fancy Buttons</title>
+      <link>https://blog.toastit.dev/blog/crouton-14-buttons/</link>
+      <pubDate>Wed, 22 Jan 2020 21:50:06 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-14-buttons/</guid>
+      <description>It&amp;rsquo;s all well and good putting buttons all over your toast notification, but text is a little plain. Let&amp;rsquo;s see how we can dress out buttons up a little bit!</description>
+    </item>
+    
+    <item>
+      <title>Crouton #13 - Hitting Snooze</title>
+      <link>https://blog.toastit.dev/blog/crouton-13-hitting-snooze/</link>
+      <pubDate>Wed, 20 Nov 2019 20:09:45 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-13-hitting-snooze/</guid>
+      <description>Hitting snooze on your alarm clock is probably rather common. Let&amp;rsquo;s take a look at how you can do the same thing with your Toast Notifications.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #12 - Toasting in Many Tongues (Tōhi o nga reo maha)</title>
+      <link>https://blog.toastit.dev/blog/crouton-12/</link>
+      <pubDate>Tue, 30 Jul 2019 23:09:29 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-12/</guid>
+      <description>Toast notification data bindings have a number of uses. We&amp;rsquo;ve already covered updating toasts, now let&amp;rsquo;s teach our notifications a second language.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #11 - Updating Toast Notifications, Gracefully</title>
+      <link>https://blog.toastit.dev/blog/crouton-11/</link>
+      <pubDate>Tue, 16 Jul 2019 22:20:04 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-11/</guid>
+      <description>Following the release of BurntToast v0.7.0 there were a couple of headline features that needed to be written about. Shoulder Taps had their time in the spotlight and now it&amp;rsquo;s the turn of Updatable Toasts.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #10 - Cold Shoulder (Taps)</title>
+      <link>https://blog.toastit.dev/blog/crouton-10/</link>
+      <pubDate>Mon, 01 Apr 2019 20:49:54 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-10/</guid>
+      <description>If you can forgive incomplete help, the latest update of BurntToast has some cool new features. First one we&amp;rsquo;ll be covering is Shoulder Taps!</description>
+    </item>
+    
+    <item>
+      <title>Everything Is Better with Toast: Getting Build Notifications</title>
+      <link>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</link>
+      <pubDate>Fri, 08 Feb 2019 22:51:33 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</guid>
+      <description>When you want to keep an eye on build results, but don&amp;rsquo;t want to dedicate a screen to the web page, toast is the answer!</description>
+    </item>
+    
+    <item>
+      <title>Crouton #8 Redux - Now with a More Complete Example</title>
+      <link>https://blog.toastit.dev/blog/crouton-8-redux/</link>
+      <pubDate>Wed, 09 Jan 2019 16:37:08 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-8-redux/</guid>
+      <description>I didn&amp;rsquo;t do the best job of the examples in my original post on this topic. Let&amp;rsquo;s put that right.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #9 - Free, with Attribution</title>
+      <link>https://blog.toastit.dev/blog/crouton-9-attribution/</link>
+      <pubDate>Thu, 04 Oct 2018 02:07:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-9-attribution/</guid>
+      <description>Where did that toast come from? Who cooked it?! If only it was attributed to someone&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Crouton #8 - I like Your Code, but I Don&#39;t Want It on All My Computers</title>
+      <link>https://blog.toastit.dev/blog/crouton-8-i-like-your-code-but-i-dont-want-it-on-all-my-computers/</link>
+      <pubDate>Mon, 20 Aug 2018 17:18:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-8-i-like-your-code-but-i-dont-want-it-on-all-my-computers/</guid>
+      <description>I get you; you like toast, but you don&amp;rsquo;t want to put a toaster on 100 desks.</description>
+    </item>
+    
+    <item>
+      <title>Downloading an Image for Local Use</title>
+      <link>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</link>
+      <pubDate>Sun, 27 May 2018 12:55:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</guid>
+      <description>This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&amp;rsquo;m disappointed that I didn&amp;rsquo;t get to it sooner.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #7 – Superhero Landing</title>
+      <link>https://blog.toastit.dev/blog/crouton-heroimages/</link>
+      <pubDate>Sat, 12 May 2018 14:45:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-heroimages/</guid>
+      <description>Ever find yourself needing to get an image up on your screen in a timely manner?</description>
+    </item>
+    
+    <item>
+      <title>Crouton #6 – Dance to Your Own Beat</title>
+      <link>https://blog.toastit.dev/blog/crouton-sounds/</link>
+      <pubDate>Sun, 01 Apr 2018 16:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-sounds/</guid>
+      <description>It gives me a glimpse into how people are using the module and it also focuses my documentation efforts on something that might actually be useful.</description>
+    </item>
+    
+    <item>
+      <title>Need PowerShell Help? Use #PSHelp!</title>
+      <link>https://blog.toastit.dev/blog/pshelp-twitter/</link>
+      <pubDate>Mon, 19 Mar 2018 19:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/pshelp-twitter/</guid>
+      <description>If you&amp;rsquo;re looking for some help, try #PSHelp. If you&amp;rsquo;ve got knowledge to share (and you do), make sure you jump in and get involved!</description>
+    </item>
+    
+    <item>
+      <title>DIY AppId and WiX, for Tasty Toast</title>
+      <link>https://blog.toastit.dev/blog/burnttoast-wix/</link>
+      <pubDate>Fri, 02 Mar 2018 15:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/burnttoast-wix/</guid>
+      <description>This time around, I&amp;rsquo;ll walk you through how to create your own installer.</description>
+    </item>
+    
+    <item>
+      <title>BurntToast &#43; AppId = It&#39;s Working!</title>
+      <link>https://blog.toastit.dev/blog/burnttoast-appid-installer/</link>
+      <pubDate>Sat, 03 Feb 2018 18:45:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/burnttoast-appid-installer/</guid>
+      <description>I can&amp;rsquo;t tell you how happy I am to be writing this post.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #5 – Password Expiry Warning</title>
+      <link>https://blog.toastit.dev/blog/crouton-password/</link>
+      <pubDate>Wed, 24 Jan 2018 21:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-password/</guid>
+      <description>How the heck did that happen, isn&amp;rsquo;t the system meant to give me some warning?</description>
+    </item>
+    
+    <item>
+      <title>BurntToast Breaking Change: Hiding Customizable AppID</title>
+      <link>https://blog.toastit.dev/blog/burnttoast-no-appid/</link>
+      <pubDate>Sun, 08 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/burnttoast-no-appid/</guid>
+      <description>I hate reducing customizability, just as much as I hate making breaking changes in my projects.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #4 – Getting Your Head Around Headers</title>
+      <link>https://blog.toastit.dev/blog/crouton-headers/</link>
+      <pubDate>Mon, 15 May 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-headers/</guid>
+      <description>Headers, introduced in the Creators Update, can be used to organize you toasts.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #3 - Sometimes You Just Want to Click Your Toast</title>
+      <link>https://blog.toastit.dev/blog/crouton-clickable/</link>
+      <pubDate>Sun, 07 May 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-clickable/</guid>
+      <description>Buttons can look pretty ugly when only using one, so just click your Toast instead!</description>
+    </item>
+    
+    <item>
+      <title>Crouton #2 - You Can&#39;t Stop Progress (Bars)</title>
+      <link>https://blog.toastit.dev/blog/crouton-progress-bars/</link>
+      <pubDate>Sat, 29 Apr 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-progress-bars/</guid>
+      <description>April saw the release of the Creators Update for Windows 10 which brought with it a handful of new options for toast notifications.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #1 - Toast Notifications for New Stack Overflow Questions</title>
+      <link>https://blog.toastit.dev/blog/crouton-stackwatch/</link>
+      <pubDate>Sun, 19 Mar 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-stackwatch/</guid>
+      <description>A crouton is a small piece of toast for soup or salads. Or, a small piece of (burnt) toast</description>
+    </item>
+    
+  </channel>
+</rss>

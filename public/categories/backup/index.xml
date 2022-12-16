@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backup on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/backup/</link>
+    <description>Recent content in Backup on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 Jul 2020 01:16:38 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/backup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Synology Active Backup Suite Review</title>
+      <link>https://blog.toastit.dev/blog/synology-active-backup-suite-review/</link>
+      <pubDate>Sat, 18 Jul 2020 01:16:38 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/synology-active-backup-suite-review/</guid>
+      <description>Have you ever come face to face with something that shines a spotlight on a gap in your knowledge of a subject? This happened to me recently when I was asked to review Synology&amp;rsquo;s Active Backup Suite.</description>
+    </item>
+    
+    <item>
+      <title>Disjointed Thoughts on Veeam Backup for Office 365 v3</title>
+      <link>https://blog.toastit.dev/blog/veeam-onedrive-selective/</link>
+      <pubDate>Sat, 04 May 2019 20:38:35 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-onedrive-selective/</guid>
+      <description>I&amp;rsquo;ve been wanting to get this out for a while, but couldn&amp;rsquo;t find the right way to present it&amp;hellip; rather than stressing, here&amp;rsquo;s a brain dump on VBO v3.</description>
+    </item>
+    
+    <item>
+      <title>Getting Selective with Veeam Backup for Microsoft Office 365</title>
+      <link>https://blog.toastit.dev/blog/veeam-365-selective/</link>
+      <pubDate>Mon, 25 Feb 2019 21:08:57 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-365-selective/</guid>
+      <description>I can&amp;rsquo;t stand &amp;ldquo;expected warnings,&amp;rdquo; but getting selective in my VBO jobs got me back to my happy place.</description>
+    </item>
+    
+    <item>
+      <title>Veeam Backup for Microsoft Office 365 v3.0: It&#39;s Good, Very Good</title>
+      <link>https://blog.toastit.dev/blog/veeam-backup-for-microsoft-office-365-v3/</link>
+      <pubDate>Mon, 18 Feb 2019 21:29:41 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-backup-for-microsoft-office-365-v3/</guid>
+      <description>I&amp;rsquo;ve been testing a beta of Veeam Backup for Microsoft Office 365 v3. It ticked some boxes of mine (spoiler alert.)</description>
+    </item>
+    
+    <item>
+      <title>My Wish List for Veeam Backup for Microsoft Office 365 v3</title>
+      <link>https://blog.toastit.dev/blog/my-wish-list-vbo365/</link>
+      <pubDate>Tue, 09 Oct 2018 19:47:26 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-wish-list-vbo365/</guid>
+      <description>I heard a rumor that v3 is already well into development&amp;hellip; hopeful it&amp;rsquo;s not too late to register my feature wish list!</description>
+    </item>
+    
+    <item>
+      <title>Veeam: My First Virtual Lab</title>
+      <link>https://blog.toastit.dev/blog/veeam-my-first-virtual-lab/</link>
+      <pubDate>Sun, 25 Mar 2018 20:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-my-first-virtual-lab/</guid>
+      <description>Over the last day or so I&amp;rsquo;ve been setting up a sandbox/virtual lab which leverages our Veeam backups.</description>
+    </item>
+    
+  </channel>
+</rss>

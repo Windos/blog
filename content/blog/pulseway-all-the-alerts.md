@@ -3,7 +3,7 @@ categories = ["PowerShell", "Monitoring"]
 date = 2015-06-29T12:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/1280px-US_Navy_030516-N-5862D-010_A_recruit_division_sings_as_they_successfully_complete_the_final_leg_of_a_Battle_Stations_drill.jpg"
+thumbnail = "/2018/05/1280px-US_Navy_030516-N-5862D-010_A_recruit_division_sings_as_they_successfully_complete_the_final_leg_of_a_Battle_Stations_drill.jpg"
 slug = "pulseway-all-the-alerts"
 summary = "Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn't present in the OS after booting up? Uhh..."
 tags = ["PowerShell", "Monitoring"]
@@ -16,7 +16,7 @@ title = "With PowerShell, Pulseway Can Alert on Anything"
 
 Need to monitor some servers (and/or workstations)? [Pulseway](http://www.pulseway.com/) is a good solution. The configuration of what you want alerts on is as simple as putting checks in boxes.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/standard-notify.png" >}}
+{{< figure src="/2018/05/standard-notify.png" >}}
 
 * Need to know when someone logs into your server? **Check**
 * Need to know when someone installs something on your server? **Check**
@@ -93,9 +93,9 @@ Register-ScheduledJob -Name 'Check Server Disk' -ScriptBlock {
 
 Now we need to get Pulseway checking for our new events, this is a case of opening up Pulseway Manager on the monitored server, selecting the _Notifications_ tab, then the _Event Log_ tab, hitting the check box, clicking add and filling out the details.
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/notify-eventlog.PNG" >}}
+{{< figure src="/2018/05/notify-eventlog.PNG" >}}
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/event-log-filter.png" >}}
+{{< figure src="/2018/05/event-log-filter.png" >}}
 
 It's important to remember to select the right Event Log (Windows PowerShell in this case), the event level, event ID and source that you specified within your script.
 

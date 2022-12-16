@@ -3,7 +3,7 @@ categories = ["PowerShell", "Meta"]
 date = 2018-04-12T17:00:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/1024px-Flickr_-_Official_U.S._Navy_Imagery_-_U.S._Naval_Academy_plebes_carry_a_log_as_part_of_teamwork_training_during_Sea_Trials..jpg"
+thumbnail = "/2018/05/1024px-Flickr_-_Official_U.S._Navy_Imagery_-_U.S._Naval_Academy_plebes_carry_a_log_as_part_of_teamwork_training_during_Sea_Trials..jpg"
 slug = "summit2018-day4"
 summary = "That's it. It's over. I've shaken many hand, met many people, and seen lots of PowerShell."
 tags = ["PowerShell", "Meta"]
@@ -24,7 +24,7 @@ Please do read the [previous three recaps](https://king.geek.nz/tags/index.html#
 
 "Do you want your morning to be easy?"
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/helmick-large.jpg" >}}
+{{< figure src="/2018/05/helmick-large.jpg" >}}
 
 I said it yesterday, and I'll say it again today: Jason's energy is amazing.
 
@@ -38,7 +38,7 @@ Effectively, he was giving us the answer to a problem we hadn't had yet so that 
 
 [Mark Domansky](https://twitter.com/MarkDomansky)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/mark-large-1.jpg" >}}
+{{< figure src="/2018/05/mark-large-1.jpg" >}}
 
 Wow. Just wow.
 
@@ -52,7 +52,7 @@ Mark's talk was about [WebJEA](https://github.com/markdomansky/WebJEA), which pr
 
 [Wesley Kirkland](https://twitter.com/unleashthecloud)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/wesley-large.jpg" >}}
+{{< figure src="/2018/05/wesley-large.jpg" >}}
 
 This was a session about meta programming and how we're probably doing it already and not realizing it (which I am, and didn't!)
 
@@ -64,7 +64,7 @@ Also, I picked up a new phrase that is pretty close to my new favorite: **Temper
 
 [Adam Driscoll](https://twitter.com/adamdriscoll/)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/adam-large.jpg" >}}
+{{< figure src="/2018/05/adam-large.jpg" >}}
 
 Adam did a great job of putting the requirements of creating cross platform compatible PowerShell modules into terms that non-developers could follow. I point this out because it's all about .NET and DLLs and the like.
 
@@ -74,7 +74,7 @@ This session inspired me to check out if Linux (or specific distributions) there
 
 [Brandon Olin](https://twitter.com/devblackops)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/brandon-large.jpg" >}}
+{{< figure src="/2018/05/brandon-large.jpg" >}}
 
 I mentioned ChatOps earlier, and Brandon is **the** ChatOps guy. I've seen this presentation via a virtual PowerShell User Group.
 

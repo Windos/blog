@@ -3,7 +3,7 @@ categories = ["PowerShell"]
 date = 2018-06-19T19:41:46Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/06/chris-geirman-421715-unsplash.jpg"
+thumbnail = "/2018/06/chris-geirman-421715-unsplash.jpg"
 slug = "scheduled-job-qualified"
 summary = "Much sooner than expected, let's talk about Windows PowerShell scheduled jobs again."
 tags = ["PowerShell"]
@@ -41,7 +41,7 @@ I cogitated during my morning routine before the actual problem "clicked" in my 
 
 When you create a scheduled job, and then looks at what is executing via the Task Scheduler you'll notice that **powershell.exe** is the spring board:
 
-{{< figure src="__GHOST_URL__/content/images/2018/06/DefaultJobAction.png" >}}
+{{< figure src="/2018/06/DefaultJobAction.png" >}}
 
 That makes sense, right? And for me this is perfectly fine. Evidently, though, some security teams may not be comfortable with this. As it is, there is a possibility of someone dropping a malicious version of **powershell.exe** into a path location or otherwise intercepting the lookup of this executable.
 
@@ -109,7 +109,7 @@ The only thing to note in this last code snippet is the **TaskPath**, which refl
 
 And finally, check the GUI again and you'll notice that we're now using the full path to **powershell.exe**.
 
-{{< figure src="__GHOST_URL__/content/images/2018/06/UpdatedJobAction.png" >}}
+{{< figure src="/2018/06/UpdatedJobAction.png" >}}
 
 ## **Wrap Up**
 

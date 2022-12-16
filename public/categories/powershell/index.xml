@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PowerShell on ToastIT</title>
+    <link>https://blog.toastit.dev/categories/powershell/</link>
+    <description>Recent content in PowerShell on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 07 May 2021 05:42:32 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/categories/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Learning Story: From Timber to Chocolatey</title>
+      <link>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</link>
+      <pubDate>Fri, 07 May 2021 05:42:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</guid>
+      <description>This post is part of #TheMVPChallenge. It&amp;rsquo;s not exactly what was on the brief&amp;hellip; but I think it&amp;rsquo;s a story worth telling!</description>
+    </item>
+    
+    <item>
+      <title>Road to BurntToast v1: Actionable Toast for All!</title>
+      <link>https://blog.toastit.dev/blog/road-to-burnttoast-v1-1/</link>
+      <pubDate>Tue, 20 Apr 2021 22:03:29 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/road-to-burnttoast-v1-1/</guid>
+      <description>BurntToast is finally growing up. It&amp;rsquo;s going through puberty and will see a v1 release when it gets to the other side&amp;hellip; but it&amp;rsquo;ll be a journey.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #15 - You Can&#39;t Silence Toast</title>
+      <link>https://blog.toastit.dev/blog/crouton-15-you-cant-silence-toast/</link>
+      <pubDate>Sun, 31 Jan 2021 21:08:16 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-15-you-cant-silence-toast/</guid>
+      <description>Focus assist is a favoured tool of practiced speakers and presenters on Windows. It does put you in a bit of a bind if the thing you&amp;rsquo;re presenting requires notifications though.</description>
+    </item>
+    
+    <item>
+      <title>Review: PowerShell for Sysadmins</title>
+      <link>https://blog.toastit.dev/blog/review-powershell-sysadmins/</link>
+      <pubDate>Sat, 05 Sep 2020 15:33:46 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/review-powershell-sysadmins/</guid>
+      <description>Are you a sysadmin? Looking to stop wearing out your mouse? Could this be the book for you?</description>
+    </item>
+    
+    <item>
+      <title>Actionable Toast Notifications, Finally Cracked Them!</title>
+      <link>https://blog.toastit.dev/blog/actionable/</link>
+      <pubDate>Fri, 07 Aug 2020 17:54:01 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/actionable/</guid>
+      <description>I don&amp;rsquo;t know how to express a happy dance with text. If I could that&amp;rsquo;s what would be here because I&amp;rsquo;ve finally removed a thorn from my side that&amp;rsquo;s been there for five years.</description>
+    </item>
+    
+    <item>
+      <title>The Anatomy of Toast</title>
+      <link>https://blog.toastit.dev/blog/anatomy-of-toast/</link>
+      <pubDate>Tue, 28 Jul 2020 14:05:26 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/anatomy-of-toast/</guid>
+      <description>BurntToast just turned five, and I&amp;rsquo;ve only now realized that I&amp;rsquo;ve never written about how all the module&amp;rsquo;s &amp;ldquo;advanced&amp;rdquo; functions work together to create a toast notification.</description>
+    </item>
+    
+    <item>
+      <title>Fun with Azure Key Vault Part 2: Integration with Azure Functions</title>
+      <link>https://blog.toastit.dev/blog/azure-key-vault-2/</link>
+      <pubDate>Sat, 20 Jun 2020 15:58:22 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-key-vault-2/</guid>
+      <description>Now that we have our credentials stored in an Azure Key Vault, how do we go about using them in other Azure services?</description>
+    </item>
+    
+    <item>
+      <title>So *That&#39;s* What OutBuffer Is For!</title>
+      <link>https://blog.toastit.dev/blog/what-outbuffer-is-for/</link>
+      <pubDate>Wed, 27 May 2020 06:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/what-outbuffer-is-for/</guid>
+      <description>OutBuffer has been lurking in amongst the common parameters on most cmdlets for years, but I&amp;rsquo;ve never taken the time to ask what it&amp;rsquo;s for.</description>
+    </item>
+    
+    <item>
+      <title>Fun with Azure Key Vault Part 1: Vault Creation and Storing PSCredential Objects</title>
+      <link>https://blog.toastit.dev/blog/azure-key-vault-1/</link>
+      <pubDate>Thu, 21 May 2020 23:40:03 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-key-vault-1/</guid>
+      <description>I&amp;rsquo;m so used to storing fully formed credentials in the local Windows Credential Manager. How do I transition that into the &amp;ldquo;secrets&amp;rdquo; centric world that is the cloud?</description>
+    </item>
+    
+    <item>
+      <title>I&#39;m Josh King, Sysadmin, and This Is How I Work (During Lockdown)</title>
+      <link>https://blog.toastit.dev/blog/how-i-work-lockdown/</link>
+      <pubDate>Sun, 12 Apr 2020 21:40:52 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-i-work-lockdown/</guid>
+      <description>My last &amp;ldquo;How I Work&amp;rdquo; post was over three years ago and I&amp;rsquo;ve been considering an update for a while. What better time to do that than during the COVID-19 lockdown?</description>
+    </item>
+    
+    <item>
+      <title>Staying up to Date on PowerShell Releases with Update Notifications - #PS7Now</title>
+      <link>https://blog.toastit.dev/blog/ps7now-update-notifications/</link>
+      <pubDate>Thu, 12 Mar 2020 20:47:55 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ps7now-update-notifications/</guid>
+      <description>If you&amp;rsquo;re not stalking the PowerShell team on Twitter, or obsessively refreshing the PowerShell repo on GitHub, how are you meant to be aware of new releases?</description>
+    </item>
+    
+    <item>
+      <title>Exploring... Nothing? PowerShell 7&#39;s Null Conditional Operators - #PS7Now</title>
+      <link>https://blog.toastit.dev/blog/ps7now-null-conditional/</link>
+      <pubDate>Tue, 10 Mar 2020 22:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ps7now-null-conditional/</guid>
+      <description>How do you deal with potentially getting nothing back from a cmdlet or function? PowerShell 7 introduced a set of new operators to make working with null values easier.</description>
+    </item>
+    
+    <item>
+      <title>Getting Your Hands on PowerShell 7 - #PS7Now</title>
+      <link>https://blog.toastit.dev/blog/ps7now-installing/</link>
+      <pubDate>Sat, 07 Mar 2020 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ps7now-installing/</guid>
+      <description>PowerShell 7 is out now! The first step in being able to add it to our toolbox is to install it so let&amp;rsquo;s check out our options.</description>
+    </item>
+    
+    <item>
+      <title>It&#39;s Likely We&#39;re Living in a PSSession</title>
+      <link>https://blog.toastit.dev/blog/living-in-a-pssession/</link>
+      <pubDate>Fri, 28 Feb 2020 20:04:08 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/living-in-a-pssession/</guid>
+      <description>PowerShell remoting is a truly powerful tool, but sometimes your scripts need a little help finding their way. How can you tell when you&amp;rsquo;re in a PSSession and what info is available about the session itself?</description>
+    </item>
+    
+    <item>
+      <title>Crouton #14 - Fancy Buttons</title>
+      <link>https://blog.toastit.dev/blog/crouton-14-buttons/</link>
+      <pubDate>Wed, 22 Jan 2020 21:50:06 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-14-buttons/</guid>
+      <description>It&amp;rsquo;s all well and good putting buttons all over your toast notification, but text is a little plain. Let&amp;rsquo;s see how we can dress out buttons up a little bit!</description>
+    </item>
+    
+    <item>
+      <title>Universal Automation: An Early Look</title>
+      <link>https://blog.toastit.dev/blog/universal-automation-early-look/</link>
+      <pubDate>Wed, 15 Jan 2020 22:21:38 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/universal-automation-early-look/</guid>
+      <description>I had the pleasure of testing Universal Automation while it was in private beta. Now the beta is open to all and I&amp;rsquo;m really excited for it to be in more hands because it&amp;rsquo;s a very interesting project!</description>
+    </item>
+    
+    <item>
+      <title>PowerShell&#39;s Secret Wildcard</title>
+      <link>https://blog.toastit.dev/blog/powershells-secret-wildcard/</link>
+      <pubDate>Wed, 08 Jan 2020 21:07:33 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/powershells-secret-wildcard/</guid>
+      <description>It&amp;rsquo;s funny how you can be a daily PowerShell user for years and completely miss something about a feature you regularly use&amp;hellip; such as the &amp;ldquo;like&amp;rdquo; operators accepting more than two different wildcards.</description>
+    </item>
+    
+    <item>
+      <title>New Year&#39;s Resolutions - 2020</title>
+      <link>https://blog.toastit.dev/blog/resolutions-2020/</link>
+      <pubDate>Wed, 01 Jan 2020 13:48:30 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/resolutions-2020/</guid>
+      <description>Apparently I forgot to do one of these posts last year. I like having these posts to look back on, so let&amp;rsquo;s get back on track!</description>
+    </item>
+    
+    <item>
+      <title>Azure Devops for PowerShell - #AzureAdventCalendar 2019 Day 15</title>
+      <link>https://blog.toastit.dev/blog/azure-devops-for-powershell-azureadventcalendar-2019-day-15/</link>
+      <pubDate>Sat, 14 Dec 2019 11:21:22 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-devops-for-powershell-azureadventcalendar-2019-day-15/</guid>
+      <description>It&amp;rsquo;s long past time to wrap some modern smarts around KovertKringle, a PowerShell module for managing Secret Santa events.</description>
+    </item>
+    
+    <item>
+      <title>Making Sense of Data: The Matrix</title>
+      <link>https://blog.toastit.dev/blog/making-sense-of-data/</link>
+      <pubDate>Tue, 10 Dec 2019 20:39:17 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/making-sense-of-data/</guid>
+      <description>&amp;ldquo;There&amp;rsquo;s way too much information to decode the Matrix. You get used to it, though. Your brain does the translating. I don&amp;rsquo;t even see the code.&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Tired of Massive &#34;like&#34; Operator Chains? Rub a Little RegEx on It</title>
+      <link>https://blog.toastit.dev/blog/like-operator-chains/</link>
+      <pubDate>Wed, 27 Nov 2019 20:18:22 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/like-operator-chains/</guid>
+      <description>RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #13 - Hitting Snooze</title>
+      <link>https://blog.toastit.dev/blog/crouton-13-hitting-snooze/</link>
+      <pubDate>Wed, 20 Nov 2019 20:09:45 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-13-hitting-snooze/</guid>
+      <description>Hitting snooze on your alarm clock is probably rather common. Let&amp;rsquo;s take a look at how you can do the same thing with your Toast Notifications.</description>
+    </item>
+    
+    <item>
+      <title>Quick Ternary Operator Revisit: Can It Elseif?</title>
+      <link>https://blog.toastit.dev/blog/quick-ternary-operator-revisit/</link>
+      <pubDate>Fri, 04 Oct 2019 15:41:49 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/quick-ternary-operator-revisit/</guid>
+      <description>I was thinking about the new Ternary Operator and had a random thought&amp;hellip; can it handle elseif logic?</description>
+    </item>
+    
+    <item>
+      <title>Roll Your Sleeves Up, It&#39;s Hacktoberfest Time!</title>
+      <link>https://blog.toastit.dev/blog/hacktoberfest-2019/</link>
+      <pubDate>Sun, 29 Sep 2019 21:37:45 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/hacktoberfest-2019/</guid>
+      <description>I&amp;rsquo;m gearing up for my fourth Hacktoberfest event, and so should you. You could even come away from this month with a fancy new t-shirt!</description>
+    </item>
+    
+    <item>
+      <title>Getting Familiar with the Ternary Operator in PowerShell 7</title>
+      <link>https://blog.toastit.dev/blog/ternary-operator-powershell-7/</link>
+      <pubDate>Tue, 24 Sep 2019 21:17:30 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ternary-operator-powershell-7/</guid>
+      <description>What the heck is a &amp;ldquo;ternary&amp;rdquo; and what&amp;rsquo;s it doing in my PowerShell?!</description>
+    </item>
+    
+    <item>
+      <title>Azure DevOps Pipelines Tune Up: Templates and Centralization</title>
+      <link>https://blog.toastit.dev/blog/azure-pipelines-tune-up/</link>
+      <pubDate>Fri, 20 Sep 2019 10:04:57 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-pipelines-tune-up/</guid>
+      <description>After reading some awesome posts on the topic, I&amp;rsquo;ve been shamed into making my pipelines a little more efficient.</description>
+    </item>
+    
+    <item>
+      <title>Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?</title>
+      <link>https://blog.toastit.dev/blog/powershell7-foreach-parallel/</link>
+      <pubDate>Mon, 09 Sep 2019 21:38:52 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/powershell7-foreach-parallel/</guid>
+      <description>PoshRSJob has been my go to module for Parallelization for years&amp;hellip; let&amp;rsquo;s see if a head to head test with the new PowerShell 7 feature will change that.</description>
+    </item>
+    
+    <item>
+      <title>MVP: OMG</title>
+      <link>https://blog.toastit.dev/blog/mvp-omg/</link>
+      <pubDate>Sun, 01 Sep 2019 06:52:59 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/mvp-omg/</guid>
+      <description>Today I&amp;rsquo;m humbled, shocked, and proud to announce that I&amp;rsquo;m now a Microsoft MVP.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #12 - Toasting in Many Tongues (Tōhi o nga reo maha)</title>
+      <link>https://blog.toastit.dev/blog/crouton-12/</link>
+      <pubDate>Tue, 30 Jul 2019 23:09:29 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-12/</guid>
+      <description>Toast notification data bindings have a number of uses. We&amp;rsquo;ve already covered updating toasts, now let&amp;rsquo;s teach our notifications a second language.</description>
+    </item>
+    
+    <item>
+      <title>Normalizing Phone Numbers, Easier with Regex</title>
+      <link>https://blog.toastit.dev/blog/normalizing-phone-numbers-easier-with-regex/</link>
+      <pubDate>Wed, 24 Jul 2019 23:16:12 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/normalizing-phone-numbers-easier-with-regex/</guid>
+      <description>After years of staring at it confused, I&amp;rsquo;ve finally given into the dark side and started to learn RegEx.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #11 - Updating Toast Notifications, Gracefully</title>
+      <link>https://blog.toastit.dev/blog/crouton-11/</link>
+      <pubDate>Tue, 16 Jul 2019 22:20:04 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-11/</guid>
+      <description>Following the release of BurntToast v0.7.0 there were a couple of headline features that needed to be written about. Shoulder Taps had their time in the spotlight and now it&amp;rsquo;s the turn of Updatable Toasts.</description>
+    </item>
+    
+    <item>
+      <title>Disjointed Thoughts on Veeam Backup for Office 365 v3</title>
+      <link>https://blog.toastit.dev/blog/veeam-onedrive-selective/</link>
+      <pubDate>Sat, 04 May 2019 20:38:35 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-onedrive-selective/</guid>
+      <description>I&amp;rsquo;ve been wanting to get this out for a while, but couldn&amp;rsquo;t find the right way to present it&amp;hellip; rather than stressing, here&amp;rsquo;s a brain dump on VBO v3.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #10 - Cold Shoulder (Taps)</title>
+      <link>https://blog.toastit.dev/blog/crouton-10/</link>
+      <pubDate>Mon, 01 Apr 2019 20:49:54 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-10/</guid>
+      <description>If you can forgive incomplete help, the latest update of BurntToast has some cool new features. First one we&amp;rsquo;ll be covering is Shoulder Taps!</description>
+    </item>
+    
+    <item>
+      <title>Getting Selective with Veeam Backup for Microsoft Office 365</title>
+      <link>https://blog.toastit.dev/blog/veeam-365-selective/</link>
+      <pubDate>Mon, 25 Feb 2019 21:08:57 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-365-selective/</guid>
+      <description>I can&amp;rsquo;t stand &amp;ldquo;expected warnings,&amp;rdquo; but getting selective in my VBO jobs got me back to my happy place.</description>
+    </item>
+    
+    <item>
+      <title>Moving My Automatic Blog Archive Tweets to Azure Functions</title>
+      <link>https://blog.toastit.dev/blog/blog-archive-to-azure-function/</link>
+      <pubDate>Sat, 23 Feb 2019 08:08:50 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/blog-archive-to-azure-function/</guid>
+      <description>A few scripts run on my home server, but can happily run in a serverless environment. Time to give that poor server a rest, I think.</description>
+    </item>
+    
+    <item>
+      <title>How I Failed My Way to Success with Azure Pipelines - Part 2: Release</title>
+      <link>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/</link>
+      <pubDate>Sat, 16 Feb 2019 20:08:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/</guid>
+      <description>What good is a nicely built PowerShell module if no one can use it? Time to release it into the wild!</description>
+    </item>
+    
+    <item>
+      <title>RSAT as a Feature: I Thought I Was Going to Love It, Until I Saw It in Action</title>
+      <link>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</link>
+      <pubDate>Wed, 13 Feb 2019 19:56:39 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</guid>
+      <description>I&amp;rsquo;m a little late to this particular party, but I only just had the 1809 update on my workstation today.</description>
+    </item>
+    
+    <item>
+      <title>Everything Is Better with Toast: Getting Build Notifications</title>
+      <link>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</link>
+      <pubDate>Fri, 08 Feb 2019 22:51:33 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</guid>
+      <description>When you want to keep an eye on build results, but don&amp;rsquo;t want to dedicate a screen to the web page, toast is the answer!</description>
+    </item>
+    
+    <item>
+      <title>How I Failed My Way to Success with Azure Pipelines - Part 1: Build</title>
+      <link>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines/</link>
+      <pubDate>Tue, 05 Feb 2019 22:38:49 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines/</guid>
+      <description>Some people learn by writing. Some by watching videos. Apparently I learn by failing and head-desking.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #8 Redux - Now with a More Complete Example</title>
+      <link>https://blog.toastit.dev/blog/crouton-8-redux/</link>
+      <pubDate>Wed, 09 Jan 2019 16:37:08 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-8-redux/</guid>
+      <description>I didn&amp;rsquo;t do the best job of the examples in my original post on this topic. Let&amp;rsquo;s put that right.</description>
+    </item>
+    
+    <item>
+      <title>A Toast to 2018</title>
+      <link>https://blog.toastit.dev/blog/a-toast-to-2018/</link>
+      <pubDate>Sun, 30 Dec 2018 19:20:59 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/a-toast-to-2018/</guid>
+      <description>The community, in and of itself, made 2018 for me. If you haven’t already gotten engaged in it… put it on your list for 2019. You wont regret it.</description>
+    </item>
+    
+    <item>
+      <title>Cutting My Teeth on PowerShell Flavoured GitHub Actions</title>
+      <link>https://blog.toastit.dev/blog/powershell-flavoured-github-actions/</link>
+      <pubDate>Tue, 18 Dec 2018 22:46:50 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/powershell-flavoured-github-actions/</guid>
+      <description>Carrying out PowerShell based GitHub Actions in less than a minute? Colour me impressed!</description>
+    </item>
+    
+    <item>
+      <title>Crouton #9 - Free, with Attribution</title>
+      <link>https://blog.toastit.dev/blog/crouton-9-attribution/</link>
+      <pubDate>Thu, 04 Oct 2018 02:07:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-9-attribution/</guid>
+      <description>Where did that toast come from? Who cooked it?! If only it was attributed to someone&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>I Need You! #Hacktoberfest</title>
+      <link>https://blog.toastit.dev/blog/hacktoberfest-2018/</link>
+      <pubDate>Mon, 01 Oct 2018 18:42:53 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/hacktoberfest-2018/</guid>
+      <description>This is my third Hacktoberfest, the event that made October one of my favorite months of the year!</description>
+    </item>
+    
+    <item>
+      <title>Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes</title>
+      <link>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</link>
+      <pubDate>Thu, 23 Aug 2018 22:22:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</guid>
+      <description>Time for a bit of Exchange flavoured spring cleaning? Let&amp;rsquo;s find some un-needed shared mailboxes!</description>
+    </item>
+    
+    <item>
+      <title>Crouton #8 - I like Your Code, but I Don&#39;t Want It on All My Computers</title>
+      <link>https://blog.toastit.dev/blog/crouton-8-i-like-your-code-but-i-dont-want-it-on-all-my-computers/</link>
+      <pubDate>Mon, 20 Aug 2018 17:18:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-8-i-like-your-code-but-i-dont-want-it-on-all-my-computers/</guid>
+      <description>I get you; you like toast, but you don&amp;rsquo;t want to put a toaster on 100 desks.</description>
+    </item>
+    
+    <item>
+      <title>Copying Office 365 User Licensing</title>
+      <link>https://blog.toastit.dev/blog/copying-office-365-user-licensing/</link>
+      <pubDate>Mon, 23 Jul 2018 17:06:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/copying-office-365-user-licensing/</guid>
+      <description>Spoiler alert: this post didn&amp;rsquo;t end up the way I expected it to when I started writing&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Keeping Credentials Safe, But Accessible</title>
+      <link>https://blog.toastit.dev/blog/safe-credentials/</link>
+      <pubDate>Mon, 09 Jul 2018 22:15:24 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/safe-credentials/</guid>
+      <description>How do you deal with credentials in your scripts? Personally, I&amp;rsquo;m a Credential Manager kind of guy.</description>
+    </item>
+    
+    <item>
+      <title>PS Scheduled Jobs: Exploring Your Options</title>
+      <link>https://blog.toastit.dev/blog/exploring-your-options/</link>
+      <pubDate>Fri, 29 Jun 2018 15:12:52 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/exploring-your-options/</guid>
+      <description>We&amp;rsquo;ve been looking into PowerShell Scheduled Jobs lately, today let&amp;rsquo;s have a quick look at the &amp;ldquo;options&amp;rdquo; available to us.</description>
+    </item>
+    
+    <item>
+      <title>Fully Qualified Path to PowerShell.exe in Scheduled Jobs?</title>
+      <link>https://blog.toastit.dev/blog/scheduled-job-qualified/</link>
+      <pubDate>Tue, 19 Jun 2018 19:41:46 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/scheduled-job-qualified/</guid>
+      <description>Much sooner than expected, let&amp;rsquo;s talk about Windows PowerShell scheduled jobs again.</description>
+    </item>
+    
+    <item>
+      <title>PowerShell Orchestration with Scheduled Jobs - The Start of a Series</title>
+      <link>https://blog.toastit.dev/blog/powershell-orchestration-with-scheduled-jobs-the-start-of-a-series/</link>
+      <pubDate>Sun, 17 Jun 2018 22:12:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/powershell-orchestration-with-scheduled-jobs-the-start-of-a-series/</guid>
+      <description>In an effort to spread my love of Windows PowerShell scheduled jobs, this is the start of series on the subject.</description>
+    </item>
+    
+    <item>
+      <title>A Graphical Example of the Value of Planet PowerShell</title>
+      <link>https://blog.toastit.dev/blog/a-graphical-example-of-the-value-of/</link>
+      <pubDate>Fri, 01 Jun 2018 14:53:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/a-graphical-example-of-the-value-of/</guid>
+      <description>If you have a PowerShell blog, I can&amp;rsquo;t overstate how valuable it is to get your feed hooked up to Planet PowerShell!</description>
+    </item>
+    
+    <item>
+      <title>Automatic Blog Archive Tweets</title>
+      <link>https://blog.toastit.dev/blog/automatic-blog-archive-tweets/</link>
+      <pubDate>Tue, 29 May 2018 05:54:09 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/automatic-blog-archive-tweets/</guid>
+      <description>This morning I was up at 4 AM, live streaming the creation of an auto-tweet script.</description>
+    </item>
+    
+    <item>
+      <title>Downloading an Image for Local Use</title>
+      <link>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</link>
+      <pubDate>Sun, 27 May 2018 12:55:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</guid>
+      <description>This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&amp;rsquo;m disappointed that I didn&amp;rsquo;t get to it sooner.</description>
+    </item>
+    
+    <item>
+      <title>Get the (Tech)Snip!</title>
+      <link>https://blog.toastit.dev/blog/techsnips-intro/</link>
+      <pubDate>Tue, 15 May 2018 13:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/techsnips-intro/</guid>
+      <description>TechSnips is a new e-learning service and I’ve been recording content for it, along with many other contributors.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #7 – Superhero Landing</title>
+      <link>https://blog.toastit.dev/blog/crouton-heroimages/</link>
+      <pubDate>Sat, 12 May 2018 14:45:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-heroimages/</guid>
+      <description>Ever find yourself needing to get an image up on your screen in a timely manner?</description>
+    </item>
+    
+    <item>
+      <title>All I Want Is a Damned CSV!</title>
+      <link>https://blog.toastit.dev/blog/ps-csv/</link>
+      <pubDate>Wed, 18 Apr 2018 20:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ps-csv/</guid>
+      <description>CSVs are pretty handy, right? And there is a cmdlet that&amp;rsquo;ll handle this for you!</description>
+    </item>
+    
+    <item>
+      <title>A Quick Look Back at #PSHSummit 2018</title>
+      <link>https://blog.toastit.dev/blog/summit2018-hindsight/</link>
+      <pubDate>Mon, 16 Apr 2018 13:15:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-hindsight/</guid>
+      <description>After another three flights, and 16 hours in the air, I&amp;rsquo;m back home in New Zealand. I can certainly say that the change in time zones has hit me harder coming back. Going over to Bellevue, I got right into things and felt (for the most part) normal.
+Last week I did a blog post for each dayof the PowerShell &amp;#43; DevOps Global Summit, going over what I took part in that day and what my main takeaways were.</description>
+    </item>
+    
+    <item>
+      <title>Day Four of #PSHSummit 2018 - Iron Scripter</title>
+      <link>https://blog.toastit.dev/blog/summit2018-day4/</link>
+      <pubDate>Thu, 12 Apr 2018 17:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-day4/</guid>
+      <description>That&amp;rsquo;s it. It&amp;rsquo;s over. I&amp;rsquo;ve shaken many hand, met many people, and seen lots of PowerShell.</description>
+    </item>
+    
+    <item>
+      <title>Day Three of #PSHSummit 2018 - I Did the Thing</title>
+      <link>https://blog.toastit.dev/blog/summit2018-day3/</link>
+      <pubDate>Wed, 11 Apr 2018 18:59:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-day3/</guid>
+      <description>Today was the reason I was able to be here at Summit. Today was the day I presented in front of about 100 people.</description>
+    </item>
+    
+    <item>
+      <title>Day Two of #PSHSummit 2018 - Getting Smart</title>
+      <link>https://blog.toastit.dev/blog/summit2018-day2/</link>
+      <pubDate>Tue, 10 Apr 2018 16:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-day2/</guid>
+      <description>No comments about the plumbing or anything today, having gotten over the initial shock.</description>
+    </item>
+    
+    <item>
+      <title>Day One of #PSHSummit 2018 - Bright-Eyed and Bushy-Tailed</title>
+      <link>https://blog.toastit.dev/blog/summit2018-day1/</link>
+      <pubDate>Mon, 09 Apr 2018 18:50:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/summit2018-day1/</guid>
+      <description>Why the hell are American toilets so full?</description>
+    </item>
+    
+    <item>
+      <title>Crouton #6 – Dance to Your Own Beat</title>
+      <link>https://blog.toastit.dev/blog/crouton-sounds/</link>
+      <pubDate>Sun, 01 Apr 2018 16:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-sounds/</guid>
+      <description>It gives me a glimpse into how people are using the module and it also focuses my documentation efforts on something that might actually be useful.</description>
+    </item>
+    
+    <item>
+      <title>Need PowerShell Help? Use #PSHelp!</title>
+      <link>https://blog.toastit.dev/blog/pshelp-twitter/</link>
+      <pubDate>Mon, 19 Mar 2018 19:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/pshelp-twitter/</guid>
+      <description>If you&amp;rsquo;re looking for some help, try #PSHelp. If you&amp;rsquo;ve got knowledge to share (and you do), make sure you jump in and get involved!</description>
+    </item>
+    
+    <item>
+      <title>Where the bloody hell are ya?</title>
+      <link>https://blog.toastit.dev/blog/where-are-you/</link>
+      <pubDate>Sun, 11 Mar 2018 20:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/where-are-you/</guid>
+      <description>This seems like a decent excuse for a &amp;lsquo;State of the Blog&amp;rsquo; post.</description>
+    </item>
+    
+    <item>
+      <title>DIY AppId and WiX, for Tasty Toast</title>
+      <link>https://blog.toastit.dev/blog/burnttoast-wix/</link>
+      <pubDate>Fri, 02 Mar 2018 15:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/burnttoast-wix/</guid>
+      <description>This time around, I&amp;rsquo;ll walk you through how to create your own installer.</description>
+    </item>
+    
+    <item>
+      <title>BurntToast &#43; AppId = It&#39;s Working!</title>
+      <link>https://blog.toastit.dev/blog/burnttoast-appid-installer/</link>
+      <pubDate>Sat, 03 Feb 2018 18:45:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/burnttoast-appid-installer/</guid>
+      <description>I can&amp;rsquo;t tell you how happy I am to be writing this post.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #5 – Password Expiry Warning</title>
+      <link>https://blog.toastit.dev/blog/crouton-password/</link>
+      <pubDate>Wed, 24 Jan 2018 21:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-password/</guid>
+      <description>How the heck did that happen, isn&amp;rsquo;t the system meant to give me some warning?</description>
+    </item>
+    
+    <item>
+      <title>New Year&#39;s Resolutions - 2018</title>
+      <link>https://blog.toastit.dev/blog/resolution-2018/</link>
+      <pubDate>Tue, 02 Jan 2018 11:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/resolution-2018/</guid>
+      <description>Woah, 2017 flew by.</description>
+    </item>
+    
+    <item>
+      <title>KovertKringle: Secret Santa With a Dash of PowerShell</title>
+      <link>https://blog.toastit.dev/blog/kovertkringle/</link>
+      <pubDate>Mon, 11 Dec 2017 14:46:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/kovertkringle/</guid>
+      <description>Given it&amp;rsquo;s the holiday season, I worked on a PowerShell based Secret Santa Organizer</description>
+    </item>
+    
+    <item>
+      <title>Avoiding DateTime Headaches</title>
+      <link>https://blog.toastit.dev/blog/datetime-headache/</link>
+      <pubDate>Sun, 05 Nov 2017 19:15:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/datetime-headache/</guid>
+      <description>Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style.</description>
+    </item>
+    
+    <item>
+      <title>#PSBlogWeek 2017 Recap</title>
+      <link>https://blog.toastit.dev/blog/psblogweek-recap/</link>
+      <pubDate>Sat, 21 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/psblogweek-recap/</guid>
+      <description>It was a great event, with five days worth of awesome PowerShell content coming out!</description>
+    </item>
+    
+    <item>
+      <title>Creating Storage Reports With PowerShell</title>
+      <link>https://blog.toastit.dev/blog/powershell-storage-report/</link>
+      <pubDate>Mon, 16 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/powershell-storage-report/</guid>
+      <description>Whether they&amp;rsquo;re nearly empty, nearly full, or somewhere in-between, it&amp;rsquo;s helpful to get a quick overview of all your servers&amp;rsquo; hard drives.</description>
+    </item>
+    
+    <item>
+      <title>BurntToast Breaking Change: Hiding Customizable AppID</title>
+      <link>https://blog.toastit.dev/blog/burnttoast-no-appid/</link>
+      <pubDate>Sun, 08 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/burnttoast-no-appid/</guid>
+      <description>I hate reducing customizability, just as much as I hate making breaking changes in my projects.</description>
+    </item>
+    
+    <item>
+      <title>October: The Hackiest Month of the Year</title>
+      <link>https://blog.toastit.dev/blog/oct-17/</link>
+      <pubDate>Sun, 01 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/oct-17/</guid>
+      <description>Summits, Blogging, and Hacking make October the &amp;lsquo;hackiest&amp;rsquo; month of the year.</description>
+    </item>
+    
+    <item>
+      <title>Recurrence Patterns and PowerShell</title>
+      <link>https://blog.toastit.dev/blog/recurrence-pattern/</link>
+      <pubDate>Mon, 25 Sep 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/recurrence-pattern/</guid>
+      <description>There&amp;rsquo;s one thing that bugs me when scheduling scripts from the prompt, however: Recurrence.</description>
+    </item>
+    
+    <item>
+      <title>Revisiting Windows Updates in 2017: The Lab Setup</title>
+      <link>https://blog.toastit.dev/blog/wu-2017-revisit-setup/</link>
+      <pubDate>Wed, 16 Aug 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/wu-2017-revisit-setup/</guid>
+      <description>It&amp;rsquo;s been nine months, time to revisit the prevention of Windows Update reboots.</description>
+    </item>
+    
+    <item>
+      <title>Office 365 &amp; PowerShell: Connecting All the Pieces</title>
+      <link>https://blog.toastit.dev/blog/o365-all-the-things/</link>
+      <pubDate>Thu, 03 Aug 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/o365-all-the-things/</guid>
+      <description>Now that we&amp;rsquo;ve figured out how to connect to each of the Office 365 services, it&amp;rsquo;s time to tie a pretty (PowerShell) blue bow on it.</description>
+    </item>
+    
+    <item>
+      <title>Office 365 &amp; PowerShell: Jacking Into the Matrix</title>
+      <link>https://blog.toastit.dev/blog/o365-connect/</link>
+      <pubDate>Thu, 27 Jul 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/o365-connect/</guid>
+      <description>Just like their on-premises counterparts, each of these products has their own PowerShell interface for management.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #4 – Getting Your Head Around Headers</title>
+      <link>https://blog.toastit.dev/blog/crouton-headers/</link>
+      <pubDate>Mon, 15 May 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-headers/</guid>
+      <description>Headers, introduced in the Creators Update, can be used to organize you toasts.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #3 - Sometimes You Just Want to Click Your Toast</title>
+      <link>https://blog.toastit.dev/blog/crouton-clickable/</link>
+      <pubDate>Sun, 07 May 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-clickable/</guid>
+      <description>Buttons can look pretty ugly when only using one, so just click your Toast instead!</description>
+    </item>
+    
+    <item>
+      <title>Crouton #2 - You Can&#39;t Stop Progress (Bars)</title>
+      <link>https://blog.toastit.dev/blog/crouton-progress-bars/</link>
+      <pubDate>Sat, 29 Apr 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-progress-bars/</guid>
+      <description>April saw the release of the Creators Update for Windows 10 which brought with it a handful of new options for toast notifications.</description>
+    </item>
+    
+    <item>
+      <title>Always Ask for the API</title>
+      <link>https://blog.toastit.dev/blog/always-api/</link>
+      <pubDate>Mon, 24 Apr 2017 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/always-api/</guid>
+      <description>Your business uses two disparate cloud services and needs them to share data, but they don’t integrate natively. You really don’t need to make this harder than it needs to be.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #1 - Toast Notifications for New Stack Overflow Questions</title>
+      <link>https://blog.toastit.dev/blog/crouton-stackwatch/</link>
+      <pubDate>Sun, 19 Mar 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-stackwatch/</guid>
+      <description>A crouton is a small piece of toast for soup or salads. Or, a small piece of (burnt) toast</description>
+    </item>
+    
+    <item>
+      <title>Reporting on Trello Boards with PowerTrello</title>
+      <link>https://blog.toastit.dev/blog/trello-report/</link>
+      <pubDate>Sun, 05 Mar 2017 12:54:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/trello-report/</guid>
+      <description>Nothing distracts a room full of nerds faster than technology.</description>
+    </item>
+    
+    <item>
+      <title>DHCP Reservations: No Cluster? No Problem!</title>
+      <link>https://blog.toastit.dev/blog/dhcp-reservations/</link>
+      <pubDate>Sun, 29 Jan 2017 12:50:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/dhcp-reservations/</guid>
+      <description>Have multiple DHCP servers that aren’t in a cluster? Don’t worry!</description>
+    </item>
+    
+    <item>
+      <title>New Year’s Resolutions - 2017</title>
+      <link>https://blog.toastit.dev/blog/resolution-2017/</link>
+      <pubDate>Thu, 05 Jan 2017 12:48:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/resolution-2017/</guid>
+      <description>New Year’s Resolutions are the in thing, right?</description>
+    </item>
+    
+    <item>
+      <title>PowerShell Updateable Help Frustration</title>
+      <link>https://blog.toastit.dev/blog/updatable-help-frustration/</link>
+      <pubDate>Mon, 07 Nov 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/updatable-help-frustration/</guid>
+      <description>AAAAAAAAAAAAARRGH!</description>
+    </item>
+    
+    <item>
+      <title>Validating Prevention of Automatic Reboots on Windows 10, Version 1607</title>
+      <link>https://blog.toastit.dev/blog/wu-windows-1607/</link>
+      <pubDate>Mon, 17 Oct 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/wu-windows-1607/</guid>
+      <description>Over a year ago, I answered a question on Super User. The question was about stopping the very persistent Windows Update from rebooting without the users’ consent, and wow was that ever a popular topic.</description>
+    </item>
+    
+    <item>
+      <title>Automatically Shutting Down My Home Server, so I Don&#39;t Have To</title>
+      <link>https://blog.toastit.dev/blog/home-server-shutdown/</link>
+      <pubDate>Sun, 03 Jul 2016 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/home-server-shutdown/</guid>
+      <description>My home server, nestled behind the TV, is an old HP workstation. It&amp;rsquo;s not exactly what I&amp;rsquo;d call&amp;hellip; power efficient.</description>
+    </item>
+    
+    <item>
+      <title>Giving ValidateScript a Makeover</title>
+      <link>https://blog.toastit.dev/blog/ugly-validation/</link>
+      <pubDate>Wed, 22 Jul 2015 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ugly-validation/</guid>
+      <description>Figure out what you did wrong and don&amp;rsquo;t do it again. Good luck!</description>
+    </item>
+    
+    <item>
+      <title>Mini Post: 20 More Pulseway Alerts with PowerShell</title>
+      <link>https://blog.toastit.dev/blog/more-alerts/</link>
+      <pubDate>Thu, 02 Jul 2015 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/more-alerts/</guid>
+      <description>In this mini post I&amp;rsquo;ll list 20 more ideas for PowerShell fuelled Pulseway alerts.</description>
+    </item>
+    
+    <item>
+      <title>With PowerShell, Pulseway Can Alert on Anything</title>
+      <link>https://blog.toastit.dev/blog/pulseway-all-the-alerts/</link>
+      <pubDate>Mon, 29 Jun 2015 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/pulseway-all-the-alerts/</guid>
+      <description>Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&amp;rsquo;t present in the OS after booting up? Uhh&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Splatting your way to reduced duplicated code</title>
+      <link>https://blog.toastit.dev/blog/ps-splatting/</link>
+      <pubDate>Tue, 23 Sep 2014 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ps-splatting/</guid>
+      <description>You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet.</description>
+    </item>
+    
+    <item>
+      <title>Repairing Trust Relationships Without a Reboot</title>
+      <link>https://blog.toastit.dev/blog/trust-no-reboot/</link>
+      <pubDate>Sun, 21 Sep 2014 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/trust-no-reboot/</guid>
+      <description>Perhaps it was a helpdesk technician powering up a cloned desktop while connected to the network.</description>
+    </item>
+    
+    <item>
+      <title>The Single Most Important Resource When Learning Windows PowerShell</title>
+      <link>https://blog.toastit.dev/blog/ps-important-resource/</link>
+      <pubDate>Sat, 13 Sep 2014 12:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/ps-important-resource/</guid>
+      <description>There is one thing I learnt to do early on and continue to do to this day: Ask for help.</description>
+    </item>
+    
+  </channel>
+</rss>

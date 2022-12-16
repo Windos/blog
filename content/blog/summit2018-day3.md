@@ -3,7 +3,7 @@ categories = ["PowerShell", "Meta"]
 date = 2018-04-11T18:59:00Z
 description = ""
 draft = false
-image = "__GHOST_URL__/content/images/2018/05/170223-M-GJ704-948--1-.JPG"
+thumbnail = "/2018/05/170223-M-GJ704-948--1-.JPG"
 slug = "summit2018-day3"
 summary = "Today was the reason I was able to be here at Summit. Today was the day I presented in front of about 100 people."
 tags = ["PowerShell", "Meta"]
@@ -22,7 +22,7 @@ If you haven't read the previous recap posts, please do [check them out](https:/
 
 [Jeff Hicks](https://twitter.com/JeffHicks)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/Jeff-large.jpg" >}}
+{{< figure src="/2018/05/Jeff-large.jpg" >}}
 
 I walked out of this session feeling well armed to start working on my own DSC resources. Until now I've known I'm going to need to do it at some stage but hadn't actually looked into the process of doing so. From the outside, it looked like a mammoth task that I'd never have the time to work through.
 
@@ -36,7 +36,7 @@ I have a feeling this talk may result in a potential cDscPulseway resource somet
 
 [Jason Helmick](https://twitter.com/theJasonHelmick)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/Jason-large.jpg" >}}
+{{< figure src="/2018/05/Jason-large.jpg" >}}
 
 I can't say anything that will ever get across Jason's energy with any form of accuracy. He is just as enthusiastic in person as he is in his videos. He knows his stuff and he **loves** being able to teach others.
 
@@ -50,7 +50,7 @@ JEA is a thing that's going to need to be done, one way or another. I'm hoping t
 
 Aaaaaaaaaah!
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/Me-large.jpg" >}}
+{{< figure src="/2018/05/Me-large.jpg" >}}
 
 After yesterday's post went live, I did a practice run for my session. In my hotel room. Out loud. My neighbors must have thought I was crazy.
 
@@ -66,7 +66,7 @@ I was humbled by the number of people that decided to attend my talk. 100 people
 
 [Josh Duffney](https://twitter.com/joshduffney)
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/Duffney-large.jpg" >}}
+{{< figure src="/2018/05/Duffney-large.jpg" >}}
 
 I'd actually seen this presentation previously at a PowerShell User Group. It was interesting to see how Josh had refined the talk between then and now.
 
@@ -98,7 +98,7 @@ Tomorrow is the final day of the Summit, and will conclude with the Iron Scripte
 
 Finally, if there are any typos, or incoherent sentences in this post... I really don't know why they're there...
 
-{{< figure src="__GHOST_URL__/content/images/2018/05/beer.jpg" >}}
+{{< figure src="/2018/05/beer.jpg" >}}
 
 Also, remember that if you're looking for [PowerShell help](https://king.geek.nz/2018/03/20/pshelp-twitter/), you can find it on Twitter using [#PSHelp](https://twitter.com/search?f=tweets&vertical=default&q=%23pshelp&src=typd)!
 
