@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  How I Failed My Way to Success with Azure Pipelines - Part 2: Release - ToastIT
+  </title>
+  <meta name="description" content="What good is a nicely built PowerShell module if no one can use it? Time to release it into the wild!" />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="How I Failed My Way to Success with Azure Pipelines - Part 2: Release" />
+<meta property="og:description" content="What good is a nicely built PowerShell module if no one can use it? Time to release it into the wild!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-02-17T09:08:32+00:00" />
+<meta property="article:modified_time" content="2019-02-17T09:08:32+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How I Failed My Way to Success with Azure Pipelines - Part 2: Release"/>
+<meta name="twitter:description" content="What good is a nicely built PowerShell module if no one can use it? Time to release it into the wild!"/>
+
+  <meta itemprop="name" content="How I Failed My Way to Success with Azure Pipelines - Part 2: Release">
+<meta itemprop="description" content="What good is a nicely built PowerShell module if no one can use it? Time to release it into the wild!"><meta itemprop="datePublished" content="2019-02-17T09:08:32+00:00" />
+<meta itemprop="dateModified" content="2019-02-17T09:08:32+00:00" />
+<meta itemprop="wordCount" content="2668">
+<meta itemprop="keywords" content="PowerShell,Azure," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">How I Failed My Way to Success with Azure Pipelines - Part 2: Release</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    February 17, 2019
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      13&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      2668&nbsp;words
+      
+    </h5>
+
+    <p>Despite the name of this series of posts, the first one didn&rsquo;t contain too many fails. Credit where credit is due, that&rsquo;s because of <a href="https://twitter.com/TylerLeonhardt" target="_blank" rel="noopener">Tyler&amp;rsquo;s</a>
+ ground work on the build pipeline front. When it came to release pipelines I was flying blind, bring on the fails!</p>
+<p>Missed part one of this series? <a href="https://king.geek.nz/2019/02/07/how-i-failed-my-way-to-success-with-azure-pipelines/" target="_blank" rel="noopener">Read it first!</a>
+</p>
+<h2 id="if-you-dont-clean-your-room-you-wont-get-any-yaml">If You Don&rsquo;t Clean Your Room, You Won&rsquo;t Get Any YAML</h2>
+<p>Unlike the build pipelines we&rsquo;ve just finished with, there is (currently) no support to configure release pipelines via YAML. This means we&rsquo;ll be using the visual editor.</p>
+<h3 id="defaults-on-new-pipelines">Defaults on New Pipelines</h3>
+<p>When you go in to create a new pipeline, you&rsquo;ll be presented with a smorgasbord of templates to start with. These cover a huge range of scenarios, including deploying a Node.js app to Azure App Service and deploying a Kubernetes Cluster.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/2019-02-12--5-.png" alt="Release Pipeline Template"></p>
+<p>If one of these are close to what you&rsquo;re looking to do, go ahead and use them. For me though, I started with an empty job.</p>
+<p>You&rsquo;ll then be prompted to name your first stage. Depending on your requirements you may need to deploy to multiple stages, like &ldquo;Test&rdquo;, &ldquo;UAT&rdquo;, and &ldquo;Prod&rdquo;.</p>
+<p>For a PowerShell module though, and especially on my first run through, I just went straight to production (and why wouldn&rsquo;t you <a href="https://www.youtube.com/watch?v=5p8wTOr8AbU" target="_blank" rel="noopener">deploy to production</a>
+?)</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/StageName.png" alt="StageName"></p>
+<p>I&rsquo;m going to go back and add a preview stage within my projects in order to get preview/beta releases out on the PowerShell Gallery and GitHub as a final dry run before &ldquo;going live.&rdquo;</p>
+<p>Next, add an artifact. This is effectively letting your release pipeline know where to pull the &ldquo;bits&rdquo; from that it&rsquo;s going to release. This can come directly from your source control, such as GitHub or Azure Repos, but since we&rsquo;ve got a build pipeline setup, we&rsquo;ll stick with that.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/AddAnArtifact.PNG" alt="AddAnArtifact"></p>
+<p>If you&rsquo;re leaving your source as a build pipeline, go ahead and select the project, the specific pipeline and the default version. You <strong>can</strong> specify this at runtime manually, but I like to set it to the latest from the build pipeline.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/BuildSource.PNG" alt="BuildSource"></p>
+<p>Also, don&rsquo;t forget to name and save your pipeline. It&rsquo;s currently called &ldquo;New release pipeline&rdquo; and you can change this by clicking the name at the top of the screen. Changing the name will force you to save the pipeline&hellip; if you don&rsquo;t do this and you close the page without thinking about it&hellip; all your work&rsquo;s gone!</p>
+<p>On this screen you can also enable triggers to make deployment to your stages automatic. We&rsquo;ll discuss later that I manually create releases, but I do want to automatically deploy to the production stage when a release is created. To do this, click the pre-deployment conditions button next to the stage.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Conditions.PNG" alt="Conditions"></p>
+<p>As you&rsquo;ll see, the default here is to automatically deploy &ldquo;after release&rdquo; which is perfect for me. If you want to ensure that you have some input, you can toggle this to manual only. There&rsquo;s a lot of other options you can play with, that I haven&rsquo;t touched yet, including specify who needs to give their approval before a deployment can proceed.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/ConditionsBlade.PNG" alt="ConditionsBlade"></p>
+<p>Before we start diving into making our pipeline <strong>do</strong> something, let&rsquo;s have a look at the lay of the land around jobs and tasks. It&rsquo;s not the most intuitive thing in the world, but to start adjusting these, click the link under the stage&rsquo;s name.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/StageTasks.png" alt="StageTasks"></p>
+<p>With no jobs configured, you end up on a somewhat sparse screen and the first time I landed here I was a little confused about what&rsquo;s next.</p>
+<p>On the left you&rsquo;ll see you default job. Remember from our dive into build pipelines that jobs contain tasks, and a pipeline can have one or more jobs. If you click on the job, you can edit its settings, like name and which agent pool it uses (mainly, selecting if it runs on Windows or Linux.)</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/AgentSettings.PNG" alt="AgentSettings"></p>
+<p>What about adding tasks? Hit the &ldquo;+&rdquo; next to the name of your job. You&rsquo;ll be greeted by a (searchable) list of available tasks, select one to add them then click on an added task on the left to configure them.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/NewTask.png" alt="NewTask"></p>
+<h3 id="my-pipeline">My Pipeline</h3>
+<p>Up until now I&rsquo;ve been showing you a new/default release pipeline, but I think it&rsquo;s about time I jump over to my &ldquo;real&rdquo; one for BurntToast.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/TaskList.PNG" alt="TaskList"></p>
+<p>The first thing you&rsquo;ll notice is two &ldquo;Download Pipeline Artifact&rdquo; tasks. These are matched to two &ldquo;Publish Pipeline Artifact&rdquo; tasks in my build pipelines. You <strong>can</strong> specify a specific pipeline from which to download artifacts, otherwise it&rsquo;ll download from the default for this pipeline.</p>
+<p>The only other things to configure here are the name of the artifacts, matching what you specified in the publish task previously, and the path to download to.</p>
+<p>I spent a long time trying to figure out why I couldn&rsquo;t touch my artifacts within my later PowerShell tasks. I knew where the artifacts directory should have been, but nothing was there. Hadn&rsquo;t I specified an artifact when first starting to create this pipeline?</p>
+<p>I didn&rsquo;t realize you actually have to download the artifacts within a given job before you can use them.</p>
+<p>If you need to touch the artifacts, remember to add tasks to download them.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/ConfigDownloadArtifact.PNG" alt="ConfigDownloadArtifact"></p>
+<p>You may also notice that these pair of tasks are in preview and that there is another, confusingly similar task called &ldquo;Download Build Artifacts&rdquo;.</p>
+<p>These two pairs of tasks don&rsquo;t mix (as far as I&rsquo;m aware) so either use the &ldquo;Pipeline&rdquo; version or the &ldquo;Build&rdquo; version.</p>
+<p>Not realizing which one I&rsquo;d used in my build task (because YAML), I didn&rsquo;t initially know which one to use and again found myself wondering why my artifacts directory was still empty.</p>
+<p>Next we&rsquo;ll add various PowerShell tasks (we&rsquo;ll look at the code soon.) They are very similar to their build pipeline counterparts, just configured through the visual interface rather than YAML.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/PowerShellTask.PNG" alt="PowerShellTask"></p>
+<p>Notice that the path to my script uses the same automatic variable provided by Azure Pipelines as my Pipeline Artifact Download. That &ldquo;PipelinesScripts&rdquo; path was specified during the download as well.</p>
+<p>Each of my PowerShell tasks have some environment variables configured.</p>
+<p>The version tag task has a variable for the artifacts directory.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/EnvTag.PNG" alt="EnvTag"></p>
+<p>The PowerShell Gallery publishing task also has the artifacts directory but also has our API key.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/EnvGallery.PNG" alt="EnvGallery"></p>
+<p>And the Twitter announcement task has a lot! Once again we&rsquo;ve got the artifacts directory, but we&rsquo;ve also got our four Twitter keys, and a &ldquo;release message&rdquo; which we&rsquo;ll talk a little more about later.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/EnvTwitter.PNG" alt="EnvTwitter"></p>
+<p>These environment variables are used within our scripts like any other environment variable. For instance, the artifacts directory one that all of our tasks have would be referenced as <code>$env:ArtifactDir</code></p>
+<p>But why create those environment variables when your values are just pipeline variables. Can&rsquo;t you just reference them directly? I should be able to, if I&rsquo;m reading the documentation correctly&hellip; but I couldn&rsquo;t get it to work for hours. It&rsquo;s a little extra configuration, but this method just works, and at this stage I&rsquo;m happy with that.</p>
+<p>The final task here is the &ldquo;GitHub release (create)&rdquo; one. This is a really nice way of getting a release up on the GitHub repo for your project. If you haven&rsquo;t already done so, you&rsquo;ll need to setup OAuth to allow this action to be carried out by Azure Pipelines. Once the connection is sorted, choose the repository and &ldquo;target&rdquo; (the SHA of the commit on GitHub which forms this release&hellip; luckily this is stored in a variable automatically: <code>$(Build.SourceVersion)</code>)</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/GitRelease-1.PNG" alt="GitRelease-1"></p>
+<p>You also need to specify a tag and release title. These are using variables, which are set via one of the PowerShell tasks and we&rsquo;ll look at the code for that soon (I promise.)</p>
+<p>Our build pipeline also saved a zip file of the release, and a text file containing the release notes. These were within one of the artifacts and we&rsquo;ll use them here to flesh out our GitHub release. I&rsquo;ve also opted into adding a changelog, which lists out all of the commits since the last release.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/GitRelease-2.PNG" alt="GitRelease-2"></p>
+<p>Before we get to the code, let&rsquo;s quickly look at the custom pipeline variables we&rsquo;ll be using since it&rsquo;s right here. To manage your variables, click the tab for it below the name of your pipeline.</p>
+<p>You&rsquo;ll need five variables defined (and made secret, so one can&rsquo;t see the plain text behind them.) One is an API key for the PowerShell Gallery, with permission to publish new releases for the specific project that this pipeline will release. The other four are all Twitter&hellip; don&rsquo;t ask me why you need four keys for Twitter, but the setup for your Twitter module of choice will point you in the right direction.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Variables.PNG" alt="Variables"></p>
+<h2 id="release-scripts-totally-different-than-build-scripts">Release Scripts&hellip; Totally Different Than Build Scripts</h2>
+<p>You can see the complete script over <a href="https://github.com/Windos/BurntToast/blob/master/Azure-Pipelines/release.ps1" target="_blank" rel="noopener">on GitHub</a>
+, if you&rsquo;re wanting to jump straight to the end.</p>
+<p>We&rsquo;ll start with the switches which control which blocks of code are run by a given task, and the bootstrap step. If you skipped the previous post in this series, the bootstrap strep is where I check for, and install, modules I&rsquo;m relying on for my script to run.</p>
+<pre><code>[CmdletBinding()]
+param(
+    [switch]
+    $Bootstrap,
+
+    [switch]
+    $DefineTag,
+
+    [switch]
+    $Publish,
+
+    [switch]
+    $Announce
+)
+
+# Bootstrap step
+if ($Bootstrap.IsPresent) {
+    Write-Information &quot;Validate and install missing prerequisits for building ...&quot;
+
+    # For tweeting
+    if (-not (Get-Module -Name PSTwitterAPI -ListAvailable)) {
+        Write-Warning &quot;Module 'PSTwitterAPI' is missing. Installing 'PSTwitterAPI' ...&quot;
+        Install-Module -Name PSTwitterAPI -Scope CurrentUser -Force
+    }
+}
+</code></pre>
+<p>The only module I need to install here is <a href="https://www.powershellgallery.com/packages/PSTwitterAPI" target="_blank" rel="noopener">PSTwitterAPI</a>
+, which is the module I&rsquo;ve decided to use for getting a tweet out about my new release.</p>
+<p>My first &ldquo;real&rdquo; PowerShell task defines the version number for the release. This was stored in a text file during the build and then this is opened and assigned to a pipeline variable.</p>
+<pre><code># Define Tag step
+if ($DefineTag.IsPresent) {
+    $ReleaseVersion = Get-Content -Path $env:ArtifactDirPipelinesScriptsrelease-version.txt
+    Write-Host &quot;##vso[task.setvariable variable=RELEASETAG]$ReleaseVersion&quot;
+}
+</code></pre>
+<p>Write-Host, what the hell?! Yeah, I tried swapping that out for Write-Information, and it didn&rsquo;t work right away and I didn&rsquo;t have the patience for trying to force it to work. If you&rsquo;re curious that syntax comes direct from the <a href="https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&amp;tabs=yaml%2Cpowershell#set-in-script" target="_blank" rel="noopener">documentation</a>
+.</p>
+<p>That variable, now that it is set, can be used in any other task within this particular job, but won&rsquo;t be available in other jobs if you happen to have more than one. Where you saw <code>$(RELEASETAG)</code> previously, that was me referencing this variable.</p>
+<p>Next, we&rsquo;ll actually publish this module to the PowerShell Gallery.</p>
+<pre><code># Publish step
+if ($Publish.IsPresent) {
+    # Publish Module to PowerShell Gallery
+    Try {
+        $Splat = @{
+            Path        = (Resolve-Path -Path $env:ArtifactDirBurntToast)
+            NuGetApiKey = $env:PSGallery
+            ErrorAction = 'Stop'
+        }
+        Publish-Module @Splat
+
+        Write-Output -InputObject ('BurntToast PowerShell Module published to the PowerShell Gallery')
+    } Catch {
+        throw $_
+    }
+}
+</code></pre>
+<p>This pulls in the API key variable for the Gallery, via the environment variable set on the task. It then just references the path to our module in the Artifact Directory (again, via an environment variable) and the call the publish module cmdlet to do the deed.</p>
+<p>There is a <a href="https://marketplace.visualstudio.com/items?itemName=kenakamu.PSGalleryPublisher&amp;targetId=d10bc8e3-7165-4d4c-894b-2e4381b72c2a" target="_blank" rel="noopener">PowerShell Gallery Publisher</a>
+ task available on the Azure Pipelines marketplace, but I elected to write my own script. I just liked the idea of having a little more control, and it&rsquo;s not the most complicated of tasks to script.</p>
+<p>Once this executes, our updated module will be live on the Gallery. I&hellip; may have tested this a few times myself.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Testing.PNG" alt="Testing"></p>
+<p>The final task is in aid of letting the world know that a new release is out in the wild. We do that via Twitter, and since this is the only task that needs the Twitter module, I only call the bootstrap section at this stage.</p>
+<p>I start by checking for the module, throwing an error if it&rsquo;s not installed or importing it if it is installed.</p>
+<pre><code>if($Announce.IsPresent) {
+    if (-not (Get-Module -Name PSTwitterAPI -ListAvailable)) {
+        throw &quot;Cannot find the 'PSTwitterAPI' module. Please specify '-Bootstrap' to install release dependencies.&quot;
+    }
+
+    Import-Module -Name PSTwitterAPI
+</code></pre>
+<p>Next, let&rsquo;s use our <strong>four</strong> Twitter keys to build up a hash table and set out OAuth settings.</p>
+<pre><code>    $OAuthSettings = @{
+        ApiKey            = $env:TwitterConsumerKey
+        ApiSecret         = $env:TwitterConsumerSecret
+        AccessToken       = $env:TwitterAccessToken
+        AccessTokenSecret = $env:TwitterAccessSecret
+    }
+
+    Set-TwitterOAuthSettings @OAuthSettings
+</code></pre>
+<p>Then, pull the release version from the text file (I found this easier than referencing the variable that was set in an earlier task&hellip;) and the string representation of our tweets.</p>
+<pre><code>    $ReleaseVersion = Get-Content -Path $env:ArtifactDirPipelinesScriptsrelease-version.txt
+
+    $Tweets = @(&quot;I just pushed BurntToast v$ReleaseVersion to the #PowerShell Gallery via @AzureDevOps!$([System.Environment]::NewLine)$([System.Environment]::NewLine)$env:ReleaseMessage$([System.Environment]::NewLine)$([System.Environment]::NewLine)https://www.powershellgallery.com/packages/BurntToast/$ReleaseVersion&quot;,
+                &quot;You can also find this release over on @GitHub.$([System.Environment]::NewLine)$([System.Environment]::NewLine)Please do fire through any issue, feature requests, or submit some additional code!$([System.Environment]::NewLine)$([System.Environment]::NewLine)https://github.com/Windos/BurntToast/releases/tag/v$ReleaseVersion&quot;)
+</code></pre>
+<p>Wait, Tweets?</p>
+<p>Yeap, that&rsquo;s an array containing two (long) strings which will end up forming two tweets. The first announces the release, and links to it on the PowerShell Gallery. The second reminds people that it can also be found on GitHub and to open issues as needed.</p>
+<p>I can easily add a third tweet here, and I&rsquo;m considering including the release notes&hellip; but I don&rsquo;t believe there&rsquo;s much value in that.</p>
+<p>You&rsquo;ll have to have been <em>very</em> keen eyed, but in the first tweet I&rsquo;m referencing the <code>$env:ReleaseMessage</code> variable that we passed through to the task. This is defined when we create a release and allows me to personalize the message going out, along the lines of &ldquo;This release does x, and make sure you try y!&rdquo;</p>
+<p>Finally, we send the tweets. We do this by looping through all of our tweet strings. If we&rsquo;ve already sent a tweet, we reply to that, so we end up creating a tweet chain.</p>
+<pre><code>    foreach ($Tweet in $Tweets) {
+        if ($PrevTweet) {
+            $PrevTweet = Send-TwitterStatuses_Update -in_reply_to_status_id $PrevTweet.id.ToString() -status $Tweet
+        } else {
+            $PrevTweet = Send-TwitterStatuses_Update -status $Tweet
+        }
+    }
+}
+</code></pre>
+<p>And believe it or not&hellip; we&rsquo;re done!</p>
+<p>Well, sort of. We&rsquo;ve got to create a release now.</p>
+<h2 id="release-the-kraken">Release the Kraken!</h2>
+<p>There&rsquo;s a few options for automatically creating new releases, but given that mine ends up out on the Gallery and Twitter I didn&rsquo;t really want to risk that going AWOL. So I only create new releases manually. There&rsquo;s two main options for manually creating a release.</p>
+<p>The first is from a successful build. If I look at the history on my build pipeline, I can choose a build and select it for release.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/BuildToRelease.PNG" alt="BuildToRelease"></p>
+<p>The other options is by pressing the &ldquo;Create a release&rdquo; button when looking at your history of releases.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/NewRelease.png" alt="NewRelease"></p>
+<p>Regardless, you&rsquo;ll end up with the &ldquo;Create a new release&rdquo; blade to fill out. You&rsquo;ll need to choose an artifact, if you chose the first method this will be pre-selected and otherwise it&rsquo;ll be set to the latest.</p>
+<p>You can also fill out the release description, and I certainly do as the text I enter here ends up in my tweet.</p>
+<p>The top of the blade is a little misleading unless you stop to actually read the text. Selecting something up here overrides any automation you have on your stages and sets them to manual.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/NewReleaseBlade.PNG" alt="NewReleaseBlade"></p>
+<p>If you remember the default conditions on our production stage&hellip; if we don&rsquo;t provide an override here, creating this release will go straight into running our deployment tasks.</p>
+<p>And <strong>now</strong> we&rsquo;re done!</p>
+<h2 id="i-need-proof-of-life">I Need Proof of Life</h2>
+<p>The best way to convey this whole process, from GitHub commit to Gallery release, is to see it. I&rsquo;ve gone through this process and recorded it so you can see it all happen.</p>
+<h2 id="is-this-the-end">Is This the End?</h2>
+<p>I mentioned at the end of the previous post in this series that I wasn&rsquo;t sure if it was going to be a two or three parter. This post, like the previous one, is roughly the 3,000 words long and is beginning to feel unwieldy.</p>
+<p>There will be a third post to round out this series, covering some refinements I&rsquo;ve made to these pipelines and a summary of what I&rsquo;ve learned on this journey.</p>
+<p>In the meantime, keep an eye on <a href="https://twitter.com/WindosNZ" target="_blank" rel="noopener">Twitter</a>
+ for potential release notification and also let me know if and how you&rsquo;re using Azure Pipelines.</p>
+<p>Looking for part one of this series? <a href="https://king.geek.nz/2019/02/07/how-i-failed-my-way-to-success-with-azure-pipelines/" target="_blank" rel="noopener">Read it here!</a>
+</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

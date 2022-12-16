@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on ToastIT</title>
+    <link>https://blog.toastit.dev/tags/security/</link>
+    <description>Recent content in Security on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 29 Aug 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The War on Passwords</title>
+      <link>https://blog.toastit.dev/blog/war-on-passwords/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/war-on-passwords/</guid>
+      <description>A little over a year ago, the United States National Institute for Standards and Technology (NIST) released a draft of SP 800-63 &amp;lt;em&amp;gt;Digital Identity Guidelines&amp;lt;/em&amp;gt;. These guidelines were finalized in June. I first found out about NIST&amp;rsquo;s guidelines via Sophosand it really captured my imagination.
+(Yes, I&amp;rsquo;m including a few hyperlinks in this post. Consider them references and additional reading if you&amp;rsquo;re want to find out more.)</description>
+    </item>
+    
+    <item>
+      <title>A Very Octocat U2F Key</title>
+      <link>https://blog.toastit.dev/blog/u2f-key/</link>
+      <pubDate>Fri, 16 Oct 2015 00:55:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/u2f-key/</guid>
+      <description>Earlier this month GitHub announced, in partnership with Yubico, that they now support FIDO Universal 2nd Factor (U2F) as an option for two-factor authentication alongside their existing support for Google/Microsoft Authenticator Apps. With the announcement came a special offer: a special edition, Octocat adorned, Yubico U2F key for only $5!
+A deal too good to pass up, especially as someone that has around ten services listed in their phone&amp;rsquo;s Authenticator app.</description>
+    </item>
+    
+  </channel>
+</rss>

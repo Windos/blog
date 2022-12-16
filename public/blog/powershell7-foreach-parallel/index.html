@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob? - ToastIT
+  </title>
+  <meta name="description" content="PoshRSJob has been my go to module for Parallelization for years... let&#39;s see if a head to head test with the new PowerShell 7 feature will change that." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?" />
+<meta property="og:description" content="PoshRSJob has been my go to module for Parallelization for years... let&#39;s see if a head to head test with the new PowerShell 7 feature will change that." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/powershell7-foreach-parallel/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-09-10T09:38:52+00:00" />
+<meta property="article:modified_time" content="2019-09-10T09:38:52+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?"/>
+<meta name="twitter:description" content="PoshRSJob has been my go to module for Parallelization for years... let&#39;s see if a head to head test with the new PowerShell 7 feature will change that."/>
+
+  <meta itemprop="name" content="Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?">
+<meta itemprop="description" content="PoshRSJob has been my go to module for Parallelization for years... let&#39;s see if a head to head test with the new PowerShell 7 feature will change that."><meta itemprop="datePublished" content="2019-09-10T09:38:52+00:00" />
+<meta itemprop="dateModified" content="2019-09-10T09:38:52+00:00" />
+<meta itemprop="wordCount" content="1434">
+<meta itemprop="keywords" content="PowerShell," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    September 10, 2019
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      7&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      1434&nbsp;words
+      
+    </h5>
+
+    <p>I&rsquo;ve been a long time user of <a href="https://twitter.com/proxb" target="_blank" rel="noopener">Boe Prox&amp;rsquo;s</a>
+ module, <a href="https://www.powershellgallery.com/packages/PoshRSJob" target="_blank" rel="noopener">PoshRSJob</a>
+. For the uninitiated, this module lets you easily add a touch of <a href="https://en.wikipedia.org/wiki/Parallel_computing" target="_blank" rel="noopener">parallelization</a>
+ to your PowerShell scripts. It allows you to spin up runspaces without the headache of having to try and figure them out yourself.</p>
+<h2 id="why-bother">Why Bother?</h2>
+<p>If you&rsquo;ve ever found yourself needing to reach out onto your network and find a particular file on each of 500 different workstations you have a couple of options for how to tackle the job.</p>
+<p>First, you could iterate through the list of workstations, one at a time, and look for the file. Once you have your answer from the first machine, you move onto the second, then the third, and so on.</p>
+<p>Alternatively, you can leverage PoshRSJob so run this check on 20 (or whatever threshold you set) workstations at the same time. As the search finishes on one workstation, it starts on another.</p>
+<p>An analogy that&rsquo;s a little easier to visualize is supermarket checkouts.</p>
+<p>Imagine it takes a full minute to process a single customer wanting to buy some groceries. The supermarket only has one checkout open, so it would take them 15 minutes to empty a queue of 15 customers.</p>
+<p>The supermarket realizes if they make customers wait that long, they might end up losing sales. To get through the queue faster they open up another four checkouts and can now process five customers at once.</p>
+<p>With the additional checkouts open, they can now empty the queue in just three minutes.</p>
+<p>Thinking back to our workstation example, let&rsquo;s say that it takes five minutes to check the entire hard drive of a given workstation for the file we&rsquo;re looking for. This means checking one workstation at a time will take a grand total of over 41 hours to check all 500!</p>
+<p>Now imagine being able to check 50 at a time, we should be able to get the job done in under an hour.</p>
+<p><em>Note, there&rsquo;s some overhead involved, both in spinning up runspaces AND processing customers at the checkout, so this napkin maths isn&rsquo;t perfect.</em></p>
+<h2 id="so-whats-new">So What&rsquo;s New?</h2>
+<p>Microsoft, and many open source contributors, have been hard at work on <a href="https://github.com/powershell/powershell/" target="_blank" rel="noopener">PowerShell 7</a>
+. This upcoming release is now on its <a href="https://github.com/PowerShell/PowerShell/releases/tag/v7.0.0-preview.3" target="_blank" rel="noopener">third preview</a>
+, and is full of awesome new features that I can&rsquo;t wait to use in production.</p>
+<p>The headliner for me is the new <a href="https://devblogs.microsoft.com/powershell/powershell-foreach-object-parallel-feature/" target="_blank" rel="noopener">ForEach-Object Parallel feature</a>
+.</p>
+<p>This feature, like PoshRSJob, allows you to leverage runspaces to run parts of your scripts in parallel.</p>
+<p>This raises a question, when PowerShell 7 is generally available and I look to start using it in production, do I start using the new feature instead of PoshRSJob?</p>
+<p>One is a known entity that I&rsquo;ve used for years, but the other is built directly into the core of the language, and I know I can use it without having to grab a module from the <a href="https://www.powershellgallery.com/" target="_blank" rel="noopener">PowerShell Gallery</a>
+.</p>
+<p>The only fair thing to do, is to put both options to the test.</p>
+<h2 id="two-options-enter">Two Options Enter</h2>
+<p>Technically, there&rsquo;s three options because I&rsquo;m going to include just running everything sequentially as an option&hellip; but only to show the potential gains in parallelization in general.</p>
+<p>This test involves pinging 10 different addresses on the internet, five will be supplied as IP Addresses and the other five will be supplied as names that need to be resolved. Each address will have two echo requests sent to it, and a <a href="https://powershellexplained.com/2016-10-28-powershell-everything-you-wanted-to-know-about-pscustomobject/" target="_blank" rel="noopener">PSCustomObject </a>
+will be returned stating the address and if it responded or not.</p>
+<p>If you&rsquo;ve seen <a href="https://www.youtube.com/watch?v=Yp_m5T_kyJU" target="_blank" rel="noopener">my presentation</a>
+ on optimizing PowerShell for speed, you will have seen a smaller version of this test. Given I&rsquo;m not having to worry about on stage pacing in this format, instead of only repeating each test only five to ten times they have each been run 1000 times.</p>
+<p>Let&rsquo;s start with the sequential runs:</p>
+<pre><code>$RawTimes = [System.Collections.Generic.List[int]]::new()
+
+foreach ($Run in 1..1000) {
+    $Stopwatch = [System.Diagnostics.Stopwatch]::new()
+    $Stopwatch.Start()
+    $Targets = @('8.8.8.8',
+                 '8.8.4.4',
+                 '1.1.1.1',
+                 '1.0.0.1',
+                 '9.9.9.9',
+                 'stuff.co.nz',
+                 'trademe.co.nz',
+                 'google.com',
+                 'example.com',
+                 'toastit.dev')
+
+    foreach ($Target in $Targets) {
+        $Response = Test-Connection -ComputerName $Target -Count 2 -Quiet -InformationAction Ignore
+
+        [PSCustomObject] @{
+            Host = $Target
+            Online = $Response
+        }
+    }
+    $Stopwatch.Stop()
+    $RawTimes.Add($Stopwatch.ElapsedMilliseconds)
+}
+
+$RawTimes | Measure -Average -Minimum -Maximum
+
+Count             : 1000
+Average           : 10620.135
+Sum               :
+Maximum           : 11046
+Minimum           : 10525
+StandardDeviation :
+Property          :
+</code></pre>
+<p><em>Note, the <code>-InformationAction Ignore</code> on <code>Test-Connection</code> is included because the <a href="https://github.com/PowerShell/PowerShell/issues/6768" target="_blank" rel="noopener">current behaviour in PowerShell 7</a>
+ is that the text from the echo request is returned on the information stream even when the <code>-Quiet</code> switch is specified (the expected behaviour from Windows PowerShell 5.1 is that only a Boolean value would be output.)</em></p>
+<p>The average time to complete each iteration was over 10 seconds. Meaning the overall test took just shy of three hours to complete&hellip; my poor test VM.</p>
+<p>Next, let&rsquo;s try my old faithful PoshRSJob.</p>
+<pre><code>$PoshRSJobTimes = [System.Collections.Generic.List[int]]::new()
+
+foreach ($Run in 1..1000) {
+    $Stopwatch = [System.Diagnostics.Stopwatch]::new()
+    $Stopwatch.Start()
+    $Targets = @('8.8.8.8',
+                 '8.8.4.4',
+                 '1.1.1.1',
+                 '1.0.0.1',
+                 '9.9.9.9',
+                 'stuff.co.nz',
+                 'trademe.co.nz',
+                 'google.com',
+                 'example.com',
+                 'toastit.dev')
+
+    $Targets | Start-RSJob -Throttle 5 -ScriptBlock {
+        $Response = Test-Connection -ComputerName $_ -Count 2 -Quiet -InformationAction Ignore
+
+        [PSCustomObject] @{
+            Host = $_
+            Online = $Response
+        }
+    } | Wait-RSJob | Receive-RSJob
+    $Stopwatch.Stop()
+    $PoshRSJobTimes.Add($Stopwatch.ElapsedMilliseconds)
+}
+
+$PoshRSJobTimes | Measure -Average -Minimum -Maximum
+
+Count             : 1000
+Average           : 3254.613
+Sum               :
+Maximum           : 5987
+Minimum           : 2422
+StandardDeviation :
+Property          :
+</code></pre>
+<p>This one took a little over 3 seconds per iteration, and the entire test completed in under an hour.</p>
+<p>Finally, the new <code>ForEach-Object</code> feature.</p>
+<pre><code>$Ps7Times = [System.Collections.Generic.List[int]]::new()
+
+foreach ($Run in 1..1000) {
+    $Stopwatch = [System.Diagnostics.Stopwatch]::new()
+    $Stopwatch.Start()
+    $Targets = @('8.8.8.8',
+                 '8.8.4.4',
+                 '1.1.1.1',
+                 '1.0.0.1',
+                 '9.9.9.9',
+                 'stuff.co.nz',
+                 'trademe.co.nz',
+                 'google.com',
+                 'example.com',
+                 'toastit.dev')
+
+    $Targets | ForEach-Object -ThrottleLimit 5 -Parallel {
+        $Response = Test-Connection -ComputerName $_ -Count 2 -Quiet -InformationAction Ignore
+
+        [PSCustomObject] @{
+            Host = $_
+            Online = $Response
+        }
+    }
+    $Stopwatch.Stop()
+    $Ps7Times.Add($Stopwatch.ElapsedMilliseconds)
+}
+
+$Ps7Times | Measure -Average -Minimum -Maximum
+
+Count             : 1000
+Average           : 2461.979
+Sum               :
+Maximum           : 6028
+Minimum           : 2413
+StandardDeviation :
+Property          :
+</code></pre>
+<p>This one managed to beat out PoshRSJob by about 0.8 seconds.</p>
+<p>Note the syntax of this command for when you go to run it yourself, there&rsquo;s a new <code>-Parallel</code> parameter on <code>ForEach-Object</code> which takes a script block as input. This is different from the normal use of ForEach-Object where <code>-Process</code> would normally consume your scriptblock.</p>
+<p>The <code>-ThrottleLimit</code> parameter allows you to control how many iterations can be run at the same time and in both this test and the PoshRSJob test this was set to five. This could easily have gone higher, and for your tasks it&rsquo;ll be a case of working out your sweet spot for the throttle that will give you the best speed vs. resource usage (e.g. CPU/memory usage or network capacity.)</p>
+<h2 id="not-the-full-picture">Not the Full Picture</h2>
+<p>Looking at only those numbers, the new PowerShell 7 feature did come out ahead of PoshRSJob, however with only 100 iterations each the results were much closer: 2.8 vs. 2.7.</p>
+<p>You&rsquo;ll also notice that there are more pipelines involved in the PoshRSJob tests, where we wait for the jobs to finish and then receive their output (<code>| Wait-RSJob | Receive-RSJob</code>). It&rsquo;s possible to use a similar construct with <code>ForEach-Object</code>, but supplying the <code>-AsJob</code> switch and then using the <code>Wait-Job</code> and <code>Receive-Job</code> cmdlets.</p>
+<p>I didn&rsquo;t go for that, because I don&rsquo;t need to store my jobs in a variable and come back to them later. It&rsquo;s very possible that this is what gave the new feature the edge over a higher number of iterations.</p>
+<h2 id="the-verdict">The Verdict</h2>
+<p>I&rsquo;m not 100% sure what I was expecting when I started the project. Part of me assumed that the new feature would be handy, but not as performant as PoshRSJob, and that it would be an easy decision to just keep using it.</p>
+<p>What will actually happen is that I won&rsquo;t be re-writing my scripts, and will continue to use PoshRSJob where it is already installed and already in use. However, going forward if the system I&rsquo;m using has PowerShell 7 installed I&rsquo;ll make use of the new feature instead.</p>
+<h2 id="a-note-on-parallelization-in-general">A Note on Parallelization in General</h2>
+<p>I linked to a Microsoft PowerShell blog post about this feature earlier, but one section to pay some attention to is &ldquo;<a href="https://devblogs.microsoft.com/powershell/powershell-foreach-object-parallel-feature/#when-should-it-be-avoided" target="_blank" rel="noopener">When should it be avoided</a>
+&rdquo; section.</p>
+<p>In short, parallelization isn&rsquo;t a silver bullet. If you&rsquo;re doing something that takes a <strong>very</strong> short amount of time to complete, the overhead involved in creating a tearing down runspaces will outweigh the benefit from running in parallel making the script take longer than it would have done.</p>
+<p>As ever, it&rsquo;s important to test <strong>your</strong> use cases and pick the best solution for it.</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  How I Failed My Way to Success with Azure Pipelines - Part 1: Build - ToastIT
+  </title>
+  <meta name="description" content="Some people learn by writing. Some by watching videos. Apparently I learn by failing and head-desking." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="How I Failed My Way to Success with Azure Pipelines - Part 1: Build" />
+<meta property="og:description" content="Some people learn by writing. Some by watching videos. Apparently I learn by failing and head-desking." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-02-06T11:38:49+00:00" />
+<meta property="article:modified_time" content="2019-02-06T11:38:49+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How I Failed My Way to Success with Azure Pipelines - Part 1: Build"/>
+<meta name="twitter:description" content="Some people learn by writing. Some by watching videos. Apparently I learn by failing and head-desking."/>
+
+  <meta itemprop="name" content="How I Failed My Way to Success with Azure Pipelines - Part 1: Build">
+<meta itemprop="description" content="Some people learn by writing. Some by watching videos. Apparently I learn by failing and head-desking."><meta itemprop="datePublished" content="2019-02-06T11:38:49+00:00" />
+<meta itemprop="dateModified" content="2019-02-06T11:38:49+00:00" />
+<meta itemprop="wordCount" content="3814">
+<meta itemprop="keywords" content="PowerShell,Azure," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">How I Failed My Way to Success with Azure Pipelines - Part 1: Build</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    February 6, 2019
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      18&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      3814&nbsp;words
+      
+    </h5>
+
+    <p>When something new and shiny comes out, I find myself needing it to &ldquo;click&rdquo; with me before I go &ldquo;right, yes, I <strong>need</strong> to use that.&rdquo;</p>
+<p>This isn&rsquo;t to say I don&rsquo;t see the value in it. I just assume that it&rsquo;s for someone other than me.</p>
+<p><a href="https://azure.microsoft.com/en-us/services/devops/pipelines/" target="_blank" rel="noopener">Azure Pipelines</a>
+, part of Microsoft&rsquo;s <a href="https://azure.microsoft.com/en-us/services/devops/" target="_blank" rel="noopener">DevOps Services</a>
+, was in that box for a long time. I assumed it was way out of my league, that it could work for PowerShell projects but ones that are much bigger than what I work on.</p>
+<p>Looking for part two of this series? <a href="https://king.geek.nz/2019/02/17/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/" target="_blank" rel="noopener">Read it here!</a>
+</p>
+<h2 id="the-click-moment">The Click Moment</h2>
+<p>I remember the exact moment that Azure Pipelines clicked for me. <a href="https://twitter.com/TylerLeonhardt" target="_blank" rel="noopener">Tyler Leonhardt</a>
+, <a href="https://twitter.com/steviecoaster" target="_blank" rel="noopener">Stephen Valdinger</a>
+, and I were working on <a href="https://github.com/Windos/PoshNotify" target="_blank" rel="noopener">PoshNotify</a>
+ and Tyler <a href="https://github.com/Windos/PoshNotify/pull/17" target="_blank" rel="noopener">submitted a PR</a>
+ with the guts of a build pipeline and asked me to hook it up within Azure Pipelines.</p>
+<p>The first time I was a build run, I was sold.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/PoshNotify-BuildPipeline.PNG" alt="PoshNotify-BuildPipeline"></p>
+<p>PoshNotify is a cross-platform PowerShell module, and what Tyler had setup was a build that ran our suite of Pester tests against all of our major targets: macOS, Linux, and Windows.</p>
+<p>We wanted<a href="https://twitter.com/steviecoaster/status/1091146296205996032" target="_blank" rel="noopener">needed badges</a>
+ on our GitHub readme, and that meant sorting out things like code coverage stats. After that, publishing to the PowerShell Gallery was the next logical step, right?</p>
+<p>From there, I ran with it a little bit. I still hadn&rsquo;t quite figured everything out and just put everything, including the Gallery release, into our build pipeline rather than branching out to a release pipeline.</p>
+<p>Still, for a first attempt, I&rsquo;m really happy that I got it going.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/PoshNotify-CoverageAndGallery.PNG" alt="PoshNotify-CoverageAndGallery"></p>
+<p>That was my &ldquo;click&rdquo; moment, which got me hooked on Azure Pipelines. But this specific project isn&rsquo;t the topic of this post&hellip; instead let&rsquo;s have a look at my second attempt at setting this up for a PowerShell project: <a href="https://github.com/Windos/BurntToast" target="_blank" rel="noopener">BurntToast</a>
+.</p>
+<h2 id="laying-the-groundwork">Laying the Groundwork</h2>
+<p>Since the basis of my build pipeline is ensuring that nothing is broken, I needed to expand (or rather create) my suite of Pester tests. When I looked into it, it turned out that the <em>only</em> tests I had previously written for BurntToast were for a function that no longer existed. Oops.</p>
+<p>Effectively, I was starting from nothing, which meant I needed to take a step back and think about how I was going to go about actually testing all this stuff. Like&hellip; how do I test that a toast displayed?</p>
+<p>Once again, I took inspiration from Tyler. Over on PoshNotify we were testing the output when you supply the <code>WhatIf</code> flag. For the actual toasts, this meant being able to check that the XML generated matched what I expect it to be. It also allowed me to test the complex objects being created by the bulk of the other functions too.</p>
+<p>It turns out, though, that I didn&rsquo;t have WhatIf wired up. My first task was to go through each of my functions and set up <code>ShouldProcess</code>. Check out an example of how this was done at the end of <a href="https://github.com/Windos/BurntToast/blob/master/BurntToast/Public/Submit-BTNotification.ps1" target="_blank" rel="noopener">Submit-BTNotification</a>
+.</p>
+<p>I found that some of my What If output was far too long, and it was causing line breaks to be added at random points, and Pester assertions to fail.</p>
+<p>This meant I had to undertake steps to reduce line lengths.</p>
+<p>This &ldquo;What If&rdquo; work sorted, I manually pushed a <a href="https://www.powershellgallery.com/packages/BurntToast/0.6.3" target="_blank" rel="noopener">release of BurntToast</a>
+ to the Gallery. In theory this would be the last time I edit the user facing code while going on my Pipelines journey.</p>
+<p>The final piece of ground work was writing the <a href="https://github.com/Windos/BurntToast/blob/master/Tests/BurntToast.Tests.ps1" target="_blank" rel="noopener">test cases</a>
+. If you&rsquo;re curious about how to test What If output, go have a look, it&rsquo;s basically a case of starting a transcript, running your test, and pulling the What If message from the transcript. Check that it&rsquo;s what you&rsquo;re expecting, and you&rsquo;re done!</p>
+<p>Some objects included paths to files on disk. These could not be hard coded so variables had to be used in the expected What If string to account for this.</p>
+<h2 id="building-your-build-pipeline">Building Your Build Pipeline</h2>
+<p>After a very long introduction, it&rsquo;s finally time to start getting into the meat of Azure Pipelines. There is a graphical editor for this, and we&rsquo;ll see this later when we move on to release pipelines (because it&rsquo;s the only option), but we&rsquo;re going to be doing this in straight YAML.</p>
+<p>Before we get too far into this, there is an <a href="https://marketplace.visualstudio.com/items?itemName=ms-azure-devops.azure-pipelines" target="_blank" rel="noopener">Azure Pipelines extension</a>
+ for <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</a>
+. I highly recommend installing it, as it&rsquo;ll help to ensure that your YAML is valid. I didn&rsquo;t know about it until after I was done and it would have saved me many headaches.</p>
+<p>By default your YAML file will be called <code>azure-pipelines.yml</code> and be stored in the root of your repo. But you don&rsquo;t have to stick to that convention. I made the decision to have a directory called Azure-Pipelines where I store all of the related configuration files and scripts.</p>
+<p>If you want to jump forward and see &ldquo;the goods&rdquo; check out <a href="https://github.com/Windos/BurntToast/blob/master/Azure-Pipelines/build.yml" target="_blank" rel="noopener">build.yml</a>
+ and <a href="https://github.com/Windos/BurntToast/blob/master/Azure-Pipelines/build.ps1" target="_blank" rel="noopener">build.ps1</a>
+</p>
+<p>We&rsquo;re about to go through a lot of code, both PowerShell and YAML. I&rsquo;ll do my best to tackle this in manageable chunks and will highlight areas of peak failure as we go.</p>
+<h3 id="metadata-bonus-points-for-puns">Metadata (Bonus Points for Puns)</h3>
+<p>First, some configuration for the entire build pipeline.</p>
+<pre><code>jobs:
+- job: CookToast
+  displayName: 'Cook Toast'
+  pool:
+    vmImage: 'VS2017-Win2016'
+  steps:
+</code></pre>
+<p>These pipelines are divided into Jobs, Steps, and Tasks. PoshNotify has multiple jobs, one for each operating system, but on BurntToast I only needed one. I named the job &lsquo;CookToast&rsquo;, and this name can&rsquo;t have a space in it&hellip; hence the display name specified just under it.</p>
+<p>The only other interesting thing here the <code>vmImage</code> line, which let&rsquo;s Azure know which pool we want to run our tasks on. I haven&rsquo;t actually found a list of available images (as the one&rsquo;s Tyler used gave me what I needed), but this 2016 one has been a workhorse for me.</p>
+<h3 id="getting-our-first-test-on">Getting Our (First) Test On</h3>
+<p>Next, we&rsquo;ll run our first task.</p>
+<pre><code>  - task: PowerShell@2
+    displayName: 'Run tests (individual .ps1 files)'
+    inputs:
+      targetType: Inline
+      script: ./Azure-Pipelines/build.ps1 -Bootstrap -Test
+</code></pre>
+<p>This is where we can start flexing our PowerShell muscles. The task is a pre-defined block provided by Microsoft for run PowerShell code. The <code>@2</code> indicated that we&rsquo;re using the second version.</p>
+<p>If you don&rsquo;t provide a display name, you&rsquo;ll end up with the generic name&hellip; which gets very confusing if you&rsquo;ve got more than one of these.</p>
+<p>As you may have guessed from the display name, and the switches against the script, this task runs our tests, but what code is it running? And what&rsquo;s with the bootstrap switch?</p>
+<p>The working directory when your scripts are running is the root of your repo (or a copy of it), so &ldquo;./Azure-Pipelines&rdquo; refers to a folder within that root.</p>
+<pre><code>[CmdletBinding()]
+param(
+    [switch]
+    $Bootstrap,
+
+    [switch]
+    $Compile,
+
+    [switch]
+    $Test
+)
+
+# Bootstrap step
+if ($Bootstrap.IsPresent) {
+    Write-Information &quot;Validate and install missing prerequisits for building ...&quot;
+
+    # For testing Pester
+    if (-not (Get-Module -Name Pester -ListAvailable)) {
+        Write-Warning &quot;Module 'Pester' is missing. Installing 'Pester' ...&quot;
+        Install-Module -Name Pester -Scope CurrentUser -Force
+    }
+
+    if (-not (Get-Module -Name PSCodeCovIo -ListAvailable)) {
+        Write-Warning &quot;Module 'PSCodeCovIo' is missing. Installing 'PSCodeCovIo' ...&quot;
+        Install-Module -Name PSCodeCovIo -Scope CurrentUser -Force
+    }
+}
+
+# Test step
+if($Test.IsPresent) {
+    if (-not (Get-Module -Name Pester -ListAvailable)) {
+        throw &quot;Cannot find the 'Pester' module. Please specify '-Bootstrap' to install build dependencies.&quot;
+    }
+
+    if (-not (Get-Module -Name PSCodeCovIo -ListAvailable)) {
+        throw &quot;Cannot find the 'PSCodeCovIo' module. Please specify '-Bootstrap' to install build dependencies.&quot;
+    }
+
+    $RelevantFiles = (Get-ChildItem ./BurntToast -Recurse -Include &quot;*.psm1&quot;,&quot;*.ps1&quot;).FullName
+
+    if ($env:TF_BUILD) {
+        $res = Invoke-Pester &quot;./Tests&quot; -OutputFormat NUnitXml -OutputFile TestResults.xml -CodeCoverage $RelevantFiles -PassThru
+        if ($res.FailedCount -gt 0) { throw &quot;$($res.FailedCount) tests failed.&quot; }
+    } else {
+        $res = Invoke-Pester &quot;./Tests&quot; -CodeCoverage $RelevantFiles -PassThru
+    }
+
+    Export-CodeCovIoJson -CodeCoverage $res.CodeCoverage -RepoRoot $pwd -Path coverage.json
+
+    Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
+}
+</code></pre>
+<p>The top of our PowerShell script has a bunch of switches, this lets us control which parts of the code is run by a given task.</p>
+<p>This first task includes a bootstrap option which checks for any required dependencies and installs them if needed. We obviously need <a href="https://www.powershellgallery.com/packages/Pester" target="_blank" rel="noopener">Pester</a>
+ to run our tests, but what is <a href="https://www.powershellgallery.com/packages/PSCodeCovIo" target="_blank" rel="noopener">PSCodeCovIo</a>
+? We&rsquo;ll see a little more of this in a moment, but in short it transforms code coverage stats from Pester into a format that <a href="https://codecov.io/" target="_blank" rel="noopener">Codecov</a>
+ can work with.</p>
+<p>As for the tests themselves we start by once again checking for our dependencies (just in case the bootstrap hasn&rsquo;t been run yet), then we build a list of &ldquo;relevant files.&rdquo;</p>
+<p>This is part of the code coverage feature built into Pester. Pester needs to know which files actually make up the contents of your module, and it uses this to figure out which files (and lines within files) weren&rsquo;t touched while running your tests.</p>
+<p>When we actually run our tests, we assign the output (which includes the code coverage info) to the variable <code>$res</code>, and for environments like Azure Pipelines we also tell it to use the NUnitXml format for it&rsquo;s output so that it can be read properly.</p>
+<p>At the end of our test section, we pass the <code>$res</code> variable though <code>Export-CodeCovIoJson</code> from the PSCodeCovIo module. This outputs a JSON file. We then also call an address on the internet to download a <a href="https://codecov.io/bash" target="_blank" rel="noopener">Bash script</a>
+.</p>
+<p>Just like on your system, not providing a path for output files will drop them into your working directory. In this case that means the Codecov Bash Script and JSON data will be in the root of your repo.</p>
+<p>And&hellip; that&rsquo;s it? We&rsquo;re not doing anything with the JSON file or script?</p>
+<p>Not yet&hellip; first we&rsquo;re going to compile our module.</p>
+<h3 id="compile-you-think-im-some-sort-of-developer">Compile? You Think I&rsquo;m Some Sort of Developer?!</h3>
+<pre><code>  - task: PowerShell@2
+    displayName: 'Compile module'
+    inputs:
+      targetType: Inline
+      script: ./Azure-Pipelines/build.ps1 -Compile
+</code></pre>
+<p>As you can see, we&rsquo;re calling our <code>build.ps1</code> script again, with the Compile switch.</p>
+<pre><code># Compile step
+if ($Compile.IsPresent) {
+    if (Get-Module BurntToast) {
+        Remove-Module BurntToast -Force
+    }
+
+    if ((Test-Path ./Output)) {
+        Remove-Item -Path ./Output -Recurse -Force
+    }
+
+    # Copy non-script files to output folder
+    if (-not (Test-Path .Output)) {
+        $null = New-Item -Path .Output -ItemType Directory
+    }
+
+    Copy-Item -Path '.BurntToast*' -Filter '*.*' -Exclude '*.ps1', '*.psm1' -Recurse -Destination .Output -Force
+    Remove-Item -Path .OutputPrivate, .OutputPublic -Recurse -Force
+
+    # Copy Module README file
+    Copy-Item -Path '.README.md' -Destination .Output -Force
+
+    Get-ChildItem -Path &quot;.BurntToastPrivate*.ps1&quot; -Recurse | Get-Content | Add-Content .OutputBurntToast.psm1
+
+    $Public  = @( Get-ChildItem -Path &quot;.BurntToastPublic*.ps1&quot; -ErrorAction SilentlyContinue )
+
+    $Public | Get-Content | Add-Content .OutputBurntToast.psm1
+
+    &quot;`$PublicFunctions = '$($Public.BaseName -join &quot;', '&quot;)'&quot; | Add-Content .OutputBurntToast.psm1
+
+    Get-Content -Path .Azure-PipelinesBurntToast-Template.psm1 | Add-Content .OutputBurntToast.psm1
+
+    Remove-Item -Path .BurntToast -Recurse -Force
+    Rename-Item -Path .Output -NewName 'BurntToast'
+
+    # Compress output, for GitHub release
+    Compress-Archive -Path .BurntToast* -DestinationPath .Azure-PipelinesBurntToast.zip
+
+    # Re-import module, extract release notes and version
+    Import-Module ./BurntToast/BurntToast.psd1 -Force
+    (Get-Module BurntToast)[0].ReleaseNotes | Add-Content .Azure-Pipelinesrelease-notes.txt
+    (Get-Module BurntToast)[0].Version.ToString() | Add-Content .Azure-Pipelinesrelease-version.txt
+}
+</code></pre>
+<p>Umm, compile?</p>
+<p>When working on my module, all of the functions are in their own .ps1 file. But when I push out a release, I want all of those functions to be included in the module&rsquo;s .psm1 file. There&rsquo;s a few benefits around doing this, but the main one as far as users are concerned is the speed of importing the module. For BurntToast this more than halved the time it took to import on my machine.</p>
+<p><em>Thanks to <a href="https://twitter.com/HalbaradKenafin" target="_blank" rel="noopener">Chris Gardner</a>
+ for giving a lot of press to this topic, which made me think to do it.</em></p>
+<p>Given we&rsquo;re PowerShell people, and automation is our game, there&rsquo;s no way we want to be copying these functions into the .psm1 file manually, right? That&rsquo;s the impetus for this compile step.</p>
+<p>This task starts with removing BurntToast from the current session. We&rsquo;re about to be deleting things, and BurntToast imports a dll which would make this near impossible if not released.</p>
+<p>Remove-Module throws a terminating error if the specified module isn&rsquo;t currently loaded&hellip; this caused much frustration. Why would it throw an error?!</p>
+<p>Next, we create an &ldquo;Output&rdquo; directory (or clear it out if it already exists) then copy all of the contents of our module except .ps1 files and the .psm1.</p>
+<p>Now we start building up a new .psm1 file, starting by dumping the contents of any private functions into it. We follow this up with the public function, although we also store these in a variable as we need to list their names as an array of strings. That&rsquo;s what this little snippet is all about, notice we&rsquo;re putting quote marks around each name, that&rsquo;s to ensure each name is treated as a string.</p>
+<pre><code>&quot;`$PublicFunctions = '$($Public.BaseName -join &quot;', '&quot;)'&quot; | Add-Content .OutputBurntToast.psm1
+</code></pre>
+<p>I forgot to include the quote marks initially, meaning that the script was trying to run the functions rather than store their names. This didn&rsquo;t end well.</p>
+<p>Finally we dump in a <a href="https://github.com/Windos/BurntToast/blob/master/Azure-Pipelines/BurntToast-Template.psm1" target="_blank" rel="noopener">template</a>
+ of the rest of our .psm1 file. This is static content (unlike the stuff above it), and it references the <code>$PublicFunctions</code> variable as the list of functions to export.</p>
+<p>Now we delete the folder containing our regular BurntToast directory, which contains the version of the module with individual .ps1 files. Our Output directory is renamed to BurntToast, meaning that this compiled version of the module is now &ldquo;live&rdquo;.</p>
+<p>Finally we get some artifacts ready for a potential release (even if a release doesn&rsquo;t eventuate from this build.)</p>
+<p>This includes a zip archive of the BurntToast directory, to be included as a binary on any GitHub releases.</p>
+<p>The source path for this zip archive is &ldquo;.BurntToast*&rdquo; meaning that the folder itself isn&rsquo;t included in the archive. This is personal preference for me.</p>
+<p>We also need some info from the module, so the module is re-imported, and the Release Notes and Version number extracted and saved to their own .txt files.</p>
+<p>Somehow it seemed like I was getting two copies of the version number, and the build would fail. This is why you see the Get-Module cmdlet wrapped in paréntesis and specifying the first item returned.</p>
+<p>How do we know that we&rsquo;ve compiled our module, how do we know this hasn&rsquo;t broken anything? We run the tests again!</p>
+<pre><code>  - task: PowerShell@2
+    displayName: 'Run tests (compiled .psm1)'
+    inputs:
+      targetType: Inline
+      script: ./Azure-Pipelines/build.ps1 -Test
+</code></pre>
+<p>You&rsquo;ll note that this task is very similar to the last time we ran our tests, just with a different display name and without the bootstrap switch (you only need to do that once.)</p>
+<p>I initially considered having the test script know that this was a &ldquo;after compile&rdquo; run, and would change the tested directory from &ldquo;./BurntToast&rdquo; to &ldquo;./Output&rdquo;. While this worked, it felt wrong&hellip; hence just replacing the BurntToast directory.</p>
+<h3 id="success-tell-the-world">Success, Tell the World!</h3>
+<p>Alright, we&rsquo;ve got our test results. Technically we&rsquo;ve have two sets of test results but the &ldquo;compiled&rdquo; test overwrote those from the first test. But what do we do with those test results?</p>
+<pre><code>  - task: PublishTestResults@2
+    displayName: 'Publish test results'
+    inputs:
+      testRunner: NUnit
+      testResultsFiles: '**/TestResults.xml'
+    condition: succeededOrFailed()
+</code></pre>
+<p>This is the built in task for publishing test results. Of note here, is that the test runner is set to &lsquo;NUnit&rsquo; <em>(remember that Pester was set to an output format of &lsquo;NUnitXml&rsquo;)</em> and the test results file matches the filename specified as the Pester output file.</p>
+<p>The task makes it so that the Azure Pipelines service itself is aware of the result, and can display them nicely on the builds web page.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/TestResults.PNG" alt="TestResults"></p>
+<p>Ok, that&rsquo;s the test results, what about this code coverage business?</p>
+<p>We&rsquo;d previously downloaded a Bash script, so let&rsquo;s go ahead and use it.</p>
+<pre><code>  - task: Bash@3
+    displayName: 'Upload coverage to Codecov'
+    inputs:
+      targetType: 'filePath'
+      filePath: ./codecov.sh
+      arguments: -f coverage.json -t $(CODECOV_TOKEN)
+</code></pre>
+<p>Like the PowerShell task, this Bash task allows you to run commands or scripts inside of Bash. I&rsquo;m pointing the file path at the .sh file we downloaded in a previous task, and passing in a few arguments. The first argument is the JSON file created using the PSCodeCovIo module and the second is the token to authenticate with Codecov (we&rsquo;ll cover how to get, and set that soon)</p>
+<h3 id="publishing-but-not-for-the-world-to-see">Publishing, but Not for the World to See</h3>
+<p>There&rsquo;s one final piece of house keeping to do before we can call our build pipeline complete, publishing build artifacts.</p>
+<p>To carry out this task, I&rsquo;m using the &ldquo;Publish Pipeline Artifact&rdquo; pre-defined task (which is in preview and different than the Publish Build Artifact task.)</p>
+<pre><code>  - task: PublishPipelineArtifact@0
+    displayName: 'Publish compiled module artifact'
+    inputs:
+      artifactName: 'BurntToast'
+      targetPath: ./BurntToast
+    condition: succeededOrFailed()
+
+  - task: PublishPipelineArtifact@0
+    displayName: 'Publish Pipelines scripts as artifact'
+    inputs:
+      artifactName: 'PipelinesScripts'
+      targetPath: ./Azure-Pipelines
+    condition: succeededOrFailed()
+</code></pre>
+<p>I&rsquo;m carrying out this task twice. The first run is targeting the entire &lsquo;BurntToast&rsquo; directory which contains the compiled module, this will allow us to publish to external repositories in our Release Pipeline. The second run targets the &lsquo;Azure-Pipelines&rsquo; directory which contains the zipped copy of the module, the release notes, version number, and most importantly the PowerShell script file that actually performs our release actions.</p>
+<p>Note you can customize the name of these artifacts, and this will change how you interact with them in future pipelines.</p>
+<p>We&rsquo;ve now got a complete build pipeline definition, and build script&hellip; but it&rsquo;s not touched Azure Pipelines at all yet. Before we dive into that, let&rsquo;s take a short detour.</p>
+<h2 id="can-you-mark-my-work">Can You Mark My Work?</h2>
+<p>We need to sign up for <a href="https://codecov.io/" target="_blank" rel="noopener">Codecov</a>
+ before we go any further. This will allow us to throw our code coverage data at them and have a nice report (and badge for our reademe).</p>
+<p>Head to <a href="https://codecov.io/" target="_blank" rel="noopener">https://codecov.io</a>
+ and sign up. You do this by signing in with your Git provider and for me this was GitHub.</p>
+<p>Unfortunately, I can&rsquo;t replicate (or remember) the process 100% accurately, as I&rsquo;ve already been through it, but you will have to grant Codecov certain permissions on your GitHub account and then select the specific repository your want to track coverage. It&rsquo;s all fairly straight forward.</p>
+<p>Once you&rsquo;ve added your repository, head over to the settings and take note of your &ldquo;Repository Upload Token&rdquo;. We&rsquo;ll be supplying this as a secure variable to Azure Pipelines soon.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/UploadToken.png" alt="UploadToken"></p>
+<p>Once everything is hooked up and your pipeline running (the next step, I promise) you&rsquo;ll be able to see your coverage on Codecov itself.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Coverage.PNG" alt="Coverage"></p>
+<p>But more importantly, you&rsquo;ll get information directly within GitHub too. For instance it will start to let you know how much your coverage will change after merging a pull request.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Codecov-report.PNG" alt="Codecov-report"></p>
+<h2 id="squeezing-through-the-pipeline">Squeezing Through the Pipe(line)</h2>
+<p>Finally, it&rsquo;s time to see the fruits of our labor. Head to the Azure DevOps site, <a href="https://dev.azure.com/" target="_blank" rel="noopener">https://dev.azure.com</a>
+ and sign in with your Microsoft account of choice.</p>
+<p>This first thing you&rsquo;ll need to do is create an &ldquo;organization&rdquo;. In short this is a name, which will be included and publicly visible in URLs, and the Azure region where your projects will be hosted.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/New-Organization.PNG" alt="New-Organization"></p>
+<p>Despite what that screenshot shows, my organization is &ldquo;windosnz&rdquo;.</p>
+<p>Next, you&rsquo;ll need to add a project. Give it a name (I like to match the name of my GitHub repo, &lsquo;BurntToast&rsquo; in this case.) a description and set the visibility. I personally set mine to Public, so that I can link to it and share.</p>
+<p>It&rsquo;ll take a couple of moments to spin up your project, and when it&rsquo;s done you&rsquo;ll see a screen informing you that you&rsquo;ve got no pipelines.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/NewPipelines.PNG" alt="NewPipelines"></p>
+<p>Here&rsquo;s where I actually like to jump over to GitHub and begin the setup process from that end. Find <a href="https://github.com/marketplace/azure-pipelines" target="_blank" rel="noopener">Azure Pipelines in the GitHub Marketplace</a>
+ and install it. You&rsquo;ll go through to a screen where you configure access, you can either grant Azure Pipelines access to all of your repos or just the one(s) you specify (this is the route I went).</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Access.PNG" alt="Access"></p>
+<p>Click save and you&rsquo;ll be taken back to Azure Pipelines. You&rsquo;ll note that you&rsquo;re part way through adding a new pipeline and that the &ldquo;connect&rdquo; step is already done. Select your repo and go through to configure. This automatically scans your repo to try and decide on the type of template to apply.</p>
+<p>If we had used the default name for a pipeline YAML file (azure-pipelines.yml) it would detect and use that&hellip; but since we didn&rsquo;t we&rsquo;ll have to jump through some additional hoops.</p>
+<p>Once the option comes up, choose &ldquo;Starter pipeline.&rdquo;</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Starter.PNG" alt="Starter"></p>
+<p>It will saddle you with a default YAML file, and we&rsquo;ve got no choice but to hit Save and Run. Don&rsquo;t bother editing this file at all, we&rsquo;re about to ditch it.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/SaveAndRun.PNG" alt="SaveAndRun"></p>
+<p>Unfortunately this will send through a commit to your repo on GitHub. You can get rid of this file once we&rsquo;re done though. Once the commit is done, it&rsquo;ll sit on configuring for a little bit and then it&rsquo;ll show you that it&rsquo;s running &ldquo;your&rdquo; build.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/ManualRun.PNG" alt="ManualRun"></p>
+<p>When this build finishes, head up top the top right of the page, click the three dots, and choose &ldquo;Edit pipeline.&rdquo;</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/EditPipeline.PNG" alt="EditPipeline"></p>
+<p>You&rsquo;ll see the contents of the YAML file again. Ignore this and head back up to the three dots, and this time choose &ldquo;Pipeline settings.&rdquo;</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/PipelineSettings.PNG" alt="PipelineSettings"></p>
+<p>See that YAML file path field? That&rsquo;s where we specify which YAML file defines this pipeline. Go ahead and change that to point to your definition (you can press the icon to the right to navigate your repo and select the file.)</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/YAML-file-path.PNG" alt="YAML-file-path"></p>
+<p>For me, this field becomes: <code>Azure-Pipelines/build.yml</code></p>
+<p>While we&rsquo;re in the settings area, let&rsquo;s provide that upload token for Codecov. Head to the Variables tab, and choose add. Give the variable a name, we used the name &ldquo;CODECOV_TOKEN&rdquo; in the definition and this needs to match. Also make sure that you click the padlock next to where you paste in the actual value of your token, this makes it a secret that cannot be viewed in plain text.</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Variable.PNG" alt="Variable"></p>
+<p>Click &ldquo;Save &amp; queue&rdquo; to save your changes and queue and execution of your build pipeline.</p>
+<p>Sit back and relax, believe it or not you&rsquo;re done!</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Cook-Toast.PNG" alt="Cook-Toast"></p>
+<p>Notice that the job name and the display names of the tasks match what you set in your YAML file. Now&hellip; head back to GitHub and get rid of the azure-pipelines.yml file that this process added to your repo, you don&rsquo;t need it and it&rsquo;s just making a mess.</p>
+<h2 id="whats-next">What&rsquo;s Next?</h2>
+<p>I&rsquo;d originally intended for this post to cover my entire Azure Pipelines journey&hellip; but at over 4,000 words I decided to make this a two (or three, gasp!) parter. This post covered <strong>build</strong> pipelines, and the next will cover <strong>release</strong> pipelines. That one will be a bit more visual, as you can only create your build through the web site at the moment, there is no support (at the time of writing) to edit the YAML yourself.</p>
+<p>I also want to sum up my learnings. That may be at the end of the second post, or become a third post of it&rsquo;s own.</p>
+<p>Keep an eye out on <a href="https://twitter.com/WindosNZ" target="_blank" rel="noopener">Twitter</a>
+ for future posts!</p>
+<p>By the way, we got our badges:</p>
+<p><img src="__GHOST_URL__/content/images/2019/02/Badges.PNG" alt="Badges"></p>
+<p>You made it all the way to the end of part one?! <a href="https://king.geek.nz/2019/02/17/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/" target="_blank" rel="noopener">Read part two here!</a>
+</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

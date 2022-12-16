@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Crouton #13 - Hitting Snooze - ToastIT
+  </title>
+  <meta name="description" content="Hitting snooze on your alarm clock is probably rather common. Let&#39;s take a look at how you can do the same thing with your Toast Notifications." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Crouton #13 - Hitting Snooze" />
+<meta property="og:description" content="Hitting snooze on your alarm clock is probably rather common. Let&#39;s take a look at how you can do the same thing with your Toast Notifications." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/crouton-13-hitting-snooze/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-11-21T09:09:45+00:00" />
+<meta property="article:modified_time" content="2019-11-21T09:09:45+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Crouton #13 - Hitting Snooze"/>
+<meta name="twitter:description" content="Hitting snooze on your alarm clock is probably rather common. Let&#39;s take a look at how you can do the same thing with your Toast Notifications."/>
+
+  <meta itemprop="name" content="Crouton #13 - Hitting Snooze">
+<meta itemprop="description" content="Hitting snooze on your alarm clock is probably rather common. Let&#39;s take a look at how you can do the same thing with your Toast Notifications."><meta itemprop="datePublished" content="2019-11-21T09:09:45+00:00" />
+<meta itemprop="dateModified" content="2019-11-21T09:09:45+00:00" />
+<meta itemprop="wordCount" content="1212">
+<meta itemprop="keywords" content="BurntToast,PowerShell," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Crouton #13 - Hitting Snooze</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    November 21, 2019
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      6&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      1212&nbsp;words
+      
+    </h5>
+
+    <p>Earlier this year an <a href="https://github.com/Windos/BurntToast/issues/71" target="_blank" rel="noopener">issue</a>
+ came through on the <a href="https://github.com/Windos/BurntToast" target="_blank" rel="noopener">BurntToast GitHub repo</a>
+ about binding custom snooze times to a toast&rsquo;s snooze button.</p>
+<p>If my documentation was a little more complete, the answer would have been in the built in help&hellip; but I&rsquo;m still working on that (while hanging my head in shame!) This post is the first step in getting something written on the topic of Snoozing and/or Dismissing toast notifications.</p>
+<h2 id="first-option-let-the-system-handle-it">First Option: Let the System Handle It</h2>
+<p>If all you&rsquo;re looking for is a quick pair of snooze and dismiss buttons with some default options for a selectable amount of time snooze time, just let Windows handle it.</p>
+<p>To do this, specify the <code>SnoozeAndDismiss</code> switch when calling the <code>New-BurntToastNotification</code> function.</p>
+<pre><code>New-BurntToastNotification -SnoozeAndDismiss
+</code></pre>
+<p><img src="__GHOST_URL__/content/images/2019/11/image.png" alt="System Default Snooze and Dismiss Toast">
+<em>(No&hellip; I don&rsquo;t know where that &ldquo;9 minutes&rdquo; comes from either. I&rsquo;ll be ignoring it going froward.)</em></p>
+<p>You can achieve the same thing using the component functions if you&rsquo;re doing something a little more advanced. You can do this by specifying the <code>-SnoozeAndDismiss</code> switch on the <code>New-BtAction</code> function.</p>
+<p>You&rsquo;ll likely note that when you use the system snooze and dismiss option, that the toast stays on the screen for a lot longer than a normal toast. We&rsquo;re talking three minutes compared to about six seconds for a regular toast.</p>
+<pre><code>$Text1 = New-BTText -Content 'Default Notification'
+$ImagePath = Join-Path -Path (Get-Module BurntToast -ListAvailable).ModuleBase -ChildPath 'Images\BurntToast.png'
+$Image1 = New-BTImage -Source $ImagePath -AppLogoOverride -Crop Circle
+$Audio1 = New-BTAudio -Source 'ms-winsoundevent:Notification.Default'
+
+$Binding1 = New-BTBinding -Children $Text1 -AppLogoOverride $Image1
+$Visual1 = New-BTVisual -BindingGeneric $Binding1
+
+$Action = New-BTAction -SnoozeAndDismiss
+$Content1 = New-BTContent -Visual $Visual1 -Audio $Audio1 -Actions $Action
+
+Submit-BTNotification -Content $Content1
+</code></pre>
+<h3 id="what-do-the-buttons-actually-do">What do the buttons actually do?</h3>
+<p>Dismiss is simply acknowledges the toast and removes it from the screen. It doesn&rsquo;t go to the Action Center to be viewed later, it is gone for good. This is the same behavior as if the user clicked on a toast that had no <a href="__GHOST_URL__/2017/05/08/crouton-clickable/">on-click action</a>
+.</p>
+<p>Snooze sends the toast back to the operating system as a scheduled toast with a set time to reappear of whenever the button was pressed plus the amount of minutes in the drop down box.</p>
+<p><em>A future version of BurntToast will allow you to inspect what scheduled toasts are waiting on your system and remove them ahead of time if needed.</em></p>
+<h2 id="second-option-do-it-yourself">Second Option: Do It Yourself</h2>
+<p>A quick note before we get into this section, in order to roll your own snooze and dismiss buttons your only option is to use the more verbose component functions. Rather than repeating the same boiler plate code over and over again, just assume that all examples from now on also contains the following snippet:</p>
+<pre><code>$Text1 = New-BTText -Content 'Default Notification'
+$ImagePath = Join-Path -Path (Get-Module BurntToast -ListAvailable).ModuleBase -ChildPath 'Images\BurntToast.png'
+$Image1 = New-BTImage -Source $ImagePath -AppLogoOverride -Crop Circle
+$Audio1 = New-BTAudio -Source 'ms-winsoundevent:Notification.Default'
+
+$Binding1 = New-BTBinding -Children $Text1 -AppLogoOverride $Image1
+$Visual1 = New-BTVisual -BindingGeneric $Binding1
+</code></pre>
+<p>In order to replicate the default snooze and dismiss behavior, we first need to create the items that will go into our drop down list of times to snooze.</p>
+<pre><code>$5Min = New-BTSelectionBoxItem -Id 5 -Content '5 minutes'
+$10Min = New-BTSelectionBoxItem -Id 10 -Content '10 minutes'
+$1Hour = New-BTSelectionBoxItem -Id 60 -Content '1 hour'
+$4Hour = New-BTSelectionBoxItem -Id 240 -Content '4 hours'
+$1Day = New-BTSelectionBoxItem -Id 1440 -Content '1 day'
+</code></pre>
+<p>The <code>Id</code> parameter indicates the number of minutes to snooze your toast if selected. The <code>Content</code> parameter can be whatever you want, though it helps to relate it to the amount of time you&rsquo;ll be snoozing for.</p>
+<p>You can only have up to five of these selection box items.</p>
+<p>Next, we need to add all of these items to the selection box itself.</p>
+<pre><code>$Items = $5Min, $10Min, $1Hour, $4Hour, $1Day
+$SelectionBox = New-BTInput -Id 'SnoozeTime' -DefaultSelectionBoxItemId 10 -Items $Items
+</code></pre>
+<p>When creating your selection box, the <code>Id</code> can be anything you want, it will be referenced later on your snooze button to tie the two elements together.</p>
+<p>The <code>DefaultSelectionBoxItemId</code> needs to match one of your snooze times. This will, as you may have guessed, automatically select that item as the default when your toast displays.</p>
+<p>Finally, you need to add all of your selection box items to the <code>Items</code> parameter.</p>
+<p>This gives you the selection box, but that is useless without some buttons, isn&rsquo;t it?</p>
+<pre><code>$SnoozeButton = New-BTButton -Snooze -Id 'SnoozeTime'
+$DismissButton = New-BTButton -Dismiss
+</code></pre>
+<p>The only thing to take note of here, is that the <code>Id</code> on your snooze button needs to match the Id specified on your selection box. If you don&rsquo;t match IDs, then your selection will be ignored and hitting the snooze button will result in the system default time being used instead.</p>
+<p>Next, we bundle our buttons and selection box up into an &ldquo;action&rdquo; object.</p>
+<pre><code>$Action = New-BTAction -Buttons $SnoozeButton, $DismissButton -Inputs $SelectionBox
+</code></pre>
+<p>The order in which your specify your buttons determines in which order they appear on your toast.</p>
+<p>Finally, let&rsquo;s see that this all works by submitting the toast to Windows.</p>
+<pre><code>$Content1 = New-BTContent -Visual $Visual1 -Audio $Audio1 -Actions $Action
+
+Submit-BTNotification -Content $Content1
+</code></pre>
+<p>You&rsquo;re now ready to create a toast notification with snooze times that you&rsquo;ve defined. There is, however, a few other DIY options available to you&hellip; some are a little more useful than others.</p>
+<h3 id="snooze-without-options">Snooze Without Options</h3>
+<p>As mentioned previously, if you don&rsquo;t tie your selection box to your snooze button with a matching ID, the default system time is used instead. You can use this fact to make a snoozable toast without a drop down box.</p>
+<pre><code>$SnoozeButton = New-BTButton -Snooze
+$DismissButton = New-BTButton -Dismiss
+
+$Action = New-BTAction -Buttons $SnoozeButton, $DismissButton
+$Content1 = New-BTContent -Visual $Visual1 -Audio $Audio1 -Actions $Action
+
+Submit-BTNotification -Content $Content1
+</code></pre>
+<p><img src="__GHOST_URL__/content/images/2019/11/image-1.png" alt="Snooze and Dismiss Toast without Options">
+It should be noted that without the selection box, this toast only displays for as long as a regular toast (6 seconds) rather than the much longer time that these snooze and dismiss toasts are normally afforded.</p>
+<h3 id="snooze-only">Snooze Only</h3>
+<p>Since the dismiss button just does the same thing as clicking on a blank area of the toast itself&hellip; do we really need it? We can omit the dismiss button in favor of a super snooze button if desired.</p>
+<pre><code>$5Min = New-BTSelectionBoxItem -Id 5 -Content '5 minutes'
+$10Min = New-BTSelectionBoxItem -Id 10 -Content '10 minutes'
+$1Hour = New-BTSelectionBoxItem -Id 60 -Content '1 hour'
+
+$Items = $5Min, $10Min, $1Hour
+$SelectionBox = New-BTInput -Id 'SnoozeTime' -DefaultSelectionBoxItemId 10 -Items $Items
+
+$SnoozeButton = New-BTButton -Snooze -Id 'SnoozeTime'
+
+$Action = New-BTAction -Buttons $SnoozeButton -Inputs $SelectionBox
+$Content1 = New-BTContent -Visual $Visual1 -Audio $Audio1 -Actions $Action
+
+Submit-BTNotification -Content $Content1
+</code></pre>
+<p><img src="__GHOST_URL__/content/images/2019/11/image-2.png" alt="Snooze Toast with no Dismiss Button"></p>
+<h3 id="dismiss-only">Dismiss Only</h3>
+<p>This one is probably the least useful, but let&rsquo;s have a look for the sake of completeness.</p>
+<pre><code>$DismissButton = New-BTButton -Dismiss
+
+$Action = New-BTAction -Buttons $DismissButton
+$Content1 = New-BTContent -Visual $Visual1 -Audio $Audio1 -Actions $Action
+
+Submit-BTNotification -Content $Content1
+</code></pre>
+<p><img src="__GHOST_URL__/content/images/2019/11/image-3.png" alt="Toast with Dismiss Button only"></p>
+<h2 id="disclaimer-snoozed-toast-bug">Disclaimer: Snoozed Toast Bug</h2>
+<p>There&rsquo;s currently an <a href="https://github.com/Windos/BurntToast/issues/72" target="_blank" rel="noopener">issue</a>
+ where toasts that have been dismissed don&rsquo;t display correctly. You&rsquo;ll see curly braces around some of the text.
+<img src="__GHOST_URL__/content/images/2019/11/image-4.png" alt="Snoozed Toast comes back with curly braces">
+I&rsquo;m hoping this will be sorted by the time of the next BurntToast release because it does make these less polished than they should be.</p>
+<p>Until this is fixed, I hope you can find some use in these snoozable toasts, even if you don&rsquo;t use them in a user facing role for the time being!</p>
+<h2 id="credit">Credit</h2>
+<p>Hero image by <a href="https://unsplash.com/@thetechnomaid?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Sophie Elvis</a>
+ on <a href="https://unsplash.com/s/photos/snooze?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

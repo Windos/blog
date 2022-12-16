@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backup on ToastIT</title>
+    <link>https://blog.toastit.dev/tags/backup/</link>
+    <description>Recent content in Backup on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 18 Jul 2020 13:16:38 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/backup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Synology Active Backup Suite Review</title>
+      <link>https://blog.toastit.dev/blog/synology-active-backup-suite-review/</link>
+      <pubDate>Sat, 18 Jul 2020 13:16:38 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/synology-active-backup-suite-review/</guid>
+      <description>Until recently if you asked me about backup providers, I would have talked about the likes of Veeam, StorageCraft, or even Commvault. Why this selection? They are all providers I&amp;rsquo;ve worked with or evaluated in the past, however this does indicate a &amp;ldquo;you don&amp;rsquo;t know what you don&amp;rsquo;t know&amp;rdquo; problem.
+For example, Synology has always just been a &amp;ldquo;storage&amp;rdquo; company in my mind. While I knew you could run certain workloads on them, I had no idea they have their own suite of backup tools.</description>
+    </item>
+    
+    <item>
+      <title>Disjointed Thoughts on Veeam Backup for Office 365 v3</title>
+      <link>https://blog.toastit.dev/blog/veeam-onedrive-selective/</link>
+      <pubDate>Sun, 05 May 2019 08:38:35 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-onedrive-selective/</guid>
+      <description>A while back, while it was in beta, I sung the praises of Veeam Backup for Office 365 v3(VBO). Since then this update has been officially released. I haven&amp;rsquo;t yet (&amp;hellip; at the time of writing) had the opportunity to update my production install, although I am champing at the bit to do so, so I&amp;rsquo;ve continued to poke around the beta until the license expires.
+Before diving into this, I want to highlight that this is going to be a little different from my normal posts.</description>
+    </item>
+    
+    <item>
+      <title>Getting Selective with Veeam Backup for Microsoft Office 365</title>
+      <link>https://blog.toastit.dev/blog/veeam-365-selective/</link>
+      <pubDate>Tue, 26 Feb 2019 10:08:57 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-365-selective/</guid>
+      <description>Let&amp;rsquo;s say you&amp;rsquo;re midway through a migration to Office 365. Some of your user&amp;rsquo;s still have mailboxes on-site and others are with Exchange Online. You&amp;rsquo;re not yet advising users to throw data into OneDrive for Business&amp;hellip; but you&amp;rsquo;re also not telling people not to use it.
+And, of course, even though you&amp;rsquo;re moving to the cloud you understand that your data is still your problem. With that in mind, you&amp;rsquo;ve got yourself a product to backup your Office 365 data such as Veeam Backup for Microsoft Office 365 (VBO)- yes, there are other products out there, but Veeam is what I know so it&amp;rsquo;s what I use in my &amp;ldquo;hypothetical&amp;rdquo; scenarios.</description>
+    </item>
+    
+    <item>
+      <title>Veeam Backup for Microsoft Office 365 v3.0: It&#39;s Good, Very Good</title>
+      <link>https://blog.toastit.dev/blog/veeam-backup-for-microsoft-office-365-v3/</link>
+      <pubDate>Tue, 19 Feb 2019 10:29:41 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-backup-for-microsoft-office-365-v3/</guid>
+      <description>Towards the end of last week, a tweet with a nice big &amp;ldquo;Veeam Green&amp;rdquo; logo caught my eye.
+Veeam Backup for Microsoft Office 365 v3 BETA is here! Looking for your feedback! Get it now via https://t.co/ahLz7QUfKX#veeam#office365#beta— Niels Engelen (@nielsengelen) February 13, 2019A beta preview of the next version of Veeam Backup for Microsoft Office 365? Yes please!
+I don&amp;rsquo;t know what I was expecting when I clicked through, but I certainly wasn&amp;rsquo;t expecting anything from my wish listto be in the change notes.</description>
+    </item>
+    
+    <item>
+      <title>My Wish List for Veeam Backup for Microsoft Office 365 v3</title>
+      <link>https://blog.toastit.dev/blog/my-wish-list-vbo365/</link>
+      <pubDate>Wed, 10 Oct 2018 08:47:26 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-wish-list-vbo365/</guid>
+      <description>I&amp;rsquo;ve been testing out Veeam&amp;rsquo;s offering for backing up Office 365. Earlier versions of it could backup Exchange Online but the recently released v2expanded to being able to backup SharePoint Online and OneDrive for Business.
+It&amp;rsquo;s a topic that deserves its own post (it&amp;rsquo;s on the list, I swear!), but the reason for needing a product like this needs a quick explanation.
+But it&amp;rsquo;s in the cloud, it&amp;rsquo;s already backed up!</description>
+    </item>
+    
+    <item>
+      <title>Veeam: My First Virtual Lab</title>
+      <link>https://blog.toastit.dev/blog/veeam-my-first-virtual-lab/</link>
+      <pubDate>Mon, 26 Mar 2018 09:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-my-first-virtual-lab/</guid>
+      <description>Over the last day or so I&amp;rsquo;ve been setting up a sandbox/virtual lab which leverages our Veeam backups. We&amp;rsquo;ve been using SureBackupfor automatic restore point verification, but a large software update that&amp;rsquo;s coming down the pipeline was a really good excuse to get a semi-persistent lab running.
+This post goes through the process of setting up a lab from start to finish. I&amp;rsquo;d found posts that went through parts of the process, usually focusing on the trickier parts, but I didn&amp;rsquo;t really find any real world, end-to-end walkthroughs.</description>
+    </item>
+    
+  </channel>
+</rss>

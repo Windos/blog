@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Azure DevOps Pipelines Tune Up: Templates and Centralization - ToastIT
+  </title>
+  <meta name="description" content="After reading some awesome posts on the topic, I&#39;ve been shamed into making my pipelines a little more efficient." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Azure DevOps Pipelines Tune Up: Templates and Centralization" />
+<meta property="og:description" content="After reading some awesome posts on the topic, I&#39;ve been shamed into making my pipelines a little more efficient." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/azure-pipelines-tune-up/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-09-20T22:04:57+00:00" />
+<meta property="article:modified_time" content="2019-09-20T22:04:57+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Azure DevOps Pipelines Tune Up: Templates and Centralization"/>
+<meta name="twitter:description" content="After reading some awesome posts on the topic, I&#39;ve been shamed into making my pipelines a little more efficient."/>
+
+  <meta itemprop="name" content="Azure DevOps Pipelines Tune Up: Templates and Centralization">
+<meta itemprop="description" content="After reading some awesome posts on the topic, I&#39;ve been shamed into making my pipelines a little more efficient."><meta itemprop="datePublished" content="2019-09-20T22:04:57+00:00" />
+<meta itemprop="dateModified" content="2019-09-20T22:04:57+00:00" />
+<meta itemprop="wordCount" content="1460">
+<meta itemprop="keywords" content="Azure,PowerShell," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Azure DevOps Pipelines Tune Up: Templates and Centralization</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    September 20, 2019
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      7&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      1460&nbsp;words
+      
+    </h5>
+
+    <p>Last weekend I wrote two plugins for <a href="https://github.com/poshbotio/PoshBot" target="_blank" rel="noopener">PoshBot</a>
+: <a href="https://powershellgallery.com/packages/PoshBot.Joker" target="_blank" rel="noopener">Joker</a>
+ &amp; <a href="https://www.powershellgallery.com/packages/PoshBot.Sentiment/" target="_blank" rel="noopener">Sentiment</a>
+. Both of these were equipped with my standard Azure DevOps Pipelines treatment for testing, building, and releasing them to the PowerShell Gallery. Doing two in quick succession made me realize just how repetitive my pipelines actually are.</p>
+<p>It was interesting timing then, that during the week I came across a post by <a href="https://twitter.com/justinchronicle" target="_blank" rel="noopener">Justin Yoo</a>
+ about <a href="https://devkimchi.com/2019/09/04/azure-devops-pipelines-refactoring-technics/" target="_blank" rel="noopener">refactoring these pipelines</a>
+. This post really got me thinking about how I could do my own pipelines better, and when I shared it on Twitter, this was bolstered by being linked to <a href="https://twitter.com/Ba4bes" target="_blank" rel="noopener">Barbara Forbes&amp;rsquo;</a>
+<a href="https://4bes.nl/2019/07/31/getting-started-with-azure-devops-job-and-step-templates-part-1/" target="_blank" rel="noopener">post</a>
+(s).</p>
+<p>Justin&rsquo;s post covered using templates, and Barbara&rsquo;s took the next logic step of centralizing those templates in a common repository.</p>
+<p>Feeling plenty of shame about the current state of my own Azure DevOps Pipelines, let&rsquo;s see what we can do to bring them up to spec.</p>
+<h2 id="the-lay-of-the-land">The Lay of the Land</h2>
+<p>Before we dive into making changes, we should have a look at what we&rsquo;re starting with. The victim I&rsquo;ll choose is the <a href="https://github.com/ToastIT-dev/PoshBot.Joker/blob/4a08d9cffa170ea3c909259ca448e4ac559caff1/.pipelines/build.yml" target="_blank" rel="noopener">pipeline for PoshBot.Joker</a>
+, here&rsquo;s the yaml for its build job:</p>
+<pre><code>trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - /src/*
+
+jobs:
+- job: PoshBot_Joker_Test_Build
+  displayName: 'Test &amp; Build'
+  pool:
+    vmImage: 'windows-2019'
+  steps:
+
+  - task: PowerShell@2
+    displayName: 'Run PowerShell Script Analyzer'
+    inputs:
+      targetType: Inline
+      script: .\.pipelines\build.ps1 -Analyze -BasePath '.\src'
+
+  - task: PowerShell@2
+    displayName: 'Run Pester tests (individual .ps1 files)'
+    inputs:
+      targetType: Inline
+      script: .\.pipelines\build.ps1 -Test -BasePath '.'
+
+  - task: PowerShell@2
+    displayName: 'Compile module'
+    inputs:
+      targetType: Inline
+      script: .\.pipelines\build.ps1 -Compile -BasePath '.' -Module 'PoshBot.Joker'
+
+  - task: PowerShell@2
+    displayName: 'Run Pester tests (compiled .psm1)'
+    inputs:
+      targetType: Inline
+      script: .\.pipelines\build.ps1 -Test -BasePath '.'
+
+  - task: PublishTestResults@2
+    displayName: 'Publish test results'
+    inputs:
+      testRunner: NUnit
+      testResultsFiles: '**/TestResults.xml'
+    condition: succeededOrFailed()
+
+  - task: PublishPipelineArtifact@0
+    displayName: 'Publish compiled module artifact'
+    inputs:
+      artifactName: 'PoshBot.Joker'
+      targetPath: .\PoshBot.Joker
+
+  - task: PublishPipelineArtifact@0
+    displayName: 'Publish meta scripts'
+    inputs:
+      artifactName: '_Scripts'
+      targetPath: .\.pipelines
+</code></pre>
+<p>The high level flow of this pipeline is:</p>
+<ul>
+<li>Run <a href="https://github.com/PowerShell/PSScriptAnalyzer" target="_blank" rel="noopener">PSScriptAnalyzer</a>
+ against the code base, no point carrying on if the code is bad.</li>
+<li>Run the project&rsquo;s Pester tests.</li>
+<li>Compile all of the functions into a single .psm1 file.</li>
+<li>Run the Pester tests again, just in case compilation broke something.</li>
+<li>Publish the test results, so that the details can be seen in the Azure DevOps interface (it is very pretty!)</li>
+<li>Publish two artifacts, one is the compiled module, the other is the directory which contains scripts that the release pipeline will need.</li>
+</ul>
+<p>When setting up this pipeline for a new project, not much changes. In fact, the only thing that does change is the module name (hint&hellip; that&rsquo;s a candidate for turning into a variable in a template!)</p>
+<h2 id="create-a-template">Create a Template</h2>
+<p>Our first step in giving these pipelines a tune up, is turning the previous yaml into a template. I&rsquo;m templating the entire steps stanza:</p>
+<pre><code>parameters:
+  VmImage: ''
+  Module: ''
+  JobName: ''
+
+jobs:
+- job: ${{ parameters.JobName }}
+  displayName: 'Test &amp; Build'
+  pool:
+    vmImage: ${{ parameters.VmImage }}
+  steps:
+
+  - task: PowerShell@2
+    displayName: 'Run PowerShell Script Analyzer'
+    inputs:
+      targetType: Inline
+      script: .\.pipelines\build.ps1 -Analyze -BasePath '.\src'
+
+  - task: PowerShell@2
+    displayName: 'Run Pester tests (individual .ps1 files)'
+    inputs:
+      targetType: Inline
+      script: .\.pipelines\build.ps1 -Test -BasePath '.'
+
+  - task: PowerShell@2
+    displayName: 'Compile module'
+    inputs:
+      targetType: Inline
+      script: .\.pipelines\build.ps1 -Compile -BasePath '.' -Module '${{ parameters.Module }}'
+
+  - task: PowerShell@2
+    displayName: 'Run Pester tests (compiled .psm1)'
+    inputs:
+      targetType: Inline
+      script: .\.pipelines\build.ps1 -Test -BasePath '.'
+
+  - task: PublishTestResults@2
+    displayName: 'Publish test results'
+    inputs:
+      testRunner: NUnit
+      testResultsFiles: '**/TestResults.xml'
+    condition: succeededOrFailed()
+
+  - task: PublishPipelineArtifact@0
+    displayName: 'Publish compiled module artifact'
+    inputs:
+      artifactName: '${{ parameters.Module }}'
+      targetPath: .\${{ parameters.Module }}
+
+  - task: PublishPipelineArtifact@0
+    displayName: 'Publish meta scripts'
+    inputs:
+      artifactName: '_Scripts'
+      targetPath: .\.pipelines
+</code></pre>
+<p>That looks very familiar, doesn&rsquo;t it?</p>
+<p>The key differences here is that there is no longer any mention of triggers, this will be in the project&rsquo;s own yaml file which calls this template. It now starts with a parameters section, where I&rsquo;ve defined a couple of variables that&rsquo;re usable in the template and settable when calling on the template.</p>
+<p>I&rsquo;ve elected to make the <code>VmImage</code> a parameter, which will allow me to reuse the template against different versions of Windows Server, or even Linux or MacOS is that makes sense for the project.</p>
+<p>You&rsquo;ll also notice that I&rsquo;ve made both <code>Module</code> and <code>JobName</code> parameters. I would have considered just reusing the Module name in constructing the job name&hellip; but the job name cannot contain periods, which plugins for PoshBot generally do (e.g. PoshBot.Joker). I <em>could</em> have just made the job name static, but I like to make them more specific than that.</p>
+<p>You can use these variable within the template using this syntax: <code>${{ parameters.ParameterName }}</code>, just swap out the Parameter name for the specific one you&rsquo;re wanting to reference.</p>
+<h2 id="a-central-location">A Central Location</h2>
+<p>I&rsquo;m going to skip a key part here, testing that my template actually works, and jump straight to putting it in its own repository on GitHub. After reading through the blog posts I linked above I&rsquo;m (perhaps over-) confident that this template will just work.</p>
+<p>Going forward my templates will all be located in a &ldquo;<a href="https://github.com/ToastIT-dev/CentralPipeline" target="_blank" rel="noopener">CentralPipeline</a>
+&rdquo; repository on GitHub, and the template we&rsquo;re using here can already be <a href="https://github.com/ToastIT-dev/CentralPipeline/blob/master/standard-build-template.yaml" target="_blank" rel="noopener">found there</a>
+.</p>
+<p>Note that in order to use this location on GitHub, you need to have an authorized service connection. These get automatically created when you setup GitHub repositories as the sources for your code in a given Azure DevOps pipeline, but I like to create a generic &ldquo;github&rdquo; one for use in all projects, regardless of which account or organization owns the code being built.</p>
+<p>In any project, head to the project settings, then service connections and add a new GitHub connection. I name mine &lsquo;github&rsquo; and then click authorize.
+<img src="__GHOST_URL__/content/images/2019/09/image.png" alt="">Creating a new GitHub service connection
+You&rsquo;ll see on the left hand side two of this screenshot that I have two existing connections which I could have used. I&rsquo;ll point out in the following section where this specific connection is being used.</p>
+<h2 id="applying-the-template">Applying the Template</h2>
+<p>Finally, we&rsquo;ll circle back to the original project and adjust its yaml to replace the unneeded parts are start using our new template.</p>
+<p>We leave in the trigger section which indicates when the pipeline should run (in this case it runs when any changes are made to the source code (in the &lsquo;src&rsquo; directory) on the master branch. This means anything changed that isn&rsquo;t &ldquo;code&rdquo; such as the repository&rsquo;s readme file or work on a dev branch won&rsquo;t trigger a new build.</p>
+<pre><code>trigger:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - /src/*
+</code></pre>
+<p>Next we setup a resource for the location of our template, this is that CentralPipeline repository I created for my own templates. Note the <code>endpoint</code> line, which is set to &lsquo;github&rsquo; which indicates which service connection to use. This is where I could have used one of the other connections that had been automatically created but I like the look of using a generic one.</p>
+<pre><code>resources:
+  repositories:
+    - repository: CentralPipeline
+      type: github
+      endpoint: github
+      name: ToastIT-dev/CentralPipeline
+</code></pre>
+<p>The <code>repository</code> is what you&rsquo;ll reference this repo as, it doesn&rsquo;t <strong>need</strong> to match the actual repo name, and the <code>name</code> is the location on GitHub in the format of <code>Owner</code>/<code>Repo Name</code>. As you can see, my template repo is owned by the &ldquo;ToastIT-dev&rdquo; organization.</p>
+<p>Finally, let&rsquo;s use the template and provide the parameters needed to customize it.</p>
+<pre><code>jobs:
+- template: standard-build-template.yaml@CentralPipeline
+  parameters:
+    VmImage: windows-2019
+    Module: PoshBot.Joker
+    JobName: PoshBot_Joker_Test_Build
+</code></pre>
+<p>Remember that we templated the entire jobs stanza, so inside that stanza in our &ldquo;real&rdquo; yaml we reference the template in the form of <code>filename/path</code>@<code>repository name</code> remembering that this name is the name provided under the resources section that doesn&rsquo;t need to actually match the name on GitHub.</p>
+<p>Head over to GitHub to see the <a href="https://raw.githubusercontent.com/ToastIT-dev/PoshBot.Joker/master/.pipelines/build.yml" target="_blank" rel="noopener">entire yaml file</a>
+&hellip; it&rsquo;s a lot smaller than when we started.</p>
+<h2 id="its-alive">It&rsquo;s Alive!</h2>
+<p>All going well, the next time the pipeline runs we&rsquo;ll have a successful build:
+<img src="__GHOST_URL__/content/images/2019/09/image-1.png" alt="">
+Funnily enough, this looks no different from when I started. That&rsquo;s a good thing, we&rsquo;ve simplified setting these pipelines up and the end result is exactly the build pipeline I need.</p>
+<p>Going forward if I wanted to add more standard steps to the build, I just need to edit the one template rather than going through every single project and updating their snowflake yaml files.</p>
+<p>It also means there&rsquo;s less chance of me messing up something when editing the master yaml file when setting up a new project (which has happened many more times than I&rsquo;d like to admit.)</p>
+<h2 id="final-words">Final Words</h2>
+<p>Thanks again to both Justin and Barbara for getting me started on this journey of making my pipelines more efficient. There&rsquo;s more work for me to do on this front, first of which is to move all of my other projects over to this new template.</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

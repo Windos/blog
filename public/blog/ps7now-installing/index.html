@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Getting Your Hands on PowerShell 7 - #PS7Now - ToastIT
+  </title>
+  <meta name="description" content="PowerShell 7 is out now! The first step in being able to add it to our toolbox is to install it so let&#39;s check out our options." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Getting Your Hands on PowerShell 7 - #PS7Now" />
+<meta property="og:description" content="PowerShell 7 is out now! The first step in being able to add it to our toolbox is to install it so let&#39;s check out our options." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/ps7now-installing/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-03-08T12:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-08T12:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting Your Hands on PowerShell 7 - #PS7Now"/>
+<meta name="twitter:description" content="PowerShell 7 is out now! The first step in being able to add it to our toolbox is to install it so let&#39;s check out our options."/>
+
+  <meta itemprop="name" content="Getting Your Hands on PowerShell 7 - #PS7Now">
+<meta itemprop="description" content="PowerShell 7 is out now! The first step in being able to add it to our toolbox is to install it so let&#39;s check out our options."><meta itemprop="datePublished" content="2020-03-08T12:00:00+00:00" />
+<meta itemprop="dateModified" content="2020-03-08T12:00:00+00:00" />
+<meta itemprop="wordCount" content="987">
+<meta itemprop="keywords" content="PowerShell," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Getting Your Hands on PowerShell 7 - #PS7Now</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    March 8, 2020
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      5&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      987&nbsp;words
+      
+    </h5>
+
+    <p>This post is part of the <a href="https://twitter.com/search?q=%23PS7Now" target="_blank" rel="noopener">#PS7Now</a>
+ PowerShell Blog Week celebrating the general availability launch of <a href="https://docs.microsoft.com/en-us/powershell/" target="_blank" rel="noopener">PowerShell 7.</a>
+</p>
+<p>There&rsquo;s a lot of great content coming out this week from a number of different authors, so make sure you keep an eye on the <a href="https://twitter.com/search?q=%23PS7Now" target="_blank" rel="noopener">hashtag</a>
+ over on Twitter or checkout the table at the bottom of this post for direct links!</p>
+<p>It&rsquo;s finally here!</p>
+<p>It was April of 2019, just after the Generally Available release of PowerShell Core 6.2, when the PowerShell team <a href="https://devblogs.microsoft.com/powershell/the-next-release-of-powershell-powershell-7/" target="_blank" rel="noopener">announced</a>
+ that the next release of would be known as PowerShell 7.</p>
+<p>There were two things that surprised people in that announcement, the first being that the next version number wouldn&rsquo;t just increment up to 6.3. Secondly, where&rsquo;d that quantifier &ldquo;Core&rdquo; disappear to?</p>
+<p>Since then, we&rsquo;ve had six preview releases and 2 release candidates. There&rsquo;s been a huge number of community contributions and epic work from the PowerShell team.</p>
+<p>Thanks to all the effort put in by so many people, Windows admins that have been bound to Windows PowerShell 5.1 can finally make the move over to the opensource version of their favorite (I assume!) management tool. This move allows them to benefit from all the new features that have been built in since development shifted from being focused solely on Windows. This should be reasonably frictionless<a href="#footnote-one">[1]</a>
+ due to greater compatibility (compared to 6.2).</p>
+<p>But before all of the new features are explored by others throughout this blog week, we&rsquo;ll have a look at getting it installed.</p>
+<h2 id="install-manually">Install Manually</h2>
+<p>Our first option for installing PowerShell 7 is to grab the relevant installer from <a href="https://github.com/PowerShell/PowerShell/releases/tag/v7.0.0" target="_blank" rel="noopener">GitHub</a>
+. Chances are if you&rsquo;re installing on Windows you&rsquo;ll want to grab the x86 or x64 MSI file. Download and run that, click through the wizard and you&rsquo;re ready to rock.</p>
+<p>If you&rsquo;re wanting to do a manual install on Linux or Mac&hellip; I&rsquo;m not sure this is the best path to take. Instead, check out <a href="https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7" target="_blank" rel="noopener">the docs</a>
+ about how to install on your distribution of choice.</p>
+<p><em>Note, the install does it&rsquo;s best to remove any existing installs of PowerShell Core 6.x, but will leave PowerShell 7 Preview installs untouched. You may want to go ahead and remove the preview installs yourself if you were following them.</em></p>
+<h3 id="its-portable">It&rsquo;s Portable</h3>
+<p>I wanted to call out here that PowerShell 7 is technically portable. The GitHub releases page has zipped versions of the Windows releases which you can extract and&hellip; put anywhere and then run <code>pwsh.exe</code>.</p>
+<p>PowerShell 7 won&rsquo;t be on your path by default if you go this route but it does give you complete control.</p>
+<h2 id="scripted-install">Scripted Install</h2>
+<p>There are a pair of scripts available to automatically install the latest PowerShell version available.</p>
+<p>On Windows, run the following command in a PowerShell console:</p>
+<pre><code>iex &quot;&amp; { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI&quot;
+</code></pre>
+<p>In the interest of completeness, and because I hate leaving aliases there let&rsquo;s just note the two in that snippet:</p>
+<ul>
+<li><code>iex</code> = <code>Invoke-Expression</code></li>
+<li><code>irm</code> = <code>Invoke-RestMethod</code></li>
+</ul>
+<p>This time, I can be a little more helpful for those on Linux. While it&rsquo;s not the same script, it&rsquo;s just as simple to run:</p>
+<pre><code>wget https://aka.ms/install-powershell.sh; sudo bash install-powershell.sh
+</code></pre>
+<p>Execute this in your terminal of choice, unlike the Windows option you don&rsquo;t already need PowerShell.</p>
+<h2 id="the-microsoft-store">The Microsoft Store?!</h2>
+<p>The newest option that&rsquo;s been (being?) introduced for PowerShell 7 is the ability to install it as an app from the Microsoft store.</p>
+<p>To get it, search for PowerShell and install it. The app will be from &ldquo;Microsoft Corporation&rdquo; and be under the developer tools category. Remember, there&rsquo;s no &ldquo;Windows&rdquo; or &ldquo;Core&rdquo; in the name anymore&hellip; just PowerShell.</p>
+<p>At the time of writing the live version of PowerShell 7 isn&rsquo;t yet available, but I can attest to the Preview working rather well.
+<img src="__GHOST_URL__/content/images/2020/02/image-1.png" alt="PowerShell in the Microsoft Store">
+At least during the preview, the app was able to live alongside the MSI version, which in turn can happily live alongside Windows PowerShell.</p>
+<p>In practice, I found it better to choose either the store version or the MSI version as I wasn&rsquo;t always 100% sure which I was opening (you can tell, you just need to pay closer than normal attention.)</p>
+<p>The benefit to installing from the store is that you&rsquo;ll get automatic updates as they are released, though it&rsquo;s possible they may be slower (due to verification of the packages) than the general releases to GitHub.</p>
+<p>The preview versions did have some issues related to resource virtualization. The hope is that this has been resolved, but we won&rsquo;t know for sure until the next version is up on the Store.</p>
+<h2 id="one-final-option">One Final Option</h2>
+<p>There&rsquo;s one last option I wanted to include, as I know <a href="https://twitter.com/steviecoaster" target="_blank" rel="noopener">someone</a>
+ would give me a hard time if I left it out: <a href="https://chocolatey.org/" target="_blank" rel="noopener">Chocolatey</a>
+.</p>
+<p>If you work on Windows and haven&rsquo;t heard about and installed Chocolatey, <a href="https://chocolatey.org/install" target="_blank" rel="noopener">fix that</a>
+.</p>
+<p>It&rsquo;s a tool that allows you to install, update, and otherwise manage software on Windows much like our friends on Linux can with their package managers.</p>
+<p>To install <a href="https://chocolatey.org/packages/powershell-core" target="_blank" rel="noopener">PowerShell 7 using Chocolatey</a>
+, run:</p>
+<pre><code>choco install powershell-core
+</code></pre>
+<p>You&rsquo;ll note that the command mentions &ldquo;PowerShell Core&rdquo;, that&rsquo;s a hangover from this package being how the previous releases were made available and keeping that name allows existing users to easily update.</p>
+<p>It&rsquo;s possible that this will change to just <code>powershell</code> in the future or that the more &ldquo;correct&rdquo; name is added in addition.</p>
+<h2 id="more-to-come">More to Come</h2>
+<p>Regardless of the method chosen, you&rsquo;ll now be up and running on PowerShell 7. Follow the <a href="https://twitter.com/search?q=%23PS7Now&amp;amp;f=live" target="_blank" rel="noopener">#PS7Now</a>
+ hashtag on Twitter for more about this exciting release or check out the other blog week authors directly.
+AuthorTwitterBlogAdam Bertram<a href="https://twitter.com/adbertram" target="_blank" rel="noopener">@adbertram</a>
+<a href="https://adamtheautomator.com" target="_blank" rel="noopener">https://adamtheautomator.com</a>
+Dan Franciscus<a href="https://twitter.com/dan_franciscus" target="_blank" rel="noopener">@dan_franciscus</a>
+<a href="https://winsysblog.com" target="_blank" rel="noopener">https://winsysblog.com</a>
+Dave Carroll<a href="https://twitter.com/thedavecarroll" target="_blank" rel="noopener">@thedavecarroll</a>
+<a href="https://powershell.anovelidea.org" target="_blank" rel="noopener">https://powershell.anovelidea.org</a>
+Jeff Hicks<a href="https://twitter.com/JeffHicks" target="_blank" rel="noopener">@JeffHicks</a>
+<a href="https://jdhitsolutions.com" target="_blank" rel="noopener">https://jdhitsolutions.com</a>
+Jonathan Medd<a href="https://twitter.com/jonathanmedd" target="_blank" rel="noopener">@jonathanmedd</a>
+<a href="https://www.jonathanmedd.net" target="_blank" rel="noopener">https://www.jonathanmedd.net</a>
+Josh Duffney<a href="https://twitter.com/joshduffney" target="_blank" rel="noopener">@joshduffney</a>
+<a href="http://duffney.io" target="_blank" rel="noopener">http://duffney.io</a>
+Mike Kanakos<a href="https://twitter.com/MikeKanakos" target="_blank" rel="noopener">@MikeKanakos</a>
+<a href="https://www.networkadm.in" target="_blank" rel="noopener">https://www.networkadm.in</a>
+Prateek Singh<a href="https://twitter.com/singhprateik" target="_blank" rel="noopener">@singhprateik</a>
+<a href="https://ridicurious.com" target="_blank" rel="noopener">https://ridicurious.com</a>
+Thomas Lee<a href="https://twitter.com/doctordns" target="_blank" rel="noopener">@doctordns</a>
+<a href="https://tfl09.blogspot.com" target="_blank" rel="noopener">https://tfl09.blogspot.com</a>
+</p>
+<h2 id="credit">Credit</h2>
+<p>Hero image by <a href="http://livinglifeundecided.com/" target="_blank" rel="noopener">Erin King</a>
+</p>
+<h2 id="footnotes">Footnotes</h2>
+<p><a href="1.">1.</a>
+ Yes, there are some scripts that won&rsquo;t work in PS7 or will require some work. Don&rsquo;t feel like you have to transition completely and never look back.</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

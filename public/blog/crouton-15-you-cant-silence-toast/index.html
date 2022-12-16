@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Crouton #15 - You Can&#39;t Silence Toast - ToastIT
+  </title>
+  <meta name="description" content="Focus assist is a favoured tool of practiced speakers and presenters on Windows. It does put you in a bit of a bind if the thing you&#39;re presenting requires notifications though." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Crouton #15 - You Can&#39;t Silence Toast" />
+<meta property="og:description" content="Focus assist is a favoured tool of practiced speakers and presenters on Windows. It does put you in a bit of a bind if the thing you&#39;re presenting requires notifications though." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/crouton-15-you-cant-silence-toast/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-02-01T10:08:16+00:00" />
+<meta property="article:modified_time" content="2021-02-01T10:08:16+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Crouton #15 - You Can&#39;t Silence Toast"/>
+<meta name="twitter:description" content="Focus assist is a favoured tool of practiced speakers and presenters on Windows. It does put you in a bit of a bind if the thing you&#39;re presenting requires notifications though."/>
+
+  <meta itemprop="name" content="Crouton #15 - You Can&#39;t Silence Toast">
+<meta itemprop="description" content="Focus assist is a favoured tool of practiced speakers and presenters on Windows. It does put you in a bit of a bind if the thing you&#39;re presenting requires notifications though."><meta itemprop="datePublished" content="2021-02-01T10:08:16+00:00" />
+<meta itemprop="dateModified" content="2021-02-01T10:08:16+00:00" />
+<meta itemprop="wordCount" content="1324">
+<meta itemprop="keywords" content="BurntToast,PowerShell," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Crouton #15 - You Can&#39;t Silence Toast</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    February 1, 2021
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      7&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      1324&nbsp;words
+      
+    </h5>
+
+    <p>This post has been in the works for a long time now. We&rsquo;re talking almost half a year, and it&rsquo;s been one heck of an uphill battle putting fingers on keys and getting this written.
+<img src="__GHOST_URL__/content/images/2021/02/image.png" alt="Screenshot of Draft, Five Months Ago">
+So, what ended up being the catalyst that got this post out into the wild? This morning I woke up to a great tweet from <a href="https://twitter.com/sqldbawithbeard" target="_blank" rel="noopener">Rob Sewell</a>
+ with a video about how he&rsquo;s dealing with focus assist so that his toast notification can get through.</p>
+<blockquote>
+<p>I wanted a notification when my Azure SQL database was ready &amp; later when Azure AAD had synced in my demo. <a href="https://twitter.com/WindosNZ?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">@WindosNZ</a>
+ BurntToast module is cool. With Focus Assist on, no notification. I created a horrid that works with Win10 2004<a href="https://t.co/0HSeBFyHUd" target="_blank" rel="noopener">https://t.co/0HSeBFyHUd</a>
+<a href="https://t.co/nCc6Okkc2Z" target="_blank" rel="noopener">https://t.co/nCc6Okkc2Z</a>
+
+— Rob Sewell - Beardy McBeardFace (@sqldbawithbeard) <a href="https://twitter.com/sqldbawithbeard/status/1355863947044392963?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">January 31, 2021</a>
+</p>
+</blockquote>
+<p>The solution presented is simply brilliant and is an excellent example of what you can get done with PowerShell.</p>
+<h2 id="but-why">But Why?</h2>
+<p>So, what&rsquo;s the problem Rob (and this post back when I started writing it) is trying to solve?</p>
+<p>When you&rsquo;re presenting, sharing your screen on a video call, or just want to tune out some digital noise while trying to get work done it&rsquo;s a pain (and sometimes embarrassing) to have notifications pop up.</p>
+<p>Windows has a built-in feature to tame those notifications, <a href="https://support.microsoft.com/en-us/windows/turn-focus-assist-on-or-off-in-windows-10-5492a638-b5a3-1ee0-0c4f-5ae044450e09" target="_blank" rel="noopener">Focus Assist</a>
+. Turn that bad boy on and you can say goodbye to those pesky notifications.</p>
+<p>But then what happens when you&rsquo;re using <a href="https://www.powershellgallery.com/packages/BurntToast" target="_blank" rel="noopener">BurntToast</a>
+, as a self-promoting example, to get notifications that you <em>actually</em> want to see?</p>
+<p>This is the problem: stop most notifications showing up on screen, except for the ones you&rsquo;re creating yourself.</p>
+<p>Rob&rsquo;s solution is to automate the keystrokes needed to turn Focus Assist off, pop the toast, then turn focus assist back on.</p>
+<p>There are just two issues with this:</p>
+<ol>
+<li>The act of toggling focus assist is a little&hellip; jarring (watch the video, it&rsquo;s worth it.)</li>
+<li>This gives a window where other unwanted notifications can sneak in.</li>
+</ol>
+<h2 id="priority-guest-list">Priority Guest List</h2>
+<p>There are two levels you can set for focus assist, &ldquo;priority only&rdquo; and &ldquo;alarms only.&rdquo; We&rsquo;ll tackle the first one first.</p>
+<p>You&rsquo;re able to define a list of apps on your priority list. Notifications from these apps will show on screen when you have focus assist set to priority only (makes sense, right?)</p>
+<p>To define this list, open up the <a href="https://support.microsoft.com/en-us/windows/find-settings-in-windows-10-6ffbef87-e633-45ac-a1e8-b7a834578ac6" target="_blank" rel="noopener">&lt;strong&gt;Settings&lt;/strong&gt; app</a>
+, click into the <strong>System</strong> category and choose <strong>Focus assist</strong>. For here you&rsquo;ll see you current focus assist and under &ldquo;Priority only&rdquo; is a link to customize your priority list.
+<img src="__GHOST_URL__/content/images/2021/02/image-1.png" alt="Focus assist options in the Settings app, indicating the priority list customization link">
+When you click that link you&rsquo;ll see a little more than just a list of apps. You can also see that by default this focus assist level will also show notifications for incoming calls (e.g. from Teams) and reminders.</p>
+<p>You can customize specific contacts that can break through focus assist across a number of apps, but most importantly is the list of apps themselves.</p>
+<p>There are a few apps listed by default, including some Xbox apps (probably because playing games can automatically turn on focus assist, so they expect you may still want your gaming notifications.) While you&rsquo;re here you can take a moment to clean up this list if you&rsquo;d like by clicking on a given app and clicking <strong>Remove</strong>.
+<img src="__GHOST_URL__/content/images/2021/02/image-2.png" alt="Removing a default app from the priority list">
+To add an app, click Add an app (surprise, surprise) and choose the app from the list.</p>
+<p>You&rsquo;ll note that the list of available apps isn&rsquo;t exhaustive. My assumption here is that it only list apps that either have already sent a notification or that Windows knows explicitly that it is capable of sending a notification.</p>
+<p>The default app used by BurntToast when sending a notification is Windows PowerShell, so select that from the list.</p>
+<p>Voilà, you can now set focus assist to priority only and your toast notifications from Windows PowerShell will still show!</p>
+<p>This doesn&rsquo;t solve Rob&rsquo;s problem though. You&rsquo;ll note that he is cranking focus assist all the way up to the max. In fact, if you pay attention to most any practiced presenter and you&rsquo;ll see that they default to the maximum focus assist level as priority only has a lot of potential for still letting unwanted notifications through.</p>
+<h2 id="sound-the-alarm">Sound the Alarm!</h2>
+<p>There&rsquo;s a hint in the name of the max focus assist level that gives away how we can break through. Just in case the hint is buried a little deep, check out the description under it while you&rsquo;re in the settings app:
+<img src="__GHOST_URL__/content/images/2021/02/image-3.png" alt="Alarms only, settings app description">
+The only notifications that are allowed are alarms. Those come from clocks&hellip; and when you&rsquo;re creating your own toasts you can just say: &ldquo;Psst, Windows. This toast isn&rsquo;t a reminder&hellip; it&rsquo;s an alarm. Trust me. Thanks bud.&rdquo;</p>
+<p>Really, all that&rsquo;s happening for this categorization of toast notifications is tweaking the notification&rsquo;s &ldquo;<a href="https://docs.microsoft.com/en-us/windows/uwp/design/shell/tiles-and-notifications/toast-schema#toastscenario" target="_blank" rel="noopener">scenario</a>
+&rdquo;. One of these happens to be an alarm scenario, and all focus assist is doing is blocking notifications that do not have that particular scenario set.</p>
+<p><em>One caveat, just the scenario isn&rsquo;t enough. The notification <strong>also</strong> needs to have snooze and dismiss buttons on it to be considered a &ldquo;real&rdquo; alarm.</em></p>
+<p>At the time of writing, this can&rsquo;t be done with just the <code>New-BurntToastNotification</code> function. Instead, you have to use the component functions. Learning these functions are a great way to get more control over your notifications&hellip; but it is one heck of a learning curve.</p>
+<p>We&rsquo;ll start by defining an app logo and a hero image.</p>
+<pre><code>$AppIcon = New-BTImage -Source 'https://i.imgur.com/ZbdyG6F.gif' -AppLogoOverride
+$HeroImage = New-BTImage -Source 'https://pbs.twimg.com/media/EEsoTNdXYAEYd73.jpg' -HeroImage
+</code></pre>
+<p>Next, two lines of text. The first is the heading and will show embolden compared to the second.</p>
+<pre><code>$Text1 = New-BTText -Text &quot;You Can't Silence Toast!&quot;
+$Text2 = New-BTText -Text 'Seriously, with the &quot;Alarm&quot; scenario, this will break through focus assist.'
+</code></pre>
+<p>Now we bind those images and text together&hellip; into a binding object. That binding object then feeds into a visual object.</p>
+<pre><code>$Binding1 = New-BTBinding -Children $Text1, $Text2 -AppLogoOverride $AppIcon -HeroImage $HeroImage
+$Visual1 = New-BTVisual -BindingGeneric $Binding1
+</code></pre>
+<p>When using the alarm scenario locks you into using one of the 10 alarm sounds. This example uses &ldquo;Alarm5&rdquo; but you can use tab completion to pick a different one. You can also omit the <code>-Loop</code> switch if you only want to hear the sound play once, otherwise it will loop as long as the notification is on screen.</p>
+<pre><code>$Audio1 = New-BTAudio -Source ms-winsoundevent:Notification.Looping.Alarm5 -Loop
+</code></pre>
+<p>You can opt for a silent notification if you want to not have an annoying alarm sound in your ear. In that case replace the previous line with the following.</p>
+<pre><code>$Audio1 = New-BTAudio -Silent
+</code></pre>
+<p>I mentioned needed snooze and dismiss buttons above. Let&rsquo;s go ahead and sort them out.</p>
+<pre><code>$Action1 = New-BTAction -SnoozeAndDismiss
+</code></pre>
+<p>Like with thing binding object, we now combine all of our various components into a content object, remember to set the <code>-scenario</code> to <strong>Alarm</strong>. We finally take the content and submit it to the OS&hellip; all going well we will have out toast.</p>
+<pre><code>$Content1 = New-BTContent -Visual $Visual1 -Actions $Action1 -Audio $Audio1 -Scenario Alarm
+Submit-BTNotification -Content $Content1
+</code></pre>
+<p><img src="__GHOST_URL__/content/images/2021/02/2021-02-01_22-52-01.gif" alt="Toast notification breaking through focus assist"></p>
+<h2 id="pros-and-cons">Pros and Cons</h2>
+<p>The priority list option is the easiest to pull off. It allows you the maximum amount of freedom in the creation of your notifications as the buttons and sounds are not dictated for you.</p>
+<p>The downside is that all notifications from PowerShell will break through. If you&rsquo;re a heavy user (I don&rsquo;t have a toast problem, you have a toast problem!) then you may get more notifications come through than you&rsquo;d ideally want.</p>
+<p>The alarm option means you can be more selective in which notifications do end up on screen, but the style of them is a little more rigid (I don&rsquo;t normally like buttons for most of my use cases). You&rsquo;re also forced to use the more advanced functions, which mean a steeper learning curve.</p>
+<p>Regardless, there are options.</p>
+<p>You can always toggle focus assist off and on as needed if that&rsquo;s your jam 😉</p>
+<h2 id="credit">Credit</h2>
+<p>Hero Image by <a href="https://unsplash.com/@tinaflour?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Kristina Flour</a>
+ on <a href="https://unsplash.com/s/photos/silence?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

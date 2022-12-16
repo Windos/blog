@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BurntToast on ToastIT</title>
+    <link>https://blog.toastit.dev/tags/burnttoast/</link>
+    <description>Recent content in BurntToast on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 12 Feb 2022 06:54:25 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/burnttoast/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Finally, Introducing the First Preview of BurntToast v1</title>
+      <link>https://blog.toastit.dev/blog/finally-introducing-the-first-preview-of-burnttoast-v1/</link>
+      <pubDate>Sat, 12 Feb 2022 06:54:25 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/finally-introducing-the-first-preview-of-burnttoast-v1/</guid>
+      <description>Evidently, this last year has gone by very fast. I announcedthat I was starting to work on the re-write of BurntToast that will be released as v1 back in April of 2021 and then promptly&amp;hellip; didn&amp;rsquo;t get around to working on it. With a job change and generally being busy, BurntToast took a back seat for a while there.
+But I&amp;rsquo;m glad to say that the first preview release is up on the PowerShell Gallery: BurntToast 1.</description>
+    </item>
+    
+    <item>
+      <title>Road to BurntToast v1: Actionable Toast for All!</title>
+      <link>https://blog.toastit.dev/blog/road-to-burnttoast-v1-1/</link>
+      <pubDate>Wed, 21 Apr 2021 10:03:29 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/road-to-burnttoast-v1-1/</guid>
+      <description>Last year it finally became possible to have actionable toast notificationsin PowerShell&amp;hellip; as long as you were running PowerShell 7.1 and above. This was a super cool development—and I was over the moon with it—but the PowerShell version limitation always loomed and was a downer of a caveat when I was demoing the new feature.
+That changes now (or more accurately soon™)!
+These &amp;ldquo;Road to BurntToast v1&amp;rdquo; posts are intended to give a preview of some of the features coming in BurntToast v1.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #15 - You Can&#39;t Silence Toast</title>
+      <link>https://blog.toastit.dev/blog/crouton-15-you-cant-silence-toast/</link>
+      <pubDate>Mon, 01 Feb 2021 10:08:16 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-15-you-cant-silence-toast/</guid>
+      <description>This post has been in the works for a long time now. We&amp;rsquo;re talking almost half a year, and it&amp;rsquo;s been one heck of an uphill battle putting fingers on keys and getting this written. So, what ended up being the catalyst that got this post out into the wild? This morning I woke up to a great tweet from Rob Sewellwith a video about how he&amp;rsquo;s dealing with focus assist so that his toast notification can get through.</description>
+    </item>
+    
+    <item>
+      <title>Actionable Toast Notifications, Finally Cracked Them!</title>
+      <link>https://blog.toastit.dev/blog/actionable/</link>
+      <pubDate>Sat, 08 Aug 2020 05:54:01 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/actionable/</guid>
+      <description>I&amp;rsquo;ve been living and breathing toast notifications while building the BurntToastmodule for the past five years. Through this time, they&amp;rsquo;ve been great for delivering information&amp;hellip; or annoying users.
+But there has always been a lingering missing piece: &amp;ldquo;Can I do something with these notifications?&amp;rdquo;
+Sure, you could always put buttons on your toast notifications. But they were limited to snoozing and dismissing the notification itself or opening files or websites in their default applications.</description>
+    </item>
+    
+    <item>
+      <title>The Anatomy of Toast</title>
+      <link>https://blog.toastit.dev/blog/anatomy-of-toast/</link>
+      <pubDate>Wed, 29 Jul 2020 02:05:26 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/anatomy-of-toast/</guid>
+      <description>Last week, Jeff Hicksasked a questionon the BurntToast repothat made me realize I&amp;rsquo;ve got a lot to work to do documenting the module. I mean, I already knew this, but it was the first time someone had said &amp;ldquo;I&amp;rsquo;m trying to figure this out using only the built-in help, and it&amp;rsquo;s not working!&amp;rdquo;
+One of the main things this highlighted, and a good place to start, was that I&amp;rsquo;ve never written about the how the module&amp;rsquo;s &amp;ldquo;advanced&amp;rdquo; functions map to the structure of the resulting XML that Windows uses to display toast notifications.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #14 - Fancy Buttons</title>
+      <link>https://blog.toastit.dev/blog/crouton-14-buttons/</link>
+      <pubDate>Thu, 23 Jan 2020 10:50:06 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-14-buttons/</guid>
+      <description>Toast notifications really shine when you move from just showing information to allowing the user to take some sort of action on it. Unfortunately, our choices when doing this via PowerShell is limited but we can present the user with buttons which can link through to said information in other applications or online.
+This is all well and good, and works, but what if these buttons look a little plain?</description>
+    </item>
+    
+    <item>
+      <title>Crouton #13 - Hitting Snooze</title>
+      <link>https://blog.toastit.dev/blog/crouton-13-hitting-snooze/</link>
+      <pubDate>Thu, 21 Nov 2019 09:09:45 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-13-hitting-snooze/</guid>
+      <description>Earlier this year an issuecame through on the BurntToast GitHub repoabout binding custom snooze times to a toast&amp;rsquo;s snooze button.
+If my documentation was a little more complete, the answer would have been in the built in help&amp;hellip; but I&amp;rsquo;m still working on that (while hanging my head in shame!) This post is the first step in getting something written on the topic of Snoozing and/or Dismissing toast notifications.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #12 - Toasting in Many Tongues (Tōhi o nga reo maha)</title>
+      <link>https://blog.toastit.dev/blog/crouton-12/</link>
+      <pubDate>Wed, 31 Jul 2019 11:09:29 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-12/</guid>
+      <description>Last time we talkedtoast notifications, we covered how you can gracefully update their content. This was achieved through a process called data binding where you specify placeholder &amp;ldquo;anchors&amp;rdquo; in your notification in place of the actual text which then maps through to the text to be displayed in a hashtable.
+There&amp;rsquo;s another use case for this data binding mechanism which I&amp;rsquo;m very excited about: localization.
+First, an Apology I&amp;rsquo;ll be using Māorias a non-English language in this post, but I&amp;rsquo;m ashamed to say that my te reo isn&amp;rsquo;t too sharp.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #11 - Updating Toast Notifications, Gracefully</title>
+      <link>https://blog.toastit.dev/blog/crouton-11/</link>
+      <pubDate>Wed, 17 Jul 2019 10:20:04 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-11/</guid>
+      <description>Wow, it feels like forever since I was last able to sit down and write a blog post. What better way to get back into the swing of things than to make good on the post I alluded to in my last Crouton: Updatable Toast Notifications.
+The Old Method Prior to version 0.7.0 of BurntToastyou had one option for updating the content of a toast. That options was what I&amp;rsquo;d probably refer to as &amp;ldquo;Brute Force.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #10 - Cold Shoulder (Taps)</title>
+      <link>https://blog.toastit.dev/blog/crouton-10/</link>
+      <pubDate>Tue, 02 Apr 2019 09:49:54 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-10/</guid>
+      <description>Last night I pushed go on a big update to BurntToast, bringing the version number up to 0.7.0.
+The features present in this update were done a short while ago, and then I hit a bit of a slow down when it came to cleaning up the documentation and help. Instead of delaying getting these features out into the wild, I elected to push the update with &amp;ldquo;enough&amp;rdquo; help.</description>
+    </item>
+    
+    <item>
+      <title>Everything Is Better with Toast: Getting Build Notifications</title>
+      <link>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</link>
+      <pubDate>Sat, 09 Feb 2019 11:51:33 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</guid>
+      <description>If you&amp;rsquo;ve seen my recent tweetsor my latest blog post, you know that I&amp;rsquo;m on a bit of an Azure Pipelineskick at the moment. The natural progression of this is merging Pipelines with my primary PowerShell/tech interest&amp;hellip; toast.
+I realized I was keeping the Pipelines site open as I was pushing commits, waiting to see if the latest build succeeded. Had I broken something? Did I need to pull apart my last set of changes?</description>
+    </item>
+    
+    <item>
+      <title>Crouton #8 Redux - Now with a More Complete Example</title>
+      <link>https://blog.toastit.dev/blog/crouton-8-redux/</link>
+      <pubDate>Thu, 10 Jan 2019 05:37:08 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-8-redux/</guid>
+      <description>It feels like only yesterday that I wrote Crouton #8, but it&amp;rsquo;s actually been over four months. Obviously, time has been flying by recently. I&amp;rsquo;m revisiting the topic following a question from @jkrhrton Twitter asking for example files, and I figured it might make for a decent mini blog post.
+@WindosNZDo you have any example files relating to your &#39;Crouton #8&#39; blog post? I just can&#39;t quite wrap my head around it.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #9 - Free, with Attribution</title>
+      <link>https://blog.toastit.dev/blog/crouton-9-attribution/</link>
+      <pubDate>Thu, 04 Oct 2018 15:07:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-9-attribution/</guid>
+      <description>There&amp;rsquo;s a lot of hidden gems within the toast notification framework that allow you to tailor your toasts to your taste.
+One of these features that I haven&amp;rsquo;t given enough love to (so much so, that it isn&amp;rsquo;t even properly implemented in BurntToastyet) is attribution.
+It&amp;rsquo;s a small thing (literally), but attribution text let&amp;rsquo;s you provide more context about the source of your notification. The official documentation demonstrates using this text to identify the communication channel that a message was received on, such as &amp;ldquo;Via SMS&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #8 - I like Your Code, but I Don&#39;t Want It on All My Computers</title>
+      <link>https://blog.toastit.dev/blog/crouton-8-i-like-your-code-but-i-dont-want-it-on-all-my-computers/</link>
+      <pubDate>Tue, 21 Aug 2018 05:18:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-8-i-like-your-code-but-i-dont-want-it-on-all-my-computers/</guid>
+      <description>BurntToasthas been downloaded over 13,000 times. 1,400of these were just in the past six weeks. While I haven&amp;rsquo;t been able to chat with anyone responsible for these numbers, I have to assume it&amp;rsquo;s because someone out there is deploying the module across a reasonably large network for notifications on numerous end points.
+This thought ties in with a question I got recently. If you do want to use toast notifications across your network, do you have to deploy the module everywhere?</description>
+    </item>
+    
+    <item>
+      <title>Downloading an Image for Local Use</title>
+      <link>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</link>
+      <pubDate>Mon, 28 May 2018 00:55:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/downloading-an-image-for-local-use/</guid>
+      <description>During my latest livestream, after failing at what I intended to do, we got onto enabling the ability to use pictures from the Internet in toast notifications. All of the documentation for the UWP Toolkit suggests this should just work, but unfortunately it didn&amp;rsquo;t in practice.
+Rather than changing the code, and documentation, to explicitly not make this work from within the module we set out to enable this functionality ourselves.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #7 – Superhero Landing</title>
+      <link>https://blog.toastit.dev/blog/crouton-heroimages/</link>
+      <pubDate>Sun, 13 May 2018 02:45:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-heroimages/</guid>
+      <description>Ever find yourself needing to get an image up on your screen in a timely manner?
+Yeah, me neither. But if you do find this to be the case then you can use a Toast Notification to do the job.
+As with all of these &amp;ldquo;Crouton&amp;rdquo; posts, you&amp;rsquo;ll need to have the BurntToastmodule installed in order to follow along.
+The Scenario Let&amp;rsquo;s say you have CCTV cameras outside your server rooms, and you want to get a snapshot when they pickup movement.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #6 – Dance to Your Own Beat</title>
+      <link>https://blog.toastit.dev/blog/crouton-sounds/</link>
+      <pubDate>Mon, 02 Apr 2018 04:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-sounds/</guid>
+      <description>BurntToastis long overdue an update (sorry!) and right alongside that is the project&amp;rsquo;s need for better documentation.
+I recently got a tweet about how to get a toast to play custom sound. I really like getting messages like this for two reasons: it gives me a glimpse into how people are using the module and it also focuses my documentation efforts on something that might actually be useful.
+@WindosNZhi.</description>
+    </item>
+    
+    <item>
+      <title>Need PowerShell Help? Use #PSHelp!</title>
+      <link>https://blog.toastit.dev/blog/pshelp-twitter/</link>
+      <pubDate>Tue, 20 Mar 2018 08:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/pshelp-twitter/</guid>
+      <description>Lately, I&amp;rsquo;ve been thinking about how much I enjoytaking part in the monthly #PSTweetChatevent on Twitter and how awesome the PowerShell community on there is (seriously, y&amp;rsquo;all rock!)
+If possible, I&amp;rsquo;d love to try and help steer that amazing community towards a hashtag specifically for helping with short (hopefully) PowerShell problems.
+There&amp;rsquo;s Always a Hashtag As it turns out, there&amp;rsquo;s already a hashtag which sees some use: #PSHelpI&amp;rsquo;ve added this to my TweetDeck layout and will be keeping an eye on it from now on.</description>
+    </item>
+    
+    <item>
+      <title>DIY AppId and WiX, for Tasty Toast</title>
+      <link>https://blog.toastit.dev/blog/burnttoast-wix/</link>
+      <pubDate>Sat, 03 Mar 2018 04:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/burnttoast-wix/</guid>
+      <description>It has certainly taken a lot longer to get this post out than I&amp;rsquo;d hoped. Better late than never, I guess?
+My last postshowed off the results I had using the WiX Toolsetto create a Start Menu shortcut with the necessary metadata embedded to get toasts working properly in newer versions of Windows 10.
+This time around, I&amp;rsquo;ll walk you through how to create your own installer.
+Get WiX Given we&amp;rsquo;ll be using it very soon, the first thing you should do is grab the latest stable release of the WiX Toolset(they&amp;rsquo;ll link you off to the GitHub repo, download the exe file).</description>
+    </item>
+    
+    <item>
+      <title>BurntToast &#43; AppId = It&#39;s Working!</title>
+      <link>https://blog.toastit.dev/blog/burnttoast-appid-installer/</link>
+      <pubDate>Sun, 04 Feb 2018 07:45:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/burnttoast-appid-installer/</guid>
+      <description>I can&amp;rsquo;t tell you how happy I am to be writing this post.
+AppId&amp;rsquo;s have been a thorn in my sidefor a long time. I&amp;rsquo;ve been using a loophole to get toasts displayed which recent versions of Windows 10 closed. This resulted in my removing the ability to easily set a custom AppId.
+The fix in the short term was to hard code BurntToast&amp;rsquo;s default AppId to that of powershell.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #5 – Password Expiry Warning</title>
+      <link>https://blog.toastit.dev/blog/crouton-password/</link>
+      <pubDate>Thu, 25 Jan 2018 10:30:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-password/</guid>
+      <description>&amp;ldquo;Something is wrong with my computer. Outlook is asking me for my password?!&amp;rdquo;
+&amp;ldquo;Let me look&amp;hellip; Oh, it looks like your password expired about 15 minutes ago.&amp;rdquo;
+&amp;ldquo;How the heck did that happen, isn&amp;rsquo;t the system meant to give me some warning?&amp;rdquo;
+Invisible Expiry Reminders I don&amp;rsquo;t often get these calls personally any more, but I do overhear them. There&amp;rsquo;s no point trying to tell your user that the &amp;lsquo;system&amp;rsquo; did warn them (for three days by default).</description>
+    </item>
+    
+    <item>
+      <title>BurntToast Breaking Change: Hiding Customizable AppID</title>
+      <link>https://blog.toastit.dev/blog/burnttoast-no-appid/</link>
+      <pubDate>Sun, 08 Oct 2017 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/burnttoast-no-appid/</guid>
+      <description>I hate reducing customizability, just as much as I hate making breaking changes in my projects.
+Unfortunately, BurntToasthas been making use of a bug to display Toast Notifications in Windows 10 despite it not being a UWP app. The Fall Creators Update appearsto be patching this bug and people running Insider builds have already noted that BurntToast isn&amp;rsquo;t functioning like they&amp;rsquo;re used to.
+What was the bug? First, I should point out that Microsoft&amp;amp;rsquo;s guidancehas always been that for a desktop application (or in this case a script) to display a Toast Notification, you must have a shortcut in the start menu with an AppUserModeId (Referred to in this post as AppId.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #4 – Getting Your Head Around Headers</title>
+      <link>https://blog.toastit.dev/blog/crouton-headers/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-headers/</guid>
+      <description>Headers are a new option for toast notifications introduced in the Creators Update for Windows 10. They are used for the organization of toasts, and are supported from version 0.6.0 of the BurntToastPowerShell module and beyond.
+Creating a Header Unlike the clickable toaststhat we discussed in the last croutonpost, you can use the &amp;ldquo;basic&amp;rdquo; New-BurntToastNotification function for toasts with headers, however you will need to use the New-BtHeader function to create the header object (which you can then re-use for multiple toasts.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #3 - Sometimes You Just Want to Click Your Toast</title>
+      <link>https://blog.toastit.dev/blog/crouton-clickable/</link>
+      <pubDate>Mon, 08 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-clickable/</guid>
+      <description>Buttons, as we have discussed previously, are all well and good. However, if you&amp;rsquo;re only adding one to your toast, they can look a little… out of place if not outright ugly.
+Surelyyou can just set an action on the toast itself, making it clickable?
+Before we jump in, I&amp;rsquo;m aware that I&amp;rsquo;ve been terrible about mentioning the PowerShell module these posts rely on, and linking to other relevant info.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #2 - You Can&#39;t Stop Progress (Bars)</title>
+      <link>https://blog.toastit.dev/blog/crouton-progress-bars/</link>
+      <pubDate>Sun, 30 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-progress-bars/</guid>
+      <description>April saw the release of the Creators Update for Windows 10 which brought with it a handful of new options for toast notifications. This post will serve as a quick rundown for one of these new options: Progress Bars.
+A note before we get started, the examples below require version 0.6.0 of the BurntToast module.
+Creating a progress bar Progress bars are created using a dedicated function, New-BTProgressBar, the resultant object can then be passed to New-BurntToastNotification.</description>
+    </item>
+    
+    <item>
+      <title>Crouton #1 - Toast Notifications for New Stack Overflow Questions</title>
+      <link>https://blog.toastit.dev/blog/crouton-stackwatch/</link>
+      <pubDate>Sun, 19 Mar 2017 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/crouton-stackwatch/</guid>
+      <description>Last week I pushed an update for the BurntToastPowerShell module to the PowerShell Gallery. This update, version 0.5.2, exposed the ability to add custom buttons to your toast notifications instead of just the standard Snooze and Dismiss option from previous versions.
+This dramatically increases the flexibility and usability of these PowerShell generated toasts.
+In an effort to show off the cool things you can accomplish with BurntToast, and to demo new features as they come out, I&amp;rsquo;ll be writing a series of ‘Croutons.</description>
+    </item>
+    
+  </channel>
+</rss>

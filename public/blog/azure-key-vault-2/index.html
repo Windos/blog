@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Fun with Azure Key Vault Part 2: Integration with Azure Functions - ToastIT
+  </title>
+  <meta name="description" content="Now that we have our credentials stored in an Azure Key Vault, how do we go about using them in other Azure services?" />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Fun with Azure Key Vault Part 2: Integration with Azure Functions" />
+<meta property="og:description" content="Now that we have our credentials stored in an Azure Key Vault, how do we go about using them in other Azure services?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/azure-key-vault-2/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-06-21T03:58:22+00:00" />
+<meta property="article:modified_time" content="2020-06-21T03:58:22+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fun with Azure Key Vault Part 2: Integration with Azure Functions"/>
+<meta name="twitter:description" content="Now that we have our credentials stored in an Azure Key Vault, how do we go about using them in other Azure services?"/>
+
+  <meta itemprop="name" content="Fun with Azure Key Vault Part 2: Integration with Azure Functions">
+<meta itemprop="description" content="Now that we have our credentials stored in an Azure Key Vault, how do we go about using them in other Azure services?"><meta itemprop="datePublished" content="2020-06-21T03:58:22+00:00" />
+<meta itemprop="dateModified" content="2020-06-21T03:58:22+00:00" />
+<meta itemprop="wordCount" content="1618">
+<meta itemprop="keywords" content="PowerShell,Azure," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Fun with Azure Key Vault Part 2: Integration with Azure Functions</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    June 21, 2020
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      8&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      1618&nbsp;words
+      
+    </h5>
+
+    <p>In <a href="__GHOST_URL__/2020/05/22/azure-key-vault-1/">Part 1</a>
+ of this series we learned how to spin up our own <a href="https://azure.microsoft.com/en-us/services/key-vault/" target="_blank" rel="noopener">Azure Key Vault</a>
+ and store a <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-credential" target="_blank" rel="noopener">PSCredential</a>
+ Object in it. We also checked out how to get those credentials back out and use them in our regular scripts.</p>
+<p>Today, we&rsquo;re going to figure out how we can integrate our Key Vault into <a href="https://azure.microsoft.com/en-us/services/functions/" target="_blank" rel="noopener">Azure Functions</a>
+ and make use of our credentials there.</p>
+<p>Before we continue, make sure you&rsquo;ve followed through the demo in Part 1 or just understand that I&rsquo;ll be reusing Azure resources from that demo without mentioning how to create them here.</p>
+<p>We&rsquo;re going to be using the Azure Portal a fair amount here. We can&rsquo;t do exactly what we need to via the <a href="https://www.powershellgallery.com/packages/Az.Functions" target="_blank" rel="noopener">Az.Functions</a>
+ module (yet), and we could use the <a href="https://docs.microsoft.com/en-us/cli/azure" target="_blank" rel="noopener">Azure CLI</a>
+ but I&rsquo;m not all that familiar with it.</p>
+<h2 id="creating-our-function">Creating Our Function</h2>
+<p>To start head over to the <a href="https://portal.azure.com" target="_blank" rel="noopener">Azure Portal</a>
+, and search for &ldquo;Function App&rdquo;. Choose that from the list of services.
+<img src="__GHOST_URL__/content/images/2020/06/image.png" alt="Searching for Function App service in the Azure Portal">
+If you already have functions, you&rsquo;ll see them listed. We&rsquo;ll click the Add button to create a new one, though.
+<img src="__GHOST_URL__/content/images/2020/06/image-1.png" alt="Add button on Function App page">
+The first page you&rsquo;ll need to fill out is all the &ldquo;basic&rdquo; information about it. You&rsquo;ll need to choose a resource group, for this demo we&rsquo;ll use the <strong>rg-PsCredDemo</strong> group that we created for our Key Vault in part 1.</p>
+<p>You also need to give it a name, you won&rsquo;t be able to copy mine directly as it needs to be globally unique across all of Azure.</p>
+<p>The final choices on this page are the runtime stack, which will be PowerShell Core, version, and region. Your only choice for version is 6, here&rsquo;s hoping got PowerShell 7 support soon. I&rsquo;m matching my regions to everything created in part 1.</p>
+<p>Once you&rsquo;re happy with your settings here, click next to head to the &ldquo;hosting&rdquo; options.
+<img src="__GHOST_URL__/content/images/2020/06/functionapp.png" alt="Basic function app info">
+The hosting options are where any costs associated with this function will be incurred. Firstly you&rsquo;ll need a Storage account to store the various files that make up your function. We haven&rsquo;t made one yet, so I&rsquo;ll add a new one.
+<img src="__GHOST_URL__/content/images/2020/06/image-3.png" alt="Creating new storage account">
+You&rsquo;ll notice an option to choose an operating system. Unfortunately, PowerShell functions are only supported on Windows at the moment so there&rsquo;s nothing to set here.</p>
+<p>Finally, choose your plan. I&rsquo;m leaving mine on &ldquo;Consumption (Serverless)&rdquo; as for what we&rsquo;re doing it&rsquo;s cheaper (or most likely free.) If you&rsquo;re expecting very high usage of your function, or you know you need the more premium features, you might want to consider the other plans&hellip; but if you&rsquo;re unsure just stick to consumption.</p>
+<p>When happy, click next.
+<img src="__GHOST_URL__/content/images/2020/06/image-4.png" alt="Consumption plan">
+In order to better see what&rsquo;s happening when we run out function, I am going to be turning on Application Insights. There is a small cost to this, but I almost always turn it on so it&rsquo;s invaluable when troubleshooting.</p>
+<p>It will suggest a new for your Application Insights instance, but if you want to control it, click &ldquo;Create new&rdquo; to open up a blade where you can provide your own details.</p>
+<p>If you&rsquo;re using tags to categorize things in your Azure tenant click the next button to set those, otherwise skip straight to the end by clicking &ldquo;Review + create&rdquo;
+<img src="__GHOST_URL__/content/images/2020/06/image-5.png" alt="Creating new Application Insights instance">
+Have a read of this final page, it your last chance to go back and make adjustments. When you&rsquo;re ready click Create.
+<img src="__GHOST_URL__/content/images/2020/06/image-6.png" alt="Review and create">
+Now sit back and wait for a little bit while your new function is deployed. When it&rsquo;s finished, you&rsquo;ll see a &ldquo;Go to resource&rdquo; button which will take you directly to your new function.
+<img src="__GHOST_URL__/content/images/2020/06/image-10.png" alt="Deployment is complete"></p>
+<h2 id="i-can-haz-creds">I Can Haz Creds?</h2>
+<p>Before we create any code in our function, we&rsquo;re first going to set it up so that it is able to retrieve credentials stored in our Key Vault.</p>
+<p>Start from the main page of our function app. If you&rsquo;re following on in sequence, you&rsquo;ll be here after clicking &ldquo;Go to resource&rdquo; at the end of the last section, otherwise search for &ldquo;Function App&rdquo; again as we did right at the start of this post and choose it from the list of deployed functions.</p>
+<p>Scroll down until your see &ldquo;Identity&rdquo; in the &ldquo;Settings&rdquo; section of all the options on the left hand side of the page and click it.
+<img src="__GHOST_URL__/content/images/2020/06/image-11.png" alt="Finding the Identity setting option">
+This is where we let Azure know how our function can be referenced across other Azure services. In our case we&rsquo;ll be telling Key Vault &ldquo;See this function? It&rsquo;s ok to let it get access to our secrets.&rdquo;</p>
+<p>If you&rsquo;re comfortable setting up app registrations, you can go to the User assigned tab, but we&rsquo;ll be sticking to System assigned here. All we have to do to get a system assigned identity is toggle the status to &ldquo;On&rdquo;.
+<img src="__GHOST_URL__/content/images/2020/06/image-12.png" alt="System assigned status">
+Do make sure you click Save after toggling it though. Save yourself an hour of troubleshooting because you did what I do every time and forget to click that one button.</p>
+<p>You&rsquo;ll know you&rsquo;ve done it right because you&rsquo;ll get a confirmation asking if you&rsquo;re ok with a managed identity being created in Azure AD (you want to click Yes.)
+<img src="__GHOST_URL__/content/images/2020/06/image-13.png" alt="Make sure you click save!"><img src="__GHOST_URL__/content/images/2020/06/image-14.png" alt="Yes, enable it">
+With that done we need to head over to our Key Vault. Search for it and choose it from the list of resources.
+<img src="__GHOST_URL__/content/images/2020/06/image-15.png" alt="Key Vaults service">
+Pick the vault from the list. The one created for this demo was &ldquo;kv-PsCredStore&rdquo;.
+<img src="__GHOST_URL__/content/images/2020/06/image-16.png" alt="List of deployed vaults">
+Once you&rsquo;re there head straight into the Access policies settings and add a new policy.
+<img src="__GHOST_URL__/content/images/2020/06/image-19.png" alt="Access policies settings">
+To create your access policy, you need to select the principal (your function app) and what permissions you want to give it. In this example I only want the function to be able to list and retrieve secrets (but not certificates or keys) so I only give it those two permissions.</p>
+<p>Scrolls down and hit Add once you&rsquo;ve done configuring your policy.
+<img src="__GHOST_URL__/content/images/2020/06/image-20.png" alt="Creating a new access policy">
+Once again, make sure you click save when you get back to the main Access policies page! It&rsquo;s easy to miss and if you don&rsquo;t do it the change won&rsquo;t take effect.
+<img src="__GHOST_URL__/content/images/2020/06/image-21.png" alt="CLICK SAVE!"></p>
+<h2 id="using-the-creds">Using the Creds</h2>
+<p>Before we head back to our function app, we need some details about the secret we&rsquo;re going to be using. Head into the Secrets section and choose the PSCredential we created in part one.
+<img src="__GHOST_URL__/content/images/2020/06/kv-secrets.png" alt="Open the existing credential secret">
+You&rsquo;ll then see a list of versions (possibly only one) click on the current version to open it.
+<img src="__GHOST_URL__/content/images/2020/06/image-23.png" alt="Selecting the current version">
+Once you&rsquo;re into a specific version, you&rsquo;ll see a Secret Identifier field which is really just a URL. You&rsquo;ll need to take a copy of this and keep it available for later.</p>
+<p>In my example this is: <a href="https://kv-pscredstore.vault.azure.net/secrets/TestCredential/89f0a4f08b3d4973a1e3d32d4519a5d1" target="_blank" rel="noopener">&lt;code&gt;https://kv-pscredstore.vault.azure.net/secrets/TestCredential/89f0a4f08b3d4973a1e3d32d4519a5d1&lt;/code&gt;</a>
+
+<img src="__GHOST_URL__/content/images/2020/06/image-24.png" alt="Copy the secret identifier">
+Now, head back to our function app. Head down to the Configuration setting and choose to add a new application setting.
+<img src="__GHOST_URL__/content/images/2020/06/image-25.png" alt="Add application setting">
+You can give this setting any name, though I will call mine &ldquo;TestCredential&rdquo; to make it match the name of the Key Vault secret. The value needs to be in the format of <code>@Microsoft.KeyVault(SecretUri=&lt;SECRET_IDENTIFIER&gt;)</code> so for me it&rsquo;ll be:</p>
+<pre><code>@Microsoft.KeyVault(SecretUri=https://kv-pscredstore.vault.azure.net/secrets/TestCredential/89f0a4f08b3d4973a1e3d32d4519a5d1)
+</code></pre>
+<p><img src="__GHOST_URL__/content/images/2020/06/image-26.png" alt="Adding an application setting">
+Back on the list of application settings, click the <strong>Save</strong> and then **Refresh **buttons. You&rsquo;ll know it&rsquo;s worked because your setting will show &ldquo;Key Vault Reference&rdquo; in the source column with a green check mark.
+<img src="__GHOST_URL__/content/images/2020/06/image-27.png" alt="Verifying that it worked">
+Be aware that this locks your function to only a specific version of the secret. If you load a new version into your Key Vault, the function will continue to use the old one.</p>
+<p>You can remove the version number from your key vault reference if desired and this will allow your function to always get the latest version. You need to ensure you leave the trailing slash though, or else it won&rsquo;t work.</p>
+<p>In the above example this would be:</p>
+<p>@Microsoft.KeyVault(SecretUri=https://kv-pscredstore.vault.azure.net/secrets/TestCredential/)</p>
+<h2 id="actually-using-the-secret">Actually Using the Secret</h2>
+<p>We&rsquo;ve done a <em>lot</em> of setup, now it&rsquo;s time to put this to work. On your function apps page, head into the functions section and click add.
+<img src="__GHOST_URL__/content/images/2020/06/addfunction.png" alt="Add a new function">
+We&rsquo;re going to keep things simple here and get to the point where we&rsquo;re interacting with our credential secret as fast as possible. With that in mind we&rsquo;ll use a timer trigger template.
+<img src="__GHOST_URL__/content/images/2020/06/temaplte.png" alt="Pick a template">
+Give this function a name, I&rsquo;ve called mine CredGetter. The default schedule means the function will run every five minutes and I&rsquo;ve left this as is.
+<img src="__GHOST_URL__/content/images/2020/06/image-30.png" alt="Create functions">
+Once the function has been created, head into Code + Test to edit the PowerShell behind the function.
+<img src="__GHOST_URL__/content/images/2020/06/image-31.png" alt="Default PowerShell script">
+I left all the template code intact, and added the following at the end:</p>
+<pre><code>$Cred = New-Object System.Management.Automation.PSCredential (
+    ($env:TestCredential -Split &quot;`v&quot;)[0],
+    (ConvertTo-SecureString ($env:TestCredential -Split &quot;`v&quot;)[1] -AsPlainText -Force)
+)
+
+Write-Host &quot;The Key Vault secret username is: $($Cred.UserName)&quot;
+Write-Host &quot;The Key Vault secret password is: $($Cred.GetNetworkCredential().Password)&quot;
+</code></pre>
+<p>Save after you&rsquo;ve added this code and then you can either wait for this function to run on its timer or click the Test/Run button to trigger it manually. Eventually you&rsquo;ll see output in the log pane towards the bottom of the page. As you can see you credential was retrieved and contains the data I set in it in part 1.
+<img src="__GHOST_URL__/content/images/2020/06/image-32.png" alt="UserName and Password output">
+<em>n.b. you might need to refresh the page in order to see updated log output. Be patient.</em></p>
+<p>But how did that work? That application settings can be accessed in our PowerShell script as an environment variable. We called ours &ldquo;TestCredential&rdquo; and I reference that in the script as <code>$env:TestCredential</code> which goes off to Key Vault and pulls back the secret that the application setting references.</p>
+<h2 id="wrap-up">Wrap Up</h2>
+<p>I originally intended on this being a short two-part series. But in writing out this second part I&rsquo;ve realized that there&rsquo;s something I want to cover in a third installment. I won&rsquo;t make any promises when that&rsquo;ll come out though, there&rsquo;ll be several unrelated posts between part 2 and part 3.</p>
+<p>If you&rsquo;ve got any questions about this, please do leave a comment on this post, or hit me up on <a href="https://twitter.com/WindosNZ" target="_blank" rel="noopener">Twitter</a>
+.</p>
+<h2 id="credit">Credit</h2>
+<p>Hero image by <a href="https://unsplash.com/@silas_crioco?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Silas Köhler</a>
+ on <a href="https://unsplash.com/?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

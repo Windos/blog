@@ -12,8 +12,8 @@ DefaultContentLanguage = "en"
     [languages.en.params]
       introTitle = "Josh King"
       introSubtitle = "Geek, Father, Walking Helpdesk"
-      introPhoto = "/picture.jpg"
-      logo = "/blist-logo.png"
+      introPhoto = "/avatar.jpg"
+      logo = "/toastit-logo.png"
     [[languages.en.menu.main]]
         name = "Blog"
         url = "blog"
@@ -36,19 +36,19 @@ DefaultContentLanguage = "en"
 
 [params]
   # Enable the darkmode toggle in header
-  darkModeToggle = true
+  darkModeToggle = false
 
   # Enable search in header
   enableSearch = true
 
   # Custom copyright - optional
-  copyright = "Copyright © 2021 - Katheryn Fox · All rights reserved"
-  favicon = "/favicon.svg"
+  copyright = "Copyright © 2022 - Josh King · All rights reserved"
+  favicon = "/favicon.png"
 
   # Color for the intro details and social links block, not applicable for dark mode
   # Supported values: Any color from TailwindCSS default colors
   # Reference: https://tailwindcss.com/docs/customizing-colors
-  ascentColor = "bg-blue-100"
+  ascentColor = "bg-blue-300"
 
   # The page bundle that is shown on the front page
   frontBundle = "blog"
@@ -56,14 +56,11 @@ DefaultContentLanguage = "en"
 [params.homepage.social]
   # Global params xommon for both languages
   title = "Follow me"
-  description = "I work on everything coding and tweet developer memes"
-  twitter = "https://twitter.com/"
-  linkedin = "https://linkedin.com/in/"
-  xing = "https://www.xing.com/profile/"
-  github = "https://github.com/"
-  medium = "https://medium.com/"
-  reddit = "https://reddit.com/"
-  dribbble = "https://dribbble.com/"
+  description = ""
+  twitter = "https://twitter.com/WindosNZ"
+  linkedin = "https://linkedin.com/in/windos"
+  github = "https://github.com/Windos"
+  youtube = "https://www.youtube.com/c/JoshuaKingSolari"
 
 [[menu.main]]
   name = "About"

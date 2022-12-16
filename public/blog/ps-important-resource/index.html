@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  The Single Most Important Resource When Learning Windows PowerShell - ToastIT
+  </title>
+  <meta name="description" content="There is one thing I learnt to do early on and continue to do to this day: Ask for help." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="The Single Most Important Resource When Learning Windows PowerShell" />
+<meta property="og:description" content="There is one thing I learnt to do early on and continue to do to this day: Ask for help." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/ps-important-resource/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-09-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2014-09-14T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="The Single Most Important Resource When Learning Windows PowerShell"/>
+<meta name="twitter:description" content="There is one thing I learnt to do early on and continue to do to this day: Ask for help."/>
+
+  <meta itemprop="name" content="The Single Most Important Resource When Learning Windows PowerShell">
+<meta itemprop="description" content="There is one thing I learnt to do early on and continue to do to this day: Ask for help."><meta itemprop="datePublished" content="2014-09-14T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2014-09-14T00:00:00+00:00" />
+<meta itemprop="wordCount" content="861">
+<meta itemprop="keywords" content="PowerShell,Nugget," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">The Single Most Important Resource When Learning Windows PowerShell</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    September 14, 2014
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      5&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      861&nbsp;words
+      
+    </h5>
+
+    <p>So you&rsquo;ve decided to learn Windows PowerShell. You&rsquo;re probably reading a fair share of blogs, forums and even books. Maybe there is a specific task you&rsquo;re trying to complete and have found out that PowerShell is the only avenue to do so. Or maybe you&rsquo;ve heard a lot about PowerShell, and it&rsquo;s ever increasing functionality within Windows, and are curious about how you can make it work for you in your day job.</p>
+<p>I&rsquo;m not going to pretend that I&rsquo;m a PowerShell guru, or even an expert. But I do use it daily. There is one thing I learnt to do early on and continue to do to this day:</p>
+<p><strong>Ask for help</strong></p>
+<p>I don&rsquo;t mean jumping on a forum or <a href="http://superuser.com/" target="_blank" rel="noopener">Super User</a>
+, though these are both great options for figuring out some of the more challenging dilema you may face. I&rsquo;m referring to PowerShell&rsquo;s build in help cmdlet; <a href="http://go.microsoft.com/fwlink/p/?linkid=289584" target="_blank" rel="noopener">&lt;strong&gt;Get-Help&lt;/strong&gt;</a>
+</p>
+<h2 id="making-the-help-come-to-you">Making the help come to you</h2>
+<p>Using a PowerShell cmdlet brings the help to you, where you need it. Whether you&rsquo;re working in the prompt, or the ISE, you&rsquo;ll get the information you&rsquo;re after without having to minimize, open, or move anything.</p>
+<p>That&rsquo;s not to say you&rsquo;re limited to reading the help only within the same window that you&rsquo;re working in. To quickly open the help document in another window, use the <code>-ShowWindow</code> switch.</p>
+<p>If you prefer to read your help documents on a nicely formatted website (like I do), then use the <code>-Online</code> switch. This will open up the relevant TechNet page for the cmdlet in question.</p>
+<h2 id="always-the-latest">Always the latest</h2>
+<p>Earlier versions of PowerShell, specifically v1 and 2, shipped with the help files. This means if there was a mistake in the help files, or they just needed updating in general, the developers had to wait for the next PowerShell update.</p>
+<p>From version 3 and above the help files are now downloaded and aren&rsquo;t included by default. To download them for the first time, or update existing help files, simply run <code>Update-Help</code>.</p>
+<p>The PowerShell developers can now push updates to the help whenever it is needed, meaning you get the most up to date help available.</p>
+<h2 id="how-do-you-actually-use-get-help">How do you actually use Get-Help?</h2>
+<p>Using <code>Get-Help</code> is fairly easy, though it does have it&rsquo;s own help file if you&rsquo;re interested (<code>Get-Help Get-Help</code>)</p>
+<p>Simply specify the cmdlet you need help with. This will give you a standard, yet limited, subset of the help available for the cmdlet, including:</p>
+<ul>
+<li>A quick synopsis</li>
+<li>The cmdlets syntax</li>
+<li>A longer description</li>
+<li>Related links, including related cmdlets and a TechNet URL if available.</li>
+</ul>
+<p>If you need more detailed information, including extra notes about every parameter and examples of how to use the cmdlet you can use <code>-detailed</code> or <code>-full</code> switch. Detailed gives more information, but not as much as full. I only ever use the full switch.</p>
+<p>If you only want to see some examples of the cmdlet in action, use the <code>-examples</code> switch.</p>
+<h2 id="help-to-the-rescue">Help to the rescue</h2>
+<p>Say that you&rsquo;re trying to get Windows Events. You know, maybe from past experience, google, or someone else&rsquo;s script, that you can use <code>Get-EventLog</code> to perform the task. You have seen that you can specify the times between which you would like to see events. However, you&rsquo;re not sure if the correct parameters are &ldquo;start&rdquo; and &ldquo;end&rdquo; or &ldquo;before&rdquo; and &ldquo;after.&rdquo;</p>
+<pre><code>PS C:\&gt; help Get-EventLog
+
+NAME
+    Get-EventLog
+
+SYNOPSIS
+    Gets the events in an event log, or a list of the event logs, on the local or remote computers.
+
+SYNTAX
+    Get-EventLog [-LogName] &lt;String&gt; [[-InstanceId] &lt;Int64[]&gt;] [-After &lt;DateTime&gt;] [-AsBaseObject] [-Before &lt;DateTime&gt;] [-ComputerName &lt;String[]&gt;] [-EntryType &lt;String[]&gt;] [-Index &lt;Int32[]&gt;] [-Message &lt;String&gt;] [-Newest &lt;Int32&gt;] [-Source &lt;String[]&gt;] [-UserName &lt;String[]&gt;] [&lt;CommonParameters&gt;]
+
+-- More --
+</code></pre>
+<p>With a quick glance at the syntax, you can see both <code>-After</code> and <code>-Before</code> and that they both take DateTime values.</p>
+<p>Without leaving the window, you&rsquo;ve got your answer and can keep on working.</p>
+<h2 id="what-now">What now?</h2>
+<p>Start using <code>Get-Help</code>, or more likely <code>help</code>, whenever you&rsquo;re trying to figure out how to use a new cmdlet. Use it when you&rsquo;re trying to use a cmdlet you&rsquo;ve used in the past in a different way. Make it your first port of call. Often times you&rsquo;ll find that if it doesn&rsquo;t give you the answer outright, you&rsquo;ll pick up the breadcrumbs you need to find it.</p>
+<p>Use <code>help</code> to read about more advanced topics or topics that don&rsquo;t relate to a specific cmdlet. These topics start with &ldquo;about_&rdquo; so use a wildcard to get a list of them and pick something interesting: <code>Get-Help about_*</code></p>
+<pre><code>PS C:\&gt; get-help about_Arrays
+TOPIC
+    about_Arrays
+
+SHORT DESCRIPTION
+    Describes arrays, which are data structures designed to store collections of items.
+
+-- More --
+</code></pre>
+<p>Most importantly keep going with PowerShell. A new version of Windows is just around the corner and with that comes a new version of PowerShell with even greater functionality. The foundation you build now will help you do even more going forward.</p>
+<p>PowerShell is a broad topic. Even it&rsquo;s help goes much deeper than I could ever explore in one post; this one only scratches the surface. I hope, however, that it has at least introduced you to your new go-to resource when you need a little guidance</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

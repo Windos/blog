@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  So *That&#39;s* What OutBuffer Is For! - ToastIT
+  </title>
+  <meta name="description" content="OutBuffer has been lurking in amongst the common parameters on most cmdlets for years, but I&#39;ve never taken the time to ask what it&#39;s for." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="So *That&#39;s* What OutBuffer Is For!" />
+<meta property="og:description" content="OutBuffer has been lurking in amongst the common parameters on most cmdlets for years, but I&#39;ve never taken the time to ask what it&#39;s for." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/what-outbuffer-is-for/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-05-27T18:30:00+00:00" />
+<meta property="article:modified_time" content="2020-05-27T18:30:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="So *That&#39;s* What OutBuffer Is For!"/>
+<meta name="twitter:description" content="OutBuffer has been lurking in amongst the common parameters on most cmdlets for years, but I&#39;ve never taken the time to ask what it&#39;s for."/>
+
+  <meta itemprop="name" content="So *That&#39;s* What OutBuffer Is For!">
+<meta itemprop="description" content="OutBuffer has been lurking in amongst the common parameters on most cmdlets for years, but I&#39;ve never taken the time to ask what it&#39;s for."><meta itemprop="datePublished" content="2020-05-27T18:30:00+00:00" />
+<meta itemprop="dateModified" content="2020-05-27T18:30:00+00:00" />
+<meta itemprop="wordCount" content="759">
+<meta itemprop="keywords" content="PowerShell," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">So *That&#39;s* What OutBuffer Is For!</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    May 27, 2020
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      4&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      759&nbsp;words
+      
+    </h5>
+
+    <p><a href="https://twitter.com/concentrateddon" target="_blank" rel="noopener">Don Jones</a>
+ has been talking at a lot of PowerShell User Groups lately. One of the topics he&rsquo;s been covering is little nuggets from his latest (and probably last) PowerShell focused book, <a href="https://leanpub.com/shell-of-an-idea" target="_blank" rel="noopener">Shell of an Idea</a>
+.</p>
+<p>In his talk with the <a href="https://twitter.com/chgopsug" target="_blank" rel="noopener">Chicago PowerShell User Group</a>
+ earlier this month, Don told the story about how <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters#outbuffer" target="_blank" rel="noopener">OutBuffer</a>
+ came to be&hellip; and what it does. You could see in people&rsquo;s video feeds a collective &ldquo;huh, that&rsquo;s actually really cool.&rdquo;</p>
+<blockquote>
+<p>Slide 7 and I've already learnt something.</p>
+<p>&hellip; So <em>that's</em> what -outbuffer is for!
+— Josh (Windos) King (@WindosNZ) <a href="https://twitter.com/WindosNZ/status/1261070657694994433?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">May 14, 2020</a>
+</p>
+</blockquote>
+<p>This post is inspired by Don&rsquo;s talks and book. It&rsquo;s going to look at what OutBuffer is and how to use it.</p>
+<p>This post won&rsquo;t cover the associated story, for that I highly recommend picking up a copy of <a href="https://leanpub.com/shell-of-an-idea" target="_blank" rel="noopener">Shell of an Idea</a>
+. It&rsquo;s well worth a read, even if you&rsquo;re not a PowerShell die hard. The topics and lessons are universal.</p>
+<h2 id="first-what-is-it">First, What Is It?</h2>
+<p>Chances are good that you see OutBuffer often when tabbing through available parameters on commands. You&rsquo;ll have not paid it much mind as it&rsquo;s not the parameter you&rsquo;re looking for.
+<img src="__GHOST_URL__/content/images/2020/05/OutBuffer-Tab-Completion.gif" alt="Cmdlet parameter tab completetion with&amp;hellip; OutBuffer">
+So&hellip; what is it?</p>
+<p>Well it all has to do with the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_pipelines" target="_blank" rel="noopener">pipeline</a>
+, the <a href="https://docs.microsoft.com/en-us/powershell/scripting/learn/understanding-the-powershell-pipeline" target="_blank" rel="noopener">life blood of PowerShell</a>
+ which enables you to pass objects from one command directly into another.</p>
+<p>The examples used here are adaptions of the one found in the <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_commonparameters#outbuffer" target="_blank" rel="noopener">OutBuffer documentation</a>
+. It&rsquo;s a great illustration and I couldn&rsquo;t come up with a better one that wasn&rsquo;t more complicated than need be.</p>
+<p>Consider this example, which demonstrates how you&rsquo;re used to working with pipelines.</p>
+<pre><code>1..4 |
+    ForEach-Object {Write-Host &quot;$($_): First&quot;; $_} |
+    ForEach-Object {Write-Host &quot;$($_): Second&quot;}
+</code></pre>
+<p>This example generates the numbers 1 through 4, passes them down the pipeline to <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/foreach-object" target="_blank" rel="noopener">ForEach-Object</a>
+, where a statement is printed to the screen including the current number and a note that it&rsquo;s the first foreach loop. It then passes the numbers down the pipeline to a second foreach loop which prints to the screen again.</p>
+<pre><code>1: First
+1: Second
+2: First
+2: Second
+3: First
+3: Second
+4: First
+4: Second
+</code></pre>
+<p>From the output you can see that it processes each number in sequence. &ldquo;1&rdquo; passes through both loops, then &ldquo;2&rdquo; passes through both, etc.</p>
+<p>This is because the default behavior is to pass objects down the pipeline one at a time as soon as the previous command is done with one object it&rsquo;s past along.</p>
+<p>OutBuffer specifies how many objects to store up before passing them down the pipeline in a larger batch. The trick is that the number of objects passed down the pipeline is what you provide to the OutBuffer parameter plus 1, so <code>-OutBuffer 1</code> passes objects in batches of 2, and <code>-OutBuffer 2</code> would pass batches on 3.</p>
+<p>Let&rsquo;s revisit our example with <code>-OutBuffer 1</code> added to the first foreach loop.</p>
+<pre><code>1..4 |
+    ForEach-Object {Write-Host &quot;$($_): First&quot;; $_} -OutBuffer 1 |
+    ForEach-Object {Write-Host &quot;$($_): Second&quot;}
+
+1: First
+2: First
+1: Second
+2: Second
+3: First
+4: First
+3: Second
+4: Second
+</code></pre>
+<p>This time you&rsquo;ll notice that the output shows that the numbers are working their way through the loops in pairs. &ldquo;1&rdquo; and &ldquo;2&rdquo; both show output from the first loop, then the second loop, and then &ldquo;3&rdquo; and &ldquo;4&rdquo; take their turn.</p>
+<p>We can turn this all the way up, so that all four numbers are processed in batches.</p>
+<pre><code>1..4 |
+    ForEach-Object {Write-Host &quot;$($_): First&quot;; $_} -OutBuffer 3 |
+    ForEach-Object {Write-Host &quot;$($_): Second&quot;}
+
+1: First
+2: First
+3: First
+4: First
+1: Second
+2: Second
+3: Second
+4: Second
+</code></pre>
+<h2 id="but-why">But Why?</h2>
+<p>For the full story, including the funny scenario under which it got implemented, go read Shell of an Idea.</p>
+<p>As for why it was added, consider the fact that you can pass objects between commands that are technically running on different machines on your network. If you&rsquo;re dealing with a <strong>lot</strong> of objects this can get very chatty on your network. OutBuffer allows you to queue up objects to send larger, but less frequent, chunks.</p>
+<p>This still works today and may be an interesting tool certainly for network-based operations but also if you&rsquo;re wanting to control the flow of objects through loops for whatever reason.</p>
+<p>This has been in PowerShell since day one, and in hindsight I wish I knew about it sooner. Thinking back this could have helped in a few niche scenarios that I&rsquo;d struggled with at the time.</p>
+<p>So&hellip; <strong>that&rsquo;s</strong> what OutBuffer is for!</p>
+<h2 id="credit">Credit</h2>
+<p>Hero image by <a href="https://unsplash.com/@alexiby?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Alex Iby</a>
+ on <a href="https://unsplash.com/s/photos/lightbulb?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

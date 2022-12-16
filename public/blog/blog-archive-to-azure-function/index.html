@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Moving My Automatic Blog Archive Tweets to Azure Functions - ToastIT
+  </title>
+  <meta name="description" content="A few scripts run on my home server, but can happily run in a serverless environment. Time to give that poor server a rest, I think." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Moving My Automatic Blog Archive Tweets to Azure Functions" />
+<meta property="og:description" content="A few scripts run on my home server, but can happily run in a serverless environment. Time to give that poor server a rest, I think." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/blog-archive-to-azure-function/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-02-23T21:08:50+00:00" />
+<meta property="article:modified_time" content="2019-02-23T21:08:50+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Moving My Automatic Blog Archive Tweets to Azure Functions"/>
+<meta name="twitter:description" content="A few scripts run on my home server, but can happily run in a serverless environment. Time to give that poor server a rest, I think."/>
+
+  <meta itemprop="name" content="Moving My Automatic Blog Archive Tweets to Azure Functions">
+<meta itemprop="description" content="A few scripts run on my home server, but can happily run in a serverless environment. Time to give that poor server a rest, I think."><meta itemprop="datePublished" content="2019-02-23T21:08:50+00:00" />
+<meta itemprop="dateModified" content="2019-02-23T21:08:50+00:00" />
+<meta itemprop="wordCount" content="1826">
+<meta itemprop="keywords" content="PowerShell,Azure," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Moving My Automatic Blog Archive Tweets to Azure Functions</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    February 23, 2019
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      9&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      1826&nbsp;words
+      
+    </h5>
+
+    <p>Mid way through last year I <a href="https://king.geek.nz/2018/05/30/automatic-blog-archive-tweets/" target="_blank" rel="noopener">live streamed and blogged</a>
+ the creation of a script that automatically sends out &ldquo;blog archive&rdquo; tweets. It&rsquo;s been working well, and has been resurfacing topics that I sometimes forget I&rsquo;ve written.</p>
+<p>Until today, it&rsquo;d been running on my home server&hellip; but why?</p>
+<p>It&rsquo;s a fairly simple script, with no need to run on an actual server, let alone that specific one. It seems like the perfect script to move to a serverless service and learn how to use them in practice.</p>
+<h2 id="azure-functions"><strong>Azure Functions</strong></h2>
+<p>I opted to use <a href="https://azure.microsoft.com/en-us/services/functions/" target="_blank" rel="noopener">Azure Functions</a>
+ as my serverless platform of choice. It is a paid service, after a certain threshold. That threshold? 1,000,000 requests / month&hellip; yeah I&rsquo;m not going to be getting anywhere near that, so for my purposes I can consider it to be free!</p>
+<p>As for PowerShell, it&rsquo;s available as an unsupported experimental language and only on the older version of function apps (we&rsquo;ll touch on this when we get to it.)</p>
+<h2 id="making-the-move"><strong>Making the Move</strong></h2>
+<p>I&rsquo;ve already got an Azure account. I&rsquo;m actually still in the middle of my <a href="https://azure.microsoft.com/en-us/free/" target="_blank" rel="noopener">free trial</a>
+ with some available credit and extra services being free for 12 months (so expect a few blog posts while I don&rsquo;t have to pay for it?!)</p>
+<p>However, I&rsquo;m starting this task from a blank slate, I&rsquo;ve got no existing Function Apps or Resource Groups or anything.</p>
+<p>To get started, sign into you Azure account and load up the <a href="https://portal.azure.com/" target="_blank" rel="noopener">portal</a>
+.</p>
+<p>Head to the Function Apps page, and you can see any existing apps&hellip; and also find that you can&rsquo;t add a new one directly from this page. Instead hit the plus up the top left of the page.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--0-.png" alt="2019-02-23&amp;ndash;0-">
+From here, either search for or scroll down to find &ldquo;<strong>Function App</strong>&rdquo;. Choosing &ldquo;<strong>Compute</strong>&rdquo; from the left hand column will filter the list of options and make it easier to find.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--1--1.png" alt="2019-02-23&amp;ndash;1&amp;ndash;1">
+This will open a blade where you can fill out info for your new Function App. The first option is the app name and this has to globally unique as it ends up with an internet resolvable domain name.</p>
+<p>If you&rsquo;ve got existing resource groups and storage provisioned, you can select them here&hellip; or just create new ones like I am.</p>
+<p>Also, if locality of your app is important (because serverless != no servers), remember to pick a location. It wasn&rsquo;t too important for this task, but when I have to think about proximity to &ldquo;my audience&rdquo;, West US tends to be best so I stuck with that here.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--3--1.png" alt="2019-02-23&amp;ndash;3&amp;ndash;1">
+Once the deployment is finished, which could take a little while if you&rsquo;re setting up a brand new resource group, you&rsquo;ll be able to get straight to your new Function App via the shortcut in your notifications.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--5--1.png" alt="2019-02-23&amp;ndash;5&amp;ndash;1">
+The overview tab gives a high level break down of your app, including the url and quick links to some of the settings we&rsquo;ll be going into soon. The &ldquo;Platform features&rdquo; tab is a listing of all of the features you may need to get into.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--6--2.png" alt="2019-02-23&amp;ndash;6&amp;ndash;2">
+We&rsquo;ll start by looking into the &ldquo;Function app settings&rdquo; (which you can also get to from the Overview tab.)
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--7--1.png" alt="2019-02-23&amp;ndash;7&amp;ndash;1">
+In order to use PowerShell, this function needs to be running version ~1 but the default is ~2 (which makes sense, it is newer&hellip;)</p>
+<p>Toggle the version to downgrade and wait for a moment to let it make these changes.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--8--1.png" alt="2019-02-23&amp;ndash;7&amp;ndash;1">
+While we&rsquo;re looking at settings, we need to add some tokens which will be used to authenticate against the Twitter APIs when it&rsquo;s time to send our tweet.</p>
+<p>You do this in the &ldquo;Application settings&rdquo;. Once again, this is accessible via the Overview or Platform features tabs. Once you&rsquo;re in Application settings, scroll down to&hellip; Application settings (no I&rsquo;m not joking) and add four new settings.</p>
+<p>These are for the four different tokens and secrets needed by Twitter. You Twitter module of choice should point you in the right direction for getting these generated.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--11--1.png" alt="2019-02-23&amp;ndash;11&amp;ndash;1">
+So far we&rsquo;ve defined the platform on which our function (and future functions?) will run. Now we need to create an actual function.</p>
+<p>There&rsquo;s a drop down for functions on the left of the screen which currently has nothing under it. Click the plus sign next to it though, to start the process of creating one.</p>
+<p>The first screen you&rsquo;ll see gives a bunch of quick premade functions, but they aren&rsquo;t what we want. We need to create a custom function as we&rsquo;re planning to use PowerShell.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--12--1.png" alt="2019-02-23&amp;ndash;12&amp;ndash;1">
+On the next page, toggle on &ldquo;Experimental Language Support&rdquo; which enables the PowerShell option we&rsquo;re looking for. You can pick any of the templates, but the one I want for this function is the &ldquo;Timer trigger&rdquo; as the script just runs on a given timer rather than being triggered via an API call.</p>
+<p>Once you know your trigger click on your preferred language underneath it (&hellip; PowerShell!)
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--13--1.png" alt="2019-02-23&amp;ndash;13&amp;ndash;1">
+A new blade will fly out&hellip; from the right this time (I really don&rsquo;t get Azure&rsquo;s UX at times). Name the trigger, and define your schedule.</p>
+<p>If you&rsquo;re a *nix user, this schedule probably makes sense to you, as it&rsquo;s in the format of a cron expression. I don&rsquo;t know that I&rsquo;ve ever had to define one of these myself&hellip; and also this implementation may not be 100% standard as one of the cron expression websites wasn&rsquo;t creating schedules that Azure considered valid (and vice versa.)</p>
+<p>If, like me, you need to get up to speed on cron expressions this <a href="https://codehollow.com/2017/02/azure-functions-time-trigger-cron-cheat-sheet/" target="_blank" rel="noopener">cheat sheet</a>
+ will help.</p>
+<p>My schedule is <code>0 0 0 * * MON,THU</code> which, all going well should meant that at midnight (UTC) on Mondays and Thursdays my function will fire. This <em>may</em> happen at a different time, as the timer <em>could</em> be set to server local time instead of UTC.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--16--1.png" alt="2019-02-23&amp;ndash;16&amp;ndash;1">
+Once you create this function, you&rsquo;ll be dumped into your script, <code>run.ps1</code>, which has some demo code (writing some random output.) Instead, dump your scripts in there.</p>
+<p><em>This hasn&rsquo;t changed much since my original post, but I&rsquo;ll break it down in the next section.</em></p>
+<p>Notice I&rsquo;ve got some code up the top of my script checking for and installing my Twitter module of choice, <a href="https://www.powershellgallery.com/packages/PSTwitterAPI" target="_blank" rel="noopener">PSTwitterAPI</a>
+.</p>
+<p>You can click run to test out your code.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--17--1.png" alt="2019-02-23&amp;ndash;17&amp;ndash;1">
+But&hellip; problems. As this is a headless situation, I can&rsquo;t actually install the module from the Gallery. It&rsquo;s possible there is a way to make this work, but Google suggested this is the intention and if you rely on a module, you should include it with your function.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--18--1.png" alt="2019-02-23&amp;ndash;18&amp;ndash;1">
+So I went about including in PSTwitterAPI with my function, and the logical place to do this is the storage account that got created with my Function App.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--20--1.png" alt="2019-02-23&amp;ndash;20&amp;ndash;1">
+There&rsquo;s a handy way of viewing and managing the content of this storage account within the browser, called <strong>Storage Explorer</strong>.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--21--1.png" alt="2019-02-23&amp;ndash;21&amp;ndash;1">
+What you&rsquo;re looking for here is under <strong>File Shares</strong>. And you&rsquo;ll want to navigate through the file system to <strong>wwwroot</strong> under which you&rsquo;ll find the name of your trigger.</p>
+<p>That directory will contain the json file containing the config for your function and that <code>run.ps1</code> script we were editing earlier.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--23--1.png" alt="2019-02-23&amp;ndash;23&amp;ndash;1">
+From here, you can upload files&hellip; but not directories unfortunately, so I started by creating a new directory called &ldquo;Modules&rdquo;.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--24--1.png" alt="2019-02-23&amp;ndash;24&amp;ndash;1">
+And then I went about manually creating the folder structure for the module itself, and uploading files into the correct folders (making sure what I ended up with in the storage account matched the copy of the module on my workstation.)
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--26--1.png" alt="2019-02-23&amp;ndash;26&amp;ndash;1">
+Head back to your function, and if you see the &ldquo;View Files&rdquo; option on the right, you&rsquo;ll now see your new Modules directory.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--28--1.png" alt="2019-02-23&amp;ndash;28&amp;ndash;1">
+Change your script to not try and install the module, and import the module via path instead of name and it should be working.</p>
+<p>Now if we click run&hellip; it still comes out with errors, complaining about there not being a path argument on <code>Import-Module</code>.</p>
+<p>This is a lie, and I have to assume it&rsquo;s a random scoping/experimental language problem. The function is actually working for me at this point, and tweets do go out.
+<img src="__GHOST_URL__/content/images/2019/02/2019-02-23--29--1.png" alt="2019-02-23&amp;ndash;29&amp;ndash;1">
+It&rsquo;s just a shame that the status for the job is coming back as failed despite working perfectly.</p>
+<h2 id="the-script-with-small-updates"><strong>The Script, with Small Updates</strong></h2>
+<p>Check out <a href="https://gist.github.com/Windos/83b49044447ce8c156db017230274d52" target="_blank" rel="noopener">Gist</a>
+ for the full script.</p>
+<p>We start with some variables we&rsquo;ll be using in the coming steps, the main one is the address of my RSS feed and the array list which will contain all of my blog posts.</p>
+<pre><code>$Uri = 'https://king.geek.nz/rss/'
+$Posts = [System.Collections.ArrayList]::new()
+$PageNumber = 1
+$More = $true
+</code></pre>
+<p>Now we build up that list of blog posts. I <em>may</em> have over engineered this when I first wrote it, but this is how I deal with the pagination of my RSS feed. As long as I&rsquo;m getting something back, I consider there to be more available and increment the page number and call it again.</p>
+<pre><code>while ($More) {
+    try {
+        $Page = Invoke-RestMethod -Uri &quot;$Uri$PageNumber&quot; -ErrorAction Stop
+    } catch {
+        $Page = $null
+    }
+
+    if ($Page.Count -gt 0) {
+        foreach ($Post in $Page) {
+            $null = $Posts.Add($Post)
+        }
+
+        $PageNumber += 1
+    } else {
+        $More = $false
+    }
+}
+</code></pre>
+<p>Next, pick a post at random and pull the meta data from it, including title and link. I also turn all of the tags from my posts into hashtags.</p>
+<p>Finally, all of that information is used to build the text of my tweet.</p>
+<pre><code>$PostToPost = $Posts | Get-Random
+
+$Title = $PostToPost.title.'#cdata-section'
+$Excerpt = $PostToPost.description.'#cdata-section'
+$Link = $PostToPost.link
+$Categories = $PostToPost.category | foreach {$_.'#cdata-section'.replace(' ', '')}
+
+$Hashtags = ''
+foreach ($Category in $Categories) {
+    $Hashtags += &quot; #$Category&quot;
+}
+
+$TweetText = &quot;From the blog archive: &quot;&quot;$Title&quot;&quot;`n`n$Excerpt$Hashtags`n$link&quot;
+</code></pre>
+<p>wrapping up the script, we import that local copy of PSTwitterAPI. That ErrorAction is an attempt to suppress the errors coming out of my function.</p>
+<p>Then we use all of those tokens we set to authenticate against twitter, and finally we send the tweet.</p>
+<pre><code>Import-Module -Path .\Modules\PSTwitterAPI\PSTwitterAPI.psd1 -ErrorAction SilentlyContinue
+
+$OAuthSettings = @{
+    ApiKey            = $env:TWITTER_APIKEY
+    ApiSecret         = $env:TWITTER_APISECRET
+    AccessToken       = $env:TWITTER_ACCESSTOKEN
+    AccessTokenSecret = $env:TWITTER_ACCESSTOKENSECRET
+}
+
+Set-TwitterOAuthSettings @OAuthSettings
+
+Send-TwitterStatuses_Update -Status $TweetText
+</code></pre>
+<h3 id="a-note-from-the-future"><strong>A Note, from the Future</strong></h3>
+<p>Rather than the ErrorAction, is put in a try/catch block around that one statement. The job is now completing without this false error.</p>
+<pre><code>try {
+    Import-Module -Path .\Modules\PSTwitterAPI\PSTwitterAPI.psd1
+} catch {
+    Write-Warning 'Import-Module complained about the Path argument.'
+}
+</code></pre>
+<h2 id="next-up"><strong>Next Up</strong></h2>
+<p>The first real test of this is coming up on Monday, when I should see a tweet go out without my input. If it doesn&rsquo;t work as expected this post will be updated with a new section about the fix.</p>
+<p>I&rsquo;ll also continue to try and resolve or suppress that error as I really want to avoid the normalization of deviance and would like to be able to setup alerts for <strong>real</strong> failures.</p>
+<p>I&rsquo;m also toying with the idea of a second function that has an HTML trigger that returns a random blog post. That should be a fun experiment (whether or not it&rsquo;s actually useful!)</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

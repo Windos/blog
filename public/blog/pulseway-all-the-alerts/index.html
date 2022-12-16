@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  With PowerShell, Pulseway Can Alert on Anything - ToastIT
+  </title>
+  <meta name="description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&#39;t present in the OS after booting up? Uhh..." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="With PowerShell, Pulseway Can Alert on Anything" />
+<meta property="og:description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&#39;t present in the OS after booting up? Uhh..." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/pulseway-all-the-alerts/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2015-06-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-06-30T00:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="With PowerShell, Pulseway Can Alert on Anything"/>
+<meta name="twitter:description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&#39;t present in the OS after booting up? Uhh..."/>
+
+  <meta itemprop="name" content="With PowerShell, Pulseway Can Alert on Anything">
+<meta itemprop="description" content="Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn&#39;t present in the OS after booting up? Uhh..."><meta itemprop="datePublished" content="2015-06-30T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2015-06-30T00:00:00+00:00" />
+<meta itemprop="wordCount" content="833">
+<meta itemprop="keywords" content="PowerShell,Monitoring," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">With PowerShell, Pulseway Can Alert on Anything</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    June 30, 2015
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      4&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      833&nbsp;words
+      
+    </h5>
+
+    <h2 id="the-pitch"><strong>The Pitch</strong></h2>
+<p>Need to monitor some servers (and/or workstations)? <a href="http://www.pulseway.com/" target="_blank" rel="noopener">Pulseway</a>
+ is a good solution. The configuration of what you want alerts on is as simple as putting checks in boxes.
+<img src="__GHOST_URL__/content/images/2018/05/standard-notify.png" alt="standard-notify"></p>
+<ul>
+<li>Need to know when someone logs into your server? <strong>Check</strong></li>
+<li>Need to know when someone installs something on your server? <strong>Check</strong></li>
+<li>Need to know when your servers CPU is pegged at 100%? <strong>Check</strong></li>
+<li>Need to know when your servers data drive is running out of free space? <strong>Check</strong></li>
+<li>Need to know when a disk simply isn&rsquo;t present in the OS after booting up? Uhh&hellip;</li>
+</ul>
+<h2 id="the-fix-or-powershell-to-the-rescue"><strong>The Fix (or, PowerShell to the Rescue!)</strong></h2>
+<p>One seemingly overlooked option for Pulseway notifications is monitoring the event log. Sure, you could look for your bog standard event log entries. Audit results. Failed login attempts. GPO failures.</p>
+<p>You know what is really good at manipulating the event log, not just <a href="https://technet.microsoft.com/en-us/library/ee176846.aspx" target="_blank" rel="noopener">viewing</a>
+/<a href="http://blogs.technet.com/b/heyscriptingguy/archive/2011/01/24/use-powershell-cmdlet-to-filter-event-log-for-easy-parsing.aspx" target="_blank" rel="noopener">filtering</a>
+/<a href="https://technet.microsoft.com/en-us/library/hh849789.aspx" target="_blank" rel="noopener">clearing</a>
+ logs, but also <a href="https://technet.microsoft.com/en-us/library/hh849768.aspx" target="_blank" rel="noopener">adding</a>
+ events? PowerShell.</p>
+<p>Yes, I was being vague and mysterious there. Don&rsquo;t worry we&rsquo;ll get into the nuts and bolts soon.</p>
+<p>At a high level:</p>
+<ul>
+<li>PowerShell checks for &lsquo;stuff&rsquo;, possibly using a PS Scheduled Job.</li>
+<li>PowerShell registers events in a systems event log.</li>
+<li>Pulseway monitors the event log.</li>
+<li>Pulseway sends out alerts when it sees certain events.</li>
+<li>You sleep easy(er)</li>
+</ul>
+<h2 id="the-nut-and-bolts"><strong>The Nut and Bolts</strong></h2>
+<p>The first thing you need to do is get your event log ready to accept your custom events. This allows you to specify the &lsquo;source&rsquo; of the events, which makes it easier to filter on them. I also like to put my PowerShell generated events in the Windows PowerShell log (rather than application, or security, or the like.)</p>
+<pre><code>New-EventLog -LogName 'Windows PowerShell' -Source 'DiskCheck'
+</code></pre>
+<p>This is something you only have to do once, going forward you&rsquo;ll just be referencing the source you&rsquo;ve created.</p>
+<p>Next, you need to figure out what PowerShell should be checking and script it, including writing to the event log.</p>
+<pre><code>function Test-ConnectedDisk
+{
+    [CmdletBinding()]
+    Param (
+        [string] $Server,
+        [string] $Disk
+    )
+
+    $OsPartition = Get-Partition -DriveLetter $Disk -CimSession $Server -ErrorAction SilentlyContinue
+
+    if (!$OsPartition)
+    {
+        Write-EventLog -LogName 'Windows PowerShell' -Source 'DiskCheck' -EntryType Error -EventId 120 -Message 'DISK MISSING!' -ComputerName $Server
+    }
+    else
+    {
+        Write-EventLog -LogName 'Windows PowerShell' -Source 'DiskCheck' -EntryType Information -EventId 121 -Message 'Disk is present and accounted for.' -ComputerName $Server
+    }
+}
+</code></pre>
+<p>I like to put functions like the one above into a module so that they can be easily called by a PS Scheduled Job, and updated without touching the job itself. As for creating the job, I want this check to happen once an hour, on the hour. The job requires network access, as I run a few jobs from a &lsquo;script&rsquo; server and touch remote servers.</p>
+<pre><code>$firstRun = Get-Date -Hour $((Get-Date).AddHours(1).Hour) -Minute 0 -Second 0
+
+$jobTrigger = New-JobTrigger -Once -At $firstRun -RepetitionInterval (New-TimeSpan -Minutes 60) -RepeatIndefinitely
+$jobOptions = New-ScheduledJobOption -RequireNetwork
+$cred = Get-Credential
+
+Register-ScheduledJob -Name 'Check Server Disk' -ScriptBlock {
+    Test-ConnectedDisk -Server 'test1.example.com' -Disk 'd'
+} -Credential $cred -Trigger $jobTrigger -ScheduledJobOption $jobOptions
+</code></pre>
+<p>Now we need to get Pulseway checking for our new events, this is a case of opening up Pulseway Manager on the monitored server, selecting the <em>Notifications</em> tab, then the <em>Event Log</em> tab, hitting the check box, clicking add and filling out the details.
+<img src="__GHOST_URL__/content/images/2018/05/notify-eventlog.PNG" alt="notify-eventlog"><img src="__GHOST_URL__/content/images/2018/05/event-log-filter.png" alt="event-log-filter">
+It&rsquo;s important to remember to select the right Event Log (Windows PowerShell in this case), the event level, event ID and source that you specified within your script.</p>
+<p>You can specify Pulseway&rsquo;s notification level here. My boss set his notification for critical events to an air-raid siren, so I like to set things to that level.</p>
+<p>Depending on your Pulseway configuration, and what level you set the notification to, you&rsquo;ll get an email and/or alert whenever the event you&rsquo;re looking for occurs. Note that unless you specifically allow repeat notifications, you won&rsquo;t get more than one Pulseway alert until you have cleared the alarm.</p>
+<h2 id="closing-notes"><strong>Closing Notes</strong></h2>
+<ul>
+<li>I like to have a matching pair of events, one for the error state and one for logging that everything is normal. As you can see in the script above, I set the normal event to information. This allows me to check the event log an now that the job has been running.</li>
+<li>In general, you can use any EventId you want, as long as it is a 16bit integer. However, I read somewhere (and am currently unable to find the source) that the range of 100-999 isn&rsquo;t used by any Microsoft application and is free to be used.</li>
+<li>I like to use unique IDs for each event log I create. Remember to document which ID is for what. If you work in a team and have a wiki, you could log it there, or put it in a CSV file.</li>
+<li>Bonus points if you write a function to determine the next available EventId.</li>
+<li>Be careful about over saturating yourself with notifications. Set the appropriate notification level based on your needs and those of the business.</li>
+<li>If you&rsquo;re getting flooded with alerts you could become desensitized to the really important ones.</li>
+</ul>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

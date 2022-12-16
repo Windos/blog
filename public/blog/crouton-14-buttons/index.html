@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Crouton #14 - Fancy Buttons - ToastIT
+  </title>
+  <meta name="description" content="It&#39;s all well and good putting buttons all over your toast notification, but text is a little plain. Let&#39;s see how we can dress out buttons up a little bit!" />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Crouton #14 - Fancy Buttons" />
+<meta property="og:description" content="It&#39;s all well and good putting buttons all over your toast notification, but text is a little plain. Let&#39;s see how we can dress out buttons up a little bit!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/crouton-14-buttons/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-01-23T10:50:06+00:00" />
+<meta property="article:modified_time" content="2020-01-23T10:50:06+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Crouton #14 - Fancy Buttons"/>
+<meta name="twitter:description" content="It&#39;s all well and good putting buttons all over your toast notification, but text is a little plain. Let&#39;s see how we can dress out buttons up a little bit!"/>
+
+  <meta itemprop="name" content="Crouton #14 - Fancy Buttons">
+<meta itemprop="description" content="It&#39;s all well and good putting buttons all over your toast notification, but text is a little plain. Let&#39;s see how we can dress out buttons up a little bit!"><meta itemprop="datePublished" content="2020-01-23T10:50:06+00:00" />
+<meta itemprop="dateModified" content="2020-01-23T10:50:06+00:00" />
+<meta itemprop="wordCount" content="698">
+<meta itemprop="keywords" content="BurntToast,PowerShell," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Crouton #14 - Fancy Buttons</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    January 23, 2020
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      4&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      698&nbsp;words
+      
+    </h5>
+
+    <p>Toast notifications really shine when you move from just showing information to allowing the user to take some sort of action on it. Unfortunately, our choices when doing this via PowerShell is limited but we can present the user with buttons which can link through to said information in other applications or online.</p>
+<p>This is all well and good, and works, but what if these buttons look a little plain?</p>
+<p>This post is a &ldquo;crouton&rdquo; and is a short post about a specific feature or use case of the <a href="https://www.powershellgallery.com/packages/BurntToast" target="_blank" rel="noopener">BurntToast PowerShell module</a>
+.</p>
+<p>For more of these posts check out the <a href="__GHOST_URL__/tag/burnttoast/">BurntToast tag</a>
+.</p>
+<h2 id="naked-buttons">Naked Buttons</h2>
+<p>Let&rsquo;s start by checking out buttons in general. You create them using the <code>[New-BTButton](https://github.com/Windos/BurntToast/blob/master/Help/New-BTButton.md)</code> function and must at least provide &ldquo;Content&rdquo; (the text displayed on the button) and &ldquo;Arguments&rdquo; (the link to the file or web page to open.)</p>
+<p>This function creates an object which represents your button and you can then pass this through to other functions, such as <code>[New-BurntToastNotification](https://github.com/Windos/BurntToast/blob/master/Help/New-BurntToastNotification.md)</code>.</p>
+<p>As an example, I&rsquo;m running a script that generates a report. It takes a long time to complete so I show a toast notification when it completes and I want to use buttons so that the user can open the report in either a CSV or XLSX format.</p>
+<p>We&rsquo;ll start by creating two buttons, one for each file format:</p>
+<pre><code>$CsvArgs = @{
+    Content   = 'Open as CSV'
+    Arguments = 'C:\Reports\long-report.csv'
+}
+$ButtonCsv = New-BTButton @CsvArgs
+
+$XlsxArgs = @{
+    Content   = 'Open as XLSX'
+    Arguments = 'C:\Reports\long-report.xlsx'
+}
+$ButtonXlsx = New-BTButton @XlsxArgs
+</code></pre>
+<p>We then take the two button objects and include them when displaying the notification:</p>
+<pre><code>$Text = 'Report Completed',
+        'Something needs you attention, please open the report in your desired format.'
+
+New-BurntToastNotification -Text $Text -Button $ButtonCsv, $ButtonXlsx
+</code></pre>
+<p>The result is a toast notification which does the job, but those buttons look a little&hellip; boring.
+<img src="__GHOST_URL__/content/images/2020/01/image-4.png" alt="Toast with &amp;quot;Naked Buttons&amp;quot;"></p>
+<h2 id="fancy-buttons">Fancy Buttons</h2>
+<p>The option available to us for dressing up our buttons is to add a picture to them. In order to do this you use the &ldquo;ImageUri&rdquo; parameter, though there&rsquo;s an issue in the current version (0.7.0) where only local files work.</p>
+<p>This image needs to be a square. Wide images will be squashed, and it doesn&rsquo;t look pretty.</p>
+<p>Let&rsquo;s re-run the previous code, but this time we&rsquo;ll provide and icon image for each file format:</p>
+<pre><code>$CsvArgs = @{
+    Content   = 'Open as CSV'
+    Arguments = 'C:\Reports\long-report.csv'
+    ImageUri  = 'C:\Icons\019-csv file.png'
+}
+$ButtonCsv = New-BTButton @CsvArgs
+
+$XlsxArgs = @{
+    Content   = 'Open as XLSX'
+    Arguments = 'C:\Reports\long-report.xlsx'
+    ImageUri  = 'C:\Icons\082-xlsx format.png'
+}
+$ButtonXlsx = New-BTButton @XlsxArgs
+
+$Text = 'Report Completed',
+        'Something needs you attention, please open the report in your desired format.'
+
+New-BurntToastNotification -Text $Text -Button $ButtonCsv, $ButtonXlsx
+</code></pre>
+<p>Now, we have a much different notification.
+<img src="__GHOST_URL__/content/images/2020/01/image-5.png" alt="Buttons with Images">
+Admittedly, the icon images didn&rsquo;t fair too well when they were shrunk down. Also, in all honesty, I&rsquo;m not too fond of the light gray back being removed when you&rsquo;re using these images.</p>
+<h2 id="another-option">Another Option</h2>
+<p>If you want to use images and have a light gray background on your buttons, you need to include at least one button without an image on it.</p>
+<p>To demo that, I&rsquo;ll add a dismiss button without an image:</p>
+<pre><code>$CsvArgs = @{
+    Content   = 'CSV'
+    Arguments = 'C:\Reports\long-report.csv'
+    ImageUri  = 'C:\Icons\019-csv file.png'
+}
+$ButtonCsv = New-BTButton @CsvArgs
+
+$XlsxArgs = @{
+    Content   = 'XLSX'
+    Arguments = 'C:\Reports\long-report.xlsx'
+    ImageUri  = 'C:\Icons\082-xlsx format.png'
+}
+$ButtonXlsx = New-BTButton @XlsxArgs
+
+$ButtonDismiss = New-BTButton -Dismiss
+
+$Text = 'Report Completed',
+        'Something needs you attention, please open the report in your desired format.'
+
+New-BurntToastNotification -Text $Text -Button $ButtonCsv, $ButtonXlsx, $ButtonDismiss
+</code></pre>
+<p><img src="__GHOST_URL__/content/images/2020/01/image-6.png" alt="Traditional Buttons with Images">
+You&rsquo;ll note that I also had to shorten the text on the original two buttons in order to fit all three on the notification.</p>
+<h2 id="final-notes">Final Notes</h2>
+<p>As mentioned above, the images only work if they are local. This will be fixed in the next version of BurntToast.</p>
+<p>You also want your image to be squares, and look good (or at least easy to read) when small.</p>
+<p>I hope you find this feature useful, or at least entertaining. Please do let me know how you use it!</p>
+<h2 id="credit">Credit</h2>
+<p>Hero image by <a href="https://unsplash.com/@waldemarbrandt67w?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Waldemar Brandt</a>
+ on <a href="https://unsplash.com/?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+</p>
+<p>Icon pack used in these demos by <a href="https://www.flaticon.com/authors/payungkead" target="_blank" rel="noopener">Payungkead</a>
+ on <a href="https://www.flaticon.com/packs/file-format-3" target="_blank" rel="noopener">flaticon.com</a>
+</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

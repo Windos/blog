@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Office 365 on ToastIT</title>
+    <link>https://blog.toastit.dev/tags/office-365/</link>
+    <description>Recent content in Office 365 on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 07 May 2021 17:42:32 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/office-365/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Learning Story: From Timber to Chocolatey</title>
+      <link>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</link>
+      <pubDate>Fri, 07 May 2021 17:42:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</guid>
+      <description>My passion has always been tech. Growing up my neighbour&amp;rsquo;s old computers often found their way to me, and I have fond memories of building myself a 486DX2 &amp;ldquo;gaming pc.&amp;rdquo;
+That computer was when I leant about the capacitors in power supplies. It turns out that if you&amp;rsquo;re swapping the fan in one of those for one with LEDs in it you probably shouldn&amp;rsquo;t twist the wires together by hand. Who&amp;rsquo;d have known?</description>
+    </item>
+    
+    <item>
+      <title>Getting Selective with Veeam Backup for Microsoft Office 365</title>
+      <link>https://blog.toastit.dev/blog/veeam-365-selective/</link>
+      <pubDate>Tue, 26 Feb 2019 10:08:57 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-365-selective/</guid>
+      <description>Let&amp;rsquo;s say you&amp;rsquo;re midway through a migration to Office 365. Some of your user&amp;rsquo;s still have mailboxes on-site and others are with Exchange Online. You&amp;rsquo;re not yet advising users to throw data into OneDrive for Business&amp;hellip; but you&amp;rsquo;re also not telling people not to use it.
+And, of course, even though you&amp;rsquo;re moving to the cloud you understand that your data is still your problem. With that in mind, you&amp;rsquo;ve got yourself a product to backup your Office 365 data such as Veeam Backup for Microsoft Office 365 (VBO)- yes, there are other products out there, but Veeam is what I know so it&amp;rsquo;s what I use in my &amp;ldquo;hypothetical&amp;rdquo; scenarios.</description>
+    </item>
+    
+    <item>
+      <title>Veeam Backup for Microsoft Office 365 v3.0: It&#39;s Good, Very Good</title>
+      <link>https://blog.toastit.dev/blog/veeam-backup-for-microsoft-office-365-v3/</link>
+      <pubDate>Tue, 19 Feb 2019 10:29:41 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/veeam-backup-for-microsoft-office-365-v3/</guid>
+      <description>Towards the end of last week, a tweet with a nice big &amp;ldquo;Veeam Green&amp;rdquo; logo caught my eye.
+Veeam Backup for Microsoft Office 365 v3 BETA is here! Looking for your feedback! Get it now via https://t.co/ahLz7QUfKX#veeam#office365#beta— Niels Engelen (@nielsengelen) February 13, 2019A beta preview of the next version of Veeam Backup for Microsoft Office 365? Yes please!
+I don&amp;rsquo;t know what I was expecting when I clicked through, but I certainly wasn&amp;rsquo;t expecting anything from my wish listto be in the change notes.</description>
+    </item>
+    
+    <item>
+      <title>Everything Is Better with Toast: Getting Build Notifications</title>
+      <link>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</link>
+      <pubDate>Sat, 09 Feb 2019 11:51:33 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/everything-is-better-with-toast-getting-build-notifications/</guid>
+      <description>If you&amp;rsquo;ve seen my recent tweetsor my latest blog post, you know that I&amp;rsquo;m on a bit of an Azure Pipelineskick at the moment. The natural progression of this is merging Pipelines with my primary PowerShell/tech interest&amp;hellip; toast.
+I realized I was keeping the Pipelines site open as I was pushing commits, waiting to see if the latest build succeeded. Had I broken something? Did I need to pull apart my last set of changes?</description>
+    </item>
+    
+    <item>
+      <title>My Wish List for Veeam Backup for Microsoft Office 365 v3</title>
+      <link>https://blog.toastit.dev/blog/my-wish-list-vbo365/</link>
+      <pubDate>Wed, 10 Oct 2018 08:47:26 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-wish-list-vbo365/</guid>
+      <description>I&amp;rsquo;ve been testing out Veeam&amp;rsquo;s offering for backing up Office 365. Earlier versions of it could backup Exchange Online but the recently released v2expanded to being able to backup SharePoint Online and OneDrive for Business.
+It&amp;rsquo;s a topic that deserves its own post (it&amp;rsquo;s on the list, I swear!), but the reason for needing a product like this needs a quick explanation.
+But it&amp;rsquo;s in the cloud, it&amp;rsquo;s already backed up!</description>
+    </item>
+    
+    <item>
+      <title>Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes</title>
+      <link>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</link>
+      <pubDate>Fri, 24 Aug 2018 10:22:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/orphaned-shared-mailboxes/</guid>
+      <description>You might be migrating your on-premises Exchange server to the cloud. Maybe you&amp;rsquo;re migrating to a newer version of Exchange. Or maybe you just feel like a bit of a spring clean.
+Regardless of why, or if, you want to clean up orphaned shared mailboxes, it is an interesting problem to tackle.
+First, in the interest of avoiding scope creep, let&amp;rsquo;s define what we mean by &amp;ldquo;orphaned shared mailbox&amp;rdquo;:
+It is a shared mailbox, not a user mailbox that you&amp;rsquo;ve shared.</description>
+    </item>
+    
+    <item>
+      <title>Copying Office 365 User Licensing</title>
+      <link>https://blog.toastit.dev/blog/copying-office-365-user-licensing/</link>
+      <pubDate>Tue, 24 Jul 2018 05:06:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/copying-office-365-user-licensing/</guid>
+      <description>I don&amp;rsquo;t know if this is an issue for anyone else, or if it&amp;rsquo;s unique to me and the organisation I work for.
+As you may knowfrom some of my previous posts, we&amp;rsquo;re dipping our toes into Office 365. This means we&amp;rsquo;re only giving users access to certain features as and when we&amp;rsquo;re ready and we&amp;rsquo;re controlling this by turning on and off parts of their licenses.
+As an example of this, checkout this fictional user&amp;rsquo;s license configuration: The Problem Unless I&amp;rsquo;m missing something, there&amp;rsquo;s no decent way of going &amp;ldquo;this user has their license configured how I like it, make this other user (or more likely group of users) look like that.</description>
+    </item>
+    
+    <item>
+      <title>Office 365 &amp; PowerShell: Connecting All the Pieces</title>
+      <link>https://blog.toastit.dev/blog/o365-all-the-things/</link>
+      <pubDate>Fri, 04 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/o365-all-the-things/</guid>
+      <description>Now that we&amp;rsquo;ve figured out how to connectto each of the Office 365 services, it&amp;rsquo;s time to tie a pretty (PowerShell) blue bow on it. If you just want to skip the writeup and see the result, you can check out the Gist. This Gist may get updates in the future.
+Disclaimer The script created in this post is not a complete solution.
+It is very much a starting point with no error handling.</description>
+    </item>
+    
+    <item>
+      <title>Office 365 &amp; PowerShell: Jacking Into the Matrix</title>
+      <link>https://blog.toastit.dev/blog/o365-connect/</link>
+      <pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/o365-connect/</guid>
+      <description>One thing became apparent very quickly during my recent foray into Office 365: it truly is one big amalgam of bunch of Microsoft products. Just like their on-premises counterparts, each of these products has their own PowerShell interface for management.
+Almost every module in the courseware for the &amp;ldquo;Enabling and Managing Office 365&amp;rdquo; course includes a &amp;ldquo;this is the thing you need to download&amp;rdquo; and/or &amp;ldquo;these are the PowerShell commands you need to run to connect.</description>
+    </item>
+    
+    <item>
+      <title>Old Office 365 Training: Navigating the Minefield</title>
+      <link>https://blog.toastit.dev/blog/o365-training/</link>
+      <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/o365-training/</guid>
+      <description>I&amp;rsquo;ve been doing a lot of research around Office 365 and Azure over the past couple of weeks. As a fan of video training, and as a Pluralsightsubscriber, I&amp;rsquo;ve been devouring the Pluralsight library.
+One thing I&amp;rsquo;ve had to become good at very quickly is figuring out the age of the content I&amp;rsquo;m watching and deciding whether it&amp;rsquo;s still relevant.
+Unlike traditional (on-premises) technologies, you can&amp;rsquo;t tell from a title whether you&amp;rsquo;re studying the latest version (Exchange 2016 vs Exchange 2013 for example.</description>
+    </item>
+    
+  </channel>
+</rss>

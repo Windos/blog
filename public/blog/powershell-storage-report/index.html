@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Creating Storage Reports With PowerShell - ToastIT
+  </title>
+  <meta name="description" content="Whether they&#39;re nearly empty, nearly full, or somewhere in-between, it&#39;s helpful to get a quick overview of all your servers&#39; hard drives." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Creating Storage Reports With PowerShell" />
+<meta property="og:description" content="Whether they&#39;re nearly empty, nearly full, or somewhere in-between, it&#39;s helpful to get a quick overview of all your servers&#39; hard drives." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/powershell-storage-report/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2017-10-16T23:00:00+00:00" />
+<meta property="article:modified_time" content="2017-10-16T23:00:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating Storage Reports With PowerShell"/>
+<meta name="twitter:description" content="Whether they&#39;re nearly empty, nearly full, or somewhere in-between, it&#39;s helpful to get a quick overview of all your servers&#39; hard drives."/>
+
+  <meta itemprop="name" content="Creating Storage Reports With PowerShell">
+<meta itemprop="description" content="Whether they&#39;re nearly empty, nearly full, or somewhere in-between, it&#39;s helpful to get a quick overview of all your servers&#39; hard drives."><meta itemprop="datePublished" content="2017-10-16T23:00:00+00:00" />
+<meta itemprop="dateModified" content="2017-10-16T23:00:00+00:00" />
+<meta itemprop="wordCount" content="2181">
+<meta itemprop="keywords" content="PowerShell,Windows," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Creating Storage Reports With PowerShell</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    October 16, 2017
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      11&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      2181&nbsp;words
+      
+    </h5>
+
+    <p><em>This post is part of the <a href="http://psblogweek.com/" target="_blank" rel="noopener">#PSBlogWeek</a>
+ PowerShell blogging series. #PSBlogWeek is a regular event where anyone interested in writing great content about PowerShell is welcome to volunteer. The purpose is to pool our collective PowerShell knowledge together over a 5-day period and write about a topic that anyone using PowerShell may benefit from. #PSBlogWeek is a Twitter hashtag, so feel free to stay up to date on the topic on Twitter at the <a href="https://twitter.com/search?q=%23PSBlogWeek" target="_blank" rel="noopener">#PSBlogWeek</a>
+ hashtag. For more information on #PSBlogWeek, or if you&rsquo;d like to volunteer for future sessions, contact Adam Bertram (<a href="https://twitter.com/adbertram" target="_blank" rel="noopener">@adbertram</a>
+) on Twitter.</em></p>
+<p>In your environment, you may have monitoring tools that fire off emails when a drive has reached certain usage thresholds, or you may have other tools calculating these trends.</p>
+<p>This is great, but sometimes it&rsquo;s helpful to have a script you can run to get a quick overview of all your servers&rsquo; hard drives at a particular point in time—whether they&rsquo;re nearly empty, nearly full, or somewhere in-between. Of course, it helps if the output can be fed down the PowerShell pipeline into other scripts.</p>
+<h2 id="too-long-wont-read"><strong>Too long; won&rsquo;t read</strong></h2>
+<p>If you hadn&rsquo;t guessed, this post will be discussing a complete script. I&rsquo;m sure some readers won&rsquo;t need my explanation to understand the how&rsquo;s and why&rsquo;s of it. But if you&rsquo;re wanting to skip to &ldquo;the goods,&rdquo; you can check out the <a href="https://gist.github.com/Windos/5e33d33f8c3bedd1962f089ed240701b" target="_blank" rel="noopener">Gist</a>
+.</p>
+<p>For everyone else, know that I&rsquo;ll be deviating from how I normally do these types of posts. Instead of reading through the finished script line by line, I&rsquo;ll be talking about the logical flow of how it was built.</p>
+<p>This may result in parts not fitting together right away, but I promise it will all fall into place by the end.</p>
+<h2 id="herding-the-servers"><strong>Herding the servers</strong></h2>
+<p>The first thing to sort out is getting a collection of all of our servers. Strictly speaking, our script <em>should</em> take this list as an input, allowing us to tweak the list each time the report is run. However, I run this script the same way <em>every</em> time and have elected to &ldquo;hard code&rdquo; the generation of this collection.</p>
+<pre><code>$OrgUnit = 'OU=servers,OU=computers,OU=corp,DC=example,DC=com'
+$Servers = Get-ADComputer -Filter {(OperatingSystem -like '*Server*') -and (Enabled -eq $True)} -SearchBase $OrgUnit -Properties ManagedBy
+</code></pre>
+<p>That seems like a lot for a simple task, right?</p>
+<p>It sure is. I&rsquo;m being a little over the top with the filtering, but I like doing it all upfront to save some post-processing later.</p>
+<p>But what is all of that filtering actually doing?</p>
+<p>Firstly, providing an Organizational Unit to the <em>SearchBase</em> parameter means that we&rsquo;re only looking for computer accounts within that location. There&rsquo;s no point in grabbing all of our workstations, laptops, and VDI instances when we don&rsquo;t care about them.</p>
+<p>The other filtering means we&rsquo;re only getting accounts that are enabled and whose Operating System name contains the word &ldquo;Server.&rdquo; This will match things like &ldquo;Windows <strong>Server</strong> 2012 R2,&rdquo; meaning I only get our servers and not workstations that have accidentally ended up in the wrong container.</p>
+<p>The last thing you&rsquo;ll notice is that we&rsquo;re requesting the <em>ManagedBy</em> property. This is so I know who the caretaker of each server is. Armed with a name, I can tap them on the shoulder—or more likely send them an automated email—if I notice a drive that they should be keeping an eye on is nearly full.</p>
+<h2 id="gathering-the-disks"><strong>Gathering the disks</strong></h2>
+<p>Now that we have our servers sorted, we need to do a little digging regarding each local disk attached to them. For this, we&rsquo;ll be querying WMI and then combining the resultant information with details about the parent server.</p>
+<pre><code>$WmiSplat = @{
+    ComputerName = $ComputerName
+    Class = 'Win32_LogicalDisk'
+    Filter = 'DriveType = 3 AND VolumeName != &quot;RESERVED_PAGING_FILE&quot;'
+    Property = 'DeviceID', 'FreeSpace', 'Size', 'VolumeName'
+    ErrorAction = 'Stop'
+}
+
+$Disks = Get-WmiObject @WmiSplat
+</code></pre>
+<p>You&rsquo;ll note that we&rsquo;re using <a href="http://king.geek.nz/2014/09/24/ps-splatting/" target="_blank" rel="noopener">splatting</a>
+ for <code>Get-WmiObject</code>, a technique where you supply parameters to a cmdlet via a hash table. Other than helping to avoid long line length, it&rsquo;s not truly necessary in this case. It is, however, what I prefer to do when using many parameters at once, and it&rsquo;s a good habit to get into.</p>
+<p>The parameters themselves are fairly standard. Filtering on <em>DriveType 3</em> means we&rsquo;re only going to be getting local disks, as opposed to network or removable ones. In my environment, we used to create disks specifically for page files. Not many of them exist anymore, but if they do, I don&rsquo;t want to see them in this report. So, we&rsquo;re filtering them out based on the standard name we gave them.</p>
+<pre><code>foreach ($Disk in $Disks) {
+    $PctUsed = ($Disk.Size - $Disk.FreeSpace) / $Disk.Size
+
+    [PSCustomObject] [Ordered] @{
+        ComputerName    = $ComputerName
+        ManagedBy       = $ManagedBy
+        DriveLetter     = $Disk.DeviceID
+        VolumeName      = $Disk.VolumeName
+        SizeRemaining   = $Disk.FreeSpace
+        SizeRemainingGB = [Math]::Round($Disk.FreeSpace / 1GB, 2)
+        Size            = $Disk.Size
+        SizeGB          = [Math]::Round($Disk.Size / 1GB, 2)
+        Usage           = New-PercentBar -Percent $PctUsed -BarCharacter '▓'
+    }
+}
+</code></pre>
+<p>Now, for each disk, let&rsquo;s wrap up the information we&rsquo;ve got into a neat custom object. Most of the properties we&rsquo;re just pulling through directly from the <code>$Disk</code> object. (<em>ComputerName</em> and <em>ManagedBy</em> are coming from the ADComputer object, more on that later.)</p>
+<p><em>Size</em> and <em>SizeGB</em> are two different representations of the same thing; the first measuring the size of a disk in bytes and the second being converted into gigabytes. PowerShell has a nice shorthand for doing this conversion: simply divide the byte value by &ldquo;1GB,&rdquo; and this works for other units too. We&rsquo;re rounding the resulting figure, as conversions like this can tend to end up with many decimal places.</p>
+<p>You may be wondering why <code>[Ordered]</code> is slotted in there between <code>[PSCustomObject]</code> and the hash table defining its properties. By default, hash tables don&rsquo;t have a set order, so even though <em>Usage</em> is defined last, it might end up being displayed first. This is normally fine, but, in this case, I want some control over the output of this script, and <code>[Ordered]</code> is how you tell PowerShell that the order is to be preserved.</p>
+<p>Finally, the <em>Usage</em> property is using my <a href="https://www.powershellgallery.com/packages/PoshPctBar" target="_blank" rel="noopener">PoshPctBar</a>
+ module to display disk usage in a graphical form (for example: <code>[▓▓........]</code>). This is optional and requires installing the module, but I find having this included allows me to quickly pick out problem disks.</p>
+<h2 id="what-about-errors"><strong>What about errors?!</strong></h2>
+<p>Good catch (pun intended)!</p>
+<p>You never know what might cause it—whether it&rsquo;s that you don&rsquo;t have permission on the remote server or WMI isn&rsquo;t responding for whatever reason—but from time to time <code>Get-WmiObject</code> may generate an error instead of &ldquo;useful&rdquo; output.</p>
+<p>The eagle-eyed reader out there would have noted that the code snippet in the previous section included setting the error action for the WMI cmdlet to &ldquo;stop.&rdquo; This is to ensure that any errors from that cmdlet are &ldquo;terminating&rdquo; and will be caught using try/catch.</p>
+<p>To get some workable error handling, wrap the previous snippet in a &ldquo;try&rdquo; block, and then we&rsquo;ll be able to mitigate them in a &ldquo;catch&rdquo; block.</p>
+<pre><code>try {
+    # Previous snippet
+} catch {
+    [PSCustomObject] [Ordered] @{
+        ComputerName    = $ComputerName
+        ManagedBy       = $ManagedBy
+        DriveLetter     = $null
+        VolumeName      = $null
+        SizeRemaining   = $null
+        SizeRemainingGB = $null
+        Size            = $null
+        SizeGB          = $null
+        Usage           = $_.Exception.Message
+    }
+}
+</code></pre>
+<p>With this catch block, we&rsquo;re creating an object with the same properties as what we previously created. This means they&rsquo;ll seamlessly output alongside our &ldquo;working&rdquo; objects, but with enough information included so that we know which server the error occurred on, and what the message of the error was. The message is just a string and is being included in the <em>Usage</em> property, which is normally a string anyway.</p>
+<p>In the context of a catch block, <code>$_</code> changes to the error that caused the block to trigger. This is why <em>ComputerName</em> and <em>ManagedBy</em> are being supplied as their own variable, rather than properties of a parent object as you might expect to see them.</p>
+<h2 id="my-screen-isnt-that-wide"><strong>My screen isn&rsquo;t that wide!</strong></h2>
+<p>At this point, we&rsquo;ve got a lot of properties for each disk—and a few of them are just two different ways of seeing the same value. By default, when there are this many properties, PowerShell will opt to output this information as a list rather than a nicely formatted table.</p>
+<p>Ever notice how you&rsquo;ll often run a cmdlet and only see a subset of the information available unless you pipe the output to <code>Select-Object *</code>?</p>
+<p>We&rsquo;re able to do the same thing with our custom objects by specifying a &ldquo;<a href="https://learn-powershell.net/2013/08/03/quick-hits-set-the-default-property-display-in-powershell-on-custom-objects/" target="_blank" rel="noopener">Default Display Property Set</a>
+.&rdquo; In short, we&rsquo;ll be telling PowerShell: &ldquo;Unless I say otherwise, I only want to see this handful of properties.&rdquo;</p>
+<p>But first, we need to establish which properties we want to see:</p>
+<pre><code>$DefaultDisplaySet = 'ComputerName', 'DriveLetter', 'SizeGB', 'Usage'
+$DefaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet(‘DefaultDisplayPropertySet', [String[]] $DefaultDisplaySet)
+$PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($DefaultDisplayPropertySet)
+</code></pre>
+<p>Then, we need to &ldquo;apply&rdquo; this to each of our objects before pushing them down the pipeline:</p>
+<pre><code>$DiskObj = [PSCustomObject] [Ordered] @{
+    # Previous snippet
+}
+
+$DiskObj | Add-Member MemberSet PSStandardMembers $PSStandardMembers
+$DiskObj
+</code></pre>
+<p>Four is the magic number when PowerShell is deciding between a list or a table. We&rsquo;ll now only see <em>ComputerName</em>, <em>DriveLetter</em>, <em>SizeGB</em>, <em>Usage</em> unless we decide otherwise. The data is still there if we need it.</p>
+<h2 id="this-is-going-to-take-forever-to-run-in-my-environment"><strong>This is going to take forever to run in my environment!</strong></h2>
+<p>It probably would if you were to just iterate through each server one at a time. Luckily, there are a few options for running these tasks against more than one target at any given moment.</p>
+<p>My go-to for this is <a href="https://www.powershellgallery.com/packages/PoshRSJob" target="_blank" rel="noopener">PoshRSJob</a>
+. I use it all the time (perhaps too often). This module simplifies the creation of <a href="https://msdn.microsoft.com/en-us/library/system.management.automation.runspaces.runspace%28v=vs.85%29.aspx" target="_blank" rel="noopener">runspaces</a>
+, to the point where you barely have to think about (or understand) them.</p>
+<p>Most of the previous code, everything except generating a list of servers, gets wrapped up into a script block variable (executable code stored in a variable, similar to a function). As a habit, I refer to this variable as <code>$JobBlock</code>.</p>
+<pre><code>$JobBlock = {
+    if (Test-Connection -ComputerName $_.Name -Count 1 -Quiet) {
+        # DefaultDisplayPropertySet
+
+        $ComputerName = $_.Name
+        $ManagedBy = ($_.ManagedBy -split &quot;,*..=&quot;)[1]
+
+        try {
+            # Previous snippet
+        } catch {
+            # Previous snippet
+        }
+    }
+}
+</code></pre>
+<p>One thing you&rsquo;ll note here is the use of <code>$_</code>, which denotes the current server. As mentioned above, some properties that we&rsquo;ll potentially need inside our catch block are being stored as independent variables.</p>
+<p><em>ManagedBy</em> has a little bit of string manipulation going on to make the output more useful for me. In my case, I only want to know the name of the user, rather than their full distinguished name. You may want to adjust this if you require different information.</p>
+<p>You&rsquo;ll also notice that we&rsquo;re checking to make sure that each server is online by pinging it once before attempting to gather disk info. This works in my environment because the servers are configured to respond to my workstation.</p>
+<p>To get the ball rolling, simply pipe your collection of servers into the PoshRSJob functions as shown:</p>
+<pre><code>$Servers | Select-Object * | Start-RSJob -ScriptBlock $JobBlock -Name {$_.Name} | Wait-RSJob -ShowProgress | Receive-RSJob
+</code></pre>
+<p>The servers are going through <code>Select-Object</code> so that the <em>ManagedBy</em> property is available. <code>Start-RSJob</code> is the function doing the heavy lifting of getting our task done; it&rsquo;s passing each server object into our script block, and the content of the script block is running through for each of them. Just in case, we&rsquo;re naming each job after the name of the given server, allowing us to troubleshoot if anything goes wrong.</p>
+<p>Generally, starting a bunch of jobs would just do that—start the jobs and then return control to you so that you can keep working while they complete in the background. That&rsquo;s not what I actually want to happen with this script, so we use the <code>Wait-RSJob</code> function to prevent ourselves from performing other actions until they all complete (or fail), and the <em>ShowProgress</em> switch will give us a visual indicator of how many jobs have completed.</p>
+<p>Finally, <code>Receive-RSJob</code> will collect the resultant output from each job.</p>
+<h2 id="the-proof-is-in-the-pudding"><strong>The proof is in the pudding</strong></h2>
+<p>I&rsquo;ve not actually shown you any output from all of this yet; it seemed a little premature until it all comes together at the end.</p>
+<p>Make sure you have a look at the <a href="https://gist.github.com/Windos/5e33d33f8c3bedd1962f089ed240701b" target="_blank" rel="noopener">final product</a>
+ all stitched together, wrapped up as a function with some comment-based help.</p>
+<p>But, how do you actually use the thing?</p>
+<p>First, just run it directly and view the output inside your PowerShell host:
+<img src="__GHOST_URL__/content/images/2018/05/Output1.png" alt="Output1">
+Next, pop the output into a variable for further manipulation:
+<img src="__GHOST_URL__/content/images/2018/05/Output2.png" alt="Output2">
+From here, it&rsquo;s up to you to tweak as you see fit.</p>
+<h2 id="final-thoughts"><strong>Final thoughts</strong></h2>
+<p>That was a long journey, looking back at this post, but I hope the result was worth it. Working through this covered a number of topics, and given how many of them there were, I couldn&rsquo;t dive into them all as deeply as I might have liked to.</p>
+<p>If there&rsquo;s a specific topic you want covered in more detail in a follow-up post, please let me know here or on <a href="https://twitter.com/WindosNZ" target="_blank" rel="noopener">Twitter</a>
+.</p>
+<p>And finally, please check out the other <a href="http://psblogweek.com/" target="_blank" rel="noopener">#PSBlogWeek</a>
+ posts, and follow the <a href="https://twitter.com/search?q=%23PSBlogWeek" target="_blank" rel="noopener">hashtag</a>
+ to find other useful PowerShell content!</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

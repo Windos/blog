@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on ToastIT</title>
+    <link>https://blog.toastit.dev/tags/</link>
+    <description>Recent content in Tags on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 12 Feb 2022 06:54:25 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BurntToast</title>
+      <link>https://blog.toastit.dev/tags/burnttoast/</link>
+      <pubDate>Sat, 12 Feb 2022 06:54:25 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/burnttoast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://blog.toastit.dev/tags/powershell/</link>
+      <pubDate>Sat, 12 Feb 2022 06:54:25 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Azure</title>
+      <link>https://blog.toastit.dev/tags/azure/</link>
+      <pubDate>Fri, 07 May 2021 17:42:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meta</title>
+      <link>https://blog.toastit.dev/tags/meta/</link>
+      <pubDate>Fri, 07 May 2021 17:42:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Office 365</title>
+      <link>https://blog.toastit.dev/tags/office-365/</link>
+      <pubDate>Fri, 07 May 2021 17:42:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/office-365/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backup</title>
+      <link>https://blog.toastit.dev/tags/backup/</link>
+      <pubDate>Sat, 18 Jul 2020 13:16:38 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/backup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nugget</title>
+      <link>https://blog.toastit.dev/tags/nugget/</link>
+      <pubDate>Sat, 29 Feb 2020 09:04:08 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/nugget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Toolbox</title>
+      <link>https://blog.toastit.dev/tags/toolbox/</link>
+      <pubDate>Thu, 16 Jan 2020 11:21:38 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/toolbox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://blog.toastit.dev/tags/windows/</link>
+      <pubDate>Thu, 14 Feb 2019 08:56:39 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://blog.toastit.dev/tags/security/</link>
+      <pubDate>Tue, 29 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>https://blog.toastit.dev/tags/monitoring/</link>
+      <pubDate>Fri, 03 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/tags/monitoring/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

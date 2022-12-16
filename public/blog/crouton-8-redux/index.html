@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Crouton #8 Redux - Now with a More Complete Example - ToastIT
+  </title>
+  <meta name="description" content="I didn&#39;t do the best job of the examples in my original post on this topic. Let&#39;s put that right." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Crouton #8 Redux - Now with a More Complete Example" />
+<meta property="og:description" content="I didn&#39;t do the best job of the examples in my original post on this topic. Let&#39;s put that right." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/crouton-8-redux/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-01-10T05:37:08+00:00" />
+<meta property="article:modified_time" content="2019-01-10T05:37:08+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Crouton #8 Redux - Now with a More Complete Example"/>
+<meta name="twitter:description" content="I didn&#39;t do the best job of the examples in my original post on this topic. Let&#39;s put that right."/>
+
+  <meta itemprop="name" content="Crouton #8 Redux - Now with a More Complete Example">
+<meta itemprop="description" content="I didn&#39;t do the best job of the examples in my original post on this topic. Let&#39;s put that right."><meta itemprop="datePublished" content="2019-01-10T05:37:08+00:00" />
+<meta itemprop="dateModified" content="2019-01-10T05:37:08+00:00" />
+<meta itemprop="wordCount" content="779">
+<meta itemprop="keywords" content="BurntToast,PowerShell," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Crouton #8 Redux - Now with a More Complete Example</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    January 10, 2019
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      4&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      779&nbsp;words
+      
+    </h5>
+
+    <p>It feels like only yesterday that I wrote <a href="https://king.geek.nz/2018/08/21/crouton-8-i-like-your-code-but-i-dont-want-it-on-all-my-computers/" target="_blank" rel="noopener">Crouton #8</a>
+, but it&rsquo;s actually been over four months. Obviously, time has been flying by recently. I&rsquo;m revisiting the topic following a question from <a href="https://twitter.com/jkrhrt" target="_blank" rel="noopener">@jkrhrt</a>
+ on Twitter asking for example files, and I figured it might make for a decent mini blog post.</p>
+<blockquote>
+<p><a href="https://twitter.com/WindosNZ?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">@WindosNZ</a>
+ Do you have any example files relating to your 'Crouton #8' blog post? I just can't quite wrap my head around it. TIA.<a href="https://t.co/oJYQ6hy2SQ" target="_blank" rel="noopener">https://t.co/oJYQ6hy2SQ</a>
+
+— 𝕵𝖆𝖈𝖐 (@jkrhrt) <a href="https://twitter.com/jkrhrt/status/1081694822191300609?ref_src=twsrc%5Etfw" target="_blank" rel="noopener">January 5, 2019</a>
+</p>
+</blockquote>
+<h2 id="recap"><strong>Recap</strong></h2>
+<p>To very quickly recap the previous post, we were looking at how to use <a href="https://powershellgallery.com/packages/BurntToast" target="_blank" rel="noopener">BurntToast</a>
+ to author toasts and display them on remote computers without having to have the BurntToast module itself on all those computers.</p>
+<p>To do this you&rsquo;d have the module installed on your workstation (or wherever you&rsquo;re wanting to &ldquo;design&rdquo; your toasts). On this computer, you import the module and use all the functions within it to create an XML file that you&rsquo;d then store in a central location like a file server.</p>
+<p>Then on your remote end points, you can read the contents of your XML file and use the native Windows APIs to show your toasts without calling on BurntToast.</p>
+<p>With that in mind, let&rsquo;s look at those two scenarios in their own sections.</p>
+<p><em>As a disclaimer, I&rsquo;ve edited the formatting of the XML output below to make it easier to read. You don&rsquo;t need to do this… I just wanted it to look nicer on the blog.</em></p>
+<h2 id="authoring-workstation"><strong>Authoring Workstation</strong></h2>
+<p>I&rsquo;m cheating a little bit here and re-using the second example from the original Crouton post, but let&rsquo;s build it out fully instead of simply referring to the first example like we&rsquo;d done on the first go around.</p>
+<p>Assuming you&rsquo;ve already got the module installed, it should automatically import so let&rsquo;s jump straight in. You must use the &ldquo;advanced&rdquo; functions to build the toast, and a simple one could look a little something like this:</p>
+<pre><code>$Text1 = New-BTText -Content 'No Time For Questions'
+$Text2 = New-BTText -Content 'All servers are being shut down in __WARNTIME__, save your work!'
+$Audio1 = New-BTAudio -Source 'ms-winsoundevent:Notification.Looping.Alarm'
+$Binding1 = New-BTBinding -Children $Text1, $Text2
+$Visual1 = New-BTVisual -BindingGeneric $Binding1
+$Content1 = New-BTContent -Audio $Audio1 -Visual $Visual1
+</code></pre>
+<p>Once all of this has been run, you&rsquo;ll have a variable called <code>$Content1</code>. This object has a method, <code>GetContent()</code> which allows you to extract the XML data from it. If you look at that now, however, you will see a lot of extra characters around the text fields, and these will render in the final toast.</p>
+<pre><code>$Content1.GetContent()
+
+
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;toast&gt;
+  &lt;visual&gt;
+    &lt;binding template=&quot;ToastGeneric&quot;&gt;
+      &lt;text&gt;{No Time For Questions}&lt;/text&gt;
+      &lt;text&gt;{All servers are being shut down in __WARNTIME__, save your work!}&lt;/text&gt;
+    &lt;/binding&gt;
+  &lt;/visual&gt;
+  &lt;audio src=&quot;ms-winsoundevent:Notification.Looping.Alarm&quot; /&gt;
+&lt;/toast&gt;
+</code></pre>
+<p><em>Notice the curly braces&hellip;</em></p>
+<p>BurntToast would normally handle these for you when displaying the toast, but since you won&rsquo;t be using BurntToast for this you&rsquo;ll need to do the clean-up yourself:</p>
+<pre><code>$CleanContent = $Content1.GetContent().Replace('&lt;text&gt;{', '&lt;text&gt;')
+$CleanContent = $CleanContent.Replace('}&lt;/text&gt;', '&lt;/text&gt;')
+$CleanContent = $CleanContent.Replace('=&quot;{', '=&quot;')
+$CleanContent = $CleanContent.Replace('}&quot; ', '&quot; ')
+</code></pre>
+<p><em>This is the full suite of replacements that could be needed for all sorts of toasts, and yes it is very much overkill for this example but I&rsquo;ve included it for completeness sake.</em></p>
+<p>And that&rsquo;s going to look a lot better:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;toast&gt;
+  &lt;visual&gt;
+    &lt;binding template=&quot;ToastGeneric&quot;&gt;
+      &lt;text&gt;No Time For Questions&lt;/text&gt;
+      &lt;text&gt;All servers are being shut down in __WARNTIME__, save your work!&lt;/text&gt;
+    &lt;/binding&gt;
+  &lt;/visual&gt;
+  &lt;audio src=&quot;ms-winsoundevent:Notification.Looping.Alarm&quot; /&gt;
+&lt;/toast&gt;
+</code></pre>
+<p>Now that we&rsquo;ve got that XML all cleaned up, we need to save it to our central server:</p>
+<pre><code>Set-Content -Value $CleanContent -Path '\\FileServer\toasts$\RemoteToast.xml'
+</code></pre>
+<p>I&rsquo;ve saved a copy of what this file would look like on <a href="https://gist.github.com/Windos/16ad5ca744bc5c38cd4fb86f6e8067f9" target="_blank" rel="noopener">Gist</a>
+, without my &ldquo;nice&rdquo; blog formatting.</p>
+<h2 id="end-points"><strong>End Points</strong></h2>
+<p>On another computer, without BurntToast installed, go ahead an pull the XML content from the file server (or wherever you ended up saving the file):</p>
+<pre><code>$Xml = Get-Content -Path '\\FileServer\toasts$\RemoteToast.xml'
+</code></pre>
+<p>The original text had a placeholder, which we&rsquo;ll replace with real information now.</p>
+<pre><code>$Xml = $Xml.Replace('__WARNTIME__', '2 Minutes')
+</code></pre>
+<p>I won&rsquo;t break down these steps, there&rsquo;s some of that in the original post. Effectively what you&rsquo;re doing here is loading the native Windows runtimes and using them to pass the XML through to the Windows API responsible for displaying toasts.</p>
+<pre><code>$AppId = '{1AC14E77-02E7-4E5D-B744-2EB1AE5198B7}\WindowsPowerShell\v1.0\powershell.exe'
+
+$null = [Windows.UI.Notifications.ToastNotificationManager, Windows.UI.Notifications, ContentType = WindowsRuntime]
+$null = [Windows.Data.Xml.Dom.XmlDocument, Windows.Data.Xml.Dom.XmlDocument, ContentType = WindowsRuntime]
+
+$ToastXml = [Windows.Data.Xml.Dom.XmlDocument]::new()
+$ToastXml.LoadXml($Xml)
+
+$Toast = [Windows.UI.Notifications.ToastNotification]::new($ToastXml)
+[Windows.UI.Notifications.ToastNotificationManager]::CreateToastNotifier($AppId).Show($Toast)
+</code></pre>
+<p>All going well, you&rsquo;ll see a toast that looks like this:
+<img src="__GHOST_URL__/content/images/2019/01/UpdatedToastExample.PNG" alt="Updated Toast Example"></p>
+<h2 id="wrap-up"><strong>Wrap Up</strong></h2>
+<p>I hope that made sense and was a lot clearer than my original post. Re-reading it while writing this… yeah, I could have done a better job of it. Ah well, it&rsquo;s all a learning process.</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

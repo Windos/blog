@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Fun with Azure Key Vault Part 1: Vault Creation and Storing PSCredential Objects - ToastIT
+  </title>
+  <meta name="description" content="I&#39;m so used to storing fully formed credentials in the local Windows Credential Manager. How do I transition that into the &#39;secrets&#39; centric world that is the cloud?" />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Fun with Azure Key Vault Part 1: Vault Creation and Storing PSCredential Objects" />
+<meta property="og:description" content="I&#39;m so used to storing fully formed credentials in the local Windows Credential Manager. How do I transition that into the &#39;secrets&#39; centric world that is the cloud?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/azure-key-vault-1/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-05-22T11:40:03+00:00" />
+<meta property="article:modified_time" content="2020-05-22T11:40:03+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fun with Azure Key Vault Part 1: Vault Creation and Storing PSCredential Objects"/>
+<meta name="twitter:description" content="I&#39;m so used to storing fully formed credentials in the local Windows Credential Manager. How do I transition that into the &#39;secrets&#39; centric world that is the cloud?"/>
+
+  <meta itemprop="name" content="Fun with Azure Key Vault Part 1: Vault Creation and Storing PSCredential Objects">
+<meta itemprop="description" content="I&#39;m so used to storing fully formed credentials in the local Windows Credential Manager. How do I transition that into the &#39;secrets&#39; centric world that is the cloud?"><meta itemprop="datePublished" content="2020-05-22T11:40:03+00:00" />
+<meta itemprop="dateModified" content="2020-05-22T11:40:03+00:00" />
+<meta itemprop="wordCount" content="1283">
+<meta itemprop="keywords" content="PowerShell,Azure," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Fun with Azure Key Vault Part 1: Vault Creation and Storing PSCredential Objects</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    May 22, 2020
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      7&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      1283&nbsp;words
+      
+    </h5>
+
+    <p>I&rsquo;ve spent a lot of time recently working on automation solutions in Azure. These solutions use a lot of different Azure services including <a href="https://azure.microsoft.com/en-us/services/logic-apps/" target="_blank" rel="noopener">Logic Apps</a>
+, <a href="https://azure.microsoft.com/en-us/services/automation/" target="_blank" rel="noopener">Automation Accounts</a>
+, and <a href="https://azure.microsoft.com/en-us/services/functions/" target="_blank" rel="noopener">Functions</a>
+.</p>
+<p>When working on larger solutions, you often find that you need to use secrets and credentials. If a single solution spans multiple services, it makes sense to store these secrets once in a common place where you can always access them. This makes it so that if you need to update a secret you only have to update it once, rather than hoping you can remember all of the different places you&rsquo;ve stored it.</p>
+<p>Luckily, Azure has a service available for storing these secrets: <a href="https://azure.microsoft.com/en-us/services/key-vault/" target="_blank" rel="noopener">Key Vault</a>
+.</p>
+<p>You&rsquo;ll notice that this post is labeled as &ldquo;Part 1&rdquo;. At the time of writing I&rsquo;m only planning on this &ldquo;series&rdquo; being two parts, but who knows what the future holds?</p>
+<p>This part will focus on using the <a href="https://docs.microsoft.com/en-us/powershell/azure/new-azureps-module-az" target="_blank" rel="noopener">Az</a>
+ module to create a Key Vault and how to store and retrieve <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security/get-credential" target="_blank" rel="noopener">PSCredential</a>
+ objects.</p>
+<p>Part 2 will cover seamlessly accessing secrets stored in your Key Vault as environment variables in a PowerShell based Azure Function.</p>
+<p>Yes, there are costs associated with all the Azure services mentioned and used in this series, including Key Vault. Some have free tiers, but I would encourage you to think through your use case and be sure you understand the costs.</p>
+<p>If you&rsquo;re unsure, you can always sign up for an <a href="https://azure.microsoft.com/en-us/free/" target="_blank" rel="noopener">Azure trial</a>
+.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>I&rsquo;m assuming that we&rsquo;re working from your local workstation here. The first couple of steps can be skipped if you happen to be using <a href="https://docs.microsoft.com/en-us/azure/cloud-shell/overview" target="_blank" rel="noopener">Azure Cloud Shell</a>
+ instead.</p>
+<p>We&rsquo;ll start by installing the Az module. This is actually a collection of many modules, of which we really only need a small handful, but it&rsquo;s just easier to install all of them.</p>
+<pre><code>Install-Module -Name Az
+</code></pre>
+<p>With that installed, let&rsquo;s get connected to our Azure tenant.</p>
+<pre><code>Connect-AzAccount
+</code></pre>
+<p>This will pop open a window for you to authenticate. You&rsquo;ll want to login with an account that has access to your Azure subscription(s).
+<img src="__GHOST_URL__/content/images/2020/05/image.png" alt="Azure sign in window">
+If you have more than one subscription, you&rsquo;ll need to make sure you&rsquo;re using the correct one.</p>
+<pre><code>You can use [Get-AzContext](https://docs.microsoft.com/en-us/powershell/module/az.accounts/get-azcontext) to see your current subscription, and if needed [Select-AzContext](https://docs.microsoft.com/en-us/powershell/module/az.accounts/set-azcontext) to change it.
+</code></pre>
+<h2 id="creating-the-vault">Creating the Vault</h2>
+<p>The first thing we need is a <a href="https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal" target="_blank" rel="noopener">resource group</a>
+. Think of these like a folder you keep files in on your hard drive, except these contain instances of Azure services that you setup.</p>
+<p>If you&rsquo;ve already got a suitable resource group, you can of course use it if desired. I like to keep mine self-contained, for example when I&rsquo;m setting up a demo (such as for this post) I create a resource group for it. This means clean up after the demo is complete is as simple as deleting the group which also deletes all the resources it contained.</p>
+<p>You&rsquo;ll need a name for the group, and a location. I&rsquo;ll be storing both in variables so that they&rsquo;re easily repeatable.</p>
+<p>If you&rsquo;re not sure what locations are available, or the correct format to specify them, run <a href="https://docs.microsoft.com/en-us/powershell/module/az.resources/get-azlocation" target="_blank" rel="noopener">Get-AzLocation</a>
+</p>
+<pre><code>$ResourceGroupName = 'rg-PsCredDemo'
+$Location = 'EastUS'
+
+New-AzResourceGroup -Name $ResourceGroupName -Location $Location
+</code></pre>
+<p>Now we need to setup our Key Vault. I&rsquo;ll reuse the previous variables and add a new one, that being the name of our vault.</p>
+<pre><code>$VaultName = 'kv-PsCredStore'
+
+New-AzKeyVault -Name $VaultName -ResourceGroupName $ResourceGroupName -Location $Location
+</code></pre>
+<p>Normally, you&rsquo;re done. However, in my case I&rsquo;m using an account that isn&rsquo;t native to this Azure tenant and I got the following warning:</p>
+<pre><code>WARNING: Access policy is not set. No user or application have access permission to use this vault. This can happen if the vault was created by a service principal. Please use Set-AzKeyVaultAccessPolicy to set access policies.
+</code></pre>
+<p>That&rsquo;s a bit of a problem, it means we don&rsquo;t have rights to add secrets to our vault. You can set these permissions yourself as follows.</p>
+<p>Note that the UPN needed here is likely <em>not</em> your email address and will instead be a onmicrosoft.com one. Use <a href="https://docs.microsoft.com/en-us/powershell/module/az.resources/get-azaduser" target="_blank" rel="noopener">Get-AzADUser</a>
+ to find the correct UPN.</p>
+<pre><code>$KVAccessPolicy = @{
+    UserPrincipalName         = 'upn@example.onmicrosoft.com'
+    VaultName                 = $VaultName
+    ResourceGroupName         = $ResourceGroupName
+    PermissionsToCertificates = @('Get','List','Delete','Create','Import','Update','Managecontacts','Getissuers','Listissuers','Setissuers','Deleteissuers','Manageissuers','Recover','Backup','Restore','Purge')
+    PermissionsToKeys         = @('Decrypt','Encrypt','UnwrapKey','WrapKey','Verify','Sign','Get','List','Update','Create','Import','Delete','Backup','Restore','Recover','Purge')
+    PermissionsToSecrets      = @('Get','List','Set','Delete','Backup','Restore','Recover','Purge')
+
+}
+
+Set-AzKeyVaultAccessPolicy @KVAccessPolicy
+</code></pre>
+<p>This gives you full access to your vault and you&rsquo;ll now be good to store your credentials in the vault.</p>
+<h2 id="making-a-deposit">Making a Deposit</h2>
+<p>With our Key Vault setup it&rsquo;s finally time to store a PSCredential object in it. To start, let&rsquo;s create our local PSCredential.</p>
+<pre><code>$Cred = Get-Credential
+</code></pre>
+<p><img src="__GHOST_URL__/content/images/2020/05/image-1.png" alt="Standard password prompt">
+Key Vault cannot accept raw PSCredential objects, so we need to convert it into a format that it understands. Credit goes to <a href="https://github.com/buchs" target="_blank" rel="noopener">Kevin Buchs</a>
+ for detailing how he does this in an <a href="https://github.com/Azure/azure-powershell/issues/10434" target="_blank" rel="noopener">issue</a>
+ on GitHub where he was requesting native support for PSCredentials.</p>
+<pre><code>$SecretString = ConvertTo-SecureString -AsPlainText -Force -String ($Cred.UserName + &quot;`v&quot; + $Cred.GetNetworkCredential().Password)
+</code></pre>
+<p>What we&rsquo;re doing here is taking the username and password from our credential, and joining them together with a &ldquo;vertical tab&rdquo; character (something that I would be amazed to find in a password&hellip; if that&rsquo;s even possible.)</p>
+<p>The joined pieces are then converted into a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.security.securestring" target="_blank" rel="noopener">secure string</a>
+ which happens to be something that our Key Vault <em>can</em> accept.</p>
+<p>The last thing to do, is send through our secure string as a new secret in the vault.</p>
+<pre><code>Set-AzKeyVaultSecret -VaultName $VaultName -Name 'TestCredential' -SecretValue $SecretString -ContentType 'PSCredential'
+</code></pre>
+<p>Give your secret a name that makes sense so that you know what it is in the future. I also like to set the content type to PSCredential so that I remember what it was specifically that I stored.</p>
+<h2 id="making-a-withdrawal">Making a Withdrawal</h2>
+<p>Storing our credential is all well and good, but it&rsquo;s no good if we can&rsquo;t use it later. In general, you can retrieve your secrets by calling for it by name from your specified vault.</p>
+<pre><code>$VaultName = 'kv-PsCredStore'
+
+$Secret = Get-AzKeyVaultSecret -VaultName $VaultName -Name 'TestCredential'
+$Secret.SecretValueText
+</code></pre>
+<p>If you follow that through, you&rsquo;ll notice that the <code>SecretValueText</code> property is your secret in plain text. In our case that includes our password! Not great.</p>
+<p>Rather than store my secret in a variable like that, I do the following to recreate my PSCredential object as directly as possible. This does involve retrieving my secret twice, but I prefer doing that over having to clean up other variables.</p>
+<pre><code>$Cred = New-Object System.Management.Automation.PSCredential (
+    ((Get-AzKeyVaultSecret -VaultName $VaultName -Name 'TestCredential').SecretValueText -Split &quot;`v&quot;)[0],
+    (ConvertTo-SecureString ((Get-AzKeyVaultSecret -VaultName $VaultName -Name 'TestCredential').SecretValueText -Split &quot;`v&quot;)[1] -AsPlainText -Force)
+)
+</code></pre>
+<p>You&rsquo;ll note that instead of joining with a vertical tab we&rsquo;re now splitting on a vertical tab to separate our username from password. We feed both into a new PSCredential and now we&rsquo;re ready to use it for our automation tasks that require them.</p>
+<h2 id="wrap-up">Wrap Up</h2>
+<p>One thing I didn&rsquo;t touch on here, other than briefly in the intro, was&hellip; why? Why store your credentials in an Azure Key Vault?</p>
+<p>For me it&rsquo;s very handy to store them in a central location that can be retrieved from any number of places controlled by access policies. My on prem scripts can reach out and get them, my Azure Functions can use them too (and this will be the topic of Part 2).</p>
+<p>It also means if I have to rotate the password then I only have to update it in one place rather than in the credential manager on my script box and in the variables of my Azure Function, etc.</p>
+<p>Also, yes, you could potentially store your username and password as two separate secrets and get the same result&hellip; but I find this neater, especially when you start dealing with a number of secrets in your vault, to keep them as a pair in one secret.</p>
+<h2 id="credit">Credit</h2>
+<p>Hero image by <a href="https://unsplash.com/@emielmaters?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Emiel Maters</a>
+ on <a href="https://unsplash.com/?utm_source=unsplash&amp;amp;utm_medium=referral&amp;amp;utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a>
+</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

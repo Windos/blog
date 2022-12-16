@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on ToastIT</title>
+    <link>https://blog.toastit.dev/tags/windows/</link>
+    <description>Recent content in Windows on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 14 Feb 2019 08:56:39 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RSAT as a Feature: I Thought I Was Going to Love It, Until I Saw It in Action</title>
+      <link>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</link>
+      <pubDate>Thu, 14 Feb 2019 08:56:39 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action/</guid>
+      <description>Ok, that title may be a little hyperbolic. It&amp;rsquo;s not like I hate the experience of having the Remote Server Administration Tools (RSAT) installable as a feature rather than a standalone download. It&amp;rsquo;s just that it&amp;rsquo;s not what I&amp;rsquo;d imagine when I first heard about it.
+But what was I expecting? I thought we&amp;rsquo;d still be going into the classic Windows Features interface, just without the need to install the binaries (manually) before hand.</description>
+    </item>
+    
+    <item>
+      <title>Windows Updates: Putting Update Avoidance to Bed</title>
+      <link>https://blog.toastit.dev/blog/wu-put-to-bed/</link>
+      <pubDate>Tue, 16 Jan 2018 07:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/wu-put-to-bed/</guid>
+      <description>This will be my fourth, and final, poston the topic of stopping updates from automatically installing on Windows 10.
+If you&amp;rsquo;re wanting to skip to the punch line:
+Yes, you can prevent updates from being installed, No, you shouldn&amp;rsquo;t prevent updates from being installed, Do updates on your time, and don&amp;rsquo;t leave them sitting there for weeks. The Road So Far This journey started with an answer on Super User.</description>
+    </item>
+    
+    <item>
+      <title>Creating Storage Reports With PowerShell</title>
+      <link>https://blog.toastit.dev/blog/powershell-storage-report/</link>
+      <pubDate>Mon, 16 Oct 2017 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/powershell-storage-report/</guid>
+      <description>This post is part of the #PSBlogWeekPowerShell blogging series. #PSBlogWeek is a regular event where anyone interested in writing great content about PowerShell is welcome to volunteer. The purpose is to pool our collective PowerShell knowledge together over a 5-day period and write about a topic that anyone using PowerShell may benefit from. #PSBlogWeek is a Twitter hashtag, so feel free to stay up to date on the topic on Twitter at the #PSBlogWeekhashtag.</description>
+    </item>
+    
+    <item>
+      <title>Revisiting Windows Updates in 2017: The Lab Setup</title>
+      <link>https://blog.toastit.dev/blog/wu-2017-revisit-setup/</link>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/wu-2017-revisit-setup/</guid>
+      <description>It&amp;rsquo;s been nine months since I last looked into preventing Windows Update related reboots in Windows 10. It feels like so much has changed since then and a recent commentmade me realize there is more to test.
+With that in mind, I&amp;rsquo;m rebuilding my lab and will be introducing test cases over time. This will be a very short post detailing the first two test cases and how you can follow along with the results as they come about.</description>
+    </item>
+    
+    <item>
+      <title>Digging Up Old Blog Posts</title>
+      <link>https://blog.toastit.dev/blog/old-posts/</link>
+      <pubDate>Mon, 21 Nov 2016 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/old-posts/</guid>
+      <description>I was recently looking through my Google Analytics and noticed there was an old blogspot address that I hadn&amp;rsquo;t seen in years.
+The blog only had two posts on it, and judging by the title (and my job at the time) I was obviously looking at starting a Helpdesk orientated site.
+Time sure has flown by since then.
+Rather than just let the (short) posts die, I figure I&amp;rsquo;d repost them here (for the lulz.</description>
+    </item>
+    
+    <item>
+      <title>Update on Windows Update... Up Time</title>
+      <link>https://blog.toastit.dev/blog/win-10-update-up-time/</link>
+      <pubDate>Sun, 06 Nov 2016 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/win-10-update-up-time/</guid>
+      <description>Three weeks ago, I started up an experimentto find out if an old SuperUser answerof mine was still valid.
+The TL;DR of the previous post was:
+VMs built running Professional and Enterprise editions of Windows 10, version 1607. PowerShell script is running to collect a screenshot of the VMs every hour. These screenshots also show system uptime. So, it rebooted right? Nope. Three weeks (nearly) later, and we still haven&amp;rsquo;t had a reboot.</description>
+    </item>
+    
+    <item>
+      <title>Validating Prevention of Automatic Reboots on Windows 10, Version 1607</title>
+      <link>https://blog.toastit.dev/blog/wu-windows-1607/</link>
+      <pubDate>Mon, 17 Oct 2016 23:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/wu-windows-1607/</guid>
+      <description>Over a year ago, I answered a questionon Super User. The question was about stopping the very persistent Windows Update from rebooting without the users&amp;rsquo; consent, and wow was that ever a popular topic. The question is up to about 91K views, and my answer is rapidly approaching 100 up votes.
+Since then there has been a number of large updates to Windows 10, chief among them being the Anniversary Update, after which there has been a lot of conflicting reports of whether or not the ‘fix&amp;rsquo; still worked.</description>
+    </item>
+    
+    <item>
+      <title>Repairing Trust Relationships Without a Reboot</title>
+      <link>https://blog.toastit.dev/blog/trust-no-reboot/</link>
+      <pubDate>Mon, 22 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/trust-no-reboot/</guid>
+      <description>It&amp;rsquo;s hopefully not something that comes up often, but if you work in a Windows environment you will undoubtedly come across machines with trust relationship issues with the domain. Maybe it was an overeager High Availability action on a vSphere guest resulting in two copies of the same server running at once. Or perhaps it was a helpdesk technician powering up a cloned desktop while connected to the network. Suddenly you can&amp;rsquo;t get onto the machine using your domain credentials.</description>
+    </item>
+    
+  </channel>
+</rss>

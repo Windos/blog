@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on ToastIT</title>
+    <link>https://blog.toastit.dev/tags/azure/</link>
+    <description>Recent content in Azure on ToastIT</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 07 May 2021 17:42:32 +0000</lastBuildDate><atom:link href="https://blog.toastit.dev/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Learning Story: From Timber to Chocolatey</title>
+      <link>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</link>
+      <pubDate>Fri, 07 May 2021 17:42:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/my-learning-story-from-timber-to-chocolatey/</guid>
+      <description>My passion has always been tech. Growing up my neighbour&amp;rsquo;s old computers often found their way to me, and I have fond memories of building myself a 486DX2 &amp;ldquo;gaming pc.&amp;rdquo;
+That computer was when I leant about the capacitors in power supplies. It turns out that if you&amp;rsquo;re swapping the fan in one of those for one with LEDs in it you probably shouldn&amp;rsquo;t twist the wires together by hand. Who&amp;rsquo;d have known?</description>
+    </item>
+    
+    <item>
+      <title>Fun with Azure Key Vault Part 2: Integration with Azure Functions</title>
+      <link>https://blog.toastit.dev/blog/azure-key-vault-2/</link>
+      <pubDate>Sun, 21 Jun 2020 03:58:22 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-key-vault-2/</guid>
+      <description>In Part 1of this series we learned how to spin up our own Azure Key Vaultand store a PSCredentialObject in it. We also checked out how to get those credentials back out and use them in our regular scripts.
+Today, we&amp;rsquo;re going to figure out how we can integrate our Key Vault into Azure Functionsand make use of our credentials there.
+Before we continue, make sure you&amp;rsquo;ve followed through the demo in Part 1 or just understand that I&amp;rsquo;ll be reusing Azure resources from that demo without mentioning how to create them here.</description>
+    </item>
+    
+    <item>
+      <title>Fun with Azure Key Vault Part 1: Vault Creation and Storing PSCredential Objects</title>
+      <link>https://blog.toastit.dev/blog/azure-key-vault-1/</link>
+      <pubDate>Fri, 22 May 2020 11:40:03 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-key-vault-1/</guid>
+      <description>I&amp;rsquo;ve spent a lot of time recently working on automation solutions in Azure. These solutions use a lot of different Azure services including Logic Apps, Automation Accounts, and Functions.
+When working on larger solutions, you often find that you need to use secrets and credentials. If a single solution spans multiple services, it makes sense to store these secrets once in a common place where you can always access them.</description>
+    </item>
+    
+    <item>
+      <title>Azure Devops for PowerShell - #AzureAdventCalendar 2019 Day 15</title>
+      <link>https://blog.toastit.dev/blog/azure-devops-for-powershell-azureadventcalendar-2019-day-15/</link>
+      <pubDate>Sun, 15 Dec 2019 00:21:22 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-devops-for-powershell-azureadventcalendar-2019-day-15/</guid>
+      <description>Did you grow up with advent calendars in the lead up to Christmas each year? My kids have taken up the tradition with a great passion (the chocolate may have something to do with this), which makes me all sorts of jealous.
+Luckily there&amp;rsquo;s another option for those that may have - as far as you&amp;rsquo;ll admit to the office - outgrown chocolate based advent calendars: the Azure Advent Calendar.</description>
+    </item>
+    
+    <item>
+      <title>Azure DevOps Pipelines Tune Up: Templates and Centralization</title>
+      <link>https://blog.toastit.dev/blog/azure-pipelines-tune-up/</link>
+      <pubDate>Fri, 20 Sep 2019 22:04:57 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/azure-pipelines-tune-up/</guid>
+      <description>Last weekend I wrote two plugins for PoshBot: Joker&amp;amp; Sentiment. Both of these were equipped with my standard Azure DevOps Pipelines treatment for testing, building, and releasing them to the PowerShell Gallery. Doing two in quick succession made me realize just how repetitive my pipelines actually are.
+It was interesting timing then, that during the week I came across a post by Justin Yooabout refactoring these pipelines.</description>
+    </item>
+    
+    <item>
+      <title>Moving My Automatic Blog Archive Tweets to Azure Functions</title>
+      <link>https://blog.toastit.dev/blog/blog-archive-to-azure-function/</link>
+      <pubDate>Sat, 23 Feb 2019 21:08:50 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/blog-archive-to-azure-function/</guid>
+      <description>Mid way through last year I live streamed and bloggedthe creation of a script that automatically sends out &amp;ldquo;blog archive&amp;rdquo; tweets. It&amp;rsquo;s been working well, and has been resurfacing topics that I sometimes forget I&amp;rsquo;ve written.
+Until today, it&amp;rsquo;d been running on my home server&amp;hellip; but why?
+It&amp;rsquo;s a fairly simple script, with no need to run on an actual server, let alone that specific one. It seems like the perfect script to move to a serverless service and learn how to use them in practice.</description>
+    </item>
+    
+    <item>
+      <title>How I Failed My Way to Success with Azure Pipelines - Part 2: Release</title>
+      <link>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/</link>
+      <pubDate>Sun, 17 Feb 2019 09:08:32 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines-part-2-release/</guid>
+      <description>Despite the name of this series of posts, the first one didn&amp;rsquo;t contain too many fails. Credit where credit is due, that&amp;rsquo;s because of Tyler&amp;amp;rsquo;sground work on the build pipeline front. When it came to release pipelines I was flying blind, bring on the fails!
+Missed part one of this series? Read it first!If You Don&amp;rsquo;t Clean Your Room, You Won&amp;rsquo;t Get Any YAML Unlike the build pipelines we&amp;rsquo;ve just finished with, there is (currently) no support to configure release pipelines via YAML.</description>
+    </item>
+    
+    <item>
+      <title>How I Failed My Way to Success with Azure Pipelines - Part 1: Build</title>
+      <link>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines/</link>
+      <pubDate>Wed, 06 Feb 2019 11:38:49 +0000</pubDate>
+      
+      <guid>https://blog.toastit.dev/blog/how-i-failed-my-way-to-success-with-azure-pipelines/</guid>
+      <description>When something new and shiny comes out, I find myself needing it to &amp;ldquo;click&amp;rdquo; with me before I go &amp;ldquo;right, yes, I need to use that.&amp;rdquo;
+This isn&amp;rsquo;t to say I don&amp;rsquo;t see the value in it. I just assume that it&amp;rsquo;s for someone other than me.
+Azure Pipelines, part of Microsoft&amp;rsquo;s DevOps Services, was in that box for a long time. I assumed it was way out of my league, that it could work for PowerShell projects but ones that are much bigger than what I work on.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Downloading an Image for Local Use - ToastIT
+  </title>
+  <meta name="description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&#39;m disappointed that I didn&#39;t get to it sooner." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Downloading an Image for Local Use" />
+<meta property="og:description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&#39;m disappointed that I didn&#39;t get to it sooner." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/downloading-an-image-for-local-use/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2018-05-28T00:55:00+00:00" />
+<meta property="article:modified_time" content="2018-05-28T00:55:00+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Downloading an Image for Local Use"/>
+<meta name="twitter:description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&#39;m disappointed that I didn&#39;t get to it sooner."/>
+
+  <meta itemprop="name" content="Downloading an Image for Local Use">
+<meta itemprop="description" content="This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I&#39;m disappointed that I didn&#39;t get to it sooner."><meta itemprop="datePublished" content="2018-05-28T00:55:00+00:00" />
+<meta itemprop="dateModified" content="2018-05-28T00:55:00+00:00" />
+<meta itemprop="wordCount" content="666">
+<meta itemprop="keywords" content="PowerShell,Nugget,BurntToast," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Downloading an Image for Local Use</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    May 28, 2018
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      4&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      666&nbsp;words
+      
+    </h5>
+
+    <p>During my latest <a href="https://youtu.be/OXFBHCY4Ils" target="_blank" rel="noopener">livestream</a>
+, after failing at what I intended to do, we got onto enabling the ability to use pictures from the Internet in toast notifications. All of the documentation for the UWP Toolkit suggests this should just work, but unfortunately it didn&rsquo;t in practice.</p>
+<p>Rather than changing the code, and documentation, to explicitly not make this work from within the module we set out to enable this functionality ourselves.</p>
+<h2 id="the-beginning"><strong>The Beginning</strong></h2>
+<p>Let&rsquo;s start with code we were working with. I&rsquo;ve simplified this to just the parts of the function we were worried about, but you can see the full function <a href="https://github.com/Windos/BurntToast/blob/v0.6.2/BurntToast/Public/New-BTImage.ps1" target="_blank" rel="noopener">on GitHub</a>
+.</p>
+<pre><code>function New-BTImage {
+    param (
+        [string] $Source
+    )
+
+    # Don't worry about this type and what it does, just know that this function
+    # creates and object, adds properties to it, then outputs it at the end
+    $Image = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
+
+    if ($Source) {
+        $Image.Source = $Source
+    }
+
+    $Image
+}
+</code></pre>
+<p>Simply put, this function took a source and added this to an &ldquo;AdaptiveImage&rdquo; objects. This should have been able to take a local path or an Internet address. Local paths worked, but not Internet ones.</p>
+<h2 id="the-first-attempt"><strong>The First Attempt</strong></h2>
+<p>The answer that we came up with on stream was to download the image(s) to a local path (in the temp directory) and adjust the source to that new path. My first attempt at this included generating a GUID for the file name to ensure that it was unique.</p>
+<pre><code>function New-BTImage {
+    param (
+        [string] $Source
+    )
+
+    $Image = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
+
+    if ($Source) {
+        if ($Source -like 'http?://*') {
+            $FileExtension = $Source.Split('.')[-1]
+            $Guid = [guid]::newGuid()
+
+            $NewFilePath = '{0}\{1}.{2}' -f $Env:TEMP, $Guid, $FileExtension
+
+            Invoke-WebRequest -Uri $Source -OutFile $NewFilePath
+
+            $Image.Source = $NewFilePath
+        } else {
+            $Image.Source = $Source
+        }
+    }
+
+    $Image
+}
+</code></pre>
+<p>In this iteration I tested to see if the source started with an HTTP or HTTPS and then split the patch on periods. The last item in the result from splitting the source should give me the file extension.</p>
+<p>Then I create a new GUID, and build the path to where the file will be downloaded to. The file is then downloaded and used as the source on the image object.</p>
+<p>This worked, but there was one issue with it&hellip;</p>
+<h2 id="the-final-product"><strong>The Final Product</strong></h2>
+<p>The issue was that if you used the same image multiple times, then it would be downloaded every time. You&rsquo;d end up with multiple copies of the same image in your temp directory and have to wait for it to be downloaded every time you generated a new toast.</p>
+<p>The answer to this was to preserve the name from the Internet and test to see if it is already in the temp directory.</p>
+<pre><code>function New-BTImage {
+    param (
+        [string] $Source
+    )
+
+    $Image = [Microsoft.Toolkit.Uwp.Notifications.AdaptiveImage]::new()
+
+    if ($Source) {
+        if ($Source -like 'http?://*') {
+            $RemoteFileName = $Source.Split('/')[-1]
+
+            $NewFilePath = '{0}\{1}' -f $Env:TEMP, $RemoteFileName
+
+            if (!(Test-Path -Path $NewFilePath)) {
+                Invoke-WebRequest -Uri $Source -OutFile $NewFilePath
+            }
+
+            $Image.Source = $NewFilePath
+        } else {
+            $Image.Source = $Source
+        }
+    }
+
+    $Image
+}
+</code></pre>
+<p>This time I split the source on a forward slash, and the last item would give me the full file name (including extension.)</p>
+<p>Then <code>Test-Path</code> is used to see if that filename exists in the temp directory and if not then the file is downloaded.</p>
+<p>With that in place, Internet based images could now be used!</p>
+<p>This change will be part of the v0.6.2 release of <a href="https://www.powershellgallery.com/packages/BurntToast" target="_blank" rel="noopener">BurntToast</a>
+ and my hope is that it will make displaying visually interesting toasts much easier.</p>
+<h2 id="wrap-up"><strong>Wrap Up</strong></h2>
+<p>This wasn&rsquo;t the problem I was intending to tackle during the livestream, but I&rsquo;m glad we did get to it. It had been sitting as an open issue on the project for a long time and given how quick of a fix it was I&rsquo;m disappointed that I didn&rsquo;t get to it sooner.</p>
+<p>Remember that <a href="https://twitter.com/search?f=tweets&amp;amp;vertical=default&amp;amp;q=%23pstweetchat" target="_blank" rel="noopener">#PSTweetChat</a>
+ is this coming Friday (1 - 2 PM Eastern Time). Also, if you&rsquo;re looking for <a href="https://king.geek.nz/2018/03/20/pshelp-twitter/" target="_blank" rel="noopener">PowerShell help</a>
+, you can find it on Twitter using <a href="https://twitter.com/search?f=tweets&amp;amp;vertical=default&amp;amp;q=%23pshelp&amp;amp;src=typd" target="_blank" rel="noopener">#PSHelp</a>
+!</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>

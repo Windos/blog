@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" href="/favicon.png">
+
+  <title>
+  Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It - ToastIT
+  </title>
+  <meta name="description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code." />
+  <meta name="author" content="Josh King" />
+  <meta name="generator" content="Hugo 0.101.0" /><link
+    rel="stylesheet"
+    href="https://blog.toastit.dev/css/styles.min.f1259c4f8868acc3e3e3f3194acb8dc973d6d46276811e77f3af9cdf78a5af42.css"
+    integrity="sha256-8SWcT4horMPj4/MZSsuNyXPW1GJ2gR5386+c33ilr0I="
+  />
+  
+  
+
+  <meta property="og:title" content="Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It" />
+<meta property="og:description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.toastit.dev/blog/like-operator-chains/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-11-28T09:18:22+00:00" />
+<meta property="article:modified_time" content="2019-11-28T09:18:22+00:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It"/>
+<meta name="twitter:description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code."/>
+
+  <meta itemprop="name" content="Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It">
+<meta itemprop="description" content="RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code."><meta itemprop="datePublished" content="2019-11-28T09:18:22+00:00" />
+<meta itemprop="dateModified" content="2019-11-28T09:18:22+00:00" />
+<meta itemprop="wordCount" content="916">
+<meta itemprop="keywords" content="PowerShell," />
+</head>
+<body class="dark:bg-gray-800 dark:text-white relative flex flex-col min-h-screen"><header class="container flex justify-between md:justify-between gap-4 flex-wrap p-6 mx-auto relative">
+  <a href="https://blog.toastit.dev/" class="capitalize font-extrabold text-2xl">
+    
+    <img src="/toastit-logo.png" alt="ToastIT" class="h-8 max-w-full" />
+    
+  </a>
+  <button class="mobile-menu-button md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <line x1="4" y1="8" x2="20" y2="8" />
+      <line x1="4" y1="16" x2="20" y2="16" />
+    </svg>
+  </button>
+  <ul class="mobile-menu absolute z-10 px-6 pb-6 md:p-0 top-full left-0 w-full md:w-auto md:relative hidden md:flex flex-col md:flex-row items-end md:items-center gap-4 lg:gap-6 bg-white dark:bg-gray-800">
+
+    
+    <li><a href="/blog">Blog</a></li>
+    
+    <li><a href="/page/about/">About</a></li>
+    
+    <li><a href="/tags">Tags</a></li>
+    
+    <li><a href="/blog/emoji-support/">Top Post</a></li>
+    
+
+    
+
+    
+    <li class="grid place-items-center">
+      <span class="open-search inline-block cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="10" cy="10" r="7" />
+          <line x1="21" y1="21" x2="15" y2="15" />
+        </svg>
+      </span>
+    </li>
+    
+
+    
+  </ul>
+</header>
+<main class="flex-1">
+  
+  
+
+  
+
+  <article class="prose lg:prose-lg mx-auto my-8 dark:prose-dark px-4">
+
+    <h1 class="text-2xl font-bold mb-2">Tired of Massive &#39;like&#39; Operator Chains? Rub a Little RegEx on It</h1>
+    <h5 class="text-sm flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <rect x="4" y="5" width="16" height="16" rx="2" />
+        <line x1="16" y1="3" x2="16" y2="7" />
+        <line x1="8" y1="3" x2="8" y2="7" />
+        <line x1="4" y1="11" x2="20" y2="11" />
+        <rect x="8" y="15" width="2" height="2" />
+      </svg>
+      Posted on 
+  
+    November 28, 2019
+  
+
+
+      
+        &nbsp;&bull;&nbsp;
+      
+      <svg xmlns="http://www.w3.org/2000/svg" class="mr-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15 15" />
+      </svg>
+      5&nbsp;minutes
+      &nbsp;&bull;
+      <svg xmlns="http://www.w3.org/2000/svg" class="mx-1" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+        <line x1="3" y1="6" x2="3" y2="19" />
+        <line x1="12" y1="6" x2="12" y2="19" />
+        <line x1="21" y1="6" x2="21" y2="19" />
+      </svg>
+      916&nbsp;words
+      
+    </h5>
+
+    <p>I was recently writing a PowerShell script and found myself needing to check an input value against a laundry list of criteria. That criteria could have been anywhere in the input value, so out of habit I started writing something that looked like this:</p>
+<pre><code>$Input = 'This is an example string. It demonstrates &quot;stuff.&quot;'
+
+if ($Input -like '*example*' -or
+    $Input -like '*demo*' -or
+    $Input -like '*more criteria*' -or
+    $Input -like '*when will this end?*') {
+    'A criteria matched, do the thing!'
+}
+</code></pre>
+<p>This works, but it doesn&rsquo;t scale. This example matches against four criteria, and it&rsquo;s already getting a little long for my liking.</p>
+<p>What if I had a list of 10 criteria, or 100? Yeah&hellip; that&rsquo;s not going to work out.</p>
+<h2 id="theres-got-to-be-a-better-way">There&rsquo;s Got to Be a Better Way</h2>
+<p>In the above example, I used the &ldquo;like&rdquo; operator, which allows you to match against a string using wildcards.</p>
+<p>There are a lot of other <a href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-6" target="_blank" rel="noopener">comparison operators</a>
+ available for us to use.</p>
+<p>A favorite when looking for a a full string in a large group of criteria, is the &ldquo;in&rdquo; (or &ldquo;contains&rdquo;) operator.</p>
+<pre><code>$Input = 'josh'
+
+$Criteria = 'adam', 'barry', 'josh', 'steve'
+
+if ($Input -in $Criteria) {
+    'A criteria matched, do the thing!'
+}
+</code></pre>
+<p>What we really need is a way combine both the &ldquo;like&rdquo; and &ldquo;in&rdquo;.</p>
+<h2 id="regex-to-the-rescue">RegEx to the Rescue!</h2>
+<p>It turns out that RegEx is a very handy tool to have in your tool belt, as I&rsquo;ve been discovering since I last used it in a <a href="__GHOST_URL__/2019/07/25/normalizing-phone-numbers-easier-with-regex/">blog post</a>
+. It has the ability to both look for chunks of text inside a larger input string, and also chaining together those chunks that we&rsquo;re looking for.</p>
+<p>From now on, we&rsquo;ll make use of the &ldquo;match&rdquo; operator.</p>
+<p>For starters, searching inside a string is even easier than with the &ldquo;like&rdquo; operator:</p>
+<pre><code>$Input = 'This is an example string. It demonstrates &quot;stuff.&quot;'
+
+$Input -match 'example'
+</code></pre>
+<p>Next we layer in matching against multiple criteria. We do this with the <code>|</code> character, which in RegEx is technically called an &ldquo;alternation&rdquo;, just think of it as an &ldquo;or&rdquo;.</p>
+<pre><code>$Input = 'This is an example string. It demonstrates &quot;stuff.&quot;'
+
+$Input -match 'example|unique|test'
+</code></pre>
+<p>This is going to return true if any of the words &ldquo;example&rdquo;, &ldquo;unique&rdquo;, or &ldquo;test&rdquo; are found in my input string. It&rsquo;s important to know that you&rsquo;re no limited to words here, you can have full on sentences if needed.</p>
+<p><em>Note: if you&rsquo;re a performance fiend, the words are searched for in order, so if you&rsquo;re expecting one to match most often, put it towards the left of your list of criteria.</em></p>
+<p>Now we need to make this even more expandable. Ideally we could pull a list from some system and dynamically build our RegEx string to match against all of them. An example might be pulling a list of common passwords.</p>
+<pre><code>$Input = 'This is an example string. It demonstrates &quot;stuff.&quot;'
+
+$Criteria = 'example', 'unique', 'test', 'a lot', 'of', 'entries'
+
+$Input -match ($Criteria -join '|')
+</code></pre>
+<p>Here we load up our criteria into a list (that&rsquo;s fairly easy to maintain), and then use the &lsquo;join&rsquo; operator to put a pipe character between each of them. We then use the joined string in our match.</p>
+<p>We&rsquo;ve now got a working method for searching for long lists of criteria in a given string without having to tediously build chains of like statements!</p>
+<h2 id="my-real-world-example">My Real World Example</h2>
+<p>The script I alluded to at the start of this post involved pulling user account information from Active Directory. One of my main design drivers was making the script as generic as possible and also friendly to use by people that don&rsquo;t live and breath PowerShell.</p>
+<p>With that in mind, I had made it so that the user could specify a base Organisational Unit (OU) to search from but I also needed a way of allowing the user to exclude specific OUs that may live under that base.</p>
+<p>There&rsquo;s many ways to solve this problem, but the way I opted to do it was to take the user&rsquo;s distinguished name property (which includes the OU path the live under), and check it against a list of exclusions.</p>
+<p>For user input, you might have data like this:</p>
+<pre><code>$BaseOU = 'OU=Users,OU=Corp,DC=ToastIT,DC=DEV'
+$ExclusionOUs = 'OU=HR,OU=Users,OU=Corp,DC=ToastIT,DC=DEV',
+                'OU=Finance,OU=Users,OU=Corp,DC=ToastIT,DC=DEV',
+                'OU=Executive,OU=Users,OU=Corp,DC=ToastIT,DC=DEV'
+</code></pre>
+<p>I&rsquo;ve kept the list of exclusions short for the sake of demonstration, but as a script I was going to be handing off I have no idea how long (or short) it could end up being.</p>
+<p>Later on, I need to pull user objects from AD, but I don&rsquo;t want to end up with users inside those that were excluded.</p>
+<pre><code>$Users = Get-ADUser -Filter 'Enabled -eq $true' -SearchBase $BaseOU |
+    Where-Object {$_.DistinguishedName -notmatch ($ExclusionOUs -join '|')}
+</code></pre>
+<p>Job done!</p>
+<h2 id="proceed-with-caution">Proceed with Caution</h2>
+<p>Generally, RegEx is case sensitive, however PowerShell isn&rsquo;t. The &ldquo;match&rdquo; operator will ignore case, so it&rsquo;ll match &ldquo;Example&rdquo; with &ldquo;example&rdquo;.</p>
+<p>If this is going to be an issue in your case, use the &ldquo;cmatch&rdquo; operator. There&rsquo;s actually a number of these case sensitive operators in PowerShell, including the &ldquo;clike&rdquo; and &ldquo;cin&rdquo; versions of the operators we looked at earlier.</p>
+<p>Another thing to be aware of is special RegEx characters. For example, a period (&quot;.&quot;) is one of the wild card characters available so you will probably want to avoid including them in your list of criteria (or work out escaping them.)</p>
+<p>If you&rsquo;re interested in learning about other edge cases that may cause issues, or find learn some more things you can do with RegEx, check out the reference on <a href="https://regexr.com/" target="_blank" rel="noopener">regexr.com</a>
+</p>
+
+  </article><div class="bg-blue-300 dark:bg-gray-900">
+  <div class="container px-6 py-12 mx-auto max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <div class="text-2xl font-bold mb-2">Follow me</div>
+      <p class="opacity-60"></p>
+    </div>
+    <ul class="flex justify-center gap-4">
+      
+      <li>
+        <a
+          href="https://twitter.com/WindosNZ"
+          target="_blank"
+          rel="noopener"
+          aria-label="Twitter"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      <li>
+        <a
+          href="https://linkedin.com/in/windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="11" x2="8" y2="16" />
+            <line x1="8" y1="8" x2="8" y2="8.01" />
+            <line x1="12" y1="16" x2="12" y2="11" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      <li>
+        <a
+          href="https://github.com/Windos"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+            />
+          </svg>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      <li>
+        <a
+          href="https://www.youtube.com/c/JoshuaKingSolari"
+          target="_blank"
+          rel="noopener"
+          aria-label="YouTube"
+          class="p-2 inline-block rounded-full border border-transparent text-gray-500 hover:text-gray-800 hover:border-gray-800 cursor-pointer transition-colors dark:text-gray-600 dark:hover:border-gray-300 dark:hover:text-gray-300"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-youtube"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 9l5 3l-5 3z" />
+          </svg>
+        </a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</div>
+    </main><footer class="container p-6 mx-auto flex justify-between items-center">
+  <span class="text-sm font-light">
+    
+    Copyright © 2022 - Josh King · All rights reserved
+    
+  </span>
+  <span onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-1 cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5"
+      stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M18 15l-6 -6l-6 6h12" />
+    </svg>
+  </span>
+</footer>
+
+<div class="search-ui absolute top-0 left-0 w-full h-full bg-white dark:bg-gray-800 hidden">
+  <div class="container max-w-3xl mx-auto p-12">
+    <div class="relative">
+      <div class="my-4 text-center text-2xl font-bold">Search</div>
+
+      <span class="p-2 absolute right-0 top-0 cursor-pointer close-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </span>
+    </div>
+
+    <input type="search" class="py-2 px-3 w-full dark:text-black border dark:border-transparent"
+      placeholder="Enter search query" />
+
+    <div class="search-results text-lg font-medium my-4 hidden">Results</div>
+    <ul class="search-list my-2">
+
+    </ul>
+
+    <div class="no-results text-center my-8 hidden">
+      <div class="text-xl font-semibold mb-2">No results found</div>
+      <p class="font-light text-sm">Try adjusting your search query</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script src="https://blog.toastit.dev/js/scripts.min.js"></script>
+
+
+
+
+
+
+
+<script>
+  const mobileMenuButton = document.querySelector('.mobile-menu-button')
+  const mobileMenu = document.querySelector('.mobile-menu')
+  function toggleMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+  }
+  if(mobileMenu && mobileMenuButton){
+    mobileMenuButton.addEventListener('click', toggleMenu)
+  }
+</script>
+</body>
+</html>
