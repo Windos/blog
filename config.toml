@@ -3,6 +3,8 @@ metaDataFormat = "yaml"
 title = "ToastIT"
 theme = "blist"
 
+googleAnalytics = 'G-PNF7X4NP00'
+
 [taxonomies]
   tags = 'tag'
 
