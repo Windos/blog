@@ -1,4 +1,4 @@
-baseurl = "https://blog.toastit.dev"
+baseurl = "https://toastit.dev"
 metaDataFormat = "yaml"
 title = "ToastIT"
 theme = "blist"
