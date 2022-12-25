@@ -8,6 +8,7 @@ disqusShortname = 'windosgithub'
 
 [taxonomies]
   tags = 'tag'
+  series = 'series'
 
 [permalinks]
   blog = '/:year/:month/:day/:slug'
@@ -56,6 +57,11 @@ contentDir = "content"
 
   # The page bundle that is shown on the front page
   frontBundle = "blog"
+
+  # Open Graph
+  description = "Geek, Father, Walking Helpdesk"
+  images = ['site_hero.jpg']
+  title = 'ToastIT.dev - Josh King'
 
 [params.homepage.social]
   # Global params xommon for both languages
