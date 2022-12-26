@@ -4,11 +4,11 @@ date = 2020-08-07T17:54:01Z
 description = ""
 draft = false
 thumbnail = "/2020/08/kate-hliznitsova-ZIGxIQ4gzBU-unsplash.jpg"
+images = ["/2020/08/kate-hliznitsova-ZIGxIQ4gzBU-unsplash.jpg]
 slug = "actionable"
 summary = "I don't know how to express a happy dance with text. If I could that's what would be here because I've finally removed a thorn from my side that's been there for five years."
 tag = ["PowerShell", "BurntToast"]
 title = "Actionable Toast Notifications, Finally Cracked Them!"
-
 +++
 
 
@@ -226,15 +226,15 @@ This is where you can interrogate any input you may need to make decisions on wh
 
 ## Next Steps and Unknowns
 
-I’m currently planning out what needs to be done for the next release of BurntToast. Regarding making actionable toasts easier to work with I’m planning to add some way of using specifying code to trigger on events via both `New-BurntToastNotification` and `Submit-BTNotification`.
+I'm currently planning out what needs to be done for the next release of BurntToast. Regarding making actionable toasts easier to work with I'm planning to add some way of using specifying code to trigger on events via both `New-BurntToastNotification` and `Submit-BTNotification`.
 
-This will probably take the form of ActivatedEvent and DismissedEvent parameters that accept a script block, though I’m open to suggestions on that front. I’m wondering about the failed event too; this may only be exposed against `Submit-BTNotification`.
+This will probably take the form of ActivatedEvent and DismissedEvent parameters that accept a script block, though I'm open to suggestions on that front. I'm wondering about the failed event too; this may only be exposed against `Submit-BTNotification`.
 
-I still have a few unknowns too. This has so far only been tested in a session on my local computer and I’m not sure what the interaction would be regarding remote sessions. Remembering the remote endpoint would need to be on PowerShell 7.1, it will depend on how long the session stays open. If it closes immediately after the toast is sent, then the event registration will be lost, and nothing will trigger.
+I still have a few unknowns too. This has so far only been tested in a session on my local computer and I'm not sure what the interaction would be regarding remote sessions. Remembering the remote endpoint would need to be on PowerShell 7.1, it will depend on how long the session stays open. If it closes immediately after the toast is sent, then the event registration will be lost, and nothing will trigger.
 
-Regardless, this is a very exciting time in the work of toast notifications. All those use cases I’ve been shelving for half a decade can be revisited and there’s more testing needed than there is time in the day.
+Regardless, this is a very exciting time in the work of toast notifications. All those use cases I've been shelving for half a decade can be revisited and there's more testing needed than there is time in the day.
 
-If you’re interested in seeing some of these use cases in action, make sure you tune into [PSPowerHour](https://www.twitch.tv/devopsorg) towards the end of September (keep an eye on [Twitter](https://twitter.com/WindosNZ) for details) where I’ll be presenting "[Croque Monsieur: Step up Your Toast Notification Game](https://sessionize.com/s/windos/croque_monsieur_step_up_your_toast_/34007)".
+If you're interested in seeing some of these use cases in action, make sure you tune into [PSPowerHour](https://www.twitch.tv/devopsorg) towards the end of September (keep an eye on [Twitter](https://twitter.com/WindosNZ) for details) where I'll be presenting "[Croque Monsieur: Step up Your Toast Notification Game](https://sessionize.com/s/windos/croque_monsieur_step_up_your_toast_/34007)".
 
 If you've got any questions about these actionable toasts that might need a bit of depth, please do feel free to open a new [discussion over on GitHub](https://github.com/Windos/BurntToast/discussions).
 

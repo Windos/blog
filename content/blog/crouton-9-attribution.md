@@ -4,11 +4,11 @@ date = 2018-10-04T02:07:00Z
 description = ""
 draft = false
 thumbnail = "/2018/10/rukma-pratista-1054296-unsplash.jpg"
+images = ["/2018/10/rukma-pratista-1054296-unsplash.jpg"]
 slug = "crouton-9-attribution"
 summary = "Where did that toast come from? Who cooked it?! If only it was attributed to someone..."
 tag = ["BurntToast", "PowerShell"]
 title = "Crouton #9 - Free, with Attribution"
-
 +++
 
 

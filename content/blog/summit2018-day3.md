@@ -4,11 +4,11 @@ date = 2018-04-11T18:59:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/170223-M-GJ704-948--1-.JPG"
+images = ["/2018/05/170223-M-GJ704-948--1-.JPG"]
 slug = "summit2018-day3"
 summary = "Today was the reason I was able to be here at Summit. Today was the day I presented in front of about 100 people."
 tag = ["PowerShell", "Meta"]
 title = "Day Three of #PSHSummit 2018 - I Did the Thing"
-
 +++
 
 

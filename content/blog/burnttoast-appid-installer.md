@@ -4,11 +4,11 @@ date = 2018-02-03T18:45:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-19.jpg"
+images = ["/2018/05/thumb-19.jpg"]
 slug = "burnttoast-appid-installer"
 summary = "I can't tell you how happy I am to be writing this post."
 tag = ["PowerShell", "BurntToast"]
 title = "BurntToast + AppId = It's Working!"
-
 +++
 
 

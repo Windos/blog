@@ -4,13 +4,12 @@ date = 2018-03-11T20:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-21.jpg"
+images = ["/2018/05/thumb-21.jpg"]
 slug = "where-are-you"
 summary = "This seems like a decent excuse for a 'State of the Blog' post."
 tag = ["PowerShell", "Meta"]
 title = "Where the bloody hell are ya?"
-
 +++
-
 
 I've been somewhat absent lately, both from this blog and [YouTube](https://www.youtube.com/c/JoshuaKingSolari). I did not fully appreciated how much until I'd had a message or two asking when my next video will be out.
 
@@ -89,4 +88,3 @@ In general, I've enjoyed attending this virtual user group. Their meeting times 
 ## **Get in touch!**
 
 Regardless of anything else, you can always catch me on [Twitter](https://twitter.com/WindosNZ), so feel free to hit me up on there.
-

@@ -4,11 +4,11 @@ date = 2019-11-20T20:09:45Z
 description = ""
 draft = false
 thumbnail = "/2019/11/sophie-elvis-msC14JchkKU-unsplash.jpg"
+images = ["/2019/11/sophie-elvis-msC14JchkKU-unsplash.jpg"]
 slug = "crouton-13-hitting-snooze"
 summary = "Hitting snooze on your alarm clock is probably rather common. Let's take a look at how you can do the same thing with your Toast Notifications."
 tag = ["BurntToast", "PowerShell"]
 title = "Crouton #13 - Hitting Snooze"
-
 +++
 
 

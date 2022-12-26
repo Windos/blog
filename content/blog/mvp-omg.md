@@ -4,11 +4,11 @@ date = 2019-09-01T06:52:59Z
 description = ""
 draft = false
 thumbnail = "/2018/07/lidya-nada-638316-unsplash.jpg"
+images = ["/2018/07/lidya-nada-638316-unsplash.jpg"]
 slug = "mvp-omg"
 summary = "Today I'm humbled, shocked, and proud to announce that I'm now a Microsoft MVP."
 tag = ["PowerShell", "Meta"]
 title = "MVP: OMG"
-
 +++
 
 

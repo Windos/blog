@@ -4,11 +4,11 @@ date = 2017-08-03T12:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-6.jpg"
+images = ["/2018/05/thumb-6.jpg"]
 slug = "o365-all-the-things"
 summary = "Now that we've figured out how to connect to each of the Office 365 services, it's time to tie a pretty (PowerShell) blue bow on it."
 tag = ["PowerShell", "Office 365"]
 title = "Office 365 & PowerShell: Connecting All the Pieces"
-
 +++
 
 

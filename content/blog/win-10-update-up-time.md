@@ -4,13 +4,12 @@ date = 2016-11-06T10:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb.png"
+images = ["/2018/05/thumb.png"]
 slug = "win-10-update-up-time"
 summary = "Three weeks on, did Windows 10 decide to reboot?"
 tag = ["Windows"]
 title = "Update on Windows Update... Up Time"
-
 +++
-
 
 Three weeks ago, I [started up an experiment](https://king.geek.nz/2016/10/18/wu-windows-1607/) to find out if an old [SuperUser answer](https://superuser.com/questions/957267/how-to-disable-automatic-reboots-in-windows-10/963933#963933) of mine was still valid.
 
@@ -43,4 +42,3 @@ I'll keep the VMs running for as long as I can. The screenshots are now being sa
 Check out the folder: [Win10-Screenshots](https://1drv.ms/f/s!Ah37swlUrkCXk_oYpAxxlT9_89Xyog)
 
 For the time being **all** screenshots are going into there. When I get a chance I'll write a script to clean them up.
-

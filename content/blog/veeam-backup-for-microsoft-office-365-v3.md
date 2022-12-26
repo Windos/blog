@@ -4,13 +4,12 @@ date = 2019-02-18T21:29:41Z
 description = ""
 draft = false
 thumbnail = "/2019/02/katya-austin-554633-unsplash.jpg"
+images = ["/2019/02/katya-austin-554633-unsplash.jpg"]
 slug = "veeam-backup-for-microsoft-office-365-v3"
 summary = "I've been testing a beta of Veeam Backup for Microsoft Office 365 v3. It ticked some boxes of mine (spoiler alert.)"
 tag = ["Backup", "Office 365"]
 title = "Veeam Backup for Microsoft Office 365 v3.0: It's Good, Very Good"
-
 +++
-
 
 Towards the end of last week, a tweet with a nice big "[Veeam Green](https://www.color-hex.com/color/54b948)" logo caught my eye.
 
@@ -113,4 +112,3 @@ I [sung Veeam's praises](https://www.veeam.com/success-stories/veeam-hastings-di
 I'd argue that this is an even more important update than the last, as it feels like these features are now "ready" for prime time. Anyone that was on the fence about getting this product to protect their data in Office 365, now's the time to start getting quotes sorted.
 
 **This update is good... very good.**
-

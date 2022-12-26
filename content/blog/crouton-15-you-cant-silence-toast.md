@@ -4,11 +4,11 @@ date = 2021-01-31T21:08:16Z
 description = ""
 draft = false
 thumbnail = "/2020/09/kristina-flour-BcjdbyKWquw-unsplash.jpg"
+images = ["/2020/09/kristina-flour-BcjdbyKWquw-unsplash.jpg"]
 slug = "crouton-15-you-cant-silence-toast"
 summary = "Focus assist is a favoured tool of practiced speakers and presenters on Windows. It does put you in a bit of a bind if the thing you're presenting requires notifications though."
 tag = ["BurntToast", "PowerShell"]
 title = "Crouton #15 - You Can't Silence Toast"
-
 +++
 
 

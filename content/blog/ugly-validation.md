@@ -4,13 +4,12 @@ date = 2015-07-22T12:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/3224581771_5917d64f99_b.jpg"
+images = ["/2018/05/3224581771_5917d64f99_b.jpg"]
 slug = "ugly-validation"
 summary = "Figure out what you did wrong and don't do it again. Good luck!"
 tag = ["PowerShell"]
 title = "Giving ValidateScript a Makeover"
-
 +++
-
 
 ## **I Feel Validated**
 
@@ -114,4 +113,3 @@ As you can see, the text we specified after the `throw` statement is presented t
 * ValidateScript is the most flexible atribute
 * But man is that output ugly
 * Validation functions, which throw on invalid values allow you to present much nicer feedback to the user.
-

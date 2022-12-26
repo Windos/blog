@@ -4,11 +4,11 @@ date = 2018-05-29T05:54:09Z
 description = ""
 draft = false
 thumbnail = "/2018/05/samuel-zeller-118195-unsplash.jpg"
+images = ["/2018/05/samuel-zeller-118195-unsplash.jpg"]
 slug = "automatic-blog-archive-tweets"
 summary = "This morning I was up at 4 AM, live streaming the creation of an auto-tweet script."
 tag = ["PowerShell", "Meta"]
 title = "Automatic Blog Archive Tweets"
-
 +++
 
 

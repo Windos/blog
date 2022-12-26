@@ -7,7 +7,6 @@ slug = "trello-report"
 summary = "Nothing distracts a room full of nerds faster than technology."
 tag = ["PowerShell"]
 title = "Reporting on Trello Boards with PowerTrello"
-
 +++
 
 
@@ -52,21 +51,21 @@ Head over to Trello, and generate an [API Key](https://trello.com/app-key) (Make
 Fire up an elevated PowerShell console (i.e. Run as Administrator), and pop your API Key into a variable:
 
 ```powershell
-$apikey = ‘pastedkeyhere'
+$apikey = 'pastedkeyhere'
 
 ```
 
 Now request a token, using the relevant command in the PowerTrello module:
 
 ```powershell
-$token = Request-TrelloAccessToken –ApiKey $apikey
+$token = Request-TrelloAccessToken -ApiKey $apikey
 
 ```
 
 Save the key and token, this creates entries in your registry for future use:
 
 ```powershell
-Set-TrelloConfiguration –ApiKey $apikey –AccessToken $token
+Set-TrelloConfiguration -ApiKey $apikey -AccessToken $token
 
 ```
 

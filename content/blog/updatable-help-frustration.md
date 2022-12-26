@@ -4,13 +4,12 @@ date = 2016-11-07T10:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-1.png"
+images = ["/2018/05/thumb-1.png"]
 slug = "updatable-help-frustration"
 summary = "AAAAAAAAAAAAARRGH!"
 tag = ["PowerShell"]
 title = "PowerShell Updateable Help Frustration"
-
 +++
-
 
 AAAAAAAAAAAAARRGH!
 
@@ -74,4 +73,3 @@ There may even be a demand for a community service around this?
 I wonder if OneDrive or some sort of cloud storage will work?
 
 On second thought, these are not rabbit holes I should be exploring right now.
-

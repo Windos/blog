@@ -4,13 +4,12 @@ date = 2018-03-25T20:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/MaxPixel.freegreatpicture.com-Toy-Child-Game-Childhood-Blocks-Education-Kid-503109.jpg"
+images = ["/2018/05/MaxPixel.freegreatpicture.com-Toy-Child-Game-Childhood-Blocks-Education-Kid-503109.jpg"]
 slug = "veeam-my-first-virtual-lab"
 summary = "Over the last day or so I've been setting up a sandbox/virtual lab which leverages our Veeam backups."
 tag = ["Backup"]
 title = "Veeam: My First Virtual Lab"
-
 +++
-
 
 Over the last day or so I've been setting up a sandbox/virtual lab which leverages our Veeam backups. We've been using [SureBackup](https://www.veeam.com/videos/surebackup-how-it-works-22.html) for automatic restore point verification, but a large software update that's coming down the pipeline was a really good excuse to get a semi-persistent lab running.
 
@@ -32,15 +31,15 @@ Here's something I didn't realize until diving into this; despite marketing term
 
 So what is involved? There's three components which I like to think of as the what, where, and when.
 
-**What** – Application Group
+**What** - Application Group
 
 This defines which VMs will be part of your lab. It can also specify which special role each VM performs and any non-standard timings that are needed. For example, one of your VMs may be a domain control that takes a really long time to boot for whatever reason.
 
-**Where** – Virtual Lab
+**Where** - Virtual Lab
 
 There's a bunch involved here, but at the end of the day this results in an appliance that sits in your virtual infrastructure and acts as a proxy/gateway between your lab and the rest of the network.
 
-**When** – SureBackup Job
+**When** - SureBackup Job
 
 This job links your Application Group with your Virtual Lab. You can set this job to run automatically at certain times (you'd do this for automatically verifying the integrity of your restore points), but this particular job will be run on demand.
 
@@ -108,7 +107,6 @@ You can set a route on your local machine, pointing all traffic to that range to
 
 ```
 route -p ADD 10.1.1.2.0 MASK 255.255.255.0 10.1.1.199
-
 ```
 
 This didn't work for me, and I ended up having to set the route on our core switching. The specifics of this will depend on your switch/router vendor, so talk to your network team if you're not sure.
@@ -134,4 +132,3 @@ I'm working on scripting this, so that redeploying the lab is even easier (and d
 That's it for getting started with a Veeam Virtual Lab. Are you using this feature, or are you a Veeam user that's been thinking about using SureBackup? Let me know your story/use cases in the comments below or over on [Twitter](https://twitter.com/WindosNZ).
 
 Also, remember that if you're looking for [PowerShell help](https://king.geek.nz/2018/03/20/pshelp-twitter/), you can find it on Twitter using [#PSHelp](https://twitter.com/search?f=tweets&vertical=default&q=%23pshelp&src=typd)!
-

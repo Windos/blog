@@ -4,11 +4,11 @@ date = 2017-10-16T10:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-12.jpg"
+images = ["/2018/05/thumb-12.jpg"]
 slug = "powershell-storage-report"
 summary = "Whether they're nearly empty, nearly full, or somewhere in-between, it's helpful to get a quick overview of all your servers' hard drives."
 tag = ["PowerShell", "Windows"]
 title = "Creating Storage Reports With PowerShell"
-
 +++
 
 
@@ -141,7 +141,7 @@ But first, we need to establish which properties we want to see:
 
 ```powershell
 $DefaultDisplaySet = 'ComputerName', 'DriveLetter', 'SizeGB', 'Usage'
-$DefaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet(‘DefaultDisplayPropertySet', [String[]] $DefaultDisplaySet)
+$DefaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet('DefaultDisplayPropertySet', [String[]] $DefaultDisplaySet)
 $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($DefaultDisplayPropertySet)
 
 ```

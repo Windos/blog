@@ -4,11 +4,11 @@ date = 2018-10-01T18:42:53Z
 description = ""
 draft = false
 thumbnail = "/2018/10/rawpixel-653764-unsplash.jpg"
+images = ["/2018/10/rawpixel-653764-unsplash.jpg"]
 slug = "hacktoberfest-2018"
 summary = "This is my third Hacktoberfest, the event that made October one of my favorite months of the year!"
 tag = ["PowerShell", "Meta"]
 title = "I Need You! #Hacktoberfest"
-
 +++
 
 

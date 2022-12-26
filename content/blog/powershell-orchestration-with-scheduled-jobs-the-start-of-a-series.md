@@ -4,11 +4,11 @@ date = 2018-06-17T22:12:00Z
 description = ""
 draft = false
 thumbnail = "/2018/06/estee-janssens-396889-unsplash.jpg"
+images = ["/2018/06/estee-janssens-396889-unsplash.jpg"]
 slug = "powershell-orchestration-with-scheduled-jobs-the-start-of-a-series"
 summary = "In an effort to spread my love of Windows PowerShell scheduled jobs, this is the start of series on the subject."
 tag = ["PowerShell"]
 title = "PowerShell Orchestration with Scheduled Jobs - The Start of a Series"
-
 +++
 
 

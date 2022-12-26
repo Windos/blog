@@ -4,11 +4,11 @@ date = 2019-07-16T22:20:04Z
 description = ""
 draft = false
 thumbnail = "/2019/05/mae-mu-1547158-unsplash.jpg"
+images = ["/2019/05/mae-mu-1547158-unsplash.jpg"]
 slug = "crouton-11"
 summary = "Following the release of BurntToast v0.7.0 there were a couple of headline features that needed to be written about. Shoulder Taps had their time in the spotlight and now it's the turn of Updatable Toasts."
 tag = ["BurntToast", "PowerShell"]
 title = "Crouton #11 - Updating Toast Notifications, Gracefully"
-
 +++
 
 

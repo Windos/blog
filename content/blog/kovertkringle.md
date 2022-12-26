@@ -4,11 +4,11 @@ date = 2017-12-11T14:46:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-15.jpg"
+images = ["/2018/05/thumb-15.jpg"]
 slug = "kovertkringle"
 summary = "Given it's the holiday season, I worked on a PowerShell based Secret Santa Organizer"
 tag = ["PowerShell"]
 title = "KovertKringle: Secret Santa With a Dash of PowerShell"
-
 +++
 
 

@@ -4,11 +4,11 @@ date = 2017-10-21T10:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-13.jpg"
+images = ["/2018/05/thumb-13.jpg"]
 slug = "psblogweek-recap"
 summary = "It was a great event, with five days worth of awesome PowerShell content coming out!"
 tag = ["PowerShell", "Meta"]
 title = "#PSBlogWeek 2017 Recap"
-
 +++
 
 

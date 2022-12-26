@@ -4,11 +4,11 @@ date = 2018-03-02T15:30:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-20.jpg"
+images = ["/2018/05/thumb-20.jpg"]
 slug = "burnttoast-wix"
 summary = "This time around, I'll walk you through how to create your own installer."
 tag = ["PowerShell", "BurntToast"]
 title = "DIY AppId and WiX, for Tasty Toast"
-
 +++
 
 

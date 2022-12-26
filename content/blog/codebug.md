@@ -4,11 +4,11 @@ date = 2018-06-15T22:00:16Z
 description = ""
 draft = false
 thumbnail = "/2018/06/jill-heyer-5576-unsplash.jpg"
+images = ["/2018/06/jill-heyer-5576-unsplash.jpg"]
 slug = "codebug"
 summary = "One day my daughter will be putting my code to shame, and I can't wait."
 tag = ["Meta"]
 title = "Coding with Kids Doesn't \"Bug\" Me!"
-
 +++
 
 

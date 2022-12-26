@@ -4,11 +4,11 @@ date = 2020-01-22T21:50:06Z
 description = ""
 draft = false
 thumbnail = "/2020/01/waldemar-brandt-H7gNBeSy7eE-unsplash.jpg"
+images = ["/2020/01/waldemar-brandt-H7gNBeSy7eE-unsplash.jpg"]
 slug = "crouton-14-buttons"
 summary = "It's all well and good putting buttons all over your toast notification, but text is a little plain. Let's see how we can dress out buttons up a little bit!"
 tag = ["BurntToast", "PowerShell"]
 title = "Crouton #14 - Fancy Buttons"
-
 +++
 
 

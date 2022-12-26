@@ -4,11 +4,11 @@ date = 2019-07-30T23:09:29Z
 description = ""
 draft = false
 thumbnail = "/2019/07/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg"
+images = ["/2019/07/joseph-gonzalez-zcUgjyqEwe8-unsplash.jpg"]
 slug = "crouton-12"
 summary = "Toast notification data bindings have a number of uses. We've already covered updating toasts, now let's teach our notifications a second language."
 tag = ["BurntToast", "PowerShell"]
 title = "Crouton #12 - Toasting in Many Tongues (Tōhi o nga reo maha)"
-
 +++
 
 

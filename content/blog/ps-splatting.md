@@ -4,11 +4,11 @@ date = 2014-09-23T12:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/8734598308_3d1ceaaf15_k.jpg"
+images = ["/2018/05/8734598308_3d1ceaaf15_k.jpg"]
 slug = "ps-splatting"
 summary = "You create a hashtable of of the parameter names and their values, which you can format nicely, and pass the hashtable to the cmdlet."
 tag = ["PowerShell", "Nugget"]
 title = "Splatting your way to reduced duplicated code"
-
 +++
 
 
@@ -16,7 +16,7 @@ title = "Splatting your way to reduced duplicated code"
 
 A good example of this in action from the [TechNet magazine](https://technet.microsoft.com/en-us/magazine/gg675931.aspx) is turning:
 
-{% highlight powershell %}Get-WmiObject –computername SERVER-R2 –class Win32_LogicalDisk –filter "DriveType=3" –credential "Administrator"{% endhighlight %}
+{% highlight powershell %}Get-WmiObject -computername SERVER-R2 -class Win32_LogicalDisk -filter "DriveType=3" -credential "Administrator"{% endhighlight %}
 
 into:
 

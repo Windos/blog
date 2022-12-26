@@ -4,11 +4,11 @@ date = 2020-05-21T23:40:03Z
 description = ""
 draft = false
 thumbnail = "/2020/05/emiel-maters-3a7nrgYSbRE-unsplash.jpg"
+images = ["/2020/05/emiel-maters-3a7nrgYSbRE-unsplash.jpg"]
 slug = "azure-key-vault-1"
 summary = "I'm so used to storing fully formed credentials in the local Windows Credential Manager. How do I transition that into the \"secrets\" centric world that is the cloud?"
 tag = ["PowerShell", "Azure"]
 title = "Fun with Azure Key Vault Part 1: Vault Creation and Storing PSCredential Objects"
-
 +++
 
 

@@ -4,15 +4,15 @@ date = 2021-05-07T05:42:32Z
 description = ""
 draft = false
 thumbnail = "/2021/05/element5-digital-OyCl7Y4y0Bk-unsplash.jpg"
+images = ["/2021/05/element5-digital-OyCl7Y4y0Bk-unsplash.jpg"]
 slug = "my-learning-story-from-timber-to-chocolatey"
 summary = "This post is part of #TheMVPChallenge. It's not exactly what was on the brief... but I think it's a story worth telling!"
 tag = ["Meta", "Azure", "Office 365", "PowerShell"]
 title = "My Learning Story: From Timber to Chocolatey"
-
 +++
 
 
-My passion has always been tech. Growing up my neighbour’s old computers often found their way to me, and I have fond memories of building myself a 486DX2 "gaming pc."
+My passion has always been tech. Growing up my neighbour's old computers often found their way to me, and I have fond memories of building myself a 486DX2 "gaming pc."
 
 That computer was when I leant about the capacitors in power supplies. It turns out that if you're swapping the fan in one of those for one with LEDs in it you probably shouldn't twist the wires together by hand. Who'd have known?
 

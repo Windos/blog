@@ -4,11 +4,11 @@ date = 2019-10-04T15:41:49Z
 description = ""
 draft = false
 thumbnail = "/2019/10/jens-lelie-u0vgcIOQG08-unsplash.jpg"
+images = ["/2019/10/jens-lelie-u0vgcIOQG08-unsplash.jpg"]
 slug = "quick-ternary-operator-revisit"
 summary = "I was thinking about the new Ternary Operator and had a random thought... can it handle elseif logic?"
 tag = ["Nugget", "PowerShell"]
 title = "Quick Ternary Operator Revisit: Can It Elseif?"
-
 +++
 
 

@@ -4,13 +4,12 @@ date = 2018-01-15T18:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-17.jpg"
+images = ["/2018/05/thumb-17.jpg"]
 slug = "wu-put-to-bed"
 summary = "There were, and still are, many people frustrated with the fact that Windows 10 would decide to forcibly reboot for updates."
 tag = ["Windows"]
 title = "Windows Updates: Putting Update Avoidance to Bed"
-
 +++
-
 
 This will be my fourth, and final, [post](https://king.geek.nz/tags/#windows-update) on the topic of stopping updates from automatically installing on Windows 10.
 
@@ -73,4 +72,3 @@ So, to wrap up here's the real fix:
 Pick a day of the week and manually check for updates. I tend to manually check for updates every Friday night (even though I know there's usually only patches once a month.)
 
 Finally, **only** press install if you're willing to follow it up with a reboot. If you install the updates, Windows will eventually do the reboot one way or another. Commit to the follow up, or you've only got yourself to blame.
-

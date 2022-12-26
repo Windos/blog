@@ -4,11 +4,11 @@ date = 2019-02-23T08:08:50Z
 description = ""
 draft = false
 thumbnail = "/2019/02/josh-edgoose-1078641-unsplash.jpg"
+images = ["/2019/02/josh-edgoose-1078641-unsplash.jpg"]
 slug = "blog-archive-to-azure-function"
 summary = "A few scripts run on my home server, but can happily run in a serverless environment. Time to give that poor server a rest, I think."
 tag = ["PowerShell", "Azure"]
 title = "Moving My Automatic Blog Archive Tweets to Azure Functions"
-
 +++
 
 

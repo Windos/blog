@@ -4,11 +4,11 @@ date = 2018-08-12T22:21:01Z
 description = ""
 draft = false
 thumbnail = "/2018/08/jason-rosewell-60014-unsplash.jpg"
+images = ["/2018/08/jason-rosewell-60014-unsplash.jpg"]
 slug = "echo-echo"
 summary = "I don't know if this will help anyone else, and it's more for future me, but I hope it helps someone out there!"
 tag = ["Meta"]
 title = "Echo, Echo: Combine System Sounds with your Microphone for Skype for Business Presentations"
-
 +++
 
 

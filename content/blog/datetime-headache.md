@@ -4,11 +4,11 @@ date = 2017-11-05T19:15:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-14.jpg"
+images = ["/2018/05/thumb-14.jpg"]
 slug = "datetime-headache"
 summary = "Sometimes PowerShell just throws the system culture out the window and assumes that you meant to supply the date in the American style."
 tag = ["PowerShell", "Nugget"]
 title = "Avoiding DateTime Headaches"
-
 +++
 
 

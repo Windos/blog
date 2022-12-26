@@ -4,11 +4,11 @@ date = 2018-01-02T11:30:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-16.jpg"
+images = ["/2018/05/thumb-16.jpg"]
 slug = "resolution-2018"
 summary = "Woah, 2017 flew by."
 tag = ["PowerShell", "Meta"]
 title = "New Year's Resolutions - 2018"
-
 +++
 
 

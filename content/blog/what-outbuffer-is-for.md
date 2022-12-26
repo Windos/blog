@@ -4,13 +4,12 @@ date = 2020-05-27T06:30:00Z
 description = ""
 draft = false
 thumbnail = "/2020/05/alex-iby-HfR0W6HW_Cw-unsplash.jpg"
+images = ["/2020/05/alex-iby-HfR0W6HW_Cw-unsplash.jpg"]
 slug = "what-outbuffer-is-for"
 summary = "OutBuffer has been lurking in amongst the common parameters on most cmdlets for years, but I've never taken the time to ask what it's for."
 tag = ["PowerShell"]
 title = "So *That's* What OutBuffer Is For!"
-
 +++
-
 
 [Don Jones](https://twitter.com/concentrateddon) has been talking at a lot of PowerShell User Groups lately. One of the topics he's been covering is little nuggets from his latest (and probably last) PowerShell focused book, [Shell of an Idea](https://leanpub.com/shell-of-an-idea).
 
@@ -116,4 +115,3 @@ So... **that's** what OutBuffer is for!
 ## Credit
 
 Hero image by [Alex Iby](https://unsplash.com/@alexiby?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/lightbulb?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-

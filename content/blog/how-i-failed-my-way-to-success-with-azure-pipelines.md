@@ -4,11 +4,11 @@ date = 2019-02-05T22:38:49Z
 description = ""
 draft = false
 thumbnail = "/2019/02/quino-al-135852-unsplash.jpg"
+images = ["/2019/02/quino-al-135852-unsplash.jpg"]
 slug = "how-i-failed-my-way-to-success-with-azure-pipelines"
 summary = "Some people learn by writing. Some by watching videos. Apparently I learn by failing and head-desking."
 tag = ["PowerShell", "Azure"]
 title = "How I Failed My Way to Success with Azure Pipelines - Part 1: Build"
-
 +++
 
 

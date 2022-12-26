@@ -4,13 +4,12 @@ date = 2020-01-15T22:21:38Z
 description = ""
 draft = false
 thumbnail = "/2020/01/franck-v-U3sOwViXhkY-unsplash.jpg"
+images = ["/2020/01/franck-v-U3sOwViXhkY-unsplash.jpg"]
 slug = "universal-automation-early-look"
 summary = "I had the pleasure of testing Universal Automation while it was in private beta. Now the beta is open to all and I'm really excited for it to be in more hands because it's a very interesting project!"
 tag = ["PowerShell", "Toolbox"]
 title = "Universal Automation: An Early Look"
-
 +++
-
 
 Chances are good that if you've been around any part of the PowerShell community during the past couple of years, you've at least heard of [Universal Dashboard](https://universaldashboard.io/) (UD).
 
@@ -59,4 +58,3 @@ In the meantime, I'd love [to hear](https://twitter.com/WindosNZ) what sort of u
 ## Credit
 
 Hero image by [Franck V.](https://unsplash.com/@franckinjapan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/automation?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-

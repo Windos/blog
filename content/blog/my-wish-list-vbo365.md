@@ -4,11 +4,11 @@ date = 2018-10-09T19:47:26Z
 description = ""
 draft = false
 thumbnail = "/2018/10/dawid-zawila-279998-unsplash.jpg"
+images = ["/2018/10/dawid-zawila-279998-unsplash.jpg"]
 slug = "my-wish-list-vbo365"
 summary = "I heard a rumor that v3 is already well into development... hopeful it's not too late to register my feature wish list!"
 tag = ["Backup", "Office 365"]
 title = "My Wish List for Veeam Backup for Microsoft Office 365 v3"
-
 +++
 
 
@@ -22,7 +22,7 @@ No, just no.
 
 Microsoft guarantees availability, but your data = your problem.
 
-Yes, versioning may help, and retaining deleted items for x days is ok. However, Microsoft doesn’t care if George from HR deleted an important email six months ago that he desperately needs now.
+Yes, versioning may help, and retaining deleted items for x days is ok. However, Microsoft doesn't care if George from HR deleted an important email six months ago that he desperately needs now.
 
 Thinking you don't need to backup your cloud data is like setting up a redundant pair of on-premises file servers and declaring that backups of them aren't needed.
 

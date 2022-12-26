@@ -4,11 +4,11 @@ date = 2018-07-23T17:06:00Z
 description = ""
 draft = false
 thumbnail = "/2018/07/freestocks-org-540554-unsplash.jpg"
+images = ["/2018/07/freestocks-org-540554-unsplash.jpg"]
 slug = "copying-office-365-user-licensing"
 summary = "Spoiler alert: this post didn't end up the way I expected it to when I started writing..."
 tag = ["PowerShell", "Office 365"]
 title = "Copying Office 365 User Licensing"
-
 +++
 
 

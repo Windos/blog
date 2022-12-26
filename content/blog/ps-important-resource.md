@@ -4,11 +4,11 @@ date = 2014-09-13T12:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/ArtAndFeminismNYC-Generations.jpg"
+images = ["/2018/05/ArtAndFeminismNYC-Generations.jpg"]
 slug = "ps-important-resource"
 summary = "There is one thing I learnt to do early on and continue to do to this day: Ask for help."
 tag = ["PowerShell", "Nugget"]
 title = "The Single Most Important Resource When Learning Windows PowerShell"
-
 +++
 
 

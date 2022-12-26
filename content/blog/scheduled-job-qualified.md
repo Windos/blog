@@ -4,11 +4,11 @@ date = 2018-06-19T19:41:46Z
 description = ""
 draft = false
 thumbnail = "/2018/06/chris-geirman-421715-unsplash.jpg"
+images = ["/2018/06/chris-geirman-421715-unsplash.jpg"]
 slug = "scheduled-job-qualified"
 summary = "Much sooner than expected, let's talk about Windows PowerShell scheduled jobs again."
 tag = ["PowerShell"]
 title = "Fully Qualified Path to PowerShell.exe in Scheduled Jobs?"
-
 +++
 
 

@@ -4,11 +4,11 @@ date = 2019-09-24T21:17:30Z
 description = ""
 draft = false
 thumbnail = "/2019/09/pablo-heimplatz-an3qaxZ-2bY-unsplash.jpg"
+images = ["/2019/09/pablo-heimplatz-an3qaxZ-2bY-unsplash.jpg"]
 slug = "ternary-operator-powershell-7"
 summary = "What the heck is a \"ternary\" and what's it doing in my PowerShell?!"
 tag = ["PowerShell"]
 title = "Getting Familiar with the Ternary Operator in PowerShell 7"
-
 +++
 
 

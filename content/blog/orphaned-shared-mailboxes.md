@@ -4,11 +4,11 @@ date = 2018-08-23T22:22:00Z
 description = ""
 draft = false
 thumbnail = "/2018/08/rawpixel-777268-unsplash.jpg"
+images = ["/2018/08/rawpixel-777268-unsplash.jpg"]
 slug = "orphaned-shared-mailboxes"
 summary = "Time for a bit of Exchange flavoured spring cleaning? Let's find some un-needed shared mailboxes!"
 tag = ["PowerShell", "Office 365", "Nugget"]
 title = "Pre-Migration Housekeeping: Finding Orphaned Shared Mailboxes"
-
 +++
 
 

@@ -4,11 +4,11 @@ date = 2017-07-27T12:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb.jpeg"
+images = ["/2018/05/thumb.jpeg"]
 slug = "o365-connect"
 summary = "Just like their on-premises counterparts, each of these products has their own PowerShell interface for management."
 tag = ["PowerShell", "Office 365"]
 title = "Office 365 & PowerShell: Jacking Into the Matrix"
-
 +++
 
 
@@ -55,7 +55,7 @@ $Cred = Get-Credential
 Then go ahead and start, then import, a PowerShell session:
 
 ```powershell
-$ExSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid/" -Credential $Cred -Authentication "Basic" –AllowRedirection
+$ExSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid/" -Credential $Cred -Authentication "Basic" -AllowRedirection
 Import-PSSession $ExSession
 
 ```
@@ -72,7 +72,7 @@ Like Exchange, sore your credential then open and import Skype for Business Onli
 
 ```powershell
 $Cred = Get-Credential
-$S4BSession = New-CSOnlineSession –Credential $Cred
+$S4BSession = New-CSOnlineSession -Credential $Cred
 Import-PSSession $S4BSession
 
 ```

@@ -4,11 +4,11 @@ date = 2020-04-12T21:40:52Z
 description = ""
 draft = false
 thumbnail = "/2020/03/dillon-shook-3iPKIXVXv_U-unsplash.jpg"
+images = ["/2020/03/dillon-shook-3iPKIXVXv_U-unsplash.jpg"]
 slug = "how-i-work-lockdown"
 summary = "My last \"How I Work\" post was over three years ago and I've been considering an update for a while. What better time to do that than during the COVID-19 lockdown?"
 tag = ["Meta", "PowerShell"]
 title = "I'm Josh King, Sysadmin, and This Is How I Work (During Lockdown)"
-
 +++
 
 
@@ -54,7 +54,7 @@ The rest of the business was a bit of a mixed bag, some worked remotely from tim
 
 As a company we've all pulled together well, making sure everyone is up and running, comfortable, and safe. It's also great to be part of a team enabling other businesses to get themselves working remotely during the COVID-19 lockdown.
 
-## **In general, w**hat apps, software, or tools can’t you live without?****
+## **In general, w**hat apps, software, or tools can't you live without?****
 
 [PowerShell](https://docs.microsoft.com/en-us/powershell/) is my tool of choice, though that's obvious if you've read any other blog post on this site.
 

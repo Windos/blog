@@ -4,13 +4,12 @@ date = 2019-02-25T21:08:57Z
 description = ""
 draft = false
 thumbnail = "/2019/02/vinicius-amano-566532-unsplash.jpg"
+images = ["/2019/02/vinicius-amano-566532-unsplash.jpg"]
 slug = "veeam-365-selective"
 summary = "I can't stand \"expected warnings,\" but getting selective in my VBO jobs got me back to my happy place."
 tag = ["Backup", "PowerShell", "Office 365"]
 title = "Getting Selective with Veeam Backup for Microsoft Office 365"
-
 +++
-
 
 Let's say you're midway through a migration to Office 365. Some of your user's still have mailboxes on-site and others are with Exchange Online. You're not yet advising users to throw data into OneDrive for Business... but you're also not telling people **not** to use it.
 
@@ -69,7 +68,7 @@ Start by connecting to Exchange Online via PowerShell:
 
 ```powershell
 $Cred = Get-Credential
-$ExSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid/" -Credential $Cred -Authentication "Basic" –AllowRedirection
+$ExSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "https://outlook.office365.com/powershell-liveid/" -Credential $Cred -Authentication "Basic" -AllowRedirection
 Import-PSSession $ExSession
 
 ```
@@ -108,7 +107,7 @@ Connecting is very similar, just change the Uri and authentication method:
 
 ```powershell
 $Cred = Get-Credential
-$ExSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "http://mail.example.com/PowerShell/" -Credential $Cred -Authentication "Kerberos" –AllowRedirection
+$ExSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "http://mail.example.com/PowerShell/" -Credential $Cred -Authentication "Kerberos" -AllowRedirection
 Import-PSSession $ExSession
 
 ```
@@ -191,4 +190,3 @@ This has done the job for me, though I may still tweak things from time to time.
 I'm also now in a state where I can expect jobs to end without warnings. This actually helped tracked down when SharePoint was (incorrectly) treating something in a user's OneDrive as a virus and stopping VBO from getting a copy of it.
 
 I'm sure there are better ways to achieve my goals here, but these two are getting the job done.
-

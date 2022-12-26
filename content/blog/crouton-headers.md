@@ -4,11 +4,11 @@ date = 2017-05-15T12:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-4.jpg"
+images = ["/2018/05/thumb-4.jpg"]
 slug = "crouton-headers"
 summary = "Headers, introduced in the Creators Update, can be used to organize you toasts."
 tag = ["PowerShell", "BurntToast"]
-title = "Crouton #4 – Getting Your Head Around Headers"
-
+title = "Crouton #4 - Getting Your Head Around Headers"
 +++
 
 
@@ -36,7 +36,7 @@ New-BurntToastNotification -Text 'New Stack Overflow Question!', 'More details!'
 
 ## **Check out Those Results**
 
-There are two places you will see these headers manifest, on the toast themselves and in Windows’ Action Center.
+There are two places you will see these headers manifest, on the toast themselves and in Windows' Action Center.
 
 On the toast, the header appears, as you would expect, as a headline:
 
@@ -48,7 +48,7 @@ In the Action Center, a header will appear once and every toast with that header
 
 ## **Bugger! I Messed up My Header!**
 
-Don’t worry, you can easily update the display string. Remember that Id I mentioned above? Behind the scenes, the Id is the glue that holds this together. It tells the Action Center which toast(s) belong under which header(s).
+Don't worry, you can easily update the display string. Remember that Id I mentioned above? Behind the scenes, the Id is the glue that holds this together. It tells the Action Center which toast(s) belong under which header(s).
 
 If you create a new header with the same Id as has been used previously, but with a different Title, the display text will be updated which you submit your next toast.
 
@@ -58,7 +58,7 @@ Generally speaking, headers give you a second way of organizing your toasts. The
 
 In general, given that these toasts are created using PowerShell, I consider the AppId the perfect way of defining which script or process generated the toast. Headers give you a way of separating toasts generated via different “channels” within a script or process.
 
-As a practical example of this, consider a script that [checks for new questions on Stack Overflow.](https://king.geek.nz/2017/03/20/crouton-stackwatch/) Unlike the previous example of this, let’s assume that you want to keep track of more than one tag. Headers will allow you to keep these questions organized.
+As a practical example of this, consider a script that [checks for new questions on Stack Overflow.](https://king.geek.nz/2017/03/20/crouton-stackwatch/) Unlike the previous example of this, let's assume that you want to keep track of more than one tag. Headers will allow you to keep these questions organized.
 
 {{< figure src="/2018/05/stackwatcher.png" >}}
 

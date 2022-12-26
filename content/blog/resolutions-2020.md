@@ -4,11 +4,11 @@ date = 2020-01-01T13:48:30Z
 description = ""
 draft = false
 thumbnail = "/2020/01/jamie-street--d6kTMGXV6E-unsplash.jpg"
+images = ["/2020/01/jamie-street--d6kTMGXV6E-unsplash.jpg"]
 slug = "resolutions-2020"
 summary = "Apparently I forgot to do one of these posts last year. I like having these posts to look back on, so let's get back on track!"
 tag = ["Meta", "PowerShell"]
 title = "New Year's Resolutions - 2020"
-
 +++
 
 

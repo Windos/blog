@@ -4,11 +4,11 @@ date = 2019-11-27T20:18:22Z
 description = ""
 draft = false
 thumbnail = "/2019/11/anthony-martino-6AtQNsjMoJo-unsplash.jpg"
+images = ["/2019/11/anthony-martino-6AtQNsjMoJo-unsplash.jpg"]
 slug = "like-operator-chains"
 summary = "RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code."
 tag = ["PowerShell"]
 title = "Tired of Massive \"like\" Operator Chains? Rub a Little RegEx on It"
-
 +++
 
 

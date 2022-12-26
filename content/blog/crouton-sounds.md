@@ -4,11 +4,11 @@ date = 2018-04-01T16:30:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/feature.jpg"
+images = ["/2018/05/feature.jpg"]
 slug = "crouton-sounds"
 summary = "It gives me a glimpse into how people are using the module and it also focuses my documentation efforts on something that might actually be useful."
 tag = ["PowerShell", "BurntToast"]
-title = "Crouton #6 – Dance to Your Own Beat"
-
+title = "Crouton #6 - Dance to Your Own Beat"
 +++
 
 

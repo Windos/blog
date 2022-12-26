@@ -4,11 +4,11 @@ date = 2018-07-09T22:15:24Z
 description = ""
 draft = false
 thumbnail = "/2018/07/nicole-harrington-62045-unsplash.jpg"
+images = ["/2018/07/nicole-harrington-62045-unsplash.jpg"]
 slug = "safe-credentials"
 summary = "How do you deal with credentials in your scripts? Personally, I'm a Credential Manager kind of guy."
 tag = ["PowerShell"]
 title = "Keeping Credentials Safe, But Accessible"
-
 +++
 
 

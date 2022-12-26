@@ -4,13 +4,12 @@ date = 2017-08-28T12:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-8.jpg"
+images = ["/2018/05/thumb-8.jpg"]
 slug = "war-on-passwords"
 summary = "The NIST guidelines struck a chord with me. It seemed to be something that our users would embrace while addressing potential issues within any given workplace"
 tag = ["Security", "Meta"]
 title = "The War on Passwords"
-
 +++
-
 
 A little over a year ago, the United States National Institute for Standards and Technology ([NIST](https://www.nist.gov/)) released a draft of [SP 800-63 _Digital Identity Guidelines_](https://pages.nist.gov/800-63-3/). These guidelines were finalized in June. I first found out about NIST's guidelines via [Sophos](https://nakedsecurity.sophos.com/2016/08/18/nists-new-password-rules-what-you-need-to-know/) and it really captured my imagination.
 
@@ -60,8 +59,8 @@ It sure is!
 
 I'll rip off the two examples from the previously mentioned comic to demonstrate the value of a longer passphrase vs traditions password (assuming a brute force attack at 1000 guesses per second):
 
-* Tr0ub4dor&3 – Hard to remember, 3 days to crack.
-* correct horse battery staple – Easy to remember, 550 years to crack.
+* Tr0ub4dor&3 - Hard to remember, 3 days to crack.
+* correct horse battery staple - Easy to remember, 550 years to crack.
 
 Traditionally, we'd consider that first example to be a top-notch example of what we want. You're also likely to see this written on the underside this users' keyboard because it so hard to remember.
 
@@ -118,4 +117,3 @@ This post isn't intended to tell you, "this is what you should be doing." Rather
 I firmly believe in a few years' time, passphrases will be the industry standard. Until then, cogitate on them and start the conversation.
 
 What are your thoughts about password policies. If you had free reign, what would your personal policy for your company be? Let me know in the comments below, or over on [twitter](https://twitter.com/WindosNZ).
-

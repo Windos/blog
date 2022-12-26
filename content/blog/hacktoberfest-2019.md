@@ -4,11 +4,11 @@ date = 2019-09-29T21:37:45Z
 description = ""
 draft = false
 thumbnail = "/2019/09/umanoide-8NvFlA8DO6Q-unsplash.jpg"
+images = ["/2019/09/umanoide-8NvFlA8DO6Q-unsplash.jpg"]
 slug = "hacktoberfest-2019"
 summary = "I'm gearing up for my fourth Hacktoberfest event, and so should you. You could even come away from this month with a fancy new t-shirt!"
 tag = ["Meta", "Nugget", "PowerShell"]
 title = "Roll Your Sleeves Up, It's Hacktoberfest Time!"
-
 +++
 
 

@@ -4,11 +4,11 @@ date = 2016-11-23T10:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/Automatic_Telephone_Exchange-_Communications_in_Wartime-_London-_England-_UK-_1945_D23695.jpg"
+images = ["/2018/05/Automatic_Telephone_Exchange-_Communications_in_Wartime-_London-_England-_UK-_1945_D23695.jpg"]
 slug = "how-i-work"
 summary = "Consider this my 'How I Work' post, and if you're interested in reading more posts from other bloggers make sure you check out the list of participants on GitHub"
 tag = ["Meta"]
 title = "I'm Josh King, 'IT Pro,' and This Is How I Work"
-
 +++
 
 
@@ -46,7 +46,7 @@ Varied.
 
 And I guess that really is the spice of life. Variety keeps things interesting and fresh. Having such a large pool of responsibilities means no two days are the same and a lot of different technologies to cut your teeth on.
 
-## **What apps, software, or tools can’t you live without?**
+## **What apps, software, or tools can't you live without?**
 
 If you've read almost any of my previous posts, or follow me on Twitter, you'll be able to guess the primary answer: PowerShell.
 
@@ -103,7 +103,7 @@ More PowerShell!
 
 Yes I know I'm a bit of a broken record on this topic, but I really do mean it. There is always something else that can be automated, a new challenge to tackle, a task to simplify, it's just a matter of setting aside enough time to do it properly.
 
-## **Is there anything else you’d like to add that might be interesting to readers?**
+## **Is there anything else you'd like to add that might be interesting to readers?**
 
 I think I've pretty much covered everything about myself that I think is interesting. Kiwis have a habit of downplaying their own achievements: something, something, tall poppy syndrome.
 

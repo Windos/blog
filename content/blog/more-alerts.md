@@ -4,11 +4,11 @@ date = 2015-07-02T12:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/1280px-US_Navy_030516-N-5862D-010_A_recruit_division_sings_as_they_successfully_complete_the_final_leg_of_a_Battle_Stations_drill-1.jpg"
+images = ["/2018/05/1280px-US_Navy_030516-N-5862D-010_A_recruit_division_sings_as_they_successfully_complete_the_final_leg_of_a_Battle_Stations_drill-1.jpg"]
 slug = "more-alerts"
 summary = "In this mini post I'll list 20 more ideas for PowerShell fuelled Pulseway alerts."
 tag = ["PowerShell", "Monitoring", "Nugget"]
 title = "Mini Post: 20 More Pulseway Alerts with PowerShell"
-
 +++
 
 

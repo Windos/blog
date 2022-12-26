@@ -4,11 +4,11 @@ date = 2019-07-24T23:16:12Z
 description = ""
 draft = false
 thumbnail = "/2019/07/antoine-barres-jay5BqVyf5A-unsplash.jpg"
+images = ["/2019/07/antoine-barres-jay5BqVyf5A-unsplash.jpg"]
 slug = "normalizing-phone-numbers-easier-with-regex"
 summary = "After years of staring at it confused, I've finally given into the dark side and started to learn RegEx."
 tag = ["PowerShell"]
 title = "Normalizing Phone Numbers, Easier with Regex"
-
 +++
 
 

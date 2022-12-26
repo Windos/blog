@@ -4,10 +4,10 @@ date = 2018-04-16T13:15:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/56012414_699aac9e8e_o.jpg"
+images = ["/2018/05/56012414_699aac9e8e_o.jpg"]
 slug = "summit2018-hindsight"
 tag = ["PowerShell", "Meta"]
 title = "A Quick Look Back at #PSHSummit 2018"
-
 +++
 
 

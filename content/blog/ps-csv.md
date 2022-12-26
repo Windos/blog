@@ -4,11 +4,11 @@ date = 2018-04-18T20:30:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/3500720731_fd6be590fe_b.jpg"
+images = ["/2018/05/3500720731_fd6be590fe_b.jpg"]
 slug = "ps-csv"
 summary = "CSVs are pretty handy, right? And there is a cmdlet that'll handle this for you!"
 tag = ["PowerShell", "Nugget"]
 title = "All I Want Is a Damned CSV!"
-
 +++
 
 

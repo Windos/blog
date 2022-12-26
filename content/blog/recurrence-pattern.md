@@ -4,11 +4,11 @@ date = 2017-09-25T10:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-9.jpg"
+images = ["/2018/05/thumb-9.jpg"]
 slug = "recurrence-pattern"
 summary = "There's one thing that bugs me when scheduling scripts from the prompt, however: Recurrence."
 tag = ["PowerShell", "Nugget"]
 title = "Recurrence Patterns and PowerShell"
-
 +++
 
 
@@ -39,7 +39,7 @@ I realized that I did this so often, that I recently reworked this snippet into 
 This script will return `true` or `false`, depending on whether the current date falls within the specified pattern. For instance, I'm writing this it is the 9th of September, 2017 and running this example today returns `true`:
 
 ```powershell
-Test-RecurrencePattern -Day Tuesday – Instance Last
+Test-RecurrencePattern -Day Tuesday - Instance Last
 
 ```
 

@@ -4,11 +4,11 @@ date = 2016-07-03T12:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/Socket_5.png"
+images = ["/2018/05/Socket_5.png"]
 slug = "home-server-shutdown"
 summary = "My home server, nestled behind the TV, is an old HP workstation. It's not exactly what I'd call... power efficient."
 tag = ["PowerShell", "Nugget"]
 title = "Automatically Shutting Down My Home Server, so I Don't Have To"
-
 +++
 
 

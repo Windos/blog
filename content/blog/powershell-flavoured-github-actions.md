@@ -4,11 +4,11 @@ date = 2018-12-18T22:46:50Z
 description = ""
 draft = false
 thumbnail = "/2018/12/adam-jang-224270-unsplash.jpg"
+images = ["/2018/12/adam-jang-224270-unsplash.jpg"]
 slug = "powershell-flavoured-github-actions"
 summary = "Carrying out PowerShell based GitHub Actions in less than a minute? Colour me impressed!"
 tag = ["PowerShell"]
 title = "Cutting My Teeth on PowerShell Flavoured GitHub Actions"
-
 +++
 
 

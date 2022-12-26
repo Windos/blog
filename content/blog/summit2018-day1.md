@@ -4,11 +4,11 @@ date = 2018-04-09T18:50:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/1024px-Bright-eyed_and_Bushy-tailed_-7976750718-.jpg"
+images = ["/2018/05/1024px-Bright-eyed_and_Bushy-tailed_-7976750718-.jpg"]
 slug = "summit2018-day1"
 summary = "Why the hell are American toilets so full?"
 tag = ["PowerShell", "Meta"]
 title = "Day One of #PSHSummit 2018 - Bright-Eyed and Bushy-Tailed"
-
 +++
 
 
@@ -110,7 +110,7 @@ There was a lot of lightning demos, and I wrote a lot of notes. I'm not going to
 * REST API!
 * Prerelease support for PowerShellGet
 * There are good text messages on the gallery site
-* Find-Module –AllowPrerelease
+* Find-Module -AllowPrerelease
 * Save module doesn't put "prerelease" in folder name on disk
 * Get-Module also doesn't indicate prerelease status, you have to looking under $_.PrivateDate.PSData
 * PowerShell IoT Module

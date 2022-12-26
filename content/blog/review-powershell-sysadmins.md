@@ -4,11 +4,11 @@ date = 2020-09-05T15:33:46Z
 description = ""
 draft = false
 thumbnail = "/2020/09/nong-vang-9pw4TKvT3po-unsplash.jpg"
+images = ["/2020/09/nong-vang-9pw4TKvT3po-unsplash.jpg"]
 slug = "review-powershell-sysadmins"
 summary = "Are you a sysadmin? Looking to stop wearing out your mouse? Could this be the book for you?"
 tag = ["PowerShell"]
 title = "Review: PowerShell for Sysadmins"
-
 +++
 
 

@@ -4,11 +4,11 @@ date = 2018-03-19T19:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/pexels-photo-167964.jpeg"
+images = ["/2018/05/pexels-photo-167964.jpeg"]
 slug = "pshelp-twitter"
 summary = "If you're looking for some help, try #PSHelp. If you've got knowledge to share (and you do), make sure you jump in and get involved!"
 tag = ["PowerShell", "BurntToast"]
 title = "Need PowerShell Help? Use #PSHelp!"
-
 +++
 
 
@@ -49,7 +49,7 @@ Note that this code is intended to be run once. Parts of it will throw an error 
 
 # Setup a 'scratch' location in the registry, to prevent re-alerting on the same tweet.
 New-Item -Path 'HKCU:\SOFTWARE\PowerShell-Scratch'
-Set-ItemProperty -Path 'HKCU:\SOFTWARE\PowerShell-Scratch' -Name 'PSHelp-LastId' –Value 'FirstRun'
+Set-ItemProperty -Path 'HKCU:\SOFTWARE\PowerShell-Scratch' -Name 'PSHelp-LastId' -Value 'FirstRun'
 
 # Define the job block whick will be run on a schedule via a Scheduled Job
 $JobBlock = {

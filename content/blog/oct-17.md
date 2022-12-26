@@ -4,11 +4,11 @@ date = 2017-10-01T10:00:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/thumb-10.jpg"
+images = ["/2018/05/thumb-10.jpg"]
 slug = "oct-17"
 summary = "Summits, Blogging, and Hacking make October the 'hackiest' month of the year."
 tag = ["PowerShell", "Nugget", "Meta"]
 title = "October: The Hackiest Month of the Year"
-
 +++
 
 

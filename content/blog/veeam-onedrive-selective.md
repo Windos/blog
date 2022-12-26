@@ -4,13 +4,12 @@ date = 2019-05-04T20:38:35Z
 description = ""
 draft = false
 thumbnail = "/2019/04/kaitlyn-chow-554372-unsplash.jpg"
+images = ["/2019/04/kaitlyn-chow-554372-unsplash.jpg"]
 slug = "veeam-onedrive-selective"
 summary = "I've been wanting to get this out for a while, but couldn't find the right way to present it... rather than stressing, here's a brain dump on VBO v3."
 tag = ["Backup", "PowerShell"]
 title = "Disjointed Thoughts on Veeam Backup for Office 365 v3"
-
 +++
-
 
 A while back, while it was in beta, I [sung the praises of Veeam Backup for Office 365 v3](__GHOST_URL__/2019/02/19/veeam-backup-for-microsoft-office-365-v3/) (VBO). Since then this update has been [officially released](https://www.veeam.com/news/new-veeam-backup-for-microsoft-office-365-version-3-now-available.html). I haven't yet (... at the time of writing) had the opportunity to update my production install, although I am champing at the bit to do so, so I've continued to poke around the beta until the license expires.
 
@@ -71,4 +70,3 @@ When I finally got a chance to upgrade my production instance it took about two 
 All this is to say, be prepared that you'll have a bit of downtime between starting on your VBO upgrade and starting your jobs again.
 
 Don't worry, and be patient!
-

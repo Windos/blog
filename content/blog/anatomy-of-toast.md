@@ -4,11 +4,11 @@ date = 2020-07-28T14:05:26Z
 description = ""
 draft = false
 thumbnail = "/2020/07/joyce-mccown-LAEPsbXOhIM-unsplash.jpg"
+images = ["/2020/07/joyce-mccown-LAEPsbXOhIM-unsplash.jpg"]
 slug = "anatomy-of-toast"
 summary = "BurntToast just turned five, and I've only now realized that I've never written about how all the module's \"advanced\" functions work together to create a toast notification."
 tag = ["PowerShell", "BurntToast"]
 title = "The Anatomy of Toast"
-
 +++
 
 

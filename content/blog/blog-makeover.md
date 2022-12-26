@@ -4,11 +4,11 @@ date = 2018-05-25T06:52:00Z
 description = ""
 draft = false
 thumbnail = "/2018/05/james-pond-191811-unsplash.jpg"
+images = ["/2018/05/james-pond-191811-unsplash.jpg"]
 slug = "blog-makeover"
 summary = "Didn't I literally just post about my blogging workflow on GitHub Pages? Welp, I'm not there anymore!"
 tag = ["Meta"]
 title = "Blog Makeover - Why, Where, How?"
-
 +++
 
 

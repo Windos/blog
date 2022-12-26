@@ -4,11 +4,11 @@ date = 2019-02-13T19:56:39Z
 description = ""
 draft = false
 thumbnail = "/2019/02/daniel-watson-75027-unsplash.jpg"
+images = ["/2019/02/daniel-watson-75027-unsplash.jpg"]
 slug = "rsat-as-a-feature-i-thought-i-was-going-to-love-it-until-i-saw-it-in-action"
 summary = "I'm a little late to this particular party, but I only just had the 1809 update on my workstation today."
 tag = ["PowerShell", "Nugget", "Windows"]
 title = "RSAT as a Feature: I Thought I Was Going to Love It, Until I Saw It in Action"
-
 +++
 
 

@@ -4,11 +4,11 @@ date = 2019-09-09T21:38:52Z
 description = ""
 draft = false
 thumbnail = "/2019/09/bence-boros-l3_9j916sh0-unsplash.jpg"
+images = ["/2019/09/bence-boros-l3_9j916sh0-unsplash.jpg"]
 slug = "powershell7-foreach-parallel"
 summary = "PoshRSJob has been my go to module for Parallelization for years... let's see if a head to head test with the new PowerShell 7 feature will change that."
 tag = ["PowerShell"]
 title = "Can Parallel For Each Loops in PowerShell 7 Tear Me Away from PoshRSJob?"
-
 +++
 
 
