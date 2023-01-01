@@ -3,6 +3,8 @@ metaDataFormat = "yaml"
 title = "ToastIT"
 theme = "blist"
 
+timeZone = 'Pacific/Auckland'
+
 googleAnalytics = 'G-PNF7X4NP00'
 disqusShortname = 'windosgithub'
 
