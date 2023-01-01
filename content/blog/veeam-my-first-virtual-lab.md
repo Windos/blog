@@ -9,7 +9,7 @@ slug = "veeam-my-first-virtual-lab"
 summary = "Over the last day or so I've been setting up a sandbox/virtual lab which leverages our Veeam backups."
 tag = ["Backup"]
 title = "Veeam: My First Virtual Lab"
-alias = [
+aliases = [
     "/2018/03/26/veeam-my-first-virtual-lab/amp/",
     "/2018/03/26/veeam-my-first-virtual-lab/"
 ]
