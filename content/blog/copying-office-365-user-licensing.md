@@ -9,6 +9,11 @@ slug = "copying-office-365-user-licensing"
 summary = "Spoiler alert: this post didn't end up the way I expected it to when I started writing..."
 tag = ["PowerShell", "Office 365"]
 title = "Copying Office 365 User Licensing"
+aliases = [
+    "/2018/07/24/copying-office-365-user-licensing/amp/",
+    "/2018/07/24/copying-office-365-user-licensing/",
+    "/2018/07/24/copying-office-365-user-licensing"
+]
 +++
 
 

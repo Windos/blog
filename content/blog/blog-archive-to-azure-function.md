@@ -9,6 +9,11 @@ slug = "blog-archive-to-azure-function"
 summary = "A few scripts run on my home server, but can happily run in a serverless environment. Time to give that poor server a rest, I think."
 tag = ["PowerShell", "Azure"]
 title = "Moving My Automatic Blog Archive Tweets to Azure Functions"
+aliases = [
+    "/2019/02/24/blog-archive-to-azure-function/amp/",
+    "/2019/02/24/blog-archive-to-azure-function/",
+    "/2019/02/24/blog-archive-to-azure-function"
+]
 +++
 
 

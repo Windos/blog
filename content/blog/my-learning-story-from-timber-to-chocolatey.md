@@ -9,6 +9,11 @@ slug = "my-learning-story-from-timber-to-chocolatey"
 summary = "This post is part of #TheMVPChallenge. It's not exactly what was on the brief... but I think it's a story worth telling!"
 tag = ["Meta", "Azure", "Office 365", "PowerShell"]
 title = "My Learning Story: From Timber to Chocolatey"
+aliases = [
+    "/2021/05/07/my-learning-story-from-timber-to-chocolatey/amp/",
+    "/2021/05/07/my-learning-story-from-timber-to-chocolatey/",
+    "/2021/05/07/my-learning-story-from-timber-to-chocolatey"
+]
 +++
 
 

@@ -9,6 +9,11 @@ slug = "everything-is-better-with-toast-getting-build-notifications"
 summary = "When you want to keep an eye on build results, but don't want to dedicate a screen to the web page, toast is the answer!"
 tag = ["PowerShell", "BurntToast", "Office 365"]
 title = "Everything Is Better with Toast: Getting Build Notifications"
+aliases = [
+    "/2019/02/10/everything-is-better-with-toast-getting-build-notifications/amp/",
+    "/2019/02/10/everything-is-better-with-toast-getting-build-notifications/",
+    "/2019/02/10/everything-is-better-with-toast-getting-build-notifications"
+]
 +++
 
 

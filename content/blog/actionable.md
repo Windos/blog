@@ -9,6 +9,11 @@ slug = "actionable"
 summary = "I don't know how to express a happy dance with text. If I could that's what would be here because I've finally removed a thorn from my side that's been there for five years."
 tag = ["PowerShell", "BurntToast"]
 title = "Actionable Toast Notifications, Finally Cracked Them!"
+aliases = [
+    "/2020/08/08/actionable/amp/",
+    "/2020/08/08/actionable/",
+    "/2020/08/08/actionable"
+]
 +++
 
 

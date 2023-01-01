@@ -9,6 +9,11 @@ slug = "recurrence-pattern"
 summary = "There's one thing that bugs me when scheduling scripts from the prompt, however: Recurrence."
 tag = ["PowerShell", "Nugget"]
 title = "Recurrence Patterns and PowerShell"
+aliases = [
+    "/recurrence-pattern/amp/",
+    "/recurrence-pattern/",
+    "/recurrence-pattern"
+]
 +++
 
 

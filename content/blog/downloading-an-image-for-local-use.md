@@ -9,6 +9,11 @@ slug = "downloading-an-image-for-local-use"
 summary = "This has been sitting as an open issue on the project for a long time and given how quick of a fix it was I'm disappointed that I didn't get to it sooner."
 tag = ["PowerShell", "Nugget", "BurntToast"]
 title = "Downloading an Image for Local Use"
+aliases = [
+    "/2018/05/28/downloading-an-image-for-local-use/amp/",
+    "/2018/05/28/downloading-an-image-for-local-use/",
+    "/2018/05/28/downloading-an-image-for-local-use"
+]
 +++
 
 

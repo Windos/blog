@@ -9,6 +9,11 @@ slug = "powershell-orchestration-with-scheduled-jobs-the-start-of-a-series"
 summary = "In an effort to spread my love of Windows PowerShell scheduled jobs, this is the start of series on the subject."
 tag = ["PowerShell"]
 title = "PowerShell Orchestration with Scheduled Jobs - The Start of a Series"
+aliases = [
+    "/powershell-orchestration-with-scheduled-jobs-the-start-of-a-series/amp/",
+    "/powershell-orchestration-with-scheduled-jobs-the-start-of-a-series/",
+    "/powershell-orchestration-with-scheduled-jobs-the-start-of-a-series"
+]
 +++
 
 

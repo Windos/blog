@@ -9,6 +9,11 @@ slug = "road-to-burnttoast-v1-1"
 summary = "BurntToast is finally growing up. It's going through puberty and will see a v1 release when it gets to the other side... but it'll be a journey."
 tag = ["BurntToast", "PowerShell"]
 title = "Road to BurntToast v1: Actionable Toast for All!"
+aliases = [
+    "/2021/04/21/road-to-burnttoast-v1-1/amp/",
+    "/2021/04/21/road-to-burnttoast-v1-1/",
+    "/2021/04/21/road-to-burnttoast-v1-1"
+]
 +++
 
 

@@ -9,6 +9,11 @@ slug = "crouton-14-buttons"
 summary = "It's all well and good putting buttons all over your toast notification, but text is a little plain. Let's see how we can dress out buttons up a little bit!"
 tag = ["BurntToast", "PowerShell"]
 title = "Crouton #14 - Fancy Buttons"
+aliases = [
+    "/2020/01/23/crouton-14-buttons/amp/",
+    "/2020/01/23/crouton-14-buttons/",
+    "/2020/01/23/crouton-14-buttons"
+]
 +++
 
 

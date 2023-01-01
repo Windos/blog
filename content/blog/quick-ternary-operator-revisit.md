@@ -9,6 +9,11 @@ slug = "quick-ternary-operator-revisit"
 summary = "I was thinking about the new Ternary Operator and had a random thought... can it handle elseif logic?"
 tag = ["Nugget", "PowerShell"]
 title = "Quick Ternary Operator Revisit: Can It Elseif?"
+aliases = [
+    "/2019/10/05/quick-ternary-operator-revisit/amp/",
+    "/2019/10/05/quick-ternary-operator-revisit/",
+    "/2019/10/05/quick-ternary-operator-revisit"
+]
 +++
 
 

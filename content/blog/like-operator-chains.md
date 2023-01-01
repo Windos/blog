@@ -9,6 +9,11 @@ slug = "like-operator-chains"
 summary = "RegEx continue to prove itself as a valuable tool in my tool belt when scripting. Sometimes it can save you a lot of time and many lines of code."
 tag = ["PowerShell"]
 title = "Tired of Massive \"like\" Operator Chains? Rub a Little RegEx on It"
+aliases = [
+    "/2019/11/28/like-operator-chains/amp/",
+    "/2019/11/28/like-operator-chains/",
+    "/2019/11/28/like-operator-chains"
+]
 +++
 
 

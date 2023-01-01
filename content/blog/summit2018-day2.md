@@ -9,6 +9,11 @@ slug = "summit2018-day2"
 summary = "No comments about the plumbing or anything today, having gotten over the initial shock."
 tag = ["PowerShell", "Meta"]
 title = "Day Two of #PSHSummit 2018 - Getting Smart"
+aliases = [
+    "/2018/04/11/summit2018-day2/amp/",
+    "/2018/04/11/summit2018-day2/",
+    "/2018/04/11/summit2018-day2"
+]
 +++
 
 
