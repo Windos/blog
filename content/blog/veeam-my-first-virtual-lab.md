@@ -9,6 +9,7 @@ slug = "veeam-my-first-virtual-lab"
 summary = "Over the last day or so I've been setting up a sandbox/virtual lab which leverages our Veeam backups."
 tag = ["Backup"]
 title = "Veeam: My First Virtual Lab"
+alias = ["/2018/03/26/veeam-my-first-virtual-lab/amp/"]
 +++
 
 Over the last day or so I've been setting up a sandbox/virtual lab which leverages our Veeam backups. We've been using [SureBackup](https://www.veeam.com/videos/surebackup-how-it-works-22.html) for automatic restore point verification, but a large software update that's coming down the pipeline was a really good excuse to get a semi-persistent lab running.
