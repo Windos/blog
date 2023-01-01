@@ -9,6 +9,11 @@ slug = "azure-devops-for-powershell-azureadventcalendar-2019-day-15"
 summary = "It's long past time to wrap some modern smarts around KovertKringle, a PowerShell module for managing Secret Santa events."
 tag = ["Azure", "PowerShell"]
 title = "Azure Devops for PowerShell - #AzureAdventCalendar 2019 Day 15"
+aliases = [
+    "/2019/12/15/azure-devops-for-powershell-azureadventcalendar-2019-day-15/amp/",
+    "/2019/12/15/azure-devops-for-powershell-azureadventcalendar-2019-day-15/",
+    "/2019/12/15/azure-devops-for-powershell-azureadventcalendar-2019-day-15"
+]
 +++
 
 

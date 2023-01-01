@@ -11,7 +11,8 @@ tag = ["Backup"]
 title = "Veeam: My First Virtual Lab"
 aliases = [
     "/2018/03/26/veeam-my-first-virtual-lab/amp/",
-    "/2018/03/26/veeam-my-first-virtual-lab/"
+    "/2018/03/26/veeam-my-first-virtual-lab/",
+    "/2018/03/26/veeam-my-first-virtual-lab"
 ]
 +++
 

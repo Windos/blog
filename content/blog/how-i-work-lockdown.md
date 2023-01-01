@@ -9,6 +9,11 @@ slug = "how-i-work-lockdown"
 summary = "My last \"How I Work\" post was over three years ago and I've been considering an update for a while. What better time to do that than during the COVID-19 lockdown?"
 tag = ["Meta", "PowerShell"]
 title = "I'm Josh King, Sysadmin, and This Is How I Work (During Lockdown)"
+aliases = [
+    "/2020/04/13/how-i-work-lockdown/amp/",
+    "/2020/04/13/how-i-work-lockdown/",
+    "/2020/04/13/how-i-work-lockdown"
+]
 +++
 
 

@@ -9,6 +9,11 @@ slug = "pulseway-all-the-alerts"
 summary = "Need to know when your servers CPU is pegged at 100%? Check. Need to know when a disk simply isn't present in the OS after booting up? Uhh..."
 tag = ["PowerShell", "Monitoring"]
 title = "With PowerShell, Pulseway Can Alert on Anything"
+aliases = [
+    "/2015/06/30/pulseway-all-the-alerts/amp/",
+    "/2015/06/30/pulseway-all-the-alerts/",
+    "/2015/06/30/pulseway-all-the-alerts"
+]
 +++
 
 
