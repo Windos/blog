@@ -4,7 +4,7 @@ title = "ToastIT"
 theme = "ananke"
 enableRobotsTXT = true
 SectionPagesMenu = "main"
-Paginate = 10
+Paginate = 15
 
 googleAnalytics = 'G-PNF7X4NP00'
 disqusShortname = 'windosgithub'
@@ -46,7 +46,7 @@ contentDir = "content"
   background_color_class = "bg-black"
   author = "Josh King"
   site_logo = "/toastit-logo.png"
-  recent_posts_number = 3
+  recent_posts_number = 5
 
   # Enable the darkmode toggle in header
   darkModeToggle = true
