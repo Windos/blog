@@ -3,7 +3,6 @@ metaDataFormat = "toml"
 title = "ToastIT"
 theme = "ananke"
 enableRobotsTXT = true
-SectionPagesMenu = "main"
 Paginate = 15
 
 googleAnalytics = 'G-PNF7X4NP00'
