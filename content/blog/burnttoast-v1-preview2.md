@@ -1,6 +1,6 @@
 +++
 categories = ["BurntToast", "PowerShell"]
-date = 2023-05-07T08:00:00Z
+date = 2023-05-07T01:30:00Z
 description = "If the wait for Preview1 felt long, the wait for Preview2 was even longer."
 draft = false
 thumbnail = "/2023/05/levi-meir-clancy-jdIT3puximI-unsplash.jpg"
