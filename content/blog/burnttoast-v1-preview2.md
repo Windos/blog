@@ -24,7 +24,7 @@ All that said, you'll now find the the second preview release up on the PowerShe
 
 ## What's Broken?
 
-Based on [feedback](https://github.com/Windos/BurntToast/discussions/192) from the first preview, the various images functions were combined into one. Specifically this means that the `Add-BTAppLogo` and `Add-BTHeroImage` functions have been removed in Preview2. Their functionality can now be accessed using switch parameters on the `Add-BTImage` function.
+Based on [feedback](https://github.com/Windos/BurntToast/discussions/192) from the first preview, the various images functions were combined into one. Specifically this means that the `Add-BTAppLogo` and `Add-BTHeroImage` functions have been removed in Preview2. Their functionality can now be accessed using switch parameters on the [Add-BTImage](https://docs.toastit.dev/commands/add-btimage) function.
 
 For example, to add a App Logo to a toast notification, you would now run:
 
@@ -46,7 +46,7 @@ $Builder | Show-BTNotification
 
 Firstly, thanks to [Mark Kraus](https://techhub.social/@markekraus) for helping to ensure that all invalid characters are removed when caching images. There had been an edge case where characters that local file systems don't support would be used in file names and would result in errors.
 
-A new function, [`Add-BTInputTextBox`](https://docs.toastit.dev/commands/add-btinputtextbox) was added which allows you, as the name suggests, add a text box to your toast notifications. At the moment you won't be able to do much with this, but I'm hoping to allow for easily triggering events and getting data from these text boxes in the next preview release.
+A new function, [Add-BTInputTextBox](https://docs.toastit.dev/commands/add-btinputtextbox) was added which allows you, as the name suggests, add a text box to your toast notifications. At the moment you won't be able to do much with this, but I'm hoping to allow for easily triggering events and getting data from these text boxes in the next preview release.
 
 Note that a toast cannot _only_ contain an input box, there needs to be some other element such as text or an app logo.
 
@@ -59,7 +59,7 @@ $Builder | Show-BTNotification
 
 {{< figure src="/2023/05/TextBoxExample.png" >}}
 
-The [`Add-BTText`](https://docs.toastit.dev/commands/add-bttext) function now has an `Attribution` switch parameter which allows you to specify attribution for the resulting notification. For example if you were doing notifications for a chat app, you may attribute toast notifications to a specific channel or 1:1 chat.
+The [Add-BTText](https://docs.toastit.dev/commands/add-bttext) function now has an `Attribution` switch parameter which allows you to specify attribution for the resulting notification. For example if you were doing notifications for a chat app, you may attribute toast notifications to a specific channel or 1:1 chat.
 
 ```powershell
 $Builder = New-BTContentBuilder
@@ -78,7 +78,7 @@ Note that the ability to update a toast notification was not included in this pr
 
 As is, a bindable string appears in a toast notification as the placeholder text surrounded by curly braces.
 
-Something tells me that curly braces aren't what you're after, so instead you need to have "data bindings" which map your placeholder to the actual value you want to display. You do this with the new [`Add-BTDataBinding`](https://docs.toastit.dev/commands/add-btdatabinding) function, via which you can either add each binding one at a time via the `Key` and `Value` parameters or add multiple at once by providing a hashtable.
+Something tells me that curly braces aren't what you're after, so instead you need to have "data bindings" which map your placeholder to the actual value you want to display. You do this with the new [Add-BTDataBinding](https://docs.toastit.dev/commands/add-btdatabinding) function, via which you can either add each binding one at a time via the `Key` and `Value` parameters or add multiple at once by providing a hashtable.
 
 ```powershell
 $Builder = New-BTContentBuilder
