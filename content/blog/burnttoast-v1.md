@@ -1,6 +1,6 @@
 +++
 categories = ["BurntToast", "PowerShell"]
-date = 2025-07-22T11:00:00Z
+date = 2025-07-22T10:30:00Z
 description = "It's been a long, eventful, decade. The perfect amount of time to burn some toast!"
 draft = false
 thumbnail = "/2025/07/BurntToast.png"
