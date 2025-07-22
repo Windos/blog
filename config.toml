@@ -1,7 +1,9 @@
 baseurl = "https://toastit.dev"
-metaDataFormat = "yaml"
+metaDataFormat = "toml"
 title = "ToastIT"
-theme = "blist"
+theme = "ananke"
+enableRobotsTXT = true
+Paginate = 15
 
 googleAnalytics = 'G-PNF7X4NP00'
 disqusShortname = 'windosgithub'
@@ -40,6 +42,11 @@ contentDir = "content"
   introPhoto = "/avatar.jpg"
   logo = "/toastit-logo.png"
 
+  background_color_class = "bg-black"
+  author = "Josh King"
+  site_logo = "/toastit-logo.png"
+  recent_posts_number = 5
+
   # Enable the darkmode toggle in header
   darkModeToggle = true
 
@@ -62,6 +69,11 @@ contentDir = "content"
   description = "Geek, Father, Walking Helpdesk"
   images = ['site_hero.jpg']
   title = 'ToastIT.dev - Josh King'
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
 
 [params.homepage.social]
   # Global params xommon for both languages
@@ -86,3 +98,24 @@ contentDir = "content"
   [markup.goldmark.renderer]
     # Enable to include inline HTML
     unsafe = true
+
+[[params.ananke_socials]]
+name = "mastodon"
+url = "https://mastodon.nz/@windos"
+rel = "me noopener"
+
+[[params.ananke_socials]]
+name = "twitter"
+url = "https://twitter.com/WindosNZ"
+
+[[params.ananke_socials]]
+name = "linkedin"
+url = "https://linkedin.com/in/windos"
+
+[[params.ananke_socials]]
+name = "github"
+url = "https://github.com/Windos"
+
+[[params.ananke_socials]]
+name = "youtube"
+url = "https://www.youtube.com/c/JoshuaKingSolari"
