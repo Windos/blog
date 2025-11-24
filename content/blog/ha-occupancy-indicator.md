@@ -194,3 +194,5 @@ One thing you'll note here is that I'm setting the notify light to the same brig
 It took a few iterations to get from a basic red light to a robust notification system, but the result is seamless. The living room vibe is preserved, and I no longer have to walk down the hall just to find a locked door.
 
 Now, if you’ll excuse me, I have some other automations to shed some light on.
+
+Credit: Photo by [Al Butler](https://unsplash.com/@albutler) on [Unsplash](https://unsplash.com/photos/a-close-up-of-a-sign-on-a-door-ifCDP8ALJOY).
