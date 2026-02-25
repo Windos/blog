@@ -4,7 +4,6 @@ title = "ToastIT"
 theme = "blist"
 
 googleAnalytics = 'G-PNF7X4NP00'
-disqusShortname = 'windosgithub'
 
 [taxonomies]
   tags = 'tag'
