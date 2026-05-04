@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode }}" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ block "title" . }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ site.Params.bio }}{{ end }}{{ end }}">
+    <meta property="og:title" content="{{ .Title }} | {{ site.Title }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ site.Params.bio }}{{ end }}{{ end }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    {{- $image := "" -}}
+    {{- if .Params.images -}}
+        {{- $image = index .Params.images 0 -}}
+    {{- else if .Params.image -}}
+        {{- $image = .Params.image -}}
+    {{- else -}}
+        {{- $image = site.Params.avatar -}}
+    {{- end -}}
+    {{- if $image -}}
+    <meta property="og:image" content="{{ $image | absURL }}">
+    <meta name="twitter:image" content="{{ $image | absURL }}">
+    {{- end -}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title }} | {{ site.Title }}">
+    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ site.Params.bio }}{{ end }}{{ end }}">
+    
+    <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+    
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v={{ now.Unix }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    {{ if site.Params.accent_color }}
+    <style>
+        :root {
+            --accent-color: {{ site.Params.accent_color | default "#3b82f6" }};
+        }
+    </style>
+    {{ end }}
+    <script>
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        }
+    </script>
+</head>
+<body>
+    <div class="site-wrapper">
+        {{ partial "header.html" . }}
+        <main class="site-main">
+            {{ block "main" . }}{{ end }}
+        </main>
+        {{ partial "footer.html" . }}
+    </div>
+    <script src="{{ "js/theme-toggle.js" | relURL }}"></script>
+</body>
+</html>

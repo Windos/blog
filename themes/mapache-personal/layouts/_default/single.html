@@ -1,0 +1,33 @@
+{{ define "main" }}
+<article class="post-single">
+    {{- if .Params.image -}}
+    {{- $image := .Resources.GetMatch .Params.image -}}
+    <figure class="post-hero-image">
+        {{- if $image -}}
+        <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}">
+        {{- else -}}
+        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
+        {{- end -}}
+    </figure>
+    {{- end -}}
+    <div class="container">
+        <header class="post-header">
+            <h1 class="post-title">{{ .Title }}</h1>
+            {{- if eq .Type "posts" -}}
+            <div class="post-meta">
+                {{ if site.Params.author }}<span class="post-author">By <a href="{{ "/about/" | relLangURL }}">{{ site.Params.author }}</a></span> &middot; {{ end }}
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                {{ with .Params.tags }}
+                <span class="post-tags">
+                    &middot; {{ range . }}<a href="{{ "tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}
+                </span>
+                {{ end }}
+            </div>
+            {{- end -}}
+        </header>
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+    </div>
+</article>
+{{ end }}

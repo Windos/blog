@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="container list-page">
+    <header class="list-header" style="margin: 3rem 0;">
+        <h1 class="list-title" style="font-size: 2.5rem; font-weight: 800;">{{ .Title }}</h1>
+        {{ with .Content }}<div class="list-description" style="color: var(--text-muted); margin-top: 1rem;">{{ . }}</div>{{ end }}
+    </header>
+    <div class="tags-grid">
+        {{ range .Data.Terms.ByCount }}
+        <a href="{{ .Page.RelPermalink }}" class="tag-card" style="background-color: var(--card-bg); border: 1px solid var(--border-color); padding: 1rem 1.5rem; border-radius: 0.5rem; color: var(--text-color); font-weight: 600; display: flex; justify-content: space-between; align-items: center; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;">
+            <span>{{ .Page.Title }}</span>
+            <span class="tag-count" style="background-color: var(--accent-color, #3b82f6); color: white; padding: 0.2rem 0.6rem; border-radius: 9999px; font-size: 0.8rem;">{{ .Count }} post{{ if ne .Count 1 }}s{{ end }}</span>
+        </a>
+        {{ end }}
+    </div>
+</div>
+<style>
+.tag-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color, #3b82f6);
+}
+</style>
+{{ end }}

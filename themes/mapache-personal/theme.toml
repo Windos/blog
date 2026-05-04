@@ -1,0 +1,12 @@
+name = "mapache-personal"
+license = "MIT"
+licenselink = "https://github.com/toastit/mapache-personal/blob/master/LICENSE"
+description = "A clean personal theme based on Mapache for Ghost"
+homepage = "https://toastit.dev/"
+tags = ["blog", "personal", "clean", "light", "dark"]
+features = ["light/dark mode"]
+min_version = "0.120.0"
+
+[author]
+  name = "Toastit"
+  homepage = "https://toastit.dev"

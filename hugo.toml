@@ -1,0 +1,17 @@
+baseURL = 'https://toastit.dev/'
+languageCode = 'en-us'
+title = 'ToastIT.dev'
+theme = 'mapache-personal'
+
+[params]
+  accent_color = '#3b82f6'
+  author = 'Josh King'
+  bio = 'Geek, Father, Walking Helpdesk.'
+  avatar = '/images/avatar.png'
+  images = ['/images/avatar.png']
+  github = 'https://github.com/Windos'
+  bluesky = 'https://bsky.app/profile/toastit.dev'
+  linkedin = 'https://www.linkedin.com/in/windos/'
+
+[permalinks]
+  posts = "/:year/:month/:day/:slug/"

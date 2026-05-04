@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="container list-page">
+    <header class="list-header" style="margin: 3rem 0;">
+        <h1 class="list-title" style="font-size: 2.5rem; font-weight: 800;">{{ .Title }}</h1>
+        {{ with .Content }}<div class="list-description" style="color: var(--text-muted); margin-top: 1rem;">{{ . }}</div>{{ end }}
+    </header>
+    <div class="post-grid">
+        {{ range .Pages }}
+        <article class="post-card">
+            {{- if .Params.image -}}
+            {{- $image := .Resources.GetMatch .Params.image -}}
+            <a class="post-card-image-link" href="{{ .RelPermalink }}">
+                <img class="post-card-image" src="{{ if $image }}{{ $image.RelPermalink }}{{ else }}{{ .Params.image | relURL }}{{ end }}" alt="{{ .Title }}" loading="lazy">
+            </a>
+            {{- end -}}
+            <div class="post-card-content">
+                <header class="post-card-header">
+                    <div class="post-card-meta">
+                        <time class="post-card-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                        {{- with .Params.tags -}}
+                        <span class="post-card-divider">&bull;</span>
+                        <span class="post-card-tags">
+                            {{- range $index, $tag := . -}}
+                                {{- if gt $index 0 }}, {{ end -}}
+                                <a href="{{ "tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+                            {{- end -}}
+                        </span>
+                        {{- end -}}
+                    </div>
+                    <h3 class="post-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>{{ .Summary | plainify | truncate 150 }}</p>
+                </section>
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
